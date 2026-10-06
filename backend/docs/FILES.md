@@ -106,3 +106,41 @@ Changed:
 - `backend/tests/test_config.py`
 - `backend/README.md`
 - `backend/docs/FILES.md`
+
+# Phase 4 files
+
+Created:
+
+- `backend/app/api/v1/simulate.py`
+- `backend/app/api/v1/telemetry.py`
+- `backend/app/repositories/analytics_repo.py`
+- `backend/app/repositories/ingestion_run_repo.py`
+- `backend/app/repositories/telemetry_repo.py`
+- `backend/app/repositories/transformer_repo.py`
+- `backend/app/schemas/ingestion.py`
+- `backend/app/services/hooks.py`
+- `backend/app/services/ingestion_service.py`
+- `backend/app/services/quality_stats.py`
+- `backend/app/services/replay_service.py`
+- `backend/docs/ingestion.md`
+- `backend/docs/phase4-acceptance.md`
+- `backend/tests/ingestion/__init__.py`
+- `backend/tests/ingestion/conftest.py`
+- `backend/tests/ingestion/test_batch.py`
+- `backend/tests/ingestion/test_concurrency.py`
+- `backend/tests/ingestion/test_lifespan.py`
+- `backend/tests/ingestion/test_logging.py`
+- `backend/tests/ingestion/test_performance.py`
+- `backend/tests/ingestion/test_quality_stats.py`
+- `backend/tests/ingestion/test_replay.py`
+- `backend/tests/ingestion/test_single.py`
+
+Changed:
+
+- `backend/README.md`
+- `backend/alembic/env.py`
+- `backend/app/api/v1/router.py`
+- `backend/app/main.py`
+- `backend/app/ml_client/factory.py`
+- `backend/docs/FILES.md`
+- `backend/docs/ml-integration-notes.md`

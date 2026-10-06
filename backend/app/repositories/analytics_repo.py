@@ -1,0 +1,33 @@
+from sqlalchemy import select
+from sqlalchemy.dialects.postgresql import insert
+from sqlalchemy.orm import Session
+
+from app.models.analytics import Analytics
+from app.schemas.analytics import MLResultIn
+
+
+def get_for_telemetry(session: Session, telemetry_id: int) -> Analytics | None:
+    return session.scalar(select(Analytics).where(Analytics.telemetry_id == telemetry_id))
+
+
+def insert_analytics(
+    session: Session,
+    telemetry_id: int,
+    result: MLResultIn,
+) -> tuple[Analytics, bool]:
+    statement = (
+        insert(Analytics)
+        .values(
+            telemetry_id=telemetry_id,
+            **result.model_dump(mode="python"),
+        )
+        .on_conflict_do_nothing(index_elements=[Analytics.telemetry_id])
+        .returning(Analytics)
+    )
+    row = session.scalar(statement)
+    if row is not None:
+        return row, True
+    row = get_for_telemetry(session, telemetry_id)
+    if row is None:
+        raise RuntimeError("Analytics lookup did not return a row")
+    return row, False

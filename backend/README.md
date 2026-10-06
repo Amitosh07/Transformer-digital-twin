@@ -1,4 +1,4 @@
-# Backend Phases 1, 2 and 3
+# Backend Phases 1 through 4
 
 FastAPI + synchronous SQLAlchemy 2.0/psycopg 3 + PostgreSQL 16.
 All project changes are under `backend/` on `feature/backend-api`.
@@ -43,8 +43,8 @@ assert that all migrations are applied. Errors elsewhere use
 `{"error":{"code":"...","message":"...","details":null}}`.
 OpenAPI is available at `/docs`. The `/api/v1` router is ready for Phase 2.
 Canonical telemetry, ML results, transformer configuration, alert, maintenance, pagination,
-error and latest-state schemas are defined. Ingestion routes and ML inference are planned
-for subsequent phases.
+error and latest-state schemas are defined. The ingestion routes use these contracts and the configured
+ML adapter.
 
 ## Verify
 
@@ -128,3 +128,18 @@ Phase 3 verification: 403 tests passed with no skips, including all prior Postgr
 regressions. Ruff and format checks passed; all new files were checked for raw source
 column names, and ML client imports were checked for database/dataframe dependencies.
 The existing Starlette/httpx dependency deprecation warning remains.
+
+## Phase 4 ingestion
+
+Live, batch and replay endpoints share the single telemetry-ingestion service. Telemetry
+and analytics persist together, duplicates are idempotent, and ingestion runs record
+quality statistics and replay progress. Chunks contain 1000 valid rows; MAX_BATCH_SIZE
+remains 5000 by default. ML and alert-hook failures are isolated.
+
+See `docs/ingestion.md` for endpoint contracts, error classification, history/deque
+semantics, replay behavior and verification commands. MQTT remains a future phase.
+The app now closes its cached HTTP ML client on shutdown.
+
+Phase 4 verification: 435 tests passed with no skips; Ruff and formatting passed.
+The 10,000-row stub load took 44.977 seconds; its duplicate reload took 30.158 seconds.
+See `docs/phase4-acceptance.md` for every acceptance result and both summaries.

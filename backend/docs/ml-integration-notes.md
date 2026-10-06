@@ -189,9 +189,9 @@ across all attempts. The service must make analysis requests safe to repeat afte
 
 httpx is a backend runtime dependency. No remote service is needed for the tests:
 httpx.MockTransport covers success, failures and retry behavior. The HTTP adapter's
-`close()` releases its owned client; injected clients remain caller-owned. Phase 4 should
-close the cached HTTP adapter on application shutdown. Clearing the factory cache alone
-does not close its previous client.
+`close()` releases its owned client; injected clients remain caller-owned. The Phase 4 app lifespan now
+closes the cached HTTP adapter on shutdown through close_ml_client(). Clearing the
+factory cache alone does not close its previous client.
 
 ## Deterministic stub rules
 
