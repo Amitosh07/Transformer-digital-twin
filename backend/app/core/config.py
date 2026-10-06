@@ -20,6 +20,8 @@ class Settings(BaseSettings):
     ml_http_url: str | None = None
     ml_python_entrypoint: str | None = None
     ml_history_window: int = Field(default=60, ge=1)
+    ml_timeout_seconds: float = Field(default=5.0, gt=0, allow_inf_nan=False)
+    ml_max_retries: int = Field(default=2, ge=0)
     max_batch_size: int = Field(default=5000, ge=1)
     cors_origins: list[str] = Field(default_factory=list)
     mqtt_enabled: bool = False

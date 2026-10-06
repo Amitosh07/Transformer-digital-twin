@@ -1,4 +1,4 @@
-# Backend Phases 1 and 2
+# Backend Phases 1, 2 and 3
 
 FastAPI + synchronous SQLAlchemy 2.0/psycopg 3 + PostgreSQL 16.
 All project changes are under `backend/` on `feature/backend-api`.
@@ -113,3 +113,18 @@ Phase 2 validation: 311 tests passed, with no skips, against PostgreSQL 16. Ruff
 format check passed. This includes every Phase 1 regression and ORM conversion for the new
 schemas. The existing Starlette/httpx dependency deprecation warning remains.
 Production endpoints are unchanged; validation endpoints exist only in test applications.
+
+## Phase 3 ML integration
+
+`app/ml_client/` defines the protocol, deterministic stub, lazy Python adapter, HTTP
+adapter, safe failure wrapper and cached factory. Set ML_BACKEND to select an adapter;
+ML_TIMEOUT_SECONDS and ML_MAX_RETRIES configure HTTP behavior. httpx is now a runtime
+dependency; pandas is not required. No endpoints or persistence were added in this phase.
+
+See `docs/ml-integration-notes.md` for the exact interface, full HTTP JSON examples,
+history-window contract, stub rules and open questions for Person 1.
+
+Phase 3 verification: 403 tests passed with no skips, including all prior PostgreSQL
+regressions. Ruff and format checks passed; all new files were checked for raw source
+column names, and ML client imports were checked for database/dataframe dependencies.
+The existing Starlette/httpx dependency deprecation warning remains.

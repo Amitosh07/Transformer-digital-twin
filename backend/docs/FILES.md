@@ -77,3 +77,32 @@ Changed:
 - `backend/docs/FILES.md`
 - `backend/tests/test_config.py`
 - `backend/tests/test_errors.py`
+
+# Phase 3 files
+
+Created:
+
+- `backend/app/ml_client/base.py`
+- `backend/app/ml_client/stub_client.py`
+- `backend/app/ml_client/python_client.py`
+- `backend/app/ml_client/http_client.py`
+- `backend/app/ml_client/safe.py`
+- `backend/app/ml_client/factory.py`
+- `backend/tests/ml_client/__init__.py`
+- `backend/tests/ml_client/conftest.py`
+- `backend/tests/ml_client/test_base.py`
+- `backend/tests/ml_client/test_stub_client.py`
+- `backend/tests/ml_client/test_python_client.py`
+- `backend/tests/ml_client/test_http_client.py`
+- `backend/tests/ml_client/test_safe.py`
+- `backend/tests/ml_client/test_factory.py`
+- `backend/docs/ml-integration-notes.md`
+
+Changed:
+
+- `backend/app/core/config.py`
+- `backend/.env.example`
+- `backend/pyproject.toml`
+- `backend/tests/test_config.py`
+- `backend/README.md`
+- `backend/docs/FILES.md`

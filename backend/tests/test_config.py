@@ -10,6 +10,8 @@ def test_defaults() -> None:
     assert settings.default_transformer_id == "TX-001"
     assert settings.ml_backend == "stub"
     assert settings.ml_history_window == 60
+    assert settings.ml_timeout_seconds == 5
+    assert settings.ml_max_retries == 2
     assert settings.mqtt_enabled is False
     assert settings.max_batch_size == 5000
 
@@ -34,6 +36,10 @@ def test_environment(monkeypatch: pytest.MonkeyPatch) -> None:
         ("ml_history_window", 0),
         ("mqtt_port", 65536),
         ("max_batch_size", 0),
+        ("ml_timeout_seconds", 0),
+        ("ml_timeout_seconds", float("nan")),
+        ("ml_timeout_seconds", float("inf")),
+        ("ml_max_retries", -1),
         ("log_level", "INVALID"),
     ],
 )
