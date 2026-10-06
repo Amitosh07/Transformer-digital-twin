@@ -11,6 +11,7 @@ def test_defaults() -> None:
     assert settings.ml_backend == "stub"
     assert settings.ml_history_window == 60
     assert settings.mqtt_enabled is False
+    assert settings.max_batch_size == 5000
 
 
 def test_environment(monkeypatch: pytest.MonkeyPatch) -> None:
@@ -32,6 +33,7 @@ def test_environment(monkeypatch: pytest.MonkeyPatch) -> None:
         ("ml_backend", "invalid"),
         ("ml_history_window", 0),
         ("mqtt_port", 65536),
+        ("max_batch_size", 0),
         ("log_level", "INVALID"),
     ],
 )

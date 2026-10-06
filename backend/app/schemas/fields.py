@@ -1,0 +1,27 @@
+"""Ordered telemetry contract; identity is included, metadata is excluded."""
+
+CANONICAL_TELEMETRY_FIELDS: list[str] = [
+    "transformer_id",
+    "timestamp",
+    "phase_voltage_l1",
+    "phase_voltage_l2",
+    "phase_voltage_l3",
+    "current_l1",
+    "current_l2",
+    "current_l3",
+    "neutral_current",
+    "oil_temperature",
+    "winding_temperature",
+    "ambient_temperature",
+    "oil_level",
+    "oil_temp_alarm",
+    "oil_temp_trip",
+    "magnetic_oil_gauge_alarm",
+    "active_power_total",
+    "apparent_power_total",
+    "reactive_power_total",
+    "energy_kwh",
+    "power_factor_l1",
+    "power_factor_l2",
+    "power_factor_l3",
+]

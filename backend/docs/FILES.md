@@ -47,3 +47,33 @@
 - `backend/tests/test_models.py`
 - `backend/tests/test_schemas.py`
 - `backend/tests/test_session.py`
+
+# Phase 2 files
+
+Created:
+
+- `backend/app/schemas/alert.py`
+- `backend/app/schemas/analytics.py`
+- `backend/app/schemas/common.py`
+- `backend/app/schemas/fields.py`
+- `backend/app/schemas/maintenance.py`
+- `backend/app/schemas/quality.py`
+- `backend/app/schemas/state.py`
+- `backend/app/schemas/transformer.py`
+- `backend/tests/test_analytics_schemas.py`
+- `backend/tests/test_common_schemas.py`
+- `backend/tests/test_quality.py`
+- `backend/tests/test_schema_orm.py`
+- `backend/tests/test_telemetry_contract.py`
+- `backend/tests/test_transformer_schemas.py`
+
+Changed:
+
+- `backend/.env.example`
+- `backend/README.md`
+- `backend/app/core/config.py`
+- `backend/app/core/errors.py`
+- `backend/app/schemas/telemetry.py`
+- `backend/docs/FILES.md`
+- `backend/tests/test_config.py`
+- `backend/tests/test_errors.py`

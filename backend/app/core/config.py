@@ -20,6 +20,7 @@ class Settings(BaseSettings):
     ml_http_url: str | None = None
     ml_python_entrypoint: str | None = None
     ml_history_window: int = Field(default=60, ge=1)
+    max_batch_size: int = Field(default=5000, ge=1)
     cors_origins: list[str] = Field(default_factory=list)
     mqtt_enabled: bool = False
     mqtt_host: str = "localhost"

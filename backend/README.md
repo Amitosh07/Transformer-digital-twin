@@ -1,4 +1,4 @@
-# Backend Phase 1
+# Backend Phases 1 and 2
 
 FastAPI + synchronous SQLAlchemy 2.0/psycopg 3 + PostgreSQL 16.
 All project changes are under `backend/` on `feature/backend-api`.
@@ -42,8 +42,9 @@ with `status: "degraded"` and `db: "error"` if the database is unavailable. It d
 assert that all migrations are applied. Errors elsewhere use
 `{"error":{"code":"...","message":"...","details":null}}`.
 OpenAPI is available at `/docs`. The `/api/v1` router is ready for Phase 2.
-Canonical telemetry validation is defined now, but ingestion routes and ML inference
-are planned for subsequent phases.
+Canonical telemetry, ML results, transformer configuration, alert, maintenance, pagination,
+error and latest-state schemas are defined. Ingestion routes and ML inference are planned
+for subsequent phases.
 
 ## Verify
 
@@ -88,3 +89,27 @@ To exercise the migration CLI on a fresh disposable database (downgrade removes 
 ## Files created
 
 See `docs/FILES.md` for the complete tracked deliverable list.
+
+## Phase 2 schema contracts
+
+- `TelemetryIn` accepts canonical fields plus optional `source_name` and `scenario_id` metadata.
+  `TelemetryInput` remains a compatibility alias. `TelemetryOut` supports ORM conversion.
+- Batch validation reads `MAX_BATCH_SIZE` from settings (default 5000); records must be a list.
+- Shared validators reject extra/excluded fields, naive timestamps and non-finite floats.
+  Valid timestamps normalize to UTC; protection booleans normalize to integer binary values.
+- Unverified thermal/oil measurements have no unit conversions or numeric range constraints.
+  Power factors use [-1, 1], probability scores use [0, 1], and health index uses [0, 100].
+- `MLResultIn` and `AnalyticsOut` require schema/feature/model versions; all analytic outputs
+  can be null. Health component names and reason codes follow `docs/CONTEXT.md`.
+- Transformer nameplate fields have no rating defaults. Patch `exclude_unset=True`
+  distinguishes omitted configuration from explicitly supplied nulls.
+- `LatestStateOut` can represent an asset with no telemetry or analytics yet; feature and model
+  versions remain null until available. All Out schemas accept SQLAlchemy attributes.
+- Completeness helpers count each non-null measurement, including zero, out of 21 fields.
+  Identity and metadata are excluded. Missing any of the seven critical fields sets the flag.
+- Shared error handlers use the typed `ErrorResponse` envelope and omit tracebacks from responses.
+
+Phase 2 validation: 311 tests passed, with no skips, against PostgreSQL 16. Ruff check and
+format check passed. This includes every Phase 1 regression and ORM conversion for the new
+schemas. The existing Starlette/httpx dependency deprecation warning remains.
+Production endpoints are unchanged; validation endpoints exist only in test applications.
