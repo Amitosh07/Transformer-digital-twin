@@ -1,0 +1,10 @@
+"""Import all models to register migration metadata."""
+
+from app.models.alert import Alert
+from app.models.analytics import Analytics
+from app.models.ingestion_run import IngestionRun
+from app.models.maintenance_record import MaintenanceRecord
+from app.models.telemetry import Telemetry
+from app.models.transformer import Transformer
+
+__all__ = ["Alert", "Analytics", "IngestionRun", "MaintenanceRecord", "Telemetry", "Transformer"]
