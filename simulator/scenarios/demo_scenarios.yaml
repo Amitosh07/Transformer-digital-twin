@@ -1,0 +1,91 @@
+#
+# Demo / judging scenario catalogue — simulator_README §14
+#
+# At least 5 deterministic scenarios with expected results.
+# Each entry documents the scenario_id, injected canonical fields,
+# and the expected Digital Twin response chain (§9).
+#
+
+scenarios:
+
+  - scenario_id: SCN_HEALTHY_01
+    name: Healthy
+    description: >
+      Normal transformer operation.  All telemetry within expected ranges.
+      Demonstrates baseline behaviour of the Digital Twin.
+    severity: LOW
+    injected_variables: []
+    expected_response:
+      - health index ≥ 80
+      - anomaly score near 0
+      - maintenance priority NORMAL
+      - no alarm / trip flags
+
+  - scenario_id: SCN_OVERLOAD_01
+    name: Overload
+    description: >
+      All three phase currents raised to ≈130 % of rated.
+      Active and apparent power increase proportionally.
+    severity: HIGH
+    injected_variables:
+      - current_l1
+      - current_l2
+      - current_l3
+      - active_power_total
+      - apparent_power_total
+    expected_response:
+      - loading_percent exceeds 100 %
+      - thermal model temperature rises
+      - anomaly_score increases
+      - health_index decreases
+      - maintenance_priority → PLAN or URGENT
+      - reason code OVERLOAD
+
+  - scenario_id: SCN_THERMAL_STRESS_01
+    name: Thermal Stress
+    description: >
+      Oil and winding temperatures elevated well above the thermal model
+      prediction.  Simulates a cooling-system failure.
+    severity: HIGH
+    injected_variables:
+      - oil_temperature
+      - winding_temperature
+    expected_response:
+      - thermal_residual becomes large
+      - anomaly_score increases
+      - health_index decreases
+      - fault_risk increases
+      - maintenance_recommendation mentions thermal / cooling
+      - reason codes HIGH_OIL_TEMP, RAPID_TEMP_RISE
+
+  - scenario_id: SCN_CURRENT_IMBALANCE_01
+    name: Current Imbalance
+    description: >
+      Phase L2 current drops to ≈40 % of expected while L1 and L3 stay
+      normal.  Neutral current rises as a consequence.
+    severity: MEDIUM
+    injected_variables:
+      - current_l2
+      - neutral_current
+    expected_response:
+      - current_imbalance_pct rises
+      - neutral_current_magnitude rises
+      - anomaly_score increases
+      - health_index decreases
+      - reason code CURRENT_IMBALANCE
+
+  - scenario_id: SCN_LOW_OIL_01
+    name: Low Oil / Alarm
+    description: >
+      Oil level drops significantly; magnetic oil gauge alarm activates.
+      Models an oil-leak scenario.
+    severity: HIGH
+    injected_variables:
+      - oil_level
+      - magnetic_oil_gauge_alarm
+    expected_response:
+      - oil_level_deviation increases
+      - magnetic_oil_gauge_alarm = 1
+      - health_index decreases
+      - maintenance_recommendation mentions oil
+      - reason codes LOW_OIL_LEVEL, MOG_ALARM
