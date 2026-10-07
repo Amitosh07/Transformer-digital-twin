@@ -1,0 +1,337 @@
+{
+  "initial": {
+    "elapsed_seconds": 9.044353,
+    "rows": 10000,
+    "sql_statements": 94,
+    "sql_statements_per_row": 0.0094,
+    "sql_seconds": 3.940751,
+    "statement_kinds": {
+      "INSERT": 22,
+      "SELECT": 42,
+      "SAVEPOINT": 10,
+      "RELEASE": 10,
+      "UPDATE": 10
+    },
+    "stages": {
+      "alert_maintenance_hook": {
+        "calls": 10000,
+        "inclusive_seconds": 0.977478,
+        "sql_count": 0,
+        "sql_seconds": 0.0
+      },
+      "batch_history": {
+        "calls": 1,
+        "inclusive_seconds": 0.003733,
+        "sql_count": 1,
+        "sql_seconds": 0.001481
+      },
+      "bulk_analytics": {
+        "calls": 10,
+        "inclusive_seconds": 2.514973,
+        "sql_count": 10,
+        "sql_seconds": 1.816389
+      },
+      "bulk_telemetry": {
+        "calls": 10,
+        "inclusive_seconds": 2.324194,
+        "sql_count": 10,
+        "sql_seconds": 1.704788
+      },
+      "duplicate_prefilter": {
+        "calls": 10,
+        "inclusive_seconds": 0.367239,
+        "sql_count": 10,
+        "sql_seconds": 0.32364
+      },
+      "ml": {
+        "calls": 10000,
+        "inclusive_seconds": 1.763853,
+        "sql_count": 0,
+        "sql_seconds": 0.0
+      },
+      "other": {
+        "calls": 0,
+        "inclusive_seconds": 0.0,
+        "sql_count": 11,
+        "sql_seconds": 0.016276
+      },
+      "record": {
+        "calls": 10000,
+        "inclusive_seconds": 8.13781,
+        "sql_count": 40,
+        "sql_seconds": 0.057429
+      },
+      "transformer": {
+        "calls": 1,
+        "inclusive_seconds": 0.006503,
+        "sql_count": 2,
+        "sql_seconds": 0.0033
+      },
+      "transformer_lock": {
+        "calls": 10,
+        "inclusive_seconds": 0.023297,
+        "sql_count": 10,
+        "sql_seconds": 0.017447
+      },
+      "validation_quality": {
+        "calls": 1,
+        "inclusive_seconds": 0.173527,
+        "sql_count": 0,
+        "sql_seconds": 0.0
+      }
+    },
+    "summary": {
+      "run_id": 1,
+      "row_count": 10000,
+      "inserted_count": 10000,
+      "duplicate_count": 0,
+      "parse_error_count": 0,
+      "out_of_range_count": 0,
+      "errors_sample": []
+    }
+  },
+  "identical_reload": {
+    "elapsed_seconds": 1.265399,
+    "rows": 10000,
+    "sql_statements": 41,
+    "sql_statements_per_row": 0.0041,
+    "sql_seconds": 0.677573,
+    "statement_kinds": {
+      "INSERT": 1,
+      "SELECT": 30,
+      "UPDATE": 10
+    },
+    "stages": {
+      "duplicate_prefilter": {
+        "calls": 10,
+        "inclusive_seconds": 0.709413,
+        "sql_count": 10,
+        "sql_seconds": 0.6332
+      },
+      "other": {
+        "calls": 0,
+        "inclusive_seconds": 0.0,
+        "sql_count": 11,
+        "sql_seconds": 0.017311
+      },
+      "transformer": {
+        "calls": 10,
+        "inclusive_seconds": 0.025858,
+        "sql_count": 10,
+        "sql_seconds": 0.018321
+      },
+      "transformer_lock": {
+        "calls": 10,
+        "inclusive_seconds": 0.013219,
+        "sql_count": 10,
+        "sql_seconds": 0.008741
+      },
+      "validation_quality": {
+        "calls": 1,
+        "inclusive_seconds": 0.284654,
+        "sql_count": 0,
+        "sql_seconds": 0.0
+      }
+    },
+    "summary": {
+      "run_id": 2,
+      "row_count": 10000,
+      "inserted_count": 0,
+      "duplicate_count": 10000,
+      "parse_error_count": 0,
+      "out_of_range_count": 0,
+      "errors_sample": []
+    }
+  },
+  "without_ml": {
+    "elapsed_seconds": 3.746614,
+    "rows": 10000,
+    "sql_statements": 43,
+    "sql_statements_per_row": 0.0043,
+    "sql_seconds": 2.231801,
+    "statement_kinds": {
+      "INSERT": 12,
+      "SELECT": 21,
+      "UPDATE": 10
+    },
+    "stages": {
+      "bulk_telemetry": {
+        "calls": 10,
+        "inclusive_seconds": 2.553059,
+        "sql_count": 10,
+        "sql_seconds": 1.886417
+      },
+      "duplicate_prefilter": {
+        "calls": 10,
+        "inclusive_seconds": 0.359628,
+        "sql_count": 10,
+        "sql_seconds": 0.312132
+      },
+      "other": {
+        "calls": 0,
+        "inclusive_seconds": 0.0,
+        "sql_count": 11,
+        "sql_seconds": 0.015079
+      },
+      "record": {
+        "calls": 10000,
+        "inclusive_seconds": 2.811632,
+        "sql_count": 0,
+        "sql_seconds": 0.0
+      },
+      "transformer": {
+        "calls": 1,
+        "inclusive_seconds": 0.004067,
+        "sql_count": 2,
+        "sql_seconds": 0.002336
+      },
+      "transformer_lock": {
+        "calls": 10,
+        "inclusive_seconds": 0.021768,
+        "sql_count": 10,
+        "sql_seconds": 0.015836
+      },
+      "validation_quality": {
+        "calls": 1,
+        "inclusive_seconds": 0.268797,
+        "sql_count": 0,
+        "sql_seconds": 0.0
+      }
+    },
+    "summary": {
+      "run_id": 3,
+      "row_count": 10000,
+      "inserted_count": 10000,
+      "duplicate_count": 0,
+      "parse_error_count": 0,
+      "out_of_range_count": 0,
+      "errors_sample": []
+    }
+  },
+  "single_http": {
+    "elapsed_seconds": 2.151367,
+    "rows": 100,
+    "sql_statements": 801,
+    "sql_statements_per_row": 8.01,
+    "sql_seconds": 0.76595,
+    "statement_kinds": {
+      "SELECT": 400,
+      "INSERT": 201,
+      "SAVEPOINT": 100,
+      "RELEASE": 100
+    },
+    "stages": {
+      "alert_maintenance_hook": {
+        "calls": 100,
+        "inclusive_seconds": 0.238991,
+        "sql_count": 200,
+        "sql_seconds": 0.149893
+      },
+      "analytics_insert": {
+        "calls": 100,
+        "inclusive_seconds": 0.336677,
+        "sql_count": 100,
+        "sql_seconds": 0.121888
+      },
+      "history": {
+        "calls": 100,
+        "inclusive_seconds": 0.40916,
+        "sql_count": 100,
+        "sql_seconds": 0.105986
+      },
+      "ml": {
+        "calls": 100,
+        "inclusive_seconds": 0.025311,
+        "sql_count": 0,
+        "sql_seconds": 0.0
+      },
+      "other": {
+        "calls": 0,
+        "inclusive_seconds": 0.0,
+        "sql_count": 100,
+        "sql_seconds": 0.066626
+      },
+      "telemetry_insert": {
+        "calls": 100,
+        "inclusive_seconds": 0.325266,
+        "sql_count": 100,
+        "sql_seconds": 0.10037
+      },
+      "transformer": {
+        "calls": 100,
+        "inclusive_seconds": 0.211166,
+        "sql_count": 101,
+        "sql_seconds": 0.149907
+      },
+      "transformer_lock": {
+        "calls": 100,
+        "inclusive_seconds": 0.106852,
+        "sql_count": 100,
+        "sql_seconds": 0.07128
+      }
+    }
+  },
+  "mqtt_style": {
+    "elapsed_seconds": 1.946137,
+    "rows": 100,
+    "sql_statements": 801,
+    "sql_statements_per_row": 8.01,
+    "sql_seconds": 0.753067,
+    "statement_kinds": {
+      "SELECT": 400,
+      "INSERT": 201,
+      "SAVEPOINT": 100,
+      "RELEASE": 100
+    },
+    "stages": {
+      "alert_maintenance_hook": {
+        "calls": 100,
+        "inclusive_seconds": 0.245053,
+        "sql_count": 200,
+        "sql_seconds": 0.153951
+      },
+      "analytics_insert": {
+        "calls": 100,
+        "inclusive_seconds": 0.33388,
+        "sql_count": 100,
+        "sql_seconds": 0.116469
+      },
+      "history": {
+        "calls": 100,
+        "inclusive_seconds": 0.425884,
+        "sql_count": 100,
+        "sql_seconds": 0.104666
+      },
+      "ml": {
+        "calls": 100,
+        "inclusive_seconds": 0.026558,
+        "sql_count": 0,
+        "sql_seconds": 0.0
+      },
+      "record": {
+        "calls": 100,
+        "inclusive_seconds": 1.789605,
+        "sql_count": 100,
+        "sql_seconds": 0.066589
+      },
+      "telemetry_insert": {
+        "calls": 100,
+        "inclusive_seconds": 0.337742,
+        "sql_count": 100,
+        "sql_seconds": 0.097899
+      },
+      "transformer": {
+        "calls": 100,
+        "inclusive_seconds": 0.198228,
+        "sql_count": 101,
+        "sql_seconds": 0.140307
+      },
+      "transformer_lock": {
+        "calls": 100,
+        "inclusive_seconds": 0.109446,
+        "sql_count": 100,
+        "sql_seconds": 0.073186
+      }
+    }
+  }
+}

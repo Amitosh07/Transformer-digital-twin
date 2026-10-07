@@ -266,3 +266,57 @@ Changed:
 - `backend/docs/ingestion.md`
 - `backend/docs/read-api-notes.md`
 - `backend/tests/read_api/conftest.py`
+
+
+# Phase 8 files
+
+Created:
+
+- `backend/app/core/request_logging.py`
+- `backend/app/repositories/readiness_repo.py`
+- `backend/app/schemas/readiness.py`
+- `backend/app/services/batch_ingestion.py`
+- `backend/app/services/readiness_service.py`
+- `backend/docs/hardening.md`
+- `backend/docs/performance.md`
+- `backend/docs/phase8-acceptance.md`
+- `backend/docs/profile-after-first.json`
+- `backend/docs/profile-after.json`
+- `backend/docs/profile-before.json`
+- `backend/docs/profile-final.json`
+- `backend/scripts/check_coverage.py`
+- `backend/scripts/profile_ingest.py`
+- `backend/scripts/snapshot_openapi.py`
+- `backend/tests/hardening/__init__.py`
+- `backend/tests/hardening/conftest.py`
+- `backend/tests/hardening/test_concurrency.py`
+- `backend/tests/hardening/test_contract.py`
+- `backend/tests/hardening/test_guards.py`
+- `backend/tests/hardening/test_readiness.py`
+- `backend/tests/hardening/test_repository_recovery.py`
+- `backend/tests/hardening/test_requests.py`
+- `backend/tests/performance/__init__.py`
+- `backend/tests/performance/conftest.py`
+- `backend/tests/performance/test_differential.py`
+- `backend/tests/performance/test_million_reads.py`
+- `backend/tests/snapshots/openapi.json`
+
+Changed:
+
+- `backend/README.md`
+- `backend/app/api/v1/health.py`
+- `backend/app/core/errors.py`
+- `backend/app/main.py`
+- `backend/app/ml_client/http_client.py`
+- `backend/app/ml_client/python_client.py`
+- `backend/app/repositories/alert_repo.py`
+- `backend/app/repositories/analytics_repo.py`
+- `backend/app/repositories/maintenance_repo.py`
+- `backend/app/repositories/telemetry_repo.py`
+- `backend/app/repositories/transformer_repo.py`
+- `backend/app/services/alert_service.py`
+- `backend/app/services/ingestion_service.py`
+- `backend/docs/FILES.md`
+- `backend/docs/alerts.md`
+- `backend/docs/ingestion.md`
+- `backend/pyproject.toml`

@@ -1,7 +1,7 @@
 from datetime import datetime
 from typing import Any
 
-from sqlalchemy import Select, func, or_, select
+from sqlalchemy import Select, func, or_, select, tuple_
 from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.orm import Session
 
@@ -179,3 +179,29 @@ def scenarios(session: Session, limit: int, offset: int) -> tuple[list[Any], int
         groups.order_by(Telemetry.scenario_id).limit(limit).offset(offset)
     ).mappings()
     return list(rows), total
+
+
+def existing_keys(session: Session, records: list[TelemetryIn]) -> set[tuple[str, datetime]]:
+    keys = list({(record.transformer_id, record.timestamp) for record in records})
+    return set(
+        session.execute(
+            select(Telemetry.transformer_id, Telemetry.timestamp).where(
+                tuple_(Telemetry.transformer_id, Telemetry.timestamp).in_(keys)
+            )
+        )
+    )
+
+
+def insert_many(
+    session: Session, values: list[dict[str, Any]]
+) -> dict[tuple[str, datetime], Telemetry]:
+    if not values:
+        return {}
+    rows = session.scalars(
+        insert(Telemetry)
+        .on_conflict_do_nothing(index_elements=[Telemetry.transformer_id, Telemetry.timestamp])
+        .returning(Telemetry),
+        values,
+        execution_options={"render_nulls": True},
+    )
+    return {(row.transformer_id, row.timestamp): row for row in rows}

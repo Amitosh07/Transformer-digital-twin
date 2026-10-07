@@ -17,6 +17,7 @@ from app.schemas.quality import compute_data_quality_score, compute_is_missing_c
 from app.schemas.telemetry import TelemetryIn
 from app.schemas.transformer import TransformerOut
 from app.services import hooks
+from app.services.batch_ingestion import BatchChunk
 from app.services.quality_stats import parse_records
 
 logger = logging.getLogger(__name__)
@@ -60,6 +61,7 @@ def ingest_record(
     _history: list[TelemetryIn] | None = None,
     _commit: bool = True,
     reanalyze_missing: bool = False,
+    _chunk: BatchChunk | None = None,
 ) -> IngestResult:
     settings = get_settings()
     record = record.model_copy(update={"source_name": record.source_name or "api"})
@@ -67,15 +69,19 @@ def ingest_record(
         transformer = _transformer or TransformerOut.model_validate(
             transformer_repo.ensure_transformer(session, record.transformer_id),
         )
-        transformer_repo.lock_for_ingestion(session, record.transformer_id)
+        if _chunk is None:
+            transformer_repo.lock_for_ingestion(session, record.transformer_id)
         missing = compute_is_missing_critical(record)
-        telemetry, duplicate = telemetry_repo.insert_telemetry(
-            session,
-            record,
-            schema_version=settings.schema_version,
-            is_missing_critical=missing,
-            data_quality_score=compute_data_quality_score(record),
-        )
+        if _chunk is None:
+            telemetry, duplicate = telemetry_repo.insert_telemetry(
+                session,
+                record,
+                schema_version=settings.schema_version,
+                is_missing_critical=missing,
+                data_quality_score=compute_data_quality_score(record),
+            )
+        else:
+            telemetry, duplicate = _chunk.telemetry(session, record)
         if duplicate and (
             not reanalyze_missing
             or not run_ml
@@ -101,10 +107,14 @@ def ingest_record(
                 except Exception as exc:
                     client = _UnavailableClient(exc)
                 ml_result = safe_analyze(client, transformer, record, history)
-                analytics, created = analytics_repo.insert_analytics(
-                    session, telemetry.id, ml_result
-                )
-                analytics_out = AnalyticsOut.model_validate(analytics)
+                if _chunk is None:
+                    analytics, created = analytics_repo.insert_analytics(
+                        session, telemetry.id, ml_result
+                    )
+                    analytics_out = AnalyticsOut.model_validate(analytics)
+                else:
+                    _chunk.pending.append((telemetry, ml_result))
+                    created = False
                 if ml_result.error_detail:
                     warnings.append("ML_UNAVAILABLE")
                 if ml_result.inference_status == "INSUFFICIENT_DATA":
@@ -126,6 +136,8 @@ def ingest_record(
                 analytics=analytics_out,
                 warnings=warnings,
             )
+        if _chunk is not None and (record.transformer_id, record.timestamp) == _chunk.last_key:
+            _chunk.finish(session)
         if _commit:
             session.commit()
         return result
@@ -154,45 +166,66 @@ def ingest_batch(
     contexts: dict[str, _BatchContext] = {}
     committed_inserted = 0
     try:
-        for index, record in enumerate(records, 1):
-            if record.transformer_id not in contexts:
-                transformer = TransformerOut.model_validate(
-                    transformer_repo.ensure_transformer(session, record.transformer_id),
-                )
-                stored = (
-                    telemetry_repo.load_batch_history(
-                        session,
-                        record.transformer_id,
-                        record.timestamp,
-                        last_by_transformer[record.transformer_id],
-                        settings.ml_history_window,
+        for start in range(0, len(records), CHUNK_SIZE):
+            chunk_records = records[start : start + CHUNK_SIZE]
+            assets = sorted({record.transformer_id for record in chunk_records})
+            transformers = {}
+            for asset in assets:
+                if asset in contexts:
+                    transformers[asset] = contexts[asset].transformer
+                else:
+                    transformers[asset] = TransformerOut.model_validate(
+                        transformer_repo.ensure_transformer(session, asset)
                     )
-                    if run_ml
-                    else []
+                transformer_repo.lock_for_ingestion(session, asset)
+            seen = telemetry_repo.existing_keys(session, chunk_records)
+            fresh = []
+            for record in chunk_records:
+                key = (record.transformer_id, record.timestamp)
+                if key in seen:
+                    stats.duplicate_count += 1
+                else:
+                    seen.add(key)
+                    fresh.append(record)
+            chunk = BatchChunk(fresh, settings) if fresh else None
+            for record in fresh:
+                if record.transformer_id not in contexts:
+                    stored = (
+                        telemetry_repo.load_batch_history(
+                            session,
+                            record.transformer_id,
+                            record.timestamp,
+                            last_by_transformer[record.transformer_id],
+                            settings.ml_history_window,
+                        )
+                        if run_ml
+                        else []
+                    )
+                    contexts[record.transformer_id] = _BatchContext(
+                        transformer=transformers[record.transformer_id],
+                        window=deque(maxlen=settings.ml_history_window),
+                        stored=deque(stored),
+                    )
+                context = contexts[record.transformer_id]
+                result = ingest_record(
+                    session,
+                    record,
+                    run_ml=run_ml,
+                    _transformer=context.transformer,
+                    _history=context.history_before(record) if run_ml else [],
+                    _commit=False,
+                    _chunk=chunk,
                 )
-                contexts[record.transformer_id] = _BatchContext(
-                    transformer=transformer,
-                    window=deque(maxlen=settings.ml_history_window),
-                    stored=deque(stored),
-                )
-            context = contexts[record.transformer_id]
-            result = ingest_record(
-                session,
-                record,
-                run_ml=run_ml,
-                _transformer=context.transformer,
-                _history=context.history_before(record) if run_ml else [],
-                _commit=False,
-            )
-            if result.duplicate:
-                stats.duplicate_count += 1
-            else:
-                stats.inserted_count += 1
-                context.window.append(record)
-            if index % CHUNK_SIZE == 0:
-                ingestion_run_repo.update_run(session, run_id, stats.values(), "RUNNING")
-                session.commit()
-                committed_inserted = stats.inserted_count
+                if result.duplicate:
+                    stats.duplicate_count += 1
+                else:
+                    stats.inserted_count += 1
+                    context.window.append(record)
+            if start + len(chunk_records) == len(records):
+                break
+            ingestion_run_repo.update_run(session, run_id, stats.values(), "RUNNING")
+            session.commit()
+            committed_inserted = stats.inserted_count
         ingestion_run_repo.update_run(session, run_id, stats.values(), "COMPLETED")
         session.commit()
         return stats.summary(run_id)

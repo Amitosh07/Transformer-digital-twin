@@ -1,0 +1,5392 @@
+{
+  "components": {
+    "schemas": {
+      "AlertOut": {
+        "additionalProperties": false,
+        "properties": {
+          "acknowledged_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Acknowledged At"
+          },
+          "alert_type": {
+            "title": "Alert Type",
+            "type": "string"
+          },
+          "analytics_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Analytics Id"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "evidence": {
+            "additionalProperties": true,
+            "title": "Evidence",
+            "type": "object"
+          },
+          "id": {
+            "title": "Id",
+            "type": "integer"
+          },
+          "last_seen_at": {
+            "format": "date-time",
+            "title": "Last Seen At",
+            "type": "string"
+          },
+          "recommended_action": {
+            "title": "Recommended Action",
+            "type": "string"
+          },
+          "resolved_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Resolved At"
+          },
+          "severity": {
+            "enum": [
+              "INFO",
+              "WARNING",
+              "CRITICAL"
+            ],
+            "title": "Severity",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "OPEN",
+              "ACKNOWLEDGED",
+              "RESOLVED"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "telemetry_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Telemetry Id"
+          },
+          "threshold_or_reason": {
+            "title": "Threshold Or Reason",
+            "type": "string"
+          },
+          "timestamp": {
+            "format": "date-time",
+            "title": "Timestamp",
+            "type": "string"
+          },
+          "transformer_id": {
+            "title": "Transformer Id",
+            "type": "string"
+          },
+          "trigger": {
+            "title": "Trigger",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "transformer_id",
+          "timestamp",
+          "severity",
+          "alert_type",
+          "trigger",
+          "evidence",
+          "threshold_or_reason",
+          "recommended_action",
+          "status",
+          "last_seen_at",
+          "created_at"
+        ],
+        "title": "AlertOut",
+        "type": "object"
+      },
+      "AnalyticsOut": {
+        "additionalProperties": false,
+        "properties": {
+          "anomaly_flag": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Anomaly Flag"
+          },
+          "anomaly_score": {
+            "anyOf": [
+              {
+                "maximum": 1.0,
+                "minimum": 0.0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Anomaly Score"
+          },
+          "error_detail": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error Detail"
+          },
+          "fault_risk": {
+            "anyOf": [
+              {
+                "maximum": 1.0,
+                "minimum": 0.0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Fault Risk"
+          },
+          "feature_version": {
+            "title": "Feature Version",
+            "type": "string"
+          },
+          "health_components": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/HealthComponents"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "health_index": {
+            "anyOf": [
+              {
+                "maximum": 100.0,
+                "minimum": 0.0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Health Index"
+          },
+          "health_reason_codes": {
+            "anyOf": [
+              {
+                "items": {
+                  "enum": [
+                    "HIGH_OIL_TEMP",
+                    "RAPID_TEMP_RISE",
+                    "OVERLOAD",
+                    "CURRENT_IMBALANCE",
+                    "VOLTAGE_IMBALANCE",
+                    "LOW_OIL_LEVEL",
+                    "OIL_TEMP_ALARM",
+                    "OIL_TEMP_TRIP",
+                    "MOG_ALARM",
+                    "ANOMALOUS_PATTERN"
+                  ],
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Health Reason Codes"
+          },
+          "inference_status": {
+            "enum": [
+              "OK",
+              "INSUFFICIENT_DATA"
+            ],
+            "title": "Inference Status",
+            "type": "string"
+          },
+          "loading_percent": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Loading Percent"
+          },
+          "maintenance_priority": {
+            "anyOf": [
+              {
+                "enum": [
+                  "NORMAL",
+                  "WATCH",
+                  "PLAN",
+                  "URGENT"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Maintenance Priority"
+          },
+          "maintenance_recommendation": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Maintenance Recommendation"
+          },
+          "missing_features": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Missing Features",
+            "type": "array"
+          },
+          "model_version": {
+            "title": "Model Version",
+            "type": "string"
+          },
+          "predicted_fault": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Predicted Fault"
+          },
+          "prediction_confidence": {
+            "anyOf": [
+              {
+                "maximum": 1.0,
+                "minimum": 0.0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Prediction Confidence"
+          },
+          "reason_codes": {
+            "anyOf": [
+              {
+                "items": {
+                  "enum": [
+                    "HIGH_OIL_TEMP",
+                    "RAPID_TEMP_RISE",
+                    "OVERLOAD",
+                    "CURRENT_IMBALANCE",
+                    "VOLTAGE_IMBALANCE",
+                    "LOW_OIL_LEVEL",
+                    "OIL_TEMP_ALARM",
+                    "OIL_TEMP_TRIP",
+                    "MOG_ALARM",
+                    "ANOMALOUS_PATTERN"
+                  ],
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reason Codes"
+          },
+          "schema_version": {
+            "title": "Schema Version",
+            "type": "string"
+          },
+          "thermal_model_temperature": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Thermal Model Temperature"
+          },
+          "thermal_residual": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Thermal Residual"
+          },
+          "thermal_state": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Thermal State"
+          },
+          "timestamp": {
+            "format": "date-time",
+            "title": "Timestamp",
+            "type": "string"
+          },
+          "transformer_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "title": "Transformer Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "transformer_id",
+          "timestamp",
+          "inference_status",
+          "schema_version",
+          "feature_version",
+          "model_version"
+        ],
+        "title": "AnalyticsOut",
+        "type": "object"
+      },
+      "AnalyticsPoint": {
+        "additionalProperties": false,
+        "properties": {
+          "anomaly_flag": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Anomaly Flag"
+          },
+          "anomaly_score": {
+            "anyOf": [
+              {
+                "maximum": 1.0,
+                "minimum": 0.0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Anomaly Score"
+          },
+          "fault_risk": {
+            "anyOf": [
+              {
+                "maximum": 1.0,
+                "minimum": 0.0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Fault Risk"
+          },
+          "feature_version": {
+            "title": "Feature Version",
+            "type": "string"
+          },
+          "inference_status": {
+            "enum": [
+              "OK",
+              "INSUFFICIENT_DATA"
+            ],
+            "title": "Inference Status",
+            "type": "string"
+          },
+          "loading_percent": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Loading Percent"
+          },
+          "maintenance_priority": {
+            "anyOf": [
+              {
+                "enum": [
+                  "NORMAL",
+                  "WATCH",
+                  "PLAN",
+                  "URGENT"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Maintenance Priority"
+          },
+          "model_version": {
+            "title": "Model Version",
+            "type": "string"
+          },
+          "predicted_fault": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Predicted Fault"
+          },
+          "prediction_confidence": {
+            "anyOf": [
+              {
+                "maximum": 1.0,
+                "minimum": 0.0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Prediction Confidence"
+          },
+          "reason_codes": {
+            "anyOf": [
+              {
+                "items": {
+                  "enum": [
+                    "HIGH_OIL_TEMP",
+                    "RAPID_TEMP_RISE",
+                    "OVERLOAD",
+                    "CURRENT_IMBALANCE",
+                    "VOLTAGE_IMBALANCE",
+                    "LOW_OIL_LEVEL",
+                    "OIL_TEMP_ALARM",
+                    "OIL_TEMP_TRIP",
+                    "MOG_ALARM",
+                    "ANOMALOUS_PATTERN"
+                  ],
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reason Codes"
+          },
+          "schema_version": {
+            "title": "Schema Version",
+            "type": "string"
+          },
+          "thermal_model_temperature": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Thermal Model Temperature"
+          },
+          "thermal_residual": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Thermal Residual"
+          },
+          "thermal_state": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Thermal State"
+          },
+          "timestamp": {
+            "format": "date-time",
+            "title": "Timestamp",
+            "type": "string"
+          }
+        },
+        "required": [
+          "timestamp",
+          "inference_status",
+          "schema_version",
+          "feature_version",
+          "model_version"
+        ],
+        "title": "AnalyticsPoint",
+        "type": "object"
+      },
+      "DataSource": {
+        "additionalProperties": false,
+        "properties": {
+          "scenario_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Scenario Id"
+          },
+          "source_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Source Name"
+          }
+        },
+        "title": "DataSource",
+        "type": "object"
+      },
+      "ErrorDetail": {
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "title": "Code",
+            "type": "string"
+          },
+          "details": {
+            "title": "Details"
+          },
+          "message": {
+            "title": "Message",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code",
+          "message"
+        ],
+        "title": "ErrorDetail",
+        "type": "object"
+      },
+      "ErrorResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/ErrorDetail"
+          }
+        },
+        "required": [
+          "error"
+        ],
+        "title": "ErrorResponse",
+        "type": "object"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "title": "Detail",
+            "type": "array"
+          }
+        },
+        "title": "HTTPValidationError",
+        "type": "object"
+      },
+      "HealthComponents": {
+        "additionalProperties": false,
+        "properties": {
+          "alarm": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Alarm"
+          },
+          "anomaly": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Anomaly"
+          },
+          "electrical": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Electrical"
+          },
+          "loading": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Loading"
+          },
+          "oil": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Oil"
+          },
+          "thermal": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Thermal"
+          }
+        },
+        "title": "HealthComponents",
+        "type": "object"
+      },
+      "HealthPoint": {
+        "additionalProperties": false,
+        "properties": {
+          "health_components": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/HealthComponents"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "health_index": {
+            "anyOf": [
+              {
+                "maximum": 100.0,
+                "minimum": 0.0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Health Index"
+          },
+          "health_reason_codes": {
+            "anyOf": [
+              {
+                "items": {
+                  "enum": [
+                    "HIGH_OIL_TEMP",
+                    "RAPID_TEMP_RISE",
+                    "OVERLOAD",
+                    "CURRENT_IMBALANCE",
+                    "VOLTAGE_IMBALANCE",
+                    "LOW_OIL_LEVEL",
+                    "OIL_TEMP_ALARM",
+                    "OIL_TEMP_TRIP",
+                    "MOG_ALARM",
+                    "ANOMALOUS_PATTERN"
+                  ],
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Health Reason Codes"
+          },
+          "inference_status": {
+            "enum": [
+              "OK",
+              "INSUFFICIENT_DATA"
+            ],
+            "title": "Inference Status",
+            "type": "string"
+          },
+          "timestamp": {
+            "format": "date-time",
+            "title": "Timestamp",
+            "type": "string"
+          }
+        },
+        "required": [
+          "timestamp",
+          "inference_status"
+        ],
+        "title": "HealthPoint",
+        "type": "object"
+      },
+      "HealthResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "db": {
+            "enum": [
+              "ok",
+              "error"
+            ],
+            "title": "Db",
+            "type": "string"
+          },
+          "schema_version": {
+            "title": "Schema Version",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "ok",
+              "degraded"
+            ],
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "db",
+          "schema_version"
+        ],
+        "title": "HealthResponse",
+        "type": "object"
+      },
+      "IngestionSummary": {
+        "additionalProperties": false,
+        "properties": {
+          "duplicate_count": {
+            "title": "Duplicate Count",
+            "type": "integer"
+          },
+          "errors_sample": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationSample"
+            },
+            "title": "Errors Sample",
+            "type": "array"
+          },
+          "inserted_count": {
+            "title": "Inserted Count",
+            "type": "integer"
+          },
+          "out_of_range_count": {
+            "title": "Out Of Range Count",
+            "type": "integer"
+          },
+          "parse_error_count": {
+            "title": "Parse Error Count",
+            "type": "integer"
+          },
+          "row_count": {
+            "title": "Row Count",
+            "type": "integer"
+          },
+          "run_id": {
+            "title": "Run Id",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "run_id",
+          "row_count",
+          "inserted_count",
+          "duplicate_count",
+          "parse_error_count",
+          "out_of_range_count",
+          "errors_sample"
+        ],
+        "title": "IngestionSummary",
+        "type": "object"
+      },
+      "LatestStateOut": {
+        "additionalProperties": false,
+        "properties": {
+          "analytics": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AnalyticsOut"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "data_source": {
+            "$ref": "#/components/schemas/DataSource"
+          },
+          "demo_mode": {
+            "title": "Demo Mode",
+            "type": "boolean"
+          },
+          "feature_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Feature Version"
+          },
+          "model_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Model Version"
+          },
+          "open_alerts_count": {
+            "minimum": 0.0,
+            "title": "Open Alerts Count",
+            "type": "integer"
+          },
+          "schema_version": {
+            "title": "Schema Version",
+            "type": "string"
+          },
+          "telemetry": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/TelemetryOut"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "transformer": {
+            "$ref": "#/components/schemas/TransformerOut"
+          }
+        },
+        "required": [
+          "transformer",
+          "open_alerts_count",
+          "demo_mode",
+          "schema_version"
+        ],
+        "title": "LatestStateOut",
+        "type": "object"
+      },
+      "MaintenanceOut": {
+        "additionalProperties": false,
+        "properties": {
+          "analytics_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Analytics Id"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "integer"
+          },
+          "priority": {
+            "enum": [
+              "NORMAL",
+              "WATCH",
+              "PLAN",
+              "URGENT"
+            ],
+            "title": "Priority",
+            "type": "string"
+          },
+          "reason_codes": {
+            "items": {
+              "enum": [
+                "HIGH_OIL_TEMP",
+                "RAPID_TEMP_RISE",
+                "OVERLOAD",
+                "CURRENT_IMBALANCE",
+                "VOLTAGE_IMBALANCE",
+                "LOW_OIL_LEVEL",
+                "OIL_TEMP_ALARM",
+                "OIL_TEMP_TRIP",
+                "MOG_ALARM",
+                "ANOMALOUS_PATTERN"
+              ],
+              "type": "string"
+            },
+            "title": "Reason Codes",
+            "type": "array"
+          },
+          "recommendation": {
+            "title": "Recommendation",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "OPEN",
+              "DONE",
+              "DISMISSED"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "timestamp": {
+            "format": "date-time",
+            "title": "Timestamp",
+            "type": "string"
+          },
+          "transformer_id": {
+            "title": "Transformer Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "transformer_id",
+          "timestamp",
+          "priority",
+          "recommendation",
+          "reason_codes",
+          "status",
+          "created_at"
+        ],
+        "title": "MaintenanceOut",
+        "type": "object"
+      },
+      "MaintenancePatch": {
+        "additionalProperties": false,
+        "properties": {
+          "status": {
+            "enum": [
+              "DONE",
+              "DISMISSED"
+            ],
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status"
+        ],
+        "title": "MaintenancePatch",
+        "type": "object"
+      },
+      "MqttRejection": {
+        "properties": {
+          "field": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Field"
+          },
+          "reason": {
+            "title": "Reason",
+            "type": "string"
+          },
+          "time": {
+            "format": "date-time",
+            "title": "Time",
+            "type": "string"
+          },
+          "topic": {
+            "title": "Topic",
+            "type": "string"
+          }
+        },
+        "required": [
+          "time",
+          "topic",
+          "reason"
+        ],
+        "title": "MqttRejection",
+        "type": "object"
+      },
+      "MqttStatus": {
+        "properties": {
+          "connected": {
+            "default": false,
+            "title": "Connected",
+            "type": "boolean"
+          },
+          "dropped_count": {
+            "default": 0,
+            "title": "Dropped Count",
+            "type": "integer"
+          },
+          "duplicate_count": {
+            "default": 0,
+            "title": "Duplicate Count",
+            "type": "integer"
+          },
+          "enabled": {
+            "title": "Enabled",
+            "type": "boolean"
+          },
+          "error_count": {
+            "default": 0,
+            "title": "Error Count",
+            "type": "integer"
+          },
+          "host": {
+            "title": "Host",
+            "type": "string"
+          },
+          "ingested_count": {
+            "default": 0,
+            "title": "Ingested Count",
+            "type": "integer"
+          },
+          "last_error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Error"
+          },
+          "last_message_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Message At"
+          },
+          "port": {
+            "title": "Port",
+            "type": "integer"
+          },
+          "qos": {
+            "title": "Qos",
+            "type": "integer"
+          },
+          "queue_depth": {
+            "default": 0,
+            "title": "Queue Depth",
+            "type": "integer"
+          },
+          "received_count": {
+            "default": 0,
+            "title": "Received Count",
+            "type": "integer"
+          },
+          "recent_rejections": {
+            "items": {
+              "$ref": "#/components/schemas/MqttRejection"
+            },
+            "title": "Recent Rejections",
+            "type": "array"
+          },
+          "rejected_count": {
+            "default": 0,
+            "title": "Rejected Count",
+            "type": "integer"
+          },
+          "topic": {
+            "title": "Topic",
+            "type": "string"
+          }
+        },
+        "required": [
+          "enabled",
+          "host",
+          "port",
+          "topic",
+          "qos"
+        ],
+        "title": "MqttStatus",
+        "type": "object"
+      },
+      "Page_AlertOut_": {
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/AlertOut"
+            },
+            "title": "Items",
+            "type": "array"
+          },
+          "limit": {
+            "exclusiveMinimum": 0.0,
+            "title": "Limit",
+            "type": "integer"
+          },
+          "offset": {
+            "minimum": 0.0,
+            "title": "Offset",
+            "type": "integer"
+          },
+          "total": {
+            "minimum": 0.0,
+            "title": "Total",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "items",
+          "total",
+          "limit",
+          "offset"
+        ],
+        "title": "Page[AlertOut]",
+        "type": "object"
+      },
+      "Page_AnalyticsPoint_": {
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/AnalyticsPoint"
+            },
+            "title": "Items",
+            "type": "array"
+          },
+          "limit": {
+            "exclusiveMinimum": 0.0,
+            "title": "Limit",
+            "type": "integer"
+          },
+          "offset": {
+            "minimum": 0.0,
+            "title": "Offset",
+            "type": "integer"
+          },
+          "total": {
+            "minimum": 0.0,
+            "title": "Total",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "items",
+          "total",
+          "limit",
+          "offset"
+        ],
+        "title": "Page[AnalyticsPoint]",
+        "type": "object"
+      },
+      "Page_HealthPoint_": {
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/HealthPoint"
+            },
+            "title": "Items",
+            "type": "array"
+          },
+          "limit": {
+            "exclusiveMinimum": 0.0,
+            "title": "Limit",
+            "type": "integer"
+          },
+          "offset": {
+            "minimum": 0.0,
+            "title": "Offset",
+            "type": "integer"
+          },
+          "total": {
+            "minimum": 0.0,
+            "title": "Total",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "items",
+          "total",
+          "limit",
+          "offset"
+        ],
+        "title": "Page[HealthPoint]",
+        "type": "object"
+      },
+      "Page_MaintenanceOut_": {
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/MaintenanceOut"
+            },
+            "title": "Items",
+            "type": "array"
+          },
+          "limit": {
+            "exclusiveMinimum": 0.0,
+            "title": "Limit",
+            "type": "integer"
+          },
+          "offset": {
+            "minimum": 0.0,
+            "title": "Offset",
+            "type": "integer"
+          },
+          "total": {
+            "minimum": 0.0,
+            "title": "Total",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "items",
+          "total",
+          "limit",
+          "offset"
+        ],
+        "title": "Page[MaintenanceOut]",
+        "type": "object"
+      },
+      "Page_ScenarioOut_": {
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/ScenarioOut"
+            },
+            "title": "Items",
+            "type": "array"
+          },
+          "limit": {
+            "exclusiveMinimum": 0.0,
+            "title": "Limit",
+            "type": "integer"
+          },
+          "offset": {
+            "minimum": 0.0,
+            "title": "Offset",
+            "type": "integer"
+          },
+          "total": {
+            "minimum": 0.0,
+            "title": "Total",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "items",
+          "total",
+          "limit",
+          "offset"
+        ],
+        "title": "Page[ScenarioOut]",
+        "type": "object"
+      },
+      "Page_TelemetryPoint_": {
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/TelemetryPoint"
+            },
+            "title": "Items",
+            "type": "array"
+          },
+          "limit": {
+            "exclusiveMinimum": 0.0,
+            "title": "Limit",
+            "type": "integer"
+          },
+          "offset": {
+            "minimum": 0.0,
+            "title": "Offset",
+            "type": "integer"
+          },
+          "total": {
+            "minimum": 0.0,
+            "title": "Total",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "items",
+          "total",
+          "limit",
+          "offset"
+        ],
+        "title": "Page[TelemetryPoint]",
+        "type": "object"
+      },
+      "Page_TransformerOut_": {
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/TransformerOut"
+            },
+            "title": "Items",
+            "type": "array"
+          },
+          "limit": {
+            "exclusiveMinimum": 0.0,
+            "title": "Limit",
+            "type": "integer"
+          },
+          "offset": {
+            "minimum": 0.0,
+            "title": "Offset",
+            "type": "integer"
+          },
+          "total": {
+            "minimum": 0.0,
+            "title": "Total",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "items",
+          "total",
+          "limit",
+          "offset"
+        ],
+        "title": "Page[TransformerOut]",
+        "type": "object"
+      },
+      "ProtectionEvent": {
+        "additionalProperties": false,
+        "properties": {
+          "magnetic_oil_gauge_alarm": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Magnetic Oil Gauge Alarm"
+          },
+          "oil_temp_alarm": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Oil Temp Alarm"
+          },
+          "oil_temp_trip": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Oil Temp Trip"
+          },
+          "timestamp": {
+            "format": "date-time",
+            "title": "Timestamp",
+            "type": "string"
+          }
+        },
+        "required": [
+          "timestamp"
+        ],
+        "title": "ProtectionEvent",
+        "type": "object"
+      },
+      "RawTelemetryBatchIn": {
+        "additionalProperties": false,
+        "properties": {
+          "records": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "title": "Records",
+            "type": "array"
+          }
+        },
+        "required": [
+          "records"
+        ],
+        "title": "RawTelemetryBatchIn",
+        "type": "object"
+      },
+      "ReadinessOut": {
+        "additionalProperties": false,
+        "properties": {
+          "db": {
+            "enum": [
+              "ready",
+              "error"
+            ],
+            "title": "Db",
+            "type": "string"
+          },
+          "details": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "title": "Details",
+            "type": "object"
+          },
+          "migrations": {
+            "enum": [
+              "ready",
+              "error"
+            ],
+            "title": "Migrations",
+            "type": "string"
+          },
+          "ml": {
+            "enum": [
+              "ready",
+              "unchecked",
+              "error"
+            ],
+            "title": "Ml",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "ready",
+              "not_ready"
+            ],
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "db",
+          "migrations",
+          "ml"
+        ],
+        "title": "ReadinessOut",
+        "type": "object"
+      },
+      "ReplayAccepted": {
+        "additionalProperties": false,
+        "properties": {
+          "run_id": {
+            "title": "Run Id",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "run_id"
+        ],
+        "title": "ReplayAccepted",
+        "type": "object"
+      },
+      "ReplayIn": {
+        "additionalProperties": false,
+        "properties": {
+          "from_stored": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/StoredWindow"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "records": {
+            "anyOf": [
+              {
+                "items": {
+                  "additionalProperties": true,
+                  "type": "object"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Records"
+          },
+          "run_ml": {
+            "default": true,
+            "title": "Run Ml",
+            "type": "boolean"
+          },
+          "source_name": {
+            "default": "api",
+            "maxLength": 255,
+            "minLength": 1,
+            "title": "Source Name",
+            "type": "string"
+          },
+          "speed_multiplier": {
+            "default": 0,
+            "minimum": 0.0,
+            "title": "Speed Multiplier",
+            "type": "number"
+          },
+          "transformer_id": {
+            "anyOf": [
+              {
+                "maxLength": 128,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Transformer Id"
+          }
+        },
+        "title": "ReplayIn",
+        "type": "object"
+      },
+      "ReplayStatusOut": {
+        "additionalProperties": false,
+        "properties": {
+          "duplicate_count": {
+            "title": "Duplicate Count",
+            "type": "integer"
+          },
+          "finished_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Finished At"
+          },
+          "inserted_count": {
+            "title": "Inserted Count",
+            "type": "integer"
+          },
+          "missing_count_by_field": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "type": "integer"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Missing Count By Field"
+          },
+          "out_of_range_count": {
+            "title": "Out Of Range Count",
+            "type": "integer"
+          },
+          "parse_error_count": {
+            "title": "Parse Error Count",
+            "type": "integer"
+          },
+          "row_count": {
+            "title": "Row Count",
+            "type": "integer"
+          },
+          "run_id": {
+            "title": "Run Id",
+            "type": "integer"
+          },
+          "schema_version": {
+            "title": "Schema Version",
+            "type": "string"
+          },
+          "source_name": {
+            "title": "Source Name",
+            "type": "string"
+          },
+          "started_at": {
+            "format": "date-time",
+            "title": "Started At",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "RUNNING",
+              "COMPLETED",
+              "FAILED"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "timestamp_gap_stats": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Timestamp Gap Stats"
+          }
+        },
+        "required": [
+          "run_id",
+          "status",
+          "row_count",
+          "inserted_count",
+          "duplicate_count",
+          "parse_error_count",
+          "out_of_range_count",
+          "missing_count_by_field",
+          "timestamp_gap_stats",
+          "source_name",
+          "schema_version",
+          "started_at",
+          "finished_at"
+        ],
+        "title": "ReplayStatusOut",
+        "type": "object"
+      },
+      "ScenarioOut": {
+        "additionalProperties": false,
+        "properties": {
+          "first_timestamp": {
+            "format": "date-time",
+            "title": "First Timestamp",
+            "type": "string"
+          },
+          "last_timestamp": {
+            "format": "date-time",
+            "title": "Last Timestamp",
+            "type": "string"
+          },
+          "row_count": {
+            "minimum": 1.0,
+            "title": "Row Count",
+            "type": "integer"
+          },
+          "scenario_id": {
+            "title": "Scenario Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "scenario_id",
+          "first_timestamp",
+          "last_timestamp",
+          "row_count"
+        ],
+        "title": "ScenarioOut",
+        "type": "object"
+      },
+      "StoredWindow": {
+        "additionalProperties": false,
+        "properties": {
+          "end": {
+            "format": "date-time",
+            "title": "End",
+            "type": "string"
+          },
+          "start": {
+            "format": "date-time",
+            "title": "Start",
+            "type": "string"
+          }
+        },
+        "required": [
+          "start",
+          "end"
+        ],
+        "title": "StoredWindow",
+        "type": "object"
+      },
+      "TelemetryIn": {
+        "additionalProperties": false,
+        "properties": {
+          "active_power_total": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Active Power Total"
+          },
+          "ambient_temperature": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ambient Temperature"
+          },
+          "apparent_power_total": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Apparent Power Total"
+          },
+          "current_l1": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Current L1"
+          },
+          "current_l2": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Current L2"
+          },
+          "current_l3": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Current L3"
+          },
+          "energy_kwh": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Energy Kwh"
+          },
+          "magnetic_oil_gauge_alarm": {
+            "anyOf": [
+              {
+                "enum": [
+                  0,
+                  1
+                ],
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Magnetic Oil Gauge Alarm"
+          },
+          "neutral_current": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Neutral Current"
+          },
+          "oil_level": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Oil Level"
+          },
+          "oil_temp_alarm": {
+            "anyOf": [
+              {
+                "enum": [
+                  0,
+                  1
+                ],
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Oil Temp Alarm"
+          },
+          "oil_temp_trip": {
+            "anyOf": [
+              {
+                "enum": [
+                  0,
+                  1
+                ],
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Oil Temp Trip"
+          },
+          "oil_temperature": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Oil Temperature"
+          },
+          "phase_voltage_l1": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Phase Voltage L1"
+          },
+          "phase_voltage_l2": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Phase Voltage L2"
+          },
+          "phase_voltage_l3": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Phase Voltage L3"
+          },
+          "power_factor_l1": {
+            "anyOf": [
+              {
+                "maximum": 1.0,
+                "minimum": -1.0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Power Factor L1"
+          },
+          "power_factor_l2": {
+            "anyOf": [
+              {
+                "maximum": 1.0,
+                "minimum": -1.0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Power Factor L2"
+          },
+          "power_factor_l3": {
+            "anyOf": [
+              {
+                "maximum": 1.0,
+                "minimum": -1.0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Power Factor L3"
+          },
+          "reactive_power_total": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reactive Power Total"
+          },
+          "scenario_id": {
+            "anyOf": [
+              {
+                "maxLength": 255,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Scenario Id"
+          },
+          "source_name": {
+            "anyOf": [
+              {
+                "maxLength": 255,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Source Name"
+          },
+          "timestamp": {
+            "format": "date-time",
+            "title": "Timestamp",
+            "type": "string"
+          },
+          "transformer_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "title": "Transformer Id",
+            "type": "string"
+          },
+          "winding_temperature": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Winding Temperature"
+          }
+        },
+        "required": [
+          "transformer_id",
+          "timestamp"
+        ],
+        "title": "TelemetryIn",
+        "type": "object"
+      },
+      "TelemetryOut": {
+        "additionalProperties": false,
+        "properties": {
+          "active_power_total": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Active Power Total"
+          },
+          "ambient_temperature": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ambient Temperature"
+          },
+          "apparent_power_total": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Apparent Power Total"
+          },
+          "current_l1": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Current L1"
+          },
+          "current_l2": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Current L2"
+          },
+          "current_l3": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Current L3"
+          },
+          "data_quality_score": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Data Quality Score"
+          },
+          "energy_kwh": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Energy Kwh"
+          },
+          "id": {
+            "title": "Id",
+            "type": "integer"
+          },
+          "is_missing_critical": {
+            "title": "Is Missing Critical",
+            "type": "boolean"
+          },
+          "magnetic_oil_gauge_alarm": {
+            "anyOf": [
+              {
+                "enum": [
+                  0,
+                  1
+                ],
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Magnetic Oil Gauge Alarm"
+          },
+          "neutral_current": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Neutral Current"
+          },
+          "oil_level": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Oil Level"
+          },
+          "oil_temp_alarm": {
+            "anyOf": [
+              {
+                "enum": [
+                  0,
+                  1
+                ],
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Oil Temp Alarm"
+          },
+          "oil_temp_trip": {
+            "anyOf": [
+              {
+                "enum": [
+                  0,
+                  1
+                ],
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Oil Temp Trip"
+          },
+          "oil_temperature": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Oil Temperature"
+          },
+          "phase_voltage_l1": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Phase Voltage L1"
+          },
+          "phase_voltage_l2": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Phase Voltage L2"
+          },
+          "phase_voltage_l3": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Phase Voltage L3"
+          },
+          "power_factor_l1": {
+            "anyOf": [
+              {
+                "maximum": 1.0,
+                "minimum": -1.0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Power Factor L1"
+          },
+          "power_factor_l2": {
+            "anyOf": [
+              {
+                "maximum": 1.0,
+                "minimum": -1.0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Power Factor L2"
+          },
+          "power_factor_l3": {
+            "anyOf": [
+              {
+                "maximum": 1.0,
+                "minimum": -1.0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Power Factor L3"
+          },
+          "reactive_power_total": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reactive Power Total"
+          },
+          "scenario_id": {
+            "anyOf": [
+              {
+                "maxLength": 255,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Scenario Id"
+          },
+          "schema_version": {
+            "title": "Schema Version",
+            "type": "string"
+          },
+          "source_name": {
+            "anyOf": [
+              {
+                "maxLength": 255,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Source Name"
+          },
+          "timestamp": {
+            "format": "date-time",
+            "title": "Timestamp",
+            "type": "string"
+          },
+          "transformer_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "title": "Transformer Id",
+            "type": "string"
+          },
+          "winding_temperature": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Winding Temperature"
+          }
+        },
+        "required": [
+          "transformer_id",
+          "timestamp",
+          "id",
+          "is_missing_critical",
+          "schema_version"
+        ],
+        "title": "TelemetryOut",
+        "type": "object"
+      },
+      "TelemetryPoint": {
+        "additionalProperties": false,
+        "description": "Full Out shape, or a fields projection with timestamp always present.",
+        "properties": {
+          "active_power_total": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Active Power Total"
+          },
+          "ambient_temperature": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ambient Temperature"
+          },
+          "apparent_power_total": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Apparent Power Total"
+          },
+          "current_l1": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Current L1"
+          },
+          "current_l2": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Current L2"
+          },
+          "current_l3": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Current L3"
+          },
+          "data_quality_score": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Data Quality Score"
+          },
+          "energy_kwh": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Energy Kwh"
+          },
+          "id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Id"
+          },
+          "is_missing_critical": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Is Missing Critical"
+          },
+          "magnetic_oil_gauge_alarm": {
+            "anyOf": [
+              {
+                "enum": [
+                  0,
+                  1
+                ],
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Magnetic Oil Gauge Alarm"
+          },
+          "neutral_current": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Neutral Current"
+          },
+          "oil_level": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Oil Level"
+          },
+          "oil_temp_alarm": {
+            "anyOf": [
+              {
+                "enum": [
+                  0,
+                  1
+                ],
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Oil Temp Alarm"
+          },
+          "oil_temp_trip": {
+            "anyOf": [
+              {
+                "enum": [
+                  0,
+                  1
+                ],
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Oil Temp Trip"
+          },
+          "oil_temperature": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Oil Temperature"
+          },
+          "phase_voltage_l1": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Phase Voltage L1"
+          },
+          "phase_voltage_l2": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Phase Voltage L2"
+          },
+          "phase_voltage_l3": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Phase Voltage L3"
+          },
+          "power_factor_l1": {
+            "anyOf": [
+              {
+                "maximum": 1.0,
+                "minimum": -1.0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Power Factor L1"
+          },
+          "power_factor_l2": {
+            "anyOf": [
+              {
+                "maximum": 1.0,
+                "minimum": -1.0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Power Factor L2"
+          },
+          "power_factor_l3": {
+            "anyOf": [
+              {
+                "maximum": 1.0,
+                "minimum": -1.0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Power Factor L3"
+          },
+          "reactive_power_total": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reactive Power Total"
+          },
+          "scenario_id": {
+            "anyOf": [
+              {
+                "maxLength": 255,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Scenario Id"
+          },
+          "schema_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Schema Version"
+          },
+          "source_name": {
+            "anyOf": [
+              {
+                "maxLength": 255,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Source Name"
+          },
+          "timestamp": {
+            "format": "date-time",
+            "title": "Timestamp",
+            "type": "string"
+          },
+          "transformer_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Transformer Id"
+          },
+          "winding_temperature": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Winding Temperature"
+          }
+        },
+        "required": [
+          "timestamp"
+        ],
+        "title": "TelemetryPoint",
+        "type": "object"
+      },
+      "TransformerIn": {
+        "additionalProperties": false,
+        "properties": {
+          "cooling_class": {
+            "anyOf": [
+              {
+                "maxLength": 128,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cooling Class"
+          },
+          "id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "title": "Id",
+            "type": "string"
+          },
+          "name": {
+            "maxLength": 255,
+            "minLength": 1,
+            "title": "Name",
+            "type": "string"
+          },
+          "oil_type": {
+            "anyOf": [
+              {
+                "maxLength": 128,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Oil Type"
+          },
+          "rated_current_a": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rated Current A"
+          },
+          "rated_power_kva": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rated Power Kva"
+          },
+          "rated_voltage_hv": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rated Voltage Hv"
+          },
+          "rated_voltage_lv": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rated Voltage Lv"
+          }
+        },
+        "required": [
+          "id",
+          "name"
+        ],
+        "title": "TransformerIn",
+        "type": "object"
+      },
+      "TransformerOut": {
+        "additionalProperties": false,
+        "properties": {
+          "cooling_class": {
+            "anyOf": [
+              {
+                "maxLength": 128,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cooling Class"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "title": "Id",
+            "type": "string"
+          },
+          "name": {
+            "maxLength": 255,
+            "minLength": 1,
+            "title": "Name",
+            "type": "string"
+          },
+          "oil_type": {
+            "anyOf": [
+              {
+                "maxLength": 128,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Oil Type"
+          },
+          "rated_current_a": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rated Current A"
+          },
+          "rated_power_kva": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rated Power Kva"
+          },
+          "rated_voltage_hv": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rated Voltage Hv"
+          },
+          "rated_voltage_lv": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rated Voltage Lv"
+          },
+          "updated_at": {
+            "format": "date-time",
+            "title": "Updated At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "created_at",
+          "updated_at"
+        ],
+        "title": "TransformerOut",
+        "type": "object"
+      },
+      "TransformerPatch": {
+        "additionalProperties": false,
+        "properties": {
+          "cooling_class": {
+            "anyOf": [
+              {
+                "maxLength": 128,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cooling Class"
+          },
+          "name": {
+            "anyOf": [
+              {
+                "maxLength": 255,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Name"
+          },
+          "oil_type": {
+            "anyOf": [
+              {
+                "maxLength": 128,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Oil Type"
+          },
+          "rated_current_a": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rated Current A"
+          },
+          "rated_power_kva": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rated Power Kva"
+          },
+          "rated_voltage_hv": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rated Voltage Hv"
+          },
+          "rated_voltage_lv": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rated Voltage Lv"
+          }
+        },
+        "title": "TransformerPatch",
+        "type": "object"
+      },
+      "TrendBucket": {
+        "additionalProperties": false,
+        "properties": {
+          "avg": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Avg"
+          },
+          "bucket_start": {
+            "format": "date-time",
+            "title": "Bucket Start",
+            "type": "string"
+          },
+          "count": {
+            "minimum": 0.0,
+            "title": "Count",
+            "type": "integer"
+          },
+          "max": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Max"
+          },
+          "min": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Min"
+          }
+        },
+        "required": [
+          "bucket_start",
+          "count"
+        ],
+        "title": "TrendBucket",
+        "type": "object"
+      },
+      "TrendOut": {
+        "additionalProperties": false,
+        "properties": {
+          "bucket_seconds": {
+            "exclusiveMinimum": 0.0,
+            "title": "Bucket Seconds",
+            "type": "integer"
+          },
+          "end": {
+            "format": "date-time",
+            "title": "End",
+            "type": "string"
+          },
+          "no_data_signals": {
+            "items": {
+              "type": "string"
+            },
+            "title": "No Data Signals",
+            "type": "array"
+          },
+          "protection_events": {
+            "items": {
+              "$ref": "#/components/schemas/ProtectionEvent"
+            },
+            "title": "Protection Events",
+            "type": "array"
+          },
+          "signals": {
+            "additionalProperties": {
+              "items": {
+                "$ref": "#/components/schemas/TrendBucket"
+              },
+              "type": "array"
+            },
+            "title": "Signals",
+            "type": "object"
+          },
+          "start": {
+            "format": "date-time",
+            "title": "Start",
+            "type": "string"
+          }
+        },
+        "required": [
+          "start",
+          "end",
+          "bucket_seconds",
+          "signals",
+          "no_data_signals",
+          "protection_events"
+        ],
+        "title": "TrendOut",
+        "type": "object"
+      },
+      "ValidationError": {
+        "properties": {
+          "ctx": {
+            "title": "Context",
+            "type": "object"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "title": "Location",
+            "type": "array"
+          },
+          "msg": {
+            "title": "Message",
+            "type": "string"
+          },
+          "type": {
+            "title": "Error Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError",
+        "type": "object"
+      },
+      "ValidationSample": {
+        "additionalProperties": false,
+        "properties": {
+          "field": {
+            "title": "Field",
+            "type": "string"
+          },
+          "message": {
+            "title": "Message",
+            "type": "string"
+          },
+          "row_index": {
+            "title": "Row Index",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "row_index",
+          "field",
+          "message"
+        ],
+        "title": "ValidationSample",
+        "type": "object"
+      }
+    }
+  },
+  "info": {
+    "contact": {
+      "name": "Backend team (placeholder)"
+    },
+    "description": "Canonical telemetry, analytics, proxy risk (alarm/trip-based prediction), alerts and maintenance for transformer digital twins.",
+    "title": "Transformer Digital Twin API",
+    "version": "1.0.0"
+  },
+  "openapi": "3.1.0",
+  "paths": {
+    "/api/v1/alerts/{id}": {
+      "get": {
+        "operationId": "get_alert_api_v1_alerts__id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "exclusiveMinimum": 0,
+              "title": "Id",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "alert_type": "OIL_TEMP_ALARM",
+                  "analytics_id": 1,
+                  "created_at": "2026-10-07T09:00:00Z",
+                  "evidence": {
+                    "oil_temp_alarm": 1
+                  },
+                  "id": 1,
+                  "last_seen_at": "2026-10-07T09:00:00Z",
+                  "recommended_action": "Inspect indication",
+                  "severity": "WARNING",
+                  "status": "OPEN",
+                  "telemetry_id": 1,
+                  "threshold_or_reason": "OIL_TEMP_ALARM",
+                  "timestamp": "2026-10-07T09:00:00Z",
+                  "transformer_id": "TX-001",
+                  "trigger": "oil_temp_alarm"
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/AlertOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Alert not found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Invalid alert transition"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Request validation failed"
+          }
+        },
+        "summary": "Get Alert",
+        "tags": [
+          "alerts"
+        ]
+      }
+    },
+    "/api/v1/alerts/{id}/acknowledge": {
+      "patch": {
+        "operationId": "acknowledge_alert_api_v1_alerts__id__acknowledge_patch",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "exclusiveMinimum": 0,
+              "title": "Id",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "acknowledged_at": "2026-10-07T09:00:00Z",
+                  "alert_type": "OIL_TEMP_ALARM",
+                  "analytics_id": 1,
+                  "created_at": "2026-10-07T09:00:00Z",
+                  "evidence": {
+                    "oil_temp_alarm": 1
+                  },
+                  "id": 1,
+                  "last_seen_at": "2026-10-07T09:00:00Z",
+                  "recommended_action": "Inspect indication",
+                  "severity": "WARNING",
+                  "status": "ACKNOWLEDGED",
+                  "telemetry_id": 1,
+                  "threshold_or_reason": "OIL_TEMP_ALARM",
+                  "timestamp": "2026-10-07T09:00:00Z",
+                  "transformer_id": "TX-001",
+                  "trigger": "oil_temp_alarm"
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/AlertOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Alert not found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Invalid alert transition"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Request validation failed"
+          }
+        },
+        "summary": "Acknowledge Alert",
+        "tags": [
+          "alerts"
+        ]
+      }
+    },
+    "/api/v1/alerts/{id}/resolve": {
+      "patch": {
+        "operationId": "resolve_alert_api_v1_alerts__id__resolve_patch",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "exclusiveMinimum": 0,
+              "title": "Id",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "alert_type": "OIL_TEMP_ALARM",
+                  "analytics_id": 1,
+                  "created_at": "2026-10-07T09:00:00Z",
+                  "evidence": {
+                    "oil_temp_alarm": 1
+                  },
+                  "id": 1,
+                  "last_seen_at": "2026-10-07T09:00:00Z",
+                  "recommended_action": "Inspect indication",
+                  "resolved_at": "2026-10-07T09:00:00Z",
+                  "severity": "WARNING",
+                  "status": "RESOLVED",
+                  "telemetry_id": 1,
+                  "threshold_or_reason": "OIL_TEMP_ALARM",
+                  "timestamp": "2026-10-07T09:00:00Z",
+                  "transformer_id": "TX-001",
+                  "trigger": "oil_temp_alarm"
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/AlertOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Alert not found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Invalid alert transition"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Request validation failed"
+          }
+        },
+        "summary": "Resolve Alert",
+        "tags": [
+          "alerts"
+        ]
+      }
+    },
+    "/api/v1/ingest/mqtt/status": {
+      "get": {
+        "description": "An enabled consumer with an unavailable broker reports connected=false (HTTP 200).",
+        "operationId": "get_mqtt_status_api_v1_ingest_mqtt_status_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "connected": false,
+                  "dropped_count": 0,
+                  "duplicate_count": 0,
+                  "enabled": true,
+                  "error_count": 0,
+                  "host": "localhost",
+                  "ingested_count": 0,
+                  "last_error": "BROKER_UNREACHABLE",
+                  "last_message_at": "2026-10-07T09:00:00Z",
+                  "port": 1883,
+                  "qos": 1,
+                  "queue_depth": 0,
+                  "received_count": 0,
+                  "recent_rejections": [],
+                  "rejected_count": 0,
+                  "topic": "transformer/+/telemetry"
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/MqttStatus"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Get Mqtt Status",
+        "tags": [
+          "ingestion"
+        ]
+      }
+    },
+    "/api/v1/maintenance/{id}": {
+      "get": {
+        "operationId": "get_maintenance_api_v1_maintenance__id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "exclusiveMinimum": 0,
+              "title": "Id",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "created_at": "2026-10-07T09:00:00Z",
+                  "id": 1,
+                  "priority": "PLAN",
+                  "reason_codes": [
+                    "OIL_TEMP_ALARM"
+                  ],
+                  "recommendation": "Inspect the proxy alarm indication",
+                  "status": "OPEN",
+                  "timestamp": "2026-10-07T09:00:00Z",
+                  "transformer_id": "TX-001"
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/MaintenanceOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Maintenance record not found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Record is no longer OPEN"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Request validation failed"
+          }
+        },
+        "summary": "Get Maintenance",
+        "tags": [
+          "maintenance"
+        ]
+      },
+      "patch": {
+        "operationId": "patch_maintenance_api_v1_maintenance__id__patch",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "exclusiveMinimum": 0,
+              "title": "Id",
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MaintenancePatch"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "created_at": "2026-10-07T09:00:00Z",
+                  "id": 1,
+                  "priority": "PLAN",
+                  "reason_codes": [
+                    "OIL_TEMP_ALARM"
+                  ],
+                  "recommendation": "Inspect the proxy alarm indication",
+                  "status": "DONE",
+                  "timestamp": "2026-10-07T09:00:00Z",
+                  "transformer_id": "TX-001"
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/MaintenanceOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Maintenance record not found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Record is no longer OPEN"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Request validation failed"
+          }
+        },
+        "summary": "Patch Maintenance",
+        "tags": [
+          "maintenance"
+        ]
+      }
+    },
+    "/api/v1/scenarios": {
+      "get": {
+        "description": "All-time distinct scenario metadata, bounded by limit/offset.",
+        "operationId": "get_scenarios_api_v1_scenarios_get",
+        "parameters": [
+          {
+            "description": "Default 500; capped by MAX_PAGE_LIMIT",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 500,
+              "description": "Default 500; capped by MAX_PAGE_LIMIT",
+              "exclusiveMinimum": 0,
+              "title": "Limit",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "minimum": 0,
+              "title": "Offset",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "items": [
+                    {
+                      "first_timestamp": "2026-10-07T09:00:00Z",
+                      "last_timestamp": "2026-10-07T09:00:00Z",
+                      "row_count": 1,
+                      "scenario_id": "normal-demo"
+                    }
+                  ],
+                  "limit": 500,
+                  "offset": 0,
+                  "total": 1
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/Page_ScenarioOut_"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Transformer not found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Request validation failed"
+          }
+        },
+        "summary": "Get Scenarios",
+        "tags": [
+          "scenarios"
+        ]
+      }
+    },
+    "/api/v1/simulate/replay": {
+      "post": {
+        "operationId": "replay_api_v1_simulate_replay_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReplayIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReplayAccepted"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Replay",
+        "tags": [
+          "simulation"
+        ]
+      }
+    },
+    "/api/v1/simulate/replay/{run_id}": {
+      "get": {
+        "operationId": "replay_status_api_v1_simulate_replay__run_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "run_id",
+            "required": true,
+            "schema": {
+              "title": "Run Id",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReplayStatusOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Replay Status",
+        "tags": [
+          "simulation"
+        ]
+      }
+    },
+    "/api/v1/telemetry": {
+      "post": {
+        "operationId": "post_telemetry_api_v1_telemetry_post",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "run_ml",
+            "required": false,
+            "schema": {
+              "default": true,
+              "title": "Run Ml",
+              "type": "boolean"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TelemetryIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Post Telemetry",
+        "tags": [
+          "telemetry"
+        ]
+      }
+    },
+    "/api/v1/telemetry/batch": {
+      "post": {
+        "operationId": "post_batch_api_v1_telemetry_batch_post",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "run_ml",
+            "required": false,
+            "schema": {
+              "default": true,
+              "title": "Run Ml",
+              "type": "boolean"
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_name",
+            "required": false,
+            "schema": {
+              "default": "api",
+              "maxLength": 255,
+              "minLength": 1,
+              "title": "Source Name",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RawTelemetryBatchIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IngestionSummary"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Post Batch",
+        "tags": [
+          "telemetry"
+        ]
+      }
+    },
+    "/api/v1/transformers": {
+      "get": {
+        "operationId": "list_transformers_api_v1_transformers_get",
+        "parameters": [
+          {
+            "description": "Default 500; capped by MAX_PAGE_LIMIT",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 500,
+              "description": "Default 500; capped by MAX_PAGE_LIMIT",
+              "exclusiveMinimum": 0,
+              "title": "Limit",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "minimum": 0,
+              "title": "Offset",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "items": [
+                    {
+                      "created_at": "2026-10-07T09:00:00Z",
+                      "id": "TX-001",
+                      "name": "Demo transformer",
+                      "updated_at": "2026-10-07T09:00:00Z"
+                    }
+                  ],
+                  "limit": 500,
+                  "offset": 0,
+                  "total": 1
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/Page_TransformerOut_"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Transformer not found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Request validation failed"
+          }
+        },
+        "summary": "List Transformers",
+        "tags": [
+          "transformers"
+        ]
+      },
+      "post": {
+        "operationId": "create_transformer_api_v1_transformers_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TransformerIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "created_at": "2026-10-07T09:00:00Z",
+                  "id": "TX-001",
+                  "name": "Demo transformer",
+                  "updated_at": "2026-10-07T09:00:00Z"
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/TransformerOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Transformer not found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Transformer already exists"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Request validation failed"
+          }
+        },
+        "summary": "Create Transformer",
+        "tags": [
+          "transformers"
+        ]
+      }
+    },
+    "/api/v1/transformers/{id}": {
+      "get": {
+        "operationId": "get_transformer_api_v1_transformers__id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "title": "Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "created_at": "2026-10-07T09:00:00Z",
+                  "id": "TX-001",
+                  "name": "Demo transformer",
+                  "updated_at": "2026-10-07T09:00:00Z"
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/TransformerOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Transformer not found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Request validation failed"
+          }
+        },
+        "summary": "Get Transformer",
+        "tags": [
+          "transformers"
+        ]
+      },
+      "patch": {
+        "description": "Only supplied fields change. Null clears nullable nameplate configuration.",
+        "operationId": "patch_transformer_api_v1_transformers__id__patch",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "title": "Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TransformerPatch"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "created_at": "2026-10-07T09:00:00Z",
+                  "id": "TX-001",
+                  "name": "Demo transformer",
+                  "updated_at": "2026-10-07T09:00:00Z"
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/TransformerOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Transformer not found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Request validation failed"
+          }
+        },
+        "summary": "Patch Transformer",
+        "tags": [
+          "transformers"
+        ]
+      }
+    },
+    "/api/v1/transformers/{id}/alerts": {
+      "get": {
+        "operationId": "get_alerts_api_v1_transformers__id__alerts_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "title": "Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "severity",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "INFO",
+                    "WARNING",
+                    "CRITICAL"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Severity"
+            }
+          },
+          {
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "OPEN",
+                    "ACKNOWLEDGED",
+                    "RESOLVED"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Status"
+            }
+          },
+          {
+            "description": "ISO-8601 with offset",
+            "in": "query",
+            "name": "from",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "format": "date-time",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "ISO-8601 with offset",
+              "title": "From"
+            }
+          },
+          {
+            "description": "ISO-8601 with offset",
+            "in": "query",
+            "name": "to",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "format": "date-time",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "ISO-8601 with offset",
+              "title": "To"
+            }
+          },
+          {
+            "description": "With no from/to, latest ends at the asset's latest telemetry time.",
+            "in": "query",
+            "name": "anchor",
+            "required": false,
+            "schema": {
+              "default": "now",
+              "description": "With no from/to, latest ends at the asset's latest telemetry time.",
+              "enum": [
+                "latest",
+                "now"
+              ],
+              "title": "Anchor",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Default 500; capped by MAX_PAGE_LIMIT",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 500,
+              "description": "Default 500; capped by MAX_PAGE_LIMIT",
+              "exclusiveMinimum": 0,
+              "title": "Limit",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "minimum": 0,
+              "title": "Offset",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "items": [
+                    {
+                      "alert_type": "OIL_TEMP_ALARM",
+                      "analytics_id": 1,
+                      "created_at": "2026-10-07T09:00:00Z",
+                      "evidence": {
+                        "oil_temp_alarm": 1
+                      },
+                      "id": 1,
+                      "last_seen_at": "2026-10-07T09:00:00Z",
+                      "recommended_action": "Inspect indication",
+                      "severity": "WARNING",
+                      "status": "OPEN",
+                      "telemetry_id": 1,
+                      "threshold_or_reason": "OIL_TEMP_ALARM",
+                      "timestamp": "2026-10-07T09:00:00Z",
+                      "transformer_id": "TX-001",
+                      "trigger": "oil_temp_alarm"
+                    }
+                  ],
+                  "limit": 500,
+                  "offset": 0,
+                  "total": 1
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/Page_AlertOut_"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Transformer not found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Request validation failed"
+          }
+        },
+        "summary": "Get Alerts",
+        "tags": [
+          "alerts"
+        ]
+      }
+    },
+    "/api/v1/transformers/{id}/analytics": {
+      "get": {
+        "description": "Bounded analytic series; fault_risk/predicted_fault describe proxy risk.",
+        "operationId": "get_analytics_api_v1_transformers__id__analytics_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "title": "Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "schema": {
+              "default": "asc",
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "title": "Order",
+              "type": "string"
+            }
+          },
+          {
+            "description": "ISO-8601 with offset",
+            "in": "query",
+            "name": "from",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "format": "date-time",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "ISO-8601 with offset",
+              "title": "From"
+            }
+          },
+          {
+            "description": "ISO-8601 with offset",
+            "in": "query",
+            "name": "to",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "format": "date-time",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "ISO-8601 with offset",
+              "title": "To"
+            }
+          },
+          {
+            "description": "With no from/to, latest ends at the asset's latest telemetry time.",
+            "in": "query",
+            "name": "anchor",
+            "required": false,
+            "schema": {
+              "default": "now",
+              "description": "With no from/to, latest ends at the asset's latest telemetry time.",
+              "enum": [
+                "latest",
+                "now"
+              ],
+              "title": "Anchor",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Default 500; capped by MAX_PAGE_LIMIT",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 500,
+              "description": "Default 500; capped by MAX_PAGE_LIMIT",
+              "exclusiveMinimum": 0,
+              "title": "Limit",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "minimum": 0,
+              "title": "Offset",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "items": [
+                    {
+                      "anomaly_score": 0.1,
+                      "fault_risk": 0.05,
+                      "feature_version": "1.0.0",
+                      "inference_status": "OK",
+                      "model_version": "stub-0.0.0",
+                      "schema_version": "1.0.0",
+                      "timestamp": "2026-10-07T09:00:00Z"
+                    }
+                  ],
+                  "limit": 500,
+                  "offset": 0,
+                  "total": 1
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/Page_AnalyticsPoint_"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Transformer not found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Request validation failed"
+          }
+        },
+        "summary": "Get Analytics",
+        "tags": [
+          "analytics"
+        ]
+      }
+    },
+    "/api/v1/transformers/{id}/health": {
+      "get": {
+        "operationId": "get_health_api_v1_transformers__id__health_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "title": "Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "schema": {
+              "default": "asc",
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "title": "Order",
+              "type": "string"
+            }
+          },
+          {
+            "description": "ISO-8601 with offset",
+            "in": "query",
+            "name": "from",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "format": "date-time",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "ISO-8601 with offset",
+              "title": "From"
+            }
+          },
+          {
+            "description": "ISO-8601 with offset",
+            "in": "query",
+            "name": "to",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "format": "date-time",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "ISO-8601 with offset",
+              "title": "To"
+            }
+          },
+          {
+            "description": "With no from/to, latest ends at the asset's latest telemetry time.",
+            "in": "query",
+            "name": "anchor",
+            "required": false,
+            "schema": {
+              "default": "now",
+              "description": "With no from/to, latest ends at the asset's latest telemetry time.",
+              "enum": [
+                "latest",
+                "now"
+              ],
+              "title": "Anchor",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Default 500; capped by MAX_PAGE_LIMIT",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 500,
+              "description": "Default 500; capped by MAX_PAGE_LIMIT",
+              "exclusiveMinimum": 0,
+              "title": "Limit",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "minimum": 0,
+              "title": "Offset",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "items": [
+                    {
+                      "health_index": 90.0,
+                      "inference_status": "OK",
+                      "timestamp": "2026-10-07T09:00:00Z"
+                    }
+                  ],
+                  "limit": 500,
+                  "offset": 0,
+                  "total": 1
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/Page_HealthPoint_"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Transformer not found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Request validation failed"
+          }
+        },
+        "summary": "Get Health",
+        "tags": [
+          "health"
+        ]
+      }
+    },
+    "/api/v1/transformers/{id}/latest": {
+      "get": {
+        "description": "Latest telemetry and its analytics. Fault outputs describe proxy risk.",
+        "operationId": "get_latest_api_v1_transformers__id__latest_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "title": "Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "analytics": {
+                    "anomaly_score": 0.1,
+                    "fault_risk": 0.05,
+                    "feature_version": "1.0.0",
+                    "health_index": 90.0,
+                    "inference_status": "OK",
+                    "missing_features": [],
+                    "model_version": "stub-0.0.0",
+                    "schema_version": "1.0.0",
+                    "timestamp": "2026-10-07T09:00:00Z",
+                    "transformer_id": "TX-001"
+                  },
+                  "data_source": {
+                    "scenario_id": "normal-demo",
+                    "source_name": "simulator"
+                  },
+                  "demo_mode": true,
+                  "feature_version": "1.0.0",
+                  "model_version": "stub-0.0.0",
+                  "open_alerts_count": 0,
+                  "schema_version": "1.0.0",
+                  "telemetry": {
+                    "data_quality_score": 0.09523809523809523,
+                    "id": 1,
+                    "is_missing_critical": true,
+                    "oil_level": 8.0,
+                    "oil_temperature": 42.0,
+                    "scenario_id": "normal-demo",
+                    "schema_version": "1.0.0",
+                    "source_name": "simulator",
+                    "timestamp": "2026-10-07T09:00:00Z",
+                    "transformer_id": "TX-001"
+                  },
+                  "transformer": {
+                    "created_at": "2026-10-07T09:00:00Z",
+                    "id": "TX-001",
+                    "name": "Demo transformer",
+                    "updated_at": "2026-10-07T09:00:00Z"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/LatestStateOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Transformer not found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Request validation failed"
+          }
+        },
+        "summary": "Get Latest",
+        "tags": [
+          "latest state"
+        ]
+      }
+    },
+    "/api/v1/transformers/{id}/maintenance": {
+      "get": {
+        "operationId": "get_maintenance_api_v1_transformers__id__maintenance_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "title": "Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "OPEN",
+                    "DONE",
+                    "DISMISSED"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Status"
+            }
+          },
+          {
+            "description": "ISO-8601 with offset",
+            "in": "query",
+            "name": "from",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "format": "date-time",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "ISO-8601 with offset",
+              "title": "From"
+            }
+          },
+          {
+            "description": "ISO-8601 with offset",
+            "in": "query",
+            "name": "to",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "format": "date-time",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "ISO-8601 with offset",
+              "title": "To"
+            }
+          },
+          {
+            "description": "With no from/to, latest ends at the asset's latest telemetry time.",
+            "in": "query",
+            "name": "anchor",
+            "required": false,
+            "schema": {
+              "default": "now",
+              "description": "With no from/to, latest ends at the asset's latest telemetry time.",
+              "enum": [
+                "latest",
+                "now"
+              ],
+              "title": "Anchor",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Default 500; capped by MAX_PAGE_LIMIT",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 500,
+              "description": "Default 500; capped by MAX_PAGE_LIMIT",
+              "exclusiveMinimum": 0,
+              "title": "Limit",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "minimum": 0,
+              "title": "Offset",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "items": [
+                    {
+                      "created_at": "2026-10-07T09:00:00Z",
+                      "id": 1,
+                      "priority": "PLAN",
+                      "reason_codes": [
+                        "OIL_TEMP_ALARM"
+                      ],
+                      "recommendation": "Inspect the proxy alarm indication",
+                      "status": "OPEN",
+                      "timestamp": "2026-10-07T09:00:00Z",
+                      "transformer_id": "TX-001"
+                    }
+                  ],
+                  "limit": 500,
+                  "offset": 0,
+                  "total": 1
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/Page_MaintenanceOut_"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Transformer not found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Request validation failed"
+          }
+        },
+        "summary": "Get Maintenance",
+        "tags": [
+          "maintenance"
+        ]
+      }
+    },
+    "/api/v1/transformers/{id}/telemetry": {
+      "get": {
+        "description": "Bounded canonical telemetry page. fields projects an allowlist; timestamp remains included.",
+        "operationId": "get_telemetry_api_v1_transformers__id__telemetry_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "title": "Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "schema": {
+              "default": "asc",
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "title": "Order",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Fields"
+            }
+          },
+          {
+            "description": "ISO-8601 with offset",
+            "in": "query",
+            "name": "from",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "format": "date-time",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "ISO-8601 with offset",
+              "title": "From"
+            }
+          },
+          {
+            "description": "ISO-8601 with offset",
+            "in": "query",
+            "name": "to",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "format": "date-time",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "ISO-8601 with offset",
+              "title": "To"
+            }
+          },
+          {
+            "description": "With no from/to, latest ends at the asset's latest telemetry time.",
+            "in": "query",
+            "name": "anchor",
+            "required": false,
+            "schema": {
+              "default": "now",
+              "description": "With no from/to, latest ends at the asset's latest telemetry time.",
+              "enum": [
+                "latest",
+                "now"
+              ],
+              "title": "Anchor",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Default 500; capped by MAX_PAGE_LIMIT",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 500,
+              "description": "Default 500; capped by MAX_PAGE_LIMIT",
+              "exclusiveMinimum": 0,
+              "title": "Limit",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "minimum": 0,
+              "title": "Offset",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "items": [
+                    {
+                      "data_quality_score": 0.09523809523809523,
+                      "id": 1,
+                      "is_missing_critical": true,
+                      "oil_level": 8.0,
+                      "oil_temperature": 42.0,
+                      "scenario_id": "normal-demo",
+                      "schema_version": "1.0.0",
+                      "source_name": "simulator",
+                      "timestamp": "2026-10-07T09:00:00Z",
+                      "transformer_id": "TX-001"
+                    }
+                  ],
+                  "limit": 500,
+                  "offset": 0,
+                  "total": 1
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/Page_TelemetryPoint_"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Transformer not found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Request validation failed"
+          }
+        },
+        "summary": "Get Telemetry",
+        "tags": [
+          "telemetry"
+        ]
+      }
+    },
+    "/api/v1/transformers/{id}/trends": {
+      "get": {
+        "description": "SQL buckets with explicit null gaps, no interpolation. Fault signals describe proxy risk.",
+        "operationId": "get_trends_api_v1_transformers__id__trends_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "title": "Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "signals",
+            "required": true,
+            "schema": {
+              "title": "Signals",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "window",
+            "required": false,
+            "schema": {
+              "default": "24h",
+              "enum": [
+                "1h",
+                "6h",
+                "24h",
+                "7d"
+              ],
+              "title": "Window",
+              "type": "string"
+            }
+          },
+          {
+            "description": "ISO-8601 with offset",
+            "in": "query",
+            "name": "from",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "format": "date-time",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "ISO-8601 with offset",
+              "title": "From"
+            }
+          },
+          {
+            "description": "ISO-8601 with offset",
+            "in": "query",
+            "name": "to",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "format": "date-time",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "ISO-8601 with offset",
+              "title": "To"
+            }
+          },
+          {
+            "description": "With no from/to, latest ends at the asset's latest telemetry time.",
+            "in": "query",
+            "name": "anchor",
+            "required": false,
+            "schema": {
+              "default": "now",
+              "description": "With no from/to, latest ends at the asset's latest telemetry time.",
+              "enum": [
+                "latest",
+                "now"
+              ],
+              "title": "Anchor",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "bucket_seconds": 15,
+                  "end": "2026-10-07T09:00:00Z",
+                  "no_data_signals": [],
+                  "protection_events": [],
+                  "signals": {
+                    "oil_temperature": [
+                      {
+                        "avg": 42,
+                        "bucket_start": "2026-10-07T08:00:00Z",
+                        "count": 1,
+                        "max": 42,
+                        "min": 42
+                      }
+                    ]
+                  },
+                  "start": "2026-10-07T08:00:00Z"
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/TrendOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Transformer not found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Request validation failed"
+          }
+        },
+        "summary": "Get Trends",
+        "tags": [
+          "trends"
+        ]
+      }
+    },
+    "/health": {
+      "get": {
+        "operationId": "health_health_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Health",
+        "tags": [
+          "health"
+        ]
+      }
+    },
+    "/health/ready": {
+      "get": {
+        "operationId": "ready_health_ready_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReadinessOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReadinessOut"
+                }
+              }
+            },
+            "description": "Service is not ready"
+          }
+        },
+        "summary": "Ready",
+        "tags": [
+          "health"
+        ]
+      }
+    }
+  }
+}

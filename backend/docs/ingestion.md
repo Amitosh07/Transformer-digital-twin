@@ -165,3 +165,21 @@ It still runs in the same savepoint without committing, and duplicates still byp
 Ingestion locks the transformer FOR NO KEY UPDATE before inserting telemetry so concurrent
 overlapping batches serialize without conflicting child/FK lock upgrades. Lifecycle
 endpoints follow the same parent-before-child order. There is still one telemetry write path.
+
+
+## Phase 8 batch execution
+
+The common ingest_record entry point now receives a private chunk context in the batch
+path. Each chunk acquires one parent lock per transformer in sorted order, checks all
+asset/timestamp pairs in one duplicate query, and skips duplicates before ML/history/
+analytics/hook work. New telemetry and analytics are inserted in bulk with conflict
+protection and RETURNING. The existing history deque and per-chunk commits remain.
+Single HTTP, MQTT and replay continue using their ordinary per-record path.
+
+For ML-enabled batches, active alerts and open maintenance records are cached once per
+asset/chunk and evaluated in timestamp order using the same rules. A chunk savepoint
+isolates lifecycle writes. If it fails, the ordinary per-record savepoint/conflict path
+reconciles the chunk, retaining successful hooks and isolating individual failures.
+Telemetry and analytics survive hook failures. See [performance.md](performance.md)
+for the differential proof and measured database round-trip reduction, and
+[hardening.md](hardening.md) for request IDs and readiness.

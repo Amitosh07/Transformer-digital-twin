@@ -9,6 +9,9 @@ from app.schemas.transformer import TransformerIn
 
 
 def ensure_transformer(session: Session, transformer_id: str) -> Transformer:
+    existing = get(session, transformer_id)
+    if existing is not None:
+        return existing
     statement = (
         insert(Transformer)
         .values(id=transformer_id, name=transformer_id)

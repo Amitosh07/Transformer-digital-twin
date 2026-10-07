@@ -205,7 +205,8 @@ def evaluate(session: Session, telemetry_row: Telemetry, analytics_row: Analytic
         if row.clear_count >= settings.alert_auto_resolve_after:
             row.status = "RESOLVED"
             row.resolved_at = telemetry_row.timestamp
-    session.flush()
+    if "ingestion_lifecycle_cache" not in session.info:
+        session.flush()
 
 
 def get_alert(session: Session, alert_id: int) -> AlertOut:

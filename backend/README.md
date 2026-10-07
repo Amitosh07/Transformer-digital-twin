@@ -1,4 +1,4 @@
-# Backend Phases 1 through 7
+# Backend Phases 1 through 8
 
 FastAPI + synchronous SQLAlchemy 2.0/psycopg 3 + PostgreSQL 16.
 All project changes are under `backend/` on `feature/backend-api`.
@@ -180,3 +180,16 @@ resolution, completion and dismissal with the shared error envelope. Apply migra
 with `alembic upgrade head` before running this version. See [docs/alerts.md](docs/alerts.md)
 for rules, JSON severity configuration, concurrency ordering, endpoints and examples, and
 [docs/phase7-acceptance.md](docs/phase7-acceptance.md) for verification results.
+
+## Phase 8 performance and hardening
+
+Batch ingestion now prefilters duplicates and uses chunked bulk telemetry/analytics
+insertion, cached lifecycle evaluation and one transformer lock per chunk. Single HTTP,
+MQTT and replay still use ingest_record. The measured paired benchmarks and SQL stage
+profiles are in [docs/performance.md](docs/performance.md). No migration is introduced.
+
+GET `/health/ready` checks startup, database/schema and the configured ML integration;
+`/health` remains unchanged. Every HTTP response carries X-Request-ID. See
+[docs/hardening.md](docs/hardening.md) for readiness semantics, error correlation,
+OpenAPI snapshot regeneration, source/wording guards and per-package coverage checks.
+The Phase 8 acceptance results are in [docs/phase8-acceptance.md](docs/phase8-acceptance.md).

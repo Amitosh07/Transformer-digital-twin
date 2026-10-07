@@ -3,7 +3,7 @@
 from datetime import datetime
 from typing import Any
 
-from sqlalchemy import func, select
+from sqlalchemy import func, select, text
 from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.orm import Session
 
@@ -48,6 +48,9 @@ def get(session: Session, alert_id: int, *, lock: bool = False) -> Alert | None:
 
 
 def active(session: Session, asset: str) -> list[Alert]:
+    cache = session.info.get("ingestion_lifecycle_cache")
+    if cache is not None:
+        return [row for row in cache.alerts[asset] if row.status in ("OPEN", "ACKNOWLEDGED")]
     return list(
         session.scalars(
             select(Alert)
@@ -60,12 +63,18 @@ def active(session: Session, asset: str) -> list[Alert]:
 
 
 def insert_active(session: Session, values: dict[str, Any]) -> Alert:
+    cache = session.info.get("ingestion_lifecycle_cache")
+    if cache is not None:
+        row = Alert(**values)
+        cache.alerts[row.transformer_id].append(row)
+        cache.new_alerts.append(row)
+        return row
     row = session.scalar(
         insert(Alert)
         .values(**values)
         .on_conflict_do_nothing(
             index_elements=[Alert.transformer_id, Alert.alert_type],
-            index_where=Alert.status.in_(["OPEN", "ACKNOWLEDGED"]),
+            index_where=text("status IN ('OPEN','ACKNOWLEDGED')"),
         )
         .returning(Alert)
     )

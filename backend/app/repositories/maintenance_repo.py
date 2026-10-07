@@ -33,6 +33,9 @@ def get(session: Session, record_id: int, *, lock: bool = False) -> MaintenanceR
 
 
 def open_records(session: Session, asset: str) -> list[MaintenanceRecord]:
+    cache = session.info.get("ingestion_lifecycle_cache")
+    if cache is not None:
+        return [row for row in cache.maintenance[asset] if row.status == "OPEN"]
     return list(
         session.scalars(
             select(MaintenanceRecord)
@@ -45,6 +48,11 @@ def open_records(session: Session, asset: str) -> list[MaintenanceRecord]:
 
 def insert_record(session: Session, values: dict[str, Any]) -> MaintenanceRecord:
     row = MaintenanceRecord(**values)
-    session.add(row)
-    session.flush()
+    cache = session.info.get("ingestion_lifecycle_cache")
+    if cache is not None:
+        cache.maintenance[row.transformer_id].append(row)
+        cache.new_maintenance.append(row)
+    else:
+        session.add(row)
+        session.flush()
     return row

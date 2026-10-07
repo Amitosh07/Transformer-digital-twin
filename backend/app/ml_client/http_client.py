@@ -1,5 +1,7 @@
 """Synchronous HTTP adapter with bounded retries for connection errors and 5xx only."""
 
+from typing import Literal
+
 import httpx
 
 from app.core.config import Settings, get_settings
@@ -45,6 +47,21 @@ class HttpMLTwinClient:
         """Close owned connections; injected clients remain the caller's responsibility."""
         if self._owns_client:
             self._client.close()
+
+    def probe(self) -> Literal["ready", "unchecked", "error"]:
+        timeout = min(self.settings.ml_timeout_seconds, 1.0)
+        for method in ("HEAD", "GET"):
+            try:
+                with self._client.stream(
+                    method, self._url, timeout=timeout, follow_redirects=False
+                ) as response:
+                    status = response.status_code
+            except httpx.HTTPError:
+                return "error"
+            if status in (405, 501):
+                continue
+            return "ready" if 200 <= status < 300 else "error"
+        return "unchecked"
 
     def analyze(
         self,

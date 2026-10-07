@@ -105,9 +105,11 @@ stored row with missing analytics uses the same hook once when analytics is crea
 `run_ml=false` retains Phase 4 behavior: telemetry only, without analytics or hook execution.
 
 The unchanged `hooks.evaluate_alerts(session, telemetry_row, analytics_row)` signature
-orchestrates alert_service then maintenance_service inside ingestion's existing savepoint.
-Neither hook service commits. Failure rolls back all alert/maintenance mutations from
-that invocation; telemetry and analytics still commit and ingestion returns ALERT_HOOK_FAILED.
+orchestrates alert_service then maintenance_service. Neither hook service commits.
+Ordinary ingestion uses a per-record savepoint: failure rolls back that invocation,
+telemetry and analytics still commit, and ingestion returns ALERT_HOOK_FAILED. Phase 8
+batches use an equivalent chunk cache/savepoint with per-record recovery on failure;
+see the batch execution section in [ingestion.md](ingestion.md).
 
 Ingestion takes a transformer FOR NO KEY UPDATE lock **before telemetry insertion**.
 This serializes lifecycle changes for that asset and remains compatible with foreign-key
@@ -141,8 +143,8 @@ a subsequent matching occurrence can then create another OPEN record.
 | PATCH /api/v1/maintenance/{id} | OPEN -> DONE or DISMISSED; any already closed record is 409 |
 
 Unknown positive ids return 404. Invalid body/extra keys return 422. Errors use the shared
-`{"error":{"code":"...","message":"...","details":null}}` envelope (validation details
-are a list). The existing asset alert/maintenance list endpoints include generated records.
+`{"error":{"code":"...","message":"...","details":{"request_id":"..."}}}` envelope
+(validation details remain a list with request correlation; see [hardening.md](hardening.md)). The existing asset alert/maintenance list endpoints include generated records.
 AlertOut exposes last_seen_at, acknowledged_at and resolved_at; clear_count stays internal.
 `/api/v1/transformers/{id}/latest` counts only OPEN alerts, so acknowledgement and resolution
 reduce open_alerts_count. ACKNOWLEDGED alerts still participate in dedupe and auto-resolution.

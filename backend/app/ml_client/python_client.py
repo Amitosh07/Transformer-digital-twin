@@ -39,6 +39,9 @@ class PythonMLTwinClient:
         self._entrypoint = function
         return function
 
+    def check_importable(self) -> None:
+        self._load_entrypoint()
+
     def analyze(
         self,
         transformer: TransformerOut,
