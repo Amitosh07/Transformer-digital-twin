@@ -256,4 +256,3 @@ ingestion, alert rules or ML behavior changed. The optional demo reset is disabl
 default and refuses production. The earlier snapshot remains intact, allowing the new
 admin endpoint as an additive API change.
 
-## JOD
