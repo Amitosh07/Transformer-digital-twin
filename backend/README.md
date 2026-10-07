@@ -255,3 +255,5 @@ are complete. See [docs/handoff.md](docs/handoff.md), [docs/known-limitations.md
 ingestion, alert rules or ML behavior changed. The optional demo reset is disabled by
 default and refuses production. The earlier snapshot remains intact, allowing the new
 admin endpoint as an additive API change.
+
+## JOD
