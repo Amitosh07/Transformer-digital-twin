@@ -1,10 +1,11 @@
 """Environment configuration; optional integrations are disabled by default."""
 
+import json
 from functools import lru_cache
-from typing import Literal
+from typing import Annotated, Literal
 
 from pydantic import Field, field_validator, model_validator
-from pydantic_settings import BaseSettings, SettingsConfigDict
+from pydantic_settings import BaseSettings, NoDecode, SettingsConfigDict
 from sqlalchemy.engine import make_url
 
 
@@ -23,7 +24,23 @@ class Settings(BaseSettings):
     ml_timeout_seconds: float = Field(default=5.0, gt=0, allow_inf_nan=False)
     ml_max_retries: int = Field(default=2, ge=0)
     max_batch_size: int = Field(default=5000, ge=1)
-    cors_origins: list[str] = Field(default_factory=list)
+    default_window_hours: int = Field(default=24, ge=1)
+    max_window_days: int = Field(default=31, ge=1)
+    max_page_limit: int = Field(default=5000, ge=1)
+    demo_source_names: str = "simulator,replay,demo,seed,mqtt,mqtt-simulator,analytics-backfill"
+    cors_origins: Annotated[list[str], NoDecode] = Field(
+        default_factory=lambda: ["http://localhost:8501", "http://127.0.0.1:8501"]
+    )
+
+    @field_validator("cors_origins", mode="before")
+    @classmethod
+    def parse_origins(cls, value: object) -> object:
+        if isinstance(value, str):
+            if value.strip().startswith("["):
+                return json.loads(value)
+            return [origin.strip() for origin in value.split(",") if origin.strip()]
+        return value
+
     mqtt_enabled: bool = False
     mqtt_host: str = "localhost"
     mqtt_port: int = Field(default=1883, ge=1, le=65535)
@@ -39,6 +56,8 @@ class Settings(BaseSettings):
 
     @model_validator(mode="after")
     def mqtt_configuration(self) -> "Settings":
+        if self.default_window_hours > self.max_window_days * 24:
+            raise ValueError("DEFAULT_WINDOW_HOURS exceeds MAX_WINDOW_DAYS")
         if self.mqtt_reconnect_max_s < self.mqtt_reconnect_min_s:
             raise ValueError("MQTT_RECONNECT_MAX_S must be >= MQTT_RECONNECT_MIN_S")
         segments = self.mqtt_topic.split("/")

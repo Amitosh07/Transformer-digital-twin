@@ -1,8 +1,12 @@
+from datetime import datetime
+from typing import Any
+
 from sqlalchemy import select
 from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.orm import Session
 
 from app.models.analytics import Analytics
+from app.repositories.query_helpers import aggregate_signals, page_rows, window_statement
 from app.schemas.analytics import MLResultIn
 
 
@@ -31,3 +35,33 @@ def insert_analytics(
     if row is None:
         raise RuntimeError("Analytics lookup did not return a row")
     return row, False
+
+
+def read_window(
+    session: Session,
+    transformer_id: str,
+    start: datetime,
+    end: datetime,
+    limit: int,
+    offset: int,
+    order: str,
+) -> tuple[list[Analytics], int]:
+    return page_rows(
+        session,
+        window_statement(Analytics, transformer_id, start, end),
+        Analytics,
+        limit,
+        offset,
+        order,
+    )
+
+
+def read_buckets(
+    session: Session,
+    transformer_id: str,
+    start: datetime,
+    end: datetime,
+    signals: list[str],
+    seconds: int,
+) -> dict[str, dict[datetime, dict[str, Any]]]:
+    return aggregate_signals(session, Analytics, transformer_id, start, end, signals, seconds)

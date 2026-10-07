@@ -1,10 +1,12 @@
 from datetime import datetime
+from typing import Any
 
-from sqlalchemy import or_, select
+from sqlalchemy import Select, func, or_, select
 from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.orm import Session
 
 from app.models.telemetry import Telemetry
+from app.repositories.query_helpers import aggregate_signals, page_rows, window_statement
 from app.schemas.telemetry import TelemetryIn
 
 
@@ -111,3 +113,69 @@ def load_stored_window(
             statement.order_by(Telemetry.timestamp, Telemetry.transformer_id),
         )
     ]
+
+
+def get_latest(session: Session, transformer_id: str) -> Telemetry | None:
+    return session.scalar(
+        select(Telemetry)
+        .where(Telemetry.transformer_id == transformer_id)
+        .order_by(Telemetry.timestamp.desc(), Telemetry.id.desc())
+        .limit(1)
+    )
+
+
+def read_window_statement(transformer_id: str, start: datetime, end: datetime) -> Select:
+    return window_statement(Telemetry, transformer_id, start, end)
+
+
+def read_window(
+    session: Session,
+    transformer_id: str,
+    start: datetime,
+    end: datetime,
+    limit: int,
+    offset: int,
+    order: str,
+) -> tuple[list[Telemetry], int]:
+    return page_rows(
+        session, read_window_statement(transformer_id, start, end), Telemetry, limit, offset, order
+    )
+
+
+def read_buckets(
+    session: Session,
+    transformer_id: str,
+    start: datetime,
+    end: datetime,
+    signals: list[str],
+    seconds: int,
+) -> dict[str, dict[datetime, dict[str, Any]]]:
+    return aggregate_signals(session, Telemetry, transformer_id, start, end, signals, seconds)
+
+
+def protection_events(
+    session: Session, transformer_id: str, start: datetime, end: datetime
+) -> list[Telemetry]:
+    statement = read_window_statement(transformer_id, start, end).where(
+        or_(
+            Telemetry.oil_temp_alarm == 1,
+            Telemetry.oil_temp_trip == 1,
+            Telemetry.magnetic_oil_gauge_alarm == 1,
+        )
+    )
+    return list(session.scalars(statement.order_by(Telemetry.timestamp, Telemetry.id).limit(500)))
+
+
+def scenarios(session: Session, limit: int, offset: int) -> tuple[list[Any], int]:
+    groups = select(
+        Telemetry.scenario_id,
+        func.min(Telemetry.timestamp).label("first_timestamp"),
+        func.max(Telemetry.timestamp).label("last_timestamp"),
+        func.count().label("row_count"),
+    ).where(Telemetry.scenario_id.is_not(None))
+    groups = groups.group_by(Telemetry.scenario_id)
+    total = session.scalar(select(func.count()).select_from(groups.subquery())) or 0
+    rows = session.execute(
+        groups.order_by(Telemetry.scenario_id).limit(limit).offset(offset)
+    ).mappings()
+    return list(rows), total

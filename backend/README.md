@@ -1,4 +1,4 @@
-# Backend Phases 1 through 5
+# Backend Phases 1 through 6
 
 FastAPI + synchronous SQLAlchemy 2.0/psycopg 3 + PostgreSQL 16.
 All project changes are under `backend/` on `feature/backend-api`.
@@ -155,3 +155,17 @@ See docs/mqtt.md for simulator payloads, Docker broker setup, publishing and tes
 Phase 5 verification: 486 tests passed with no skips against real PostgreSQL and
 Docker Mosquitto; Ruff and formatting passed. See docs/phase5-acceptance.md for
 acceptance coverage, operational limits and reproduction commands.
+
+## Phase 6 dashboard read API
+
+Transformer configuration, latest state, paged telemetry/health/analytics, alerts,
+maintenance, scenarios and bounded SQL trends now serve the Streamlit dashboard.
+Use anchor=latest for old demo/replay data. Latest state includes demo_mode and
+data_source; null gaps and insufficient analytics remain visible. CORS defaults to
+both localhost Streamlit origins. See docs/read-api-notes.md for all contracts and limits.
+Migration 0002 adds the missing maintenance transformer/timestamp index; run
+.venv/Scripts/python.exe -m alembic upgrade head before maintenance window reads.
+
+Phase 6 verification: 557 tests passed with no skips against real PostgreSQL and
+Mosquitto; Ruff, formatting, migration round-trip/check and the natural 20,000-row
+index plan passed. See docs/phase6-acceptance.md for the detailed results.

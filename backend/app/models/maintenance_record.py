@@ -5,6 +5,7 @@ from sqlalchemy import (
     CheckConstraint,
     DateTime,
     ForeignKey,
+    Index,
     String,
     Text,
     func,
@@ -30,6 +31,9 @@ class MaintenanceRecord(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
 
     __table_args__ = (
+        Index(
+            "ix_maintenance_records_transformer_timestamp_desc", transformer_id, timestamp.desc()
+        ),
         CheckConstraint("priority IN ('NORMAL', 'WATCH', 'PLAN', 'URGENT')", name="priority"),
         CheckConstraint("status IN ('OPEN', 'DONE', 'DISMISSED')", name="status"),
     )

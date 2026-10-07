@@ -178,3 +178,52 @@ Changed:
 - `backend/docs/FILES.md`
 - `backend/docs/ingestion.md`
 - `backend/pyproject.toml`
+
+# Phase 6 files
+
+Created:
+
+- `backend/alembic/versions/0002_maintenance_window_index.py`
+- `backend/app/api/v1/alerts_read.py`
+- `backend/app/api/v1/history.py`
+- `backend/app/api/v1/latest.py`
+- `backend/app/api/v1/maintenance_read.py`
+- `backend/app/api/v1/query_dependencies.py`
+- `backend/app/api/v1/read_examples.py`
+- `backend/app/api/v1/transformers.py`
+- `backend/app/repositories/alert_repo.py`
+- `backend/app/repositories/maintenance_repo.py`
+- `backend/app/repositories/query_helpers.py`
+- `backend/app/schemas/query.py`
+- `backend/app/services/demo_mode.py`
+- `backend/app/services/query_service.py`
+- `backend/app/services/trend_service.py`
+- `backend/docs/phase6-acceptance.md`
+- `backend/docs/read-api-notes.md`
+- `backend/tests/read_api/__init__.py`
+- `backend/tests/read_api/conftest.py`
+- `backend/tests/read_api/test_alerts_read.py`
+- `backend/tests/read_api/test_contract.py`
+- `backend/tests/read_api/test_demo_mode.py`
+- `backend/tests/read_api/test_history.py`
+- `backend/tests/read_api/test_index.py`
+- `backend/tests/read_api/test_latest.py`
+- `backend/tests/read_api/test_maintenance_read.py`
+- `backend/tests/read_api/test_scenarios.py`
+- `backend/tests/read_api/test_transformers.py`
+- `backend/tests/read_api/test_trends.py`
+
+Changed:
+
+- `backend/.env.example`
+- `backend/README.md`
+- `backend/app/api/v1/router.py`
+- `backend/app/core/config.py`
+- `backend/app/models/maintenance_record.py`
+- `backend/app/repositories/analytics_repo.py`
+- `backend/app/repositories/telemetry_repo.py`
+- `backend/app/repositories/transformer_repo.py`
+- `backend/app/schemas/state.py`
+- `backend/docs/FILES.md`
+- `backend/pyproject.toml`
+- `backend/tests/test_schema_orm.py`

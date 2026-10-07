@@ -95,12 +95,14 @@ def test_every_out_model_converts_postgres_orm_and_latest_state(db: Session) -> 
     assert dumped["telemetry"]["timestamp"] == "2026-10-06T00:00:00Z"
     assert dumped["analytics"]["health_index"] is None
     assert dumped["transformer"]["rated_power_kva"] is None
+    assert dumped["data_source"] == {"source_name": None, "scenario_id": None}
     assert set(dumped) == {
         "transformer",
         "telemetry",
         "analytics",
         "open_alerts_count",
         "demo_mode",
+        "data_source",
         "schema_version",
         "feature_version",
         "model_version",
