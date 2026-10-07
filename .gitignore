@@ -1,0 +1,17 @@
+# Raw and processed data (do not push heavy datasets to GitHub)
+data/
+
+# Python compiled files and caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.venv/
+env/
+venv/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# VS Code local workspace settings
+.vscode/
