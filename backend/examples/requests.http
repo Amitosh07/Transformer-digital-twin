@@ -1,0 +1,252 @@
+# VS Code REST Client / JetBrains HTTP client. Execute requests individually.
+# Write examples use TX-HTTP; set asset=TX-HTTP to inspect them. Reads default to seeded TX-001.
+# Set IDs from actual alert/maintenance/replay responses. Resolved alerts cannot be acknowledged.
+# Reset is destructive across all assets: disabled by default, requires configured admin token.
+@baseUrl = http://127.0.0.1:8001
+@asset = TX-001
+@alertId = 1
+@maintenanceId = 1
+@runId = 1
+@adminToken = {{$processEnv DEMO_ADMIN_TOKEN}}
+
+### GET /health
+# GET /health
+GET {{baseUrl}}/health
+X-Request-ID: http-demo-example
+
+### GET /health/ready
+# GET /health/ready
+GET {{baseUrl}}/health/ready
+X-Request-ID: http-demo-example
+
+### GET /api/v1/transformers
+# GET /api/v1/transformers
+GET {{baseUrl}}/api/v1/transformers?limit=500&offset=0
+X-Request-ID: http-demo-example
+
+### POST /api/v1/transformers
+# POST /api/v1/transformers
+POST {{baseUrl}}/api/v1/transformers
+X-Request-ID: http-demo-example
+Content-Type: application/json
+
+{
+  "id": "TX-HTTP",
+  "name": "HTTP examples asset"
+}
+
+### GET /api/v1/transformers/{id}
+# GET /api/v1/transformers/{id}
+GET {{baseUrl}}/api/v1/transformers/{{asset}}
+X-Request-ID: http-demo-example
+
+### PATCH /api/v1/transformers/{id}
+# PATCH /api/v1/transformers/{id}
+PATCH {{baseUrl}}/api/v1/transformers/{{asset}}
+X-Request-ID: http-demo-example
+Content-Type: application/json
+
+{
+  "name": "Configured demo transformer",
+  "rated_power_kva": null
+}
+
+### POST /api/v1/telemetry
+# POST /api/v1/telemetry
+POST {{baseUrl}}/api/v1/telemetry?run_ml=true
+X-Request-ID: http-demo-example
+Content-Type: application/json
+
+{
+  "transformer_id": "TX-HTTP",
+  "timestamp": "2026-01-01T00:00:00Z",
+  "phase_voltage_l1": 229.891219,
+  "phase_voltage_l2": 229.990258,
+  "phase_voltage_l3": 229.620153,
+  "current_l1": 85.024504,
+  "current_l2": 84.998033,
+  "current_l3": 85.260225,
+  "neutral_current": 0.262192,
+  "oil_temperature": 42.0,
+  "winding_temperature": 45.0,
+  "ambient_temperature": 22.0,
+  "oil_level": 8.0,
+  "oil_temp_alarm": 0,
+  "oil_temp_trip": 0,
+  "magnetic_oil_gauge_alarm": 0,
+  "active_power_total": 55.738944,
+  "apparent_power_total": 58.672572,
+  "reactive_power_total": 18.320505,
+  "energy_kwh": 0.464491,
+  "power_factor_l1": 0.95,
+  "power_factor_l2": 0.95,
+  "power_factor_l3": 0.95,
+  "source_name": "seed",
+  "scenario_id": "SCN_HEALTHY"
+}
+
+### POST /api/v1/telemetry/batch
+# POST /api/v1/telemetry/batch
+POST {{baseUrl}}/api/v1/telemetry/batch?run_ml=true&source_name=seed
+X-Request-ID: http-demo-example
+Content-Type: application/json
+
+{
+  "records": [
+    {
+      "transformer_id": "TX-HTTP",
+      "timestamp": "2026-01-01T00:00:00Z",
+      "phase_voltage_l1": 229.891219,
+      "phase_voltage_l2": 229.990258,
+      "phase_voltage_l3": 229.620153,
+      "current_l1": 85.024504,
+      "current_l2": 84.998033,
+      "current_l3": 85.260225,
+      "neutral_current": 0.262192,
+      "oil_temperature": 42.0,
+      "winding_temperature": 45.0,
+      "ambient_temperature": 22.0,
+      "oil_level": 8.0,
+      "oil_temp_alarm": 0,
+      "oil_temp_trip": 0,
+      "magnetic_oil_gauge_alarm": 0,
+      "active_power_total": 55.738944,
+      "apparent_power_total": 58.672572,
+      "reactive_power_total": 18.320505,
+      "energy_kwh": 0.464491,
+      "power_factor_l1": 0.95,
+      "power_factor_l2": 0.95,
+      "power_factor_l3": 0.95,
+      "source_name": "seed",
+      "scenario_id": "SCN_HEALTHY"
+    }
+  ]
+}
+
+### GET /api/v1/transformers/{id}/latest
+# GET /api/v1/transformers/{id}/latest
+GET {{baseUrl}}/api/v1/transformers/{{asset}}/latest
+X-Request-ID: http-demo-example
+
+### GET /api/v1/transformers/{id}/telemetry
+# GET /api/v1/transformers/{id}/telemetry
+GET {{baseUrl}}/api/v1/transformers/{{asset}}/telemetry?anchor=latest&limit=500&offset=0&order=asc
+X-Request-ID: http-demo-example
+
+### GET /api/v1/transformers/{id}/health
+# GET /api/v1/transformers/{id}/health
+GET {{baseUrl}}/api/v1/transformers/{{asset}}/health?anchor=latest&limit=500&offset=0&order=asc
+X-Request-ID: http-demo-example
+
+### GET /api/v1/transformers/{id}/analytics
+# GET /api/v1/transformers/{id}/analytics
+GET {{baseUrl}}/api/v1/transformers/{{asset}}/analytics?anchor=latest&limit=500&offset=0&order=asc
+X-Request-ID: http-demo-example
+
+### GET /api/v1/transformers/{id}/trends
+# GET /api/v1/transformers/{id}/trends
+GET {{baseUrl}}/api/v1/transformers/{{asset}}/trends?anchor=latest&window=24h&signals=oil_temperature,current_l1,health_index,fault_risk
+X-Request-ID: http-demo-example
+
+### GET /api/v1/transformers/{id}/alerts
+# GET /api/v1/transformers/{id}/alerts
+GET {{baseUrl}}/api/v1/transformers/{{asset}}/alerts?anchor=latest&limit=500&offset=0
+X-Request-ID: http-demo-example
+
+### GET /api/v1/transformers/{id}/maintenance
+# GET /api/v1/transformers/{id}/maintenance
+GET {{baseUrl}}/api/v1/transformers/{{asset}}/maintenance?anchor=latest&limit=500&offset=0
+X-Request-ID: http-demo-example
+
+### GET /api/v1/scenarios
+# GET /api/v1/scenarios
+GET {{baseUrl}}/api/v1/scenarios?limit=500&offset=0
+X-Request-ID: http-demo-example
+
+### GET /api/v1/ingest/mqtt/status
+# GET /api/v1/ingest/mqtt/status
+GET {{baseUrl}}/api/v1/ingest/mqtt/status
+X-Request-ID: http-demo-example
+
+### GET /api/v1/alerts/{id}
+# GET /api/v1/alerts/{id}
+GET {{baseUrl}}/api/v1/alerts/{{alertId}}
+X-Request-ID: http-demo-example
+
+### PATCH /api/v1/alerts/{id}/acknowledge
+# PATCH /api/v1/alerts/{id}/acknowledge
+PATCH {{baseUrl}}/api/v1/alerts/{{alertId}}/acknowledge
+X-Request-ID: http-demo-example
+
+### PATCH /api/v1/alerts/{id}/resolve
+# PATCH /api/v1/alerts/{id}/resolve
+PATCH {{baseUrl}}/api/v1/alerts/{{alertId}}/resolve
+X-Request-ID: http-demo-example
+
+### GET /api/v1/maintenance/{id}
+# GET /api/v1/maintenance/{id}
+GET {{baseUrl}}/api/v1/maintenance/{{maintenanceId}}
+X-Request-ID: http-demo-example
+
+### PATCH /api/v1/maintenance/{id}
+# PATCH /api/v1/maintenance/{id}
+PATCH {{baseUrl}}/api/v1/maintenance/{{maintenanceId}}
+X-Request-ID: http-demo-example
+Content-Type: application/json
+
+{
+  "status": "DONE"
+}
+
+### POST /api/v1/simulate/replay
+# POST /api/v1/simulate/replay
+POST {{baseUrl}}/api/v1/simulate/replay
+X-Request-ID: http-demo-example
+Content-Type: application/json
+
+{
+  "transformer_id": "TX-HTTP",
+  "source_name": "replay-example",
+  "records": [
+    {
+      "transformer_id": "TX-HTTP",
+      "timestamp": "2026-01-01T00:00:00Z",
+      "phase_voltage_l1": 229.891219,
+      "phase_voltage_l2": 229.990258,
+      "phase_voltage_l3": 229.620153,
+      "current_l1": 85.024504,
+      "current_l2": 84.998033,
+      "current_l3": 85.260225,
+      "neutral_current": 0.262192,
+      "oil_temperature": 42.0,
+      "winding_temperature": 45.0,
+      "ambient_temperature": 22.0,
+      "oil_level": 8.0,
+      "oil_temp_alarm": 0,
+      "oil_temp_trip": 0,
+      "magnetic_oil_gauge_alarm": 0,
+      "active_power_total": 55.738944,
+      "apparent_power_total": 58.672572,
+      "reactive_power_total": 18.320505,
+      "energy_kwh": 0.464491,
+      "power_factor_l1": 0.95,
+      "power_factor_l2": 0.95,
+      "power_factor_l3": 0.95,
+      "source_name": "seed",
+      "scenario_id": "SCN_HEALTHY"
+    }
+  ],
+  "speed_multiplier": 0,
+  "run_ml": true
+}
+
+### GET /api/v1/simulate/replay/{run_id}
+# GET /api/v1/simulate/replay/{run_id}
+GET {{baseUrl}}/api/v1/simulate/replay/{{runId}}
+X-Request-ID: http-demo-example
+
+### POST /api/v1/admin/demo/reset
+# POST /api/v1/admin/demo/reset
+POST {{baseUrl}}/api/v1/admin/demo/reset?include_transformers=false
+X-Request-ID: http-demo-example
+X-Admin-Token: {{adminToken}}
