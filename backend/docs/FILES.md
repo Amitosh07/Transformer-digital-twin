@@ -227,3 +227,42 @@ Changed:
 - `backend/docs/FILES.md`
 - `backend/pyproject.toml`
 - `backend/tests/test_schema_orm.py`
+
+# Phase 7 files
+
+Created:
+
+- `backend/alembic/versions/0003_alert_lifecycle.py`
+- `backend/app/api/v1/alerts_write.py`
+- `backend/app/services/alert_service.py`
+- `backend/app/services/maintenance_service.py`
+- `backend/docs/alerts.md`
+- `backend/docs/phase7-acceptance.md`
+- `backend/tests/alerts/__init__.py`
+- `backend/tests/alerts/conftest.py`
+- `backend/tests/alerts/test_concurrency.py`
+- `backend/tests/alerts/test_contract.py`
+- `backend/tests/alerts/test_endpoints.py`
+- `backend/tests/alerts/test_lifecycle.py`
+- `backend/tests/alerts/test_rules.py`
+- `backend/tests/alerts/test_scenario.py`
+
+Changed:
+
+- `backend/.env.example`
+- `backend/README.md`
+- `backend/app/api/v1/read_examples.py`
+- `backend/app/api/v1/router.py`
+- `backend/app/core/config.py`
+- `backend/app/models/alert.py`
+- `backend/app/repositories/alert_repo.py`
+- `backend/app/repositories/maintenance_repo.py`
+- `backend/app/repositories/transformer_repo.py`
+- `backend/app/schemas/alert.py`
+- `backend/app/schemas/maintenance.py`
+- `backend/app/services/hooks.py`
+- `backend/app/services/ingestion_service.py`
+- `backend/docs/FILES.md`
+- `backend/docs/ingestion.md`
+- `backend/docs/read-api-notes.md`
+- `backend/tests/read_api/conftest.py`

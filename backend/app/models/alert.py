@@ -7,6 +7,7 @@ from sqlalchemy import (
     DateTime,
     ForeignKey,
     Index,
+    Integer,
     String,
     Text,
     func,
@@ -37,9 +38,18 @@ class Alert(Base):
         DateTime(timezone=True), server_default=func.now()
     )
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
+    clear_count: Mapped[int] = mapped_column(Integer, server_default=text("0"))
+    resolved_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
     acknowledged_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
 
     __table_args__ = (
+        Index(
+            "uq_alerts_active_transformer_type",
+            transformer_id,
+            alert_type,
+            unique=True,
+            postgresql_where=status.in_(["OPEN", "ACKNOWLEDGED"]),
+        ),
         CheckConstraint("severity IN ('INFO', 'WARNING', 'CRITICAL')", name="severity"),
         CheckConstraint("status IN ('OPEN', 'ACKNOWLEDGED', 'RESOLVED')", name="status"),
         Index("ix_alerts_transformer_timestamp_desc", transformer_id, timestamp.desc()),

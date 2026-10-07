@@ -22,4 +22,5 @@ class AlertOut(CanonicalModel):
     status: Literal["OPEN", "ACKNOWLEDGED", "RESOLVED"]
     last_seen_at: UtcDatetime
     created_at: UtcDatetime
+    resolved_at: UtcDatetime | None = None
     acknowledged_at: UtcDatetime | None = None

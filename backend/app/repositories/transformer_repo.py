@@ -50,3 +50,12 @@ def patch(session: Session, row: Transformer, changes: dict[str, Any]) -> Transf
     session.flush()
     session.refresh(row)
     return row
+
+
+def lock_for_ingestion(session: Session, transformer_id: str) -> None:
+    # NO KEY UPDATE serializes writers while remaining compatible with FK KEY SHARE locks.
+    session.execute(
+        select(Transformer.id)
+        .where(Transformer.id == transformer_id)
+        .with_for_update(key_share=True)
+    ).scalar_one()

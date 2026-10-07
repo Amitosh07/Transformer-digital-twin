@@ -8,6 +8,8 @@ from pydantic import Field, field_validator, model_validator
 from pydantic_settings import BaseSettings, NoDecode, SettingsConfigDict
 from sqlalchemy.engine import make_url
 
+from app.schemas.common import ReasonCode
+
 
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
@@ -24,6 +26,26 @@ class Settings(BaseSettings):
     ml_timeout_seconds: float = Field(default=5.0, gt=0, allow_inf_nan=False)
     ml_max_retries: int = Field(default=2, ge=0)
     max_batch_size: int = Field(default=5000, ge=1)
+    alert_health_warn: float = Field(default=60, ge=0, le=100, allow_inf_nan=False)
+    alert_health_crit: float = Field(default=40, ge=0, le=100, allow_inf_nan=False)
+    alert_anomaly_critical: float = Field(default=0.9, ge=0, le=1, allow_inf_nan=False)
+    alert_fault_risk_warn: float = Field(default=0.5, ge=0, le=1, allow_inf_nan=False)
+    alert_fault_risk_crit: float = Field(default=0.8, ge=0, le=1, allow_inf_nan=False)
+    alert_auto_resolve_after: int = Field(default=5, ge=1)
+    alert_reason_severity: dict[ReasonCode, Literal["INFO", "WARNING", "CRITICAL"]] = Field(
+        default_factory=lambda: dict.fromkeys(
+            [
+                "HIGH_OIL_TEMP",
+                "RAPID_TEMP_RISE",
+                "OVERLOAD",
+                "CURRENT_IMBALANCE",
+                "VOLTAGE_IMBALANCE",
+                "LOW_OIL_LEVEL",
+                "ANOMALOUS_PATTERN",
+            ],
+            "WARNING",
+        )
+    )
     default_window_hours: int = Field(default=24, ge=1)
     max_window_days: int = Field(default=31, ge=1)
     max_page_limit: int = Field(default=5000, ge=1)
@@ -56,6 +78,10 @@ class Settings(BaseSettings):
 
     @model_validator(mode="after")
     def mqtt_configuration(self) -> "Settings":
+        if self.alert_health_crit > self.alert_health_warn:
+            raise ValueError("ALERT_HEALTH_CRIT must be <= ALERT_HEALTH_WARN")
+        if self.alert_fault_risk_crit < self.alert_fault_risk_warn:
+            raise ValueError("ALERT_FAULT_RISK_CRIT must be >= ALERT_FAULT_RISK_WARN")
         if self.default_window_hours > self.max_window_days * 24:
             raise ValueError("DEFAULT_WINDOW_HOURS exceeds MAX_WINDOW_DAYS")
         if self.mqtt_reconnect_max_s < self.mqtt_reconnect_min_s:

@@ -1,6 +1,7 @@
 from collections.abc import Iterator
 from datetime import UTC, datetime, timedelta
 from typing import Any
+from unittest.mock import patch
 from uuid import uuid4
 
 import pytest
@@ -49,21 +50,23 @@ def read_client(db: Session) -> Iterator[TestClient]:
 @pytest.fixture
 def seeded(db: Session) -> dict[str, Any]:
     assets = [f"TX-read-{uuid4().hex[:10]}" for _ in range(2)]
-    for asset in assets:
-        for index in range(4):
-            record = TelemetryIn(
-                transformer_id=asset,
-                timestamp=BASE + timedelta(seconds=index * 10),
-                oil_temperature=40 + index * 2 if index < 3 else None,
-                oil_level=8 if index < 3 else None,
-                oil_temp_alarm=int(index == 1),
-                oil_temp_trip=int(index == 2),
-                magnetic_oil_gauge_alarm=0,
-                current_l1=0,
-                source_name="replay-public-data" if asset == assets[0] else "plant-sensor",
-                scenario_id="read-scenario" if asset == assets[0] else None,
-            )
-            ingest_record(db, record, _commit=False)
+    # Query fixtures seed lifecycle rows; generation is tested in tests/alerts.
+    with patch("app.services.hooks.evaluate_alerts"):
+        for asset in assets:
+            for index in range(4):
+                record = TelemetryIn(
+                    transformer_id=asset,
+                    timestamp=BASE + timedelta(seconds=index * 10),
+                    oil_temperature=40 + index * 2 if index < 3 else None,
+                    oil_level=8 if index < 3 else None,
+                    oil_temp_alarm=int(index == 1),
+                    oil_temp_trip=int(index == 2),
+                    magnetic_oil_gauge_alarm=0,
+                    current_l1=0,
+                    source_name="replay-public-data" if asset == assets[0] else "plant-sensor",
+                    scenario_id="read-scenario" if asset == assets[0] else None,
+                )
+                ingest_record(db, record, _commit=False)
     for index, (severity, status) in enumerate(
         [("WARNING", "OPEN"), ("CRITICAL", "OPEN"), ("INFO", "RESOLVED")]
     ):
@@ -73,7 +76,7 @@ def seeded(db: Session) -> dict[str, Any]:
                 transformer_id=assets[0],
                 timestamp=stamp,
                 severity=severity,
-                alert_type="PROTECTION",
+                alert_type=f"FIXTURE_{severity}",
                 trigger="oil_temp_alarm",
                 evidence={"oil_temp_alarm": 1},
                 threshold_or_reason="OIL_TEMP_ALARM",

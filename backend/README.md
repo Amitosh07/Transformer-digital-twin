@@ -1,4 +1,4 @@
-# Backend Phases 1 through 6
+# Backend Phases 1 through 7
 
 FastAPI + synchronous SQLAlchemy 2.0/psycopg 3 + PostgreSQL 16.
 All project changes are under `backend/` on `feature/backend-api`.
@@ -41,7 +41,8 @@ The health endpoint checks database connectivity with `SELECT 1`. It returns HTT
 with `status: "degraded"` and `db: "error"` if the database is unavailable. It does not
 assert that all migrations are applied. Errors elsewhere use
 `{"error":{"code":"...","message":"...","details":null}}`.
-OpenAPI is available at `/docs`. The `/api/v1` router is ready for Phase 2.
+OpenAPI is available at `/docs`. The `/api/v1` router serves ingestion, dashboard reads
+and alert/maintenance lifecycle endpoints.
 Canonical telemetry, ML results, transformer configuration, alert, maintenance, pagination,
 error and latest-state schemas are defined. The ingestion routes use these contracts and the configured
 ML adapter.
@@ -169,3 +170,13 @@ Migration 0002 adds the missing maintenance transformer/timestamp index; run
 Phase 6 verification: 557 tests passed with no skips against real PostgreSQL and
 Mosquitto; Ruff, formatting, migration round-trip/check and the natural 20,000-row
 index plan passed. See docs/phase6-acceptance.md for the detailed results.
+
+## Phase 7 alerts and maintenance
+
+Ingestion now evaluates protection and ML alert candidates, refreshes active alerts,
+escalates severity and resolves them after configurable clear records. PLAN/URGENT analytics
+persist deduplicated maintenance records. Lifecycle endpoints support acknowledgement,
+resolution, completion and dismissal with the shared error envelope. Apply migration 0003
+with `alembic upgrade head` before running this version. See [docs/alerts.md](docs/alerts.md)
+for rules, JSON severity configuration, concurrency ordering, endpoints and examples, and
+[docs/phase7-acceptance.md](docs/phase7-acceptance.md) for verification results.

@@ -17,3 +17,7 @@ class MaintenanceOut(CanonicalModel):
     reason_codes: list[ReasonCode]
     status: Literal["OPEN", "DONE", "DISMISSED"]
     created_at: UtcDatetime
+
+
+class MaintenancePatch(CanonicalModel):
+    status: Literal["DONE", "DISMISSED"]

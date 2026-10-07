@@ -67,6 +67,7 @@ def ingest_record(
         transformer = _transformer or TransformerOut.model_validate(
             transformer_repo.ensure_transformer(session, record.transformer_id),
         )
+        transformer_repo.lock_for_ingestion(session, record.transformer_id)
         missing = compute_is_missing_critical(record)
         telemetry, duplicate = telemetry_repo.insert_telemetry(
             session,

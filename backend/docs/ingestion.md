@@ -157,3 +157,11 @@ TEST_DATABASE_URL must point to real PostgreSQL with a CREATEDB account. The ben
 prints elapsed times and both summaries. Tests cover live/duplicate ingestion, quality,
 null preservation, query counts, chunk failure handling, ML/hook isolation, replay,
 concurrent overlap, shutdown and all prior phases.
+
+## Phase 7 hook and writer ordering
+
+The hook now generates alerts and persists maintenance records; see [alerts.md](alerts.md).
+It still runs in the same savepoint without committing, and duplicates still bypass it.
+Ingestion locks the transformer FOR NO KEY UPDATE before inserting telemetry so concurrent
+overlapping batches serialize without conflicting child/FK lock upgrades. Lifecycle
+endpoints follow the same parent-before-child order. There is still one telemetry write path.

@@ -59,13 +59,17 @@ ALERT = {
     "transformer_id": "TX-001",
     "timestamp": TIME,
     "severity": "WARNING",
-    "alert_type": "PROTECTION",
+    "alert_type": "OIL_TEMP_ALARM",
     "trigger": "oil_temp_alarm",
     "evidence": {"oil_temp_alarm": 1},
     "threshold_or_reason": "OIL_TEMP_ALARM",
     "recommended_action": "Inspect indication",
     "status": "OPEN",
     "last_seen_at": TIME,
+    "resolved_at": None,
+    "acknowledged_at": None,
+    "telemetry_id": 1,
+    "analytics_id": 1,
     "created_at": TIME,
 }
 MAINTENANCE = {

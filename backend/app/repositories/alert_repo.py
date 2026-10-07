@@ -1,8 +1,10 @@
-"""Indexed, read-only alert queries."""
+"""Indexed alert queries and transactional lifecycle persistence."""
 
 from datetime import datetime
+from typing import Any
 
 from sqlalchemy import func, select
+from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.orm import Session
 
 from app.models.alert import Alert
@@ -36,3 +38,49 @@ def read_window(
     if status is not None:
         statement = statement.where(Alert.status == status)
     return page_rows(session, statement, Alert, limit, offset)
+
+
+def get(session: Session, alert_id: int, *, lock: bool = False) -> Alert | None:
+    statement = select(Alert).where(Alert.id == alert_id)
+    if lock:
+        statement = statement.with_for_update().execution_options(populate_existing=True)
+    return session.scalar(statement)
+
+
+def active(session: Session, asset: str) -> list[Alert]:
+    return list(
+        session.scalars(
+            select(Alert)
+            .where(Alert.transformer_id == asset, Alert.status.in_(["OPEN", "ACKNOWLEDGED"]))
+            .order_by(Alert.alert_type, Alert.id)
+            .with_for_update()
+            .execution_options(populate_existing=True)
+        )
+    )
+
+
+def insert_active(session: Session, values: dict[str, Any]) -> Alert:
+    row = session.scalar(
+        insert(Alert)
+        .values(**values)
+        .on_conflict_do_nothing(
+            index_elements=[Alert.transformer_id, Alert.alert_type],
+            index_where=Alert.status.in_(["OPEN", "ACKNOWLEDGED"]),
+        )
+        .returning(Alert)
+    )
+    if row is not None:
+        return row
+    row = session.scalar(
+        select(Alert)
+        .where(
+            Alert.transformer_id == values["transformer_id"],
+            Alert.alert_type == values["alert_type"],
+            Alert.status.in_(["OPEN", "ACKNOWLEDGED"]),
+        )
+        .with_for_update()
+        .execution_options(populate_existing=True)
+    )
+    if row is None:
+        raise RuntimeError("Active alert conflict lookup failed")
+    return row
