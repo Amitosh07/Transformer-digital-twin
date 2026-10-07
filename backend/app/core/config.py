@@ -3,7 +3,7 @@
 from functools import lru_cache
 from typing import Literal
 
-from pydantic import Field, field_validator
+from pydantic import Field, field_validator, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 from sqlalchemy.engine import make_url
 
@@ -27,7 +27,29 @@ class Settings(BaseSettings):
     mqtt_enabled: bool = False
     mqtt_host: str = "localhost"
     mqtt_port: int = Field(default=1883, ge=1, le=65535)
-    mqtt_topic: str = "transformers/telemetry"
+    mqtt_username: str | None = None
+    mqtt_password: str | None = None
+    mqtt_client_id: str = Field(default="transformer-backend", min_length=1)
+    mqtt_topic: str = Field(default="transformer/+/telemetry", min_length=1)
+    mqtt_qos: int = Field(default=1, ge=0, le=2)
+    mqtt_queue_max: int = Field(default=10000, ge=1)
+    mqtt_source_name: str = Field(default="mqtt", min_length=1, max_length=255)
+    mqtt_reconnect_min_s: int = Field(default=1, ge=1)
+    mqtt_reconnect_max_s: int = Field(default=30, ge=1)
+
+    @model_validator(mode="after")
+    def mqtt_configuration(self) -> "Settings":
+        if self.mqtt_reconnect_max_s < self.mqtt_reconnect_min_s:
+            raise ValueError("MQTT_RECONNECT_MAX_S must be >= MQTT_RECONNECT_MIN_S")
+        segments = self.mqtt_topic.split("/")
+        if segments.count("+") > 1:
+            raise ValueError("MQTT_TOPIC permits at most one identity wildcard")
+        for index, segment in enumerate(segments):
+            if ("+" in segment and segment != "+") or (
+                "#" in segment and (segment != "#" or index != len(segments) - 1)
+            ):
+                raise ValueError("MQTT_TOPIC contains an invalid wildcard")
+        return self
 
     @field_validator("database_url")
     @classmethod
@@ -36,7 +58,9 @@ class Settings(BaseSettings):
             raise ValueError("DATABASE_URL must use postgresql+psycopg")
         return value
 
-    @field_validator("ml_http_url", "ml_python_entrypoint", mode="before")
+    @field_validator(
+        "ml_http_url", "ml_python_entrypoint", "mqtt_username", "mqtt_password", mode="before"
+    )
     @classmethod
     def empty_to_none(cls, value: object) -> object:
         return None if value == "" else value

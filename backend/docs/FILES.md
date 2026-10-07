@@ -144,3 +144,37 @@ Changed:
 - `backend/app/ml_client/factory.py`
 - `backend/docs/FILES.md`
 - `backend/docs/ml-integration-notes.md`
+
+# Phase 5 files
+
+Created:
+
+- `backend/app/api/v1/mqtt_status.py`
+- `backend/app/mqtt/__init__.py`
+- `backend/app/mqtt/consumer.py`
+- `backend/app/mqtt/message_handler.py`
+- `backend/app/schemas/mqtt.py`
+- `backend/app/services/mqtt_status_service.py`
+- `backend/docs/mqtt.md`
+- `backend/docs/phase5-acceptance.md`
+- `backend/tests/mqtt/__init__.py`
+- `backend/tests/mqtt/conftest.py`
+- `backend/tests/mqtt/mosquitto.conf`
+- `backend/tests/mqtt/test_broker.py`
+- `backend/tests/mqtt/test_config.py`
+- `backend/tests/mqtt/test_consumer.py`
+- `backend/tests/mqtt/test_lifespan.py`
+- `backend/tests/mqtt/test_message_handler.py`
+- `backend/tests/mqtt/test_mqtt_status.py`
+- `backend/tests/mqtt/test_mqtt_status_service.py`
+
+Changed:
+
+- `backend/.env.example`
+- `backend/README.md`
+- `backend/app/api/v1/router.py`
+- `backend/app/core/config.py`
+- `backend/app/main.py`
+- `backend/docs/FILES.md`
+- `backend/docs/ingestion.md`
+- `backend/pyproject.toml`

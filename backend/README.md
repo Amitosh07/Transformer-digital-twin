@@ -1,4 +1,4 @@
-# Backend Phases 1 through 4
+# Backend Phases 1 through 5
 
 FastAPI + synchronous SQLAlchemy 2.0/psycopg 3 + PostgreSQL 16.
 All project changes are under `backend/` on `feature/backend-api`.
@@ -137,9 +137,21 @@ quality statistics and replay progress. Chunks contain 1000 valid rows; MAX_BATC
 remains 5000 by default. ML and alert-hook failures are isolated.
 
 See `docs/ingestion.md` for endpoint contracts, error classification, history/deque
-semantics, replay behavior and verification commands. MQTT remains a future phase.
+semantics, replay behavior and verification commands. The MQTT transport is described in docs/mqtt.md.
 The app now closes its cached HTTP ML client on shutdown.
 
 Phase 4 verification: 435 tests passed with no skips; Ruff and formatting passed.
 The 10,000-row stub load took 44.977 seconds; its duplicate reload took 30.158 seconds.
 See `docs/phase4-acceptance.md` for every acceptance result and both summaries.
+
+## Phase 5 MQTT
+
+MQTT_ENABLED remains false by default. Enabling it starts a non-blocking paho v2
+consumer with a bounded queue and one ingestion worker. MQTT telemetry uses the
+same ingest_record service, idempotency and ML failure behavior as HTTP/replay.
+GET /api/v1/ingest/mqtt/status exposes connection state, counters and a rejection ring.
+See docs/mqtt.md for simulator payloads, Docker broker setup, publishing and tests.
+
+Phase 5 verification: 486 tests passed with no skips against real PostgreSQL and
+Docker Mosquitto; Ruff and formatting passed. See docs/phase5-acceptance.md for
+acceptance coverage, operational limits and reproduction commands.

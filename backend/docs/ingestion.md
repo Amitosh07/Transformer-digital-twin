@@ -1,8 +1,8 @@
 # Phase 4 ingestion and replay
 
 All telemetry writes go through `app/services/ingestion_service.py::ingest_record`.
-Live HTTP, batch and replay share this service; a later MQTT integration can call it.
-No MQTT transport or database migration was added in this phase.
+Live HTTP, batch, replay and the Phase 5 MQTT consumer share this service.
+See mqtt.md for the MQTT transport contract. No additional migration is required.
 
 ## Live ingestion
 

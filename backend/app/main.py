@@ -3,6 +3,7 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from starlette.concurrency import run_in_threadpool
 
 from app.api.v1.health import router as health_router
 from app.api.v1.router import router as v1_router
@@ -14,10 +15,21 @@ from app.ml_client.factory import close_ml_client
 
 @asynccontextmanager
 async def lifespan(application: FastAPI) -> AsyncIterator[None]:
+    consumer = None
     try:
+        if get_settings().mqtt_enabled:
+            from app.mqtt.consumer import MqttConsumer
+
+            consumer = MqttConsumer()
+            application.state.mqtt_consumer = consumer
+            consumer.start()
         yield
     finally:
-        close_ml_client()
+        try:
+            if consumer is not None:
+                await run_in_threadpool(consumer.stop)
+        finally:
+            close_ml_client()
 
 
 def create_app() -> FastAPI:
