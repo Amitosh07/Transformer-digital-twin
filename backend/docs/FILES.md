@@ -320,3 +320,52 @@ Changed:
 - `backend/docs/alerts.md`
 - `backend/docs/ingestion.md`
 - `backend/pyproject.toml`
+
+
+# Final phase files (Phase 9)
+
+Created:
+
+- `backend/.dockerignore`
+- `backend/.gitattributes`
+- `backend/CHANGELOG.md`
+- `backend/Dockerfile`
+- `backend/app/api/v1/demo_admin.py`
+- `backend/app/repositories/demo_repo.py`
+- `backend/app/schemas/demo.py`
+- `backend/app/services/demo_service.py`
+- `backend/docker-compose.backend.yml`
+- `backend/docker/entrypoint.sh`
+- `backend/docker/mosquitto.conf`
+- `backend/docs/PR_DESCRIPTION.md`
+- `backend/docs/api-notes.md`
+- `backend/docs/api.md`
+- `backend/docs/demo-verification.json`
+- `backend/docs/docker.md`
+- `backend/docs/handoff.md`
+- `backend/docs/known-limitations.md`
+- `backend/docs/phase9-acceptance.md`
+- `backend/docs/samples/api-responses.json`
+- `backend/examples/__init__.py`
+- `backend/examples/client.py`
+- `backend/examples/requests.http`
+- `backend/scripts/__init__.py`
+- `backend/scripts/capture_samples.py`
+- `backend/scripts/demo.ps1`
+- `backend/scripts/reset_demo.py`
+- `backend/scripts/seed_demo.py`
+- `backend/scripts/verify_demo_stack.py`
+- `backend/scripts/wait_for_db.py`
+- `backend/tests/demo/__init__.py`
+- `backend/tests/demo/conftest.py`
+- `backend/tests/demo/test_deliverables.py`
+- `backend/tests/demo/test_reset.py`
+- `backend/tests/demo/test_seed.py`
+
+Changed:
+
+- `backend/.env.example`
+- `backend/README.md`
+- `backend/app/api/v1/router.py`
+- `backend/app/core/config.py`
+- `backend/docs/FILES.md`

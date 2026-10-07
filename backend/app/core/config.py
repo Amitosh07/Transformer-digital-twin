@@ -4,7 +4,7 @@ import json
 from functools import lru_cache
 from typing import Annotated, Literal
 
-from pydantic import Field, field_validator, model_validator
+from pydantic import Field, SecretStr, field_validator, model_validator
 from pydantic_settings import BaseSettings, NoDecode, SettingsConfigDict
 from sqlalchemy.engine import make_url
 
@@ -49,6 +49,8 @@ class Settings(BaseSettings):
     default_window_hours: int = Field(default=24, ge=1)
     max_window_days: int = Field(default=31, ge=1)
     max_page_limit: int = Field(default=5000, ge=1)
+    demo_reset_enabled: bool = False
+    demo_admin_token: SecretStr | None = None
     demo_source_names: str = "simulator,replay,demo,seed,mqtt,mqtt-simulator,analytics-backfill"
     cors_origins: Annotated[list[str], NoDecode] = Field(
         default_factory=lambda: ["http://localhost:8501", "http://127.0.0.1:8501"]

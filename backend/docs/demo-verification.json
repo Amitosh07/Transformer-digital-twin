@@ -1,0 +1,89 @@
+{
+  "determinism": {
+    "counts": {
+      "alerts": 8,
+      "analytics": 2000,
+      "health": 2000,
+      "maintenance": 2,
+      "telemetry": 2000
+    },
+    "health_path": [
+      90,
+      55,
+      25,
+      90
+    ],
+    "insufficient_rows": 10,
+    "maintenance_priorities": [
+      "PLAN",
+      "URGENT"
+    ],
+    "resolved_alerts": 8,
+    "telemetry_values_sha256": "b09074ed9f728758903fef1e08a05bfb26a50a14ef042acfe408f8435c755045"
+  },
+  "dev_dependencies_absent": true,
+  "duplicate_seed": {
+    "alerts": 8,
+    "alerts_created": 0,
+    "analytics": 2000,
+    "duplicate_count": 2000,
+    "health_index_max": 90.0,
+    "health_index_min": 25.0,
+    "inserted_count": 0,
+    "maintenance_created": 0,
+    "maintenance_records": 2,
+    "scenarios": {
+      "SCN_FAULT": 600,
+      "SCN_HEALTHY": 800,
+      "SCN_STRESS": 600
+    },
+    "telemetry": 2000,
+    "telemetry_values_sha256": "b09074ed9f728758903fef1e08a05bfb26a50a14ef042acfe408f8435c755045"
+  },
+  "fresh_stack_health_and_readiness": true,
+  "initial_seed": {
+    "alerts": 8,
+    "alerts_created": 8,
+    "analytics": 2000,
+    "duplicate_count": 0,
+    "health_index_max": 90.0,
+    "health_index_min": 25.0,
+    "inserted_count": 2000,
+    "maintenance_created": 2,
+    "maintenance_records": 2,
+    "scenarios": {
+      "SCN_FAULT": 600,
+      "SCN_HEALTHY": 800,
+      "SCN_STRESS": 600
+    },
+    "telemetry": 2000,
+    "telemetry_values_sha256": "b09074ed9f728758903fef1e08a05bfb26a50a14ef042acfe408f8435c755045"
+  },
+  "mqtt_ingested": true,
+  "reset": {
+    "alerts": 8,
+    "analytics": 2001,
+    "ingestion_runs": 5,
+    "maintenance_records": 2,
+    "telemetry": 2001
+  },
+  "runtime_identity": "uid=10001(backend) gid=10001(backend) groups=10001(backend)",
+  "second_seed": {
+    "alerts": 8,
+    "alerts_created": 8,
+    "analytics": 2000,
+    "duplicate_count": 0,
+    "health_index_max": 90.0,
+    "health_index_min": 25.0,
+    "inserted_count": 2000,
+    "maintenance_created": 2,
+    "maintenance_records": 2,
+    "scenarios": {
+      "SCN_FAULT": 600,
+      "SCN_HEALTHY": 800,
+      "SCN_STRESS": 600
+    },
+    "telemetry": 2000,
+    "telemetry_values_sha256": "b09074ed9f728758903fef1e08a05bfb26a50a14ef042acfe408f8435c755045"
+  }
+}

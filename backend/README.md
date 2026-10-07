@@ -1,51 +1,96 @@
-# Backend Phases 1 through 8
+# Transformer Digital Twin backend
 
 FastAPI + synchronous SQLAlchemy 2.0/psycopg 3 + PostgreSQL 16.
 All project changes are under `backend/` on `feature/backend-api`.
 Read `docs/CONTEXT.md` first when continuing this project.
 
-## Start on Windows / PowerShell
+## Backend setup
 
-From the repository root, with Python 3.11+ and Docker Desktop running:
+Prerequisites: Python 3.11+ (3.12 for Docker), PostgreSQL 16, and PowerShell.
+Docker Desktop/Compose supplies PostgreSQL and persistent Mosquitto for the complete demo.
+All commands below run in backend/. Local development examples use the existing database
+on 55432 and uvicorn on 8002, avoiding the service already using port 8000 on this machine.
 
 ```powershell
 cd C:\Transformer-backend\backend
 python -m venv .venv
 .venv/Scripts/python.exe -m pip install -e ".[dev]"
-docker run --detach --name transformer-backend-phase1-pg --publish 127.0.0.1:55432:5432 --env POSTGRES_USER=transformer --env POSTGRES_PASSWORD=transformer --env POSTGRES_DB=transformer postgres:16
+if (-not (Test-Path -LiteralPath .env)) { Copy-Item .env.example .env }
 $env:DATABASE_URL = "postgresql+psycopg://transformer:transformer@127.0.0.1:55432/transformer"
+$env:ML_BACKEND = "stub"
+$env:MQTT_ENABLED = "false"
+# If the existing dev database container is stopped:
+docker start transformer-backend-phase1-pg
 .venv/Scripts/python.exe -m alembic upgrade head
-.venv/Scripts/python.exe -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
+.venv/Scripts/python.exe scripts/seed_demo.py
+.venv/Scripts/python.exe -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8002
 ```
 
-The container created during acceptance testing already exists. On this workspace,
-use `docker start transformer-backend-phase1-pg` instead of `docker run`.
-Check readiness with `docker exec transformer-backend-phase1-pg pg_isready -U transformer`.
-The Docker test credentials are for local development; configure your own database
-URL for other environments. `.env.example` lists all supported configuration variables.
-Copy it to `.env` if you prefer persistent local configuration; shell variables take precedence.
+On a new machine, use the Compose demo below to provision the database/broker, or create
+a PostgreSQL database/account and set DATABASE_URL appropriately. Do not run migration
+downgrades against retained demo/production data. Shell variables override .env settings;
+copying the example alone does not point a local process at the database's host port.
+No nameplate rating is provided by default. Optional --rated-power-kva, --rated-voltage-hv,
+--rated-voltage-lv, --rated-current-a, --cooling-class and --oil-type configure supplied values.
+--rows defaults 2000; --transformer-id defaults TX-001; --no-ml skips analytics/hooks.
+Seed is idempotent. Seed --reset requires --yes; reset scripts refuse ENV=production.
 
-In a second terminal:
+In another terminal:
 
 ```powershell
-Invoke-RestMethod http://127.0.0.1:8000/health
+Invoke-RestMethod http://127.0.0.1:8002/health
+Invoke-RestMethod http://127.0.0.1:8002/health/ready
+Invoke-RestMethod http://127.0.0.1:8002/api/v1/transformers/TX-001/latest
 ```
 
-Successful response:
+/health is liveness/connectivity and returns 200 even when degraded. /health/ready checks
+startup, database/schema head and ML reachability/importability and returns 503 on failure.
+OpenAPI is at /docs, /redoc and /openapi.json. Errors use the shared error envelope and
+all responses carry X-Request-ID. UTC times, nullable measurements, versions and proxy
+risk wording are covered in [docs/api.md](docs/api.md).
 
-```json
-{"status":"ok","db":"ok","schema_version":"1.0.0"}
+### Complete Docker demo
+
+```powershell
+./scripts/demo.ps1 up
+./scripts/demo.ps1 seed
+Invoke-RestMethod http://127.0.0.1:8001/api/v1/transformers/TX-001/latest
+./scripts/demo.ps1 reset -Yes
+./scripts/demo.ps1 seed
+./scripts/demo.ps1 down
 ```
 
-The health endpoint checks database connectivity with `SELECT 1`. It returns HTTP 200
-with `status: "degraded"` and `db: "error"` if the database is unavailable. It does not
-assert that all migrations are applied. Errors elsewhere use
-`{"error":{"code":"...","message":"...","details":null}}`.
-OpenAPI is available at `/docs`. The `/api/v1` router serves ingestion, dashboard reads
-and alert/maintenance lifecycle endpoints.
-Canonical telemetry, ML results, transformer configuration, alert, maintenance, pagination,
-error and latest-state schemas are defined. The ingestion routes use these contracts and the configured
-ML adapter.
+Default host ports: HTTP 8001, PostgreSQL 55433, MQTT 51885. They coexist with earlier dev
+containers; named volumes retain data across down/up. Set DEMO_HTTP_PORT/DEMO_DB_PORT/
+DEMO_MQTT_PORT in .env to override. The image runs as non-root with runtime dependencies
+only; entrypoint waits for DB and migrates before uvicorn. See [docs/docker.md](docs/docker.md)
+for exact direct Compose/log commands, HTTP seed/reset, MQTT and merging into the team stack.
+
+### Troubleshooting
+
+- PowerShell JSON quoting: native docker/mosquitto arguments can lose JSON quotes. Prefer
+  Invoke-RestMethod with a PowerShell object converted to JSON, or pipe a JSON file to
+  `docker compose ... exec -T mqtt mosquitto_pub ... -s`. Python paho publishing also avoids
+  shell quoting. A valid small HTTP example:
+
+```powershell
+$demoPayload = @{ transformer_id='TX-HTTP'; timestamp='2026-01-01T00:00:00Z'; oil_temperature=42; oil_level=8; source_name='simulator'; scenario_id='SCN_HEALTHY' }
+Invoke-RestMethod -Method Post -Uri http://127.0.0.1:8002/api/v1/telemetry -ContentType 'application/json' -Body ($demoPayload | ConvertTo-Json -Compress)
+```
+
+- Stale-server 404: check the base URL, process and /openapi.json; the process on port 8000
+  may be a different service or an older backend. Restart uvicorn from backend/ or rebuild
+  and recreate the Compose backend. Demo reset 404 is expected while disabled.
+- Empty historical charts: request anchor=latest or explicit aware UTC from/to. The seed
+  uses fixed January 2026 timestamps, so anchor=now can return no rows.
+- Database/readiness failure: check DATABASE_URL, pg_isready, alembic current/upgrade head,
+  and container logs. /health 200 alone does not confirm migrations are applied.
+- MQTT absent: check /api/v1/ingest/mqtt/status, enabled flag, host/port/topic, unique client
+  IDs and broker health. Acknowledgement is not database commit; monitor errors/drops.
+- API reset 403: set DEMO_RESET_ENABLED=true, non-empty DEMO_ADMIN_TOKEN, send matching
+  X-Admin-Token, and use a non-production environment. CLI still requires --yes.
+- Need a fresh seed: pause publishers/replays, run scripts/reset_demo.py --yes (optionally
+  --include-transformers), then seed again. Reset is global and does not clear MQTT counters.
 
 ## Verify
 
@@ -53,11 +98,18 @@ ML adapter.
 cd C:\Transformer-backend\backend
 $env:DATABASE_URL = "postgresql+psycopg://transformer:transformer@127.0.0.1:55432/transformer"
 $env:TEST_DATABASE_URL = $env:DATABASE_URL
+$env:MQTT_TEST_HOST = "127.0.0.1"
+$env:MQTT_TEST_PORT = "51883"
 .venv/Scripts/python.exe -m ruff check .
 .venv/Scripts/python.exe -m ruff format --check .
 .venv/Scripts/python.exe -m pytest -q
 .venv/Scripts/python.exe -m alembic check
 ```
+
+For a new machine using the running demo Compose stack, set DATABASE_URL/TEST_DATABASE_URL
+to postgresql+psycopg://transformer:transformer@127.0.0.1:55433/transformer and
+MQTT_TEST_PORT=51885 instead. The earlier dev setup uses 55432/51883. The offline-broker
+regression reserves 51884, so keep it unused during tests.
 
 Integration fixtures create a uniquely named disposable database and drop it afterward;
 the test account needs CREATEDB. Unit tests still run without `TEST_DATABASE_URL`, but
@@ -193,3 +245,13 @@ GET `/health/ready` checks startup, database/schema and the configured ML integr
 [docs/hardening.md](docs/hardening.md) for readiness semantics, error correlation,
 OpenAPI snapshot regeneration, source/wording guards and per-package coverage checks.
 The Phase 8 acceptance results are in [docs/phase8-acceptance.md](docs/phase8-acceptance.md).
+
+## Final demo and handoff phase
+
+Deterministic seed/reset scripts, Docker packaging, real captured examples and team handoff
+are complete. See [docs/handoff.md](docs/handoff.md), [docs/known-limitations.md](docs/known-limitations.md),
+[examples/client.py](examples/client.py), [examples/requests.http](examples/requests.http) and
+[docs/phase9-acceptance.md](docs/phase9-acceptance.md). No canonical schema, migrations,
+ingestion, alert rules or ML behavior changed. The optional demo reset is disabled by
+default and refuses production. The earlier snapshot remains intact, allowing the new
+admin endpoint as an additive API change.
