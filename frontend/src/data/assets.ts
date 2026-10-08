@@ -1,0 +1,80 @@
+import { TransformerAsset, FaultScenarioConfig } from '../types';
+
+export const TRANSFORMER_ASSETS: TransformerAsset[] = [
+  {
+    id: 'TX-104',
+    name: 'North Grid Primary Substation',
+    substation: 'DISCOM Feeder Substation 33/11kV',
+    ratedPowerKva: 20000,
+    voltageHvKv: 33,
+    voltageLvKv: 11,
+    ratedCurrentA: 350,
+    coolingClass: 'ONAF (Oil Natural Air Forced)',
+    oilType: 'Mineral Insulating Oil (IEC 60296)',
+  },
+  {
+    id: 'TX-082',
+    name: 'Sector 7 Industrial Feeder',
+    substation: 'Urban Distribution Substation 11/0.415kV',
+    ratedPowerKva: 1000,
+    voltageHvKv: 11,
+    voltageLvKv: 0.415,
+    ratedCurrentA: 1391,
+    coolingClass: 'ONAN (Oil Natural Air Natural)',
+    oilType: 'Synthetic Ester Oil',
+  },
+  {
+    id: 'TX-219',
+    name: 'Metro Line Power Step-Down',
+    substation: 'Traction Substation 33/0.433kV',
+    ratedPowerKva: 2500,
+    voltageHvKv: 33,
+    voltageLvKv: 0.433,
+    ratedCurrentA: 3333,
+    coolingClass: 'ONAF (Oil Natural Air Forced)',
+    oilType: 'Inhibited Mineral Oil',
+  },
+];
+
+export const FAULT_SCENARIOS: FaultScenarioConfig[] = [
+  {
+    id: 'NOMINAL',
+    title: 'Nominal Baseline',
+    badge: 'OPTIMAL',
+    severity: 'OPTIMAL',
+    description: 'Standard grid load profile with balanced 3-phase currents and steady thermal equilibrium.',
+    expectedOutcome: 'Health Index 94+, zero anomalies, thermal residual within +/-1.2°C, NORMAL maintenance.',
+  },
+  {
+    id: 'OVERLOAD',
+    title: 'Severe Grid Overload',
+    badge: '138% LOAD',
+    severity: 'WARNING',
+    description: 'Surge in downstream power demand exceeding transformer continuous nameplate rating.',
+    expectedOutcome: 'High apparent power utilization, thermal buildup, WATCH priority issued.',
+  },
+  {
+    id: 'THERMAL_STRESS',
+    title: 'Cooling Radiator Failure',
+    badge: 'RAPID ΔT RISE',
+    severity: 'CRITICAL',
+    description: 'Cooling fans fail or radiator oil circulation is choked; heat cannot dissipate into ambient air.',
+    expectedOutcome: 'Surging thermal residual (Observed >> Model), anomaly score 0.88, URGENT maintenance recommendation.',
+  },
+  {
+    id: 'CURRENT_IMBALANCE',
+    title: 'Phase Asymmetry & Neutral Surge',
+    badge: '34% IMBALANCE',
+    severity: 'ALERT',
+    description: 'Single-phase heavy loading creates severe phase imbalance and dangerous neutral current heating.',
+    expectedOutcome: 'Neutral current spikes to 142A, electrical health drops, PLAN priority for phase balancing.',
+  },
+  {
+    id: 'LOW_OIL',
+    title: 'Oil Leakage & MOG Alarm',
+    badge: 'LOW OIL LEVEL',
+    severity: 'CRITICAL',
+    description: 'Gasket breach causing oil level decline below minimum permissible conservator tank mark.',
+    expectedOutcome: 'Magnetic Oil Gauge (MOG) alarm trips, oil sub-score collapses, URGENT oil refill inspection.',
+  },
+];
