@@ -12,9 +12,9 @@ interface TimeSeriesPoint {
 
 interface ThermalResidualChartProps {
   data: TimeSeriesPoint[];
-  currentResidual: number;
-  currentObserved: number;
-  currentModel: number;
+  currentResidual: number | null;
+  currentObserved: number | null;
+  currentModel: number | null;
 }
 
 export const ThermalResidualChart: React.FC<ThermalResidualChartProps> = ({
@@ -233,20 +233,26 @@ export const ThermalResidualChart: React.FC<ThermalResidualChartProps> = ({
           <div className="flex items-center gap-1.5">
             <span className="w-3 h-0.5 bg-amber-500 rounded"></span>
             <span className="text-slate-400">
-              Observed SCADA (T<sub>obs</sub>): <strong className="text-slate-200">{currentObserved}°C</strong>
+              Observed SCADA (T<sub>obs</sub>):{' '}
+              <strong className="text-slate-200">
+                {currentObserved !== null && currentObserved !== undefined ? `${currentObserved}°C` : 'N/A'}
+              </strong>
             </span>
           </div>
           <div className="flex items-center gap-1.5">
             <span className="w-3 h-0.5 bg-cyan-400 border-dashed border-t rounded"></span>
             <span className="text-slate-400">
-              Physics Model (T<sub>model</sub>): <strong className="text-slate-200">{currentModel}°C</strong>
+              Physics Model (T<sub>model</sub>):{' '}
+              <strong className="text-slate-200">
+                {currentModel !== null && currentModel !== undefined ? `${currentModel}°C` : 'WARM-UP'}
+              </strong>
             </span>
           </div>
         </div>
 
         <div className="flex items-center gap-1.5 text-[11px] text-slate-400 bg-slate-900/60 px-2.5 py-1 rounded border border-slate-800">
           <Info className="w-3.5 h-3.5 text-cyan-400" />
-          <span>Residual ΔT = T<sub>obs</sub> − T<sub>model</sub> exposes radiator cooling degradation hours before trip alarms.</span>
+          <span>Residual ΔT = T<sub>obs</sub> − T<sub>model</sub> exposes cooling divergence hours before trip alarms.</span>
         </div>
       </div>
     </div>

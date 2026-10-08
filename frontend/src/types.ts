@@ -60,23 +60,24 @@ export interface HealthComponents {
 export interface DigitalTwinAnalytics {
   transformer_id: string;
   timestamp: string;
-  loading_percent: number;
-  thermal_model_temperature: number;
-  thermal_residual: number;
-  thermal_state: ThermalState;
-  anomaly_score: number;
-  anomaly_flag: boolean;
-  health_index: number;
-  health_components: HealthComponents;
-  fault_risk: number;
+  loading_percent: number | null;
+  thermal_model_temperature: number | null;
+  thermal_residual: number | null;
+  thermal_state: ThermalState | null;
+  anomaly_score: number | null;
+  anomaly_flag: boolean | null;
+  health_index: number | null;
+  health_components: HealthComponents | null;
+  fault_risk: number | null;
   predicted_fault: string | null;
-  prediction_confidence: number;
+  prediction_confidence: number | null;
   maintenance_priority: MaintenancePriority;
   maintenance_recommendation: string;
   reason_codes: string[];
   schema_version: string;
   feature_version: string;
   model_version: string;
+  metadata?: Record<string, any>;
 }
 
 export type ScenarioPreset = 

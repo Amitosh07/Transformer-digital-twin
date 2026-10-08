@@ -3,8 +3,8 @@ import { HealthComponents } from '../types';
 import { ShieldCheck, AlertTriangle, Flame, Zap, Gauge, Droplets, Bell, Cpu } from 'lucide-react';
 
 interface HealthIndexDialProps {
-  score: number;
-  components: HealthComponents;
+  score: number | null;
+  components: HealthComponents | null;
   reasonCodes: string[];
 }
 
@@ -14,29 +14,34 @@ export const HealthIndexDial: React.FC<HealthIndexDialProps> = ({
   reasonCodes,
 }) => {
   // Normalize score
-  const safeScore = Math.max(0, Math.min(100, score));
+  const isAvailable = score !== null && score !== undefined;
+  const safeScore = isAvailable ? Math.max(0, Math.min(100, score)) : 0;
 
   // Determine grade & color
-  let statusText = 'HEALTHY';
-  let strokeColor = '#10B981'; // emerald
-  let glowColor = 'rgba(16, 185, 129, 0.3)';
-  let bgBadge = 'bg-emerald-950/60 text-emerald-300 border-emerald-800/80';
+  let statusText = isAvailable ? 'HEALTHY' : 'UNAVAILABLE';
+  let strokeColor = isAvailable ? '#10B981' : '#64748B'; // slate
+  let glowColor = isAvailable ? 'rgba(16, 185, 129, 0.3)' : 'rgba(100, 116, 139, 0.2)';
+  let bgBadge = isAvailable
+    ? 'bg-emerald-950/60 text-emerald-300 border-emerald-800/80'
+    : 'bg-slate-900 text-slate-400 border-slate-700';
 
-  if (safeScore < 50) {
-    statusText = 'CRITICAL';
-    strokeColor = '#EF4444'; // crimson
-    glowColor = 'rgba(239, 68, 68, 0.4)';
-    bgBadge = 'bg-rose-950/70 text-rose-300 border-rose-800/80';
-  } else if (safeScore < 70) {
-    statusText = 'DEGRADED';
-    strokeColor = '#F59E0B'; // amber
-    glowColor = 'rgba(245, 158, 11, 0.35)';
-    bgBadge = 'bg-amber-950/70 text-amber-300 border-amber-800/80';
-  } else if (safeScore < 85) {
-    statusText = 'WATCH';
-    strokeColor = '#06B6D4'; // cyan
-    glowColor = 'rgba(6, 182, 212, 0.3)';
-    bgBadge = 'bg-cyan-950/70 text-cyan-300 border-cyan-800/80';
+  if (isAvailable) {
+    if (safeScore < 50) {
+      statusText = 'CRITICAL';
+      strokeColor = '#EF4444'; // crimson
+      glowColor = 'rgba(239, 68, 68, 0.4)';
+      bgBadge = 'bg-rose-950/70 text-rose-300 border-rose-800/80';
+    } else if (safeScore < 70) {
+      statusText = 'DEGRADED';
+      strokeColor = '#F59E0B'; // amber
+      glowColor = 'rgba(245, 158, 11, 0.35)';
+      bgBadge = 'bg-amber-950/70 text-amber-300 border-amber-800/80';
+    } else if (safeScore < 85) {
+      statusText = 'WATCH';
+      strokeColor = '#06B6D4'; // cyan
+      glowColor = 'rgba(6, 182, 212, 0.3)';
+      bgBadge = 'bg-cyan-950/70 text-cyan-300 border-cyan-800/80';
+    }
   }
 
   // Circular gauge calculations
@@ -100,10 +105,10 @@ export const HealthIndexDial: React.FC<HealthIndexDialProps> = ({
           {/* Centered Numbers */}
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
             <span className="text-4xl font-display font-extrabold text-slate-100 tracking-tight">
-              {safeScore.toFixed(0)}
+              {isAvailable ? safeScore.toFixed(0) : '—'}
             </span>
             <span className="text-[11px] font-mono text-slate-400 uppercase tracking-widest">
-              / 100 INDEX
+              {isAvailable ? '/ 100 INDEX' : 'UNAVAILABLE'}
             </span>
           </div>
         </div>
@@ -114,12 +119,14 @@ export const HealthIndexDial: React.FC<HealthIndexDialProps> = ({
             <span className="flex items-center gap-1.5">
               <Flame className="w-3.5 h-3.5 text-rose-400" /> Thermal State (25%)
             </span>
-            <span className="font-semibold text-slate-200">{components.thermal}%</span>
+            <span className="font-semibold text-slate-200">
+              {components?.thermal !== null && components?.thermal !== undefined ? `${components.thermal}%` : 'N/A'}
+            </span>
           </div>
           <div className="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
             <div
               className="h-full bg-rose-500 rounded-full transition-all duration-500"
-              style={{ width: `${components.thermal}%` }}
+              style={{ width: `${components?.thermal ?? 0}%` }}
             />
           </div>
 
@@ -127,12 +134,14 @@ export const HealthIndexDial: React.FC<HealthIndexDialProps> = ({
             <span className="flex items-center gap-1.5">
               <Zap className="w-3.5 h-3.5 text-amber-400" /> Electrical Balance (20%)
             </span>
-            <span className="font-semibold text-slate-200">{components.electrical}%</span>
+            <span className="font-semibold text-slate-200">
+              {components?.electrical !== null && components?.electrical !== undefined ? `${components.electrical}%` : 'N/A'}
+            </span>
           </div>
           <div className="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
             <div
               className="h-full bg-amber-500 rounded-full transition-all duration-500"
-              style={{ width: `${components.electrical}%` }}
+              style={{ width: `${components?.electrical ?? 0}%` }}
             />
           </div>
 
@@ -140,12 +149,14 @@ export const HealthIndexDial: React.FC<HealthIndexDialProps> = ({
             <span className="flex items-center gap-1.5">
               <Gauge className="w-3.5 h-3.5 text-cyan-400" /> Load Headroom (15%)
             </span>
-            <span className="font-semibold text-slate-200">{components.loading}%</span>
+            <span className="font-semibold text-slate-200">
+              {components?.loading !== null && components?.loading !== undefined ? `${components.loading}%` : 'N/A'}
+            </span>
           </div>
           <div className="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
             <div
               className="h-full bg-cyan-500 rounded-full transition-all duration-500"
-              style={{ width: `${components.loading}%` }}
+              style={{ width: `${components?.loading ?? 0}%` }}
             />
           </div>
 
@@ -153,12 +164,14 @@ export const HealthIndexDial: React.FC<HealthIndexDialProps> = ({
             <span className="flex items-center gap-1.5">
               <Droplets className="w-3.5 h-3.5 text-blue-400" /> Oil & Conservator (15%)
             </span>
-            <span className="font-semibold text-slate-200">{components.oil}%</span>
+            <span className="font-semibold text-slate-200">
+              {components?.oil !== null && components?.oil !== undefined ? `${components.oil}%` : 'N/A'}
+            </span>
           </div>
           <div className="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
             <div
               className="h-full bg-blue-500 rounded-full transition-all duration-500"
-              style={{ width: `${components.oil}%` }}
+              style={{ width: `${components?.oil ?? 0}%` }}
             />
           </div>
 
@@ -166,12 +179,14 @@ export const HealthIndexDial: React.FC<HealthIndexDialProps> = ({
             <span className="flex items-center gap-1.5">
               <Bell className="w-3.5 h-3.5 text-purple-400" /> Protection State (15%)
             </span>
-            <span className="font-semibold text-slate-200">{components.alarm}%</span>
+            <span className="font-semibold text-slate-200">
+              {components?.alarm !== null && components?.alarm !== undefined ? `${components.alarm}%` : 'N/A'}
+            </span>
           </div>
           <div className="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
             <div
               className="h-full bg-purple-500 rounded-full transition-all duration-500"
-              style={{ width: `${components.alarm}%` }}
+              style={{ width: `${components?.alarm ?? 0}%` }}
             />
           </div>
 
@@ -179,12 +194,14 @@ export const HealthIndexDial: React.FC<HealthIndexDialProps> = ({
             <span className="flex items-center gap-1.5">
               <Cpu className="w-3.5 h-3.5 text-emerald-400" /> Anomaly Margin (10%)
             </span>
-            <span className="font-semibold text-slate-200">{components.anomaly}%</span>
+            <span className="font-semibold text-slate-200">
+              {components?.anomaly !== null && components?.anomaly !== undefined ? `${components.anomaly}%` : 'N/A'}
+            </span>
           </div>
           <div className="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
             <div
               className="h-full bg-emerald-500 rounded-full transition-all duration-500"
-              style={{ width: `${components.anomaly}%` }}
+              style={{ width: `${components?.anomaly ?? 0}%` }}
             />
           </div>
         </div>
@@ -197,14 +214,18 @@ export const HealthIndexDial: React.FC<HealthIndexDialProps> = ({
             <AlertTriangle className="w-3.5 h-3.5 text-amber-400" /> Contributing Reason Codes:
           </div>
           <div className="flex flex-wrap gap-1.5">
-            {reasonCodes.map((code) => (
-              <span
-                key={code}
-                className="text-[10px] font-mono font-semibold px-2 py-0.5 rounded bg-slate-900 border border-slate-700 text-slate-200"
-              >
-                #{code}
-              </span>
-            ))}
+            {reasonCodes.map((code) => {
+              // Phase 02 / Phase 07: HIGH_OIL_TEMP represents high oil indicator under unverified units
+              const label = code === 'HIGH_OIL_TEMP' ? 'HIGH_OIL_TEMP (HIGH OIL INDICATOR)' : `#${code}`;
+              return (
+                <span
+                  key={code}
+                  className="text-[10px] font-mono font-semibold px-2 py-0.5 rounded bg-slate-900 border border-slate-700 text-slate-200"
+                >
+                  {label}
+                </span>
+              );
+            })}
           </div>
         </div>
       )}

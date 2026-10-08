@@ -238,18 +238,22 @@ export const InteractiveTwinStudio: React.FC = () => {
           <div className="text-xl sm:text-2xl font-bold text-slate-100 mt-1">
             {telemetry.oil_temperature}°C
           </div>
-          <div className="text-[10px] text-slate-500 mt-0.5">Model: {analytics.thermal_model_temperature}°C</div>
+          <div className="text-[10px] text-slate-500 mt-0.5">
+            Model: {analytics.thermal_model_temperature !== null && analytics.thermal_model_temperature !== undefined ? `${analytics.thermal_model_temperature}°C` : 'WARM-UP'}
+          </div>
         </div>
 
         {/* Thermal Residual */}
         <div className={`bg-[#0A0E17] border rounded-xl p-3 shadow-lg ${
-          Math.abs(analytics.thermal_residual) > 5.0 ? 'border-rose-500/60 bg-rose-950/20' : 'border-slate-800'
+          analytics.thermal_residual !== null && Math.abs(analytics.thermal_residual) > 5.0 ? 'border-rose-500/60 bg-rose-950/20' : 'border-slate-800'
         }`}>
           <div className="text-[10px] uppercase text-slate-400">Thermal Residual (ΔT)</div>
           <div className={`text-xl sm:text-2xl font-bold mt-1 ${
-            Math.abs(analytics.thermal_residual) > 5.0 ? 'text-rose-400 animate-pulse' : 'text-emerald-400'
+            analytics.thermal_residual !== null && Math.abs(analytics.thermal_residual) > 5.0 ? 'text-rose-400 animate-pulse' : 'text-emerald-400'
           }`}>
-            {analytics.thermal_residual > 0 ? `+${analytics.thermal_residual}°C` : `${analytics.thermal_residual}°C`}
+            {analytics.thermal_residual !== null && analytics.thermal_residual !== undefined
+              ? (analytics.thermal_residual > 0 ? `+${analytics.thermal_residual}°C` : `${analytics.thermal_residual}°C`)
+              : 'N/A (WARM-UP)'}
           </div>
           <div className="text-[10px] text-slate-500 mt-0.5">Physical Divergence</div>
         </div>
@@ -284,7 +288,9 @@ export const InteractiveTwinStudio: React.FC = () => {
           <div className={`text-xl sm:text-2xl font-bold mt-1 ${
             analytics.anomaly_flag ? 'text-rose-400' : 'text-emerald-400'
           }`}>
-            {analytics.anomaly_score.toFixed(2)}
+            {analytics.anomaly_score !== null && analytics.anomaly_score !== undefined
+              ? analytics.anomaly_score.toFixed(2)
+              : 'N/A'}
           </div>
           <div className="text-[10px] text-slate-500 mt-0.5">
             {analytics.anomaly_flag ? 'FLAG TRIGGERED' : 'NOMINAL MARGIN'}

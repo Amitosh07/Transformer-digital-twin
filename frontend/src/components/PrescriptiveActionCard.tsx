@@ -120,7 +120,9 @@ export const PrescriptiveActionCard: React.FC<PrescriptiveActionCardProps> = ({ 
               <span className="text-slate-400 text-[10px] uppercase">Inference Confidence</span>
               <div className="flex items-center justify-between mt-0.5">
                 <span className="font-semibold text-emerald-400 text-sm">
-                  {(analytics.prediction_confidence * 100).toFixed(0)}%
+                  {analytics.prediction_confidence !== null && analytics.prediction_confidence !== undefined
+                    ? `${(analytics.prediction_confidence * 100).toFixed(0)}%`
+                    : 'N/A (UNRELEASED)'}
                 </span>
                 <span className="text-[10px] text-slate-400">Schema v{analytics.schema_version}</span>
               </div>
@@ -134,7 +136,16 @@ export const PrescriptiveActionCard: React.FC<PrescriptiveActionCardProps> = ({ 
         <div className="flex items-center gap-2">
           <span>Asset: <strong className="text-slate-200">{analytics.transformer_id}</strong></span>
           <span className="text-slate-600">•</span>
-          <span>Fault Risk: <strong className={analytics.fault_risk > 0.5 ? 'text-rose-400' : 'text-emerald-400'}>{(analytics.fault_risk * 100).toFixed(0)}%</strong></span>
+          <span>
+            Fault Risk:{' '}
+            {analytics.fault_risk !== null && analytics.fault_risk !== undefined ? (
+              <strong className={analytics.fault_risk > 0.5 ? 'text-rose-400' : 'text-emerald-400'}>
+                {(analytics.fault_risk * 100).toFixed(0)}%
+              </strong>
+            ) : (
+              <strong className="text-slate-400">UNAVAILABLE (INSUFFICIENT_VALIDATION)</strong>
+            )}
+          </span>
         </div>
 
         <button
