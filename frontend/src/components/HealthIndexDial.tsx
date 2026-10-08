@@ -34,9 +34,9 @@ export const HealthIndexDial: React.FC<HealthIndexDialProps> = ({
     bgBadge = 'bg-amber-950/70 text-amber-300 border-amber-800/80';
   } else if (safeScore < 85) {
     statusText = 'WATCH';
-    strokeColor = '#06B6D4'; // cyan
-    glowColor = 'rgba(6, 182, 212, 0.3)';
-    bgBadge = 'bg-cyan-950/70 text-cyan-300 border-cyan-800/80';
+    strokeColor = '#F59E0B'; // amber
+    glowColor = 'rgba(245, 158, 11, 0.3)';
+    bgBadge = 'bg-amber-950/70 text-amber-300 border-amber-800/80';
   }
 
   // Circular gauge calculations
@@ -72,7 +72,7 @@ export const HealthIndexDial: React.FC<HealthIndexDialProps> = ({
               cx="90"
               cy="90"
               r={radius}
-              stroke="rgba(51, 65, 85, 0.3)"
+              stroke="var(--chart-grid, rgba(51, 65, 85, 0.3))"
               strokeWidth="12"
               fill="transparent"
               strokeDasharray={arcLength}

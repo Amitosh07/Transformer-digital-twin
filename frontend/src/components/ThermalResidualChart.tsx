@@ -115,7 +115,7 @@ export const ThermalResidualChart: React.FC<ThermalResidualChartProps> = ({
                   y1={y}
                   x2={width - paddingX}
                   y2={y}
-                  stroke="rgba(51, 65, 85, 0.25)"
+                  stroke="var(--chart-grid, rgba(51, 65, 85, 0.25))"
                   strokeDasharray="4 4"
                 />
                 <text
@@ -139,25 +139,25 @@ export const ThermalResidualChart: React.FC<ThermalResidualChartProps> = ({
             stroke="none"
           />
 
-          {/* Expected Model Path (Cyan dashed line) */}
+          {/* Expected Model Path (Amber dashed line) */}
           <path
             d={modelPath}
             fill="none"
-            stroke="#06B6D4"
+            stroke="#F59E0B"
             strokeWidth="2"
             strokeDasharray="4 3"
-            style={{ filter: 'drop-shadow(0 0 4px rgba(6, 182, 212, 0.4))' }}
+            style={{ filter: 'drop-shadow(0 0 4px rgba(245, 158, 11, 0.24))' }}
           />
 
-          {/* Observed Telemetry Path (Amber/Crimson solid line) */}
+          {/* Observed Telemetry Path (Blue/Crimson solid line) */}
           <path
             d={observedPath}
             fill="none"
-            stroke={isDiverging ? '#EF4444' : '#F59E0B'}
+            stroke={isDiverging ? '#EF4444' : '#2563EB'}
             strokeWidth="2.5"
             style={{
               filter: `drop-shadow(0 0 6px ${
-                isDiverging ? 'rgba(239, 68, 68, 0.6)' : 'rgba(245, 158, 11, 0.4)'
+                isDiverging ? 'rgba(239, 68, 68, 0.6)' : 'rgba(37, 99, 235, 0.3)'
               })`,
             }}
           />
@@ -187,11 +187,11 @@ export const ThermalResidualChart: React.FC<ThermalResidualChartProps> = ({
                       y1={paddingY}
                       x2={cx}
                       y2={paddingY + chartH}
-                      stroke="rgba(255, 255, 255, 0.4)"
+                      stroke="var(--chart-grid, rgba(255, 255, 255, 0.4))"
                       strokeWidth="1"
                     />
-                    <circle cx={cx} cy={cyObs} r="4" fill="#EF4444" stroke="#fff" strokeWidth="1.5" />
-                    <circle cx={cx} cy={cyMod} r="4" fill="#06B6D4" stroke="#fff" strokeWidth="1.5" />
+                    <circle cx={cx} cy={cyObs} r="4" fill="#2563EB" stroke="#fff" strokeWidth="1.5" />
+                    <circle cx={cx} cy={cyMod} r="4" fill="#F59E0B" stroke="#fff" strokeWidth="1.5" />
                   </>
                 )}
               </g>
@@ -231,13 +231,13 @@ export const ThermalResidualChart: React.FC<ThermalResidualChartProps> = ({
       <div className="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-slate-800/80 text-xs font-mono">
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-1.5">
-            <span className="w-3 h-0.5 bg-amber-500 rounded"></span>
+            <span className="w-3 h-0.5 bg-blue-600 rounded"></span>
             <span className="text-slate-400">
               Observed SCADA (T<sub>obs</sub>): <strong className="text-slate-200">{currentObserved}°C</strong>
             </span>
           </div>
           <div className="flex items-center gap-1.5">
-            <span className="w-3 h-0.5 bg-cyan-400 border-dashed border-t rounded"></span>
+            <span className="w-3 h-0.5 bg-amber-500 border-dashed border-t rounded"></span>
             <span className="text-slate-400">
               Physics Model (T<sub>model</sub>): <strong className="text-slate-200">{currentModel}°C</strong>
             </span>
