@@ -1,5 +1,4 @@
 """Convert the five baseline source CSVs into canonical transformer telemetry.
-
 This module is deliberately the only ML-layer location that knows the public
 dataset's filenames and raw column names.  It preserves the supplied timestamp
 cadence; it does not resample or impute readings.
@@ -7,7 +6,6 @@ cadence; it does not resample or impute readings.
 
 from __future__ import annotations
 
-from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Final, Literal, Mapping
 
@@ -18,25 +16,30 @@ from pandas.api.types import is_datetime64_any_dtype, is_numeric_dtype
 TIMESTAMP_COLUMN: Final = "DeviceTimeStamp"
 CANONICAL_TIMESTAMP: Final = "timestamp"
 EXCLUDED_CURRENT_VOLTAGE_COLUMNS: Final = ("VL12", "VL23", "VL31")
+PROCESSED_OUTPUT_PATH: Final = Path(__file__).resolve().parents[2] / "data" / "processed" / "canonical_telemetry.csv"
+AggregationMethod = Literal["mean", "max", "first", "last"]
 
 # The semantic treatment of every field read from each source is explicit.  In
 # particular, counters are never summed/averaged and protection states retain
 # an active state found in any duplicate source row.
-AGGREGATION_RULES: Final[dict[str, dict[Literal["mean", "max", "first"], tuple[str, ...]]]] = {
+AGGREGATION_RULES: Final[dict[str, dict[AggregationMethod, tuple[str, ...]]]] = {
     "CurrentVoltage.csv": {
         "mean": ("VL1", "VL2", "VL3", "IL1", "IL2", "IL3", "INUT"),
         "max": (),
         "first": (),
+        "last": (),
     },
     "Overview.csv": {
         "mean": ("OTI", "WTI", "ATI", "OLI"),
         "max": ("OTI_A", "OTI_T", "MOG_A"),
         "first": (),
+        "last": (),
     },
     "Power.csv": {
         "mean": ("WL1", "WL2", "WL3", "VAL1", "VAL2", "VAL3", "RVAL1", "RVAL2", "RVAL3"),
         "max": (),
         "first": (),
+        "last": (),
     },
     "PowerFactor.csv": {
         "mean": (
@@ -45,11 +48,13 @@ AGGREGATION_RULES: Final[dict[str, dict[Literal["mean", "max", "first"], tuple[s
         ),
         "max": (),
         "first": (),
+        "last": (),
     },
     "TotalPower.csv": {
         "mean": ("KW", "KVA", "KVAR", "MPD", "MKVAD"),
         "max": (),
-        "first": ("KWH", "KWH_I", "KVARH"),
+        "first": (),
+        "last": ("KWH", "KWH_I", "KVARH"),
     },
 }
 
@@ -96,21 +101,6 @@ class DataAdapterError(ValueError):
     """Raised when a source file or canonical telemetry fails validation."""
 
 
-@dataclass(frozen=True)
-class ValidationReport:
-    """A compact, serialisable report for a validated canonical DataFrame."""
-
-    row_count: int
-    column_count: int
-    min_timestamp: pd.Timestamp | None
-    max_timestamp: pd.Timestamp | None
-    missing_values_by_column: dict[str, int]
-    missing_values_total: int
-
-    def to_dict(self) -> dict[str, object]:
-        return asdict(self)
-
-
 def _source_columns(source_name: str) -> tuple[str, ...]:
     rules = AGGREGATION_RULES[source_name]
     return tuple(column for fields in rules.values() for column in fields)
@@ -129,6 +119,21 @@ def load_dataset(path: str | Path, source_name: str) -> pd.DataFrame:
     if missing:
         raise DataAdapterError(f"{source_name} is missing required columns: {missing}")
     return frame
+
+
+def load_resolved_source_datasets(data_dir: str | Path) -> dict[str, pd.DataFrame]:
+    """Load and duplicate-resolve source-level frames without changing their schema.
+
+    This keeps optional fields (including all of ``Power.csv``) available to
+    future ML feature code while ensuring they do not enter canonical telemetry.
+    """
+    base_path = Path(data_dir)
+    return {
+        source_name: resolve_duplicates(
+            parse_timestamp(load_dataset(base_path / source_name, source_name), source_name), source_name
+        )
+        for source_name in AGGREGATION_RULES
+    }
 
 
 def parse_timestamp(frame: pd.DataFrame, source_name: str) -> pd.DataFrame:
@@ -178,8 +183,8 @@ def merge_datasets(datasets: Mapping[str, pd.DataFrame]) -> pd.DataFrame:
     return merged.sort_values(CANONICAL_TIMESTAMP, kind="stable").reset_index(drop=True)
 
 
-def validate_canonical_telemetry(frame: pd.DataFrame) -> ValidationReport:
-    """Validate the canonical boundary and return its missing-reading report."""
+def validate_canonical_telemetry(frame: pd.DataFrame) -> None:
+    """Validate the canonical telemetry boundary."""
     missing_columns = [column for column in CANONICAL_COLUMNS if column not in frame.columns]
     if missing_columns:
         raise DataAdapterError(f"Canonical telemetry is missing required columns: {missing_columns}")
@@ -199,15 +204,6 @@ def validate_canonical_telemetry(frame: pd.DataFrame) -> ValidationReport:
     non_numeric = [column for column in NUMERIC_CANONICAL_COLUMNS if not is_numeric_dtype(frame[column])]
     if non_numeric:
         raise DataAdapterError(f"Canonical telemetry columns must be numeric: {non_numeric}")
-    missing_by_column = {column: int(count) for column, count in frame.isna().sum().items() if count}
-    return ValidationReport(
-        row_count=len(frame),
-        column_count=len(frame.columns),
-        min_timestamp=frame[CANONICAL_TIMESTAMP].min() if not frame.empty else None,
-        max_timestamp=frame[CANONICAL_TIMESTAMP].max() if not frame.empty else None,
-        missing_values_by_column=missing_by_column,
-        missing_values_total=sum(missing_by_column.values()),
-    )
 
 
 def build_canonical_telemetry(
@@ -217,29 +213,27 @@ def build_canonical_telemetry(
 
     Readings missing after the outer alignment remain ``NaN``.  The observed
     15-minute cadence is preserved exactly; this adapter does not resample.
-    The validation report is available at ``result.attrs['validation_report']``.
     """
     if not transformer_id or not transformer_id.strip():
         raise DataAdapterError("transformer_id must be a non-empty string")
     base_path = Path(data_dir)
-    normalized: dict[str, pd.DataFrame] = {}
-    for source_name in AGGREGATION_RULES:
-        raw = load_dataset(base_path / source_name, source_name)
-        normalized[source_name] = normalize_columns(
-            resolve_duplicates(parse_timestamp(raw, source_name), source_name), source_name
-        )
+    resolved_sources = load_resolved_source_datasets(base_path)
+    normalized = {
+        source_name: normalize_columns(frame, source_name)
+        for source_name, frame in resolved_sources.items()
+    }
     canonical = merge_datasets(normalized)
     canonical.insert(0, "transformer_id", transformer_id)
     canonical = canonical.loc[:, CANONICAL_COLUMNS]
-    report = validate_canonical_telemetry(canonical)
-    canonical.attrs["validation_report"] = report.to_dict()
+    validate_canonical_telemetry(canonical)
+    PROCESSED_OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    canonical.to_csv(PROCESSED_OUTPUT_PATH, index=False)
     return canonical
 
 
 def main() -> None:
-    """Build baseline telemetry and print its compact validation summary."""
-    telemetry = build_canonical_telemetry()
-    print(telemetry.attrs["validation_report"])
+    """Build baseline telemetry."""
+    build_canonical_telemetry()
 
 
 if __name__ == "__main__":

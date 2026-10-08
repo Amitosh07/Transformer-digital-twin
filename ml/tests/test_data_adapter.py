@@ -12,7 +12,9 @@ import pandas as pd
 from ml.adaptors.data_adapter import (
     AGGREGATION_RULES,
     DataAdapterError,
+    PROCESSED_OUTPUT_PATH,
     build_canonical_telemetry,
+    load_resolved_source_datasets,
     parse_timestamp,
     resolve_duplicates,
 )
@@ -60,15 +62,19 @@ class DataAdapterTests(unittest.TestCase):
             self.assertEqual(result.loc[0, "oil_temp_alarm"], 1)
             self.assertEqual(result.loc[0, "oil_temp_trip"], 1)
             self.assertEqual(result.loc[0, "magnetic_oil_gauge_alarm"], 1)
-            self.assertEqual(result.loc[0, "energy_kwh"], 5)
+            self.assertEqual(result.loc[0, "energy_kwh"], 99)
             self.assertAlmostEqual(result.loc[0, "active_power_total"], 7)
+            self.assertFalse(set(AGGREGATION_RULES["Power.csv"]["mean"]).intersection(result.columns))
+            self.assertTrue(PROCESSED_OUTPUT_PATH.is_file())
 
             resolved_total = resolve_duplicates(
                 parse_timestamp(pd.DataFrame([total, total_second]), "TotalPower.csv"), "TotalPower.csv"
             )
-            self.assertEqual(resolved_total.loc[0, "KWH"], 5)
-            self.assertEqual(resolved_total.loc[0, "KWH_I"], 5)
-            self.assertEqual(resolved_total.loc[0, "KVARH"], 5)
+            self.assertEqual(resolved_total.loc[0, "KWH"], 99)
+            self.assertEqual(resolved_total.loc[0, "KWH_I"], 98)
+            self.assertEqual(resolved_total.loc[0, "KVARH"], 97)
+            source_frames = load_resolved_source_datasets(data_dir)
+            self.assertIn("WL1", source_frames["Power.csv"].columns)
 
     def test_identical_duplicates_collapse_to_one_timestamp(self) -> None:
         with tempfile.TemporaryDirectory() as temporary_directory:
@@ -91,7 +97,6 @@ class DataAdapterTests(unittest.TestCase):
             self.assertTrue(result["timestamp"].is_unique)
             self.assertEqual(len(result), 2)
             self.assertEqual(result["oil_temperature"].isna().sum(), 1)
-            self.assertGreater(result.attrs["validation_report"]["missing_values_total"], 0)
 
     def test_invalid_timestamp_raises_understandable_error(self) -> None:
         with tempfile.TemporaryDirectory() as temporary_directory:

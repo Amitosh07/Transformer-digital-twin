@@ -1,0 +1,197 @@
+"""Causal feature engineering over canonical transformer telemetry only.
+
+The functions here do not resample, impute, or use raw-source names.  Every
+time-aware feature is calculated from the current record and earlier records
+for the same transformer, then returned in the caller's original row order.
+"""
+
+from __future__ import annotations
+
+from typing import Final
+
+import numpy as np
+import pandas as pd
+from pandas.api.types import is_datetime64_any_dtype
+
+
+IDENTITY_COLUMNS: Final = ("transformer_id", "timestamp")
+REQUIRED_TELEMETRY_COLUMNS: Final = (
+    *IDENTITY_COLUMNS,
+    "phase_voltage_l1", "phase_voltage_l2", "phase_voltage_l3",
+    "current_l1", "current_l2", "current_l3", "neutral_current",
+    "oil_temperature", "ambient_temperature", "oil_level",
+    "oil_temp_alarm", "oil_temp_trip", "magnetic_oil_gauge_alarm",
+    "active_power_total", "apparent_power_total",
+    "power_factor_l1", "power_factor_l2", "power_factor_l3",
+)
+FEATURE_COLUMNS: Final = (
+    "current_mean", "current_max", "current_min", "current_imbalance_pct",
+    "voltage_mean", "voltage_imbalance_pct", "neutral_current_magnitude",
+    "active_power_demand", "apparent_power_utilization", "power_factor_mean",
+    "power_factor_deviation", "oil_temperature_level", "ambient_temperature_level",
+    "ambient_to_oil_delta", "oil_temperature_rate", "temperature_rolling_mean",
+    "temperature_rolling_std", "temperature_slope", "thermal_residual",
+    "oil_level_deviation", "oil_level_rate", "oil_level_rolling_mean",
+    "rolling_load_mean", "rolling_load_std", "time_since_last_alarm",
+    "time_since_last_trip",
+)
+
+
+class FeatureEngineeringError(ValueError):
+    """Raised when canonical telemetry is unsuitable for feature generation."""
+
+
+def _validate_canonical_telemetry(frame: pd.DataFrame) -> None:
+    missing = [column for column in REQUIRED_TELEMETRY_COLUMNS if column not in frame]
+    if missing:
+        raise FeatureEngineeringError(f"Canonical telemetry is missing required columns: {missing}")
+    if frame["transformer_id"].isna().any() or (frame["transformer_id"].astype(str).str.strip() == "").any():
+        raise FeatureEngineeringError("Canonical telemetry requires a populated transformer_id")
+    if not is_datetime64_any_dtype(frame["timestamp"]):
+        raise FeatureEngineeringError("Canonical timestamp must have a pandas datetime dtype")
+    if getattr(frame["timestamp"].dt, "tz", None) is not None:
+        raise FeatureEngineeringError("Canonical timestamp must be timezone-naive")
+    if frame["timestamp"].isna().any():
+        raise FeatureEngineeringError("Canonical timestamp contains missing or invalid values")
+    if frame.duplicated(list(IDENTITY_COLUMNS)).any():
+        raise FeatureEngineeringError("Canonical telemetry contains duplicate transformer_id/timestamp pairs")
+
+
+def _safe_imbalance(values: pd.DataFrame) -> pd.Series:
+    """Return phase range divided by phase mean, without fabricating zero divisions."""
+    mean = values.mean(axis=1)
+    denominator = mean.where(mean != 0)
+    return values.max(axis=1).sub(values.min(axis=1)).div(denominator).mul(100)
+
+
+def _rate_per_hour(values: pd.Series, timestamps: pd.Series) -> pd.Series:
+    """Calculate first differences per elapsed hour for one chronological asset group."""
+    elapsed_hours = timestamps.diff().dt.total_seconds().div(3600).where(lambda series: series > 0)
+    return values.diff().div(elapsed_hours)
+
+
+def _rolling(values: pd.Series, timestamps: pd.Series, window: str) -> tuple[pd.Series, pd.Series]:
+    """Return causal time-window mean and standard deviation for one asset group."""
+    indexed = pd.Series(values.to_numpy(), index=pd.DatetimeIndex(timestamps))
+    rolling = indexed.rolling(window, min_periods=1)
+    return (
+        pd.Series(rolling.mean().to_numpy(), index=values.index),
+        pd.Series(rolling.std(ddof=1).to_numpy(), index=values.index),
+    )
+
+
+def _past_rolling_mean(values: pd.Series, timestamps: pd.Series, window: str) -> pd.Series:
+    """Return a strictly historical rolling mean, used as an oil-level baseline."""
+    indexed = pd.Series(values.to_numpy(), index=pd.DatetimeIndex(timestamps))
+    historical = indexed.rolling(window, min_periods=1, closed="left").mean()
+    return pd.Series(historical.to_numpy(), index=values.index)
+
+
+def _rolling_slope_per_hour(values: pd.Series, timestamps: pd.Series, window: str) -> pd.Series:
+    """Fit a causal least-squares temperature slope per hour at each record."""
+    index = pd.DatetimeIndex(timestamps)
+    y = pd.Series(values.to_numpy(), index=index, dtype="float64")
+    x = pd.Series((index - index[0]).total_seconds() / 3600, index=index, dtype="float64")
+    valid = y.notna()
+    rolling = valid.astype("float64").rolling(window, min_periods=1)
+    count = rolling.sum()
+    sum_x = x.where(valid).rolling(window, min_periods=1).sum()
+    sum_y = y.rolling(window, min_periods=1).sum()
+    sum_xx = x.pow(2).where(valid).rolling(window, min_periods=1).sum()
+    sum_xy = x.mul(y).rolling(window, min_periods=1).sum()
+    numerator = sum_xy.sub(sum_x.mul(sum_y).div(count))
+    denominator = sum_xx.sub(sum_x.pow(2).div(count))
+    slope = numerator.div(denominator.where((count >= 2) & (denominator != 0)))
+    return pd.Series(slope.to_numpy(), index=values.index)
+
+
+def _time_since_last_active(status: pd.Series, timestamps: pd.Series) -> pd.Series:
+    """Return elapsed hours since the latest known active status; unknown status stays NaN."""
+    result = pd.Series(np.nan, index=status.index, dtype="float64")
+    last_active: pd.Timestamp | None = None
+    for index, value, timestamp in zip(status.index, status, timestamps, strict=True):
+        if pd.isna(value):
+            continue
+        if value > 0:
+            last_active = timestamp
+            result.loc[index] = 0.0
+        elif last_active is not None:
+            result.loc[index] = (timestamp - last_active).total_seconds() / 3600
+    return result
+
+
+def _add_group_temporal_features(frame: pd.DataFrame, window: str) -> pd.DataFrame:
+    """Add per-transformer causal rolling, rate, slope, and event-history features."""
+    result = frame.copy()
+    for _, group in result.groupby("transformer_id", sort=False):
+        index = group.index
+        timestamps = group["timestamp"]
+        temperature_mean, temperature_std = _rolling(group["oil_temperature"], timestamps, window)
+        load_mean, load_std = _rolling(group["apparent_power_total"], timestamps, window)
+        oil_baseline = _past_rolling_mean(group["oil_level"], timestamps, window)
+        result.loc[index, "oil_temperature_rate"] = _rate_per_hour(group["oil_temperature"], timestamps)
+        result.loc[index, "temperature_rolling_mean"] = temperature_mean
+        result.loc[index, "temperature_rolling_std"] = temperature_std
+        result.loc[index, "temperature_slope"] = _rolling_slope_per_hour(group["oil_temperature"], timestamps, window)
+        result.loc[index, "oil_level_rolling_mean"] = oil_baseline
+        result.loc[index, "oil_level_deviation"] = group["oil_level"].sub(oil_baseline)
+        result.loc[index, "oil_level_rate"] = _rate_per_hour(group["oil_level"], timestamps)
+        result.loc[index, "rolling_load_mean"] = load_mean
+        result.loc[index, "rolling_load_std"] = load_std
+        alarm = group[["oil_temp_alarm", "magnetic_oil_gauge_alarm"]].max(axis=1, skipna=True)
+        alarm[group[["oil_temp_alarm", "magnetic_oil_gauge_alarm"]].isna().all(axis=1)] = np.nan
+        result.loc[index, "time_since_last_alarm"] = _time_since_last_active(alarm, timestamps)
+        result.loc[index, "time_since_last_trip"] = _time_since_last_active(group["oil_temp_trip"], timestamps)
+    return result
+
+
+def build_features(canonical_telemetry: pd.DataFrame, *, rolling_window: str = "1h") -> pd.DataFrame:
+    """Add contract features to canonical telemetry without changing its row order.
+
+    ``apparent_power_utilization`` and ``thermal_residual`` remain ``NaN``:
+    they respectively require an externally configured nameplate rating and a
+    Thermal Twin estimate, neither of which belongs in canonical telemetry.
+    Rates and slopes are in source units per hour.  No missing telemetry value
+    is imputed, and no future observation contributes to a rolling calculation.
+    """
+    result = canonical_telemetry.copy()
+    if not is_datetime64_any_dtype(result.get("timestamp")):
+        result["timestamp"] = pd.to_datetime(result.get("timestamp"), errors="coerce")
+    _validate_canonical_telemetry(result)
+    try:
+        pd.Timedelta(rolling_window)
+    except ValueError as exc:
+        raise FeatureEngineeringError(f"Invalid rolling window: {rolling_window!r}") from exc
+
+    current = result[["current_l1", "current_l2", "current_l3"]]
+    voltage = result[["phase_voltage_l1", "phase_voltage_l2", "phase_voltage_l3"]]
+    power_factor = result[["power_factor_l1", "power_factor_l2", "power_factor_l3"]]
+    result["current_mean"] = current.mean(axis=1)
+    result["current_max"] = current.max(axis=1)
+    result["current_min"] = current.min(axis=1)
+    result["current_imbalance_pct"] = _safe_imbalance(current)
+    result["voltage_mean"] = voltage.mean(axis=1)
+    result["voltage_imbalance_pct"] = _safe_imbalance(voltage)
+    result["neutral_current_magnitude"] = result["neutral_current"].abs()
+    result["active_power_demand"] = result["active_power_total"]
+    result["apparent_power_utilization"] = np.nan
+    result["power_factor_mean"] = power_factor.mean(axis=1)
+    result["power_factor_deviation"] = result["power_factor_mean"].sub(1).abs()
+    result["oil_temperature_level"] = result["oil_temperature"]
+    result["ambient_temperature_level"] = result["ambient_temperature"]
+    result["ambient_to_oil_delta"] = result["oil_temperature"].sub(result["ambient_temperature"])
+    result["thermal_residual"] = np.nan
+
+    ordered = result.sort_values(["transformer_id", "timestamp"], kind="stable")
+    temporal = _add_group_temporal_features(ordered, rolling_window)
+    result.loc[temporal.index, [
+        "oil_temperature_rate", "temperature_rolling_mean", "temperature_rolling_std", "temperature_slope",
+        "oil_level_deviation", "oil_level_rate", "oil_level_rolling_mean", "rolling_load_mean",
+        "rolling_load_std", "time_since_last_alarm", "time_since_last_trip",
+    ]] = temporal[[
+        "oil_temperature_rate", "temperature_rolling_mean", "temperature_rolling_std", "temperature_slope",
+        "oil_level_deviation", "oil_level_rate", "oil_level_rolling_mean", "rolling_load_mean",
+        "rolling_load_std", "time_since_last_alarm", "time_since_last_trip",
+    ]]
+    telemetry_columns = [column for column in canonical_telemetry.columns if column not in FEATURE_COLUMNS]
+    return result.loc[:, [*telemetry_columns, *FEATURE_COLUMNS]]
