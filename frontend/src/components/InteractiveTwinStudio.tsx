@@ -40,7 +40,7 @@ export const InteractiveTwinStudio: React.FC = () => {
       selectedAsset,
       selectedScenario,
       telemetry.oil_temperature,
-      analytics.thermal_model_temperature
+      analytics.thermal_model_temperature ?? telemetry.oil_temperature
     );
   }, [selectedAsset, selectedScenario, telemetry.oil_temperature, analytics.thermal_model_temperature]);
 

@@ -8,13 +8,12 @@ import { PipelineWalkthrough } from './components/PipelineWalkthrough';
 import { FeaturesGrid } from './components/FeaturesGrid';
 import { ImpactMetrics } from './components/ImpactMetrics';
 import { Architecture } from './components/Architecture';
-import { Team } from './components/Team';
 import { Roadmap } from './components/Roadmap';
 import { PitchDeckCTA } from './components/PitchDeckCTA';
 import { Footer } from './components/Footer';
 
 export function App() {
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -64,9 +63,6 @@ export function App() {
 
         {/* 8. Microservices Architecture & Data Contract */}
         <Architecture />
-
-        {/* 9. Engineering Team & Ownership Pillars */}
-        <Team />
 
         {/* 10. Production Roadmap & CPRI Integration */}
         <Roadmap />

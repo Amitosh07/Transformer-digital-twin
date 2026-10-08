@@ -15,21 +15,23 @@
   }
 
   .light {
-    --bg-primary: #F8FAFC;
-    --bg-secondary: #EDF2F7;
-    --bg-card: rgba(255, 255, 255, 0.85);
-    --border-color: rgba(203, 213, 225, 0.8);
-    --text-primary: #0F172A;
-    --text-muted: #475569;
+    color-scheme: light;
+    --bg-primary: #F4F7F8;
+    --bg-secondary: #EEF3F5;
+    --bg-card: #FFFCF7;
+    --border-color: #E7DED0;
+    --text-primary: #172033;
+    --text-muted: #526174;
+    --chart-grid: #E5EAF0;
     --accent-amber: #D97706;
-    --accent-cyan: #0284C7;
+    --accent-cyan: #0891B2;
     --accent-emerald: #059669;
     --accent-crimson: #DC2626;
   }
 }
 
 body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'Manrope', system-ui, sans-serif;
   background-color: var(--bg-primary);
   color: var(--text-primary);
   overflow-x: hidden;
@@ -38,11 +40,15 @@ body {
 
 /* Custom Typography */
 .font-display {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Sora', sans-serif;
 }
 
 .font-heading {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Sora', sans-serif;
+}
+
+.font-sans {
+  font-family: 'Manrope', system-ui, sans-serif;
 }
 
 .font-mono {
@@ -58,9 +64,10 @@ body {
 }
 
 .light .bg-grid-pattern {
-  background-image: 
-    linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  opacity: 0.28;
+  background-image:
+    linear-gradient(to right, rgba(91, 119, 149, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(91, 119, 149, 0.08) 1px, transparent 1px);
 }
 
 .bg-dot-pattern {
@@ -146,4 +153,232 @@ body {
 a:focus-visible, button:focus-visible, input:focus-visible {
   outline: 2px solid #F59E0B;
   outline-offset: 2px;
+}
+
+.light body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.light #root > div.min-h-screen {
+  background-color: #F4F7F8;
+  background-image:
+    radial-gradient(ellipse at 10% 4%, rgba(245, 243, 232, 0.42), transparent 36%),
+    radial-gradient(ellipse at 88% 18%, rgba(37, 99, 235, 0.035), transparent 38%),
+    linear-gradient(165deg, #F7F8F6 0%, #F4F7F8 46%, #EEF3F5 100%);
+  color: #172033;
+}
+
+.light .bg-grid-pattern {
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 24%, transparent 100%);
+  mask-image: radial-gradient(ellipse at center, #000 24%, transparent 100%);
+}
+
+.light .bg-grid-pattern::before,
+.light .bg-grid-pattern::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 18%, transparent 78%);
+  mask-image: radial-gradient(ellipse at center, #000 18%, transparent 78%);
+}
+
+.light .bg-grid-pattern::before {
+  opacity: 0.32;
+  background-image:
+    radial-gradient(circle, rgba(37, 99, 235, 0.26) 1px, transparent 1.7px),
+    linear-gradient(32deg, transparent 49.8%, rgba(8, 145, 178, 0.09) 50%, transparent 50.2%);
+  background-size: 112px 112px, 224px 224px;
+  background-position: 18px 26px, 18px 26px;
+}
+
+.light .bg-grid-pattern::after {
+  opacity: 0.22;
+  background-image:
+    linear-gradient(90deg, transparent 49.8%, rgba(91, 119, 149, 0.1) 50%, transparent 50.2%),
+    linear-gradient(0deg, transparent 49.8%, rgba(91, 119, 149, 0.1) 50%, transparent 50.2%);
+  background-size: 192px 144px;
+  background-position: 72px 38px;
+}
+
+.light header {
+  background-color: rgba(255, 255, 255, 0.94);
+  border-color: #DCE4E8;
+  box-shadow: 0 8px 28px rgba(23, 32, 51, 0.06);
+}
+
+.light [class*="bg-[#080B11]"],
+.light [class*="bg-[#0A0E17]"],
+.light [class*="bg-[#0B0F19]"],
+.light [class*="bg-[#06080E]"],
+.light [class*="bg-[#0F1422]"],
+.light [class*="bg-[#0A0D15]"],
+.light [class*="bg-slate-950"] {
+  background-color: #FFFCF7;
+}
+
+.light [class*="bg-slate-900"] {
+  background-color: #FBF6EE;
+}
+
+.light [class*="bg-slate-800"] {
+  background-color: #EEF3F5;
+}
+
+.light [class*="bg-slate-700"] {
+  background-color: #E5EAF0;
+}
+
+.light [class*="from-[#0F1422]"] {
+  background-image: linear-gradient(145deg, #FFFFFF 0%, #F8FAFB 100%);
+}
+
+.light [class*="border-slate-900"],
+.light [class*="border-slate-800"],
+.light [class*="border-slate-700"],
+.light [class*="border-slate-600"] {
+  border-color: #E7DED0;
+}
+
+.light [class*="hover:border-slate-700"]:hover {
+  border-color: #E9AE59;
+}
+
+.light [class*="text-slate-100"],
+.light [class*="text-slate-200"],
+.light [class*="text-white"],
+.light [class*="text-black"] {
+  color: #172033;
+}
+
+.light [class*="text-slate-300"] {
+  color: #526174;
+}
+
+.light [class*="text-slate-400"],
+.light [class*="text-slate-500"],
+.light [class*="text-slate-600"] {
+  color: #667588;
+}
+
+.light [class*="text-amber-200"],
+.light [class*="text-amber-300"],
+.light [class*="text-amber-400"] {
+  color: #B45309;
+}
+
+.light [class*="text-cyan-300"],
+.light [class*="text-cyan-400"],
+.light [class*="text-blue-300"],
+.light [class*="text-blue-400"] {
+  color: #0369A1;
+}
+
+.light [class*="text-emerald-300"],
+.light [class*="text-emerald-400"] {
+  color: #047857;
+}
+
+.light [class*="text-rose-300"],
+.light [class*="text-rose-400"],
+.light [class*="text-red-300"],
+.light [class*="text-red-400"] {
+  color: #B91C1C;
+}
+
+.light [class*="text-purple-400"] {
+  color: #0369A1;
+}
+
+.light [class*="bg-emerald-950"] {
+  background-color: #ECFDF5;
+}
+
+.light [class*="bg-cyan-950"],
+.light [class*="bg-blue-950"] {
+  background-color: #E0F2FE;
+}
+
+.light [class*="bg-amber-950"] {
+  background-color: #FFFBEB;
+}
+
+.light [class*="bg-rose-950"] {
+  background-color: #FEF2F2;
+}
+
+.light [class*="border-emerald-800"] {
+  border-color: #A7F3D0;
+}
+
+.light [class*="border-cyan-800"],
+.light [class*="border-blue-800"] {
+  border-color: #BAE6FD;
+}
+
+.light [class*="border-amber-800"] {
+  border-color: #FDE68A;
+}
+
+.light [class*="border-rose-800"] {
+  border-color: #FECACA;
+}
+
+.light [class*="shadow-xl"],
+.light [class*="shadow-2xl"],
+.light [class*="shadow-lg"] {
+  --tw-shadow-color: rgba(77, 55, 29, 0.08);
+  box-shadow: 0 8px 30px rgba(77, 55, 29, 0.06);
+}
+
+.light #problem .grid > div {
+  background-image:
+    radial-gradient(ellipse at 12% 0%, rgba(245, 158, 11, 0.09), transparent 42%),
+    linear-gradient(145deg, #FFFEFC 0%, #FFFAF2 100%);
+  border-color: #E8DCCB;
+  box-shadow: 0 10px 34px rgba(77, 55, 29, 0.075);
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+.light #problem .grid > div::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 24px;
+  right: 24px;
+  height: 2px;
+  background: linear-gradient(90deg, #D97706, rgba(245, 158, 11, 0.24) 72%, transparent);
+  opacity: 0.72;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .light #problem .grid > div:hover {
+    transform: translateY(-4px);
+    border-color: #E9AE59;
+    box-shadow: 0 18px 38px rgba(77, 55, 29, 0.12);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .light #problem .grid > div {
+    transition: none;
+  }
+}
+
+.light ::selection {
+  background: rgba(245, 158, 11, 0.24);
+  color: #172033;
+}
+
+.light ::-webkit-scrollbar-track {
+  background: #EEF3F5;
+}
+
+.light ::-webkit-scrollbar-thumb {
+  background: #C7D2DA;
+}
+
+.light ::-webkit-scrollbar-thumb:hover {
+  background: #9AA9B8;
 }
