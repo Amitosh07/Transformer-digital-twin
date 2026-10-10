@@ -1,125 +1,97 @@
-# Transformer Digital Twin — Web Presentation Layer
+# Transformer Digital Twin — Operations Console
 
-> **AI-powered Digital Twin of a Distribution Transformer for Condition Monitoring and Predictive Maintenance**  
-> Built for the CPRI / PowerNext Smart Grid Innovation Track.  
-> Governed by **Canonical Data Schema v1.0.0** (`dataschema.md`) and **ML Contract v1.0.0** (`mlcontract.md`).
+React/Vite/TypeScript monitoring UI. The application opens directly to the
+registry-backed asset overview. Historical marketing/educational components
+remain preserved, but the production entry point does not mount or import them.
+All monitoring values come from FastAPI. There is no local analytics or sample fallback.
 
----
+## Run locally
 
-## ⚡ Overview
+Use the existing lockfile and Node version compatible with Vite 8 (tested Node 22.17).
+With dependencies already installed, `npm run dev` from this directory starts Vite.
+On a fresh installation use `npm ci --ignore-scripts`. Vite binds to loopback.
+`.env.example` documents `VITE_API_BASE_URL`, selected polling and demo staleness.
+The direct API default is `http://127.0.0.1:8001`; this origin must allow the
+frontend through CORS. Do not include `/api/v1` in that setting.
 
-This web application represents the presentation and live demonstration layer of the **Transformer Digital Twin**. It transforms complex electrical, thermal, and mechanical SCADA telemetry into an intuitive, high-conviction decision-support system for utility control rooms, substation engineers, and hackathon judges.
+The existing Docker UI can remain running at 5173. To inspect current source on
+Windows PowerShell without rebuilding any container:
 
-### Key Differentiators for Judges
-1. **Physics-Informed Thermal Residual ($\Delta T = T_{\text{obs}} - T_{\text{model}}$):** Implements the IEEE C57.91 differential thermal equation to isolate cooling degradation and hot spots **48 hours before conventional trip alarms fire**.
-2. **60 FPS Real-Time 3-Phase Vector Canvas:** Interactive HTML5 canvas rendering Phases L1, L2, L3 and resulting zero-sequence neutral current waveforms with live vector asymmetry detection.
-3. **6-Pillar Composite Health Index (0–100):** Transparent, explainable asset rating weighted across Thermal (25%), Electrical (20%), Loading (15%), Oil Condition (15%), Protection (15%), and Anomaly (10%).
-4. **Interactive Fault Injection Studio:** Test Overload (138%), Cooling Loss (Rapid $\Delta T$ rise), Phase Imbalance, and Conservator Oil Leakage deterministically.
-5. **Contract Purity:** Complete decoupling from raw vendor schemas. Strictly rejects unverified line voltages (`VL12, VL23, VL31`) and prohibits silent zero-filling.
-
----
-
-## 🛠️ Technology Stack
-
-- **Framework:** React 19 + Vite 8 + TypeScript
-- **Styling:** Tailwind CSS v4 (Matte obsidian cyber-physical SCADA aesthetic)
-- **Vector Graphics:** HTML5 Canvas API (60fps requestAnimationFrame)
-- **Icons:** Lucide React + custom SVG marks
-- **Visual Micro-animations:** CSS keyframe pulses, SVG glow filters, canvas-confetti
-
----
-
-## 📂 Project Structure
-
-```
-frontend/
-├── public/
-│   └── assets/
-│       ├── transformer_hero.jpg       # Holographic CAD cutaway of transformer
-│       └── transformer_schematic.jpg  # Engineering CAD schematic & blueprint
-├── src/
-│   ├── components/
-│   │   ├── Navbar.tsx                 # Status HUD, schema pill, theme toggle
-│   │   ├── Hero.tsx                   # Editorial headline, CAD cutaway, telemetry ticker
-│   │   ├── Problem.tsx                # Why static thresholds & black-box ML fail
-│   │   ├── Solution.tsx               # Physics ODE + ML residual explanation
-│   │   ├── InteractiveTwinStudio.tsx  # Signature interactive demo & sandbox
-│   │   ├── ThreePhaseWaveformCanvas.tsx# 60fps AC vector canvas
-│   │   ├── ThermalResidualChart.tsx   # Dual thermal curves (Observed vs Model)
-│   │   ├── HealthIndexDial.tsx        # 6-pillar radial gauge dial
-│   │   ├── PrescriptiveActionCard.tsx # Operator work orders & JSON contract
-│   │   ├── PipelineWalkthrough.tsx    # 6-stage canonical pipeline stepper
-│   │   ├── FeaturesGrid.tsx           # Technical capability matrix
-│   │   ├── ImpactMetrics.tsx          # Quantified utility gains (+48h, -74%)
-│   │   ├── Architecture.tsx           # Topology, CAD blueprint, schema tree, FastAPI
-│   │   ├── Team.tsx                   # 4 ownership pillars from dataschema.md
-│   │   ├── Roadmap.tsx                # Baseline to CPRI testbed milestones
-│   │   ├── PitchDeckCTA.tsx           # One-command Docker startup snippet
-│   │   ├── GithubIcon.tsx             # Clean SVG GitHub mark
-│   │   └── Footer.tsx                 # Compliance metadata and attribution
-│   ├── data/
-│   │   ├── assets.ts                  # Substation transformer nameplates & scenarios
-│   │   └── scadaSimulation.ts         # IEEE thermal rise model & health calculation
-│   ├── types.ts                       # Canonical Schema v1.0.0 TypeScript types
-│   ├── App.tsx                        # Master application layout & theme manager
-│   ├── main.tsx                       # React DOM root entry
-│   └── index.css                      # Tailwind v4, custom scrollbars, cyber grid
-├── package.json
-└── vite.config.ts
-```
-
----
-
-## 🚀 Running Locally
-
-### 1. Prerequisites
-- Node.js 18+ (tested on Node v24)
-- npm or yarn
-
-### 2. Installation
-```bash
+```powershell
 cd frontend
-npm install
+$env:VITE_API_BASE_URL = '/'
+node node_modules/vite/bin/vite.js --host 127.0.0.1 --port 5174 --strictPort
 ```
 
-### 3. Start Development Server
-```bash
-npm run dev
-```
-Open [http://localhost:5173](http://localhost:5173) in your browser.
+Open `http://127.0.0.1:5174`. In this same-origin development mode Vite forwards
+`/api` to the established backend at `http://127.0.0.1:8001`; it returns actual
+responses/errors. The proxy is development-only. Production builds still use
+the configured API origin and existing CORS/deployment conventions. Ctrl+C
+stops only this development server. No backend, source or database reset is needed.
+The running Docker frontend retains its earlier image until separately rebuilt;
+this task verified the new source through Vite, not an updated Docker image.
 
-### 4. Build for Production
-```bash
+## Navigation and request budget
+
+Overview fetches every registry page (50 rows/request), deduplicates IDs, supports
+ID/name search and shows12 cards/page. Status/alarm filters explicitly apply to
+the visible page; other pages are not silently assessed. Latest card requests
+have at most3 concurrent calls, repeat15 seconds after completion and never fetch
+portfolio history. Every asset has its own response/error/last-success state.
+Selecting an asset stops overview polling and opens the equipment-centred view.
+
+Selected latest polls every2–5 seconds (configured default3); registry refreshes
+60 seconds, MQTT diagnostics15 seconds. Active monitoring/thermal tabs request
+only the newest300 telemetry/analytics rows in an explicit one-hour event-time
+window every15 seconds. Rows are restored to chronological display order; partial
+coverage is disclosed. Alarms/maintenance retrieve the most recent30 records
+inside a24-hour event-time window using the actual ascending API's offset pages.
+No alarm acknowledgement/control is sent. Maintenance-only RUL polls15 seconds;
+projection and one-hour energy poll30 seconds. These intervals do not restart
+whenever telemetry event time changes. Superseded requests abort/ignore their
+results; unmount cancels timers. HTTP requests time out after10 seconds.
+
+## Supported inputs and limitations
+
+| Panel | Existing backend input | Honest limitation |
+|---|---|---|
+| Asset overview | `/api/v1/transformers`, `/{id}/latest` | Null/error is not healthy; registry values do not establish verification. |
+| Equipment / electrical | Latest canonical voltage/current/power, contacts and analytics | A temperature trip or generic anomaly is not a confirmed short circuit. WTI status is not temperature. |
+| Oil leak | `oil_level`, gauge contact; telemetry history | No dedicated leak/depletion-rate result exists. A decline does not establish leakage. Units remain source-defined. |
+| Pressure / DGA | No canonical source field/resource | Explicitly unavailable. No pressure/gas values or thresholds generated. |
+| Thermal | Backend model, residual, component readiness/units and history | Residual is displayed only when readiness and observed/model units agree; no inferred headroom. |
+| Overload | Backend `loading_percent`, reason codes and asset nameplate metadata | No browser rating division, overload-duration model or invented capacity. |
+| Maintenance | Health/anomaly/recommendation metadata; maintenance records | Unreleased risk/confidence remain unavailable. |
+| RUL / energy | Existing `/{id}/rul`, `/rul/projection`, `/energy?window=1h&anchor=latest` | Synthetic scenario labelled; no lifetime claim. Missing loss/efficiency remains null. |
+| System health | `/api/v1/ingest/mqtt/status` | Broker connection/PUBACK does not prove a per-snapshot SQL receipt. |
+
+All asset paths above are under `/api/v1/transformers`. Charts use actual bounded
+`/{id}/telemetry` and `/analytics` responses. Gaps/nulls/unit mismatches break
+lines; missing observations are never zero-filled. No backend SSE/WebSocket
+route is supplied, so the UI uses bounded polling.
+
+Source kind, lineage, units, verification, measurement and analytics times,
+configuration and bundle identity remain visible. Display times use the browser's
+local timezone (the reviewed machine uses IST); ISO source times remain in time
+attributes/tooltips and API evidence. Replay event time remains historical.
+The10-second staleness threshold is a demo configuration, not a universal limit.
+Current simulator event clocks can be historical even while transport updates.
+
+## Verification
+
+```powershell
+npm test
 npm run build
+npm run lint
 ```
 
-### 5. Preview Production Build
-```bash
-npm run preview -- --port 4173 --host
-```
-Open [http://localhost:4173](http://localhost:4173) in your browser.
-
----
-
-## 🐳 Docker Deployment
-
-To launch the frontend alongside the FastAPI backend, PostgreSQL database, and SCADA simulator:
-
-```bash
-# In the root repository directory
-docker compose up --build
-```
-
----
-
-## 🎯 Judging Walkthrough (5-Minute Winning Pitch)
-
-1. **First 15 Seconds (Hero):** Point out the live telemetry stream ticker ($I_{L1}, I_{L2}, I_{L3}, OTI, WTI$) and the holographic CAD cutaway showing the physical sensor layout.
-2. **Minute 1 (The Problem vs Solution):** Contrast standard threshold alarms (which sleep during winter overloads) against our **Thermodynamic Residual ($\Delta T = T_{\text{obs}} - T_{\text{model}}$)**. Show the IEEE differential thermal equation.
-3. **Minute 2–3 (The Live Interactive Demo):**
-   - Click **"Severe Grid Overload (138%)"**: Watch the loading surge to 138%, temperature climb, and WATCH priority issue.
-   - Click **"Cooling Radiator Failure"**: Point out how $T_{\text{observed}}$ surges $+18.6^{\circ}\text{C}$ above $T_{\text{model}}$, the **Thermal Residual** goes crimson, the Health Index drops to 42, and an **URGENT** work order is generated with reason code `#RAPID_TEMP_RISE`.
-   - Click **"Phase Asymmetry & Neutral Surge"**: Watch the 60fps canvas waveform skew, revealing the surging zero-sequence neutral current wave!
-   - Click **"Nominal Baseline"**: Trigger the green recovery with confetti.
-4. **Minute 4 (Architecture & Contracts):** Open the **Canonical Schema** tab under Architecture to show how `dataschema.md` strictly insulates the project from messy Kaggle/CPRI column differences.
-5. **Minute 5 (Team & Roadmap):** Highlight the 4 distinct ownership pillars and one-command Docker deployment.
+The existing Vitest/jsdom runner now includes console behavior tests. Controlled
+fixtures are imported only by tests. Live browser evidence is in `screenshots/`:
+`overview.png`, `transformer-detail.png`, `mobile-detail.png`, `api-outage.png`
+and `live-verification.json`. See [CONSOLE_REPORT.md](CONSOLE_REPORT.md) for actual
+results and intermediate failures. Build success alone is not integration proof.
+`node scripts/verify-console.mjs` is the exercised local browser verification;
+it uses the already available Playwright-core installation in
+`$env:TEMP/h06-browser` and installed Edge. On another machine supply an equivalent
+Playwright/browser setup before running it; this helper is not a runtime dependency.
+It interrupts browser requests only, leaving services and data untouched.

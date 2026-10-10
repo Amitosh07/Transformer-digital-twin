@@ -1,0 +1,324 @@
+{
+  "retry_conflict": {
+    "exact_retry": true,
+    "accepted_state_unchanged": true,
+    "conflict_receipt": {
+      "schema_version": "1.1.0",
+      "receipt_status": "CONFLICT",
+      "snapshot_id": "31243c3db4ccc133464dcfefc243d53618840ff66a8dda7edc37fc3dc20efa11",
+      "payload_hash": "31243c3db4ccc133464dcfefc243d53618840ff66a8dda7edc37fc3dc20efa11",
+      "transformer_id": "H06-RUL-ORACLE",
+      "timestamp": "2026-10-09T00:00:00+00:00",
+      "received_at": "2026-10-09T18:36:00.344811+00:00",
+      "committed_at": null,
+      "accepted_snapshot_id": "72faee97deb55b317ce13d5c1c65825428788f66e9f36d38c897e728cdbf1a8a",
+      "accepted_payload_hash": "72faee97deb55b317ce13d5c1c65825428788f66e9f36d38c897e728cdbf1a8a",
+      "ingestion_outcome": "CONFLICT",
+      "analytics_status": "AVAILABLE",
+      "state_coverage_loss": false
+    },
+    "mqtt_conflict_count_increased": true
+  },
+  "sql_failure": {
+    "http_status": 500,
+    "no_committed_receipt_before_retry": true,
+    "accepted_rows_after_retry": 1,
+    "checkpoint_observations": 1
+  },
+  "broker_outage": {
+    "before": {
+      "counters": {
+        "acquired": 192,
+        "broker_pubacks": 197,
+        "committed": 191
+      },
+      "entries": [
+        [
+          "b615e97d9db0f91c8985b4d37de640d820bbfac877d965c18cad2d93053dfbc7",
+          "b615e97d9db0f91c8985b4d37de640d820bbfac877d965c18cad2d93053dfbc7",
+          0,
+          null
+        ]
+      ]
+    },
+    "after": {
+      "counters": {
+        "acquired": 193,
+        "broker_pubacks": 197,
+        "committed": 191
+      },
+      "entries": [
+        [
+          "b615e97d9db0f91c8985b4d37de640d820bbfac877d965c18cad2d93053dfbc7",
+          "b615e97d9db0f91c8985b4d37de640d820bbfac877d965c18cad2d93053dfbc7",
+          0,
+          "BROKER_FAILURE"
+        ],
+        [
+          "2aba5dde22bd4e953a5fffcac9d8f2954dca1981d5ddce56732eec79754eaf65",
+          "2aba5dde22bd4e953a5fffcac9d8f2954dca1981d5ddce56732eec79754eaf65",
+          0,
+          null
+        ]
+      ]
+    }
+  },
+  "database_outage": {
+    "before": {
+      "counters": {
+        "acquired": 195,
+        "broker_pubacks": 197,
+        "committed": 191
+      },
+      "entries": [
+        [
+          "b615e97d9db0f91c8985b4d37de640d820bbfac877d965c18cad2d93053dfbc7",
+          "b615e97d9db0f91c8985b4d37de640d820bbfac877d965c18cad2d93053dfbc7",
+          0,
+          "BROKER_FAILURE"
+        ],
+        [
+          "2aba5dde22bd4e953a5fffcac9d8f2954dca1981d5ddce56732eec79754eaf65",
+          "2aba5dde22bd4e953a5fffcac9d8f2954dca1981d5ddce56732eec79754eaf65",
+          0,
+          null
+        ],
+        [
+          "d02972bf6652b424cd0eed0f00b497557b220f477ee82db9e736ac4c5c878eb6",
+          "d02972bf6652b424cd0eed0f00b497557b220f477ee82db9e736ac4c5c878eb6",
+          0,
+          null
+        ],
+        [
+          "9fe75c60789cfd28c9b7ab62214127a86313b69e8ec9af8d337169b9028fd763",
+          "9fe75c60789cfd28c9b7ab62214127a86313b69e8ec9af8d337169b9028fd763",
+          0,
+          null
+        ]
+      ]
+    },
+    "after": {
+      "counters": {
+        "acquired": 196,
+        "broker_pubacks": 198,
+        "committed": 191
+      },
+      "entries": [
+        [
+          "b615e97d9db0f91c8985b4d37de640d820bbfac877d965c18cad2d93053dfbc7",
+          "b615e97d9db0f91c8985b4d37de640d820bbfac877d965c18cad2d93053dfbc7",
+          0,
+          "BROKER_FAILURE"
+        ],
+        [
+          "2aba5dde22bd4e953a5fffcac9d8f2954dca1981d5ddce56732eec79754eaf65",
+          "2aba5dde22bd4e953a5fffcac9d8f2954dca1981d5ddce56732eec79754eaf65",
+          0,
+          null
+        ],
+        [
+          "d02972bf6652b424cd0eed0f00b497557b220f477ee82db9e736ac4c5c878eb6",
+          "d02972bf6652b424cd0eed0f00b497557b220f477ee82db9e736ac4c5c878eb6",
+          0,
+          null
+        ],
+        [
+          "9fe75c60789cfd28c9b7ab62214127a86313b69e8ec9af8d337169b9028fd763",
+          "9fe75c60789cfd28c9b7ab62214127a86313b69e8ec9af8d337169b9028fd763",
+          0,
+          null
+        ],
+        [
+          "f27d0d6b49b273834145c42c619d1896827e0c02928cd3d3849f8f1ef5e18615",
+          "f27d0d6b49b273834145c42c619d1896827e0c02928cd3d3849f8f1ef5e18615",
+          0,
+          null
+        ]
+      ]
+    }
+  },
+  "spool_restart": {
+    "retained_identities": 5,
+    "all_hashes_unchanged": true
+  },
+  "recovery": {
+    "spool": {
+      "counters": {
+        "acquired": 207,
+        "broker_pubacks": 200,
+        "committed": 192
+      },
+      "entries": [
+        [
+          "2aba5dde22bd4e953a5fffcac9d8f2954dca1981d5ddce56732eec79754eaf65",
+          "2aba5dde22bd4e953a5fffcac9d8f2954dca1981d5ddce56732eec79754eaf65",
+          1,
+          "NOT_YET_COMMITTED"
+        ],
+        [
+          "d02972bf6652b424cd0eed0f00b497557b220f477ee82db9e736ac4c5c878eb6",
+          "d02972bf6652b424cd0eed0f00b497557b220f477ee82db9e736ac4c5c878eb6",
+          0,
+          null
+        ],
+        [
+          "9fe75c60789cfd28c9b7ab62214127a86313b69e8ec9af8d337169b9028fd763",
+          "9fe75c60789cfd28c9b7ab62214127a86313b69e8ec9af8d337169b9028fd763",
+          0,
+          null
+        ],
+        [
+          "f27d0d6b49b273834145c42c619d1896827e0c02928cd3d3849f8f1ef5e18615",
+          "f27d0d6b49b273834145c42c619d1896827e0c02928cd3d3849f8f1ef5e18615",
+          0,
+          null
+        ],
+        [
+          "03c7698d40df08922e8b1c4f847245b380ea4e5e17c1616222b42eb973f7a449",
+          "03c7698d40df08922e8b1c4f847245b380ea4e5e17c1616222b42eb973f7a449",
+          0,
+          null
+        ],
+        [
+          "6f2015a6c0da069ca83c94b78bc642135a6c93a3b714553c17e11356bc8e0eb2",
+          "6f2015a6c0da069ca83c94b78bc642135a6c93a3b714553c17e11356bc8e0eb2",
+          0,
+          null
+        ],
+        [
+          "e9153ddf5e2f60287732c4fc6acd5f274d8f8da7a1b5bd18c00350770b35f602",
+          "e9153ddf5e2f60287732c4fc6acd5f274d8f8da7a1b5bd18c00350770b35f602",
+          0,
+          null
+        ],
+        [
+          "45c0703aea4d101acf12ae3335767d83be9446cb589f018d6a66a413d244d632",
+          "45c0703aea4d101acf12ae3335767d83be9446cb589f018d6a66a413d244d632",
+          0,
+          null
+        ],
+        [
+          "edffa0b97fcc9ed35c107a9a2030332a2053428a7a0362de1b4ef11c4486174e",
+          "edffa0b97fcc9ed35c107a9a2030332a2053428a7a0362de1b4ef11c4486174e",
+          0,
+          null
+        ],
+        [
+          "50e8278d57897a35c8dba79305abff8df200f04003d6b2ba4c8ca30050672fb3",
+          "50e8278d57897a35c8dba79305abff8df200f04003d6b2ba4c8ca30050672fb3",
+          0,
+          null
+        ],
+        [
+          "eae01749aae4ab9c78cfd6ed33dccdad0bb1bf50e40688186ce8eff725086ef6",
+          "eae01749aae4ab9c78cfd6ed33dccdad0bb1bf50e40688186ce8eff725086ef6",
+          0,
+          null
+        ],
+        [
+          "9053fb9d1c6afe2bbb0cb94201cd724688d2d4aaf65f31a832d1d42388c8ddb1",
+          "9053fb9d1c6afe2bbb0cb94201cd724688d2d4aaf65f31a832d1d42388c8ddb1",
+          0,
+          null
+        ],
+        [
+          "b16113459b39093b50868388de286811c63496e504b0b3d23540e8cc6e35fd8c",
+          "b16113459b39093b50868388de286811c63496e504b0b3d23540e8cc6e35fd8c",
+          0,
+          null
+        ],
+        [
+          "cd1bfdf391347c71a214ece618b8ae89715a474311c27cd4e9a01e5ccf1cafe6",
+          "cd1bfdf391347c71a214ece618b8ae89715a474311c27cd4e9a01e5ccf1cafe6",
+          0,
+          null
+        ],
+        [
+          "91e972d7a47dc0912b9788904d2305a7a3d289cbd52421666a7881c5a3c63415",
+          "91e972d7a47dc0912b9788904d2305a7a3d289cbd52421666a7881c5a3c63415",
+          0,
+          null
+        ]
+      ]
+    },
+    "fully_drained": false,
+    "checkpoint_rate_preserved": true,
+    "rul_results": [
+      {
+        "timestamp": "2026-10-09T00:16:20+00:00",
+        "rul": {
+          "rul_unit": "h",
+          "rul_lower": 66.43981481481464,
+          "rul_upper": 99.65972222222197,
+          "rul_value": 79.72777777777758,
+          "simulated": true,
+          "timestamp": "2026-10-09T00:16:20Z",
+          "rul_method": "SYNTHETIC_FIRST_PASSAGE_V1",
+          "rul_status": "SIMULATED_ESTIMATE",
+          "assumptions": [
+            "Fictional latent D is independent of health index and anomaly score",
+            "Endpoint is a scenario definition, not transformer end-of-life",
+            "Future duty begins at this event time; rates have units 1/hour",
+            "Declared rate range 0.008\u20130.012/hour; not calibrated confidence",
+            "Declared future duty: [{'hours': 100.0, 'rate_per_hour': 0.01}]"
+          ],
+          "source_kind": "SIMULATED",
+          "coverage_end": "2026-10-09T00:16:20Z",
+          "end_threshold": 1.0,
+          "model_version": "synthetic-first-passage-v1",
+          "config_version": "fictional-rul-v1",
+          "coverage_start": "2026-10-08T23:00:00Z",
+          "required_inputs": [],
+          "degradation_unit": "1",
+          "limitation_codes": [],
+          "uncertainty_kind": "SCENARIO_RANGE",
+          "coverage_fraction": 1.0,
+          "degradation_state": 0.2027222222222242,
+          "future_duty_scenario": "H06_FICTIONAL_PREROLL",
+          "rul_target_definition": "Declared fictional degradation reaches scenario endpoint; not physical end-of-life",
+          "forecast_horizon_hours": 100.0,
+          "equivalent_ageing_hours": null,
+          "degradation_rate_per_hour": 0.01
+        }
+      },
+      {
+        "timestamp": "2026-10-09T00:16:10+00:00",
+        "rul": {
+          "rul_unit": "h",
+          "rul_lower": 66.44212962962946,
+          "rul_upper": 99.6631944444442,
+          "rul_value": 79.73055555555536,
+          "simulated": true,
+          "timestamp": "2026-10-09T00:16:10Z",
+          "rul_method": "SYNTHETIC_FIRST_PASSAGE_V1",
+          "rul_status": "SIMULATED_ESTIMATE",
+          "assumptions": [
+            "Fictional latent D is independent of health index and anomaly score",
+            "Endpoint is a scenario definition, not transformer end-of-life",
+            "Future duty begins at this event time; rates have units 1/hour",
+            "Declared rate range 0.008\u20130.012/hour; not calibrated confidence",
+            "Declared future duty: [{'hours': 100.0, 'rate_per_hour': 0.01}]"
+          ],
+          "source_kind": "SIMULATED",
+          "coverage_end": "2026-10-09T00:16:10Z",
+          "end_threshold": 1.0,
+          "model_version": "synthetic-first-passage-v1",
+          "config_version": "fictional-rul-v1",
+          "coverage_start": "2026-10-08T23:00:00Z",
+          "required_inputs": [],
+          "degradation_unit": "1",
+          "limitation_codes": [],
+          "uncertainty_kind": "SCENARIO_RANGE",
+          "coverage_fraction": 1.0,
+          "degradation_state": 0.20269444444444643,
+          "future_duty_scenario": "H06_FICTIONAL_PREROLL",
+          "rul_target_definition": "Declared fictional degradation reaches scenario endpoint; not physical end-of-life",
+          "forecast_horizon_hours": 100.0,
+          "equivalent_ageing_hours": null,
+          "degradation_rate_per_hour": 0.01
+        }
+      }
+    ]
+  },
+  "completed": true
+}

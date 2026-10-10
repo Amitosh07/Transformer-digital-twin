@@ -40,7 +40,7 @@ def test_canonical_fields_match_schema_and_orm() -> None:
         "power_factor_l3",
     ]
     assert CANONICAL_TELEMETRY_FIELDS == expected
-    assert list(TelemetryIn.model_fields) == expected + ["source_name", "scenario_id"]
+    assert list(TelemetryIn.model_fields) == ['schema_version', 'acquisition'] + expected + ["source_name", "scenario_id"]
     metadata = {
         "id",
         "source_name",
@@ -50,6 +50,7 @@ def test_canonical_fields_match_schema_and_orm() -> None:
         "data_quality_score",
         "schema_version",
         "ingested_at",
+        "acquisition", "payload_hash", "semantic_payload", "ingestion_outcome", "ml_status", "ml_error",
     }
     orm_fields = set(Telemetry.__table__.columns.keys()) - metadata
     assert set(CANONICAL_TELEMETRY_FIELDS) == orm_fields

@@ -18,7 +18,12 @@ from app.ml_client.factory import close_ml_client
 async def lifespan(application: FastAPI) -> AsyncIterator[None]:
     application.state.started = False
     consumer = None
+    lease = None
     try:
+        if get_settings().ml_backend == 'python':
+            from app.services.runtime_lease import RuntimeLease
+            lease = RuntimeLease()
+            await run_in_threadpool(lease.acquire)
         if get_settings().mqtt_enabled:
             from app.mqtt.consumer import MqttConsumer
 
@@ -34,6 +39,8 @@ async def lifespan(application: FastAPI) -> AsyncIterator[None]:
                 await run_in_threadpool(consumer.stop)
         finally:
             close_ml_client()
+            if lease is not None:
+                await run_in_threadpool(lease.close)
 
 
 def create_app() -> FastAPI:

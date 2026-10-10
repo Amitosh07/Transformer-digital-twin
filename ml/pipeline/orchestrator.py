@@ -1,6 +1,6 @@
 """Deterministic, stateful, quality-aware unified ML/Twin pipeline orchestrator.
 
-Phase 07 — Unified ML/Twin Pipeline:
+Phase 07 â€” Unified ML/Twin Pipeline:
 - Integrates Phases 00-06 into ONE deterministic canonical-to-analytics pipeline.
 - Enforces strict execution order:
     1. Resolve compatible bundle/config
@@ -46,6 +46,8 @@ from ml.maintenance.engine import MaintenanceEngine
 from ml.pipeline.asset_config import AssetConfig
 from ml.pipeline.bundle import PipelineBundle
 from ml.pipeline.state import AssetPipelineState
+from ml.pipeline.identity import payload_hash, utc, FIELDS
+from ml.rul.model import update_degradation, operational_result
 from ml.prediction.model import (
     STATUS_INSUFFICIENT_DATA,
     STATUS_INSUFFICIENT_VALIDATION,
@@ -68,6 +70,14 @@ class PipelineError(ValueError):
 
 class PipelineValidationError(PipelineError):
     """Raised when record schema or time validation fails."""
+
+
+def ingestion_outcome(record, digest, status):
+    return {'schema_version': '1.1.0', 'transformer_id': record['transformer_id'],
+            'timestamp': utc(record['timestamp']), 'snapshot_id': digest,
+            'ingestion_outcome': status, 'http_status': 409,
+            'forward_state_advanced': False, 'analytics': None,
+            'reason': 'SEMANTIC_PAYLOAD_CONFLICT' if status == 'CONFLICT' else 'OUT_OF_ORDER_EVENT_TIME'}
 
 
 def _check_no_excluded_fields(record: Mapping[str, Any]) -> None:
@@ -117,6 +127,33 @@ class UnifiedMLPipeline:
         """Register or update asset nameplate configuration."""
         self.asset_configs[config.transformer_id] = config
 
+    def hydrate_history(self, config, current, history):
+        """Hydrate a cold asset once; subsequent history is consistency evidence.
+
+        Never replay already accepted records. Unknown older durable identities
+        require the backend receipt store; only the bounded cache is checked here.
+        """
+        asset = config.transformer_id
+        rows = [dict(r) for r in history]
+        if any(r.get('transformer_id') != asset for r in rows):
+            raise PipelineValidationError('history contains another asset')
+        rows.sort(key=lambda r: utc(r['timestamp']))
+        if any(utc(r['timestamp']) >= utc(current['timestamp']) for r in rows):
+            raise PipelineValidationError('history must precede current event')
+        state = self._asset_states.get(asset)
+        if state is None or state.last_processed_timestamp is None:
+            for row in rows:
+                outcome = self.process_record(row, config)
+                if 'ingestion_outcome' in outcome:
+                    raise PipelineValidationError('history conflict')
+        else:
+            for row in rows:
+                prior = state.identity_cache.get(pd.Timestamp(row['timestamp']).tz_convert('UTC').isoformat())
+                if prior and prior['hash'] != payload_hash(row):
+                    raise PipelineValidationError('supplied history conflicts with accepted identity')
+                if pd.Timestamp(row['timestamp']) > state.last_processed_timestamp:
+                    raise PipelineValidationError('new history requires explicit cold hydration/backfill session')
+
     def get_state(self, transformer_id: str) -> AssetPipelineState:
         """Retrieve or initialize isolated state for the given transformer."""
         if transformer_id not in self._asset_states:
@@ -155,7 +192,8 @@ class UnifiedMLPipeline:
             if transformer_id in self._asset_states:
                 self._asset_states[transformer_id].reset()
         else:
-            self._asset_states.clear()
+            for state in self._asset_states.values():
+                state.reset()
 
     def process_record(
         self,
@@ -168,11 +206,40 @@ class UnifiedMLPipeline:
         """
         # 1 & 2. Validate schema & identity
         _check_no_excluded_fields(record)
+        if record.get('schema_version', '1.0.0') not in ('1.0.0', '1.1.0'):
+            raise PipelineValidationError('unsupported telemetry envelope version')
 
         tx_id = record.get("transformer_id")
         if not tx_id or not str(tx_id).strip():
             raise PipelineValidationError("Record requires a populated non-empty 'transformer_id'")
         tx_id = str(tx_id).strip()
+        if len(tx_id) > 128:
+            raise PipelineValidationError('asset identity exceeds 128 characters')
+        if tx_id != record['transformer_id']:
+            raise PipelineValidationError('identity whitespace is not normalized implicitly')
+        a = record.get('acquisition') or {}
+        allowed = set(FIELDS) | {'transformer_id', 'timestamp', 'schema_version',
+                                'source_name', 'scenario_id', 'acquisition'}
+        if set(record) - allowed:
+            raise PipelineValidationError(f'noncanonical input fields: {sorted(set(record) - allowed)}')
+        simulated_origin = a.get('source_kind') == 'SIMULATED' or (
+            a.get('source_kind') == 'REPLAYED' and a.get('origin_kind') == 'SIMULATED')
+        if a:
+            if a.get('timezone_status') == 'UNKNOWN':
+                raise PipelineValidationError('unknown timezone must be staged')
+            if a.get('timezone_status') == 'DECLARED_UTC' and not simulated_origin:
+                raise PipelineValidationError('declared UTC requires synthetic provenance')
+            if a.get('timezone_status') == 'ASSUMED' and (a.get('source_kind') != 'REPLAYED' or a.get('timestamp_origin') != 'REPLAY_ASSUMPTION'):
+                raise PipelineValidationError('undeclared replay timezone assumption')
+            if record.get('source_name') is not None and record['source_name'] != a.get('source_name'):
+                raise PipelineValidationError('source names disagree')
+            if any(v == 'SYNTHETIC' for v in a.get('field_verification', {}).values()) and not simulated_origin:
+                raise PipelineValidationError('synthetic units cannot authorize a real source')
+        if a.get('source_kind') == 'REPLAYED' and (
+            a.get('origin_transformer_id') == tx_id or not a.get('origin_transformer_id') or not a.get('replay_run_id') or tx_id not in self.asset_configs):
+            raise PipelineValidationError('replay requires a separate registered asset and origin/run IDs')
+        if 'received_at' in record:
+            raise PipelineValidationError('received_at is backend-owned; remove it from the inference input')
 
         ts_raw = record.get("timestamp")
         if ts_raw is None or pd.isna(ts_raw):
@@ -180,7 +247,7 @@ class UnifiedMLPipeline:
         try:
             ts = pd.Timestamp(ts_raw)
             if ts.tzinfo is None:
-                ts = ts.tz_localize(timezone.utc)
+                raise PipelineValidationError('timezone-aware timestamp required')
             else:
                 ts = ts.tz_convert(timezone.utc)
         except Exception as exc:
@@ -188,48 +255,43 @@ class UnifiedMLPipeline:
 
         # Resolve asset configuration
         cfg = asset_config or self.asset_configs.get(tx_id) or AssetConfig(transformer_id=tx_id)
+        if cfg.transformer_id != tx_id:
+            raise PipelineValidationError('configuration/record asset mismatch')
 
         # 3 & 4. Load compatible per-asset state & Check idempotency / late-row
-        state = self.get_state(tx_id)
+        # Reject retries/conflicts/late observations before any compatibility reset.
+        state = self._asset_states.get(tx_id) or self.get_state(tx_id)
 
-        if state.last_processed_timestamp is not None:
-            if ts == state.last_processed_timestamp:
-                # Idempotent retry: return existing result without re-integrating
-                if state.last_result is not None:
-                    return copy.deepcopy(state.last_result)
-            elif ts < state.last_processed_timestamp:
-                # Late-arriving observation out of event-time order
-                # Never integrate negative elapsed time into forward dynamical state
-                logger.warning(
-                    "Late observation received for %s: %s < last %s. Rejecting integration.",
-                    tx_id,
-                    ts,
-                    state.last_processed_timestamp,
-                )
-                return {
-                    "transformer_id": tx_id,
-                    "timestamp": ts.isoformat(),
-                    "inference_status": "REJECTED_LATE_OBSERVATION",
-                    "error_detail": f"Observation timestamp {ts} is earlier than latest committed {state.last_processed_timestamp}",
-                    "loading_percent": None,
-                    "thermal_model_temperature": None,
-                    "thermal_residual": None,
-                    "thermal_state": None,
-                    "anomaly_score": None,
-                    "anomaly_flag": None,
-                    "health_index": None,
-                    "health_components": None,
-                    "health_reason_codes": [],
-                    "fault_risk": None,
-                    "predicted_fault": None,
-                    "prediction_confidence": None,
-                    "maintenance_priority": "WATCH",
-                    "maintenance_recommendation": "Review data sequencing; out-of-order telemetry received.",
-                    "reason_codes": ["DATA_QUALITY_ISSUE"],
-                    "schema_version": self.bundle.schema_version,
-                    "feature_version": self.bundle.feature_version,
-                    "model_version": self.bundle.model_version,
-                }
+        semantic_hash = payload_hash(record)
+        snapshot = (record.get('acquisition') or {}).get('snapshot_id') or semantic_hash
+        if snapshot != semantic_hash:
+            raise PipelineValidationError('snapshot_id must equal semantic payload hash')
+        identity = ts.isoformat()
+        prior = state.identity_cache.get(identity)
+        if prior is not None:
+            if prior['hash'] != semantic_hash:
+                return ingestion_outcome(record, semantic_hash, 'CONFLICT')
+            return copy.deepcopy(prior['result'])
+        if state.last_processed_timestamp is not None and ts <= state.last_processed_timestamp:
+            return ingestion_outcome(record, semantic_hash, 'REJECTED_LATE_OBSERVATION')
+        # H05 uses the reserved extension on H01's candidate state. Validate before
+        # mutating any existing algorithm, and never infer D from HI/anomaly.
+        scenario = cfg.additional_configuration.get('synthetic_rul')
+        if state.synthetic_degradation is not None and scenario is None:
+            raise PipelineValidationError('active synthetic scenario removal requires explicit state migration')
+        if scenario is not None:
+            try:
+                candidate_degradation, projection = update_degradation(state.synthetic_degradation, record, scenario)
+                rul_result = projection.rul
+            except ValueError as exc:
+                raise PipelineValidationError(f'invalid synthetic RUL state/configuration: {exc}') from exc
+        else:
+            candidate_degradation = None
+            rul_result = operational_result(ts, a, cfg.additional_configuration.get('operational_rul_evidence'))
+        state = self.get_state(tx_id)
+        if state.configuration_fingerprint is not None and state.configuration_fingerprint != cfg.fingerprint:
+            state.reset()
+        state.configuration_fingerprint = cfg.fingerprint
 
         # Check gap > 30 minutes from last processed timestamp
         if state.last_processed_timestamp is not None:
@@ -241,7 +303,7 @@ class UnifiedMLPipeline:
                 # and transition thermal readiness to GAP_RESET before resetting state.
                 state.anomaly_state.reset()
                 state.health_state.reset()
-                state.maintenance_state.reset()
+                # Preserve the unresolved maintenance/protection latch across gaps.
                 state.history_records.clear()
 
         # 5. Build causal features using rolling historical context
@@ -278,7 +340,7 @@ class UnifiedMLPipeline:
 
         # 6. Calculate loading percent and utilization only when verified rating exists
         apparent_power = _sanitize_numeric(record.get("apparent_power_total"))
-        loading_percent, apparent_power_utilization = cfg.calculate_loading(apparent_power)
+        loading_percent, apparent_power_utilization = cfg.calculate_loading(apparent_power, record.get('acquisition'))
         curr_feat_row["loading_percent"] = loading_percent
         curr_feat_row["apparent_power_utilization"] = apparent_power_utilization
 
@@ -349,7 +411,10 @@ class UnifiedMLPipeline:
             forecast_inference_status = pred_res.get("inference_status", STATUS_INSUFFICIENT_VALIDATION)
 
         # 10. Run Phase 03 Health Index using its owning implementation
-        health_out = self.health_engine.process_record(curr_feat_row, state.health_state)
+        health_row = dict(curr_feat_row)
+        if state.maintenance_state.trip_latched:
+            health_row['oil_temp_trip'] = 1
+        health_out = self.health_engine.process_record(health_row, state.health_state)
 
         h_index = _sanitize_numeric(health_out.get("health_index"))
         h_components = health_out.get("health_components", {})
@@ -418,7 +483,7 @@ class UnifiedMLPipeline:
         for r in all_reasons:
             if r == "HIGH_OIL_TEMP":
                 reason_descriptions[r] = (
-                    "High oil temperature (°C)" if is_verified_temp else "High oil indicator (source units)"
+                    "High oil temperature (Â°C)" if is_verified_temp else "High oil indicator (source units)"
                 )
             elif r == "RAPID_TEMP_RISE":
                 reason_descriptions[r] = "Rapid temperature rise rate"
@@ -487,8 +552,72 @@ class UnifiedMLPipeline:
             },
         }
 
+        coverage = state.coverage(ts, curr_dict)
+        coverage['missing_fields'] = [key for key in FIELDS if record.get(key) is None]
+        readiness_reasons = []
+        if coverage['fraction'] < 1:
+            readiness_reasons.append('REDUCED_HISTORY_COVERAGE')
+        if state.history_capped:
+            readiness_reasons.append('HISTORY_COUNT_CAP')
+        if self.bundle.runtime_mode != 'STRICT_FITTED':
+            readiness_reasons.append(self.bundle.runtime_mode)
+        if not a:
+            readiness_reasons.append('UNKNOWN_PROVENANCE_AND_UNITS')
+        elif any(a.get('field_verification', {}).get(k) == 'UNVERIFIED' or a.get('field_units', {}).get(k) in (None, 'UNKNOWN')
+                 for k in ('oil_temperature', 'ambient_temperature', 'current_l1', 'current_l2', 'current_l3')):
+            readiness_reasons.append('UNVERIFIED_MEASUREMENT_UNITS')
+        if loading_percent is None:
+            readiness_reasons.append('LOADING_CONFIGURATION_OR_UNITS_INELIGIBLE')
+        if state.lifecycle_status == 'REINITIALIZED':
+            readiness_reasons.append('STATE_REINITIALIZED_WARMUP')
+        if state.protection_context_unknown and record.get('oil_temp_trip') is None:
+            readiness_reasons.append('PROTECTION_CONTEXT_UNKNOWN')
+        state.lifecycle_status = 'COVERAGE_LOSS' if coverage['fraction'] < 1 else (
+            'READY' if t_readiness == 'READY' else 'WARMING_UP')
+        result['schema_version'] = record.get('schema_version', '1.0.0')
+        result['metadata'].update({
+            'coverage': coverage,
+            'units': dict(a.get('field_units', {})),
+            'versions': {'bundle_id': self.bundle.bundle_id,
+                         'configuration_version': cfg.configuration_version,
+                         'preprocessing_version': self.bundle.preprocessing_version,
+                         'artifact_schema_version': self.bundle.schema_version},
+            'forecast': {'target_definition': 'new_oil_alert_within_1h',
+                         'horizon_hours': 1., 'release_status': 'INSUFFICIENT_VALIDATION',
+                         'operational_eligible': False,
+                         'limitation_codes': ['INSUFFICIENT_VALIDATION']},
+            'components': {name: {'status': ('INSUFFICIENT_DATA' if self.bundle.runtime_mode != 'STRICT_FITTED' and status == 'READY' else status), 'unit': unit,
+                                  'coverage_fraction': coverage['fraction'],
+                                  'reasons': readiness_reasons + reasons}
+                for name, status, unit, reasons in (
+                    ('thermal', 'READY' if t_readiness == 'READY' else 'WARMING_UP',
+                     self.bundle.thermal_config.temperature_unit, []),
+                    ('anomaly', 'READY' if a_score is not None else 'INSUFFICIENT_DATA', '1', []),
+                    ('health', 'READY' if h_index is not None else 'INSUFFICIENT_DATA', 'index', []),
+                    ('maintenance', 'INSUFFICIENT_DATA' if overall_status == 'INSUFFICIENT_DATA' else 'READY', None, []),
+                    ('forecast', 'UNAVAILABLE', None, ['INSUFFICIENT_VALIDATION']),
+                    ('rul', 'UNAVAILABLE', 'h', ['H05_NOT_IMPLEMENTED']))},
+        })
+        result['metadata']['extended_reason_codes'] = list(dict.fromkeys(all_reasons + readiness_reasons))
+
+        # Preserve the exact unextended legacy response shape. Explicit synthetic
+        # configuration or a 1.1.0 envelope opts into the additive RUL member.
+        if result['schema_version'] == '1.1.0' or scenario is not None:
+            result['rul'] = rul_result
+        result['metadata']['components']['rul'] = {
+            'status': 'INSUFFICIENT_DATA' if rul_result['rul_status'] == 'INSUFFICIENT_DATA' else 'READY',
+            'unit': 'h', 'coverage_fraction': rul_result['coverage_fraction'],
+            'reasons': list(rul_result['limitation_codes'])}
+        state.synthetic_degradation = candidate_degradation
+
         # 13. Persist state atomically
         state.commit_observation(curr_dict, ts, result)
+        state.last_payload_hash = semantic_hash
+        state.last_snapshot_id = snapshot
+        state.identity_cache[identity] = {'hash': semantic_hash, 'result': copy.deepcopy(result)}
+        if len(state.identity_cache) > state.max_history_rows:
+            del state.identity_cache[next(iter(state.identity_cache))]
+        state.protection_context_unknown = state.protection_context_unknown and record.get('oil_temp_trip') is None
 
         # 14. Return consistent response
         return copy.deepcopy(result)
@@ -558,6 +687,7 @@ def analyze(
     # Register/update asset configuration from transformer metadata
     asset_cfg = AssetConfig.from_dict(transformer)
     pipe.register_asset(asset_cfg)
+    pipe.hydrate_history(asset_cfg, record, history)
 
     # Process record through unified pipeline
     res = pipe.process_record(record, asset_config=asset_cfg)

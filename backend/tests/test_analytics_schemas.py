@@ -51,6 +51,7 @@ def test_analytic_shape_and_missing_outputs(schema: type[MLResultIn]) -> None:
         "maintenance_recommendation",
         "reason_codes",
         "error_detail",
+        "metadata", "rul",
     }
     for field in set(schema.model_fields) - required:
         assert getattr(record, field) is None

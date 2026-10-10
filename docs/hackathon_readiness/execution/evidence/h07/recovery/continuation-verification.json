@@ -1,0 +1,43 @@
+{
+  "changed_preexisting_paths": [
+    "simulator/scripts/demo_runtime.py",
+    "backend/tests/test_h02_transactional_adapter.py",
+    "simulator/config/analytics-policy.json",
+    "simulator/scripts/demo_trace.py",
+    "backend/app/services/transactional_ml.py"
+  ],
+  "json_files_checked": 14,
+  "ast": "PASS",
+  "links": "PASS",
+  "protection_isolation": "PASS",
+  "acquired_ledger": "PASS",
+  "unit_test_command": "python -m pytest tests/test_h02_transactional_adapter.py -q --tb=short",
+  "unit_test_result": "6 passed, 1 warning",
+  "prior_phase_hashes": "unchanged outside declared paths",
+  "json_tool_result": "15 actual commands passed, zero failed",
+  "final_links": "PASS",
+  "evidence_files": [
+    "docs/hackathon_readiness/execution/evidence/h07/recovery/checkpoint-sizes.jsonl",
+    "docs/hackathon_readiness/execution/evidence/h07/recovery/continuation-verification.json",
+    "docs/hackathon_readiness/execution/evidence/h07/recovery/disk-guard-attempt2.json",
+    "docs/hackathon_readiness/execution/evidence/h07/recovery/disk-guard.json",
+    "docs/hackathon_readiness/execution/evidence/h07/recovery/final-resource-sample.jsonl",
+    "docs/hackathon_readiness/execution/evidence/h07/recovery/final-services.txt",
+    "docs/hackathon_readiness/execution/evidence/h07/recovery/pending-counter-definitions.json",
+    "docs/hackathon_readiness/execution/evidence/h07/recovery/post-fix-ready.json",
+    "docs/hackathon_readiness/execution/evidence/h07/recovery/primary-spool-after.json",
+    "docs/hackathon_readiness/execution/evidence/h07/recovery/primary-trace/trace-attempts.json",
+    "docs/hackathon_readiness/execution/evidence/h07/recovery/readonly-profile-portfolio.json",
+    "docs/hackathon_readiness/execution/evidence/h07/recovery/readonly-profile.json",
+    "docs/hackathon_readiness/execution/evidence/h07/recovery/reconciliation-after.json",
+    "docs/hackathon_readiness/execution/evidence/h07/recovery/reconciliation-before.json",
+    "docs/hackathon_readiness/execution/evidence/h07/recovery/recovery-helper-attempt1-error.txt",
+    "docs/hackathon_readiness/execution/evidence/h07/recovery/recovery-measurements-attempt2.jsonl",
+    "docs/hackathon_readiness/execution/evidence/h07/recovery/recovery-summary.json",
+    "docs/hackathon_readiness/execution/evidence/h07/recovery/spool-identities-after.json",
+    "docs/hackathon_readiness/execution/evidence/h07/recovery/spool-identities-before.json",
+    "docs/hackathon_readiness/execution/evidence/h07/recovery/three-asset-guard.json",
+    "docs/hackathon_readiness/execution/evidence/h07/recovery/three-asset-measurements.jsonl",
+    "docs/hackathon_readiness/execution/evidence/h07/recovery/transactional_ml-before.py"
+  ]
+}

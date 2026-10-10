@@ -16,14 +16,14 @@ export const FeaturesGrid: React.FC = () => {
       icon: <Thermometer className="w-5 h-5 text-amber-400" />,
       title: 'Physics-Informed Thermal Residual',
       description:
-        'Computes dynamic top-oil thermal rise based on IEEE C57.91 differential equations, isolating genuine heat dissipation defects from ambient fluctuations.',
+        'Displays backend thermal estimates and residuals with reported units and component readiness.',
       tag: 'CORE INNOVATION',
     },
     {
       icon: <ShieldCheck className="w-5 h-5 text-emerald-400" />,
       title: '6-Pillar Transparent Health Index',
       description:
-        'Composite 0–100 score weighted across thermal (25%), electrical balance (20%), load headroom (15%), oil condition (15%), protection (15%), and anomaly margin (10%).',
+        'Displays backend health scores and component values. Weights are shown only where evidence is available.',
       tag: 'EXPLAINABLE AI',
     },
     {
@@ -42,7 +42,7 @@ export const FeaturesGrid: React.FC = () => {
     },
     {
       icon: <Database className="w-5 h-5 text-rose-400" />,
-      title: 'Canonical Schema Boundary v1.0.0',
+      title: 'Canonical Schema Boundary v1.1.0',
       description:
         'Strict schema insulation layer quarantining vendor quirks. Prohibits silent zero-filling and excludes unverified line voltages (VL12, VL23, VL31).',
       tag: 'DATA HYGIENE',
@@ -51,7 +51,7 @@ export const FeaturesGrid: React.FC = () => {
       icon: <Server className="w-5 h-5 text-amber-400" />,
       title: 'FastAPI & PostgreSQL Microservices',
       description:
-        'Production-ready RESTful architecture with Pydantic validation, Alembic migrations, time-series indexing on (transformer_id, timestamp), and Docker Compose.',
+        'RESTful architecture; deployment acceptance remains pending with Pydantic validation, Alembic migrations, time-series indexing on (transformer_id, timestamp), and Docker Compose.',
       tag: 'ARCHITECTURE',
     },
   ];
@@ -67,7 +67,7 @@ export const FeaturesGrid: React.FC = () => {
           Engineered for Utility Realities
         </h2>
         <p className="mt-4 text-base sm:text-lg text-slate-400 leading-relaxed font-sans">
-          Built from the ground up to satisfy the stringent testing standards of CPRI and power distribution utilities.
+          Source evidence, configuration verification and deployment acceptance remain explicit. Standards compliance has not been established.
         </p>
       </div>
 

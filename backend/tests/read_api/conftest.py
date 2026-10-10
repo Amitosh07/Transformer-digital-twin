@@ -50,6 +50,9 @@ def read_client(db: Session) -> Iterator[TestClient]:
 @pytest.fixture
 def seeded(db: Session) -> dict[str, Any]:
     assets = [f"TX-read-{uuid4().hex[:10]}" for _ in range(2)]
+    from app.services.transactional_ml import lock_assets
+    # H02 requires the complete sorted lock set before a multi-asset transaction.
+    lock_assets(db, assets)
     # Query fixtures seed lifecycle rows; generation is tested in tests/alerts.
     with patch("app.services.hooks.evaluate_alerts"):
         for asset in assets:
@@ -95,5 +98,6 @@ def seeded(db: Session) -> dict[str, Any]:
                 status=["OPEN", "DONE", "DISMISSED"][index],
             )
         )
-    db.flush()
+    # Release ingestion locks in the fixture's thread before TestClient requests.
+    db.commit()
     return {"demo": assets[0], "live": assets[1], "start": BASE, "count": 4}

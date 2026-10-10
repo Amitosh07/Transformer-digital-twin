@@ -809,11 +809,17 @@ def run_phase04_experiment(
         ],
     }
 
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(output_path, "w") as f:
-        json.dump(artifact, f, indent=2)
+    write_prediction_artifact(artifact, output_path)
 
     return artifact
+
+
+def write_prediction_artifact(artifact, output_path):
+    """Serialize the existing experiment artifact; also used by round-trip tests."""
+    output_path = Path(output_path)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(output_path, 'w', encoding='utf-8') as f:
+        json.dump(artifact, f, indent=2, allow_nan=False)
 
 
 if __name__ == "__main__":

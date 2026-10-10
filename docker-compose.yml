@@ -1,88 +1,91 @@
-# Transformer Digital Twin — Full Stack Docker Compose
-# simulator_README §11, §12
-#
-# One-command startup:
-#   docker compose up
-#
-# Services:
-#   db        — PostgreSQL 16
-#   mqtt      — Eclipse Mosquitto MQTT broker
-#   backend   — FastAPI backend (Person 2)
-#   simulator — Synthetic telemetry generator + fault injection (Person 4)
-#   frontend  — Dashboard (Person 3) — placeholder, add when ready
-
 name: transformer-digital-twin
-
 services:
-
-  # ── PostgreSQL ──────────────────────────────────────────────────────
   db:
     image: postgres:16
     environment:
       POSTGRES_USER: ${DEMO_DB_USER:-transformer}
       POSTGRES_PASSWORD: ${DEMO_DB_PASSWORD:-transformer}
       POSTGRES_DB: ${DEMO_DB_NAME:-transformer}
-    ports:
-      - "127.0.0.1:${DEMO_DB_PORT:-55433}:5432"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
+    ports: ["127.0.0.1:${DEMO_DB_PORT:-55433}:5432"]
+    volumes: ["postgres_data:/var/lib/postgresql/data"]
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
       interval: 5s
       timeout: 5s
       retries: 20
-
-  # ── MQTT Broker ─────────────────────────────────────────────────────
   mqtt:
     image: eclipse-mosquitto:2
-    ports:
-      - "127.0.0.1:${DEMO_MQTT_PORT:-51885}:1883"
-    volumes:
-      - ./backend/docker/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
-      - mqtt_data:/mosquitto/data
+    ports: ["127.0.0.1:${DEMO_MQTT_PORT:-51885}:1883"]
+    volumes: ["./backend/docker/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro", "mqtt_data:/mosquitto/data"]
     healthcheck:
       test: ["CMD", "mosquitto_pub", "-h", "127.0.0.1", "-t", "demo/health", "-m", "ok"]
       interval: 5s
       timeout: 5s
       retries: 20
-
-  # ── Backend (FastAPI) ───────────────────────────────────────────────
   backend:
-    build: ./backend
-    env_file: ./backend/.env
+    build: {context: ., dockerfile: backend/Dockerfile}
     environment:
       DATABASE_URL: postgresql+psycopg://${DEMO_DB_USER:-transformer}:${DEMO_DB_PASSWORD:-transformer}@db:5432/${DEMO_DB_NAME:-transformer}
       MQTT_ENABLED: "true"
       MQTT_HOST: mqtt
       MQTT_PORT: "1883"
       MQTT_CLIENT_ID: transformer-demo-backend
-      ML_BACKEND: stub
-      DEMO_RESET_ENABLED: "true"
-    ports:
-      - "127.0.0.1:${DEMO_HTTP_PORT:-8001}:8000"
+      ML_BACKEND: python
+      ML_PYTHON_ENTRYPOINT: ml.pipeline:analyze
+      ML_RUNTIME_MODE: ${ML_RUNTIME_MODE:-DEMO_UNVERIFIED_CONFIG}
+      ML_ARTIFACT_DIR: /artifacts
+      ANALYTICS_POLICY_FILE: /config/analytics-policy.json
+      CORS_ORIGINS: ${DEMO_CORS_ORIGINS:-http://127.0.0.1:5173,http://localhost:5173}
+      SCHEMA_VERSION: 1.1.0
+      WEB_CONCURRENCY: "1"
+      DEMO_RESET_ENABLED: "false"
+    volumes: ["./simulator/config/analytics-policy.json:/config/analytics-policy.json:ro", "${ML_ARTIFACT_HOST_DIR:-./simulator/config/artifacts}:/artifacts:ro"]
+    ports: ["127.0.0.1:${DEMO_HTTP_PORT:-8001}:8000"]
     depends_on:
-      db:
-        condition: service_healthy
-      mqtt:
-        condition: service_healthy
-
-  # ── Simulator ───────────────────────────────────────────────────────
-  simulator:
-    build: ./simulator
-    environment:
-      MQTT_HOST: mqtt
-      MQTT_PORT: "1883"
-      BACKEND_URL: http://backend:8000
+      db: {condition: service_healthy}
+      mqtt: {condition: service_healthy}
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+      args: {VITE_API_BASE_URL: "http://127.0.0.1:${DEMO_HTTP_PORT:-8001}"}
+    ports: ["127.0.0.1:${DEMO_FRONTEND_PORT:-5173}:80"]
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1/"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
     depends_on:
-      backend:
-        condition: service_started
-      mqtt:
-        condition: service_healthy
-    # Default: stream synthetic data with MQTT
-    command: ["stream", "--mqtt-host", "mqtt", "--mqtt-port", "1883",
-              "--http-url", "http://backend:8000",
-              "--interval", "5", "--transformer-id", "TX-001"]
-
+      backend: {condition: service_healthy}
+  modbus-simulator:
+    profiles: [primary]
+    build:
+      context: .
+      dockerfile: simulator/Dockerfile
+      additional_contexts: {ml_runtime: "service:backend"}
+    command: ["modbus-server", "--config", "/config/hackathon-single.yaml"]
+    volumes: ["./simulator/config:/config:ro", "./simulator/scripts:/scripts:ro"]
+    ports: ["127.0.0.1:${DEMO_MODBUS_PORT:-1502}:1502"]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import socket; socket.create_connection(('127.0.0.1',1502),2).close()"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    depends_on:
+      backend: {condition: service_healthy}
+  modbus-bridge:
+    build:
+      context: .
+      dockerfile: simulator/Dockerfile
+      additional_contexts: {ml_runtime: "service:backend"}
+    profiles: [primary]
+    command: ["modbus-bridge", "--config", "/config/hackathon-bridge.yaml"]
+    volumes: ["./simulator/config:/config:ro", "bridge_spool:/spool"]
+    depends_on:
+      backend: {condition: service_healthy}
+      mqtt: {condition: service_healthy}
+      modbus-simulator: {condition: service_healthy}
 volumes:
   postgres_data:
   mqtt_data:
+  bridge_spool:

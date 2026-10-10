@@ -1,0 +1,38 @@
+{
+  "run": "802ce1b7",
+  "asset": "H06-STRICT-802ce1b7",
+  "completed": false,
+  "configuration": {
+    "map_version": "fictional-lv-v1",
+    "gateway_id": "H06-DEMO-GW",
+    "poll_interval_seconds": 2,
+    "timeout_seconds": 2,
+    "snapshot_retries": 3,
+    "backoff_seconds": 1,
+    "max_backoff_seconds": 30,
+    "mqtt": {
+      "host": "mqtt",
+      "port": 1883
+    },
+    "receipt_base_url": "http://backend:8000",
+    "spool": {
+      "directory": "/spool",
+      "max_records": 10000,
+      "max_bytes": 16777216
+    },
+    "assets": [
+      {
+        "transformer_id": "H06-SIM-05",
+        "unit_id": 1,
+        "host": "modbus-simulator",
+        "port": 1502,
+        "expected_interval_seconds": 5
+      }
+    ]
+  },
+  "historical_diagnostic_limit": "The prior failed counter assertion did not save identities or counter snapshots; its exact increment cannot be retrospectively attributed.",
+  "failure": {
+    "type": "CalledProcessError",
+    "detail": "Command '['docker', 'compose', 'run', '-d', '--no-deps', '--no-build', '--name', 'transformer-h06-20261009-strict-802ce1b7', '--entrypoint', 'python', 'modbus-bridge', '-c', 'import time;time.sleep(600)']' returned non-zero exit status 1."
+  }
+}

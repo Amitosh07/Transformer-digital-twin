@@ -47,6 +47,8 @@ class Analytics(Base):
     health_components: Mapped[dict[str, Any] | None] = mapped_column(JSONB(none_as_null=True))
     health_reason_codes: Mapped[list[str] | None] = mapped_column(JSONB(none_as_null=True))
     reason_codes: Mapped[list[str] | None] = mapped_column(JSONB(none_as_null=True))
+    ml_metadata: Mapped[dict[str, Any] | None] = mapped_column('metadata', JSONB(none_as_null=True))
+    rul: Mapped[dict[str, Any] | None] = mapped_column(JSONB(none_as_null=True))
     schema_version: Mapped[str] = mapped_column(String(64))
     feature_version: Mapped[str] = mapped_column(String(64))
     model_version: Mapped[str] = mapped_column(String(64))

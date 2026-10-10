@@ -1,0 +1,13 @@
+{
+  "scenario_id": "FICTIONAL_CONSTANT_RATE",
+  "version": "fictional-rul-v1",
+  "start_time": "2026-10-09T00:00:00Z",
+  "initial_degradation": 0.2,
+  "endpoint": 1.0,
+  "rate_per_hour": 0.01,
+  "horizon_hours": 100.0,
+  "maximum_gap_seconds": 10.0,
+  "assume_constant_rate_across_gaps": false,
+  "rate_bounds_per_hour": [0.008, 0.012],
+  "future_duty": []
+}

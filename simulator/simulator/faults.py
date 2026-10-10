@@ -19,9 +19,7 @@ Demo scenarios (§14):
 
 from __future__ import annotations
 
-import copy
-import datetime as _dt
-from typing import Callable, Optional
+from typing import Callable
 
 import numpy as np
 
@@ -195,14 +193,20 @@ class FaultInjector:
     The injector returns a *new* record (the input is not mutated).
     """
 
-    def __init__(self, seed: int = 99) -> None:
+    def __init__(self, seed: int = 99, config=None) -> None:
         self.rng = np.random.default_rng(seed)
-        self._rapid_temp_counter: int = 0    # accumulator for ramp scenario
+        from .schema import TransformerConfig
+        # Legacy standalone injection uses the same explicitly fictional 500kVA
+        # compatibility scenario. Pass config to target a different asset.
+        self.config = config or TransformerConfig(rated_power_kva=500, rated_voltage_lv=415)
+        self._rapid_temp_counter: float = 0
+        self._elapsed_s = 60.0
 
     def inject(
         self,
         record: TransformerRecord,
         scenario_name: str,
+        elapsed_s: float = 60.0,
     ) -> tuple[TransformerRecord, ScenarioMetadata]:
         """
         Return *(mutated_record, metadata)* for the given scenario.
@@ -210,18 +214,32 @@ class FaultInjector:
         Raises ``KeyError`` if *scenario_name* is not in the catalogue.
         """
         meta = SCENARIO_CATALOGUE[scenario_name]
+        self._elapsed_s = elapsed_s
+        if elapsed_s < 0 or not np.isfinite(elapsed_s):
+            raise ValueError("positive finite elapsed time required")
+        if scenario_name != "RAPID_TEMPERATURE_RISE":
+            self._rapid_temp_counter = 0
         fn = _INJECTION_FNS.get(scenario_name)
         if fn is None or scenario_name == "HEALTHY":
-            return record.model_copy(), meta
+            return record.model_copy(deep=True), meta
 
-        mutated = record.model_copy()
+        mutated = record.model_copy(deep=True)
         fn(self, mutated)
+        from .generator import coherent_power
+        coherent_power(mutated)
+        if mutated.acquisition is not None:
+            from .schema import identify
+            mutated.scenario_id = meta.scenario_id
+            identify(mutated)
         return mutated, meta
 
     # -- individual injectors (mutate *rec* in place) ----------------------
 
     def _inject_overload(self, rec: TransformerRecord) -> None:
         factor = 1.3 + self.rng.uniform(0, 0.1)
+        if self.config is not None:
+            phase_va = sum(getattr(rec, f"phase_voltage_l{i}") * getattr(rec, f"current_l{i}") for i in (1, 2, 3))
+            factor = self.config.rated_power_kva * 1000 * factor / phase_va
         if rec.current_l1 is not None:
             rec.current_l1 = round(rec.current_l1 * factor, 2)
         if rec.current_l2 is not None:
@@ -240,8 +258,8 @@ class FaultInjector:
             rec.winding_temperature = round(rec.winding_temperature + 30.0 + self.rng.normal(0, 2), 1)
 
     def _inject_rapid_temp_rise(self, rec: TransformerRecord) -> None:
-        self._rapid_temp_counter += 1
-        ramp = 5.0 * self._rapid_temp_counter
+        self._rapid_temp_counter += self._elapsed_s
+        ramp = 5.0 * self._rapid_temp_counter / 60
         if rec.oil_temperature is not None:
             rec.oil_temperature = round(rec.oil_temperature + ramp, 1)
         if rec.winding_temperature is not None:

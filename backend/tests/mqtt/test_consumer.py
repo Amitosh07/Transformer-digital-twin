@@ -63,7 +63,7 @@ def test_persist_duplicate_and_stop_drain(
     assert client.calls[-2:] == ["disconnect", "loop_stop"]
     with Session(db_engine) as session:
         record = session.scalar(select(Telemetry).where(Telemetry.transformer_id == asset))
-        assert record.source_name == "mqtt"
+        assert record.source_name is None
         assert record.scenario_id == "mqtt-demo"
         assert record.current_l1 is None
 

@@ -1,0 +1,28 @@
+{
+  "map_version": "fictional-lv-v1",
+  "gateway_id": "H06-DEMO-GW",
+  "poll_interval_seconds": 2,
+  "timeout_seconds": 2,
+  "snapshot_retries": 3,
+  "backoff_seconds": 1,
+  "max_backoff_seconds": 30,
+  "mqtt": {
+    "host": "127.0.0.1",
+    "port": 51885
+  },
+  "receipt_base_url": "http://127.0.0.1:8001",
+  "spool": {
+    "directory": ".h06-native-spool",
+    "max_records": 10000,
+    "max_bytes": 16777216
+  },
+  "assets": [
+    {
+      "transformer_id": "H06-SIM-05",
+      "unit_id": 1,
+      "host": "127.0.0.1",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    }
+  ]
+}

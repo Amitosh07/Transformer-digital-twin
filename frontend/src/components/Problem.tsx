@@ -32,7 +32,7 @@ export const Problem: React.FC = () => {
             The Static Threshold Trap
           </h3>
           <p className="text-sm text-slate-400 font-sans leading-relaxed mb-4">
-            Traditional SCADA setups only trip breakers when oil temperature crosses arbitrary emergency cutoffs (&gt;90°C). If an overloaded transformer runs at 84°C on a freezing 5°C night, traditional alarms sleep—despite dangerous thermal runaway destroying the cellulose paper insulation.
+            A temperature reading needs load, ambient conditions and verified asset configuration for interpretation. Protection settings are asset-specific; missing evidence cannot establish a universal safe limit or prove the asset is healthy.
           </p>
 
           <div className="p-3 rounded-lg bg-slate-900 border border-slate-800/80 text-xs font-mono text-rose-400">

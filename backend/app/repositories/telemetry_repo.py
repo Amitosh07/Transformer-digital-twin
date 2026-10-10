@@ -8,9 +8,25 @@ from sqlalchemy.orm import Session
 from app.models.telemetry import Telemetry
 from app.repositories.query_helpers import aggregate_signals, page_rows, window_statement
 from app.schemas.telemetry import TelemetryIn
+from app.services.semantic_payload import digest, canonical
+
+
+class SemanticConflict(ValueError):
+    reason = 'SEMANTIC_PAYLOAD_CONFLICT'
+    def __init__(self, record, accepted_hash):
+        self.record = record
+        self.accepted_hash = accepted_hash
+        super().__init__(self.reason)
 
 
 def as_input(row: Telemetry) -> TelemetryIn:
+    if row.semantic_payload:
+        from ml.pipeline.identity import parse_record_json
+        raw = parse_record_json(row.semantic_payload)
+        raw['schema_version'] = row.schema_version
+        if raw.get('acquisition') is not None:
+            raw['acquisition']['snapshot_id'] = row.payload_hash
+        return TelemetryIn.model_validate(raw)
     return TelemetryIn.model_validate(
         {field: getattr(row, field) for field in TelemetryIn.model_fields}
     )
@@ -29,6 +45,10 @@ def insert_telemetry(
         "is_missing_critical": is_missing_critical,
         "data_quality_score": data_quality_score,
     }
+    values['schema_version'] = record.schema_version
+    values['acquisition'] = record.acquisition.model_dump(mode='json') if record.acquisition else None
+    values['payload_hash'] = digest(record)
+    values['semantic_payload'] = canonical(record)
     statement = (
         insert(Telemetry)
         .values(**values)
@@ -48,6 +68,9 @@ def insert_telemetry(
     )
     if row is None:
         raise RuntimeError("Duplicate telemetry lookup did not return a row")
+    accepted_hash = row.payload_hash or digest(as_input(row))
+    if accepted_hash != digest(record):
+        raise SemanticConflict(record, accepted_hash)
     return row, True
 
 
@@ -62,11 +85,18 @@ def load_history(
         .where(
             Telemetry.transformer_id == transformer_id,
             Telemetry.timestamp < before,
+            or_(Telemetry.ingestion_outcome == 'ACCEPTED', Telemetry.ingestion_outcome.is_(None)),
         )
         .order_by(Telemetry.timestamp.desc())
         .limit(limit)
     ).all()
-    return [as_input(row) for row in reversed(rows)]
+    # One hour plus the preceding boundary; a dense stream is capped by limit.
+    from datetime import timedelta
+    start = before - timedelta(hours=1)
+    ordered = list(reversed(rows))
+    boundary = [row for row in ordered if row.timestamp < start]
+    selected = boundary[-1:] + [row for row in ordered if row.timestamp >= start]
+    return [as_input(row) for row in selected]
 
 
 def load_batch_history(
@@ -91,6 +121,7 @@ def load_batch_history(
         .where(
             Telemetry.transformer_id == transformer_id,
             Telemetry.timestamp < last,
+            or_(Telemetry.ingestion_outcome == 'ACCEPTED', Telemetry.ingestion_outcome.is_(None)),
             or_(Telemetry.id.in_(initial_ids), Telemetry.timestamp >= first),
         )
         .order_by(Telemetry.timestamp)

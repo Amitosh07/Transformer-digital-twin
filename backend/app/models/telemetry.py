@@ -13,8 +13,11 @@ from sqlalchemy import (
     UniqueConstraint,
     func,
     text,
+    Text,
 )
 from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.dialects.postgresql import JSONB
+from typing import Any
 
 from app.db.base import Base
 
@@ -48,6 +51,16 @@ class Telemetry(Base):
     magnetic_oil_gauge_alarm: Mapped[int | None] = mapped_column(SmallInteger)
     source_name: Mapped[str | None] = mapped_column(String(255))
     scenario_id: Mapped[str | None] = mapped_column(String(255))
+    acquisition: Mapped[dict[str, Any] | None] = mapped_column(JSONB(none_as_null=True))
+    payload_hash: Mapped[str | None] = mapped_column(String(64))
+    semantic_payload: Mapped[str | None] = mapped_column(Text)
+    ingestion_outcome: Mapped[str | None] = mapped_column(String(32))
+    ml_status: Mapped[str | None] = mapped_column(String(64))
+    ml_error: Mapped[str | None] = mapped_column(String(128))
+
+    @property
+    def received_at(self):
+        return self.ingested_at
     is_duplicate: Mapped[bool] = mapped_column(Boolean, server_default=text("false"), default=False)
     is_missing_critical: Mapped[bool] = mapped_column(
         Boolean, server_default=text("false"), default=False

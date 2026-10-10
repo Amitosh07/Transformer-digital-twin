@@ -35,7 +35,10 @@ def check_ready(session: Session, settings: Settings, started: bool) -> Readines
             client = get_ml_client()
             if settings.ml_backend == "python" and isinstance(client, PythonMLTwinClient):
                 client.check_importable()
+                bundle = client.transactional_runtime().pipeline.bundle
                 result.ml = "ready"
+                result.details['ml'] = (f'{bundle.runtime_mode}; configuration={bundle.configuration_readiness}; '
+                                        'operational forecast release remains gated')
             elif settings.ml_backend == "http" and isinstance(client, HttpMLTwinClient):
                 result.ml = client.probe()
                 if result.ml == "unchecked":

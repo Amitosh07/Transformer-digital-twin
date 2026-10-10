@@ -22,7 +22,9 @@ class Settings(BaseSettings):
     ml_backend: Literal["stub", "python", "http"] = "stub"
     ml_http_url: str | None = None
     ml_python_entrypoint: str | None = None
-    ml_history_window: int = Field(default=60, ge=1)
+    ml_history_window: int = Field(default=4096, ge=1, le=4096)
+    analytics_policy_file: str | None = None
+    ml_runtime_workers: Literal[1] = 1
     ml_timeout_seconds: float = Field(default=5.0, gt=0, allow_inf_nan=False)
     ml_max_retries: int = Field(default=2, ge=0)
     max_batch_size: int = Field(default=5000, ge=1)
@@ -80,6 +82,9 @@ class Settings(BaseSettings):
 
     @model_validator(mode="after")
     def mqtt_configuration(self) -> "Settings":
+        import os
+        if self.ml_backend == 'python' and int(os.environ.get('WEB_CONCURRENCY', '1')) != 1:
+            raise ValueError('H01 runtime supports exactly one backend process/worker')
         if self.alert_health_crit > self.alert_health_warn:
             raise ValueError("ALERT_HEALTH_CRIT must be <= ALERT_HEALTH_WARN")
         if self.alert_fault_risk_crit < self.alert_fault_risk_warn:

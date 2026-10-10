@@ -1,0 +1,2 @@
+{"BlockIO":"0B / 0B","CPUPerc":"62.52%","Container":"transformer-h06-20261009-backend-1","ID":"5e153591a9ed","MemPerc":"5.72%","MemUsage":"445.6MiB / 7.606GiB","Name":"transformer-h06-20261009-backend-1","NetIO":"1.52GB / 1.84GB","PIDs":"40"}
+{"BlockIO":"74.2MB / 2.06GB","CPUPerc":"39.79%","Container":"transformer-h06-20261009-db-1","ID":"46da4cb466db","MemPerc":"9.30%","MemUsage":"724.5MiB / 7.606GiB","Name":"transformer-h06-20261009-db-1","NetIO":"10.3GB / 8.43GB","PIDs":"12"}

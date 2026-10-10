@@ -1,0 +1,1176 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://transformer-digital-twin.invalid/contracts/1.1.0/ingestion-outcome.schema.json",
+  "title": "H00 ingestion-outcome",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.1.0"
+    },
+    "transformer_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,6})?(?:Z|[+-]\\d{2}:\\d{2})$"
+    },
+    "snapshot_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "ingestion_outcome": {
+      "enum": [
+        "ACCEPTED",
+        "EXACT_RETRY",
+        "CONFLICT",
+        "REJECTED_LATE_OBSERVATION"
+      ]
+    },
+    "http_status": {
+      "enum": [
+        200,
+        201,
+        409
+      ]
+    },
+    "forward_state_advanced": {
+      "type": "boolean"
+    },
+    "analytics": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "transformer_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "timestamp": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,6})?(?:Z|[+-]\\d{2}:\\d{2})$"
+            },
+            "inference_status": {
+              "enum": [
+                "OK",
+                "INSUFFICIENT_DATA"
+              ]
+            },
+            "missing_features": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "loading_percent": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "thermal_model_temperature": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "thermal_residual": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "thermal_state": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "anomaly_score": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "maximum": 1
+            },
+            "anomaly_flag": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "health_index": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "maximum": 100
+            },
+            "health_components": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "thermal": {
+                      "type": [
+                        "number",
+                        "null"
+                      ]
+                    },
+                    "electrical": {
+                      "type": [
+                        "number",
+                        "null"
+                      ]
+                    },
+                    "loading": {
+                      "type": [
+                        "number",
+                        "null"
+                      ]
+                    },
+                    "oil": {
+                      "type": [
+                        "number",
+                        "null"
+                      ]
+                    },
+                    "alarm": {
+                      "type": [
+                        "number",
+                        "null"
+                      ]
+                    },
+                    "anomaly": {
+                      "type": [
+                        "number",
+                        "null"
+                      ]
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "health_reason_codes": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "enum": [
+                      "HIGH_OIL_TEMP",
+                      "RAPID_TEMP_RISE",
+                      "OVERLOAD",
+                      "CURRENT_IMBALANCE",
+                      "VOLTAGE_IMBALANCE",
+                      "LOW_OIL_LEVEL",
+                      "OIL_TEMP_ALARM",
+                      "OIL_TEMP_TRIP",
+                      "MOG_ALARM",
+                      "ANOMALOUS_PATTERN"
+                    ]
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "fault_risk": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "maximum": 1
+            },
+            "predicted_fault": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "prediction_confidence": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "maximum": 1
+            },
+            "maintenance_priority": {
+              "enum": [
+                "NORMAL",
+                "WATCH",
+                "PLAN",
+                "URGENT",
+                null
+              ]
+            },
+            "maintenance_recommendation": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "reason_codes": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "enum": [
+                      "HIGH_OIL_TEMP",
+                      "RAPID_TEMP_RISE",
+                      "OVERLOAD",
+                      "CURRENT_IMBALANCE",
+                      "VOLTAGE_IMBALANCE",
+                      "LOW_OIL_LEVEL",
+                      "OIL_TEMP_ALARM",
+                      "OIL_TEMP_TRIP",
+                      "MOG_ALARM",
+                      "ANOMALOUS_PATTERN"
+                    ]
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "schema_version": {
+              "enum": [
+                "1.0.0",
+                "1.1.0"
+              ]
+            },
+            "feature_version": {
+              "type": "string",
+              "minLength": 1
+            },
+            "model_version": {
+              "type": "string",
+              "minLength": 1
+            },
+            "error_detail": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "metadata": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "thermal_readiness": {
+                      "enum": [
+                        "INITIALIZING",
+                        "WARMING_UP",
+                        "READY",
+                        "GAP_RESET",
+                        "INSUFFICIENT_FORCING",
+                        "UNINITIALIZED",
+                        null
+                      ]
+                    },
+                    "thermal_model_mode": {
+                      "enum": [
+                        "PUBLIC_EMPIRICAL",
+                        "VERIFIED_UNIT_EMPIRICAL",
+                        "STANDARDS_INSPIRED_ELIGIBLE",
+                        null
+                      ]
+                    },
+                    "thermal_temperature_unit": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "apparent_power_utilization": {
+                      "type": [
+                        "number",
+                        "null"
+                      ]
+                    },
+                    "forecast_operational_status": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "experimental_fault_risk": {
+                      "type": [
+                        "number",
+                        "null"
+                      ],
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "maintenance_trip_latched": {
+                      "type": [
+                        "boolean",
+                        "null"
+                      ]
+                    },
+                    "maintenance_clear_policy_status": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "coverage_overall": {
+                      "type": [
+                        "number",
+                        "null"
+                      ],
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "health_coverage": {
+                      "type": [
+                        "number",
+                        "null"
+                      ],
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "extended_reason_codes": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "extended_health_reason_codes": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "reason_descriptions": {
+                      "type": "object",
+                      "additionalProperties": {
+                        "type": "string"
+                      }
+                    },
+                    "components": {
+                      "type": "object",
+                      "properties": {
+                        "thermal": {
+                          "type": "object",
+                          "properties": {
+                            "status": {
+                              "enum": [
+                                "READY",
+                                "WARMING_UP",
+                                "INSUFFICIENT_DATA",
+                                "UNAVAILABLE"
+                              ]
+                            },
+                            "unit": {
+                              "type": [
+                                "string",
+                                "null"
+                              ]
+                            },
+                            "coverage_fraction": {
+                              "type": [
+                                "number",
+                                "null"
+                              ],
+                              "minimum": 0,
+                              "maximum": 1
+                            },
+                            "reasons": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "required": [
+                            "status",
+                            "unit",
+                            "coverage_fraction",
+                            "reasons"
+                          ],
+                          "additionalProperties": false
+                        },
+                        "anomaly": {
+                          "type": "object",
+                          "properties": {
+                            "status": {
+                              "enum": [
+                                "READY",
+                                "WARMING_UP",
+                                "INSUFFICIENT_DATA",
+                                "UNAVAILABLE"
+                              ]
+                            },
+                            "unit": {
+                              "type": [
+                                "string",
+                                "null"
+                              ]
+                            },
+                            "coverage_fraction": {
+                              "type": [
+                                "number",
+                                "null"
+                              ],
+                              "minimum": 0,
+                              "maximum": 1
+                            },
+                            "reasons": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "required": [
+                            "status",
+                            "unit",
+                            "coverage_fraction",
+                            "reasons"
+                          ],
+                          "additionalProperties": false
+                        },
+                        "health": {
+                          "type": "object",
+                          "properties": {
+                            "status": {
+                              "enum": [
+                                "READY",
+                                "WARMING_UP",
+                                "INSUFFICIENT_DATA",
+                                "UNAVAILABLE"
+                              ]
+                            },
+                            "unit": {
+                              "type": [
+                                "string",
+                                "null"
+                              ]
+                            },
+                            "coverage_fraction": {
+                              "type": [
+                                "number",
+                                "null"
+                              ],
+                              "minimum": 0,
+                              "maximum": 1
+                            },
+                            "reasons": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "required": [
+                            "status",
+                            "unit",
+                            "coverage_fraction",
+                            "reasons"
+                          ],
+                          "additionalProperties": false
+                        },
+                        "maintenance": {
+                          "type": "object",
+                          "properties": {
+                            "status": {
+                              "enum": [
+                                "READY",
+                                "WARMING_UP",
+                                "INSUFFICIENT_DATA",
+                                "UNAVAILABLE"
+                              ]
+                            },
+                            "unit": {
+                              "type": [
+                                "string",
+                                "null"
+                              ]
+                            },
+                            "coverage_fraction": {
+                              "type": [
+                                "number",
+                                "null"
+                              ],
+                              "minimum": 0,
+                              "maximum": 1
+                            },
+                            "reasons": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "required": [
+                            "status",
+                            "unit",
+                            "coverage_fraction",
+                            "reasons"
+                          ],
+                          "additionalProperties": false
+                        },
+                        "forecast": {
+                          "type": "object",
+                          "properties": {
+                            "status": {
+                              "enum": [
+                                "READY",
+                                "WARMING_UP",
+                                "INSUFFICIENT_DATA",
+                                "UNAVAILABLE"
+                              ]
+                            },
+                            "unit": {
+                              "type": [
+                                "string",
+                                "null"
+                              ]
+                            },
+                            "coverage_fraction": {
+                              "type": [
+                                "number",
+                                "null"
+                              ],
+                              "minimum": 0,
+                              "maximum": 1
+                            },
+                            "reasons": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "required": [
+                            "status",
+                            "unit",
+                            "coverage_fraction",
+                            "reasons"
+                          ],
+                          "additionalProperties": false
+                        },
+                        "rul": {
+                          "type": "object",
+                          "properties": {
+                            "status": {
+                              "enum": [
+                                "READY",
+                                "WARMING_UP",
+                                "INSUFFICIENT_DATA",
+                                "UNAVAILABLE"
+                              ]
+                            },
+                            "unit": {
+                              "type": [
+                                "string",
+                                "null"
+                              ]
+                            },
+                            "coverage_fraction": {
+                              "type": [
+                                "number",
+                                "null"
+                              ],
+                              "minimum": 0,
+                              "maximum": 1
+                            },
+                            "reasons": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "required": [
+                            "status",
+                            "unit",
+                            "coverage_fraction",
+                            "reasons"
+                          ],
+                          "additionalProperties": false
+                        }
+                      },
+                      "required": [],
+                      "additionalProperties": false
+                    },
+                    "units": {
+                      "type": "object",
+                      "additionalProperties": {
+                        "type": "string"
+                      }
+                    },
+                    "coverage": {
+                      "type": "object",
+                      "properties": {
+                        "start": {
+                          "anyOf": [
+                            {
+                              "type": "string",
+                              "format": "date-time",
+                              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,6})?(?:Z|[+-]\\d{2}:\\d{2})$"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "end": {
+                          "anyOf": [
+                            {
+                              "type": "string",
+                              "format": "date-time",
+                              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,6})?(?:Z|[+-]\\d{2}:\\d{2})$"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "covered_seconds": {
+                          "type": [
+                            "number",
+                            "null"
+                          ],
+                          "minimum": 0
+                        },
+                        "expected_seconds": {
+                          "type": [
+                            "number",
+                            "null"
+                          ],
+                          "minimum": 0
+                        },
+                        "fraction": {
+                          "type": [
+                            "number",
+                            "null"
+                          ],
+                          "minimum": 0,
+                          "maximum": 1
+                        },
+                        "gap_count": {
+                          "type": "integer",
+                          "minimum": 0
+                        },
+                        "missing_fields": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "required": [
+                        "start",
+                        "end",
+                        "covered_seconds",
+                        "expected_seconds",
+                        "fraction",
+                        "gap_count",
+                        "missing_fields"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "forecast": {
+                      "type": "object",
+                      "properties": {
+                        "target_definition": {
+                          "type": [
+                            "string",
+                            "null"
+                          ]
+                        },
+                        "horizon_hours": {
+                          "type": [
+                            "number",
+                            "null"
+                          ],
+                          "exclusiveMinimum": 0
+                        },
+                        "release_status": {
+                          "enum": [
+                            "UNRELEASED",
+                            "INSUFFICIENT_VALIDATION",
+                            "RELEASED"
+                          ]
+                        },
+                        "operational_eligible": {
+                          "type": "boolean"
+                        },
+                        "limitation_codes": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "required": [
+                        "target_definition",
+                        "horizon_hours",
+                        "release_status",
+                        "operational_eligible",
+                        "limitation_codes"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "versions": {
+                      "type": "object",
+                      "properties": {
+                        "bundle_id": {
+                          "anyOf": [
+                            {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "configuration_version": {
+                          "anyOf": [
+                            {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "preprocessing_version": {
+                          "anyOf": [
+                            {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "artifact_schema_version": {
+                          "anyOf": [
+                            {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        }
+                      },
+                      "required": [
+                        "bundle_id",
+                        "configuration_version",
+                        "preprocessing_version",
+                        "artifact_schema_version"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "reason_evidence": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "code": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "trigger": {
+                            "type": [
+                              "string",
+                              "null"
+                            ]
+                          },
+                          "value": {
+                            "type": [
+                              "number",
+                              "null"
+                            ]
+                          },
+                          "unit": {
+                            "type": [
+                              "string",
+                              "null"
+                            ]
+                          },
+                          "threshold": {
+                            "type": [
+                              "number",
+                              "null"
+                            ]
+                          },
+                          "reference_source": {
+                            "type": [
+                              "string",
+                              "null"
+                            ]
+                          },
+                          "duration_seconds": {
+                            "type": [
+                              "number",
+                              "null"
+                            ],
+                            "minimum": 0
+                          }
+                        },
+                        "required": [
+                          "code",
+                          "trigger",
+                          "value",
+                          "unit",
+                          "threshold",
+                          "reference_source",
+                          "duration_seconds"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "rul": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "rul_status": {
+                      "enum": [
+                        "SIMULATED_ESTIMATE",
+                        "CONDITIONAL_ESTIMATE",
+                        "INSUFFICIENT_DATA",
+                        "NO_CROSSING_WITHIN_HORIZON",
+                        "END_THRESHOLD_REACHED"
+                      ]
+                    },
+                    "rul_method": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "rul_target_definition": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "rul_value": {
+                      "type": [
+                        "number",
+                        "null"
+                      ],
+                      "minimum": 0
+                    },
+                    "rul_unit": {
+                      "const": "h"
+                    },
+                    "rul_lower": {
+                      "type": [
+                        "number",
+                        "null"
+                      ],
+                      "minimum": 0
+                    },
+                    "rul_upper": {
+                      "type": [
+                        "number",
+                        "null"
+                      ],
+                      "minimum": 0
+                    },
+                    "uncertainty_kind": {
+                      "enum": [
+                        "SCENARIO_RANGE",
+                        "MODEL_QUANTILES",
+                        null
+                      ]
+                    },
+                    "forecast_horizon_hours": {
+                      "type": [
+                        "number",
+                        "null"
+                      ],
+                      "exclusiveMinimum": 0
+                    },
+                    "future_duty_scenario": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "degradation_state": {
+                      "type": [
+                        "number",
+                        "null"
+                      ],
+                      "minimum": 0
+                    },
+                    "end_threshold": {
+                      "type": [
+                        "number",
+                        "null"
+                      ],
+                      "exclusiveMinimum": 0
+                    },
+                    "degradation_unit": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "degradation_rate_per_hour": {
+                      "type": [
+                        "number",
+                        "null"
+                      ],
+                      "minimum": 0
+                    },
+                    "equivalent_ageing_hours": {
+                      "type": [
+                        "number",
+                        "null"
+                      ],
+                      "minimum": 0
+                    },
+                    "source_kind": {
+                      "enum": [
+                        "SIMULATED",
+                        "REPLAYED",
+                        "LIVE",
+                        null
+                      ]
+                    },
+                    "simulated": {
+                      "type": "boolean"
+                    },
+                    "model_version": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "config_version": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "required_inputs": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "assumptions": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "limitation_codes": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "coverage_start": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "format": "date-time",
+                          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,6})?(?:Z|[+-]\\d{2}:\\d{2})$"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "coverage_end": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "format": "date-time",
+                          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,6})?(?:Z|[+-]\\d{2}:\\d{2})$"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "coverage_fraction": {
+                      "type": [
+                        "number",
+                        "null"
+                      ],
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "timestamp": {
+                      "type": "string",
+                      "format": "date-time",
+                      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,6})?(?:Z|[+-]\\d{2}:\\d{2})$"
+                    }
+                  },
+                  "required": [
+                    "rul_status",
+                    "rul_method",
+                    "rul_target_definition",
+                    "rul_value",
+                    "rul_unit",
+                    "rul_lower",
+                    "rul_upper",
+                    "uncertainty_kind",
+                    "forecast_horizon_hours",
+                    "future_duty_scenario",
+                    "degradation_state",
+                    "end_threshold",
+                    "degradation_unit",
+                    "degradation_rate_per_hour",
+                    "equivalent_ageing_hours",
+                    "source_kind",
+                    "simulated",
+                    "model_version",
+                    "config_version",
+                    "required_inputs",
+                    "assumptions",
+                    "limitation_codes",
+                    "coverage_start",
+                    "coverage_end",
+                    "coverage_fraction",
+                    "timestamp"
+                  ],
+                  "additionalProperties": false,
+                  "allOf": [
+                    {
+                      "if": {
+                        "properties": {
+                          "rul_status": {
+                            "enum": [
+                              "INSUFFICIENT_DATA",
+                              "NO_CROSSING_WITHIN_HORIZON"
+                            ]
+                          }
+                        }
+                      },
+                      "then": {
+                        "properties": {
+                          "rul_value": {
+                            "type": "null"
+                          },
+                          "rul_lower": {
+                            "type": "null"
+                          },
+                          "rul_upper": {
+                            "type": "null"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "if": {
+                        "properties": {
+                          "rul_status": {
+                            "const": "END_THRESHOLD_REACHED"
+                          }
+                        }
+                      },
+                      "then": {
+                        "properties": {
+                          "rul_value": {
+                            "const": 0
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "if": {
+                        "properties": {
+                          "rul_status": {
+                            "enum": [
+                              "SIMULATED_ESTIMATE",
+                              "CONDITIONAL_ESTIMATE"
+                            ]
+                          }
+                        }
+                      },
+                      "then": {
+                        "properties": {
+                          "rul_value": {
+                            "type": "number",
+                            "minimum": 0
+                          }
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "transformer_id",
+            "timestamp",
+            "inference_status",
+            "schema_version",
+            "feature_version",
+            "model_version"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "reason": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "transformer_id",
+    "timestamp",
+    "snapshot_id",
+    "ingestion_outcome",
+    "http_status",
+    "forward_state_advanced",
+    "analytics",
+    "reason"
+  ],
+  "additionalProperties": false
+}

@@ -6,5 +6,6 @@ from app.models.ingestion_run import IngestionRun
 from app.models.maintenance_record import MaintenanceRecord
 from app.models.telemetry import Telemetry
 from app.models.transformer import Transformer
+from app.models.processing import IngestionReceipt, MLCheckpoint
 
-__all__ = ["Alert", "Analytics", "IngestionRun", "MaintenanceRecord", "Telemetry", "Transformer"]
+__all__ = ["Alert", "Analytics", "IngestionRun", "MaintenanceRecord", "Telemetry", "Transformer", "IngestionReceipt", "MLCheckpoint"]

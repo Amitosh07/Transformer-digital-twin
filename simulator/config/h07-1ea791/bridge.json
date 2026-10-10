@@ -1,0 +1,197 @@
+{
+  "map_version": "fictional-lv-v1",
+  "gateway_id": "H07-1ea791",
+  "poll_interval_seconds": 2,
+  "timeout_seconds": 2,
+  "snapshot_retries": 3,
+  "backoff_seconds": 1,
+  "max_backoff_seconds": 30,
+  "mqtt": {
+    "host": "mqtt",
+    "port": 1883
+  },
+  "receipt_base_url": "http://backend:8000",
+  "spool": {
+    "directory": "/spool/h07-1ea791",
+    "max_records": 10000,
+    "max_bytes": 16777216
+  },
+  "assets": [
+    {
+      "transformer_id": "H07-1ea791-01",
+      "unit_id": 1,
+      "host": "transformer-h06-20261009-h07-source-1ea791",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H07-1ea791-02",
+      "unit_id": 2,
+      "host": "transformer-h06-20261009-h07-source-1ea791",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H07-1ea791-03",
+      "unit_id": 3,
+      "host": "transformer-h06-20261009-h07-source-1ea791",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H07-1ea791-04",
+      "unit_id": 4,
+      "host": "transformer-h06-20261009-h07-source-1ea791",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H07-1ea791-05",
+      "unit_id": 5,
+      "host": "transformer-h06-20261009-h07-source-1ea791",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H07-1ea791-06",
+      "unit_id": 6,
+      "host": "transformer-h06-20261009-h07-source-1ea791",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H07-1ea791-07",
+      "unit_id": 7,
+      "host": "transformer-h06-20261009-h07-source-1ea791",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H07-1ea791-08",
+      "unit_id": 8,
+      "host": "transformer-h06-20261009-h07-source-1ea791",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H07-1ea791-09",
+      "unit_id": 9,
+      "host": "transformer-h06-20261009-h07-source-1ea791",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H07-1ea791-10",
+      "unit_id": 10,
+      "host": "transformer-h06-20261009-h07-source-1ea791",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H07-1ea791-11",
+      "unit_id": 11,
+      "host": "transformer-h06-20261009-h07-source-1ea791",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H07-1ea791-12",
+      "unit_id": 12,
+      "host": "transformer-h06-20261009-h07-source-1ea791",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H07-1ea791-13",
+      "unit_id": 13,
+      "host": "transformer-h06-20261009-h07-source-1ea791",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H07-1ea791-14",
+      "unit_id": 14,
+      "host": "transformer-h06-20261009-h07-source-1ea791",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H07-1ea791-15",
+      "unit_id": 15,
+      "host": "transformer-h06-20261009-h07-source-1ea791",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H07-1ea791-16",
+      "unit_id": 16,
+      "host": "transformer-h06-20261009-h07-source-1ea791",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H07-1ea791-17",
+      "unit_id": 17,
+      "host": "transformer-h06-20261009-h07-source-1ea791",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H07-1ea791-18",
+      "unit_id": 18,
+      "host": "transformer-h06-20261009-h07-source-1ea791",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H07-1ea791-19",
+      "unit_id": 19,
+      "host": "transformer-h06-20261009-h07-source-1ea791",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H07-1ea791-20",
+      "unit_id": 20,
+      "host": "transformer-h06-20261009-h07-source-1ea791",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H07-1ea791-21",
+      "unit_id": 21,
+      "host": "transformer-h06-20261009-h07-source-1ea791",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H07-1ea791-22",
+      "unit_id": 22,
+      "host": "transformer-h06-20261009-h07-source-1ea791",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H07-1ea791-23",
+      "unit_id": 23,
+      "host": "transformer-h06-20261009-h07-source-1ea791",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H07-1ea791-24",
+      "unit_id": 24,
+      "host": "transformer-h06-20261009-h07-source-1ea791",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H07-1ea791-25",
+      "unit_id": 25,
+      "host": "transformer-h06-20261009-h07-source-1ea791",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    }
+  ],
+  "audit_delivery": true
+}

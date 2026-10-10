@@ -1,3 +1,4 @@
+// Legacy educational simulation types; API monitoring uses api/contracts.ts.
 // Canonical Data Schema and Types matching dataschema.md v1.0.0 & mlcontract.md v1.0.0
 
 export type MaintenancePriority = 'NORMAL' | 'WATCH' | 'PLAN' | 'URGENT';
@@ -77,7 +78,7 @@ export interface DigitalTwinAnalytics {
   schema_version: string;
   feature_version: string;
   model_version: string;
-  metadata?: Record<string, any>;
+  metadata?: Record<string, unknown>;
 }
 
 export type ScenarioPreset = 

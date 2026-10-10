@@ -1,3 +1,5 @@
+> Historical frontend design notes. The current React operational console and actual API/data limitations are documented in [README.md](README.md). Prototype mock examples below are not runtime data or validated predictions.
+
 # Frontend + Dashboard
 
 ## Owner

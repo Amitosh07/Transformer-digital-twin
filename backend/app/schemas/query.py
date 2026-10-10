@@ -2,7 +2,8 @@
 
 from typing import Literal
 
-from pydantic import ConfigDict, Field
+from pydantic import ConfigDict, Field, AliasChoices
+from app.schemas.hackathon import AnalyticsMetadata, RULResult
 
 from app.schemas.analytics import HealthComponents
 from app.schemas.common import (
@@ -22,6 +23,7 @@ TELEMETRY_FIELDS = CANONICAL_TELEMETRY_FIELDS + [
     "scenario_id",
     "is_missing_critical",
     "data_quality_score",
+    "schema_version", "acquisition", "received_at",
 ]
 NUMERIC_SIGNALS = [name for name in CANONICAL_TELEMETRY_FIELDS[2:] if name not in PROTECTION_FIELDS]
 ANALYTIC_SIGNALS = [
@@ -61,6 +63,7 @@ class TelemetryPoint(TelemetryOut):
 
 class HealthPoint(CanonicalModel):
     model_config = ConfigDict(from_attributes=True)
+    metadata: AnalyticsMetadata | None = Field(default=None, validation_alias=AliasChoices('ml_metadata','metadata'))
     timestamp: UtcDatetime
     health_index: FiniteFloat | None = Field(default=None, ge=0, le=100)
     health_components: HealthComponents | None = None
@@ -86,6 +89,8 @@ class AnalyticsPoint(CanonicalModel):
     schema_version: str
     feature_version: str
     model_version: str
+    metadata: AnalyticsMetadata | None = Field(default=None, validation_alias=AliasChoices('ml_metadata','metadata'))
+    rul: RULResult | None = None
 
 
 class DataSource(CanonicalModel):

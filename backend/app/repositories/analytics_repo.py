@@ -10,6 +10,14 @@ from app.repositories.query_helpers import aggregate_signals, page_rows, window_
 from app.schemas.analytics import MLResultIn
 
 
+def persistence_values(result):
+    values = result.model_dump(mode='python')
+    values['ml_metadata'] = result.metadata.model_dump(mode='json', exclude_unset=True) if result.metadata else None
+    values.pop('metadata', None)
+    values['rul'] = result.rul.model_dump(mode='json') if result.rul else None
+    return values
+
+
 def get_for_telemetry(session: Session, telemetry_id: int) -> Analytics | None:
     return session.scalar(select(Analytics).where(Analytics.telemetry_id == telemetry_id))
 
@@ -23,7 +31,7 @@ def insert_analytics(
         insert(Analytics)
         .values(
             telemetry_id=telemetry_id,
-            **result.model_dump(mode="python"),
+            **persistence_values(result),
         )
         .on_conflict_do_nothing(index_elements=[Analytics.telemetry_id])
         .returning(Analytics)

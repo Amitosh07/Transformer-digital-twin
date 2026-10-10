@@ -7,8 +7,9 @@ from app.db.session import DatabaseSession
 from app.schemas.ingestion import IngestionSummary, RawTelemetryBatchIn
 from app.schemas.telemetry import TelemetryIn
 from app.services.ingestion_service import ingest_batch, ingest_record
+from app.api.v1.lossless_json import LosslessJSONRoute
 
-router = APIRouter(tags=["telemetry"])
+router = APIRouter(tags=["telemetry"], route_class=LosslessJSONRoute)
 
 
 @router.post("/telemetry", status_code=201)
@@ -20,7 +21,7 @@ def post_telemetry(
     result = ingest_record(db, record, run_ml=run_ml)
     if result.duplicate:
         return JSONResponse(
-            status_code=200, content={"duplicate": True, "telemetry_id": result.telemetry_id}
+            status_code=200, content=result.model_dump(mode='json')
         )
     return JSONResponse(
         status_code=201, content=result.model_dump(mode="json", exclude={"duplicate"})

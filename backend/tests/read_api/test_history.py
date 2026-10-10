@@ -46,8 +46,8 @@ def test_anchor_paging_order_and_insufficient(
         ({"from": "2020-01-01T00:00:00Z", "to": "2020-01-01T00:00:00Z"}, "earlier"),
         ({"from": "2020-01-02T00:00:00Z", "to": "2020-01-01T00:00:00Z"}, "earlier"),
         ({"from": "2020-01-01T00:00:00Z", "to": "2020-02-02T00:00:00Z"}, "MAX_WINDOW_DAYS=31"),
-        ({"from": "2020-01-01T00:00:00"}, "timezone"),
-        ({"to": "2020-01-01T00:00:00"}, "timezone"),
+        ({"from": "2020-01-01T00:00:00"}, "Aware ISO timestamp"),
+        ({"to": "2020-01-01T00:00:00"}, "Aware ISO timestamp"),
         ({"limit": 5001}, "MAX_PAGE_LIMIT=5000"),
         ({"limit": 0}, "greater"),
         ({"offset": -1}, "greater"),
@@ -114,7 +114,7 @@ def test_fields_projection_and_nulls(read_client: TestClient, seeded: dict[str, 
 
 
 @pytest.mark.parametrize(
-    "field", ["V" + "L12", "v" + "l23", "V" + "L_31", "unknown", "", "schema_version", "V" + "L1"]
+    "field", ["V" + "L12", "v" + "l23", "V" + "L_31", "unknown", "", "raw_csv", "V" + "L1"]
 )
 def test_unknown_fields_list_allowlist(
     read_client: TestClient, seeded: dict[str, Any], field: str
@@ -125,6 +125,15 @@ def test_unknown_fields_list_allowlist(
     assert response.status_code == 422
     assert "Allowed names" in response.text
     assert "oil_temperature" in response.text
+
+
+def test_schema_version_projection(read_client: TestClient, seeded: dict[str, Any]) -> None:
+    response = read_client.get(
+        f"/api/v1/transformers/{seeded['demo']}/telemetry",
+        params={"anchor": "latest", "fields": "schema_version"},
+    )
+    assert response.status_code == 200
+    assert all(row['schema_version'] == '1.0.0' for row in response.json()['items'])
 
 
 def test_current_rows_in_default_window(

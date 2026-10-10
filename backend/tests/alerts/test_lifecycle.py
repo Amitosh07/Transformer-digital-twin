@@ -6,6 +6,7 @@ import pytest
 from fastapi.testclient import TestClient
 from sqlalchemy import select, text
 from sqlalchemy.orm import Session
+from sqlalchemy.exc import SQLAlchemyError
 
 from app.core.config import get_settings
 from app.models import Alert, Analytics, MaintenanceRecord, Telemetry
@@ -116,6 +117,14 @@ def test_auto_resolve_uses_configuration(
     assert alerts(db, asset_id)["OIL_TEMP_TRIP"].status == "RESOLVED"
 
 
+def test_unknown_contact_never_clears_trip(db: Session, asset_id: str) -> None:
+    ingest_record(db, record(asset_id, oil_temp_trip=1))
+    for second in range(1, 7):
+        ingest_record(db, record(asset_id, second, oil_temp_trip=None))
+    row = alerts(db, asset_id)['OIL_TEMP_TRIP']
+    assert row.status == 'OPEN' and row.clear_count == 0
+
+
 def test_insufficient_does_not_clear_ml_alerts_but_clears_protection(
     db: Session,
     asset_id: str,
@@ -154,7 +163,10 @@ def test_protection_fires_for_insufficient_or_ml_failure(
             magnetic_oil_gauge_alarm=1,
         ),
     )
-    assert output.analytics.inference_status == "INSUFFICIENT_DATA"
+    if failure:
+        assert output.analytics is None
+    else:
+        assert output.analytics.inference_status == "INSUFFICIENT_DATA"
     assert set(alerts(db, asset_id)) == {"OIL_TEMP_ALARM", "OIL_TEMP_TRIP", "MOG_ALARM"}
     assert "ALERT_HOOK_FAILED" not in output.warnings
     assert ("ML_UNAVAILABLE" in output.warnings) == failure
@@ -179,7 +191,7 @@ def test_older_rows_cannot_clear_or_replace_newer_evidence(db: Session, asset_id
 
 
 @pytest.mark.parametrize("failure", ["python", "database"])
-def test_failing_alert_repository_preserves_telemetry_and_analytics(
+def test_failing_alert_repository_rolls_back_observation(
     db: Session,
     asset_id: str,
     monkeypatch: pytest.MonkeyPatch,
@@ -196,10 +208,11 @@ def test_failing_alert_repository_preserves_telemetry_and_analytics(
         return original(session, values)
 
     monkeypatch.setattr(alert_repo, "insert_active", fail)
-    output = ingest_record(db, record(asset_id, oil_temp_trip=1))
-    assert "ALERT_HOOK_FAILED" in output.warnings
-    assert db.get(Telemetry, output.telemetry_id) is not None
-    assert db.scalar(select(Analytics).where(Analytics.telemetry_id == output.telemetry_id))
+    # H02 makes telemetry, analytics and lifecycle effects one atomic transaction.
+    with pytest.raises(SQLAlchemyError if failure == "database" else RuntimeError):
+        ingest_record(db, record(asset_id, oil_temp_trip=1))
+    assert not db.scalar(select(Telemetry).where(Telemetry.transformer_id == asset_id))
+    assert not db.scalar(select(Analytics).where(Analytics.transformer_id == asset_id))
     assert not alerts(db, asset_id)
     assert not list(
         db.scalars(select(MaintenanceRecord).where(MaintenanceRecord.transformer_id == asset_id))

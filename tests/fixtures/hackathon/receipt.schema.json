@@ -1,0 +1,182 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://transformer-digital-twin.invalid/contracts/1.1.0/receipt.schema.json",
+  "title": "H00 receipt",
+  "oneOf": [
+    {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": "1.1.0"
+        },
+        "receipt_status": {
+          "enum": [
+            "COMMITTED",
+            "CONFLICT"
+          ]
+        },
+        "snapshot_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "payload_hash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "transformer_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,6})?(?:Z|[+-]\\d{2}:\\d{2})$"
+        },
+        "received_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,6})?(?:Z|[+-]\\d{2}:\\d{2})$"
+        },
+        "committed_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,6})?(?:Z|[+-]\\d{2}:\\d{2})$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "accepted_snapshot_id": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "accepted_payload_hash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "ingestion_outcome": {
+          "enum": [
+            "ACCEPTED",
+            "EXACT_RETRY",
+            "CONFLICT"
+          ]
+        },
+        "analytics_status": {
+          "enum": [
+            "AVAILABLE",
+            "INSUFFICIENT_DATA",
+            "UNAVAILABLE"
+          ]
+        },
+        "state_coverage_loss": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "schema_version",
+        "receipt_status",
+        "snapshot_id",
+        "payload_hash",
+        "transformer_id",
+        "timestamp",
+        "received_at",
+        "committed_at",
+        "accepted_snapshot_id",
+        "accepted_payload_hash",
+        "ingestion_outcome",
+        "analytics_status",
+        "state_coverage_loss"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "receipt_status": {
+                "const": "COMMITTED"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "committed_at": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,6})?(?:Z|[+-]\\d{2}:\\d{2})$"
+              },
+              "ingestion_outcome": {
+                "enum": [
+                  "ACCEPTED",
+                  "EXACT_RETRY"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "receipt_status": {
+                "const": "CONFLICT"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "committed_at": {
+                "type": "null"
+              },
+              "ingestion_outcome": {
+                "const": "CONFLICT"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "object",
+          "properties": {
+            "code": {
+              "const": "RECEIPT_NOT_COMMITTED"
+            },
+            "message": {
+              "type": "string",
+              "minLength": 1
+            },
+            "details": {
+              "type": "object",
+              "properties": {
+                "snapshot_id": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                }
+              },
+              "required": [
+                "snapshot_id"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "code",
+            "message",
+            "details"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "error"
+      ],
+      "additionalProperties": false
+    }
+  ]
+}

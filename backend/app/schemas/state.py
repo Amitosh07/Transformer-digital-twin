@@ -5,6 +5,7 @@ from app.schemas.common import CanonicalModel
 from app.schemas.query import DataSource
 from app.schemas.telemetry import TelemetryOut
 from app.schemas.transformer import TransformerOut
+from app.schemas.hackathon import AnalyticsAvailability
 
 
 class LatestStateOut(CanonicalModel):
@@ -19,3 +20,4 @@ class LatestStateOut(CanonicalModel):
     schema_version: str
     feature_version: str | None = None
     model_version: str | None = None
+    analytics_availability: AnalyticsAvailability | None = None

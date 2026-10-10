@@ -1,264 +1,41 @@
-import React, { useState } from 'react';
-import { Thermometer, Info, AlertCircle } from 'lucide-react';
+import type { Telemetry, AnalyticsPoint } from '../api/contracts';
+import { panel } from './ResourceCards';
+import { displayNumber, thermalReady } from '../monitoring';
 
-interface TimeSeriesPoint {
-  time: string;
-  observedTemp: number;
-  modelTemp: number;
-  residual: number;
-  load: number;
-  health: number;
+export interface ThermalPoint { timestamp: string; observed: number | null; model: number | null; }
+export function thermalPoints(telemetry: Telemetry[], analytics: AnalyticsPoint[], displayUnit?: string | null): ThermalPoint[] {
+  const byTime = new Map(analytics.map(a => [Date.parse(a.timestamp),a]));
+  return telemetry.map(t => {
+    const a = byTime.get(Date.parse(t.timestamp));
+    const unit = t.acquisition?.field_units.oil_temperature;
+    const modelUnit = a?.metadata?.thermal_temperature_unit ?? a?.metadata?.units?.thermal_model_temperature;
+    return { timestamp:t.timestamp, observed:unit && unit === displayUnit ? t.oil_temperature : null,
+      model: thermalReady(a) && unit && unit === displayUnit && unit === modelUnit ? a?.thermal_model_temperature ?? null : null };
+  });
 }
-
-interface ThermalResidualChartProps {
-  data: TimeSeriesPoint[];
-  currentResidual: number | null;
-  currentObserved: number | null;
-  currentModel: number | null;
-}
-
-export const ThermalResidualChart: React.FC<ThermalResidualChartProps> = ({
-  data,
-  currentResidual,
-  currentObserved,
-  currentModel,
-}) => {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
-  if (!data || data.length === 0) return null;
-
-  // Compute SVG plotting bounds
-  const minTemp = Math.min(...data.map((d) => Math.min(d.observedTemp, d.modelTemp))) - 5;
-  const maxTemp = Math.max(...data.map((d) => Math.max(d.observedTemp, d.modelTemp))) + 8;
-  const range = Math.max(20, maxTemp - minTemp);
-
-  const width = 600;
-  const height = 200;
-  const paddingX = 40;
-  const paddingY = 25;
-
-  const chartW = width - paddingX * 2;
-  const chartH = height - paddingY * 2;
-
-  // Convert (index, temp) to (x, y)
-  const getX = (i: number) => paddingX + (i / (data.length - 1)) * chartW;
-  const getY = (t: number) => paddingY + chartH - ((t - minTemp) / range) * chartH;
-
-  // Build SVG path strings
-  const observedPath = data.reduce(
-    (acc, d, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${getX(i)} ${getY(d.observedTemp)}`,
-    ''
-  );
-
-  const modelPath = data.reduce(
-    (acc, d, i) => `${acc} ${i === 0 ? 'M' : 'L'} ${getX(i)} ${getY(d.modelTemp)}`,
-    ''
-  );
-
-  // Build shaded polygon between model and observed
-  const reverseModelPoints = [...data].reverse().map((d, idx) => {
-    const originalIdx = data.length - 1 - idx;
-    return `L ${getX(originalIdx)} ${getY(d.modelTemp)}`;
+export function chartPath(data: ThermalPoint[], field: 'observed' | 'model', gapSeconds: number): string {
+  const values = data.flatMap(p => [p.observed,p.model]).filter((v):v is number => v != null);
+  if (!values.length) return '';
+  const min = Math.min(...values)-5, max = Math.max(...values)+5;
+  const start = Date.parse(data[0].timestamp), span = Math.max(1,Date.parse(data[data.length-1].timestamp)-start);
+  let previous: ThermalPoint | null = null;
+  return data.map(p => {
+    const value = p[field];
+    if (value == null) { previous=null; return ''; }
+    const move = !previous || Date.parse(p.timestamp)-Date.parse(previous.timestamp)>gapSeconds*1000;
+    previous=p;
+    return `${move ? 'M':'L'} ${40+(Date.parse(p.timestamp)-start)/span*520} ${175-(value-min)/(max-min)*150}`;
   }).join(' ');
-
-  const residualAreaPath = `${observedPath} ${reverseModelPoints} Z`;
-
-  const isDiverging = currentResidual !== null && Math.abs(currentResidual) > 5.0;
-
-  return (
-    <div className="bg-[#0A0E17] border border-slate-800 rounded-xl p-5 shadow-xl flex flex-col justify-between">
-      {/* Top Header */}
-      <div className="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-slate-800">
-        <div className="flex items-center gap-2">
-          <Thermometer className="w-4 h-4 text-rose-400" />
-          <span className="text-xs font-mono font-semibold uppercase tracking-wider text-slate-300">
-            Digital Twin Thermal Residual (Observed vs Thermodynamic Model)
-          </span>
-        </div>
-
-        <div className="flex items-center gap-2">
-          <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-900 border border-slate-700 text-xs font-mono">
-            <span className="text-slate-400">Δ Residual:</span>
-            <span
-              className={`font-bold ${
-                isDiverging ? 'text-rose-400 animate-pulse' : 'text-emerald-400'
-              }`}
-            >
-              {currentResidual === null
-                ? 'N/A'
-                : currentResidual > 0
-                  ? `+${currentResidual}°C`
-                  : `${currentResidual}°C`}
-            </span>
-          </div>
-
-          {isDiverging && (
-            <span className="flex items-center gap-1 text-[11px] font-mono text-rose-400 bg-rose-950/60 border border-rose-800/60 px-2 py-0.5 rounded-full">
-              <AlertCircle className="w-3 h-3 text-rose-400" />
-              THERMAL DRIFT
-            </span>
-          )}
-        </div>
-      </div>
-
-      {/* Primary SVG Chart */}
-      <div className="relative w-full my-3">
-        <svg
-          viewBox={`0 0 ${width} ${height}`}
-          className="w-full h-auto overflow-visible select-none"
-          onMouseLeave={() => setHoveredIndex(null)}
-        >
-          {/* Grid lines */}
-          {[0, 0.25, 0.5, 0.75, 1].map((ratio) => {
-            const y = paddingY + chartH * ratio;
-            const tempVal = maxTemp - ratio * range;
-            return (
-              <g key={ratio}>
-                <line
-                  x1={paddingX}
-                  y1={y}
-                  x2={width - paddingX}
-                  y2={y}
-                  stroke="var(--chart-grid, rgba(51, 65, 85, 0.25))"
-                  strokeDasharray="4 4"
-                />
-                <text
-                  x={paddingX - 8}
-                  y={y + 3}
-                  textAnchor="end"
-                  fill="#64748B"
-                  fontSize="9"
-                  fontFamily="JetBrains Mono"
-                >
-                  {tempVal.toFixed(0)}°C
-                </text>
-              </g>
-            );
-          })}
-
-          {/* Shaded Area for Thermal Residual */}
-          <path
-            d={residualAreaPath}
-            fill={isDiverging ? 'rgba(239, 68, 68, 0.2)' : 'rgba(245, 158, 11, 0.12)'}
-            stroke="none"
-          />
-
-          {/* Expected Model Path (Amber dashed line) */}
-          <path
-            d={modelPath}
-            fill="none"
-            stroke="#F59E0B"
-            strokeWidth="2"
-            strokeDasharray="4 3"
-            style={{ filter: 'drop-shadow(0 0 4px rgba(245, 158, 11, 0.24))' }}
-          />
-
-          {/* Observed Telemetry Path (Blue/Crimson solid line) */}
-          <path
-            d={observedPath}
-            fill="none"
-            stroke={isDiverging ? '#EF4444' : '#2563EB'}
-            strokeWidth="2.5"
-            style={{
-              filter: `drop-shadow(0 0 6px ${
-                isDiverging ? 'rgba(239, 68, 68, 0.6)' : 'rgba(37, 99, 235, 0.3)'
-              })`,
-            }}
-          />
-
-          {/* Interactive Hover Vertical Line and Points */}
-          {data.map((d, i) => {
-            const cx = getX(i);
-            const cyObs = getY(d.observedTemp);
-            const cyMod = getY(d.modelTemp);
-            const isHovered = hoveredIndex === i;
-
-            return (
-              <g key={i} onMouseEnter={() => setHoveredIndex(i)} className="cursor-pointer">
-                {/* Invisible hover trigger area */}
-                <rect
-                  x={cx - 10}
-                  y={paddingY}
-                  width="20"
-                  height={chartH}
-                  fill="transparent"
-                />
-
-                {isHovered && (
-                  <>
-                    <line
-                      x1={cx}
-                      y1={paddingY}
-                      x2={cx}
-                      y2={paddingY + chartH}
-                      stroke="var(--chart-grid, rgba(255, 255, 255, 0.4))"
-                      strokeWidth="1"
-                    />
-                    <circle cx={cx} cy={cyObs} r="4" fill="#2563EB" stroke="#fff" strokeWidth="1.5" />
-                    <circle cx={cx} cy={cyMod} r="4" fill="#F59E0B" stroke="#fff" strokeWidth="1.5" />
-                  </>
-                )}
-              </g>
-            );
-          })}
-        </svg>
-
-        {/* Hover Floating Details Card */}
-        {hoveredIndex !== null && data[hoveredIndex] && (
-          <div className="absolute top-2 right-4 bg-slate-900/90 border border-slate-700 backdrop-blur-md rounded-md p-2.5 text-xs font-mono shadow-2xl pointer-events-none">
-            <div className="text-slate-400 text-[10px] pb-1 border-b border-slate-800">
-              Timestamp: {data[hoveredIndex].time}
-            </div>
-            <div className="flex items-center justify-between gap-4 pt-1">
-              <span className="text-amber-400">Observed:</span>
-              <strong className="text-slate-100">{data[hoveredIndex].observedTemp}°C</strong>
-            </div>
-            <div className="flex items-center justify-between gap-4">
-              <span className="text-cyan-400">Thermodynamic Model:</span>
-              <strong className="text-slate-100">{data[hoveredIndex].modelTemp}°C</strong>
-            </div>
-            <div className="flex items-center justify-between gap-4 pt-1 border-t border-slate-800 text-[11px]">
-              <span className="text-slate-300 font-semibold">Residual ΔT:</span>
-              <span
-                className={
-                  data[hoveredIndex].residual > 5 ? 'text-rose-400 font-bold' : 'text-emerald-400'
-                }
-              >
-                +{data[hoveredIndex].residual}°C
-              </span>
-            </div>
-          </div>
-        )}
-      </div>
-
-      {/* Legend & Physical Insight Explainer */}
-      <div className="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-slate-800/80 text-xs font-mono">
-        <div className="flex items-center gap-4">
-          <div className="flex items-center gap-1.5">
-            <span className="w-3 h-0.5 bg-blue-600 rounded"></span>
-            <span className="text-slate-400">
-              Observed SCADA (T<sub>obs</sub>):{' '}
-              <strong className="text-slate-200">
-                {currentObserved !== null && currentObserved !== undefined ? `${currentObserved}°C` : 'N/A'}
-              </strong>
-            </span>
-          </div>
-          <div className="flex items-center gap-1.5">
-            <span className="w-3 h-0.5 bg-amber-500 border-dashed border-t rounded"></span>
-            <span className="text-slate-400">
-              Physics Model (T<sub>model</sub>):{' '}
-              <strong className="text-slate-200">
-                {currentModel !== null && currentModel !== undefined ? `${currentModel}°C` : 'WARM-UP'}
-              </strong>
-            </span>
-          </div>
-        </div>
-
-        <div className="flex items-center gap-1.5 text-[11px] text-slate-400 bg-slate-900/60 px-2.5 py-1 rounded border border-slate-800">
-          <Info className="w-3.5 h-3.5 text-cyan-400" />
-          <span>Residual ΔT = T<sub>obs</sub> − T<sub>model</sub> exposes cooling divergence hours before trip alarms.</span>
-        </div>
-      </div>
-    </div>
-  );
-};
+}
+export function ThermalResidualChart({ data, unit, gapSeconds=10 }: { data: ThermalPoint[]; unit?: string | null; gapSeconds?: number }) {
+  return <section className={panel} aria-label="Thermal history"><h3 className="text-lg text-cyan-300">Observed oil / backend thermal model</h3>
+    <p>Unit: {unit ?? 'Unknown source unit'} · Gaps above {gapSeconds}s remain disconnected (demo display policy).</p>
+    {!data.length ? <p>No observations</p> : <>
+      <svg viewBox="0 0 600 200" role="img" aria-label="Event-time thermal history" className="w-full">
+        <path data-testid="observed-path" d={chartPath(data,'observed',gapSeconds)} stroke="#f59e0b" fill="none" strokeWidth="2" />
+        <path d={chartPath(data,'model',gapSeconds)} stroke="#06b6d4" fill="none" strokeWidth="2" />
+      </svg>
+      <details><summary>History observations ({data.length})</summary>{data.map((p,i)=><p key={i}>{p.timestamp} · Observed {displayNumber(p.observed,unit)} · Model {displayNumber(p.model,unit)}</p>)}</details>
+    </>}
+  </section>;
+}

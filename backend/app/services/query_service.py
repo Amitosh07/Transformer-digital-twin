@@ -4,7 +4,7 @@ from datetime import UTC, datetime, timedelta
 from typing import Any, TypeVar
 
 from fastapi.exceptions import RequestValidationError
-from pydantic import BaseModel
+from pydantic import BaseModel, ValidationError
 from sqlalchemy.orm import Session
 from starlette.exceptions import HTTPException
 
@@ -33,6 +33,7 @@ from app.schemas.query import (
     TimeWindow,
 )
 from app.schemas.state import LatestStateOut
+from app.schemas.hackathon import AnalyticsAvailability
 from app.schemas.telemetry import TelemetryOut
 from app.schemas.transformer import TransformerIn, TransformerOut, TransformerPatch
 from app.services.demo_mode import is_demo_mode
@@ -117,7 +118,14 @@ def patch_transformer(session: Session, asset: str, payload: TransformerPatch) -
         raise RequestValidationError(
             [{"loc": ("body", "name"), "msg": "name cannot be null", "type": "value_error"}]
         )
-    result = TransformerOut.model_validate(transformer_repo.patch(session, row, changes))
+    merged = TransformerOut.model_validate(row).model_dump()
+    merged.update(changes)
+    try:
+        TransformerOut.model_validate(merged)
+    except ValidationError as exc:
+        raise RequestValidationError(exc.errors(include_context=False)) from None
+    json_changes = payload.model_dump(mode='json', exclude_unset=True)
+    result = TransformerOut.model_validate(transformer_repo.patch(session, row, json_changes))
     session.commit()
     return result
 
@@ -128,12 +136,8 @@ def latest(session: Session, asset: str) -> LatestStateOut:
     telemetry = TelemetryOut.model_validate(row) if row is not None else None
     analytic_row = analytics_repo.get_for_telemetry(session, row.id) if row is not None else None
     analytics = AnalyticsOut.model_validate(analytic_row) if analytic_row is not None else None
-    if analytics is not None and analytics.error_detail not in (
-        None,
-        "ML analysis failed",
-        "ML analysis timed out",
-    ):
-        analytics.error_detail = "ML analysis failed"
+    if analytics is not None and analytics.error_detail:
+        analytics = None
     source = (
         DataSource(source_name=telemetry.source_name, scenario_id=telemetry.scenario_id)
         if (telemetry is not None)
@@ -144,13 +148,20 @@ def latest(session: Session, asset: str) -> LatestStateOut:
         telemetry=telemetry,
         analytics=analytics,
         open_alerts_count=alert_repo.count_open(session, asset),
-        demo_mode=is_demo_mode(source.source_name, source.scenario_id),
+        demo_mode=(telemetry.acquisition.source_kind == 'SIMULATED' or (
+            telemetry.acquisition.source_kind == 'REPLAYED' and telemetry.acquisition.origin_kind == 'SIMULATED'))
+            if telemetry and telemetry.acquisition else (
+                is_demo_mode(source.source_name, source.scenario_id) if source.source_name != 'mqtt' else False),
         data_source=source,
         schema_version=analytics.schema_version
         if analytics
         else (telemetry.schema_version if telemetry else get_settings().schema_version),
         feature_version=analytics.feature_version if analytics else None,
         model_version=analytics.model_version if analytics else None,
+        analytics_availability=AnalyticsAvailability(
+            status=('AVAILABLE' if analytics.inference_status == 'OK' else 'INSUFFICIENT_DATA') if analytics else 'UNAVAILABLE',
+            reasons=[] if analytics else [row.ml_error or row.ml_status or 'NO_ANALYTICS'] if row else ['NO_TELEMETRY'],
+            state_coverage_loss=analytics is None or bool(row and row.ml_status == 'UNAVAILABLE')),
     )
 
 

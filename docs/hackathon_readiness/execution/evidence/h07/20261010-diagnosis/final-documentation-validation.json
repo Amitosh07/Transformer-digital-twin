@@ -1,0 +1,25 @@
+{
+  "json_tool_exit_codes": {
+    "docs\\hackathon_readiness\\execution\\evidence\\h07\\20261010-diagnosis\\final-bounded-measurements.json": 0,
+    "docs\\hackathon_readiness\\execution\\evidence\\h07\\soak-b41b39\\final-identity-ledger.json": 0,
+    "docs\\hackathon_readiness\\execution\\evidence\\h07\\soak-1ea791\\final-identity-ledger.json": 0
+  },
+  "python_ast_files": [
+    "ml/pipeline/session.py",
+    "ml/tests/test_session_h07.py",
+    "backend/app/services/transactional_ml.py",
+    "backend/app/services/ingestion_service.py",
+    "backend/app/repositories/processing_repo.py",
+    "backend/tests/test_h02_transactional_adapter.py",
+    "backend/tests/test_h02_postgres.py",
+    "simulator/simulator/spool.py",
+    "simulator/simulator/modbus_bridge.py",
+    "simulator/simulator/modbus_server.py",
+    "simulator/tests/test_h07_concurrent_spool.py",
+    "simulator/scripts/demo_portfolio.py",
+    "simulator/scripts/h07_recover_spool.py",
+    "simulator/scripts/h07_preserve_and_reconcile.py"
+  ],
+  "added_documentation_links_missing": [],
+  "full_soak": "BLOCKED per user instruction and disk guard"
+}

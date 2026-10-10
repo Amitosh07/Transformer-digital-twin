@@ -14,7 +14,7 @@ from ml.maintenance.engine import MaintenancePersistenceState
 from ml.thermal.thermal_twin import TransformerThermalState
 
 
-DEFAULT_MAX_HISTORY_ROWS = 60
+DEFAULT_MAX_HISTORY_ROWS = 4096
 
 
 @dataclass
@@ -49,6 +49,14 @@ class AssetPipelineState:
     last_processed_timestamp: pd.Timestamp | None = None
     last_result: dict[str, Any] | None = None
     observation_count: int = 0
+    last_payload_hash: str | None = None
+    last_snapshot_id: str | None = None
+    identity_cache: dict[str, dict[str, Any]] = field(default_factory=dict)
+    history_capped: bool = False
+    lifecycle_status: str = 'WARMING_UP'
+    configuration_fingerprint: str | None = None
+    synthetic_degradation: dict[str, Any] | None = None
+    protection_context_unknown: bool = True
 
     def __post_init__(self) -> None:
         self.thermal_state = TransformerThermalState(transformer_id=self.transformer_id)
@@ -91,12 +99,17 @@ class AssetPipelineState:
         self.thermal_state.reset()
         self.anomaly_state.reset()
         self.health_state.reset()
+        # Reset analytical continuity without erasing an unresolved protection latch.
+        latch = (self.maintenance_state.trip_latched, self.maintenance_state.latched_at,
+                 self.maintenance_state.clear_policy_status)
         self.maintenance_state.reset()
+        self.maintenance_state.trip_latched, self.maintenance_state.latched_at, self.maintenance_state.clear_policy_status = latch
 
-        self.history_records.clear()
-        self.last_processed_timestamp = None
-        self.last_result = None
+        # Identity survives reinitialization: an old contact change cannot become
+        # a new forward observation because an analytical model was restarted.
+        self.history_records = self.history_records[-1:]
         self.observation_count = 0
+        self.lifecycle_status = 'REINITIALIZED'
 
     def commit_observation(
         self,
@@ -111,5 +124,31 @@ class AssetPipelineState:
 
         # Append to rolling history
         self.history_records.append(dict(raw_record))
+        cutoff = timestamp - pd.Timedelta(hours=1)
+        prior = [i for i, row in enumerate(self.history_records)
+                 if pd.Timestamp(row['timestamp']) <= cutoff]
+        if prior:
+            self.history_records = self.history_records[prior[-1]:]
         if len(self.history_records) > self.max_history_rows:
             self.history_records = self.history_records[-self.max_history_rows :]
+            self.history_capped = True
+
+    def coverage(self, timestamp, record=None):
+        rows = self.history_records + ([record] if record is not None else [])
+        times = sorted(set(pd.Timestamp(r['timestamp']) for r in rows))
+        cutoff = timestamp - pd.Timedelta(hours=1)
+        acquisition = (record or (rows[-1] if rows else {})).get('acquisition') or {}
+        cadence = acquisition.get('expected_interval_seconds')
+        cadence = float(cadence) if cadence is not None else None
+        covered, gaps = 0., 0
+        for a, b in zip(times, times[1:]):
+            duration = (b - a).total_seconds()
+            if cadence is None or duration > cadence * 1.5:
+                gaps += 1
+                continue
+            covered += max(0., (min(b, timestamp) - max(a, cutoff)).total_seconds())
+        covered = min(3600., covered)
+        return {'start': max(times[0], cutoff).isoformat() if times else None,
+                'end': timestamp.isoformat(), 'covered_seconds': covered,
+                'expected_seconds': 3600., 'fraction': covered / 3600.,
+                'gap_count': gaps, 'missing_fields': []}

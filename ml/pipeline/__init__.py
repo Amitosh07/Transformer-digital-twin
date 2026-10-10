@@ -18,6 +18,7 @@ from ml.pipeline.orchestrator import (
     analyze,
 )
 from ml.pipeline.state import AssetPipelineState
+from ml.pipeline.session import PipelineSession, PreparedInference, CheckpointCompatibilityError, CandidateStateError
 
 __all__ = [
     "AssetConfig",
@@ -29,4 +30,5 @@ __all__ = [
     "UnifiedMLPipeline",
     "analyze",
     "load_release_manifest",
+    "PipelineSession", "PreparedInference", "CheckpointCompatibilityError", "CandidateStateError",
 ]

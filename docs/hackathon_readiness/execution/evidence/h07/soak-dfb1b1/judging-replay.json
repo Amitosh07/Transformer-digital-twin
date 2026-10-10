@@ -1,0 +1,7 @@
+{
+  "mode": "replay",
+  "started": "2026-10-09T20:06:15.948Z",
+  "passed": true,
+  "dom": "H06-REPLAY-R1 · Historical replay — event time is not a live reading\n\nSource: REPLAYED · canonical-replay\n\nMeasurement event: 2026-10-09T00:00:05Z · Analytics event: 2026-10-09T00:00:05Z\n\nLast successful API poll: 2026-10-09T20:06:20.955Z\n\nReceived at: 2026-10-09T18:29:21.081350Z · Expected cadence: 3600 s\n\nTimezone: DECLARED_UTC · Gateway: Unknown · Snapshot: 407c75b97039235ea95fcb5d9f3247a94833d04920644127c103c0f39ce9189a\n\nReplay origin/run: H06-RUL-ORACLE / H06-R1\n\nAnalytics availability: AVAILABLE · No availability evidence supplied\n\nBundle/configuration: demo_unverified_coded_config_v1 / fictional-demo-v1\n\nInference: OK · Reasons: HIGH_OIL_TEMP",
+  "finished": "2026-10-09T20:06:23.434Z"
+}

@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=75,<83"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "transformer-ml-runtime"
+version = "0.1.0"
+description = "Transformer twin runtime with separate artifact and operational readiness"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24,<3", "pandas>=2,<3", "scipy>=1.10,<2", "scikit-learn>=1.3,<2"]
+
+[project.optional-dependencies]
+h05-test = ["jsonschema==4.26.0"]
+
+[tool.setuptools]
+packages = ["ml", "ml.pipeline", "ml.features", "ml.thermal", "ml.anomaly", "ml.health", "ml.maintenance", "ml.prediction", "ml.rul", "ml.energy"]
+package-dir = {ml = "."}
+include-package-data = false
+
+[tool.setuptools.package-data]
+"ml.rul" = ["fictional_scenario_v1.json"]

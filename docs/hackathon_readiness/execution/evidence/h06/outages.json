@@ -1,0 +1,1127 @@
+{
+  "before_broker": {
+    "counters": {
+      "acquired": 247,
+      "broker_pubacks": 247,
+      "committed": 244
+    },
+    "entries": [
+      [
+        "56888d5e6910a8075ba6b597fb0ff56165736b3a350ff2ea8d1263327c015e8e",
+        3,
+        3,
+        "NOT_YET_COMMITTED"
+      ],
+      [
+        "e27991f4bca11d728a2417aea4ec28873d0bc6b547c9caac2f6e498ac678237e",
+        0,
+        0,
+        null
+      ],
+      [
+        "2384e8554b6d56f7b3760b43ed5bd81228d9f85298e99299cb58e02a4ce28112",
+        0,
+        0,
+        null
+      ]
+    ]
+  },
+  "broker_disconnected_baseline": {
+    "counters": {
+      "acquired": 255,
+      "broker_pubacks": 251,
+      "committed": 248
+    },
+    "entries": [
+      [
+        "9dc01c39518c9b7a649d88987144f6fc55c474e0ca5a477aeb4083f37f73af97",
+        1,
+        1,
+        "NOT_YET_COMMITTED"
+      ],
+      [
+        "25da3e4ba629bd4990d6345e6cd4837092422d85d7edd185c4e7109a9b6e38e1",
+        0,
+        0,
+        null
+      ],
+      [
+        "73f55d1545dd0ffc4ff7ba71fcb943762e08ae47f29b2cb2b747fc780bc7cbae",
+        0,
+        0,
+        null
+      ],
+      [
+        "3d0159bcb20a91019321174dfcc1f99611faef434993d434a1f644bd1bb5f423",
+        0,
+        0,
+        null
+      ],
+      [
+        "73f1864b1f4ca621da71d7a65b6bc5fe05c6e9895ed8031da34b69d80980f293",
+        0,
+        0,
+        null
+      ],
+      [
+        "10324608c63aad2c5fd6c7fca75d4f7748cd139df243426ae9c345c1e3df7219",
+        0,
+        0,
+        null
+      ],
+      [
+        "e024bf081a7f8a50308b9478ac2b2690f7e9eeb739ca62260d225c6ce2e00898",
+        0,
+        0,
+        null
+      ]
+    ]
+  },
+  "broker_down_start": {
+    "counters": {
+      "acquired": 267,
+      "broker_pubacks": 254,
+      "committed": 252
+    },
+    "entries": [
+      [
+        "73f1864b1f4ca621da71d7a65b6bc5fe05c6e9895ed8031da34b69d80980f293",
+        1,
+        0,
+        "BROKER_FAILURE"
+      ],
+      [
+        "10324608c63aad2c5fd6c7fca75d4f7748cd139df243426ae9c345c1e3df7219",
+        0,
+        0,
+        null
+      ],
+      [
+        "e024bf081a7f8a50308b9478ac2b2690f7e9eeb739ca62260d225c6ce2e00898",
+        0,
+        0,
+        null
+      ],
+      [
+        "d12a62d7ce5b38fe91546a63f661c4bd9ef89b7b03e50a73f1fd4839aed60638",
+        0,
+        0,
+        null
+      ],
+      [
+        "2418e6ccbdf7b187b3905a923879ff6987abf4785a3e526dd7a956291eccb26a",
+        0,
+        0,
+        null
+      ],
+      [
+        "2bdd25b61359f24297abd7cfd96db536225aa56f0cee4dc2615b7011742098c1",
+        0,
+        0,
+        null
+      ],
+      [
+        "5d59156b8f765520e2b118cb76f181789285630a0cb314693736ab21446c2929",
+        0,
+        0,
+        null
+      ],
+      [
+        "9b873235c3d7fd86a569dad7858fdd6fa6f6d19ff942e31c06d5a3da31dda70e",
+        0,
+        0,
+        null
+      ],
+      [
+        "923e6340fc8a01aa9fabdbf23ce959728022039b4407083e48bc6a8a5aaf6bf2",
+        0,
+        0,
+        null
+      ],
+      [
+        "88ebd6c6feec3f22463d44301c54c4e8c1f0bb7574f273be464f23b64487b2e8",
+        0,
+        0,
+        null
+      ],
+      [
+        "b2c78a041673e8132d35c3c42226772f91932b067e4122458f44307a6ab97f20",
+        0,
+        0,
+        null
+      ],
+      [
+        "3c5f36e95aee9a92a74b162b02d75516b9eeba9503c4d87a8670435519b562a1",
+        0,
+        0,
+        null
+      ],
+      [
+        "d2aa853d63a7f5ad565a832d5b74b1bbc7aa909cc8aa82544301eb58fcaefa75",
+        0,
+        0,
+        null
+      ],
+      [
+        "437af12770d6e32aa1fe173eed7182a0c83b6db4a1e63630414c934298ef6f23",
+        0,
+        0,
+        null
+      ],
+      [
+        "943bac552776b604712985b21ffb87a21f2ed20b37d705e49cbac93fe9db505d",
+        0,
+        0,
+        null
+      ]
+    ]
+  },
+  "broker_down": {
+    "counters": {
+      "acquired": 273,
+      "broker_pubacks": 254,
+      "committed": 252
+    },
+    "entries": [
+      [
+        "73f1864b1f4ca621da71d7a65b6bc5fe05c6e9895ed8031da34b69d80980f293",
+        5,
+        0,
+        "BROKER_FAILURE"
+      ],
+      [
+        "10324608c63aad2c5fd6c7fca75d4f7748cd139df243426ae9c345c1e3df7219",
+        0,
+        0,
+        null
+      ],
+      [
+        "e024bf081a7f8a50308b9478ac2b2690f7e9eeb739ca62260d225c6ce2e00898",
+        0,
+        0,
+        null
+      ],
+      [
+        "d12a62d7ce5b38fe91546a63f661c4bd9ef89b7b03e50a73f1fd4839aed60638",
+        0,
+        0,
+        null
+      ],
+      [
+        "2418e6ccbdf7b187b3905a923879ff6987abf4785a3e526dd7a956291eccb26a",
+        0,
+        0,
+        null
+      ],
+      [
+        "2bdd25b61359f24297abd7cfd96db536225aa56f0cee4dc2615b7011742098c1",
+        0,
+        0,
+        null
+      ],
+      [
+        "5d59156b8f765520e2b118cb76f181789285630a0cb314693736ab21446c2929",
+        0,
+        0,
+        null
+      ],
+      [
+        "9b873235c3d7fd86a569dad7858fdd6fa6f6d19ff942e31c06d5a3da31dda70e",
+        0,
+        0,
+        null
+      ],
+      [
+        "923e6340fc8a01aa9fabdbf23ce959728022039b4407083e48bc6a8a5aaf6bf2",
+        0,
+        0,
+        null
+      ],
+      [
+        "88ebd6c6feec3f22463d44301c54c4e8c1f0bb7574f273be464f23b64487b2e8",
+        0,
+        0,
+        null
+      ],
+      [
+        "b2c78a041673e8132d35c3c42226772f91932b067e4122458f44307a6ab97f20",
+        0,
+        0,
+        null
+      ],
+      [
+        "3c5f36e95aee9a92a74b162b02d75516b9eeba9503c4d87a8670435519b562a1",
+        0,
+        0,
+        null
+      ],
+      [
+        "d2aa853d63a7f5ad565a832d5b74b1bbc7aa909cc8aa82544301eb58fcaefa75",
+        0,
+        0,
+        null
+      ],
+      [
+        "437af12770d6e32aa1fe173eed7182a0c83b6db4a1e63630414c934298ef6f23",
+        0,
+        0,
+        null
+      ],
+      [
+        "943bac552776b604712985b21ffb87a21f2ed20b37d705e49cbac93fe9db505d",
+        0,
+        0,
+        null
+      ],
+      [
+        "b615e97d9db0f91c8985b4d37de640d820bbfac877d965c18cad2d93053dfbc7",
+        0,
+        0,
+        null
+      ],
+      [
+        "2aba5dde22bd4e953a5fffcac9d8f2954dca1981d5ddce56732eec79754eaf65",
+        0,
+        0,
+        null
+      ],
+      [
+        "d02972bf6652b424cd0eed0f00b497557b220f477ee82db9e736ac4c5c878eb6",
+        0,
+        0,
+        null
+      ],
+      [
+        "927eccc3491d26a19fb60e242e1758746121ad09d1b243e11f8b3cf883df9bc1",
+        0,
+        0,
+        null
+      ],
+      [
+        "9fe75c60789cfd28c9b7ab62214127a86313b69e8ec9af8d337169b9028fd763",
+        0,
+        0,
+        null
+      ],
+      [
+        "f27d0d6b49b273834145c42c619d1896827e0c02928cd3d3849f8f1ef5e18615",
+        0,
+        0,
+        null
+      ]
+    ]
+  },
+  "database_down_start": {
+    "counters": {
+      "acquired": 281,
+      "broker_pubacks": 254,
+      "committed": 252
+    },
+    "entries": [
+      [
+        "73f1864b1f4ca621da71d7a65b6bc5fe05c6e9895ed8031da34b69d80980f293",
+        7,
+        0,
+        "BROKER_FAILURE"
+      ],
+      [
+        "10324608c63aad2c5fd6c7fca75d4f7748cd139df243426ae9c345c1e3df7219",
+        0,
+        0,
+        null
+      ],
+      [
+        "e024bf081a7f8a50308b9478ac2b2690f7e9eeb739ca62260d225c6ce2e00898",
+        0,
+        0,
+        null
+      ],
+      [
+        "d12a62d7ce5b38fe91546a63f661c4bd9ef89b7b03e50a73f1fd4839aed60638",
+        0,
+        0,
+        null
+      ],
+      [
+        "2418e6ccbdf7b187b3905a923879ff6987abf4785a3e526dd7a956291eccb26a",
+        0,
+        0,
+        null
+      ],
+      [
+        "2bdd25b61359f24297abd7cfd96db536225aa56f0cee4dc2615b7011742098c1",
+        0,
+        0,
+        null
+      ],
+      [
+        "5d59156b8f765520e2b118cb76f181789285630a0cb314693736ab21446c2929",
+        0,
+        0,
+        null
+      ],
+      [
+        "9b873235c3d7fd86a569dad7858fdd6fa6f6d19ff942e31c06d5a3da31dda70e",
+        0,
+        0,
+        null
+      ],
+      [
+        "923e6340fc8a01aa9fabdbf23ce959728022039b4407083e48bc6a8a5aaf6bf2",
+        0,
+        0,
+        null
+      ],
+      [
+        "88ebd6c6feec3f22463d44301c54c4e8c1f0bb7574f273be464f23b64487b2e8",
+        0,
+        0,
+        null
+      ],
+      [
+        "b2c78a041673e8132d35c3c42226772f91932b067e4122458f44307a6ab97f20",
+        0,
+        0,
+        null
+      ],
+      [
+        "3c5f36e95aee9a92a74b162b02d75516b9eeba9503c4d87a8670435519b562a1",
+        0,
+        0,
+        null
+      ],
+      [
+        "d2aa853d63a7f5ad565a832d5b74b1bbc7aa909cc8aa82544301eb58fcaefa75",
+        0,
+        0,
+        null
+      ],
+      [
+        "437af12770d6e32aa1fe173eed7182a0c83b6db4a1e63630414c934298ef6f23",
+        0,
+        0,
+        null
+      ],
+      [
+        "943bac552776b604712985b21ffb87a21f2ed20b37d705e49cbac93fe9db505d",
+        0,
+        0,
+        null
+      ],
+      [
+        "b615e97d9db0f91c8985b4d37de640d820bbfac877d965c18cad2d93053dfbc7",
+        0,
+        0,
+        null
+      ],
+      [
+        "2aba5dde22bd4e953a5fffcac9d8f2954dca1981d5ddce56732eec79754eaf65",
+        0,
+        0,
+        null
+      ],
+      [
+        "d02972bf6652b424cd0eed0f00b497557b220f477ee82db9e736ac4c5c878eb6",
+        0,
+        0,
+        null
+      ],
+      [
+        "927eccc3491d26a19fb60e242e1758746121ad09d1b243e11f8b3cf883df9bc1",
+        0,
+        0,
+        null
+      ],
+      [
+        "9fe75c60789cfd28c9b7ab62214127a86313b69e8ec9af8d337169b9028fd763",
+        0,
+        0,
+        null
+      ],
+      [
+        "f27d0d6b49b273834145c42c619d1896827e0c02928cd3d3849f8f1ef5e18615",
+        0,
+        0,
+        null
+      ],
+      [
+        "03c7698d40df08922e8b1c4f847245b380ea4e5e17c1616222b42eb973f7a449",
+        0,
+        0,
+        null
+      ],
+      [
+        "6f2015a6c0da069ca83c94b78bc642135a6c93a3b714553c17e11356bc8e0eb2",
+        0,
+        0,
+        null
+      ],
+      [
+        "45c0703aea4d101acf12ae3335767d83be9446cb589f018d6a66a413d244d632",
+        0,
+        0,
+        null
+      ],
+      [
+        "edffa0b97fcc9ed35c107a9a2030332a2053428a7a0362de1b4ef11c4486174e",
+        0,
+        0,
+        null
+      ],
+      [
+        "50e8278d57897a35c8dba79305abff8df200f04003d6b2ba4c8ca30050672fb3",
+        0,
+        0,
+        null
+      ],
+      [
+        "eae01749aae4ab9c78cfd6ed33dccdad0bb1bf50e40688186ce8eff725086ef6",
+        0,
+        0,
+        null
+      ],
+      [
+        "9053fb9d1c6afe2bbb0cb94201cd724688d2d4aaf65f31a832d1d42388c8ddb1",
+        0,
+        0,
+        null
+      ],
+      [
+        "b16113459b39093b50868388de286811c63496e504b0b3d23540e8cc6e35fd8c",
+        0,
+        0,
+        null
+      ]
+    ]
+  },
+  "bridge_stopped": {
+    "counters": {
+      "acquired": 285,
+      "broker_pubacks": 255,
+      "committed": 252
+    },
+    "entries": [
+      [
+        "73f1864b1f4ca621da71d7a65b6bc5fe05c6e9895ed8031da34b69d80980f293",
+        "73f1864b1f4ca621da71d7a65b6bc5fe05c6e9895ed8031da34b69d80980f293",
+        7,
+        1,
+        "TEMPORARY_RECEIPT_FAILURE"
+      ],
+      [
+        "10324608c63aad2c5fd6c7fca75d4f7748cd139df243426ae9c345c1e3df7219",
+        "10324608c63aad2c5fd6c7fca75d4f7748cd139df243426ae9c345c1e3df7219",
+        0,
+        0,
+        null
+      ],
+      [
+        "e024bf081a7f8a50308b9478ac2b2690f7e9eeb739ca62260d225c6ce2e00898",
+        "e024bf081a7f8a50308b9478ac2b2690f7e9eeb739ca62260d225c6ce2e00898",
+        0,
+        0,
+        null
+      ],
+      [
+        "d12a62d7ce5b38fe91546a63f661c4bd9ef89b7b03e50a73f1fd4839aed60638",
+        "d12a62d7ce5b38fe91546a63f661c4bd9ef89b7b03e50a73f1fd4839aed60638",
+        0,
+        0,
+        null
+      ],
+      [
+        "2418e6ccbdf7b187b3905a923879ff6987abf4785a3e526dd7a956291eccb26a",
+        "2418e6ccbdf7b187b3905a923879ff6987abf4785a3e526dd7a956291eccb26a",
+        0,
+        0,
+        null
+      ],
+      [
+        "2bdd25b61359f24297abd7cfd96db536225aa56f0cee4dc2615b7011742098c1",
+        "2bdd25b61359f24297abd7cfd96db536225aa56f0cee4dc2615b7011742098c1",
+        0,
+        0,
+        null
+      ],
+      [
+        "5d59156b8f765520e2b118cb76f181789285630a0cb314693736ab21446c2929",
+        "5d59156b8f765520e2b118cb76f181789285630a0cb314693736ab21446c2929",
+        0,
+        0,
+        null
+      ],
+      [
+        "9b873235c3d7fd86a569dad7858fdd6fa6f6d19ff942e31c06d5a3da31dda70e",
+        "9b873235c3d7fd86a569dad7858fdd6fa6f6d19ff942e31c06d5a3da31dda70e",
+        0,
+        0,
+        null
+      ],
+      [
+        "923e6340fc8a01aa9fabdbf23ce959728022039b4407083e48bc6a8a5aaf6bf2",
+        "923e6340fc8a01aa9fabdbf23ce959728022039b4407083e48bc6a8a5aaf6bf2",
+        0,
+        0,
+        null
+      ],
+      [
+        "88ebd6c6feec3f22463d44301c54c4e8c1f0bb7574f273be464f23b64487b2e8",
+        "88ebd6c6feec3f22463d44301c54c4e8c1f0bb7574f273be464f23b64487b2e8",
+        0,
+        0,
+        null
+      ],
+      [
+        "b2c78a041673e8132d35c3c42226772f91932b067e4122458f44307a6ab97f20",
+        "b2c78a041673e8132d35c3c42226772f91932b067e4122458f44307a6ab97f20",
+        0,
+        0,
+        null
+      ],
+      [
+        "3c5f36e95aee9a92a74b162b02d75516b9eeba9503c4d87a8670435519b562a1",
+        "3c5f36e95aee9a92a74b162b02d75516b9eeba9503c4d87a8670435519b562a1",
+        0,
+        0,
+        null
+      ],
+      [
+        "d2aa853d63a7f5ad565a832d5b74b1bbc7aa909cc8aa82544301eb58fcaefa75",
+        "d2aa853d63a7f5ad565a832d5b74b1bbc7aa909cc8aa82544301eb58fcaefa75",
+        0,
+        0,
+        null
+      ],
+      [
+        "437af12770d6e32aa1fe173eed7182a0c83b6db4a1e63630414c934298ef6f23",
+        "437af12770d6e32aa1fe173eed7182a0c83b6db4a1e63630414c934298ef6f23",
+        0,
+        0,
+        null
+      ],
+      [
+        "943bac552776b604712985b21ffb87a21f2ed20b37d705e49cbac93fe9db505d",
+        "943bac552776b604712985b21ffb87a21f2ed20b37d705e49cbac93fe9db505d",
+        0,
+        0,
+        null
+      ],
+      [
+        "b615e97d9db0f91c8985b4d37de640d820bbfac877d965c18cad2d93053dfbc7",
+        "b615e97d9db0f91c8985b4d37de640d820bbfac877d965c18cad2d93053dfbc7",
+        0,
+        0,
+        null
+      ],
+      [
+        "2aba5dde22bd4e953a5fffcac9d8f2954dca1981d5ddce56732eec79754eaf65",
+        "2aba5dde22bd4e953a5fffcac9d8f2954dca1981d5ddce56732eec79754eaf65",
+        0,
+        0,
+        null
+      ],
+      [
+        "d02972bf6652b424cd0eed0f00b497557b220f477ee82db9e736ac4c5c878eb6",
+        "d02972bf6652b424cd0eed0f00b497557b220f477ee82db9e736ac4c5c878eb6",
+        0,
+        0,
+        null
+      ],
+      [
+        "927eccc3491d26a19fb60e242e1758746121ad09d1b243e11f8b3cf883df9bc1",
+        "927eccc3491d26a19fb60e242e1758746121ad09d1b243e11f8b3cf883df9bc1",
+        0,
+        0,
+        null
+      ],
+      [
+        "9fe75c60789cfd28c9b7ab62214127a86313b69e8ec9af8d337169b9028fd763",
+        "9fe75c60789cfd28c9b7ab62214127a86313b69e8ec9af8d337169b9028fd763",
+        0,
+        0,
+        null
+      ],
+      [
+        "f27d0d6b49b273834145c42c619d1896827e0c02928cd3d3849f8f1ef5e18615",
+        "f27d0d6b49b273834145c42c619d1896827e0c02928cd3d3849f8f1ef5e18615",
+        0,
+        0,
+        null
+      ],
+      [
+        "03c7698d40df08922e8b1c4f847245b380ea4e5e17c1616222b42eb973f7a449",
+        "03c7698d40df08922e8b1c4f847245b380ea4e5e17c1616222b42eb973f7a449",
+        0,
+        0,
+        null
+      ],
+      [
+        "6f2015a6c0da069ca83c94b78bc642135a6c93a3b714553c17e11356bc8e0eb2",
+        "6f2015a6c0da069ca83c94b78bc642135a6c93a3b714553c17e11356bc8e0eb2",
+        0,
+        0,
+        null
+      ],
+      [
+        "45c0703aea4d101acf12ae3335767d83be9446cb589f018d6a66a413d244d632",
+        "45c0703aea4d101acf12ae3335767d83be9446cb589f018d6a66a413d244d632",
+        0,
+        0,
+        null
+      ],
+      [
+        "edffa0b97fcc9ed35c107a9a2030332a2053428a7a0362de1b4ef11c4486174e",
+        "edffa0b97fcc9ed35c107a9a2030332a2053428a7a0362de1b4ef11c4486174e",
+        0,
+        0,
+        null
+      ],
+      [
+        "50e8278d57897a35c8dba79305abff8df200f04003d6b2ba4c8ca30050672fb3",
+        "50e8278d57897a35c8dba79305abff8df200f04003d6b2ba4c8ca30050672fb3",
+        0,
+        0,
+        null
+      ],
+      [
+        "eae01749aae4ab9c78cfd6ed33dccdad0bb1bf50e40688186ce8eff725086ef6",
+        "eae01749aae4ab9c78cfd6ed33dccdad0bb1bf50e40688186ce8eff725086ef6",
+        0,
+        0,
+        null
+      ],
+      [
+        "9053fb9d1c6afe2bbb0cb94201cd724688d2d4aaf65f31a832d1d42388c8ddb1",
+        "9053fb9d1c6afe2bbb0cb94201cd724688d2d4aaf65f31a832d1d42388c8ddb1",
+        0,
+        0,
+        null
+      ],
+      [
+        "b16113459b39093b50868388de286811c63496e504b0b3d23540e8cc6e35fd8c",
+        "b16113459b39093b50868388de286811c63496e504b0b3d23540e8cc6e35fd8c",
+        0,
+        0,
+        null
+      ],
+      [
+        "91e972d7a47dc0912b9788904d2305a7a3d289cbd52421666a7881c5a3c63415",
+        "91e972d7a47dc0912b9788904d2305a7a3d289cbd52421666a7881c5a3c63415",
+        0,
+        0,
+        null
+      ],
+      [
+        "259e2b037ddf802a3e240a61eb346a9abdf4140dc478e4a8f1c993a27c365b7e",
+        "259e2b037ddf802a3e240a61eb346a9abdf4140dc478e4a8f1c993a27c365b7e",
+        0,
+        0,
+        null
+      ],
+      [
+        "74c925ab4c3879d8794e09c0e5755a8ceeb944f1b8d57f26b1acfd4a22601762",
+        "74c925ab4c3879d8794e09c0e5755a8ceeb944f1b8d57f26b1acfd4a22601762",
+        0,
+        0,
+        null
+      ],
+      [
+        "2c731c69f93116a3dd77dfd4d3053a407c180580dfe3c25f382f6f5ccb88e06c",
+        "2c731c69f93116a3dd77dfd4d3053a407c180580dfe3c25f382f6f5ccb88e06c",
+        0,
+        0,
+        null
+      ]
+    ]
+  },
+  "database_down_bridge_restarted": {
+    "counters": {
+      "acquired": 289,
+      "broker_pubacks": 256,
+      "committed": 252
+    },
+    "entries": [
+      [
+        "73f1864b1f4ca621da71d7a65b6bc5fe05c6e9895ed8031da34b69d80980f293",
+        "73f1864b1f4ca621da71d7a65b6bc5fe05c6e9895ed8031da34b69d80980f293",
+        8,
+        2,
+        "TEMPORARY_RECEIPT_FAILURE"
+      ],
+      [
+        "10324608c63aad2c5fd6c7fca75d4f7748cd139df243426ae9c345c1e3df7219",
+        "10324608c63aad2c5fd6c7fca75d4f7748cd139df243426ae9c345c1e3df7219",
+        0,
+        0,
+        null
+      ],
+      [
+        "e024bf081a7f8a50308b9478ac2b2690f7e9eeb739ca62260d225c6ce2e00898",
+        "e024bf081a7f8a50308b9478ac2b2690f7e9eeb739ca62260d225c6ce2e00898",
+        0,
+        0,
+        null
+      ],
+      [
+        "d12a62d7ce5b38fe91546a63f661c4bd9ef89b7b03e50a73f1fd4839aed60638",
+        "d12a62d7ce5b38fe91546a63f661c4bd9ef89b7b03e50a73f1fd4839aed60638",
+        0,
+        0,
+        null
+      ],
+      [
+        "2418e6ccbdf7b187b3905a923879ff6987abf4785a3e526dd7a956291eccb26a",
+        "2418e6ccbdf7b187b3905a923879ff6987abf4785a3e526dd7a956291eccb26a",
+        0,
+        0,
+        null
+      ],
+      [
+        "2bdd25b61359f24297abd7cfd96db536225aa56f0cee4dc2615b7011742098c1",
+        "2bdd25b61359f24297abd7cfd96db536225aa56f0cee4dc2615b7011742098c1",
+        0,
+        0,
+        null
+      ],
+      [
+        "5d59156b8f765520e2b118cb76f181789285630a0cb314693736ab21446c2929",
+        "5d59156b8f765520e2b118cb76f181789285630a0cb314693736ab21446c2929",
+        0,
+        0,
+        null
+      ],
+      [
+        "9b873235c3d7fd86a569dad7858fdd6fa6f6d19ff942e31c06d5a3da31dda70e",
+        "9b873235c3d7fd86a569dad7858fdd6fa6f6d19ff942e31c06d5a3da31dda70e",
+        0,
+        0,
+        null
+      ],
+      [
+        "923e6340fc8a01aa9fabdbf23ce959728022039b4407083e48bc6a8a5aaf6bf2",
+        "923e6340fc8a01aa9fabdbf23ce959728022039b4407083e48bc6a8a5aaf6bf2",
+        0,
+        0,
+        null
+      ],
+      [
+        "88ebd6c6feec3f22463d44301c54c4e8c1f0bb7574f273be464f23b64487b2e8",
+        "88ebd6c6feec3f22463d44301c54c4e8c1f0bb7574f273be464f23b64487b2e8",
+        0,
+        0,
+        null
+      ],
+      [
+        "b2c78a041673e8132d35c3c42226772f91932b067e4122458f44307a6ab97f20",
+        "b2c78a041673e8132d35c3c42226772f91932b067e4122458f44307a6ab97f20",
+        0,
+        0,
+        null
+      ],
+      [
+        "3c5f36e95aee9a92a74b162b02d75516b9eeba9503c4d87a8670435519b562a1",
+        "3c5f36e95aee9a92a74b162b02d75516b9eeba9503c4d87a8670435519b562a1",
+        0,
+        0,
+        null
+      ],
+      [
+        "d2aa853d63a7f5ad565a832d5b74b1bbc7aa909cc8aa82544301eb58fcaefa75",
+        "d2aa853d63a7f5ad565a832d5b74b1bbc7aa909cc8aa82544301eb58fcaefa75",
+        0,
+        0,
+        null
+      ],
+      [
+        "437af12770d6e32aa1fe173eed7182a0c83b6db4a1e63630414c934298ef6f23",
+        "437af12770d6e32aa1fe173eed7182a0c83b6db4a1e63630414c934298ef6f23",
+        0,
+        0,
+        null
+      ],
+      [
+        "943bac552776b604712985b21ffb87a21f2ed20b37d705e49cbac93fe9db505d",
+        "943bac552776b604712985b21ffb87a21f2ed20b37d705e49cbac93fe9db505d",
+        0,
+        0,
+        null
+      ],
+      [
+        "b615e97d9db0f91c8985b4d37de640d820bbfac877d965c18cad2d93053dfbc7",
+        "b615e97d9db0f91c8985b4d37de640d820bbfac877d965c18cad2d93053dfbc7",
+        0,
+        0,
+        null
+      ],
+      [
+        "2aba5dde22bd4e953a5fffcac9d8f2954dca1981d5ddce56732eec79754eaf65",
+        "2aba5dde22bd4e953a5fffcac9d8f2954dca1981d5ddce56732eec79754eaf65",
+        0,
+        0,
+        null
+      ],
+      [
+        "d02972bf6652b424cd0eed0f00b497557b220f477ee82db9e736ac4c5c878eb6",
+        "d02972bf6652b424cd0eed0f00b497557b220f477ee82db9e736ac4c5c878eb6",
+        0,
+        0,
+        null
+      ],
+      [
+        "927eccc3491d26a19fb60e242e1758746121ad09d1b243e11f8b3cf883df9bc1",
+        "927eccc3491d26a19fb60e242e1758746121ad09d1b243e11f8b3cf883df9bc1",
+        0,
+        0,
+        null
+      ],
+      [
+        "9fe75c60789cfd28c9b7ab62214127a86313b69e8ec9af8d337169b9028fd763",
+        "9fe75c60789cfd28c9b7ab62214127a86313b69e8ec9af8d337169b9028fd763",
+        0,
+        0,
+        null
+      ],
+      [
+        "f27d0d6b49b273834145c42c619d1896827e0c02928cd3d3849f8f1ef5e18615",
+        "f27d0d6b49b273834145c42c619d1896827e0c02928cd3d3849f8f1ef5e18615",
+        0,
+        0,
+        null
+      ],
+      [
+        "03c7698d40df08922e8b1c4f847245b380ea4e5e17c1616222b42eb973f7a449",
+        "03c7698d40df08922e8b1c4f847245b380ea4e5e17c1616222b42eb973f7a449",
+        0,
+        0,
+        null
+      ],
+      [
+        "6f2015a6c0da069ca83c94b78bc642135a6c93a3b714553c17e11356bc8e0eb2",
+        "6f2015a6c0da069ca83c94b78bc642135a6c93a3b714553c17e11356bc8e0eb2",
+        0,
+        0,
+        null
+      ],
+      [
+        "45c0703aea4d101acf12ae3335767d83be9446cb589f018d6a66a413d244d632",
+        "45c0703aea4d101acf12ae3335767d83be9446cb589f018d6a66a413d244d632",
+        0,
+        0,
+        null
+      ],
+      [
+        "edffa0b97fcc9ed35c107a9a2030332a2053428a7a0362de1b4ef11c4486174e",
+        "edffa0b97fcc9ed35c107a9a2030332a2053428a7a0362de1b4ef11c4486174e",
+        0,
+        0,
+        null
+      ],
+      [
+        "50e8278d57897a35c8dba79305abff8df200f04003d6b2ba4c8ca30050672fb3",
+        "50e8278d57897a35c8dba79305abff8df200f04003d6b2ba4c8ca30050672fb3",
+        0,
+        0,
+        null
+      ],
+      [
+        "eae01749aae4ab9c78cfd6ed33dccdad0bb1bf50e40688186ce8eff725086ef6",
+        "eae01749aae4ab9c78cfd6ed33dccdad0bb1bf50e40688186ce8eff725086ef6",
+        0,
+        0,
+        null
+      ],
+      [
+        "9053fb9d1c6afe2bbb0cb94201cd724688d2d4aaf65f31a832d1d42388c8ddb1",
+        "9053fb9d1c6afe2bbb0cb94201cd724688d2d4aaf65f31a832d1d42388c8ddb1",
+        0,
+        0,
+        null
+      ],
+      [
+        "b16113459b39093b50868388de286811c63496e504b0b3d23540e8cc6e35fd8c",
+        "b16113459b39093b50868388de286811c63496e504b0b3d23540e8cc6e35fd8c",
+        0,
+        0,
+        null
+      ],
+      [
+        "91e972d7a47dc0912b9788904d2305a7a3d289cbd52421666a7881c5a3c63415",
+        "91e972d7a47dc0912b9788904d2305a7a3d289cbd52421666a7881c5a3c63415",
+        0,
+        0,
+        null
+      ],
+      [
+        "259e2b037ddf802a3e240a61eb346a9abdf4140dc478e4a8f1c993a27c365b7e",
+        "259e2b037ddf802a3e240a61eb346a9abdf4140dc478e4a8f1c993a27c365b7e",
+        0,
+        0,
+        null
+      ],
+      [
+        "74c925ab4c3879d8794e09c0e5755a8ceeb944f1b8d57f26b1acfd4a22601762",
+        "74c925ab4c3879d8794e09c0e5755a8ceeb944f1b8d57f26b1acfd4a22601762",
+        0,
+        0,
+        null
+      ],
+      [
+        "2c731c69f93116a3dd77dfd4d3053a407c180580dfe3c25f382f6f5ccb88e06c",
+        "2c731c69f93116a3dd77dfd4d3053a407c180580dfe3c25f382f6f5ccb88e06c",
+        0,
+        0,
+        null
+      ],
+      [
+        "1b134cc781534f5e293fd678eddd8a84922e0c665f3d9a09ef764ae21bbba697",
+        "1b134cc781534f5e293fd678eddd8a84922e0c665f3d9a09ef764ae21bbba697",
+        0,
+        0,
+        null
+      ],
+      [
+        "e92692c50041ae3dc74da16bb51bee44fd6cf2eb2319c56594c201ddd7656dbf",
+        "e92692c50041ae3dc74da16bb51bee44fd6cf2eb2319c56594c201ddd7656dbf",
+        0,
+        0,
+        null
+      ],
+      [
+        "54f0015b1d9b8a4d79f2698269152c183506bb6ffe24206db201452e275f2a73",
+        "54f0015b1d9b8a4d79f2698269152c183506bb6ffe24206db201452e275f2a73",
+        0,
+        0,
+        null
+      ],
+      [
+        "372766c155a6c0a8363a3c3706b787aa1ce299581bdb20b578e591686b15ad59",
+        "372766c155a6c0a8363a3c3706b787aa1ce299581bdb20b578e591686b15ad59",
+        0,
+        0,
+        null
+      ]
+    ]
+  },
+  "recovery": {
+    "counters": {
+      "acquired": 307,
+      "broker_pubacks": 265,
+      "committed": 260
+    },
+    "pending": 47,
+    "accepted_rul": [
+      {
+        "timestamp": "2026-10-09T05:45:30+05:30",
+        "rul": {
+          "rul_unit": "h",
+          "rul_lower": 66.45138888888874,
+          "rul_upper": 99.67708333333312,
+          "rul_value": 79.74166666666649,
+          "simulated": true,
+          "timestamp": "2026-10-09T00:15:30Z",
+          "rul_method": "SYNTHETIC_FIRST_PASSAGE_V1",
+          "rul_status": "SIMULATED_ESTIMATE",
+          "assumptions": [
+            "Fictional latent D is independent of health index and anomaly score",
+            "Endpoint is a scenario definition, not transformer end-of-life",
+            "Future duty begins at this event time; rates have units 1/hour",
+            "Declared rate range 0.008\u20130.012/hour; not calibrated confidence",
+            "Declared future duty: [{'hours': 100.0, 'rate_per_hour': 0.01}]"
+          ],
+          "source_kind": "SIMULATED",
+          "coverage_end": "2026-10-09T00:15:30Z",
+          "end_threshold": 1.0,
+          "model_version": "synthetic-first-passage-v1",
+          "config_version": "fictional-rul-v1",
+          "coverage_start": "2026-10-08T23:00:00Z",
+          "required_inputs": [],
+          "degradation_unit": "1",
+          "limitation_codes": [],
+          "uncertainty_kind": "SCENARIO_RANGE",
+          "coverage_fraction": 1.0,
+          "degradation_state": 0.20258333333333506,
+          "future_duty_scenario": "H06_FICTIONAL_PREROLL",
+          "rul_target_definition": "Declared fictional degradation reaches scenario endpoint; not physical end-of-life",
+          "forecast_horizon_hours": 100.0,
+          "equivalent_ageing_hours": null,
+          "degradation_rate_per_hour": 0.01
+        }
+      },
+      {
+        "timestamp": "2026-10-09T05:45:25+05:30",
+        "rul": {
+          "rul_unit": "h",
+          "rul_lower": 66.45254629629615,
+          "rul_upper": 99.67881944444423,
+          "rul_value": 79.74305555555539,
+          "simulated": true,
+          "timestamp": "2026-10-09T00:15:25Z",
+          "rul_method": "SYNTHETIC_FIRST_PASSAGE_V1",
+          "rul_status": "SIMULATED_ESTIMATE",
+          "assumptions": [
+            "Fictional latent D is independent of health index and anomaly score",
+            "Endpoint is a scenario definition, not transformer end-of-life",
+            "Future duty begins at this event time; rates have units 1/hour",
+            "Declared rate range 0.008\u20130.012/hour; not calibrated confidence",
+            "Declared future duty: [{'hours': 100.0, 'rate_per_hour': 0.01}]"
+          ],
+          "source_kind": "SIMULATED",
+          "coverage_end": "2026-10-09T00:15:25Z",
+          "end_threshold": 1.0,
+          "model_version": "synthetic-first-passage-v1",
+          "config_version": "fictional-rul-v1",
+          "coverage_start": "2026-10-08T23:00:00Z",
+          "required_inputs": [],
+          "degradation_unit": "1",
+          "limitation_codes": [],
+          "uncertainty_kind": "SCENARIO_RANGE",
+          "coverage_fraction": 1.0,
+          "degradation_state": 0.20256944444444616,
+          "future_duty_scenario": "H06_FICTIONAL_PREROLL",
+          "rul_target_definition": "Declared fictional degradation reaches scenario endpoint; not physical end-of-life",
+          "forecast_horizon_hours": 100.0,
+          "equivalent_ageing_hours": null,
+          "degradation_rate_per_hour": 0.01
+        }
+      },
+      {
+        "timestamp": "2026-10-09T05:45:20+05:30",
+        "rul": {
+          "rul_unit": "h",
+          "rul_lower": 66.45370370370355,
+          "rul_upper": 99.68055555555534,
+          "rul_value": 79.74444444444427,
+          "simulated": true,
+          "timestamp": "2026-10-09T00:15:20Z",
+          "rul_method": "SYNTHETIC_FIRST_PASSAGE_V1",
+          "rul_status": "SIMULATED_ESTIMATE",
+          "assumptions": [
+            "Fictional latent D is independent of health index and anomaly score",
+            "Endpoint is a scenario definition, not transformer end-of-life",
+            "Future duty begins at this event time; rates have units 1/hour",
+            "Declared rate range 0.008\u20130.012/hour; not calibrated confidence",
+            "Declared future duty: [{'hours': 100.0, 'rate_per_hour': 0.01}]"
+          ],
+          "source_kind": "SIMULATED",
+          "coverage_end": "2026-10-09T00:15:20Z",
+          "end_threshold": 1.0,
+          "model_version": "synthetic-first-passage-v1",
+          "config_version": "fictional-rul-v1",
+          "coverage_start": "2026-10-08T23:00:00Z",
+          "required_inputs": [],
+          "degradation_unit": "1",
+          "limitation_codes": [],
+          "uncertainty_kind": "SCENARIO_RANGE",
+          "coverage_fraction": 1.0,
+          "degradation_state": 0.20255555555555727,
+          "future_duty_scenario": "H06_FICTIONAL_PREROLL",
+          "rul_target_definition": "Declared fictional degradation reaches scenario endpoint; not physical end-of-life",
+          "forecast_horizon_hours": 100.0,
+          "equivalent_ageing_hours": null,
+          "degradation_rate_per_hour": 0.01
+        }
+      }
+    ],
+    "restart_rate_assertion": "D advances 0.01 per event-time hour after actual backend process replacement and database/broker restart"
+  }
+}

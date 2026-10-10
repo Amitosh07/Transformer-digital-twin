@@ -34,6 +34,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 import unittest
+import pandas as pd
 
 from ml.features.feature_engineering import REQUIRED_TELEMETRY_COLUMNS
 from ml.pipeline.asset_config import AssetConfig
@@ -147,17 +148,27 @@ class TestPhase08ModelMetadataAndRelease(unittest.TestCase):
         self.assertFalse(self.manifest.is_state_compatible("2.0.0"))
 
     def test_09_rollback_reset_behavior(self) -> None:
-        """Verify pipeline handles reset and restarts warm-up on state clear."""
+        """Analytical reset restarts warm-up without erasing accepted protection/identity."""
         state = self.pipeline.get_state("TX-001")
-        rec = make_sample_record(timestamp="2026-10-08T10:00:00Z")
+        rec = make_sample_record(timestamp="2026-10-08T10:00:00Z", trip=1)
         self.pipeline.process_record(rec)
         self.assertIsNotNone(state.last_processed_timestamp)
 
         # Reset state
         self.pipeline.reset_state("TX-001")
         fresh_state = self.pipeline.get_state("TX-001")
-        self.assertIsNone(fresh_state.last_processed_timestamp)
-        self.assertEqual(len(fresh_state.history_records), 0)
+        self.assertEqual(fresh_state.last_processed_timestamp, pd.Timestamp(rec['timestamp']))
+        self.assertEqual(len(fresh_state.history_records), 1)
+        self.assertFalse(fresh_state.thermal_state.is_initialized)
+        self.assertEqual(fresh_state.lifecycle_status, 'REINITIALIZED')
+        self.assertTrue(fresh_state.maintenance_state.trip_latched)
+        changed = dict(rec, oil_temp_trip=0)
+        self.assertEqual(self.pipeline.process_record(changed)['ingestion_outcome'], 'CONFLICT')
+        next_record = make_sample_record(timestamp='2026-10-08T10:05:00Z', trip=0)
+        result = self.pipeline.process_record(next_record)
+        self.assertEqual(result['metadata']['thermal_readiness'], 'INITIALIZING')
+        self.assertEqual(result['health_index'], 0)
+        self.assertTrue(result['metadata']['maintenance_trip_latched'])
 
     def test_10_unit_consistency(self) -> None:
         """Verify thermal units are labeled SOURCE_UNVERIFIED and physical limit is not claimed."""

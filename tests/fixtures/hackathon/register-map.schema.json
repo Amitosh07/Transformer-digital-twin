@@ -1,0 +1,363 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://transformer-digital-twin.invalid/contracts/1.1.0/register-map.schema.json",
+  "title": "H00 register-map",
+  "type": "object",
+  "properties": {
+    "map_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "REQUIREMENTS_ONLY",
+        "READY"
+      ]
+    },
+    "address_convention": {
+      "const": "ZERO_BASED"
+    },
+    "coherent_snapshot": {
+      "const": true
+    },
+    "sequence_guard": {
+      "const": "READ_BEFORE_AND_AFTER"
+    },
+    "control_writes_allowed": {
+      "const": false
+    },
+    "encoding_owner": {
+      "const": "Person 4 / H03"
+    },
+    "blocked_details": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "transformer_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "endpoint": {
+            "type": "string",
+            "minLength": 1
+          },
+          "unit_id": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 247
+          },
+          "measurement_side": {
+            "enum": [
+              "HV",
+              "LV",
+              "UNKNOWN"
+            ]
+          },
+          "configuration_version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "ct_ratio": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "primary": {
+                    "type": "number",
+                    "exclusiveMinimum": 0
+                  },
+                  "secondary": {
+                    "type": "number",
+                    "exclusiveMinimum": 0
+                  },
+                  "unit": {
+                    "const": "A"
+                  }
+                },
+                "required": [
+                  "primary",
+                  "secondary",
+                  "unit"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "pt_ratio": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "primary": {
+                    "type": "number",
+                    "exclusiveMinimum": 0
+                  },
+                  "secondary": {
+                    "type": "number",
+                    "exclusiveMinimum": 0
+                  },
+                  "unit": {
+                    "const": "V"
+                  }
+                },
+                "required": [
+                  "primary",
+                  "secondary",
+                  "unit"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "transformer_id",
+          "endpoint",
+          "unit_id",
+          "measurement_side",
+          "configuration_version",
+          "ct_ratio",
+          "pt_ratio"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "field": {
+            "enum": [
+              "phase_voltage_l1",
+              "phase_voltage_l2",
+              "phase_voltage_l3",
+              "current_l1",
+              "current_l2",
+              "current_l3",
+              "neutral_current",
+              "oil_temperature",
+              "winding_temperature",
+              "ambient_temperature",
+              "oil_level",
+              "oil_temp_alarm",
+              "oil_temp_trip",
+              "magnetic_oil_gauge_alarm",
+              "active_power_total",
+              "apparent_power_total",
+              "reactive_power_total",
+              "energy_kwh",
+              "power_factor_l1",
+              "power_factor_l2",
+              "power_factor_l3",
+              "timestamp",
+              "sequence",
+              "map_version"
+            ]
+          },
+          "address_zero_based": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "register_count": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1
+          },
+          "data_type": {
+            "anyOf": [
+              {
+                "enum": [
+                  "uint16",
+                  "uint32",
+                  "uint64",
+                  "int16",
+                  "int32",
+                  "float32",
+                  "float64",
+                  "utf8"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "byte_order": {
+            "anyOf": [
+              {
+                "enum": [
+                  "BIG",
+                  "LITTLE"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "word_order": {
+            "anyOf": [
+              {
+                "enum": [
+                  "BIG",
+                  "LITTLE"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "multiplier": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "exclusiveMinimum": 0
+          },
+          "unit": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "verification": {
+            "enum": [
+              "SYNTHETIC",
+              "VERIFIED",
+              "UNVERIFIED"
+            ]
+          },
+          "measurement_side": {
+            "enum": [
+              "HV",
+              "LV",
+              "UNKNOWN"
+            ]
+          },
+          "missing_sentinel": {
+            "type": [
+              "number",
+              "string",
+              "null"
+            ]
+          },
+          "quality_bit": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "read_function": {
+            "const": 4
+          }
+        },
+        "required": [
+          "field",
+          "address_zero_based",
+          "register_count",
+          "data_type",
+          "byte_order",
+          "word_order",
+          "multiplier",
+          "unit",
+          "verification",
+          "measurement_side",
+          "missing_sentinel",
+          "quality_bit",
+          "read_function"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "counter_requirements": {
+      "type": "object",
+      "properties": {
+        "semantics": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "unit": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "modulus": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "exclusiveMinimum": 0
+        },
+        "reset_evidence": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "continuity_evidence": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "timestamp_timezone": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "semantics",
+        "unit",
+        "modulus",
+        "reset_evidence",
+        "continuity_evidence",
+        "timestamp_timezone"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "map_version",
+    "status",
+    "address_convention",
+    "coherent_snapshot",
+    "sequence_guard",
+    "control_writes_allowed",
+    "encoding_owner",
+    "blocked_details",
+    "assets",
+    "entries",
+    "counter_requirements"
+  ],
+  "additionalProperties": false
+}

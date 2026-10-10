@@ -17,6 +17,14 @@ from app.schemas.transformer import TransformerOut
 
 
 class PythonMLTwinClient:
+    def transactional_runtime(self):
+        """Only the established H01 runtime owns transactional Python inference."""
+        if self.settings.ml_python_entrypoint not in ('ml.pipeline:analyze','ml.pipeline.orchestrator:analyze'):
+            raise MLClientError('Configured Python entrypoint has no H01 candidate-state interface')
+        if not hasattr(self, '_runtime'):
+            from ml.pipeline import PipelineSession
+            self._runtime = PipelineSession()
+        return self._runtime
     def __init__(self, settings: Settings | None = None) -> None:
         self.settings = settings if settings is not None else get_settings()
         self._entrypoint: Callable[..., object] | None = None

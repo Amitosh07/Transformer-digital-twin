@@ -52,7 +52,7 @@ export const Footer: React.FC = () => {
       </div>
 
       <div className="max-w-7xl mx-auto mt-8 pt-6 border-t border-slate-900 text-center text-xs font-mono text-slate-500">
-        Engineered for CPRI & PowerNext Smart Grid Innovation. Governed by IEEE C57.91 thermal loading standards.
+        Engineered for CPRI & PowerNext Smart Grid Innovation. Thermal outputs require configuration, unit and readiness evidence.
       </div>
     </footer>
   );

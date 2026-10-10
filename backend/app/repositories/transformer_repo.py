@@ -41,7 +41,7 @@ def read_page(session: Session, limit: int, offset: int) -> tuple[list[Transform
 def create(session: Session, payload: TransformerIn) -> Transformer | None:
     return session.scalar(
         insert(Transformer)
-        .values(**payload.model_dump())
+        .values(**payload.model_dump(mode='json'))
         .on_conflict_do_nothing(index_elements=[Transformer.id])
         .returning(Transformer)
     )

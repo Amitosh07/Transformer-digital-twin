@@ -1,0 +1,642 @@
+{
+  "run_id": "b41b39",
+  "assets": [
+    "H07-b41b39-01",
+    "H07-b41b39-02",
+    "H07-b41b39-03",
+    "H07-b41b39-04",
+    "H07-b41b39-05",
+    "H07-b41b39-06",
+    "H07-b41b39-07",
+    "H07-b41b39-08",
+    "H07-b41b39-09",
+    "H07-b41b39-10",
+    "H07-b41b39-11",
+    "H07-b41b39-12",
+    "H07-b41b39-13",
+    "H07-b41b39-14",
+    "H07-b41b39-15",
+    "H07-b41b39-16",
+    "H07-b41b39-17",
+    "H07-b41b39-18",
+    "H07-b41b39-19",
+    "H07-b41b39-20",
+    "H07-b41b39-21",
+    "H07-b41b39-22",
+    "H07-b41b39-23",
+    "H07-b41b39-24",
+    "H07-b41b39-25"
+  ],
+  "source": {
+    "map_version": "fictional-lv-v1",
+    "host": "0.0.0.0",
+    "port": 1502,
+    "start_utc": "2026-10-10T07:38:37.245258+00:00",
+    "seed": 42,
+    "interval_seconds": 5,
+    "timeline": [],
+    "assets": [
+      {
+        "transformer_id": "H07-b41b39-01",
+        "unit_id": 1,
+        "seed": 42,
+        "configuration": {
+          "transformer_id": "H07-b41b39-01",
+          "rated_power_kva": 30,
+          "rated_voltage_lv": 400,
+          "rated_current_a": 43.30127018922193,
+          "configuration_status": "SYNTHETIC_CONFIG",
+          "configuration_version": "fictional-demo-v1",
+          "measurement_side": "LV"
+        },
+        "timeline": [
+          {
+            "from_seconds": 120,
+            "to_seconds": 150,
+            "scenario": "OVERLOAD"
+          },
+          {
+            "from_seconds": 150,
+            "to_seconds": 180,
+            "scenario": "ALARM_TRIP"
+          }
+        ]
+      },
+      {
+        "transformer_id": "H07-b41b39-02",
+        "unit_id": 2,
+        "seed": 43,
+        "configuration": {
+          "transformer_id": "H07-b41b39-02",
+          "rated_power_kva": 30,
+          "rated_voltage_lv": 400,
+          "rated_current_a": 43.30127018922193,
+          "configuration_status": "SYNTHETIC_CONFIG",
+          "configuration_version": "fictional-demo-v1",
+          "measurement_side": "LV"
+        },
+        "timeline": []
+      },
+      {
+        "transformer_id": "H07-b41b39-03",
+        "unit_id": 3,
+        "seed": 44,
+        "configuration": {
+          "transformer_id": "H07-b41b39-03",
+          "rated_power_kva": 30,
+          "rated_voltage_lv": 400,
+          "rated_current_a": 43.30127018922193,
+          "configuration_status": "SYNTHETIC_CONFIG",
+          "configuration_version": "fictional-demo-v1",
+          "measurement_side": "LV"
+        },
+        "timeline": []
+      },
+      {
+        "transformer_id": "H07-b41b39-04",
+        "unit_id": 4,
+        "seed": 45,
+        "configuration": {
+          "transformer_id": "H07-b41b39-04",
+          "rated_power_kva": 30,
+          "rated_voltage_lv": 400,
+          "rated_current_a": 43.30127018922193,
+          "configuration_status": "SYNTHETIC_CONFIG",
+          "configuration_version": "fictional-demo-v1",
+          "measurement_side": "LV"
+        },
+        "timeline": []
+      },
+      {
+        "transformer_id": "H07-b41b39-05",
+        "unit_id": 5,
+        "seed": 46,
+        "configuration": {
+          "transformer_id": "H07-b41b39-05",
+          "rated_power_kva": 30,
+          "rated_voltage_lv": 400,
+          "rated_current_a": 43.30127018922193,
+          "configuration_status": "SYNTHETIC_CONFIG",
+          "configuration_version": "fictional-demo-v1",
+          "measurement_side": "LV"
+        },
+        "timeline": []
+      },
+      {
+        "transformer_id": "H07-b41b39-06",
+        "unit_id": 6,
+        "seed": 47,
+        "configuration": {
+          "transformer_id": "H07-b41b39-06",
+          "rated_power_kva": 30,
+          "rated_voltage_lv": 400,
+          "rated_current_a": 43.30127018922193,
+          "configuration_status": "SYNTHETIC_CONFIG",
+          "configuration_version": "fictional-demo-v1",
+          "measurement_side": "LV"
+        },
+        "timeline": []
+      },
+      {
+        "transformer_id": "H07-b41b39-07",
+        "unit_id": 7,
+        "seed": 48,
+        "configuration": {
+          "transformer_id": "H07-b41b39-07",
+          "rated_power_kva": 30,
+          "rated_voltage_lv": 400,
+          "rated_current_a": 43.30127018922193,
+          "configuration_status": "SYNTHETIC_CONFIG",
+          "configuration_version": "fictional-demo-v1",
+          "measurement_side": "LV"
+        },
+        "timeline": []
+      },
+      {
+        "transformer_id": "H07-b41b39-08",
+        "unit_id": 8,
+        "seed": 49,
+        "configuration": {
+          "transformer_id": "H07-b41b39-08",
+          "rated_power_kva": 30,
+          "rated_voltage_lv": 400,
+          "rated_current_a": 43.30127018922193,
+          "configuration_status": "SYNTHETIC_CONFIG",
+          "configuration_version": "fictional-demo-v1",
+          "measurement_side": "LV"
+        },
+        "timeline": []
+      },
+      {
+        "transformer_id": "H07-b41b39-09",
+        "unit_id": 9,
+        "seed": 50,
+        "configuration": {
+          "transformer_id": "H07-b41b39-09",
+          "rated_power_kva": 30,
+          "rated_voltage_lv": 400,
+          "rated_current_a": 43.30127018922193,
+          "configuration_status": "SYNTHETIC_CONFIG",
+          "configuration_version": "fictional-demo-v1",
+          "measurement_side": "LV"
+        },
+        "timeline": []
+      },
+      {
+        "transformer_id": "H07-b41b39-10",
+        "unit_id": 10,
+        "seed": 51,
+        "configuration": {
+          "transformer_id": "H07-b41b39-10",
+          "rated_power_kva": 30,
+          "rated_voltage_lv": 400,
+          "rated_current_a": 43.30127018922193,
+          "configuration_status": "SYNTHETIC_CONFIG",
+          "configuration_version": "fictional-demo-v1",
+          "measurement_side": "LV"
+        },
+        "timeline": []
+      },
+      {
+        "transformer_id": "H07-b41b39-11",
+        "unit_id": 11,
+        "seed": 52,
+        "configuration": {
+          "transformer_id": "H07-b41b39-11",
+          "rated_power_kva": 30,
+          "rated_voltage_lv": 400,
+          "rated_current_a": 43.30127018922193,
+          "configuration_status": "SYNTHETIC_CONFIG",
+          "configuration_version": "fictional-demo-v1",
+          "measurement_side": "LV"
+        },
+        "timeline": []
+      },
+      {
+        "transformer_id": "H07-b41b39-12",
+        "unit_id": 12,
+        "seed": 53,
+        "configuration": {
+          "transformer_id": "H07-b41b39-12",
+          "rated_power_kva": 30,
+          "rated_voltage_lv": 400,
+          "rated_current_a": 43.30127018922193,
+          "configuration_status": "SYNTHETIC_CONFIG",
+          "configuration_version": "fictional-demo-v1",
+          "measurement_side": "LV"
+        },
+        "timeline": []
+      },
+      {
+        "transformer_id": "H07-b41b39-13",
+        "unit_id": 13,
+        "seed": 54,
+        "configuration": {
+          "transformer_id": "H07-b41b39-13",
+          "rated_power_kva": 30,
+          "rated_voltage_lv": 400,
+          "rated_current_a": 43.30127018922193,
+          "configuration_status": "SYNTHETIC_CONFIG",
+          "configuration_version": "fictional-demo-v1",
+          "measurement_side": "LV"
+        },
+        "timeline": []
+      },
+      {
+        "transformer_id": "H07-b41b39-14",
+        "unit_id": 14,
+        "seed": 55,
+        "configuration": {
+          "transformer_id": "H07-b41b39-14",
+          "rated_power_kva": 30,
+          "rated_voltage_lv": 400,
+          "rated_current_a": 43.30127018922193,
+          "configuration_status": "SYNTHETIC_CONFIG",
+          "configuration_version": "fictional-demo-v1",
+          "measurement_side": "LV"
+        },
+        "timeline": []
+      },
+      {
+        "transformer_id": "H07-b41b39-15",
+        "unit_id": 15,
+        "seed": 56,
+        "configuration": {
+          "transformer_id": "H07-b41b39-15",
+          "rated_power_kva": 30,
+          "rated_voltage_lv": 400,
+          "rated_current_a": 43.30127018922193,
+          "configuration_status": "SYNTHETIC_CONFIG",
+          "configuration_version": "fictional-demo-v1",
+          "measurement_side": "LV"
+        },
+        "timeline": []
+      },
+      {
+        "transformer_id": "H07-b41b39-16",
+        "unit_id": 16,
+        "seed": 57,
+        "configuration": {
+          "transformer_id": "H07-b41b39-16",
+          "rated_power_kva": 30,
+          "rated_voltage_lv": 400,
+          "rated_current_a": 43.30127018922193,
+          "configuration_status": "SYNTHETIC_CONFIG",
+          "configuration_version": "fictional-demo-v1",
+          "measurement_side": "LV"
+        },
+        "timeline": []
+      },
+      {
+        "transformer_id": "H07-b41b39-17",
+        "unit_id": 17,
+        "seed": 58,
+        "configuration": {
+          "transformer_id": "H07-b41b39-17",
+          "rated_power_kva": 30,
+          "rated_voltage_lv": 400,
+          "rated_current_a": 43.30127018922193,
+          "configuration_status": "SYNTHETIC_CONFIG",
+          "configuration_version": "fictional-demo-v1",
+          "measurement_side": "LV"
+        },
+        "timeline": []
+      },
+      {
+        "transformer_id": "H07-b41b39-18",
+        "unit_id": 18,
+        "seed": 59,
+        "configuration": {
+          "transformer_id": "H07-b41b39-18",
+          "rated_power_kva": 30,
+          "rated_voltage_lv": 400,
+          "rated_current_a": 43.30127018922193,
+          "configuration_status": "SYNTHETIC_CONFIG",
+          "configuration_version": "fictional-demo-v1",
+          "measurement_side": "LV"
+        },
+        "timeline": []
+      },
+      {
+        "transformer_id": "H07-b41b39-19",
+        "unit_id": 19,
+        "seed": 60,
+        "configuration": {
+          "transformer_id": "H07-b41b39-19",
+          "rated_power_kva": 30,
+          "rated_voltage_lv": 400,
+          "rated_current_a": 43.30127018922193,
+          "configuration_status": "SYNTHETIC_CONFIG",
+          "configuration_version": "fictional-demo-v1",
+          "measurement_side": "LV"
+        },
+        "timeline": []
+      },
+      {
+        "transformer_id": "H07-b41b39-20",
+        "unit_id": 20,
+        "seed": 61,
+        "configuration": {
+          "transformer_id": "H07-b41b39-20",
+          "rated_power_kva": 30,
+          "rated_voltage_lv": 400,
+          "rated_current_a": 43.30127018922193,
+          "configuration_status": "SYNTHETIC_CONFIG",
+          "configuration_version": "fictional-demo-v1",
+          "measurement_side": "LV"
+        },
+        "timeline": []
+      },
+      {
+        "transformer_id": "H07-b41b39-21",
+        "unit_id": 21,
+        "seed": 62,
+        "configuration": {
+          "transformer_id": "H07-b41b39-21",
+          "rated_power_kva": 30,
+          "rated_voltage_lv": 400,
+          "rated_current_a": 43.30127018922193,
+          "configuration_status": "SYNTHETIC_CONFIG",
+          "configuration_version": "fictional-demo-v1",
+          "measurement_side": "LV"
+        },
+        "timeline": []
+      },
+      {
+        "transformer_id": "H07-b41b39-22",
+        "unit_id": 22,
+        "seed": 63,
+        "configuration": {
+          "transformer_id": "H07-b41b39-22",
+          "rated_power_kva": 30,
+          "rated_voltage_lv": 400,
+          "rated_current_a": 43.30127018922193,
+          "configuration_status": "SYNTHETIC_CONFIG",
+          "configuration_version": "fictional-demo-v1",
+          "measurement_side": "LV"
+        },
+        "timeline": []
+      },
+      {
+        "transformer_id": "H07-b41b39-23",
+        "unit_id": 23,
+        "seed": 64,
+        "configuration": {
+          "transformer_id": "H07-b41b39-23",
+          "rated_power_kva": 30,
+          "rated_voltage_lv": 400,
+          "rated_current_a": 43.30127018922193,
+          "configuration_status": "SYNTHETIC_CONFIG",
+          "configuration_version": "fictional-demo-v1",
+          "measurement_side": "LV"
+        },
+        "timeline": []
+      },
+      {
+        "transformer_id": "H07-b41b39-24",
+        "unit_id": 24,
+        "seed": 65,
+        "configuration": {
+          "transformer_id": "H07-b41b39-24",
+          "rated_power_kva": 30,
+          "rated_voltage_lv": 400,
+          "rated_current_a": 43.30127018922193,
+          "configuration_status": "SYNTHETIC_CONFIG",
+          "configuration_version": "fictional-demo-v1",
+          "measurement_side": "LV"
+        },
+        "timeline": []
+      },
+      {
+        "transformer_id": "H07-b41b39-25",
+        "unit_id": 25,
+        "seed": 66,
+        "configuration": {
+          "transformer_id": "H07-b41b39-25",
+          "rated_power_kva": 30,
+          "rated_voltage_lv": 400,
+          "rated_current_a": 43.30127018922193,
+          "configuration_status": "SYNTHETIC_CONFIG",
+          "configuration_version": "fictional-demo-v1",
+          "measurement_side": "LV"
+        },
+        "timeline": []
+      }
+    ],
+    "container_network": true,
+    "audit_gateway_id": "H07-b41b39"
+  },
+  "bridge": {
+    "map_version": "fictional-lv-v1",
+    "gateway_id": "H07-b41b39",
+    "poll_interval_seconds": 2,
+    "timeout_seconds": 2,
+    "snapshot_retries": 3,
+    "backoff_seconds": 1,
+    "max_backoff_seconds": 30,
+    "mqtt": {
+      "host": "mqtt",
+      "port": 1883
+    },
+    "receipt_base_url": "http://backend:8000",
+    "spool": {
+      "directory": "/spool/h07-b41b39",
+      "max_records": 10000,
+      "max_bytes": 16777216
+    },
+    "assets": [
+      {
+        "transformer_id": "H07-b41b39-01",
+        "unit_id": 1,
+        "host": "transformer-h06-20261009-h07-source-b41b39",
+        "port": 1502,
+        "expected_interval_seconds": 5
+      },
+      {
+        "transformer_id": "H07-b41b39-02",
+        "unit_id": 2,
+        "host": "transformer-h06-20261009-h07-source-b41b39",
+        "port": 1502,
+        "expected_interval_seconds": 5
+      },
+      {
+        "transformer_id": "H07-b41b39-03",
+        "unit_id": 3,
+        "host": "transformer-h06-20261009-h07-source-b41b39",
+        "port": 1502,
+        "expected_interval_seconds": 5
+      },
+      {
+        "transformer_id": "H07-b41b39-04",
+        "unit_id": 4,
+        "host": "transformer-h06-20261009-h07-source-b41b39",
+        "port": 1502,
+        "expected_interval_seconds": 5
+      },
+      {
+        "transformer_id": "H07-b41b39-05",
+        "unit_id": 5,
+        "host": "transformer-h06-20261009-h07-source-b41b39",
+        "port": 1502,
+        "expected_interval_seconds": 5
+      },
+      {
+        "transformer_id": "H07-b41b39-06",
+        "unit_id": 6,
+        "host": "transformer-h06-20261009-h07-source-b41b39",
+        "port": 1502,
+        "expected_interval_seconds": 5
+      },
+      {
+        "transformer_id": "H07-b41b39-07",
+        "unit_id": 7,
+        "host": "transformer-h06-20261009-h07-source-b41b39",
+        "port": 1502,
+        "expected_interval_seconds": 5
+      },
+      {
+        "transformer_id": "H07-b41b39-08",
+        "unit_id": 8,
+        "host": "transformer-h06-20261009-h07-source-b41b39",
+        "port": 1502,
+        "expected_interval_seconds": 5
+      },
+      {
+        "transformer_id": "H07-b41b39-09",
+        "unit_id": 9,
+        "host": "transformer-h06-20261009-h07-source-b41b39",
+        "port": 1502,
+        "expected_interval_seconds": 5
+      },
+      {
+        "transformer_id": "H07-b41b39-10",
+        "unit_id": 10,
+        "host": "transformer-h06-20261009-h07-source-b41b39",
+        "port": 1502,
+        "expected_interval_seconds": 5
+      },
+      {
+        "transformer_id": "H07-b41b39-11",
+        "unit_id": 11,
+        "host": "transformer-h06-20261009-h07-source-b41b39",
+        "port": 1502,
+        "expected_interval_seconds": 5
+      },
+      {
+        "transformer_id": "H07-b41b39-12",
+        "unit_id": 12,
+        "host": "transformer-h06-20261009-h07-source-b41b39",
+        "port": 1502,
+        "expected_interval_seconds": 5
+      },
+      {
+        "transformer_id": "H07-b41b39-13",
+        "unit_id": 13,
+        "host": "transformer-h06-20261009-h07-source-b41b39",
+        "port": 1502,
+        "expected_interval_seconds": 5
+      },
+      {
+        "transformer_id": "H07-b41b39-14",
+        "unit_id": 14,
+        "host": "transformer-h06-20261009-h07-source-b41b39",
+        "port": 1502,
+        "expected_interval_seconds": 5
+      },
+      {
+        "transformer_id": "H07-b41b39-15",
+        "unit_id": 15,
+        "host": "transformer-h06-20261009-h07-source-b41b39",
+        "port": 1502,
+        "expected_interval_seconds": 5
+      },
+      {
+        "transformer_id": "H07-b41b39-16",
+        "unit_id": 16,
+        "host": "transformer-h06-20261009-h07-source-b41b39",
+        "port": 1502,
+        "expected_interval_seconds": 5
+      },
+      {
+        "transformer_id": "H07-b41b39-17",
+        "unit_id": 17,
+        "host": "transformer-h06-20261009-h07-source-b41b39",
+        "port": 1502,
+        "expected_interval_seconds": 5
+      },
+      {
+        "transformer_id": "H07-b41b39-18",
+        "unit_id": 18,
+        "host": "transformer-h06-20261009-h07-source-b41b39",
+        "port": 1502,
+        "expected_interval_seconds": 5
+      },
+      {
+        "transformer_id": "H07-b41b39-19",
+        "unit_id": 19,
+        "host": "transformer-h06-20261009-h07-source-b41b39",
+        "port": 1502,
+        "expected_interval_seconds": 5
+      },
+      {
+        "transformer_id": "H07-b41b39-20",
+        "unit_id": 20,
+        "host": "transformer-h06-20261009-h07-source-b41b39",
+        "port": 1502,
+        "expected_interval_seconds": 5
+      },
+      {
+        "transformer_id": "H07-b41b39-21",
+        "unit_id": 21,
+        "host": "transformer-h06-20261009-h07-source-b41b39",
+        "port": 1502,
+        "expected_interval_seconds": 5
+      },
+      {
+        "transformer_id": "H07-b41b39-22",
+        "unit_id": 22,
+        "host": "transformer-h06-20261009-h07-source-b41b39",
+        "port": 1502,
+        "expected_interval_seconds": 5
+      },
+      {
+        "transformer_id": "H07-b41b39-23",
+        "unit_id": 23,
+        "host": "transformer-h06-20261009-h07-source-b41b39",
+        "port": 1502,
+        "expected_interval_seconds": 5
+      },
+      {
+        "transformer_id": "H07-b41b39-24",
+        "unit_id": 24,
+        "host": "transformer-h06-20261009-h07-source-b41b39",
+        "port": 1502,
+        "expected_interval_seconds": 5
+      },
+      {
+        "transformer_id": "H07-b41b39-25",
+        "unit_id": 25,
+        "host": "transformer-h06-20261009-h07-source-b41b39",
+        "port": 1502,
+        "expected_interval_seconds": 5
+      }
+    ]
+  },
+  "source_container": "transformer-h06-20261009-h07-source-b41b39",
+  "bridge_container": "transformer-h06-20261009-h07-bridge-b41b39",
+  "start_utc": "2026-10-10T07:38:37.245258+00:00",
+  "requested_duration_seconds": 90,
+  "target_duration_seconds": 1800,
+  "software": {
+    "python": "3.13.7",
+    "host": "Windows-11-10.0.26200-SP0",
+    "docker": "29.7.2",
+    "image": "sha256:b4f2ca9231c60668ea23750d33944ee383bbaa07b622fd0b251416cc078386aa"
+  },
+  "evidence_directory": "C:\\Users\\Amitosh Nigam\\Desktop\\Transformer-digital-twin\\docs\\hackathon_readiness\\execution\\evidence\\h07\\soak-b41b39",
+  "status": "completed",
+  "measurement_start_utc": "2026-10-10T07:38:43.581971+00:00",
+  "actual_duration_seconds": 90.00041469999996,
+  "end_utc": "2026-10-10T07:40:13.582384+00:00",
+  "browser_exit_code": 0
+}

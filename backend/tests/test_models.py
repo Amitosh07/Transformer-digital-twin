@@ -14,7 +14,7 @@ EXCLUDED = {"vl12", "vl23", "vl31"}
 
 
 def test_metadata_contract() -> None:
-    assert len(Base.metadata.tables) == 6
+    assert len(Base.metadata.tables) == 8
     for table in Base.metadata.tables.values():
         assert EXCLUDED.isdisjoint(column.name.lower() for column in table.columns)
         for column in table.columns:

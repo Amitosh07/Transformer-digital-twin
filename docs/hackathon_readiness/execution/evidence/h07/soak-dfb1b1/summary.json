@@ -1,0 +1,1921 @@
+{
+  "manifest": {
+    "run_id": "dfb1b1",
+    "assets": [
+      "H07-dfb1b1-01",
+      "H07-dfb1b1-02",
+      "H07-dfb1b1-03",
+      "H07-dfb1b1-04",
+      "H07-dfb1b1-05",
+      "H07-dfb1b1-06",
+      "H07-dfb1b1-07",
+      "H07-dfb1b1-08",
+      "H07-dfb1b1-09",
+      "H07-dfb1b1-10",
+      "H07-dfb1b1-11",
+      "H07-dfb1b1-12",
+      "H07-dfb1b1-13",
+      "H07-dfb1b1-14",
+      "H07-dfb1b1-15",
+      "H07-dfb1b1-16",
+      "H07-dfb1b1-17",
+      "H07-dfb1b1-18",
+      "H07-dfb1b1-19",
+      "H07-dfb1b1-20",
+      "H07-dfb1b1-21",
+      "H07-dfb1b1-22",
+      "H07-dfb1b1-23",
+      "H07-dfb1b1-24",
+      "H07-dfb1b1-25"
+    ],
+    "source": {
+      "map_version": "fictional-lv-v1",
+      "host": "0.0.0.0",
+      "port": 1502,
+      "start_utc": "2026-10-09T19:36:30.017775+00:00",
+      "seed": 42,
+      "interval_seconds": 5,
+      "timeline": [],
+      "assets": [
+        {
+          "transformer_id": "H07-dfb1b1-01",
+          "unit_id": 1,
+          "seed": 42,
+          "configuration": {
+            "transformer_id": "H07-dfb1b1-01",
+            "rated_power_kva": 30,
+            "rated_voltage_lv": 400,
+            "rated_current_a": 43.30127018922193,
+            "configuration_status": "SYNTHETIC_CONFIG",
+            "configuration_version": "fictional-demo-v1",
+            "measurement_side": "LV"
+          },
+          "timeline": [
+            {
+              "from_seconds": 120,
+              "to_seconds": 150,
+              "scenario": "OVERLOAD"
+            },
+            {
+              "from_seconds": 150,
+              "to_seconds": 180,
+              "scenario": "ALARM_TRIP"
+            }
+          ]
+        },
+        {
+          "transformer_id": "H07-dfb1b1-02",
+          "unit_id": 2,
+          "seed": 43,
+          "configuration": {
+            "transformer_id": "H07-dfb1b1-02",
+            "rated_power_kva": 30,
+            "rated_voltage_lv": 400,
+            "rated_current_a": 43.30127018922193,
+            "configuration_status": "SYNTHETIC_CONFIG",
+            "configuration_version": "fictional-demo-v1",
+            "measurement_side": "LV"
+          },
+          "timeline": []
+        },
+        {
+          "transformer_id": "H07-dfb1b1-03",
+          "unit_id": 3,
+          "seed": 44,
+          "configuration": {
+            "transformer_id": "H07-dfb1b1-03",
+            "rated_power_kva": 30,
+            "rated_voltage_lv": 400,
+            "rated_current_a": 43.30127018922193,
+            "configuration_status": "SYNTHETIC_CONFIG",
+            "configuration_version": "fictional-demo-v1",
+            "measurement_side": "LV"
+          },
+          "timeline": []
+        },
+        {
+          "transformer_id": "H07-dfb1b1-04",
+          "unit_id": 4,
+          "seed": 45,
+          "configuration": {
+            "transformer_id": "H07-dfb1b1-04",
+            "rated_power_kva": 30,
+            "rated_voltage_lv": 400,
+            "rated_current_a": 43.30127018922193,
+            "configuration_status": "SYNTHETIC_CONFIG",
+            "configuration_version": "fictional-demo-v1",
+            "measurement_side": "LV"
+          },
+          "timeline": []
+        },
+        {
+          "transformer_id": "H07-dfb1b1-05",
+          "unit_id": 5,
+          "seed": 46,
+          "configuration": {
+            "transformer_id": "H07-dfb1b1-05",
+            "rated_power_kva": 30,
+            "rated_voltage_lv": 400,
+            "rated_current_a": 43.30127018922193,
+            "configuration_status": "SYNTHETIC_CONFIG",
+            "configuration_version": "fictional-demo-v1",
+            "measurement_side": "LV"
+          },
+          "timeline": []
+        },
+        {
+          "transformer_id": "H07-dfb1b1-06",
+          "unit_id": 6,
+          "seed": 47,
+          "configuration": {
+            "transformer_id": "H07-dfb1b1-06",
+            "rated_power_kva": 30,
+            "rated_voltage_lv": 400,
+            "rated_current_a": 43.30127018922193,
+            "configuration_status": "SYNTHETIC_CONFIG",
+            "configuration_version": "fictional-demo-v1",
+            "measurement_side": "LV"
+          },
+          "timeline": []
+        },
+        {
+          "transformer_id": "H07-dfb1b1-07",
+          "unit_id": 7,
+          "seed": 48,
+          "configuration": {
+            "transformer_id": "H07-dfb1b1-07",
+            "rated_power_kva": 30,
+            "rated_voltage_lv": 400,
+            "rated_current_a": 43.30127018922193,
+            "configuration_status": "SYNTHETIC_CONFIG",
+            "configuration_version": "fictional-demo-v1",
+            "measurement_side": "LV"
+          },
+          "timeline": []
+        },
+        {
+          "transformer_id": "H07-dfb1b1-08",
+          "unit_id": 8,
+          "seed": 49,
+          "configuration": {
+            "transformer_id": "H07-dfb1b1-08",
+            "rated_power_kva": 30,
+            "rated_voltage_lv": 400,
+            "rated_current_a": 43.30127018922193,
+            "configuration_status": "SYNTHETIC_CONFIG",
+            "configuration_version": "fictional-demo-v1",
+            "measurement_side": "LV"
+          },
+          "timeline": []
+        },
+        {
+          "transformer_id": "H07-dfb1b1-09",
+          "unit_id": 9,
+          "seed": 50,
+          "configuration": {
+            "transformer_id": "H07-dfb1b1-09",
+            "rated_power_kva": 30,
+            "rated_voltage_lv": 400,
+            "rated_current_a": 43.30127018922193,
+            "configuration_status": "SYNTHETIC_CONFIG",
+            "configuration_version": "fictional-demo-v1",
+            "measurement_side": "LV"
+          },
+          "timeline": []
+        },
+        {
+          "transformer_id": "H07-dfb1b1-10",
+          "unit_id": 10,
+          "seed": 51,
+          "configuration": {
+            "transformer_id": "H07-dfb1b1-10",
+            "rated_power_kva": 30,
+            "rated_voltage_lv": 400,
+            "rated_current_a": 43.30127018922193,
+            "configuration_status": "SYNTHETIC_CONFIG",
+            "configuration_version": "fictional-demo-v1",
+            "measurement_side": "LV"
+          },
+          "timeline": []
+        },
+        {
+          "transformer_id": "H07-dfb1b1-11",
+          "unit_id": 11,
+          "seed": 52,
+          "configuration": {
+            "transformer_id": "H07-dfb1b1-11",
+            "rated_power_kva": 30,
+            "rated_voltage_lv": 400,
+            "rated_current_a": 43.30127018922193,
+            "configuration_status": "SYNTHETIC_CONFIG",
+            "configuration_version": "fictional-demo-v1",
+            "measurement_side": "LV"
+          },
+          "timeline": []
+        },
+        {
+          "transformer_id": "H07-dfb1b1-12",
+          "unit_id": 12,
+          "seed": 53,
+          "configuration": {
+            "transformer_id": "H07-dfb1b1-12",
+            "rated_power_kva": 30,
+            "rated_voltage_lv": 400,
+            "rated_current_a": 43.30127018922193,
+            "configuration_status": "SYNTHETIC_CONFIG",
+            "configuration_version": "fictional-demo-v1",
+            "measurement_side": "LV"
+          },
+          "timeline": []
+        },
+        {
+          "transformer_id": "H07-dfb1b1-13",
+          "unit_id": 13,
+          "seed": 54,
+          "configuration": {
+            "transformer_id": "H07-dfb1b1-13",
+            "rated_power_kva": 30,
+            "rated_voltage_lv": 400,
+            "rated_current_a": 43.30127018922193,
+            "configuration_status": "SYNTHETIC_CONFIG",
+            "configuration_version": "fictional-demo-v1",
+            "measurement_side": "LV"
+          },
+          "timeline": []
+        },
+        {
+          "transformer_id": "H07-dfb1b1-14",
+          "unit_id": 14,
+          "seed": 55,
+          "configuration": {
+            "transformer_id": "H07-dfb1b1-14",
+            "rated_power_kva": 30,
+            "rated_voltage_lv": 400,
+            "rated_current_a": 43.30127018922193,
+            "configuration_status": "SYNTHETIC_CONFIG",
+            "configuration_version": "fictional-demo-v1",
+            "measurement_side": "LV"
+          },
+          "timeline": []
+        },
+        {
+          "transformer_id": "H07-dfb1b1-15",
+          "unit_id": 15,
+          "seed": 56,
+          "configuration": {
+            "transformer_id": "H07-dfb1b1-15",
+            "rated_power_kva": 30,
+            "rated_voltage_lv": 400,
+            "rated_current_a": 43.30127018922193,
+            "configuration_status": "SYNTHETIC_CONFIG",
+            "configuration_version": "fictional-demo-v1",
+            "measurement_side": "LV"
+          },
+          "timeline": []
+        },
+        {
+          "transformer_id": "H07-dfb1b1-16",
+          "unit_id": 16,
+          "seed": 57,
+          "configuration": {
+            "transformer_id": "H07-dfb1b1-16",
+            "rated_power_kva": 30,
+            "rated_voltage_lv": 400,
+            "rated_current_a": 43.30127018922193,
+            "configuration_status": "SYNTHETIC_CONFIG",
+            "configuration_version": "fictional-demo-v1",
+            "measurement_side": "LV"
+          },
+          "timeline": []
+        },
+        {
+          "transformer_id": "H07-dfb1b1-17",
+          "unit_id": 17,
+          "seed": 58,
+          "configuration": {
+            "transformer_id": "H07-dfb1b1-17",
+            "rated_power_kva": 30,
+            "rated_voltage_lv": 400,
+            "rated_current_a": 43.30127018922193,
+            "configuration_status": "SYNTHETIC_CONFIG",
+            "configuration_version": "fictional-demo-v1",
+            "measurement_side": "LV"
+          },
+          "timeline": []
+        },
+        {
+          "transformer_id": "H07-dfb1b1-18",
+          "unit_id": 18,
+          "seed": 59,
+          "configuration": {
+            "transformer_id": "H07-dfb1b1-18",
+            "rated_power_kva": 30,
+            "rated_voltage_lv": 400,
+            "rated_current_a": 43.30127018922193,
+            "configuration_status": "SYNTHETIC_CONFIG",
+            "configuration_version": "fictional-demo-v1",
+            "measurement_side": "LV"
+          },
+          "timeline": []
+        },
+        {
+          "transformer_id": "H07-dfb1b1-19",
+          "unit_id": 19,
+          "seed": 60,
+          "configuration": {
+            "transformer_id": "H07-dfb1b1-19",
+            "rated_power_kva": 30,
+            "rated_voltage_lv": 400,
+            "rated_current_a": 43.30127018922193,
+            "configuration_status": "SYNTHETIC_CONFIG",
+            "configuration_version": "fictional-demo-v1",
+            "measurement_side": "LV"
+          },
+          "timeline": []
+        },
+        {
+          "transformer_id": "H07-dfb1b1-20",
+          "unit_id": 20,
+          "seed": 61,
+          "configuration": {
+            "transformer_id": "H07-dfb1b1-20",
+            "rated_power_kva": 30,
+            "rated_voltage_lv": 400,
+            "rated_current_a": 43.30127018922193,
+            "configuration_status": "SYNTHETIC_CONFIG",
+            "configuration_version": "fictional-demo-v1",
+            "measurement_side": "LV"
+          },
+          "timeline": []
+        },
+        {
+          "transformer_id": "H07-dfb1b1-21",
+          "unit_id": 21,
+          "seed": 62,
+          "configuration": {
+            "transformer_id": "H07-dfb1b1-21",
+            "rated_power_kva": 30,
+            "rated_voltage_lv": 400,
+            "rated_current_a": 43.30127018922193,
+            "configuration_status": "SYNTHETIC_CONFIG",
+            "configuration_version": "fictional-demo-v1",
+            "measurement_side": "LV"
+          },
+          "timeline": []
+        },
+        {
+          "transformer_id": "H07-dfb1b1-22",
+          "unit_id": 22,
+          "seed": 63,
+          "configuration": {
+            "transformer_id": "H07-dfb1b1-22",
+            "rated_power_kva": 30,
+            "rated_voltage_lv": 400,
+            "rated_current_a": 43.30127018922193,
+            "configuration_status": "SYNTHETIC_CONFIG",
+            "configuration_version": "fictional-demo-v1",
+            "measurement_side": "LV"
+          },
+          "timeline": []
+        },
+        {
+          "transformer_id": "H07-dfb1b1-23",
+          "unit_id": 23,
+          "seed": 64,
+          "configuration": {
+            "transformer_id": "H07-dfb1b1-23",
+            "rated_power_kva": 30,
+            "rated_voltage_lv": 400,
+            "rated_current_a": 43.30127018922193,
+            "configuration_status": "SYNTHETIC_CONFIG",
+            "configuration_version": "fictional-demo-v1",
+            "measurement_side": "LV"
+          },
+          "timeline": []
+        },
+        {
+          "transformer_id": "H07-dfb1b1-24",
+          "unit_id": 24,
+          "seed": 65,
+          "configuration": {
+            "transformer_id": "H07-dfb1b1-24",
+            "rated_power_kva": 30,
+            "rated_voltage_lv": 400,
+            "rated_current_a": 43.30127018922193,
+            "configuration_status": "SYNTHETIC_CONFIG",
+            "configuration_version": "fictional-demo-v1",
+            "measurement_side": "LV"
+          },
+          "timeline": []
+        },
+        {
+          "transformer_id": "H07-dfb1b1-25",
+          "unit_id": 25,
+          "seed": 66,
+          "configuration": {
+            "transformer_id": "H07-dfb1b1-25",
+            "rated_power_kva": 30,
+            "rated_voltage_lv": 400,
+            "rated_current_a": 43.30127018922193,
+            "configuration_status": "SYNTHETIC_CONFIG",
+            "configuration_version": "fictional-demo-v1",
+            "measurement_side": "LV"
+          },
+          "timeline": []
+        }
+      ],
+      "container_network": true
+    },
+    "bridge": {
+      "map_version": "fictional-lv-v1",
+      "gateway_id": "H07-dfb1b1",
+      "poll_interval_seconds": 2,
+      "timeout_seconds": 2,
+      "snapshot_retries": 3,
+      "backoff_seconds": 1,
+      "max_backoff_seconds": 30,
+      "mqtt": {
+        "host": "mqtt",
+        "port": 1883
+      },
+      "receipt_base_url": "http://backend:8000",
+      "spool": {
+        "directory": "/spool/h07-dfb1b1",
+        "max_records": 10000,
+        "max_bytes": 16777216
+      },
+      "assets": [
+        {
+          "transformer_id": "H07-dfb1b1-01",
+          "unit_id": 1,
+          "host": "transformer-h06-20261009-h07-source-dfb1b1",
+          "port": 1502,
+          "expected_interval_seconds": 5
+        },
+        {
+          "transformer_id": "H07-dfb1b1-02",
+          "unit_id": 2,
+          "host": "transformer-h06-20261009-h07-source-dfb1b1",
+          "port": 1502,
+          "expected_interval_seconds": 5
+        },
+        {
+          "transformer_id": "H07-dfb1b1-03",
+          "unit_id": 3,
+          "host": "transformer-h06-20261009-h07-source-dfb1b1",
+          "port": 1502,
+          "expected_interval_seconds": 5
+        },
+        {
+          "transformer_id": "H07-dfb1b1-04",
+          "unit_id": 4,
+          "host": "transformer-h06-20261009-h07-source-dfb1b1",
+          "port": 1502,
+          "expected_interval_seconds": 5
+        },
+        {
+          "transformer_id": "H07-dfb1b1-05",
+          "unit_id": 5,
+          "host": "transformer-h06-20261009-h07-source-dfb1b1",
+          "port": 1502,
+          "expected_interval_seconds": 5
+        },
+        {
+          "transformer_id": "H07-dfb1b1-06",
+          "unit_id": 6,
+          "host": "transformer-h06-20261009-h07-source-dfb1b1",
+          "port": 1502,
+          "expected_interval_seconds": 5
+        },
+        {
+          "transformer_id": "H07-dfb1b1-07",
+          "unit_id": 7,
+          "host": "transformer-h06-20261009-h07-source-dfb1b1",
+          "port": 1502,
+          "expected_interval_seconds": 5
+        },
+        {
+          "transformer_id": "H07-dfb1b1-08",
+          "unit_id": 8,
+          "host": "transformer-h06-20261009-h07-source-dfb1b1",
+          "port": 1502,
+          "expected_interval_seconds": 5
+        },
+        {
+          "transformer_id": "H07-dfb1b1-09",
+          "unit_id": 9,
+          "host": "transformer-h06-20261009-h07-source-dfb1b1",
+          "port": 1502,
+          "expected_interval_seconds": 5
+        },
+        {
+          "transformer_id": "H07-dfb1b1-10",
+          "unit_id": 10,
+          "host": "transformer-h06-20261009-h07-source-dfb1b1",
+          "port": 1502,
+          "expected_interval_seconds": 5
+        },
+        {
+          "transformer_id": "H07-dfb1b1-11",
+          "unit_id": 11,
+          "host": "transformer-h06-20261009-h07-source-dfb1b1",
+          "port": 1502,
+          "expected_interval_seconds": 5
+        },
+        {
+          "transformer_id": "H07-dfb1b1-12",
+          "unit_id": 12,
+          "host": "transformer-h06-20261009-h07-source-dfb1b1",
+          "port": 1502,
+          "expected_interval_seconds": 5
+        },
+        {
+          "transformer_id": "H07-dfb1b1-13",
+          "unit_id": 13,
+          "host": "transformer-h06-20261009-h07-source-dfb1b1",
+          "port": 1502,
+          "expected_interval_seconds": 5
+        },
+        {
+          "transformer_id": "H07-dfb1b1-14",
+          "unit_id": 14,
+          "host": "transformer-h06-20261009-h07-source-dfb1b1",
+          "port": 1502,
+          "expected_interval_seconds": 5
+        },
+        {
+          "transformer_id": "H07-dfb1b1-15",
+          "unit_id": 15,
+          "host": "transformer-h06-20261009-h07-source-dfb1b1",
+          "port": 1502,
+          "expected_interval_seconds": 5
+        },
+        {
+          "transformer_id": "H07-dfb1b1-16",
+          "unit_id": 16,
+          "host": "transformer-h06-20261009-h07-source-dfb1b1",
+          "port": 1502,
+          "expected_interval_seconds": 5
+        },
+        {
+          "transformer_id": "H07-dfb1b1-17",
+          "unit_id": 17,
+          "host": "transformer-h06-20261009-h07-source-dfb1b1",
+          "port": 1502,
+          "expected_interval_seconds": 5
+        },
+        {
+          "transformer_id": "H07-dfb1b1-18",
+          "unit_id": 18,
+          "host": "transformer-h06-20261009-h07-source-dfb1b1",
+          "port": 1502,
+          "expected_interval_seconds": 5
+        },
+        {
+          "transformer_id": "H07-dfb1b1-19",
+          "unit_id": 19,
+          "host": "transformer-h06-20261009-h07-source-dfb1b1",
+          "port": 1502,
+          "expected_interval_seconds": 5
+        },
+        {
+          "transformer_id": "H07-dfb1b1-20",
+          "unit_id": 20,
+          "host": "transformer-h06-20261009-h07-source-dfb1b1",
+          "port": 1502,
+          "expected_interval_seconds": 5
+        },
+        {
+          "transformer_id": "H07-dfb1b1-21",
+          "unit_id": 21,
+          "host": "transformer-h06-20261009-h07-source-dfb1b1",
+          "port": 1502,
+          "expected_interval_seconds": 5
+        },
+        {
+          "transformer_id": "H07-dfb1b1-22",
+          "unit_id": 22,
+          "host": "transformer-h06-20261009-h07-source-dfb1b1",
+          "port": 1502,
+          "expected_interval_seconds": 5
+        },
+        {
+          "transformer_id": "H07-dfb1b1-23",
+          "unit_id": 23,
+          "host": "transformer-h06-20261009-h07-source-dfb1b1",
+          "port": 1502,
+          "expected_interval_seconds": 5
+        },
+        {
+          "transformer_id": "H07-dfb1b1-24",
+          "unit_id": 24,
+          "host": "transformer-h06-20261009-h07-source-dfb1b1",
+          "port": 1502,
+          "expected_interval_seconds": 5
+        },
+        {
+          "transformer_id": "H07-dfb1b1-25",
+          "unit_id": 25,
+          "host": "transformer-h06-20261009-h07-source-dfb1b1",
+          "port": 1502,
+          "expected_interval_seconds": 5
+        }
+      ]
+    },
+    "source_container": "transformer-h06-20261009-h07-source-dfb1b1",
+    "bridge_container": "transformer-h06-20261009-h07-bridge-dfb1b1",
+    "start_utc": "2026-10-09T19:36:30.017775+00:00",
+    "requested_duration_seconds": 1800,
+    "target_duration_seconds": 1800,
+    "software": {
+      "python": "3.13.7",
+      "host": "Windows-11-10.0.26200-SP0",
+      "docker": "29.7.2",
+      "image": "sha256:8bc50892ab800f8018556e61b8f14c080511ffe98f548bd244e4f0fa1ff5f3ca"
+    },
+    "evidence_directory": "C:\\Users\\Amitosh Nigam\\Desktop\\Transformer-digital-twin\\docs\\hackathon_readiness\\execution\\evidence\\h07\\soak-dfb1b1",
+    "status": "failed",
+    "measurement_start_utc": "2026-10-09T19:36:35.718308+00:00",
+    "failure": "RuntimeError('Host C: free space fell below 512 MiB safety boundary; target unmet')",
+    "actual_duration_seconds": 891.5626099000001,
+    "end_utc": "2026-10-09T19:51:27.280917+00:00",
+    "browser_exit_code": 1
+  },
+  "expected_per_asset": 178,
+  "per_asset": [
+    {
+      "asset": "H07-dfb1b1-01",
+      "expected_during_measured_event_window": 178,
+      "committed_in_window": 31,
+      "coverage_fraction": 0.17415730337078653,
+      "accepted_total_post_run": 33,
+      "analytics_total_post_run": 33,
+      "trip_rows": 4,
+      "late_rows": 0,
+      "unique_sequences": 33,
+      "first_event": "2026-10-09 19:36:30.017775+00:00",
+      "last_event": "2026-10-09 19:40:20.017775+00:00",
+      "received_per_asset": "Not exposed independently of accepted SQL rows",
+      "conflicted": 0,
+      "rejected_dropped": "Not exposed per asset"
+    },
+    {
+      "asset": "H07-dfb1b1-02",
+      "expected_during_measured_event_window": 178,
+      "committed_in_window": 30,
+      "coverage_fraction": 0.16853932584269662,
+      "accepted_total_post_run": 33,
+      "analytics_total_post_run": 33,
+      "trip_rows": 0,
+      "late_rows": 0,
+      "unique_sequences": 33,
+      "first_event": "2026-10-09 19:36:30.017775+00:00",
+      "last_event": "2026-10-09 19:40:20.017775+00:00",
+      "received_per_asset": "Not exposed independently of accepted SQL rows",
+      "conflicted": 0,
+      "rejected_dropped": "Not exposed per asset"
+    },
+    {
+      "asset": "H07-dfb1b1-03",
+      "expected_during_measured_event_window": 178,
+      "committed_in_window": 31,
+      "coverage_fraction": 0.17415730337078653,
+      "accepted_total_post_run": 33,
+      "analytics_total_post_run": 33,
+      "trip_rows": 0,
+      "late_rows": 0,
+      "unique_sequences": 33,
+      "first_event": "2026-10-09 19:36:30.017775+00:00",
+      "last_event": "2026-10-09 19:40:20.017775+00:00",
+      "received_per_asset": "Not exposed independently of accepted SQL rows",
+      "conflicted": 0,
+      "rejected_dropped": "Not exposed per asset"
+    },
+    {
+      "asset": "H07-dfb1b1-04",
+      "expected_during_measured_event_window": 178,
+      "committed_in_window": 30,
+      "coverage_fraction": 0.16853932584269662,
+      "accepted_total_post_run": 33,
+      "analytics_total_post_run": 33,
+      "trip_rows": 0,
+      "late_rows": 0,
+      "unique_sequences": 33,
+      "first_event": "2026-10-09 19:36:30.017775+00:00",
+      "last_event": "2026-10-09 19:40:20.017775+00:00",
+      "received_per_asset": "Not exposed independently of accepted SQL rows",
+      "conflicted": 0,
+      "rejected_dropped": "Not exposed per asset"
+    },
+    {
+      "asset": "H07-dfb1b1-05",
+      "expected_during_measured_event_window": 178,
+      "committed_in_window": 29,
+      "coverage_fraction": 0.16292134831460675,
+      "accepted_total_post_run": 32,
+      "analytics_total_post_run": 32,
+      "trip_rows": 0,
+      "late_rows": 0,
+      "unique_sequences": 32,
+      "first_event": "2026-10-09 19:36:35.017775+00:00",
+      "last_event": "2026-10-09 19:40:15.017775+00:00",
+      "received_per_asset": "Not exposed independently of accepted SQL rows",
+      "conflicted": 0,
+      "rejected_dropped": "Not exposed per asset"
+    },
+    {
+      "asset": "H07-dfb1b1-06",
+      "expected_during_measured_event_window": 178,
+      "committed_in_window": 30,
+      "coverage_fraction": 0.16853932584269662,
+      "accepted_total_post_run": 32,
+      "analytics_total_post_run": 32,
+      "trip_rows": 0,
+      "late_rows": 0,
+      "unique_sequences": 32,
+      "first_event": "2026-10-09 19:36:35.017775+00:00",
+      "last_event": "2026-10-09 19:40:15.017775+00:00",
+      "received_per_asset": "Not exposed independently of accepted SQL rows",
+      "conflicted": 0,
+      "rejected_dropped": "Not exposed per asset"
+    },
+    {
+      "asset": "H07-dfb1b1-07",
+      "expected_during_measured_event_window": 178,
+      "committed_in_window": 29,
+      "coverage_fraction": 0.16292134831460675,
+      "accepted_total_post_run": 32,
+      "analytics_total_post_run": 32,
+      "trip_rows": 0,
+      "late_rows": 0,
+      "unique_sequences": 32,
+      "first_event": "2026-10-09 19:36:35.017775+00:00",
+      "last_event": "2026-10-09 19:40:15.017775+00:00",
+      "received_per_asset": "Not exposed independently of accepted SQL rows",
+      "conflicted": 0,
+      "rejected_dropped": "Not exposed per asset"
+    },
+    {
+      "asset": "H07-dfb1b1-08",
+      "expected_during_measured_event_window": 178,
+      "committed_in_window": 30,
+      "coverage_fraction": 0.16853932584269662,
+      "accepted_total_post_run": 33,
+      "analytics_total_post_run": 33,
+      "trip_rows": 0,
+      "late_rows": 0,
+      "unique_sequences": 33,
+      "first_event": "2026-10-09 19:36:35.017775+00:00",
+      "last_event": "2026-10-09 19:40:20.017775+00:00",
+      "received_per_asset": "Not exposed independently of accepted SQL rows",
+      "conflicted": 0,
+      "rejected_dropped": "Not exposed per asset"
+    },
+    {
+      "asset": "H07-dfb1b1-09",
+      "expected_during_measured_event_window": 178,
+      "committed_in_window": 30,
+      "coverage_fraction": 0.16853932584269662,
+      "accepted_total_post_run": 32,
+      "analytics_total_post_run": 32,
+      "trip_rows": 0,
+      "late_rows": 0,
+      "unique_sequences": 32,
+      "first_event": "2026-10-09 19:36:35.017775+00:00",
+      "last_event": "2026-10-09 19:40:15.017775+00:00",
+      "received_per_asset": "Not exposed independently of accepted SQL rows",
+      "conflicted": 0,
+      "rejected_dropped": "Not exposed per asset"
+    },
+    {
+      "asset": "H07-dfb1b1-10",
+      "expected_during_measured_event_window": 178,
+      "committed_in_window": 29,
+      "coverage_fraction": 0.16292134831460675,
+      "accepted_total_post_run": 32,
+      "analytics_total_post_run": 32,
+      "trip_rows": 0,
+      "late_rows": 0,
+      "unique_sequences": 32,
+      "first_event": "2026-10-09 19:36:35.017775+00:00",
+      "last_event": "2026-10-09 19:40:15.017775+00:00",
+      "received_per_asset": "Not exposed independently of accepted SQL rows",
+      "conflicted": 0,
+      "rejected_dropped": "Not exposed per asset"
+    },
+    {
+      "asset": "H07-dfb1b1-11",
+      "expected_during_measured_event_window": 178,
+      "committed_in_window": 30,
+      "coverage_fraction": 0.16853932584269662,
+      "accepted_total_post_run": 32,
+      "analytics_total_post_run": 32,
+      "trip_rows": 0,
+      "late_rows": 0,
+      "unique_sequences": 32,
+      "first_event": "2026-10-09 19:36:35.017775+00:00",
+      "last_event": "2026-10-09 19:40:15.017775+00:00",
+      "received_per_asset": "Not exposed independently of accepted SQL rows",
+      "conflicted": 0,
+      "rejected_dropped": "Not exposed per asset"
+    },
+    {
+      "asset": "H07-dfb1b1-12",
+      "expected_during_measured_event_window": 178,
+      "committed_in_window": 30,
+      "coverage_fraction": 0.16853932584269662,
+      "accepted_total_post_run": 33,
+      "analytics_total_post_run": 33,
+      "trip_rows": 0,
+      "late_rows": 0,
+      "unique_sequences": 33,
+      "first_event": "2026-10-09 19:36:35.017775+00:00",
+      "last_event": "2026-10-09 19:40:20.017775+00:00",
+      "received_per_asset": "Not exposed independently of accepted SQL rows",
+      "conflicted": 0,
+      "rejected_dropped": "Not exposed per asset"
+    },
+    {
+      "asset": "H07-dfb1b1-13",
+      "expected_during_measured_event_window": 178,
+      "committed_in_window": 31,
+      "coverage_fraction": 0.17415730337078653,
+      "accepted_total_post_run": 33,
+      "analytics_total_post_run": 33,
+      "trip_rows": 0,
+      "late_rows": 0,
+      "unique_sequences": 33,
+      "first_event": "2026-10-09 19:36:35.017775+00:00",
+      "last_event": "2026-10-09 19:40:20.017775+00:00",
+      "received_per_asset": "Not exposed independently of accepted SQL rows",
+      "conflicted": 0,
+      "rejected_dropped": "Not exposed per asset"
+    },
+    {
+      "asset": "H07-dfb1b1-14",
+      "expected_during_measured_event_window": 178,
+      "committed_in_window": 31,
+      "coverage_fraction": 0.17415730337078653,
+      "accepted_total_post_run": 33,
+      "analytics_total_post_run": 33,
+      "trip_rows": 0,
+      "late_rows": 0,
+      "unique_sequences": 33,
+      "first_event": "2026-10-09 19:36:35.017775+00:00",
+      "last_event": "2026-10-09 19:40:20.017775+00:00",
+      "received_per_asset": "Not exposed independently of accepted SQL rows",
+      "conflicted": 0,
+      "rejected_dropped": "Not exposed per asset"
+    },
+    {
+      "asset": "H07-dfb1b1-15",
+      "expected_during_measured_event_window": 178,
+      "committed_in_window": 29,
+      "coverage_fraction": 0.16292134831460675,
+      "accepted_total_post_run": 32,
+      "analytics_total_post_run": 32,
+      "trip_rows": 0,
+      "late_rows": 0,
+      "unique_sequences": 32,
+      "first_event": "2026-10-09 19:36:35.017775+00:00",
+      "last_event": "2026-10-09 19:40:15.017775+00:00",
+      "received_per_asset": "Not exposed independently of accepted SQL rows",
+      "conflicted": 0,
+      "rejected_dropped": "Not exposed per asset"
+    },
+    {
+      "asset": "H07-dfb1b1-16",
+      "expected_during_measured_event_window": 178,
+      "committed_in_window": 32,
+      "coverage_fraction": 0.1797752808988764,
+      "accepted_total_post_run": 34,
+      "analytics_total_post_run": 34,
+      "trip_rows": 0,
+      "late_rows": 0,
+      "unique_sequences": 34,
+      "first_event": "2026-10-09 19:36:35.017775+00:00",
+      "last_event": "2026-10-09 19:40:25.017775+00:00",
+      "received_per_asset": "Not exposed independently of accepted SQL rows",
+      "conflicted": 0,
+      "rejected_dropped": "Not exposed per asset"
+    },
+    {
+      "asset": "H07-dfb1b1-17",
+      "expected_during_measured_event_window": 178,
+      "committed_in_window": 30,
+      "coverage_fraction": 0.16853932584269662,
+      "accepted_total_post_run": 32,
+      "analytics_total_post_run": 32,
+      "trip_rows": 0,
+      "late_rows": 0,
+      "unique_sequences": 32,
+      "first_event": "2026-10-09 19:36:35.017775+00:00",
+      "last_event": "2026-10-09 19:40:15.017775+00:00",
+      "received_per_asset": "Not exposed independently of accepted SQL rows",
+      "conflicted": 0,
+      "rejected_dropped": "Not exposed per asset"
+    },
+    {
+      "asset": "H07-dfb1b1-18",
+      "expected_during_measured_event_window": 178,
+      "committed_in_window": 30,
+      "coverage_fraction": 0.16853932584269662,
+      "accepted_total_post_run": 33,
+      "analytics_total_post_run": 33,
+      "trip_rows": 0,
+      "late_rows": 0,
+      "unique_sequences": 33,
+      "first_event": "2026-10-09 19:36:35.017775+00:00",
+      "last_event": "2026-10-09 19:40:20.017775+00:00",
+      "received_per_asset": "Not exposed independently of accepted SQL rows",
+      "conflicted": 0,
+      "rejected_dropped": "Not exposed per asset"
+    },
+    {
+      "asset": "H07-dfb1b1-19",
+      "expected_during_measured_event_window": 178,
+      "committed_in_window": 31,
+      "coverage_fraction": 0.17415730337078653,
+      "accepted_total_post_run": 33,
+      "analytics_total_post_run": 33,
+      "trip_rows": 0,
+      "late_rows": 0,
+      "unique_sequences": 33,
+      "first_event": "2026-10-09 19:36:35.017775+00:00",
+      "last_event": "2026-10-09 19:40:20.017775+00:00",
+      "received_per_asset": "Not exposed independently of accepted SQL rows",
+      "conflicted": 0,
+      "rejected_dropped": "Not exposed per asset"
+    },
+    {
+      "asset": "H07-dfb1b1-20",
+      "expected_during_measured_event_window": 178,
+      "committed_in_window": 29,
+      "coverage_fraction": 0.16292134831460675,
+      "accepted_total_post_run": 32,
+      "analytics_total_post_run": 32,
+      "trip_rows": 0,
+      "late_rows": 0,
+      "unique_sequences": 32,
+      "first_event": "2026-10-09 19:36:35.017775+00:00",
+      "last_event": "2026-10-09 19:40:15.017775+00:00",
+      "received_per_asset": "Not exposed independently of accepted SQL rows",
+      "conflicted": 0,
+      "rejected_dropped": "Not exposed per asset"
+    },
+    {
+      "asset": "H07-dfb1b1-21",
+      "expected_during_measured_event_window": 178,
+      "committed_in_window": 31,
+      "coverage_fraction": 0.17415730337078653,
+      "accepted_total_post_run": 34,
+      "analytics_total_post_run": 34,
+      "trip_rows": 0,
+      "late_rows": 0,
+      "unique_sequences": 34,
+      "first_event": "2026-10-09 19:36:35.017775+00:00",
+      "last_event": "2026-10-09 19:40:25.017775+00:00",
+      "received_per_asset": "Not exposed independently of accepted SQL rows",
+      "conflicted": 0,
+      "rejected_dropped": "Not exposed per asset"
+    },
+    {
+      "asset": "H07-dfb1b1-22",
+      "expected_during_measured_event_window": 178,
+      "committed_in_window": 30,
+      "coverage_fraction": 0.16853932584269662,
+      "accepted_total_post_run": 32,
+      "analytics_total_post_run": 32,
+      "trip_rows": 0,
+      "late_rows": 0,
+      "unique_sequences": 32,
+      "first_event": "2026-10-09 19:36:35.017775+00:00",
+      "last_event": "2026-10-09 19:40:15.017775+00:00",
+      "received_per_asset": "Not exposed independently of accepted SQL rows",
+      "conflicted": 0,
+      "rejected_dropped": "Not exposed per asset"
+    },
+    {
+      "asset": "H07-dfb1b1-23",
+      "expected_during_measured_event_window": 178,
+      "committed_in_window": 30,
+      "coverage_fraction": 0.16853932584269662,
+      "accepted_total_post_run": 33,
+      "analytics_total_post_run": 33,
+      "trip_rows": 0,
+      "late_rows": 0,
+      "unique_sequences": 33,
+      "first_event": "2026-10-09 19:36:35.017775+00:00",
+      "last_event": "2026-10-09 19:40:20.017775+00:00",
+      "received_per_asset": "Not exposed independently of accepted SQL rows",
+      "conflicted": 0,
+      "rejected_dropped": "Not exposed per asset"
+    },
+    {
+      "asset": "H07-dfb1b1-24",
+      "expected_during_measured_event_window": 178,
+      "committed_in_window": 32,
+      "coverage_fraction": 0.1797752808988764,
+      "accepted_total_post_run": 34,
+      "analytics_total_post_run": 34,
+      "trip_rows": 0,
+      "late_rows": 0,
+      "unique_sequences": 34,
+      "first_event": "2026-10-09 19:36:35.017775+00:00",
+      "last_event": "2026-10-09 19:40:25.017775+00:00",
+      "received_per_asset": "Not exposed independently of accepted SQL rows",
+      "conflicted": 0,
+      "rejected_dropped": "Not exposed per asset"
+    },
+    {
+      "asset": "H07-dfb1b1-25",
+      "expected_during_measured_event_window": 178,
+      "committed_in_window": 31,
+      "coverage_fraction": 0.17415730337078653,
+      "accepted_total_post_run": 34,
+      "analytics_total_post_run": 34,
+      "trip_rows": 0,
+      "late_rows": 0,
+      "unique_sequences": 34,
+      "first_event": "2026-10-09 19:36:35.017775+00:00",
+      "last_event": "2026-10-09 19:40:25.017775+00:00",
+      "received_per_asset": "Not exposed independently of accepted SQL rows",
+      "conflicted": 0,
+      "rejected_dropped": "Not exposed per asset"
+    }
+  ],
+  "api_response_ms": {
+    "n": 44,
+    "p50": 62.05285000032745,
+    "p95": 369.42029999772785,
+    "maximum": 478.73840000102064
+  },
+  "live_event_clock_to_visible_ms": {
+    "n": 167,
+    "p50": 178706,
+    "p95": 381826,
+    "maximum": 683246
+  },
+  "backend_received_to_visible_ms": {
+    "n": 167,
+    "p50": 10172,
+    "p95": 46899,
+    "maximum": 332430
+  },
+  "recorded_committed_receipt_to_visible_ms": {
+    "n": 167,
+    "p50": 10171.982,
+    "p95": 46898.379,
+    "maximum": 332429.568
+  },
+  "browser_error_observations": 31,
+  "api_measurement_errors": 16,
+  "queue_peak": 99,
+  "spool_peak_records": 1150,
+  "minimum_c_free_bytes": 492781568,
+  "receipt_samples": {
+    "ac52365ffab2d1b8d8ff84dacabe4a5371ab4774fff0006ca76340fecf25a66c": {
+      "payload_hash": "ac52365ffab2d1b8d8ff84dacabe4a5371ab4774fff0006ca76340fecf25a66c",
+      "committed_at": "2026-10-09 19:41:03.003754+00:00",
+      "received_at": "2026-10-09 19:41:03.003754+00:00"
+    },
+    "fc12a1703bed66b86b8bb8ddd41023908d955a65d906d91affe8a0e74b2e2a94": {
+      "payload_hash": "fc12a1703bed66b86b8bb8ddd41023908d955a65d906d91affe8a0e74b2e2a94",
+      "committed_at": "2026-10-09 19:42:47.324388+00:00",
+      "received_at": "2026-10-09 19:42:47.324388+00:00"
+    },
+    "ab169280076cd1f058b39eaa2599950a014a0638ef097b940e2ba5fdf9a580af": {
+      "payload_hash": "ab169280076cd1f058b39eaa2599950a014a0638ef097b940e2ba5fdf9a580af",
+      "committed_at": "2026-10-09 19:42:49.868031+00:00",
+      "received_at": "2026-10-09 19:42:49.868031+00:00"
+    },
+    "cab61b8fc72cfd445cc0b17282c8a8b78812a3a4ff58ee16e10afc0da73c1abf": {
+      "payload_hash": "cab61b8fc72cfd445cc0b17282c8a8b78812a3a4ff58ee16e10afc0da73c1abf",
+      "committed_at": "2026-10-09 19:41:03.239473+00:00",
+      "received_at": "2026-10-09 19:41:03.239473+00:00"
+    },
+    "e73ab3a7b74105e8d4ce9b923b4c43406fb280c03c547325d67b7eb68678d07f": {
+      "payload_hash": "e73ab3a7b74105e8d4ce9b923b4c43406fb280c03c547325d67b7eb68678d07f",
+      "committed_at": "2026-10-09 19:41:03.748348+00:00",
+      "received_at": "2026-10-09 19:41:03.748348+00:00"
+    },
+    "3d38f15fd7892f529f5c7ba565dcbc6bdd98b5d7a09a021c7a8e50bb0ddcd406": {
+      "payload_hash": "3d38f15fd7892f529f5c7ba565dcbc6bdd98b5d7a09a021c7a8e50bb0ddcd406",
+      "committed_at": "2026-10-09 19:42:48.125363+00:00",
+      "received_at": "2026-10-09 19:42:48.125363+00:00"
+    },
+    "549275c82532ad533a66ad96ba516461d2f31604aa2d20a357ae5ae829761340": {
+      "payload_hash": "549275c82532ad533a66ad96ba516461d2f31604aa2d20a357ae5ae829761340",
+      "committed_at": "2026-10-09 19:42:48.874582+00:00",
+      "received_at": "2026-10-09 19:42:48.874582+00:00"
+    },
+    "ddf10148f560d13aca2a029400555209ca21725779d4fee4d75969bbce74dd97": {
+      "payload_hash": "ddf10148f560d13aca2a029400555209ca21725779d4fee4d75969bbce74dd97",
+      "committed_at": "2026-10-09 19:42:50.749621+00:00",
+      "received_at": "2026-10-09 19:42:50.749621+00:00"
+    },
+    "68cee493014d74f4ea54ed4456f730f90eecc86bfaf8f79a48c3b6840ce421ad": {
+      "payload_hash": "68cee493014d74f4ea54ed4456f730f90eecc86bfaf8f79a48c3b6840ce421ad",
+      "committed_at": "2026-10-09 19:41:20.452293+00:00",
+      "received_at": "2026-10-09 19:41:20.452293+00:00"
+    },
+    "cf11638585f93314e483bf657edf69c6ab7b00560f50147acf95e373282716aa": {
+      "payload_hash": "cf11638585f93314e483bf657edf69c6ab7b00560f50147acf95e373282716aa",
+      "committed_at": "2026-10-09 19:44:38.399611+00:00",
+      "received_at": "2026-10-09 19:44:38.399611+00:00"
+    },
+    "c07f1b43c578b5bcfd3ef87c1a68f1e4aefe0ccb446aabb95a5fa33a47b861ad": {
+      "payload_hash": "c07f1b43c578b5bcfd3ef87c1a68f1e4aefe0ccb446aabb95a5fa33a47b861ad",
+      "committed_at": "2026-10-09 19:39:42.295565+00:00",
+      "received_at": "2026-10-09 19:39:42.295565+00:00"
+    },
+    "270efb6833328a71b0a03d5ea40afb82c7a30f28750265cc5b01a87ee889258e": {
+      "payload_hash": "270efb6833328a71b0a03d5ea40afb82c7a30f28750265cc5b01a87ee889258e",
+      "committed_at": "2026-10-09 19:44:38.920073+00:00",
+      "received_at": "2026-10-09 19:44:38.920073+00:00"
+    },
+    "8c5a016e4521fb7d8343dc3a64d3a935c7f48128ac3cbda013d23984b798cad2": {
+      "payload_hash": "8c5a016e4521fb7d8343dc3a64d3a935c7f48128ac3cbda013d23984b798cad2",
+      "committed_at": "2026-10-09 19:39:47.579760+00:00",
+      "received_at": "2026-10-09 19:39:47.579760+00:00"
+    },
+    "b6eb99a7c606a14130a84b89263d701778b2c54f27e5b97425bd29953da60554": {
+      "payload_hash": "b6eb99a7c606a14130a84b89263d701778b2c54f27e5b97425bd29953da60554",
+      "committed_at": "2026-10-09 19:39:49.310399+00:00",
+      "received_at": "2026-10-09 19:39:49.310399+00:00"
+    },
+    "2f0c0f14316cc6ee29ae66bcd8d6310eba9f646167c72805c64b106a8c6832fa": {
+      "payload_hash": "2f0c0f14316cc6ee29ae66bcd8d6310eba9f646167c72805c64b106a8c6832fa",
+      "committed_at": "2026-10-09 19:41:24.713717+00:00",
+      "received_at": "2026-10-09 19:41:24.713717+00:00"
+    },
+    "83dd856a65bbb04eda7d6f8a003a675f8099ce590da521f0c6a85f5acd2b1ae9": {
+      "payload_hash": "83dd856a65bbb04eda7d6f8a003a675f8099ce590da521f0c6a85f5acd2b1ae9",
+      "committed_at": "2026-10-09 19:41:25.505025+00:00",
+      "received_at": "2026-10-09 19:41:25.505025+00:00"
+    },
+    "2b382114867bcc83cc10e3a75117a0b584e5719400078b2f5dcdbaa70e2e9074": {
+      "payload_hash": "2b382114867bcc83cc10e3a75117a0b584e5719400078b2f5dcdbaa70e2e9074",
+      "committed_at": "2026-10-09 19:41:32.340378+00:00",
+      "received_at": "2026-10-09 19:41:32.340378+00:00"
+    },
+    "7a44c2fe530845183a32e238d921aae53d8a41721ea795166db1000d9aa9c897": {
+      "payload_hash": "7a44c2fe530845183a32e238d921aae53d8a41721ea795166db1000d9aa9c897",
+      "committed_at": "2026-10-09 19:44:42.660324+00:00",
+      "received_at": "2026-10-09 19:44:42.660324+00:00"
+    },
+    "70f75bc58f52ae7a03b49a8aa2d931f0c4416481a33856c5c7dcb1d1910321cc": {
+      "payload_hash": "70f75bc58f52ae7a03b49a8aa2d931f0c4416481a33856c5c7dcb1d1910321cc",
+      "committed_at": "2026-10-09 19:44:42.306958+00:00",
+      "received_at": "2026-10-09 19:44:42.306958+00:00"
+    },
+    "3a2ad246622100ba6f94f9c8e42ad035710d197239dc4b47de26b918294a8e57": {
+      "payload_hash": "3a2ad246622100ba6f94f9c8e42ad035710d197239dc4b47de26b918294a8e57",
+      "committed_at": "2026-10-09 19:44:53.704980+00:00",
+      "received_at": "2026-10-09 19:44:53.704980+00:00"
+    },
+    "abb1b943f4979e8821d91d100ea05d83c4ca87ade1ba8a5c42cdbdba38311944": {
+      "payload_hash": "abb1b943f4979e8821d91d100ea05d83c4ca87ade1ba8a5c42cdbdba38311944",
+      "committed_at": "2026-10-09 19:44:56.402413+00:00",
+      "received_at": "2026-10-09 19:44:56.402413+00:00"
+    },
+    "da7382b7006c1463528a43e3dcd9d499355bcab5ba09080cec9eac3dd1b28342": {
+      "payload_hash": "da7382b7006c1463528a43e3dcd9d499355bcab5ba09080cec9eac3dd1b28342",
+      "committed_at": "2026-10-09 19:44:57.466547+00:00",
+      "received_at": "2026-10-09 19:44:57.466547+00:00"
+    },
+    "63ec8a5c097a2c5d42c6e94234df49ae24415a2b9755fdede2d27143f8e55ad1": {
+      "payload_hash": "63ec8a5c097a2c5d42c6e94234df49ae24415a2b9755fdede2d27143f8e55ad1",
+      "committed_at": "2026-10-09 19:39:46.773968+00:00",
+      "received_at": "2026-10-09 19:39:46.773968+00:00"
+    },
+    "29c77dfc8889096f07744a0d24c9d056cb0978a9e051f4b9166a5cb01338bd57": {
+      "payload_hash": "29c77dfc8889096f07744a0d24c9d056cb0978a9e051f4b9166a5cb01338bd57",
+      "committed_at": "2026-10-09 19:41:29.117341+00:00",
+      "received_at": "2026-10-09 19:41:29.117341+00:00"
+    },
+    "916a0cd1198ad04e4dcdbecfd837b124cdd93c617c99fbe895a1ed6a97f35aa9": {
+      "payload_hash": "916a0cd1198ad04e4dcdbecfd837b124cdd93c617c99fbe895a1ed6a97f35aa9",
+      "committed_at": "2026-10-09 19:41:32.811294+00:00",
+      "received_at": "2026-10-09 19:41:32.811294+00:00"
+    },
+    "6cadbf173dc37957907f6fc50816dee1c234a25c0746c932333bd0d46e3dbeb6": {
+      "payload_hash": "6cadbf173dc37957907f6fc50816dee1c234a25c0746c932333bd0d46e3dbeb6",
+      "committed_at": "2026-10-09 19:43:14.376983+00:00",
+      "received_at": "2026-10-09 19:43:14.376983+00:00"
+    },
+    "b5fd607eeaf2f9b980267167e631de9cb9ac4b0d716633847688df16efd84d2f": {
+      "payload_hash": "b5fd607eeaf2f9b980267167e631de9cb9ac4b0d716633847688df16efd84d2f",
+      "committed_at": "2026-10-09 19:44:54.042978+00:00",
+      "received_at": "2026-10-09 19:44:54.042978+00:00"
+    },
+    "2d9a5fc60adb5234bb9cef7a35b42208c37409ca5142319f3605fd09a06167ea": {
+      "payload_hash": "2d9a5fc60adb5234bb9cef7a35b42208c37409ca5142319f3605fd09a06167ea",
+      "committed_at": "2026-10-09 19:44:55.966324+00:00",
+      "received_at": "2026-10-09 19:44:55.966324+00:00"
+    },
+    "add2bd94547181f4854f8a77316c6b28e2be41ecf1a7543044c57d2221bd6d1b": {
+      "payload_hash": "add2bd94547181f4854f8a77316c6b28e2be41ecf1a7543044c57d2221bd6d1b",
+      "committed_at": "2026-10-09 19:44:57.035233+00:00",
+      "received_at": "2026-10-09 19:44:57.035233+00:00"
+    },
+    "3a46cf43707747cf0ab981b702e6bf1dfece6727be57f86f85e2cad905df30d7": {
+      "payload_hash": "3a46cf43707747cf0ab981b702e6bf1dfece6727be57f86f85e2cad905df30d7",
+      "committed_at": "2026-10-09 19:43:07.759892+00:00",
+      "received_at": "2026-10-09 19:43:07.759892+00:00"
+    },
+    "976259176de8a249bdb76dd3643a8048d46e5fffcc35de5fcb48d1a579a23b10": {
+      "payload_hash": "976259176de8a249bdb76dd3643a8048d46e5fffcc35de5fcb48d1a579a23b10",
+      "committed_at": "2026-10-09 19:41:43.445661+00:00",
+      "received_at": "2026-10-09 19:41:43.445661+00:00"
+    },
+    "d3ac2ffe868dbc34004dda917d8d8d6eb12150060c53e69c4bca3d2ec5a6eea7": {
+      "payload_hash": "d3ac2ffe868dbc34004dda917d8d8d6eb12150060c53e69c4bca3d2ec5a6eea7",
+      "committed_at": "2026-10-09 19:41:47.010289+00:00",
+      "received_at": "2026-10-09 19:41:47.010289+00:00"
+    },
+    "0bba83faab1ded554295de0130dd610084e878833125274fe36df3d2637baa22": {
+      "payload_hash": "0bba83faab1ded554295de0130dd610084e878833125274fe36df3d2637baa22",
+      "committed_at": "2026-10-09 19:44:59.468902+00:00",
+      "received_at": "2026-10-09 19:44:59.468902+00:00"
+    },
+    "e1fc8b5723616adee510c20f4434ebad5cf6d7008d62e54b8ba173ee47a591dc": {
+      "payload_hash": "e1fc8b5723616adee510c20f4434ebad5cf6d7008d62e54b8ba173ee47a591dc",
+      "committed_at": "2026-10-09 19:43:10.010766+00:00",
+      "received_at": "2026-10-09 19:43:10.010766+00:00"
+    },
+    "580ff53870b9e73317136da8ef6b96440093d78b92981500e9a25735906c4d1f": {
+      "payload_hash": "580ff53870b9e73317136da8ef6b96440093d78b92981500e9a25735906c4d1f",
+      "committed_at": "2026-10-09 19:43:13.278996+00:00",
+      "received_at": "2026-10-09 19:43:13.278996+00:00"
+    },
+    "d719495e42fc66e5b27050847710a9f1a17e59d395eb0e42d8ec5f4c64fde7f2": {
+      "payload_hash": "d719495e42fc66e5b27050847710a9f1a17e59d395eb0e42d8ec5f4c64fde7f2",
+      "committed_at": "2026-10-09 19:45:01.212193+00:00",
+      "received_at": "2026-10-09 19:45:01.212193+00:00"
+    },
+    "421d967c7d446e290041a2855d78294f0b7adff63ffb2fc71c6ee2105ac4c5d2": {
+      "payload_hash": "421d967c7d446e290041a2855d78294f0b7adff63ffb2fc71c6ee2105ac4c5d2",
+      "committed_at": "2026-10-09 19:45:10.844080+00:00",
+      "received_at": "2026-10-09 19:45:10.844080+00:00"
+    },
+    "05da18989906adf391ff64052aeed908c2e89491479645003b4db347d7dcf4fd": {
+      "payload_hash": "05da18989906adf391ff64052aeed908c2e89491479645003b4db347d7dcf4fd",
+      "committed_at": "2026-10-09 19:40:03.752922+00:00",
+      "received_at": "2026-10-09 19:40:03.752922+00:00"
+    },
+    "4a469c149ef833ce6889f9eb5e35441feebe88a5492614dd18f620526e4185c1": {
+      "payload_hash": "4a469c149ef833ce6889f9eb5e35441feebe88a5492614dd18f620526e4185c1",
+      "committed_at": "2026-10-09 19:41:44.128724+00:00",
+      "received_at": "2026-10-09 19:41:44.128724+00:00"
+    },
+    "dd203337d312b362f20dc681447f6b9bba28990380923d8d9651bb1e35801df2": {
+      "payload_hash": "dd203337d312b362f20dc681447f6b9bba28990380923d8d9651bb1e35801df2",
+      "committed_at": "2026-10-09 19:45:01.624718+00:00",
+      "received_at": "2026-10-09 19:45:01.624718+00:00"
+    },
+    "49633de0447008941446323f4579599fde3a17d486825cce8092016654ef922f": {
+      "payload_hash": "49633de0447008941446323f4579599fde3a17d486825cce8092016654ef922f",
+      "committed_at": "2026-10-09 19:43:27.225686+00:00",
+      "received_at": "2026-10-09 19:43:27.225686+00:00"
+    },
+    "e424495159b0edb9ed8a1c143ba6ba14aca55012bf71ede84faa9fdeddc85bd5": {
+      "payload_hash": "e424495159b0edb9ed8a1c143ba6ba14aca55012bf71ede84faa9fdeddc85bd5",
+      "committed_at": "2026-10-09 19:45:02.068842+00:00",
+      "received_at": "2026-10-09 19:45:02.068842+00:00"
+    },
+    "10aa7bcd9c2bacd380db93be113725523c82cc44e6bc4c0ff96067319b6c06d5": {
+      "payload_hash": "10aa7bcd9c2bacd380db93be113725523c82cc44e6bc4c0ff96067319b6c06d5",
+      "committed_at": "2026-10-09 19:40:08.851848+00:00",
+      "received_at": "2026-10-09 19:40:08.851848+00:00"
+    },
+    "b052b20af6ccaa2955963323464eddc03efd76338166f537e5e2c21ccd91b552": {
+      "payload_hash": "b052b20af6ccaa2955963323464eddc03efd76338166f537e5e2c21ccd91b552",
+      "committed_at": "2026-10-09 19:45:11.252150+00:00",
+      "received_at": "2026-10-09 19:45:11.252150+00:00"
+    },
+    "e809f28c4b6511bc21812c218a34c3c2a94e5b5e41ebe1fccb45bbbb255bfeee": {
+      "payload_hash": "e809f28c4b6511bc21812c218a34c3c2a94e5b5e41ebe1fccb45bbbb255bfeee",
+      "committed_at": "2026-10-09 19:45:12.293460+00:00",
+      "received_at": "2026-10-09 19:45:12.293460+00:00"
+    },
+    "f5af97257360ad5eaba559f1e813b8cd3eef37cc6c1103c3b6c0b78648308765": {
+      "payload_hash": "f5af97257360ad5eaba559f1e813b8cd3eef37cc6c1103c3b6c0b78648308765",
+      "committed_at": "2026-10-09 19:45:13.709874+00:00",
+      "received_at": "2026-10-09 19:45:13.709874+00:00"
+    },
+    "94293f55c4fe6de5a1381c1c9d48d531df50de78af6908a0289fd5263673ef0b": {
+      "payload_hash": "94293f55c4fe6de5a1381c1c9d48d531df50de78af6908a0289fd5263673ef0b",
+      "committed_at": "2026-10-09 19:45:14.744621+00:00",
+      "received_at": "2026-10-09 19:45:14.744621+00:00"
+    },
+    "d5018aa9bac6c5d3d8e0eef49a3e6cb939c1253e60b71c7cc4ab9b0e1c568d91": {
+      "payload_hash": "d5018aa9bac6c5d3d8e0eef49a3e6cb939c1253e60b71c7cc4ab9b0e1c568d91",
+      "committed_at": "2026-10-09 19:45:15.351859+00:00",
+      "received_at": "2026-10-09 19:45:15.351859+00:00"
+    },
+    "58d893464f08c262d5e9efb09b08aac27f3301a109b80844d26a28371eab801f": {
+      "payload_hash": "58d893464f08c262d5e9efb09b08aac27f3301a109b80844d26a28371eab801f",
+      "committed_at": "2026-10-09 19:41:43.054747+00:00",
+      "received_at": "2026-10-09 19:41:43.054747+00:00"
+    },
+    "c5a3bb26a6dd2097c83f1589150d3edb1f307b6dc41978dd92d3788ff0b90260": {
+      "payload_hash": "c5a3bb26a6dd2097c83f1589150d3edb1f307b6dc41978dd92d3788ff0b90260",
+      "committed_at": "2026-10-09 19:41:46.384093+00:00",
+      "received_at": "2026-10-09 19:41:46.384093+00:00"
+    },
+    "60483e3d187e730119cffc5764ad76eec1c9d579220238e4d92b0d6b8d157143": {
+      "payload_hash": "60483e3d187e730119cffc5764ad76eec1c9d579220238e4d92b0d6b8d157143",
+      "committed_at": "2026-10-09 19:45:16.846587+00:00",
+      "received_at": "2026-10-09 19:45:16.846587+00:00"
+    },
+    "33f2d9ff18694ec9ce8fb4298095e16f2107f114c36b03347679bf6492ebd93a": {
+      "payload_hash": "33f2d9ff18694ec9ce8fb4298095e16f2107f114c36b03347679bf6492ebd93a",
+      "committed_at": "2026-10-09 19:40:04.226163+00:00",
+      "received_at": "2026-10-09 19:40:04.226163+00:00"
+    },
+    "afd13e7b6d2284619286d37c70ebb52633f31b7baefe623299fe1c684edf047f": {
+      "payload_hash": "afd13e7b6d2284619286d37c70ebb52633f31b7baefe623299fe1c684edf047f",
+      "committed_at": "2026-10-09 19:42:02.556965+00:00",
+      "received_at": "2026-10-09 19:42:02.556965+00:00"
+    },
+    "67272175397d5359a4f9db09043844d7009e3ccf8356ba1688b1fdc71debde64": {
+      "payload_hash": "67272175397d5359a4f9db09043844d7009e3ccf8356ba1688b1fdc71debde64",
+      "committed_at": "2026-10-09 19:45:18.460345+00:00",
+      "received_at": "2026-10-09 19:45:18.460345+00:00"
+    },
+    "c41413e29cf3e7ade975e640bd85dcb2864cc88f1aa9b65a81f6a0287aafbb61": {
+      "payload_hash": "c41413e29cf3e7ade975e640bd85dcb2864cc88f1aa9b65a81f6a0287aafbb61",
+      "committed_at": "2026-10-09 19:43:27.709923+00:00",
+      "received_at": "2026-10-09 19:43:27.709923+00:00"
+    },
+    "ac796bc3cdaf7d58c365c2058f0ac00ba826f56579732d4e6e595a500166d06c": {
+      "payload_hash": "ac796bc3cdaf7d58c365c2058f0ac00ba826f56579732d4e6e595a500166d06c",
+      "committed_at": "2026-10-09 19:45:19.458588+00:00",
+      "received_at": "2026-10-09 19:45:19.458588+00:00"
+    },
+    "073c289b013dd8d09cb0b8417847420c09fa29d57a648797f42ed0d15704539f": {
+      "payload_hash": "073c289b013dd8d09cb0b8417847420c09fa29d57a648797f42ed0d15704539f",
+      "committed_at": "2026-10-09 19:36:42.860490+00:00",
+      "received_at": "2026-10-09 19:36:42.860490+00:00"
+    },
+    "90197779390d5805306c7e2c454c764e64bebeeecb66ae2d56c5c43ef83047e4": {
+      "payload_hash": "90197779390d5805306c7e2c454c764e64bebeeecb66ae2d56c5c43ef83047e4",
+      "committed_at": "2026-10-09 19:36:43.229020+00:00",
+      "received_at": "2026-10-09 19:36:43.229020+00:00"
+    },
+    "fc7ec59285bb1c429db1f641e3bc6a1273c4051c113a5bf468a3bdfc3c9e8201": {
+      "payload_hash": "fc7ec59285bb1c429db1f641e3bc6a1273c4051c113a5bf468a3bdfc3c9e8201",
+      "committed_at": "2026-10-09 19:36:43.350798+00:00",
+      "received_at": "2026-10-09 19:36:43.350798+00:00"
+    },
+    "1700a5b398b73e58afbf83bc0927446d23fdec4ab77a65ece3240ec088d13d8e": {
+      "payload_hash": "1700a5b398b73e58afbf83bc0927446d23fdec4ab77a65ece3240ec088d13d8e",
+      "committed_at": "2026-10-09 19:41:57.857468+00:00",
+      "received_at": "2026-10-09 19:41:57.857468+00:00"
+    },
+    "6dd95c977f1afcac019b8efd2b3619fe03f62c532aa6750095630555348bcf67": {
+      "payload_hash": "6dd95c977f1afcac019b8efd2b3619fe03f62c532aa6750095630555348bcf67",
+      "committed_at": "2026-10-09 19:42:00.635682+00:00",
+      "received_at": "2026-10-09 19:42:00.635682+00:00"
+    },
+    "f918ae99e4a5845eef250a959b6e87e1f02f5b6db8b55bd292d03a96a2b129b6": {
+      "payload_hash": "f918ae99e4a5845eef250a959b6e87e1f02f5b6db8b55bd292d03a96a2b129b6",
+      "committed_at": "2026-10-09 19:43:32.836018+00:00",
+      "received_at": "2026-10-09 19:43:32.836018+00:00"
+    },
+    "524b2614adb8b723958f8e01e466ddb8af2e286d6dc763c724753afcbd3d135e": {
+      "payload_hash": "524b2614adb8b723958f8e01e466ddb8af2e286d6dc763c724753afcbd3d135e",
+      "committed_at": "2026-10-09 19:43:34.314543+00:00",
+      "received_at": "2026-10-09 19:43:34.314543+00:00"
+    },
+    "5b8dd7c8405c2cf56d86fda259e5ab045fe1e1ecd578d5333826cbee73b7ff4b": {
+      "payload_hash": "5b8dd7c8405c2cf56d86fda259e5ab045fe1e1ecd578d5333826cbee73b7ff4b",
+      "committed_at": "2026-10-09 19:36:53.084164+00:00",
+      "received_at": "2026-10-09 19:36:53.084164+00:00"
+    },
+    "fadb3197589615ce991910692c66cb17ea1bd2cadc55f4881352c78bb7a48da3": {
+      "payload_hash": "fadb3197589615ce991910692c66cb17ea1bd2cadc55f4881352c78bb7a48da3",
+      "committed_at": "2026-10-09 19:40:08.255431+00:00",
+      "received_at": "2026-10-09 19:40:08.255431+00:00"
+    },
+    "902b4e26f6cdfa5b6ec9596e1c2c7b9dafd00a49b9d43d31c2055432ea60be1a": {
+      "payload_hash": "902b4e26f6cdfa5b6ec9596e1c2c7b9dafd00a49b9d43d31c2055432ea60be1a",
+      "committed_at": "2026-10-09 19:43:29.091692+00:00",
+      "received_at": "2026-10-09 19:43:29.091692+00:00"
+    },
+    "c98f6f635a75e27051243fd2d58324656ea110faf9bbb9c2b5f430649f47feef": {
+      "payload_hash": "c98f6f635a75e27051243fd2d58324656ea110faf9bbb9c2b5f430649f47feef",
+      "committed_at": "2026-10-09 19:45:22.316903+00:00",
+      "received_at": "2026-10-09 19:45:22.316903+00:00"
+    },
+    "4413f8183975643decf033ad61a3f00658a931e6c52b0e277bd2333bbb607a82": {
+      "payload_hash": "4413f8183975643decf033ad61a3f00658a931e6c52b0e277bd2333bbb607a82",
+      "committed_at": "2026-10-09 19:40:09.466574+00:00",
+      "received_at": "2026-10-09 19:40:09.466574+00:00"
+    },
+    "7e51e70ed272151df45bdb1a4caac813aa665bcab0402860b3425d404fe2032b": {
+      "payload_hash": "7e51e70ed272151df45bdb1a4caac813aa665bcab0402860b3425d404fe2032b",
+      "committed_at": "2026-10-09 19:43:30.106313+00:00",
+      "received_at": "2026-10-09 19:43:30.106313+00:00"
+    },
+    "1ae65348676a74f811affcba7a47a8def243b1cf1cff13b1753d811d38515294": {
+      "payload_hash": "1ae65348676a74f811affcba7a47a8def243b1cf1cff13b1753d811d38515294",
+      "committed_at": "2026-10-09 19:36:52.331299+00:00",
+      "received_at": "2026-10-09 19:36:52.331299+00:00"
+    },
+    "a838d57abda46eb6008de5f60fc753c9fc6e128e4c24385e35a04a6f75beb131": {
+      "payload_hash": "a838d57abda46eb6008de5f60fc753c9fc6e128e4c24385e35a04a6f75beb131",
+      "committed_at": "2026-10-09 19:36:54.321852+00:00",
+      "received_at": "2026-10-09 19:36:54.321852+00:00"
+    },
+    "3c8eb11da85fbea17632ee62f4737d695b1732af981032d0bf6ef6fcbd05ac0d": {
+      "payload_hash": "3c8eb11da85fbea17632ee62f4737d695b1732af981032d0bf6ef6fcbd05ac0d",
+      "committed_at": "2026-10-09 19:45:29.803933+00:00",
+      "received_at": "2026-10-09 19:45:29.803933+00:00"
+    },
+    "ab874ee27da9c48737cf7d1dc8dfb9fc42adff03eb8fb2690a2f3d5001cc2bc6": {
+      "payload_hash": "ab874ee27da9c48737cf7d1dc8dfb9fc42adff03eb8fb2690a2f3d5001cc2bc6",
+      "committed_at": "2026-10-09 19:40:27.735500+00:00",
+      "received_at": "2026-10-09 19:40:27.735500+00:00"
+    },
+    "2e6309a61013425c6a4327ede037068a8d9f1d137058e3e80dddad9b958a484c": {
+      "payload_hash": "2e6309a61013425c6a4327ede037068a8d9f1d137058e3e80dddad9b958a484c",
+      "committed_at": "2026-10-09 19:40:29.554091+00:00",
+      "received_at": "2026-10-09 19:40:29.554091+00:00"
+    },
+    "41f1e5bfa5f9747a5ebf0a166af8bd85e9ca00f30889c43d0c2b0f9a3f1c5b57": {
+      "payload_hash": "41f1e5bfa5f9747a5ebf0a166af8bd85e9ca00f30889c43d0c2b0f9a3f1c5b57",
+      "committed_at": "2026-10-09 19:42:00.255051+00:00",
+      "received_at": "2026-10-09 19:42:00.255051+00:00"
+    },
+    "c7f4b5ee91579921029ab2cfd8b772106de525a4f0c3b58349adf6c76b02b00d": {
+      "payload_hash": "c7f4b5ee91579921029ab2cfd8b772106de525a4f0c3b58349adf6c76b02b00d",
+      "committed_at": "2026-10-09 19:42:08.014439+00:00",
+      "received_at": "2026-10-09 19:42:08.014439+00:00"
+    },
+    "3869812594ffb4f419eb9d6d27fbf224f1a2b37f730256e16cb73b59e916adba": {
+      "payload_hash": "3869812594ffb4f419eb9d6d27fbf224f1a2b37f730256e16cb73b59e916adba",
+      "committed_at": "2026-10-09 19:43:33.800747+00:00",
+      "received_at": "2026-10-09 19:43:33.800747+00:00"
+    },
+    "cbaa985d9aa6ff87d4eccc2a23355d6f2e86e13bb44621543f874ac30e177abc": {
+      "payload_hash": "cbaa985d9aa6ff87d4eccc2a23355d6f2e86e13bb44621543f874ac30e177abc",
+      "committed_at": "2026-10-09 19:43:47.579822+00:00",
+      "received_at": "2026-10-09 19:43:47.579822+00:00"
+    },
+    "ef0906ed0ee8e81f7f20a73c68f223867220670fc34c0fabe9190c7431978720": {
+      "payload_hash": "ef0906ed0ee8e81f7f20a73c68f223867220670fc34c0fabe9190c7431978720",
+      "committed_at": "2026-10-09 19:36:55.168292+00:00",
+      "received_at": "2026-10-09 19:36:55.168292+00:00"
+    },
+    "f63e5d3402f615fffa956d4567db6995a502f57fda279b6ab7338b636d0382c3": {
+      "payload_hash": "f63e5d3402f615fffa956d4567db6995a502f57fda279b6ab7338b636d0382c3",
+      "committed_at": "2026-10-09 19:45:55.833432+00:00",
+      "received_at": "2026-10-09 19:45:55.833432+00:00"
+    },
+    "3979090177feea69ea42486e29042560530e8925a616be273e53edacf909ff80": {
+      "payload_hash": "3979090177feea69ea42486e29042560530e8925a616be273e53edacf909ff80",
+      "committed_at": "2026-10-09 19:37:02.490909+00:00",
+      "received_at": "2026-10-09 19:37:02.490909+00:00"
+    },
+    "17d5d0d375c13fd13a0cfb04e93dfec75586f85f1abc5c293e67fc0373b5ad7f": {
+      "payload_hash": "17d5d0d375c13fd13a0cfb04e93dfec75586f85f1abc5c293e67fc0373b5ad7f",
+      "committed_at": "2026-10-09 19:37:03.793995+00:00",
+      "received_at": "2026-10-09 19:37:03.793995+00:00"
+    },
+    "4e715c5e53bd628cab1957f4ccd14cab171e0aa773115a2ac9e3c2148d5e50a9": {
+      "payload_hash": "4e715c5e53bd628cab1957f4ccd14cab171e0aa773115a2ac9e3c2148d5e50a9",
+      "committed_at": "2026-10-09 19:37:12.552411+00:00",
+      "received_at": "2026-10-09 19:37:12.552411+00:00"
+    },
+    "e51c240d9775863b1cf3eec171430fa6d7b4eddca166cce2b2c9d46da5bf47da": {
+      "payload_hash": "e51c240d9775863b1cf3eec171430fa6d7b4eddca166cce2b2c9d46da5bf47da",
+      "committed_at": "2026-10-09 19:37:14.065445+00:00",
+      "received_at": "2026-10-09 19:37:14.065445+00:00"
+    },
+    "db77f687685ce7f605abb812a465e1e56f0e3d4c59092406c4074f7c2671a9fb": {
+      "payload_hash": "db77f687685ce7f605abb812a465e1e56f0e3d4c59092406c4074f7c2671a9fb",
+      "committed_at": "2026-10-09 19:43:57.344100+00:00",
+      "received_at": "2026-10-09 19:43:57.344100+00:00"
+    },
+    "dc479fc2e1f1950689e92892d92ad74ca4f016174840d4a0aaf2f2c2c3993afa": {
+      "payload_hash": "dc479fc2e1f1950689e92892d92ad74ca4f016174840d4a0aaf2f2c2c3993afa",
+      "committed_at": "2026-10-09 19:44:16.275283+00:00",
+      "received_at": "2026-10-09 19:44:16.275283+00:00"
+    },
+    "823183a7034502636b95427788280c0fc49ad07d7d507edffe3b02984ba4dd87": {
+      "payload_hash": "823183a7034502636b95427788280c0fc49ad07d7d507edffe3b02984ba4dd87",
+      "committed_at": "2026-10-09 19:37:21.116500+00:00",
+      "received_at": "2026-10-09 19:37:21.116500+00:00"
+    },
+    "bf8ec3008479020304f31951a6040874ba2a96da459abd582859a375761f15c0": {
+      "payload_hash": "bf8ec3008479020304f31951a6040874ba2a96da459abd582859a375761f15c0",
+      "committed_at": "2026-10-09 19:37:22.555826+00:00",
+      "received_at": "2026-10-09 19:37:22.555826+00:00"
+    },
+    "153fe30db0f8e496d4230daeacf14df61d8d907f20bd2373666a8c8569196395": {
+      "payload_hash": "153fe30db0f8e496d4230daeacf14df61d8d907f20bd2373666a8c8569196395",
+      "committed_at": "2026-10-09 19:37:34.002386+00:00",
+      "received_at": "2026-10-09 19:37:34.002386+00:00"
+    },
+    "37f2524cb26080e2436eb494ba76769119b660042ecfa15d33aff8e635554962": {
+      "payload_hash": "37f2524cb26080e2436eb494ba76769119b660042ecfa15d33aff8e635554962",
+      "committed_at": "2026-10-09 19:45:57.226620+00:00",
+      "received_at": "2026-10-09 19:45:57.226620+00:00"
+    },
+    "6b4429ac7483e74f5aca47b861611473a548e94a2ff58d502a96cbbf1676b3f5": {
+      "payload_hash": "6b4429ac7483e74f5aca47b861611473a548e94a2ff58d502a96cbbf1676b3f5",
+      "committed_at": "2026-10-09 19:37:32.188292+00:00",
+      "received_at": "2026-10-09 19:37:32.188292+00:00"
+    },
+    "a348f3bc1adbb0982d49efce4ea335fa1504a79ad61cc11fd9f57ab40ef534ff": {
+      "payload_hash": "a348f3bc1adbb0982d49efce4ea335fa1504a79ad61cc11fd9f57ab40ef534ff",
+      "committed_at": "2026-10-09 19:37:34.734062+00:00",
+      "received_at": "2026-10-09 19:37:34.734062+00:00"
+    },
+    "a98bb2be2d780541c66f4ca469148cf19c52c357872c243994431c66757379b5": {
+      "payload_hash": "a98bb2be2d780541c66f4ca469148cf19c52c357872c243994431c66757379b5",
+      "committed_at": "2026-10-09 19:37:34.906581+00:00",
+      "received_at": "2026-10-09 19:37:34.906581+00:00"
+    },
+    "b8ff362d313d61935cfbaf90ff32bbd2a4c09a7b2ea69206d6fc58d6dedd2c9b": {
+      "payload_hash": "b8ff362d313d61935cfbaf90ff32bbd2a4c09a7b2ea69206d6fc58d6dedd2c9b",
+      "committed_at": "2026-10-09 19:37:35.047535+00:00",
+      "received_at": "2026-10-09 19:37:35.047535+00:00"
+    },
+    "82d9c320cd78b3276525178904fce060f1f3d3799d9568f903ea0a056a750d8e": {
+      "payload_hash": "82d9c320cd78b3276525178904fce060f1f3d3799d9568f903ea0a056a750d8e",
+      "committed_at": "2026-10-09 19:40:23.389416+00:00",
+      "received_at": "2026-10-09 19:40:23.389416+00:00"
+    },
+    "c618f4c483c809806f3ddb9065ff98cb08b064629f99b63d874959cbff5aed58": {
+      "payload_hash": "c618f4c483c809806f3ddb9065ff98cb08b064629f99b63d874959cbff5aed58",
+      "committed_at": "2026-10-09 19:42:06.534047+00:00",
+      "received_at": "2026-10-09 19:42:06.534047+00:00"
+    },
+    "cb82a6f5fc9b54a26a0f5b0b7d0e151c5bffae8c655bfeba8ca3484dcba20446": {
+      "payload_hash": "cb82a6f5fc9b54a26a0f5b0b7d0e151c5bffae8c655bfeba8ca3484dcba20446",
+      "committed_at": "2026-10-09 19:43:50.734310+00:00",
+      "received_at": "2026-10-09 19:43:50.734310+00:00"
+    },
+    "e0a798918ac7b47c96251604f5c80f26fedc0e1347e28bd5dd22a773853f4e74": {
+      "payload_hash": "e0a798918ac7b47c96251604f5c80f26fedc0e1347e28bd5dd22a773853f4e74",
+      "committed_at": "2026-10-09 19:37:38.657461+00:00",
+      "received_at": "2026-10-09 19:37:38.657461+00:00"
+    },
+    "f56ad1809929b2c4bcf25ecd3091ed58f9afa152f628dec92cae67f12ced80a3": {
+      "payload_hash": "f56ad1809929b2c4bcf25ecd3091ed58f9afa152f628dec92cae67f12ced80a3",
+      "committed_at": "2026-10-09 19:37:44.743750+00:00",
+      "received_at": "2026-10-09 19:37:44.743750+00:00"
+    },
+    "c6d2a7a389130822827dc826cfbbfc90092bdeccc9a3ee4a5a0b83d49bafaa71": {
+      "payload_hash": "c6d2a7a389130822827dc826cfbbfc90092bdeccc9a3ee4a5a0b83d49bafaa71",
+      "committed_at": "2026-10-09 19:43:52.067441+00:00",
+      "received_at": "2026-10-09 19:43:52.067441+00:00"
+    },
+    "5bd8df42e20040b10a11063ee482de46fe37071182627f4753f5c6147e36e336": {
+      "payload_hash": "5bd8df42e20040b10a11063ee482de46fe37071182627f4753f5c6147e36e336",
+      "committed_at": "2026-10-09 19:46:00.149063+00:00",
+      "received_at": "2026-10-09 19:46:00.149063+00:00"
+    },
+    "2fd108ba95921c0b66db02bdb8120154d344206ba336a6ca7e5077bc3dd88cf6": {
+      "payload_hash": "2fd108ba95921c0b66db02bdb8120154d344206ba336a6ca7e5077bc3dd88cf6",
+      "committed_at": "2026-10-09 19:37:46.122958+00:00",
+      "received_at": "2026-10-09 19:37:46.122958+00:00"
+    },
+    "1901a5bbb65714628078bdcd691bac62e8b504dc467023e273006290da8fa50e": {
+      "payload_hash": "1901a5bbb65714628078bdcd691bac62e8b504dc467023e273006290da8fa50e",
+      "committed_at": "2026-10-09 19:37:56.527543+00:00",
+      "received_at": "2026-10-09 19:37:56.527543+00:00"
+    },
+    "614234ae68807bdba926e242e1e60548a0567967ec5b90291f12bd9d6d4eca8e": {
+      "payload_hash": "614234ae68807bdba926e242e1e60548a0567967ec5b90291f12bd9d6d4eca8e",
+      "committed_at": "2026-10-09 19:42:26.359360+00:00",
+      "received_at": "2026-10-09 19:42:26.359360+00:00"
+    },
+    "8bb2bf844a9c2da64ac5a854f21d93aa9fa05bc43a28194c707682bd2cbf6ec7": {
+      "payload_hash": "8bb2bf844a9c2da64ac5a854f21d93aa9fa05bc43a28194c707682bd2cbf6ec7",
+      "committed_at": "2026-10-09 19:42:29.255096+00:00",
+      "received_at": "2026-10-09 19:42:29.255096+00:00"
+    },
+    "df5c96f4ba465502901e7de8c575fa58abfe669f3890fbb378bc2022ea4069fd": {
+      "payload_hash": "df5c96f4ba465502901e7de8c575fa58abfe669f3890fbb378bc2022ea4069fd",
+      "committed_at": "2026-10-09 19:43:53.151349+00:00",
+      "received_at": "2026-10-09 19:43:53.151349+00:00"
+    },
+    "48e4c702ac4182d35f02e6bc86b5d502828f5374f79c7d108b47b73166fea811": {
+      "payload_hash": "48e4c702ac4182d35f02e6bc86b5d502828f5374f79c7d108b47b73166fea811",
+      "committed_at": "2026-10-09 19:37:56.812805+00:00",
+      "received_at": "2026-10-09 19:37:56.812805+00:00"
+    },
+    "cd884248aa4a7e15ea369fbdd3ad366902e7cdb3912c03281bf33ccbfed4210c": {
+      "payload_hash": "cd884248aa4a7e15ea369fbdd3ad366902e7cdb3912c03281bf33ccbfed4210c",
+      "committed_at": "2026-10-09 19:43:56.095313+00:00",
+      "received_at": "2026-10-09 19:43:56.095313+00:00"
+    },
+    "326261bb3cc475744e5143a0a49246e0cb383bebac42cfe7943e5908c90bdccd": {
+      "payload_hash": "326261bb3cc475744e5143a0a49246e0cb383bebac42cfe7943e5908c90bdccd",
+      "committed_at": "2026-10-09 19:40:26.733733+00:00",
+      "received_at": "2026-10-09 19:40:26.733733+00:00"
+    },
+    "68d8ce124608b3abc49120f26f44795de9ee089fd124f6e37df028de723807f1": {
+      "payload_hash": "68d8ce124608b3abc49120f26f44795de9ee089fd124f6e37df028de723807f1",
+      "committed_at": "2026-10-09 19:40:31.269552+00:00",
+      "received_at": "2026-10-09 19:40:31.269552+00:00"
+    },
+    "16178623937fcb1f20056336ad3d8d35f109da72994930d6d7cab2ea58f1bf45": {
+      "payload_hash": "16178623937fcb1f20056336ad3d8d35f109da72994930d6d7cab2ea58f1bf45",
+      "committed_at": "2026-10-09 19:42:19.095534+00:00",
+      "received_at": "2026-10-09 19:42:19.095534+00:00"
+    },
+    "6c89d0237eb394821862f1f08fa0f4ff9cc15db28ed17da3753aa5ee17307404": {
+      "payload_hash": "6c89d0237eb394821862f1f08fa0f4ff9cc15db28ed17da3753aa5ee17307404",
+      "committed_at": "2026-10-09 19:46:10.796094+00:00",
+      "received_at": "2026-10-09 19:46:10.796094+00:00"
+    },
+    "57e695c5aa8eaa3b25bc2cda695ff7ee04cbf9aec461b1cd23619fa8be0fb7f3": {
+      "payload_hash": "57e695c5aa8eaa3b25bc2cda695ff7ee04cbf9aec461b1cd23619fa8be0fb7f3",
+      "committed_at": "2026-10-09 19:40:29.764978+00:00",
+      "received_at": "2026-10-09 19:40:29.764978+00:00"
+    },
+    "b536a3af59da25a03435f2065441e08f370c283563d41d0e4d86eba4616ea3bc": {
+      "payload_hash": "b536a3af59da25a03435f2065441e08f370c283563d41d0e4d86eba4616ea3bc",
+      "committed_at": "2026-10-09 19:44:11.884538+00:00",
+      "received_at": "2026-10-09 19:44:11.884538+00:00"
+    },
+    "b5426180654f2bbbf863987f5d87e60eb28be6af12a9a1d26d9af4ce6657f2b0": {
+      "payload_hash": "b5426180654f2bbbf863987f5d87e60eb28be6af12a9a1d26d9af4ce6657f2b0",
+      "committed_at": "2026-10-09 19:38:05.507983+00:00",
+      "received_at": "2026-10-09 19:38:05.507983+00:00"
+    },
+    "492f248c70a6c8d83cda8af5924ab4f56bea62d13d61649d1a7d9d7a2ab17860": {
+      "payload_hash": "492f248c70a6c8d83cda8af5924ab4f56bea62d13d61649d1a7d9d7a2ab17860",
+      "committed_at": "2026-10-09 19:38:08.301031+00:00",
+      "received_at": "2026-10-09 19:38:08.301031+00:00"
+    },
+    "a47dcb3461f86b65907fd441b05b3efb2e55974a21c70518053454bdc2d654ee": {
+      "payload_hash": "a47dcb3461f86b65907fd441b05b3efb2e55974a21c70518053454bdc2d654ee",
+      "committed_at": "2026-10-09 19:40:31.552398+00:00",
+      "received_at": "2026-10-09 19:40:31.552398+00:00"
+    },
+    "ac194cfa5e5016b16f3d7d766379f1cf0ecc95e88d6facb66005e307b3de95ab": {
+      "payload_hash": "ac194cfa5e5016b16f3d7d766379f1cf0ecc95e88d6facb66005e307b3de95ab",
+      "committed_at": "2026-10-09 19:42:28.362564+00:00",
+      "received_at": "2026-10-09 19:42:28.362564+00:00"
+    },
+    "e13f4f65f6663e863935d305863b2c476169b9509acbf4ed65b6edda08baf549": {
+      "payload_hash": "e13f4f65f6663e863935d305863b2c476169b9509acbf4ed65b6edda08baf549",
+      "committed_at": "2026-10-09 19:42:29.703339+00:00",
+      "received_at": "2026-10-09 19:42:29.703339+00:00"
+    },
+    "d21ab785d9d4380ed92a5b7abde83deb10385554843fe8bcfedcbb1bba2b2004": {
+      "payload_hash": "d21ab785d9d4380ed92a5b7abde83deb10385554843fe8bcfedcbb1bba2b2004",
+      "committed_at": "2026-10-09 19:44:12.952349+00:00",
+      "received_at": "2026-10-09 19:44:12.952349+00:00"
+    },
+    "c2747a53477203fd6691a914070ea4a1c77ca400d2953ea547d3db15509e6be4": {
+      "payload_hash": "c2747a53477203fd6691a914070ea4a1c77ca400d2953ea547d3db15509e6be4",
+      "committed_at": "2026-10-09 19:44:13.769151+00:00",
+      "received_at": "2026-10-09 19:44:13.769151+00:00"
+    },
+    "be4f7110daa403e7dd62ebd2e116dd4c01a87bb7c777f4b4c06e46789b4a8494": {
+      "payload_hash": "be4f7110daa403e7dd62ebd2e116dd4c01a87bb7c777f4b4c06e46789b4a8494",
+      "committed_at": "2026-10-09 19:44:15.248873+00:00",
+      "received_at": "2026-10-09 19:44:15.248873+00:00"
+    },
+    "13d354b49d6d71475db5e425e6bafb25feccdf704664ec0dc85f34b72cb3ac62": {
+      "payload_hash": "13d354b49d6d71475db5e425e6bafb25feccdf704664ec0dc85f34b72cb3ac62",
+      "committed_at": "2026-10-09 19:38:17.356896+00:00",
+      "received_at": "2026-10-09 19:38:17.356896+00:00"
+    },
+    "83c5c1dc3a60f8a2265450ee3a91bc68ba286076f536ad1c7265fc1e1642b678": {
+      "payload_hash": "83c5c1dc3a60f8a2265450ee3a91bc68ba286076f536ad1c7265fc1e1642b678",
+      "committed_at": "2026-10-09 19:38:19.771498+00:00",
+      "received_at": "2026-10-09 19:38:19.771498+00:00"
+    },
+    "433dade25bf107cfd3aa63a3c7a7fdc4ed1168307e513a97768b38e1b11925e4": {
+      "payload_hash": "433dade25bf107cfd3aa63a3c7a7fdc4ed1168307e513a97768b38e1b11925e4",
+      "committed_at": "2026-10-09 19:46:22.173353+00:00",
+      "received_at": "2026-10-09 19:46:22.173353+00:00"
+    },
+    "366113f7fb474afafab64fe591ddeb5c3b1c3b217a30d7d82208c1e205187abc": {
+      "payload_hash": "366113f7fb474afafab64fe591ddeb5c3b1c3b217a30d7d82208c1e205187abc",
+      "committed_at": "2026-10-09 19:38:17.702208+00:00",
+      "received_at": "2026-10-09 19:38:17.702208+00:00"
+    },
+    "2dfb9637f2273ba0696597e64c4dcf3a45fd1685829a0950d9fe7c38695c9633": {
+      "payload_hash": "2dfb9637f2273ba0696597e64c4dcf3a45fd1685829a0950d9fe7c38695c9633",
+      "committed_at": "2026-10-09 19:38:18.594151+00:00",
+      "received_at": "2026-10-09 19:38:18.594151+00:00"
+    },
+    "a0098c1617b9e0b1944cd978fc375671a5793c0ec0ec42741e8ec602ded09760": {
+      "payload_hash": "a0098c1617b9e0b1944cd978fc375671a5793c0ec0ec42741e8ec602ded09760",
+      "committed_at": "2026-10-09 19:38:20.429358+00:00",
+      "received_at": "2026-10-09 19:38:20.429358+00:00"
+    },
+    "afec37fe5592e06db9241f51f4ebbf27cb1cf92f517b13eaa37ba8c6b352481a": {
+      "payload_hash": "afec37fe5592e06db9241f51f4ebbf27cb1cf92f517b13eaa37ba8c6b352481a",
+      "committed_at": "2026-10-09 19:38:28.773664+00:00",
+      "received_at": "2026-10-09 19:38:28.773664+00:00"
+    },
+    "a966f4095dabb41e7f8655c0ad8a541a0159c49cf38a263dd7f63a7112be14e4": {
+      "payload_hash": "a966f4095dabb41e7f8655c0ad8a541a0159c49cf38a263dd7f63a7112be14e4",
+      "committed_at": "2026-10-09 19:38:37.223542+00:00",
+      "received_at": "2026-10-09 19:38:37.223542+00:00"
+    },
+    "c216b05001219fd034daafed73e1e76306ac4e423ea8eedc74162135053b7fa7": {
+      "payload_hash": "c216b05001219fd034daafed73e1e76306ac4e423ea8eedc74162135053b7fa7",
+      "committed_at": "2026-10-09 19:40:38.880812+00:00",
+      "received_at": "2026-10-09 19:40:38.880812+00:00"
+    },
+    "dcf66e0c6904dd9a400a403d59aec7432f46dc9fd3f86359b5fd27a5279c299a": {
+      "payload_hash": "dcf66e0c6904dd9a400a403d59aec7432f46dc9fd3f86359b5fd27a5279c299a",
+      "committed_at": "2026-10-09 19:46:25.144599+00:00",
+      "received_at": "2026-10-09 19:46:25.144599+00:00"
+    },
+    "60ddd56de9db48ca009d03566c307c3a3d8eea12313702f105eeb52443a5399e": {
+      "payload_hash": "60ddd56de9db48ca009d03566c307c3a3d8eea12313702f105eeb52443a5399e",
+      "committed_at": "2026-10-09 19:46:28.210180+00:00",
+      "received_at": "2026-10-09 19:46:28.210180+00:00"
+    },
+    "6b75baeba3dcef4b7a4c7badc5052c5e76eb13ddafb9f1ba56d79f52f7c71adc": {
+      "payload_hash": "6b75baeba3dcef4b7a4c7badc5052c5e76eb13ddafb9f1ba56d79f52f7c71adc",
+      "committed_at": "2026-10-09 19:38:36.535103+00:00",
+      "received_at": "2026-10-09 19:38:36.535103+00:00"
+    },
+    "4f306d78785c3fca2654cac72d829e947c87d3adc89b63b03a21b23a1a6f2933": {
+      "payload_hash": "4f306d78785c3fca2654cac72d829e947c87d3adc89b63b03a21b23a1a6f2933",
+      "committed_at": "2026-10-09 19:38:38.694252+00:00",
+      "received_at": "2026-10-09 19:38:38.694252+00:00"
+    },
+    "03f56fd6c2e45f58a6fab59e7f9641f46818eb451aa7c139fdb697f3a8d6fd83": {
+      "payload_hash": "03f56fd6c2e45f58a6fab59e7f9641f46818eb451aa7c139fdb697f3a8d6fd83",
+      "committed_at": "2026-10-09 19:38:45.879303+00:00",
+      "received_at": "2026-10-09 19:38:45.879303+00:00"
+    },
+    "5c442072f4d5b8c26fcbcfad3a63a56c973aa3ab33144c65ae87c560b706bd3a": {
+      "payload_hash": "5c442072f4d5b8c26fcbcfad3a63a56c973aa3ab33144c65ae87c560b706bd3a",
+      "committed_at": "2026-10-09 19:46:27.605058+00:00",
+      "received_at": "2026-10-09 19:46:27.605058+00:00"
+    },
+    "6733a999a28f1996e4a33f7ac791e69a6042b31112fcf2c490f3841ffdb8a484": {
+      "payload_hash": "6733a999a28f1996e4a33f7ac791e69a6042b31112fcf2c490f3841ffdb8a484",
+      "committed_at": "2026-10-09 19:46:31.647482+00:00",
+      "received_at": "2026-10-09 19:46:31.647482+00:00"
+    },
+    "8a09441ac9ad714d20e6a7e7bb250738eaba2e2fefdaef449807e33381cf86f0": {
+      "payload_hash": "8a09441ac9ad714d20e6a7e7bb250738eaba2e2fefdaef449807e33381cf86f0",
+      "committed_at": "2026-10-09 19:38:47.557626+00:00",
+      "received_at": "2026-10-09 19:38:47.557626+00:00"
+    },
+    "9f4e59818c5e12dd3bdadc03fe5894a6bada212db20f126f38df12b87e22d7c7": {
+      "payload_hash": "9f4e59818c5e12dd3bdadc03fe5894a6bada212db20f126f38df12b87e22d7c7",
+      "committed_at": "2026-10-09 19:38:56.417590+00:00",
+      "received_at": "2026-10-09 19:38:56.417590+00:00"
+    },
+    "085be8f434dfab77fa3e76eaf4e1b80a9e6d274eb797b2289ec179816a9471c1": {
+      "payload_hash": "085be8f434dfab77fa3e76eaf4e1b80a9e6d274eb797b2289ec179816a9471c1",
+      "committed_at": "2026-10-09 19:38:57.307872+00:00",
+      "received_at": "2026-10-09 19:38:57.307872+00:00"
+    },
+    "7479f07f4f13ab48ac90ac31f038c9feb3ad37993d2b32fbe838c77b26f51e38": {
+      "payload_hash": "7479f07f4f13ab48ac90ac31f038c9feb3ad37993d2b32fbe838c77b26f51e38",
+      "committed_at": "2026-10-09 19:40:41.423024+00:00",
+      "received_at": "2026-10-09 19:40:41.423024+00:00"
+    },
+    "3da2cf311cf86d7e5d0e2c761de13c49ac3559d68354cf6a6d7e43fb71a20850": {
+      "payload_hash": "3da2cf311cf86d7e5d0e2c761de13c49ac3559d68354cf6a6d7e43fb71a20850",
+      "committed_at": "2026-10-09 19:42:39.913214+00:00",
+      "received_at": "2026-10-09 19:42:39.913214+00:00"
+    },
+    "fbc8695ebb5f637488535be3bd8e83da52aa1e3675fed20ed6806a66c3444b9b": {
+      "payload_hash": "fbc8695ebb5f637488535be3bd8e83da52aa1e3675fed20ed6806a66c3444b9b",
+      "committed_at": "2026-10-09 19:42:46.755613+00:00",
+      "received_at": "2026-10-09 19:42:46.755613+00:00"
+    },
+    "c5296190f85b100dd600c611f5eef4e8cd48dfc34bbd8e138b3e2cb454aabbed": {
+      "payload_hash": "c5296190f85b100dd600c611f5eef4e8cd48dfc34bbd8e138b3e2cb454aabbed",
+      "committed_at": "2026-10-09 19:40:43.714063+00:00",
+      "received_at": "2026-10-09 19:40:43.714063+00:00"
+    },
+    "444a444c8e72755146c75fa4150767d818e29c49f96a2c8b64d198bc6379522e": {
+      "payload_hash": "444a444c8e72755146c75fa4150767d818e29c49f96a2c8b64d198bc6379522e",
+      "committed_at": "2026-10-09 19:38:55.112746+00:00",
+      "received_at": "2026-10-09 19:38:55.112746+00:00"
+    },
+    "1039b8730f047f00c19720912566431e4dd89cdadbaf2a7012b7f96147b026d3": {
+      "payload_hash": "1039b8730f047f00c19720912566431e4dd89cdadbaf2a7012b7f96147b026d3",
+      "committed_at": "2026-10-09 19:38:57.486367+00:00",
+      "received_at": "2026-10-09 19:38:57.486367+00:00"
+    },
+    "7ecf8fabf70f8b3a1037cbac33a5fdee89c79159fa93362aec92ff2aea0b606b": {
+      "payload_hash": "7ecf8fabf70f8b3a1037cbac33a5fdee89c79159fa93362aec92ff2aea0b606b",
+      "committed_at": "2026-10-09 19:39:03.647367+00:00",
+      "received_at": "2026-10-09 19:39:03.647367+00:00"
+    },
+    "b1c1c5773754bd25f97e59841386c88a0e21d1556b4db5d1aaacfe4e788b2c80": {
+      "payload_hash": "b1c1c5773754bd25f97e59841386c88a0e21d1556b4db5d1aaacfe4e788b2c80",
+      "committed_at": "2026-10-09 19:39:04.521923+00:00",
+      "received_at": "2026-10-09 19:39:04.521923+00:00"
+    },
+    "888113543bcc2134d49eee416d98a077956e3dfce3f66e352f4cec0ea2e1e2e0": {
+      "payload_hash": "888113543bcc2134d49eee416d98a077956e3dfce3f66e352f4cec0ea2e1e2e0",
+      "committed_at": "2026-10-09 19:40:55.460071+00:00",
+      "received_at": "2026-10-09 19:40:55.460071+00:00"
+    },
+    "d54dfe4bb673a9b347e6feea17ce8299a906b116c2b96433ec32723beb59e015": {
+      "payload_hash": "d54dfe4bb673a9b347e6feea17ce8299a906b116c2b96433ec32723beb59e015",
+      "committed_at": "2026-10-09 19:39:17.786244+00:00",
+      "received_at": "2026-10-09 19:39:17.786244+00:00"
+    },
+    "81f78399698965914937d9188e07042502c4d885473bc54ca672370e2f9a3d05": {
+      "payload_hash": "81f78399698965914937d9188e07042502c4d885473bc54ca672370e2f9a3d05",
+      "committed_at": "2026-10-09 19:39:20.757725+00:00",
+      "received_at": "2026-10-09 19:39:20.757725+00:00"
+    },
+    "ca0d8a8c4fa01f5ea4e78828589fa084b8aed613b6393a6b069a933dff171469": {
+      "payload_hash": "ca0d8a8c4fa01f5ea4e78828589fa084b8aed613b6393a6b069a933dff171469",
+      "committed_at": "2026-10-09 19:39:21.706568+00:00",
+      "received_at": "2026-10-09 19:39:21.706568+00:00"
+    },
+    "2c9be155c5e32a6d59cc2be74341159641ae6142eaf53ed2601bec5b849d2cb1": {
+      "payload_hash": "2c9be155c5e32a6d59cc2be74341159641ae6142eaf53ed2601bec5b849d2cb1",
+      "committed_at": "2026-10-09 19:40:54.838193+00:00",
+      "received_at": "2026-10-09 19:40:54.838193+00:00"
+    },
+    "4a9ec6b8e58e01e07eb5cab74812c0d83ab65abaf10934e7a59adb4684310dcb": {
+      "payload_hash": "4a9ec6b8e58e01e07eb5cab74812c0d83ab65abaf10934e7a59adb4684310dcb",
+      "committed_at": "2026-10-09 19:44:34.212933+00:00",
+      "received_at": "2026-10-09 19:44:34.212933+00:00"
+    },
+    "1fbeb4d0e207071747854fd3b9e74474a418e0444516fd962851cde111f40bb1": {
+      "payload_hash": "1fbeb4d0e207071747854fd3b9e74474a418e0444516fd962851cde111f40bb1",
+      "committed_at": "2026-10-09 19:42:43.022893+00:00",
+      "received_at": "2026-10-09 19:42:43.022893+00:00"
+    },
+    "c3c026e5fb7e981279bd74a5367dcc8368a635f079a2f9c22304a99b4d391e86": {
+      "payload_hash": "c3c026e5fb7e981279bd74a5367dcc8368a635f079a2f9c22304a99b4d391e86",
+      "committed_at": "2026-10-09 19:44:34.770721+00:00",
+      "received_at": "2026-10-09 19:44:34.770721+00:00"
+    },
+    "b7afad8538f0bd6b66b3275c843d947010ac513da087873942243a22e1e23a5f": {
+      "payload_hash": "b7afad8538f0bd6b66b3275c843d947010ac513da087873942243a22e1e23a5f",
+      "committed_at": "2026-10-09 19:46:38.133818+00:00",
+      "received_at": "2026-10-09 19:46:38.133818+00:00"
+    },
+    "86210ccc251ad5b707bae4c13728cfb890b36c3ab534aeab5a471bfb4c9cb276": {
+      "payload_hash": "86210ccc251ad5b707bae4c13728cfb890b36c3ab534aeab5a471bfb4c9cb276",
+      "committed_at": "2026-10-09 19:39:18.750778+00:00",
+      "received_at": "2026-10-09 19:39:18.750778+00:00"
+    },
+    "b6ac5ebf305a176d6b44e185b67922f1e4a91990e273adafa529d2506bfe254a": {
+      "payload_hash": "b6ac5ebf305a176d6b44e185b67922f1e4a91990e273adafa529d2506bfe254a",
+      "committed_at": "2026-10-09 19:39:21.506918+00:00",
+      "received_at": "2026-10-09 19:39:21.506918+00:00"
+    },
+    "1ae212b84b402fd0875133270accf8cbc09855b23da036a406516eef386d1a55": {
+      "payload_hash": "1ae212b84b402fd0875133270accf8cbc09855b23da036a406516eef386d1a55",
+      "committed_at": "2026-10-09 19:39:28.629473+00:00",
+      "received_at": "2026-10-09 19:39:28.629473+00:00"
+    },
+    "3458a5b2b0503948c95eddd12d384fcdc77fb2e85d1db14928a7abe9cb3b1b47": {
+      "payload_hash": "3458a5b2b0503948c95eddd12d384fcdc77fb2e85d1db14928a7abe9cb3b1b47",
+      "committed_at": "2026-10-09 19:39:30.457813+00:00",
+      "received_at": "2026-10-09 19:39:30.457813+00:00"
+    },
+    "688929749654e17d72812016a26bf1874ef45a25df23b762ac060ac64bda54a5": {
+      "payload_hash": "688929749654e17d72812016a26bf1874ef45a25df23b762ac060ac64bda54a5",
+      "committed_at": "2026-10-09 19:39:31.519007+00:00",
+      "received_at": "2026-10-09 19:39:31.519007+00:00"
+    },
+    "c07ac1935d4a5357d7c7327b4489a00d306b6745367456ddb059f3f0d7312a40": {
+      "payload_hash": "c07ac1935d4a5357d7c7327b4489a00d306b6745367456ddb059f3f0d7312a40",
+      "committed_at": "2026-10-09 19:40:57.923812+00:00",
+      "received_at": "2026-10-09 19:40:57.923812+00:00"
+    },
+    "e26be495de635fa57066cdddf7d0cd54b443a185838d36925d262488b558e75e": {
+      "payload_hash": "e26be495de635fa57066cdddf7d0cd54b443a185838d36925d262488b558e75e",
+      "committed_at": "2026-10-09 19:41:01.111608+00:00",
+      "received_at": "2026-10-09 19:41:01.111608+00:00"
+    },
+    "5e80183463a2cfb96c977a7e9e315fecdc486e611b3129905d29c84fe6ad96b4": {
+      "payload_hash": "5e80183463a2cfb96c977a7e9e315fecdc486e611b3129905d29c84fe6ad96b4",
+      "committed_at": "2026-10-09 19:39:31.252011+00:00",
+      "received_at": "2026-10-09 19:39:31.252011+00:00"
+    },
+    "92d7a51266753f8e6dd392766693373e50666c8f23fbe4d6e02845fb48b40f4f": {
+      "payload_hash": "92d7a51266753f8e6dd392766693373e50666c8f23fbe4d6e02845fb48b40f4f",
+      "committed_at": "2026-10-09 19:41:02.502077+00:00",
+      "received_at": "2026-10-09 19:41:02.502077+00:00"
+    }
+  },
+  "notes": [
+    "Actual first bridge acquisition wall time is not exposed by snapshot identity: unavailable, not inferred from historical replay.",
+    "event clock-to-visible is a live-clock age metric with source startup offset; no official organizer target.",
+    "Raw observer receipt_to_visible_ms was misnamed and actually uses telemetry received_at; aggregate labels correct this as backend_received_to_visible_ms.",
+    "Receipt committed_at is the persisted contract timestamp, not an independently instrumented PostgreSQL commit wall-clock boundary.",
+    "Post-run totals include queued work committed after the measurement interval. Window totals use stored receipt committed_at cutoff.",
+    "Timeout diagnostic active_sql_assets=0 means unavailable metrics, not zero active source assets."
+  ]
+}

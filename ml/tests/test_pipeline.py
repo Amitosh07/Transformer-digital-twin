@@ -53,6 +53,26 @@ from ml.pipeline.orchestrator import (
 from ml.pipeline.state import AssetPipelineState
 
 
+def fictional_asset(asset):
+    return AssetConfig(asset, rated_power_kva=100., measurement_side='LV',
+        configuration_metadata={'version': 'fictional-test-v1',
+            'status': 'SYNTHETIC_CONFIG', 'field_metadata': {'rated_power_kva': {
+                'unit': 'kVA', 'verification': 'SYNTHETIC_CONFIG',
+                'provenance': 'fictional unit test', 'evidence_reference': None}}})
+
+
+def fictional_acquisition():
+    from ml.pipeline.identity import FIELDS
+    return {'source_kind': 'SIMULATED', 'source_name': 'fictional-test',
+            'origin_kind': 'SIMULATED', 'origin_transformer_id': None,
+            'replay_run_id': None, 'gateway_id': None,
+            'timestamp_origin': 'SOURCE_SNAPSHOT', 'timezone_status': 'DECLARED_UTC',
+            'field_units': {k: 'kVA' if k == 'apparent_power_total' else 'UNKNOWN' for k in FIELDS},
+            'field_verification': {k: 'SYNTHETIC' if k == 'apparent_power_total' else 'UNVERIFIED' for k in FIELDS},
+            'measurement_side': 'LV', 'map_version': None, 'snapshot_id': None,
+            'sequence': None, 'expected_interval_seconds': 900}
+
+
 def make_sample_record(
     transformer_id: str = "TX-001",
     timestamp: str | datetime = "2026-10-08T10:00:00Z",
@@ -314,8 +334,9 @@ class TestUnifiedPipeline(unittest.TestCase):
         res1 = pipe.process_record(rec1)
         res2 = pipe.process_record(rec2)
 
-        self.assertEqual(res2["inference_status"], "REJECTED_LATE_OBSERVATION")
-        self.assertIn("DATA_QUALITY_ISSUE", res2["reason_codes"])
+        self.assertEqual(res2['ingestion_outcome'], 'REJECTED_LATE_OBSERVATION')
+        self.assertIsNone(res2['analytics'])
+        self.assertFalse(res2['forward_state_advanced'])
         # Latest committed timestamp must remain 10:30
         self.assertEqual(
             pipe.get_state("TX-001").last_processed_timestamp,
@@ -377,10 +398,10 @@ class TestUnifiedPipeline(unittest.TestCase):
 
     def test_21_correct_loading_ratio_percent(self) -> None:
         pipe = UnifiedMLPipeline(bundle=self.bundle)
-        asset_cfg = AssetConfig(transformer_id="TX-001", rated_power_kva=100.0)
+        asset_cfg = fictional_asset('TX-001')
         pipe.register_asset(asset_cfg)
 
-        rec = make_sample_record(s_total=80.0)
+        rec = make_sample_record(s_total=80.0, extra_fields={'acquisition': fictional_acquisition()})
         res = pipe.process_record(rec)
 
         self.assertAlmostEqual(res["loading_percent"], 80.0)
@@ -431,7 +452,7 @@ class TestUnifiedPipeline(unittest.TestCase):
         """Verify dashboard can consume and render all 6 stages and edge cases without recalculating."""
         # Stage 1: Healthy reference
         pipe = UnifiedMLPipeline(bundle=self.bundle)
-        pipe.register_asset(AssetConfig(transformer_id="TX-DASH", rated_power_kva=100.0))
+        pipe.register_asset(fictional_asset('TX-DASH'))
         r1 = make_sample_record(transformer_id="TX-DASH", timestamp="2026-10-08T10:00:00Z", oil_temp=35.0, current=10.0, s_total=30.0)
         s1 = pipe.process_record(r1)
         self.assertEqual(s1["maintenance_priority"], "NORMAL")
@@ -440,6 +461,7 @@ class TestUnifiedPipeline(unittest.TestCase):
 
         # Stage 2: Increased load with lagged thermal response
         r2 = make_sample_record(transformer_id="TX-DASH", timestamp="2026-10-08T10:15:00Z", oil_temp=35.0, current=30.0, s_total=90.0)
+        r2['acquisition'] = fictional_acquisition()
         s2 = pipe.process_record(r2)
         self.assertEqual(s2["loading_percent"], 90.0)
         self.assertIsNotNone(s2["thermal_model_temperature"])
