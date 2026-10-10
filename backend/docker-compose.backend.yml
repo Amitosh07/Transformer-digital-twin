@@ -1,0 +1,49 @@
+name: transformer-demo
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: ${DEMO_DB_USER:-transformer}
+      POSTGRES_PASSWORD: ${DEMO_DB_PASSWORD:-transformer}
+      POSTGRES_DB: ${DEMO_DB_NAME:-transformer}
+    ports:
+      - "127.0.0.1:${DEMO_DB_PORT:-55433}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+  mqtt:
+    image: eclipse-mosquitto:2
+    ports:
+      - "127.0.0.1:${DEMO_MQTT_PORT:-51885}:1883"
+    volumes:
+      - ./docker/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+      - mqtt_data:/mosquitto/data
+    healthcheck:
+      test: ["CMD", "mosquitto_pub", "-h", "127.0.0.1", "-t", "demo/health", "-m", "ok"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+  backend:
+    build: .
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql+psycopg://${DEMO_DB_USER:-transformer}:${DEMO_DB_PASSWORD:-transformer}@db:5432/${DEMO_DB_NAME:-transformer}
+      MQTT_ENABLED: "true"
+      MQTT_HOST: mqtt
+      MQTT_PORT: "1883"
+      MQTT_CLIENT_ID: transformer-demo-backend
+      ML_BACKEND: stub
+    ports:
+      - "127.0.0.1:${DEMO_HTTP_PORT:-8001}:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+      mqtt:
+        condition: service_healthy
+volumes:
+  postgres_data:
+  mqtt_data:

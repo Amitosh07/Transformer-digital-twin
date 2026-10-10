@@ -1,0 +1,31 @@
+[project]
+name = "transformer-simulator"
+version = "1.0.0"
+description = "Synthetic telemetry generator, historical replay, fault injection, and streaming simulator for the Transformer Digital Twin"
+requires-python = ">=3.10"
+dependencies = [
+    "paho-mqtt>=2.0,<3.0",
+    "pandas>=2.0,<3.0",
+    "numpy>=1.24,<3.0",
+    "httpx>=0.27,<1.0",
+    "pydantic>=2.0,<3.0",
+    "click>=8.0,<9.0",
+    "pyyaml>=6.0,<7.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+]
+
+[project.scripts]
+simulator = "simulator.cli:cli"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["simulator*"]
