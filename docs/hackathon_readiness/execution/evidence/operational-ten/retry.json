@@ -1,0 +1,428 @@
+{
+  "at": "2026-10-10T11:29:54.183310+00:00",
+  "asset": "KA-BLR-KOR-TX01",
+  "snapshot": "09f9b7a96acf2f5e2403508a0697376686aaffbe02ca88cdefc2b3cd29303303",
+  "exact_retry": [
+    200,
+    {
+      "telemetry_id": 17997,
+      "analytics": {
+        "metadata": {
+          "thermal_readiness": "WARMING_UP",
+          "thermal_model_mode": "PUBLIC_EMPIRICAL",
+          "thermal_temperature_unit": "SOURCE_UNVERIFIED",
+          "apparent_power_utilization": 0.7463,
+          "forecast_operational_status": "INSUFFICIENT_VALIDATION",
+          "experimental_fault_risk": null,
+          "maintenance_trip_latched": false,
+          "maintenance_clear_policy_status": "NOT_APPLICABLE",
+          "coverage_overall": 0.8888888888888888,
+          "health_coverage": 1.0,
+          "extended_reason_codes": [
+            "HIGH_OIL_TEMP",
+            "RAPID_TEMP_RISE",
+            "UNCONFIRMED_STATISTICAL_EXCEEDANCE",
+            "REDUCED_HISTORY_COVERAGE",
+            "DEMO_UNVERIFIED_CONFIG"
+          ],
+          "extended_health_reason_codes": [
+            "HIGH_OIL_TEMP",
+            "RAPID_TEMP_RISE"
+          ],
+          "reason_descriptions": {
+            "HIGH_OIL_TEMP": "High oil indicator (source units)",
+            "RAPID_TEMP_RISE": "Rapid temperature rise rate",
+            "UNCONFIRMED_STATISTICAL_EXCEEDANCE": "Unconfirmed Statistical Exceedance"
+          },
+          "components": {
+            "thermal": {
+              "status": "WARMING_UP",
+              "unit": "SOURCE_UNVERIFIED",
+              "coverage_fraction": 0.005555555555555556,
+              "reasons": [
+                "REDUCED_HISTORY_COVERAGE",
+                "DEMO_UNVERIFIED_CONFIG"
+              ]
+            },
+            "anomaly": {
+              "status": "INSUFFICIENT_DATA",
+              "unit": "1",
+              "coverage_fraction": 0.005555555555555556,
+              "reasons": [
+                "REDUCED_HISTORY_COVERAGE",
+                "DEMO_UNVERIFIED_CONFIG"
+              ]
+            },
+            "health": {
+              "status": "INSUFFICIENT_DATA",
+              "unit": "index",
+              "coverage_fraction": 0.005555555555555556,
+              "reasons": [
+                "REDUCED_HISTORY_COVERAGE",
+                "DEMO_UNVERIFIED_CONFIG"
+              ]
+            },
+            "maintenance": {
+              "status": "INSUFFICIENT_DATA",
+              "unit": null,
+              "coverage_fraction": 0.005555555555555556,
+              "reasons": [
+                "REDUCED_HISTORY_COVERAGE",
+                "DEMO_UNVERIFIED_CONFIG"
+              ]
+            },
+            "forecast": {
+              "status": "UNAVAILABLE",
+              "unit": null,
+              "coverage_fraction": 0.005555555555555556,
+              "reasons": [
+                "REDUCED_HISTORY_COVERAGE",
+                "DEMO_UNVERIFIED_CONFIG",
+                "INSUFFICIENT_VALIDATION"
+              ]
+            },
+            "rul": {
+              "status": "INSUFFICIENT_DATA",
+              "unit": "h",
+              "coverage_fraction": null,
+              "reasons": [
+                "MISSING_VERIFIED_HOTSPOT",
+                "MISSING_VERIFIED_LIQUID",
+                "MISSING_VERIFIED_INSULATION",
+                "MISSING_VERIFIED_AGEING_PARAMETERS",
+                "MISSING_VERIFIED_LIFE_BUDGET",
+                "MISSING_VERIFIED_SERVICE_AGE",
+                "MISSING_VERIFIED_PRIOR_EXPOSURE",
+                "MISSING_VERIFIED_FUTURE_DUTY",
+                "MISSING_VERIFIED_TIME_COVERAGE",
+                "OPERATIONAL_RUL_ESTIMATOR_NOT_IMPLEMENTED"
+              ]
+            }
+          },
+          "units": {
+            "oil_level": "percent",
+            "current_l1": "A",
+            "current_l2": "A",
+            "current_l3": "A",
+            "energy_kwh": "kWh",
+            "oil_temp_trip": "STATUS",
+            "oil_temp_alarm": "STATUS",
+            "neutral_current": "A",
+            "oil_temperature": "DEG_C",
+            "power_factor_l1": "1",
+            "power_factor_l2": "1",
+            "power_factor_l3": "1",
+            "phase_voltage_l1": "V",
+            "phase_voltage_l2": "V",
+            "phase_voltage_l3": "V",
+            "active_power_total": "kW",
+            "ambient_temperature": "DEG_C",
+            "winding_temperature": "STATUS",
+            "apparent_power_total": "kVA",
+            "reactive_power_total": "kVAr",
+            "magnetic_oil_gauge_alarm": "STATUS"
+          },
+          "coverage": {
+            "start": "2026-10-10T11:19:48.388377Z",
+            "end": "2026-10-10T11:20:08.388377Z",
+            "covered_seconds": 20.0,
+            "expected_seconds": 3600.0,
+            "fraction": 0.005555555555555556,
+            "gap_count": 0,
+            "missing_fields": [
+              "winding_temperature"
+            ]
+          },
+          "forecast": {
+            "target_definition": "new_oil_alert_within_1h",
+            "horizon_hours": 1.0,
+            "release_status": "INSUFFICIENT_VALIDATION",
+            "operational_eligible": false,
+            "limitation_codes": [
+              "INSUFFICIENT_VALIDATION"
+            ]
+          },
+          "versions": {
+            "bundle_id": "demo_unverified_coded_config_v1",
+            "configuration_version": "fictional-demo-v1",
+            "preprocessing_version": "1.0.0",
+            "artifact_schema_version": "1.0.0"
+          }
+        },
+        "rul": {
+          "rul_status": "INSUFFICIENT_DATA",
+          "rul_method": "THERMAL_AGEING_ELIGIBILITY_V1",
+          "rul_target_definition": "Conditional insulation-life prerequisites; whole-transformer remaining life unavailable",
+          "rul_value": null,
+          "rul_unit": "h",
+          "rul_lower": null,
+          "rul_upper": null,
+          "uncertainty_kind": null,
+          "forecast_horizon_hours": null,
+          "future_duty_scenario": null,
+          "degradation_state": null,
+          "end_threshold": null,
+          "degradation_unit": null,
+          "degradation_rate_per_hour": null,
+          "equivalent_ageing_hours": null,
+          "source_kind": "SIMULATED",
+          "simulated": false,
+          "model_version": "thermal-ageing-eligibility-v1",
+          "config_version": null,
+          "required_inputs": [
+            "verified hotspot measurement or validated hotspot model; WTI status/oil surrogate is insufficient",
+            "verified liquid and applicability",
+            "verified insulation and applicability",
+            "justified thermal-ageing parameter set and reference",
+            "defensible equivalent-life budget",
+            "prior service-age history",
+            "service age and consumed exposure history",
+            "declared future load/ambient duty",
+            "adequate verified temporal coverage"
+          ],
+          "assumptions": [
+            "Oil surrogate and binary WTI contacts are not verified winding hotspot",
+            "No life budget, physical ageing constants or empirical accuracy is invented"
+          ],
+          "limitation_codes": [
+            "MISSING_VERIFIED_HOTSPOT",
+            "MISSING_VERIFIED_LIQUID",
+            "MISSING_VERIFIED_INSULATION",
+            "MISSING_VERIFIED_AGEING_PARAMETERS",
+            "MISSING_VERIFIED_LIFE_BUDGET",
+            "MISSING_VERIFIED_SERVICE_AGE",
+            "MISSING_VERIFIED_PRIOR_EXPOSURE",
+            "MISSING_VERIFIED_FUTURE_DUTY",
+            "MISSING_VERIFIED_TIME_COVERAGE",
+            "OPERATIONAL_RUL_ESTIMATOR_NOT_IMPLEMENTED"
+          ],
+          "coverage_start": null,
+          "coverage_end": null,
+          "coverage_fraction": null,
+          "timestamp": "2026-10-10T11:20:08.388377Z"
+        },
+        "transformer_id": "KA-BLR-KOR-TX01",
+        "timestamp": "2026-10-10T11:20:08.388377Z",
+        "inference_status": "OK",
+        "missing_features": [],
+        "loading_percent": 74.63,
+        "thermal_model_temperature": 41.97113636837917,
+        "thermal_residual": null,
+        "thermal_state": null,
+        "anomaly_score": 1.0,
+        "anomaly_flag": false,
+        "health_index": 45.0,
+        "health_components": {
+          "thermal": 0.0,
+          "electrical": 0.0,
+          "loading": 100.0,
+          "oil": 100.0,
+          "alarm": 100.0,
+          "anomaly": 0.0
+        },
+        "health_reason_codes": [
+          "HIGH_OIL_TEMP",
+          "RAPID_TEMP_RISE"
+        ],
+        "fault_risk": null,
+        "predicted_fault": null,
+        "prediction_confidence": null,
+        "maintenance_priority": "WATCH",
+        "maintenance_recommendation": "Monitor transient; verify whether temperature rise is sustained.",
+        "reason_codes": [
+          "HIGH_OIL_TEMP",
+          "RAPID_TEMP_RISE"
+        ],
+        "schema_version": "1.1.0",
+        "feature_version": "1.0.0",
+        "model_version": "DEMO_UNVERIFIED_CONFIG",
+        "error_detail": null
+      },
+      "duplicate": true,
+      "warnings": [],
+      "snapshot_id": "09f9b7a96acf2f5e2403508a0697376686aaffbe02ca88cdefc2b3cd29303303",
+      "ingestion_outcome": "EXACT_RETRY",
+      "forward_state_advanced": false
+    }
+  ],
+  "changed_duplicate": [
+    409,
+    {
+      "error": {
+        "code": "HTTP_ERROR",
+        "message": "Request failed",
+        "details": {
+          "code": "SEMANTIC_PAYLOAD_CONFLICT",
+          "snapshot_id": "95ab0f3c6e94dc98b35b2409328926b10addb59e277c2a87acab47c94e159b63",
+          "accepted_payload_hash": "09f9b7a96acf2f5e2403508a0697376686aaffbe02ca88cdefc2b3cd29303303",
+          "request_id": "1d840b51-6db2-441e-82e6-791d11433115"
+        }
+      }
+    }
+  ],
+  "before": [
+    [
+      "KA-BLR-BTM-TX09",
+      "21166dbecc619be1ecb8762fa412f546",
+      89,
+      89,
+      8,
+      0
+    ],
+    [
+      "KA-BLR-BTM-TX10",
+      "9ff7469d8e3e73d82de88835bac98f84",
+      89,
+      89,
+      9,
+      0
+    ],
+    [
+      "KA-BLR-HSR-TX05",
+      "7b2be43400fa46dcb8e10a9f747d74cb",
+      89,
+      89,
+      10,
+      0
+    ],
+    [
+      "KA-BLR-HSR-TX06",
+      "11fcbaddf5f20585747a613c1b8d0190",
+      89,
+      89,
+      6,
+      0
+    ],
+    [
+      "KA-BLR-HSR-TX07",
+      "c4d1eb5189546a8209417efb50d1543a",
+      89,
+      89,
+      14,
+      0
+    ],
+    [
+      "KA-BLR-HSR-TX08",
+      "64d1e8da2f29e497deac44362c2b4a2d",
+      89,
+      89,
+      12,
+      0
+    ],
+    [
+      "KA-BLR-KOR-TX01",
+      "ce704c043e2c051e7b3e9b65492a96c0",
+      89,
+      89,
+      8,
+      0
+    ],
+    [
+      "KA-BLR-KOR-TX02",
+      "1d396f6b72d95bf117789062bf3ad77c",
+      89,
+      89,
+      10,
+      0
+    ],
+    [
+      "KA-BLR-KOR-TX03",
+      "8d3837d4dd6f2072ee4e9433c726d828",
+      89,
+      89,
+      6,
+      0
+    ],
+    [
+      "KA-BLR-KOR-TX04",
+      "9c3c10f18f03471b51bad99243d577d0",
+      89,
+      89,
+      10,
+      0
+    ]
+  ],
+  "after": [
+    [
+      "KA-BLR-BTM-TX09",
+      "21166dbecc619be1ecb8762fa412f546",
+      89,
+      89,
+      8,
+      0
+    ],
+    [
+      "KA-BLR-BTM-TX10",
+      "9ff7469d8e3e73d82de88835bac98f84",
+      89,
+      89,
+      9,
+      0
+    ],
+    [
+      "KA-BLR-HSR-TX05",
+      "7b2be43400fa46dcb8e10a9f747d74cb",
+      89,
+      89,
+      10,
+      0
+    ],
+    [
+      "KA-BLR-HSR-TX06",
+      "11fcbaddf5f20585747a613c1b8d0190",
+      89,
+      89,
+      6,
+      0
+    ],
+    [
+      "KA-BLR-HSR-TX07",
+      "c4d1eb5189546a8209417efb50d1543a",
+      89,
+      89,
+      14,
+      0
+    ],
+    [
+      "KA-BLR-HSR-TX08",
+      "64d1e8da2f29e497deac44362c2b4a2d",
+      89,
+      89,
+      12,
+      0
+    ],
+    [
+      "KA-BLR-KOR-TX01",
+      "ce704c043e2c051e7b3e9b65492a96c0",
+      89,
+      89,
+      8,
+      0
+    ],
+    [
+      "KA-BLR-KOR-TX02",
+      "1d396f6b72d95bf117789062bf3ad77c",
+      89,
+      89,
+      10,
+      0
+    ],
+    [
+      "KA-BLR-KOR-TX03",
+      "8d3837d4dd6f2072ee4e9433c726d828",
+      89,
+      89,
+      6,
+      0
+    ],
+    [
+      "KA-BLR-KOR-TX04",
+      "9c3c10f18f03471b51bad99243d577d0",
+      89,
+      89,
+      10,
+      0
+    ]
+  ],
+  "accepted_effects_and_checkpoints_unchanged": true
+}

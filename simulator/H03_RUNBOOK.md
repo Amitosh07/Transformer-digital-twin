@@ -129,3 +129,21 @@ Modbus/browser evidence. Follow the [H06 runbook](H06_RUNBOOK.md) for current
 ports, native PowerShell and Git Bash commands, receipt semantics and explicit
 demo-unverified limitations. Docker Desktop storage prevented clean-container
 acceptance in this execution; native acceptance does not prove that gate.
+
+## Current normal operations: ten named transformers (10 October 2026)
+
+The H03/H06/H07 configurations above remain historical tooling/evidence. Normal
+root Compose now uses `config/operational-server.json` and
+`config/operational-bridge.json`, both referencing `config/operational-fleet.json`.
+That single file owns all ten stable IDs, unit mappings and explicit fictional
+ratings. Seed defaults to registration only; stream defaults to the existing
+Modbus bridge. Source startup registers the exact configuration before FC04
+becomes available. Explicit single-asset CLI and historical H06 flags remain
+available; the old 25-asset wrapper requires deliberate `--legacy-h06`.
+
+Follow [the ten-transformer execution/runbook](../docs/hackathon_readiness/execution/TEN_TRANSFORMER_FLEET.md)
+for the tested existing-image runtime, preserved volumes/old containers, ports,
+PowerShell commands, native configuration-directory settings and disk guard.
+Restart source and bridge together; IDs stay stable, new sessions use current UTC,
+sequence/counter restarts remain explicit, and backend history/checkpoints remain
+durable. No old telemetry or pending spool payload is renamed or discarded.

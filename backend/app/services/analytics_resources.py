@@ -13,12 +13,19 @@ from app.services.query_service import require_transformer, resolve_window, quer
 
 def policies(asset):
     path = get_settings().analytics_policy_file
-    if not path:
-        return {}
-    value = json.loads(Path(path).read_text())
-    if value.get('version') != 'h06-policy-v1':
-        raise ValueError('Unsupported analytics policy version')
-    return value.get('assets', {}).get(asset, {})
+    if path:
+        value = json.loads(Path(path).read_text())
+        if value.get('version') != 'h06-policy-v1':
+            raise ValueError('Unsupported analytics policy version')
+        if asset in value.get('assets', {}):
+            return value['assets'][asset]
+    fleet_file = get_settings().operational_fleet_file
+    if fleet_file:
+        from app.core.operational_fleet import active_ids
+        if asset in active_ids(fleet_file):
+            fleet = json.loads(Path(fleet_file).read_text())
+            return {'energy': fleet['energy']}
+    return {}
 
 
 def runtime_transformer(transformer):

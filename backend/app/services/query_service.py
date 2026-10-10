@@ -92,8 +92,10 @@ def _page(model: type[T], rows: list[Any], total: int, pagination: Pagination) -
     )
 
 
-def transformers(session: Session, pagination: Pagination) -> Page[TransformerOut]:
-    rows, total = transformer_repo.read_page(session, pagination.limit, pagination.offset)
+def transformers(session: Session, pagination: Pagination, scope: str = 'active') -> Page[TransformerOut]:
+    from app.core.operational_fleet import active_ids
+    ids = active_ids(get_settings().operational_fleet_file) if scope == 'active' else None
+    rows, total = transformer_repo.read_page(session, pagination.limit, pagination.offset, ids)
     return _page(TransformerOut, rows, total, pagination)
 
 

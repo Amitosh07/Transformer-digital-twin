@@ -28,13 +28,18 @@ Open `http://127.0.0.1:5174`. In this same-origin development mode Vite forwards
 responses/errors. The proxy is development-only. Production builds still use
 the configured API origin and existing CORS/deployment conventions. Ctrl+C
 stops only this development server. No backend, source or database reset is needed.
-The running Docker frontend retains its earlier image until separately rebuilt;
-this task verified the new source through Vite, not an updated Docker image.
+The ten-transformer change also served the current build from the existing Docker
+frontend at 5173 without rebuilding its image. See the
+[ten-transformer report](../docs/hackathon_readiness/execution/TEN_TRANSFORMER_FLEET.md)
+for the current runtime and verified browser evidence.
 
 ## Navigation and request budget
 
-Overview fetches every registry page (50 rows/request), deduplicates IDs, supports
-ID/name search and shows12 cards/page. Status/alarm filters explicitly apply to
+Overview fetches active backend registry pages (50 rows/request), deduplicates IDs,
+supports ID/name search and shows five cards/page. The backend supplies the ordered
+ten-transformer fleet: Page 1 of 2 / Page 2 of 2, without a frontend ID list.
+Historical identities remain available through scope=all and individual APIs.
+Removed active identities stop supplying detail data. Status/alarm filters apply to
 the visible page; other pages are not silently assessed. Latest card requests
 have at most3 concurrent calls, repeat15 seconds after completion and never fetch
 portfolio history. Every asset has its own response/error/last-success state.
@@ -95,3 +100,9 @@ it uses the already available Playwright-core installation in
 `$env:TEMP/h06-browser` and installed Edge. On another machine supply an equivalent
 Playwright/browser setup before running it; this helper is not a runtime dependency.
 It interrupts browser requests only, leaving services and data untouched.
+
+For current ten-asset browser verification use `node scripts/verify-ten.mjs`.
+It reads the authoritative shared roster and the running backend, saves both
+five-card pages plus detail under `screenshots/operational-ten/`, and verifies
+TX10/TX01 isolation and actual telemetry advancement. The older verify-console
+script and screenshots remain historical 93-asset evidence, not current acceptance.

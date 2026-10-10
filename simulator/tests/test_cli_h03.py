@@ -30,7 +30,9 @@ def test_unbounded_stream_publishes_incrementally(monkeypatch):
         def close(self): pass
     monkeypatch.setattr(simulator.streaming,"StreamPublisher",Publisher)
     monkeypatch.setattr("simulator.cli.time.sleep",lambda seconds:None)
-    result=CliRunner().invoke(cli,["stream","--count","0","--interval","5","--start-utc","2026-10-09T00:00:00Z"])
+    # Explicit single-asset mode remains incremental; omitted ID now selects
+    # the operational fleet's existing Modbus bridge rather than TX-001.
+    result=CliRunner().invoke(cli,["stream","--transformer-id","TX-001","--count","0","--interval","5","--start-utc","2026-10-09T00:00:00Z"])
     assert result.exit_code == 0, result.output
     assert [r.acquisition["sequence"] for r in published] == [0,1,2]
 

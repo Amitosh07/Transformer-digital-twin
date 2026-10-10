@@ -1,6 +1,6 @@
 from typing import Any
 
-from sqlalchemy import func, select
+from sqlalchemy import case, func, select
 from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.orm import Session
 
@@ -32,9 +32,17 @@ def get(session: Session, transformer_id: str) -> Transformer | None:
     return session.get(Transformer, transformer_id)
 
 
-def read_page(session: Session, limit: int, offset: int) -> tuple[list[Transformer], int]:
-    total = session.scalar(select(func.count()).select_from(Transformer)) or 0
-    rows = session.scalars(select(Transformer).order_by(Transformer.id).limit(limit).offset(offset))
+def read_page(session: Session, limit: int, offset: int,
+              active_ids: list[str] | None = None) -> tuple[list[Transformer], int]:
+    count = select(func.count()).select_from(Transformer)
+    query = select(Transformer)
+    ordering = Transformer.id
+    if active_ids is not None:
+        count = count.where(Transformer.id.in_(active_ids))
+        query = query.where(Transformer.id.in_(active_ids))
+        ordering = case({asset: i for i, asset in enumerate(active_ids)}, value=Transformer.id)
+    total = session.scalar(count) or 0
+    rows = session.scalars(query.order_by(ordering).limit(limit).offset(offset))
     return list(rows), total
 
 

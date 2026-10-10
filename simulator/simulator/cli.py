@@ -145,7 +145,8 @@ def inject(scenario: str, count: int, transformer_id: str, seed: int, output: Op
 @click.option("--http-url", default="http://localhost:8001", help="Backend HTTP URL.")
 @click.option("--interval", default=5, help="Seconds between transmissions.")
 @click.option("--count", "-n", default=0, help="Records to send (0 = infinite).")
-@click.option("--transformer-id", default="TX-001", help="Asset ID.")
+@click.option("--transformer-id", default=None, help="Explicit legacy single asset. Omit to poll the operational ten-asset Modbus fleet.")
+@click.option("--fleet-bridge-config", default=None, type=click.Path(exists=True), help="Fleet bridge config; native loopback configuration by default.")
 @click.option("--seed", default=42, help="RNG seed.")
 @click.option("--csv", "csv_files", multiple=True, type=click.Path(exists=True), help="CSV for replay mode.")
 @click.option("--speed", default=10.0, help="Replay speed multiplier.")
@@ -165,9 +166,18 @@ def stream(
     speed: float,
     timezone=None,
     start_utc=None,
+    fleet_bridge_config=None,
 ) -> None:
-    """Stream live canonical telemetry via MQTT or HTTP."""
+    """Poll the operational Modbus fleet; explicit assets retain MQTT/HTTP streams."""
     from .streaming import StreamPublisher
+
+    if transformer_id is None:
+        if mode != 'synthetic' or scenario or count or start_utc or mqtt_host or interval != 5:
+            raise click.UsageError('Use --fleet-bridge-config for fleet transport; explicit --transformer-id for legacy single-asset flags/replay')
+        from .fleet import DEFAULT_CONFIG
+        from .modbus_bridge import run_bridge
+        run_bridge(fleet_bridge_config or DEFAULT_CONFIG / 'operational-bridge-native.json')
+        return
 
     pub = StreamPublisher(
         mqtt_host=mqtt_host,
@@ -264,11 +274,18 @@ def demo(http_url: str, transformer_id: str, records_per_scenario: int) -> None:
 @cli.command()
 @click.option("--http-url", default="http://localhost:8001", help="Backend HTTP URL.")
 @click.option("--count", "-n", default=1440, help="Number of records (default = 1 day at 1-min).")
-@click.option("--transformer-id", default="TX-001", help="Asset ID.")
+@click.option("--transformer-id", default=None, help="Explicit legacy single-asset historical seed. Omit to register only the operational fleet, without generating history.")
+@click.option("--fleet-file", default=None, type=click.Path(exists=True), help="Shared fleet manifest.")
 @click.option("--seed", default=42, help="RNG seed.")
-def seed(http_url: str, count: int, transformer_id: str, seed: int) -> None:
-    """Bulk-seed the backend with synthetic normal-operation data."""
+def seed(http_url: str, count: int, transformer_id: str, seed: int, fleet_file=None) -> None:
+    """Register the operational fleet; explicit assets retain historical seeding."""
     from .streaming import HttpPublisher
+
+    if transformer_id is None:
+        from .fleet import DEFAULT_FLEET, register_fleet
+        register_fleet(http_url, fleet_file or DEFAULT_FLEET)
+        click.echo('Registered the configured operational fleet; history was not generated or relabelled.')
+        return
 
     pub = HttpPublisher(base_url=http_url, source_name="seed")
     cfg = TransformerConfig(transformer_id=transformer_id)

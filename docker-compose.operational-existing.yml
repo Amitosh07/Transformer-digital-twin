@@ -1,0 +1,35 @@
+# Attach only these application workers to the preserved H06 DB/broker/frontend.
+# Old containers are stopped and retained, NOT removed. No image build is needed.
+name: transformer-operational-ten
+services:
+  backend:
+    extends: {file: docker-compose.yml, service: backend}
+    image: ${EXISTING_BACKEND_IMAGE:-transformer-h06-20261009-backend}
+    pull_policy: never
+    depends_on: !reset {}
+    volumes:
+      - ./backend/app:/app/app:ro
+      - ./ml:/usr/local/lib/python3.12/site-packages/ml:ro
+  modbus-simulator:
+    extends: {file: docker-compose.yml, service: modbus-simulator}
+    image: ${EXISTING_SIMULATOR_IMAGE:-transformer-h06-20261009-modbus-simulator}
+    pull_policy: never
+    volumes:
+      - ./simulator/simulator:/usr/local/lib/python3.12/site-packages/simulator:ro
+  modbus-bridge:
+    extends: {file: docker-compose.yml, service: modbus-bridge}
+    image: ${EXISTING_BRIDGE_IMAGE:-transformer-h06-20261009-modbus-bridge}
+    pull_policy: never
+    depends_on: !override
+      backend: {condition: service_healthy}
+      modbus-simulator: {condition: service_healthy}
+    volumes:
+      - ./simulator/simulator:/usr/local/lib/python3.12/site-packages/simulator:ro
+networks:
+  default:
+    external: true
+    name: ${EXISTING_RUNTIME_NETWORK:-transformer-h06-20261009_default}
+volumes:
+  bridge_spool:
+    external: true
+    name: ${EXISTING_BRIDGE_SPOOL:-transformer-h06-20261009_bridge_spool}

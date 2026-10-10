@@ -103,8 +103,13 @@ class SimulationServer:
 
 
 def run_server(config_file):
+    from .fleet import load_runtime_config, register_fleet
+    config = load_runtime_config(config_file, 'server')
+    if config.get('registry_url'):
+        raw = json.loads(Path(config_file).read_text(encoding='utf-8'))
+        register_fleet(config['registry_url'], Path(config_file).parent / raw['fleet_file'])
     async def supervised():
-        server = SimulationServer(json.loads(Path(config_file).read_text(encoding="utf-8")))
+        server = SimulationServer(config)
         running = asyncio.create_task(server.run())
         try:
             asyncio.get_running_loop().add_signal_handler(signal.SIGTERM, running.cancel)

@@ -658,3 +658,16 @@ These JSON values were captured from the seeded Compose demo by scripts/capture_
   ]
 }
 ```
+
+## Operational fleet scope (10 October 2026)
+
+`GET /api/v1/transformers` defaults to `scope=active`. When
+`OPERATIONAL_FLEET_FILE` is configured, total/limit/offset use only that ordered
+roster. This demo references `simulator/config/operational-fleet.json`, shared with
+the source/bridge. `scope=all` retains the complete historical registry; individual
+lookup/history/receipts still accept historical IDs. Without a configured fleet,
+legacy all-registry behavior is retained. Invalid fleet configuration fails closed.
+There is no database deletion, relabelling, active-flag migration or ingestion
+restriction on preserved legacy spool records. New source startup idempotently
+registers fictional nameplates; conflicting existing values are not overwritten.
+See [the current fleet report](../../docs/hackathon_readiness/execution/TEN_TRANSFORMER_FLEET.md).

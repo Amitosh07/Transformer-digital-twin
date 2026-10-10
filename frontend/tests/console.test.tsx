@@ -6,6 +6,7 @@ import { loadPortfolio, loadRegistry } from '../src/hooks/useConsoleData';
 import { trendPath, operatingState } from '../src/components/console/presentation';
 import { api } from '../src/api/client';
 import { makeLatest, page } from './fixtures';
+import fleet from '../../simulator/config/operational-fleet.json';
 afterEach(() => { vi.restoreAllMocks(); vi.unstubAllGlobals(); });
 function fixtureFetch(override?: (url: URL) => Promise<Response> | undefined) {
   const json = (value: unknown) => Promise.resolve(new Response(JSON.stringify(value)));
@@ -82,4 +83,57 @@ it('chart gaps and unit changes are not joined or filled with zero', () => {
 it('rejects cross-asset lifecycle data at the client boundary', async () => {
   vi.stubGlobal('fetch',vi.fn().mockResolvedValue(new Response(JSON.stringify(page([{id:1,transformer_id:'WRONG',timestamp:'2026-10-09T00:00:00Z',priority:'WATCH',recommendation:'Other asset',reason_codes:[],status:'OPEN'}])))));
   await expect(api.maintenance('HX-A',new URLSearchParams())).rejects.toThrow('Asset identity mismatch');
+});
+
+it('paginates the authoritative ten-asset registry as two disjoint ordered five-card pages', async () => {
+  const ids = fleet.assets.map(a => a.transformer_id);
+  fixtureFetch(u => u.pathname === '/api/v1/transformers'
+    ? Promise.resolve(new Response(JSON.stringify(page(ids.map(id => makeLatest(id).transformer), 50)))) : undefined);
+  render(<App/>);
+  await waitFor(() => expect(screen.getByRole('button',{name:`Monitor ${ids[0]}`})).toBeVisible());
+  const cards = () => within(screen.getByRole('region',{name:'Asset portfolio'})).getAllByRole('button').map(b => b.getAttribute('aria-label')!.replace('Monitor ',''));
+  expect(cards()).toEqual(ids.slice(0,5));
+  expect(screen.getByText(/Page 1 of 2/)).toBeVisible();
+  expect(screen.getByRole('button',{name:'Previous'})).toBeDisabled();
+  expect(screen.getByRole('button',{name:'Next'})).toBeEnabled();
+  fireEvent.click(screen.getByRole('button',{name:'Next'}));
+  expect(cards()).toEqual(ids.slice(5));
+  expect(screen.getByText(/Page 2 of 2/)).toBeVisible();
+  expect(screen.getByRole('button',{name:'Next'})).toBeDisabled();
+  fireEvent.click(screen.getByRole('button',{name:`Monitor ${ids[9]}`}));
+  await waitFor(() => expect(screen.getByRole('region',{name:'Selected transformer measurements'})).toHaveTextContent(ids[9]));
+  fireEvent.click(screen.getByRole('button',{name:'Asset overview',exact:true}));
+  expect(cards()).toEqual(ids.slice(5));
+  fireEvent.click(screen.getByRole('button',{name:'Previous'}));
+  expect(cards()).toEqual(ids.slice(0,5));
+  expect(new Set(ids).size).toBe(10);
+});
+
+it('clamps the page after a registry refresh reduces the available inventory', async () => {
+  const ids = fleet.assets.map(a => a.transformer_id);
+  let inventory = ids;
+  fixtureFetch(u => u.pathname === '/api/v1/transformers'
+    ? Promise.resolve(new Response(JSON.stringify(page(inventory.map(id => makeLatest(id).transformer),50)))) : undefined);
+  render(<App/>);
+  await waitFor(() => expect(screen.getByRole('button',{name:`Monitor ${ids[0]}`})).toBeVisible());
+  fireEvent.click(screen.getByRole('button',{name:'Next'}));
+  inventory = ids.slice(0,5);
+  fireEvent.click(screen.getByRole('button',{name:/Refresh/}));
+  await waitFor(() => expect(screen.getByText(/Page 1 of 1/)).toBeVisible());
+  expect(within(screen.getByRole('region',{name:'Asset portfolio'})).getAllByRole('button')).toHaveLength(5);
+  expect(screen.getByRole('button',{name:'Next'})).toBeDisabled();
+});
+
+it('stops displaying a selected identity removed from the active registry', async () => {
+  let inventory = ['HX-A','HX-B'];
+  fixtureFetch(u => u.pathname === '/api/v1/transformers'
+    ? Promise.resolve(new Response(JSON.stringify(page(inventory.map(id => makeLatest(id).transformer),50)))) : undefined);
+  render(<App/>);
+  await waitFor(() => expect(screen.getByRole('button',{name:'Monitor HX-A'})).toBeVisible());
+  fireEvent.click(screen.getByRole('button',{name:'Monitor HX-A'}));
+  await waitFor(() => expect(screen.getByRole('region',{name:'Selected transformer measurements'})).toHaveTextContent('HX-A'));
+  inventory = ['HX-B'];
+  fireEvent.click(screen.getByRole('button',{name:/Refresh/}));
+  await waitFor(() => expect(screen.queryByRole('region',{name:'Selected transformer measurements'})).not.toBeInTheDocument());
+  expect(screen.getByRole('combobox',{name:'Asset',exact:true})).toHaveValue('');
 });

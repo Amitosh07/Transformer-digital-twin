@@ -167,7 +167,8 @@ class DeliveryWorker:
 
 def run_bridge(config_file):
     path = Path(config_file)
-    config = json.loads(path.read_text(encoding="utf-8"))
+    from .fleet import load_runtime_config
+    config = load_runtime_config(path, 'bridge')
     if config["map_version"] != VERSION:
         raise ValueError("unsupported bridge map version")
     if not config["gateway_id"] or len(config["gateway_id"]) > 128:

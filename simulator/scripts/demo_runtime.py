@@ -24,6 +24,14 @@ def register(asset):
         if any(existing.get(k)!=v for k,v in payload.items()):raise RuntimeError('Existing asset configuration conflicts; select a deliberate separate run/asset')
 def setup():
     ready()
+    if not args.legacy_h06:
+        if NATIVE:
+            from simulator.fleet import register_fleet
+            register_fleet(BASE, ROOT/'simulator/config/operational-fleet.json')
+        else:
+            command('docker','compose','exec','-T','modbus-simulator','simulator','seed','--http-url','http://backend:8000')
+        print('Registered the stable operational fleet; no historical rows were seeded or renamed')
+        return
     for asset in json.loads((ROOT/'simulator/config/analytics-policy.json').read_text())['assets']:register(asset)
     code="import json;from simulator.scheduler import Scheduler;c=json.load(open('/config/hackathon-single.yaml'));c['interval_seconds']=c['pre_roll_interval_seconds'];s=Scheduler(c);from simulator.register_map import encode,decode;print(json.dumps([decode(encode(s.tick()['H06-SIM-05'],1),transformer_id='H06-SIM-05',unit_id=1,gateway_id='H06-DEMO-GW',expected_interval_seconds=60).model_dump(mode='json') for _ in range(c['pre_roll_steps'])]))"
     if NATIVE:
@@ -52,9 +60,25 @@ def primary():
     ready()
     if NATIVE:
         import sys
-        subprocess.run([sys.executable,'-m','simulator.cli','modbus-bridge','--config',str(ROOT/'simulator/config/hackathon-native-bridge.json')],check=True,cwd=ROOT);return
+        name='hackathon-native-bridge.json' if args.legacy_h06 else 'operational-bridge-native.json'
+        subprocess.run([sys.executable,'-m','simulator.cli','modbus-bridge','--config',str(ROOT/'simulator/config'/name)],check=True,cwd=ROOT);return
     command('docker','compose','--profile','primary','up','--no-build','--no-recreate','-d','modbus-bridge');print('Primary read-only Modbus bridge started; PUBACK alone does not prove commit')
 def check():
+    if not args.legacy_h06:
+        ready()
+        fleet=json.loads((ROOT/'simulator/config/operational-fleet.json').read_text())
+        ids=[a['transformer_id'] for a in fleet['assets']]
+        registry=request('/api/v1/transformers?limit=50')
+        assert registry['total']==10 and [a['id'] for a in registry['items']]==ids
+        for asset in ids:
+            latest=request('/api/v1/transformers/'+asset+'/latest')
+            record=latest['telemetry'];assert record and record['transformer_id']==asset
+            assert record['acquisition']['source_kind']=='SIMULATED'
+            receipt=request('/api/v1/ingestion/receipts/'+record['acquisition']['snapshot_id'])
+            assert receipt['receipt_status']=='COMMITTED' and receipt['payload_hash']==record['acquisition']['snapshot_id']
+            assert latest['analytics'] is not None and latest['analytics']['transformer_id']==asset
+            print(asset,record['timestamp'],receipt['payload_hash'],flush=True)
+        return
     ready();latest=request('/api/v1/transformers/H06-SIM-05/latest');assert latest['telemetry'] and latest['analytics'],'Missing persisted observations/analytics'
     record=latest['telemetry'];snapshot=record['acquisition']['snapshot_id'];receipt=request('/api/v1/ingestion/receipts/'+snapshot)
     assert receipt['receipt_status']=='COMMITTED' and receipt['payload_hash']==snapshot
@@ -74,8 +98,10 @@ def replay():
         command('docker','compose','run','--rm','--no-deps','modbus-simulator','replay-canonical','--input','/config/replay-canonical.jsonl','--transformer-id','H06-REPLAY-R1','--run-id','H06-R1','--http-url','http://backend:8000','--speed','20')
     print('REPLAYED HTTP fallback; original event times preserved; does not prove Modbus path')
 def future25():
+    if not args.legacy_h06:
+        raise RuntimeError('Normal operations use the fixed ten-asset fleet. The historical 25-asset rehearsal requires explicit --legacy-h06 and must not run beside the operational source.')
     from demo_portfolio import run
     run(args.duration_seconds,args.evidence_directory)
 if __name__=='__main__':
-    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('action',choices=['setup','primary','check','replay','25']);parser.add_argument('--api-url',default=BASE);parser.add_argument('--native',action='store_true');parser.add_argument('--evidence-directory',type=Path);parser.add_argument('--duration-seconds',type=int,default=1800)
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('action',choices=['setup','primary','check','replay','25']);parser.add_argument('--api-url',default=BASE);parser.add_argument('--native',action='store_true');parser.add_argument('--legacy-h06',action='store_true',help='Explicit historical H06 single-asset rehearsal; not the operational fleet');parser.add_argument('--evidence-directory',type=Path);parser.add_argument('--duration-seconds',type=int,default=1800)
     args=parser.parse_args();NATIVE=args.native;BASE=args.api_url.rstrip('/');{'setup':setup,'primary':primary,'check':check,'replay':replay,'25':future25}[args.action]()

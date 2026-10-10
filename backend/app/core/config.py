@@ -24,6 +24,7 @@ class Settings(BaseSettings):
     ml_python_entrypoint: str | None = None
     ml_history_window: int = Field(default=4096, ge=1, le=4096)
     analytics_policy_file: str | None = None
+    operational_fleet_file: str | None = None
     ml_runtime_workers: Literal[1] = 1
     ml_timeout_seconds: float = Field(default=5.0, gt=0, allow_inf_nan=False)
     ml_max_retries: int = Field(default=2, ge=0)

@@ -1,0 +1,72 @@
+{
+  "version": "operational-fleet-v1",
+  "source_kind": "SIMULATED",
+  "map_version": "fictional-lv-v1",
+  "interval_seconds": 5,
+  "configuration": {
+    "rated_power_kva": 30,
+    "rated_voltage_lv": 400,
+    "rated_current_a": 43.30127018922193,
+    "measurement_side": "LV",
+    "configuration_status": "SYNTHETIC_CONFIG",
+    "configuration_version": "fictional-demo-v1"
+  },
+  "assets": [
+    {
+      "transformer_id": "KA-BLR-KOR-TX01",
+      "unit_id": 1,
+      "seed": 42
+    },
+    {
+      "transformer_id": "KA-BLR-KOR-TX02",
+      "unit_id": 2,
+      "seed": 43
+    },
+    {
+      "transformer_id": "KA-BLR-KOR-TX03",
+      "unit_id": 3,
+      "seed": 44
+    },
+    {
+      "transformer_id": "KA-BLR-KOR-TX04",
+      "unit_id": 4,
+      "seed": 45
+    },
+    {
+      "transformer_id": "KA-BLR-HSR-TX05",
+      "unit_id": 5,
+      "seed": 46
+    },
+    {
+      "transformer_id": "KA-BLR-HSR-TX06",
+      "unit_id": 6,
+      "seed": 47
+    },
+    {
+      "transformer_id": "KA-BLR-HSR-TX07",
+      "unit_id": 7,
+      "seed": 48
+    },
+    {
+      "transformer_id": "KA-BLR-HSR-TX08",
+      "unit_id": 8,
+      "seed": 49
+    },
+    {
+      "transformer_id": "KA-BLR-BTM-TX09",
+      "unit_id": 9,
+      "seed": 50
+    },
+    {
+      "transformer_id": "KA-BLR-BTM-TX10",
+      "unit_id": 10,
+      "seed": 51
+    }
+  ],
+  "energy": {
+    "version": "operational-fictional-power-v1",
+    "method": "POWER",
+    "maximum_gap_seconds": 10,
+    "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+  }
+}
