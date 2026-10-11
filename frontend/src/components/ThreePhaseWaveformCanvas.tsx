@@ -54,7 +54,9 @@ export const ThreePhaseWaveformCanvas: React.FC<ThreePhaseWaveformProps> = ({
       ctx.clearRect(0, 0, width, height);
 
       // Draw Grid Lines
-      ctx.strokeStyle = 'rgba(51, 65, 85, 0.25)';
+      ctx.strokeStyle = document.documentElement.classList.contains('light')
+        ? '#E5EAF0'
+        : 'rgba(51, 65, 85, 0.25)';
       ctx.lineWidth = 1;
 
       // Horizontal Center Line

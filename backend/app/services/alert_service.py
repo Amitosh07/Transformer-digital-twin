@@ -53,7 +53,7 @@ class AlertCandidate:
 
 
 def alert_candidates(
-    record: TelemetryIn, analytics: MLResultIn, settings: Settings
+    record: TelemetryIn, analytics: MLResultIn | None, settings: Settings
 ) -> list[AlertCandidate]:
     candidates: dict[str, AlertCandidate] = {}
 
@@ -87,7 +87,7 @@ def alert_candidates(
     for kind, (field, severity) in PROTECTION_RULES.items():
         if getattr(record, field) == 1:
             add(kind, severity, field, {field: getattr(record, field)}, kind)
-    if analytics.inference_status != "OK":
+    if analytics is None or analytics.inference_status != "OK":
         return sorted(candidates.values(), key=lambda item: item.alert_type)
     if analytics.anomaly_flag is True:
         critical = (
@@ -159,10 +159,10 @@ def alert_candidates(
     return sorted(candidates.values(), key=lambda item: item.alert_type)
 
 
-def evaluate(session: Session, telemetry_row: Telemetry, analytics_row: Analytics) -> None:
+def evaluate(session: Session, telemetry_row: Telemetry, analytics_row: Analytics | None) -> None:
     settings = get_settings()
     candidates = alert_candidates(
-        as_input(telemetry_row), AnalyticsOut.model_validate(analytics_row), settings
+        as_input(telemetry_row), AnalyticsOut.model_validate(analytics_row) if analytics_row else None, settings
     )
     active = {
         row.alert_type: row for row in alert_repo.active(session, telemetry_row.transformer_id)
@@ -176,7 +176,7 @@ def evaluate(session: Session, telemetry_row: Telemetry, analytics_row: Analytic
                 {
                     "transformer_id": telemetry_row.transformer_id,
                     "telemetry_id": telemetry_row.id,
-                    "analytics_id": analytics_row.id,
+                    "analytics_id": analytics_row.id if analytics_row else None,
                     "timestamp": telemetry_row.timestamp,
                     "last_seen_at": telemetry_row.timestamp,
                     "status": "OPEN",
@@ -192,14 +192,17 @@ def evaluate(session: Session, telemetry_row: Telemetry, analytics_row: Analytic
         row.threshold_or_reason = candidate.threshold_or_reason
         row.recommended_action = candidate.recommended_action
         row.telemetry_id = telemetry_row.id
-        row.analytics_id = analytics_row.id
+        row.analytics_id = analytics_row.id if analytics_row else None
         row.clear_count = 0
         if SEVERITY_RANK[candidate.severity] > SEVERITY_RANK[row.severity]:
             row.severity = candidate.severity
     for kind, row in sorted(active.items()):
         if kind in triggered or telemetry_row.timestamp < row.last_seen_at:
             continue
-        if analytics_row.inference_status != "OK" and kind not in PROTECTION_RULES:
+        if (analytics_row is None or analytics_row.inference_status != "OK") and kind not in PROTECTION_RULES:
+            continue
+        # Unknown contacts provide no clearing evidence, including during ML outages.
+        if kind in PROTECTION_RULES and getattr(telemetry_row, PROTECTION_RULES[kind][0]) != 0:
             continue
         row.clear_count += 1
         if row.clear_count >= settings.alert_auto_resolve_after:

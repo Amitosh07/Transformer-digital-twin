@@ -1,0 +1,120 @@
+{
+  "recovery_wait_seconds": 48,
+  "broker_outage": {
+    "before": {
+      "counters": {
+        "acquired": 436,
+        "broker_pubacks": 527,
+        "committed": 435
+      },
+      "entries": [
+        [
+          "9aacd20d90f6ab37bdc2a8c9ec0bf30c7305b62d1917d9cfbfb80bfec3ce9514",
+          "9aacd20d90f6ab37bdc2a8c9ec0bf30c7305b62d1917d9cfbfb80bfec3ce9514",
+          0,
+          "BROKER_FAILURE"
+        ]
+      ]
+    },
+    "after": {
+      "counters": {
+        "acquired": 437,
+        "broker_pubacks": 527,
+        "committed": 435
+      },
+      "entries": [
+        [
+          "9aacd20d90f6ab37bdc2a8c9ec0bf30c7305b62d1917d9cfbfb80bfec3ce9514",
+          "9aacd20d90f6ab37bdc2a8c9ec0bf30c7305b62d1917d9cfbfb80bfec3ce9514",
+          0,
+          "BROKER_FAILURE"
+        ],
+        [
+          "135d939050cb8485bcca45080641d49cea51350bd6bea4ff1fba42c7bdcc357d",
+          "135d939050cb8485bcca45080641d49cea51350bd6bea4ff1fba42c7bdcc357d",
+          0,
+          null
+        ]
+      ]
+    }
+  },
+  "database_outage": {
+    "before": {
+      "counters": {
+        "acquired": 439,
+        "broker_pubacks": 527,
+        "committed": 435
+      },
+      "entries": [
+        [
+          "9aacd20d90f6ab37bdc2a8c9ec0bf30c7305b62d1917d9cfbfb80bfec3ce9514",
+          "9aacd20d90f6ab37bdc2a8c9ec0bf30c7305b62d1917d9cfbfb80bfec3ce9514",
+          0,
+          "BROKER_FAILURE"
+        ],
+        [
+          "135d939050cb8485bcca45080641d49cea51350bd6bea4ff1fba42c7bdcc357d",
+          "135d939050cb8485bcca45080641d49cea51350bd6bea4ff1fba42c7bdcc357d",
+          0,
+          null
+        ],
+        [
+          "d9e0b78389eb1ed47dacba19bb0b700af0eb456e624ea1397f8d6f0b134583a1",
+          "d9e0b78389eb1ed47dacba19bb0b700af0eb456e624ea1397f8d6f0b134583a1",
+          0,
+          null
+        ],
+        [
+          "a35630270ee4cc1aa9c577215a3a587acd6bece31b2aaed0caee39ec1328f71e",
+          "a35630270ee4cc1aa9c577215a3a587acd6bece31b2aaed0caee39ec1328f71e",
+          0,
+          null
+        ]
+      ]
+    },
+    "after": {
+      "counters": {
+        "acquired": 440,
+        "broker_pubacks": 528,
+        "committed": 435
+      },
+      "entries": [
+        [
+          "9aacd20d90f6ab37bdc2a8c9ec0bf30c7305b62d1917d9cfbfb80bfec3ce9514",
+          "9aacd20d90f6ab37bdc2a8c9ec0bf30c7305b62d1917d9cfbfb80bfec3ce9514",
+          0,
+          "BROKER_FAILURE"
+        ],
+        [
+          "135d939050cb8485bcca45080641d49cea51350bd6bea4ff1fba42c7bdcc357d",
+          "135d939050cb8485bcca45080641d49cea51350bd6bea4ff1fba42c7bdcc357d",
+          0,
+          null
+        ],
+        [
+          "d9e0b78389eb1ed47dacba19bb0b700af0eb456e624ea1397f8d6f0b134583a1",
+          "d9e0b78389eb1ed47dacba19bb0b700af0eb456e624ea1397f8d6f0b134583a1",
+          0,
+          null
+        ],
+        [
+          "a35630270ee4cc1aa9c577215a3a587acd6bece31b2aaed0caee39ec1328f71e",
+          "a35630270ee4cc1aa9c577215a3a587acd6bece31b2aaed0caee39ec1328f71e",
+          0,
+          null
+        ],
+        [
+          "13635ab0998dee15d86f27f84050af62a19eb03d0103e155d899b99bea1327d2",
+          "13635ab0998dee15d86f27f84050af62a19eb03d0103e155d899b99bea1327d2",
+          0,
+          null
+        ]
+      ]
+    }
+  },
+  "spool_restart": {
+    "retained_identities": 5,
+    "all_hashes_unchanged": true
+  },
+  "completed": false
+}

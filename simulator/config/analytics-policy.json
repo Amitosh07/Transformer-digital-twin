@@ -1,0 +1,2047 @@
+{
+  "version": "h06-policy-v1",
+  "assets": {
+    "H06-SIM-01": {
+      "synthetic_rul": {
+        "scenario_id": "H06_FICTIONAL_PREROLL",
+        "version": "fictional-rul-v1",
+        "start_time": "2026-10-08T23:00:00Z",
+        "initial_degradation": 0.19,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.01,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.008,
+          0.012
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h06-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H06-RUL-ORACLE": {
+      "synthetic_rul": {
+        "scenario_id": "FICTIONAL_CONSTANT_RATE",
+        "version": "fictional-rul-v1",
+        "start_time": "2026-10-09T00:00:00Z",
+        "initial_degradation": 0.2,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.01,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.008,
+          0.012
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h06-oracle-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 7200,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H06-ENERGY-CONSTANT": {
+      "synthetic_rul": {
+        "scenario_id": "FICTIONAL_CONSTANT_RATE",
+        "version": "fictional-rul-v1",
+        "start_time": "2026-10-09T00:00:00Z",
+        "initial_degradation": 0.2,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.01,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.008,
+          0.012
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h06-oracle-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 7200,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H06-ENERGY-RAMP": {
+      "synthetic_rul": {
+        "scenario_id": "FICTIONAL_CONSTANT_RATE",
+        "version": "fictional-rul-v1",
+        "start_time": "2026-10-09T00:00:00Z",
+        "initial_degradation": 0.2,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.01,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.008,
+          0.012
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h06-oracle-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 7200,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H06-ENERGY-RESET": {
+      "synthetic_rul": {
+        "scenario_id": "FICTIONAL_CONSTANT_RATE",
+        "version": "fictional-rul-v1",
+        "start_time": "2026-10-09T00:00:00Z",
+        "initial_degradation": 0.2,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.01,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.008,
+          0.012
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h06-oracle-v1",
+        "method": "COUNTER",
+        "maximum_gap_seconds": 7200,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE",
+        "counter_semantics": "CUMULATIVE_IMPORT"
+      }
+    },
+    "H06-REPLAY-R1": {
+      "synthetic_rul": {
+        "scenario_id": "FICTIONAL_CONSTANT_RATE",
+        "version": "fictional-rul-v1",
+        "start_time": "2026-10-09T00:00:00Z",
+        "initial_degradation": 0.2,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.01,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.008,
+          0.012
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h06-oracle-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 7200,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H06-SIM-02": {
+      "synthetic_rul": {
+        "scenario_id": "H06_FICTIONAL_PREROLL",
+        "version": "fictional-rul-v1",
+        "start_time": "2026-10-08T23:00:00Z",
+        "initial_degradation": 0.19,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.01,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 60,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.008,
+          0.012
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h06-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H06-SIM-03": {
+      "synthetic_rul": {
+        "scenario_id": "H06_FICTIONAL_PREROLL",
+        "version": "fictional-rul-v1",
+        "start_time": "2026-10-08T23:00:00Z",
+        "initial_degradation": 0.19,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.01,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 60,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.008,
+          0.012
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h06-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H06-SIM-04": {
+      "synthetic_rul": {
+        "scenario_id": "H06_FICTIONAL_PREROLL",
+        "version": "fictional-rul-v1",
+        "start_time": "2026-10-08T23:00:00Z",
+        "initial_degradation": 0.19,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.01,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 60,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.008,
+          0.012
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h06-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H06-SIM-05": {
+      "synthetic_rul": {
+        "scenario_id": "H06_FICTIONAL_PREROLL",
+        "version": "fictional-rul-v1",
+        "start_time": "2026-10-08T23:00:00Z",
+        "initial_degradation": 0.19,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.01,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 90,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.008,
+          0.012
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h06-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 90,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE",
+        "allow_boundary_interpolation": true
+      }
+    },
+    "H07-dfb1b1-01": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_0",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-09T19:36:30.017775+00:00",
+        "initial_degradation": 0.2,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.01,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.008,
+          0.012
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-dfb1b1-02": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_1",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-09T19:36:30.017775+00:00",
+        "initial_degradation": 0.201,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0101,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0081,
+          0.0121
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-dfb1b1-03": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_2",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-09T19:36:30.017775+00:00",
+        "initial_degradation": 0.202,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0102,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0082,
+          0.0122
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-dfb1b1-04": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_3",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-09T19:36:30.017775+00:00",
+        "initial_degradation": 0.203,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0103,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0083,
+          0.0123
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-dfb1b1-05": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_4",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-09T19:36:30.017775+00:00",
+        "initial_degradation": 0.20400000000000001,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0104,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0084,
+          0.0124
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-dfb1b1-06": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_5",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-09T19:36:30.017775+00:00",
+        "initial_degradation": 0.20500000000000002,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0105,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0085,
+          0.0125
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-dfb1b1-07": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_6",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-09T19:36:30.017775+00:00",
+        "initial_degradation": 0.20600000000000002,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0106,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0086,
+          0.0126
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-dfb1b1-08": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_7",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-09T19:36:30.017775+00:00",
+        "initial_degradation": 0.20700000000000002,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0107,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0087,
+          0.0127
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-dfb1b1-09": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_8",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-09T19:36:30.017775+00:00",
+        "initial_degradation": 0.20800000000000002,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0108,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0088,
+          0.0128
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-dfb1b1-10": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_9",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-09T19:36:30.017775+00:00",
+        "initial_degradation": 0.20900000000000002,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0109,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0089,
+          0.0129
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-dfb1b1-11": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_10",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-09T19:36:30.017775+00:00",
+        "initial_degradation": 0.21000000000000002,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.011,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.009000000000000001,
+          0.013000000000000001
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-dfb1b1-12": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_11",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-09T19:36:30.017775+00:00",
+        "initial_degradation": 0.21100000000000002,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0111,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0091,
+          0.0131
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-dfb1b1-13": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_12",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-09T19:36:30.017775+00:00",
+        "initial_degradation": 0.21200000000000002,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0112,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0092,
+          0.0132
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-dfb1b1-14": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_13",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-09T19:36:30.017775+00:00",
+        "initial_degradation": 0.21300000000000002,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.011300000000000001,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.009300000000000001,
+          0.013300000000000001
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-dfb1b1-15": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_14",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-09T19:36:30.017775+00:00",
+        "initial_degradation": 0.21400000000000002,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0114,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0094,
+          0.0134
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-dfb1b1-16": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_15",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-09T19:36:30.017775+00:00",
+        "initial_degradation": 0.21500000000000002,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0115,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0095,
+          0.0135
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-dfb1b1-17": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_16",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-09T19:36:30.017775+00:00",
+        "initial_degradation": 0.21600000000000003,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.011600000000000001,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.009600000000000001,
+          0.013600000000000001
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-dfb1b1-18": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_17",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-09T19:36:30.017775+00:00",
+        "initial_degradation": 0.21700000000000003,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0117,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0097,
+          0.0137
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-dfb1b1-19": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_18",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-09T19:36:30.017775+00:00",
+        "initial_degradation": 0.21800000000000003,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0118,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0098,
+          0.0138
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-dfb1b1-20": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_19",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-09T19:36:30.017775+00:00",
+        "initial_degradation": 0.219,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0119,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0099,
+          0.013900000000000001
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-dfb1b1-21": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_20",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-09T19:36:30.017775+00:00",
+        "initial_degradation": 0.22,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.012,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.01,
+          0.014
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-dfb1b1-22": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_21",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-09T19:36:30.017775+00:00",
+        "initial_degradation": 0.221,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0121,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.010100000000000001,
+          0.014100000000000001
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-dfb1b1-23": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_22",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-09T19:36:30.017775+00:00",
+        "initial_degradation": 0.222,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0122,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0102,
+          0.0142
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-dfb1b1-24": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_23",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-09T19:36:30.017775+00:00",
+        "initial_degradation": 0.223,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0123,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0103,
+          0.0143
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-dfb1b1-25": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_24",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-09T19:36:30.017775+00:00",
+        "initial_degradation": 0.224,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.012400000000000001,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0104,
+          0.0144
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-b41b39-01": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_0",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T07:38:37.245258+00:00",
+        "initial_degradation": 0.2,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.01,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.008,
+          0.012
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-b41b39-02": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_1",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T07:38:37.245258+00:00",
+        "initial_degradation": 0.201,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0101,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0081,
+          0.0121
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-b41b39-03": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_2",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T07:38:37.245258+00:00",
+        "initial_degradation": 0.202,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0102,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0082,
+          0.0122
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-b41b39-04": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_3",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T07:38:37.245258+00:00",
+        "initial_degradation": 0.203,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0103,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0083,
+          0.0123
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-b41b39-05": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_4",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T07:38:37.245258+00:00",
+        "initial_degradation": 0.20400000000000001,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0104,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0084,
+          0.0124
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-b41b39-06": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_5",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T07:38:37.245258+00:00",
+        "initial_degradation": 0.20500000000000002,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0105,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0085,
+          0.0125
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-b41b39-07": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_6",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T07:38:37.245258+00:00",
+        "initial_degradation": 0.20600000000000002,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0106,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0086,
+          0.0126
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-b41b39-08": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_7",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T07:38:37.245258+00:00",
+        "initial_degradation": 0.20700000000000002,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0107,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0087,
+          0.0127
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-b41b39-09": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_8",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T07:38:37.245258+00:00",
+        "initial_degradation": 0.20800000000000002,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0108,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0088,
+          0.0128
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-b41b39-10": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_9",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T07:38:37.245258+00:00",
+        "initial_degradation": 0.20900000000000002,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0109,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0089,
+          0.0129
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-b41b39-11": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_10",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T07:38:37.245258+00:00",
+        "initial_degradation": 0.21000000000000002,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.011,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.009000000000000001,
+          0.013000000000000001
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-b41b39-12": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_11",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T07:38:37.245258+00:00",
+        "initial_degradation": 0.21100000000000002,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0111,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0091,
+          0.0131
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-b41b39-13": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_12",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T07:38:37.245258+00:00",
+        "initial_degradation": 0.21200000000000002,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0112,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0092,
+          0.0132
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-b41b39-14": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_13",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T07:38:37.245258+00:00",
+        "initial_degradation": 0.21300000000000002,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.011300000000000001,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.009300000000000001,
+          0.013300000000000001
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-b41b39-15": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_14",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T07:38:37.245258+00:00",
+        "initial_degradation": 0.21400000000000002,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0114,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0094,
+          0.0134
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-b41b39-16": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_15",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T07:38:37.245258+00:00",
+        "initial_degradation": 0.21500000000000002,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0115,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0095,
+          0.0135
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-b41b39-17": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_16",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T07:38:37.245258+00:00",
+        "initial_degradation": 0.21600000000000003,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.011600000000000001,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.009600000000000001,
+          0.013600000000000001
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-b41b39-18": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_17",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T07:38:37.245258+00:00",
+        "initial_degradation": 0.21700000000000003,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0117,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0097,
+          0.0137
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-b41b39-19": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_18",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T07:38:37.245258+00:00",
+        "initial_degradation": 0.21800000000000003,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0118,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0098,
+          0.0138
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-b41b39-20": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_19",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T07:38:37.245258+00:00",
+        "initial_degradation": 0.219,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0119,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0099,
+          0.013900000000000001
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-b41b39-21": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_20",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T07:38:37.245258+00:00",
+        "initial_degradation": 0.22,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.012,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.01,
+          0.014
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-b41b39-22": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_21",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T07:38:37.245258+00:00",
+        "initial_degradation": 0.221,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0121,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.010100000000000001,
+          0.014100000000000001
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-b41b39-23": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_22",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T07:38:37.245258+00:00",
+        "initial_degradation": 0.222,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0122,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0102,
+          0.0142
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-b41b39-24": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_23",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T07:38:37.245258+00:00",
+        "initial_degradation": 0.223,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0123,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0103,
+          0.0143
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-b41b39-25": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_24",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T07:38:37.245258+00:00",
+        "initial_degradation": 0.224,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.012400000000000001,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0104,
+          0.0144
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-1ea791-01": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_0",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T08:24:16.190609+00:00",
+        "initial_degradation": 0.2,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.01,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.008,
+          0.012
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-1ea791-02": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_1",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T08:24:16.190609+00:00",
+        "initial_degradation": 0.201,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0101,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0081,
+          0.0121
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-1ea791-03": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_2",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T08:24:16.190609+00:00",
+        "initial_degradation": 0.202,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0102,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0082,
+          0.0122
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-1ea791-04": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_3",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T08:24:16.190609+00:00",
+        "initial_degradation": 0.203,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0103,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0083,
+          0.0123
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-1ea791-05": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_4",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T08:24:16.190609+00:00",
+        "initial_degradation": 0.20400000000000001,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0104,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0084,
+          0.0124
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-1ea791-06": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_5",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T08:24:16.190609+00:00",
+        "initial_degradation": 0.20500000000000002,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0105,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0085,
+          0.0125
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-1ea791-07": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_6",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T08:24:16.190609+00:00",
+        "initial_degradation": 0.20600000000000002,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0106,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0086,
+          0.0126
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-1ea791-08": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_7",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T08:24:16.190609+00:00",
+        "initial_degradation": 0.20700000000000002,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0107,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0087,
+          0.0127
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-1ea791-09": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_8",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T08:24:16.190609+00:00",
+        "initial_degradation": 0.20800000000000002,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0108,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0088,
+          0.0128
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-1ea791-10": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_9",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T08:24:16.190609+00:00",
+        "initial_degradation": 0.20900000000000002,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0109,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0089,
+          0.0129
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-1ea791-11": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_10",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T08:24:16.190609+00:00",
+        "initial_degradation": 0.21000000000000002,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.011,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.009000000000000001,
+          0.013000000000000001
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-1ea791-12": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_11",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T08:24:16.190609+00:00",
+        "initial_degradation": 0.21100000000000002,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0111,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0091,
+          0.0131
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-1ea791-13": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_12",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T08:24:16.190609+00:00",
+        "initial_degradation": 0.21200000000000002,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0112,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0092,
+          0.0132
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-1ea791-14": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_13",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T08:24:16.190609+00:00",
+        "initial_degradation": 0.21300000000000002,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.011300000000000001,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.009300000000000001,
+          0.013300000000000001
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-1ea791-15": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_14",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T08:24:16.190609+00:00",
+        "initial_degradation": 0.21400000000000002,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0114,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0094,
+          0.0134
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-1ea791-16": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_15",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T08:24:16.190609+00:00",
+        "initial_degradation": 0.21500000000000002,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0115,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0095,
+          0.0135
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-1ea791-17": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_16",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T08:24:16.190609+00:00",
+        "initial_degradation": 0.21600000000000003,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.011600000000000001,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.009600000000000001,
+          0.013600000000000001
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-1ea791-18": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_17",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T08:24:16.190609+00:00",
+        "initial_degradation": 0.21700000000000003,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0117,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0097,
+          0.0137
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-1ea791-19": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_18",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T08:24:16.190609+00:00",
+        "initial_degradation": 0.21800000000000003,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0118,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0098,
+          0.0138
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-1ea791-20": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_19",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T08:24:16.190609+00:00",
+        "initial_degradation": 0.219,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0119,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0099,
+          0.013900000000000001
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-1ea791-21": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_20",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T08:24:16.190609+00:00",
+        "initial_degradation": 0.22,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.012,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.01,
+          0.014
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-1ea791-22": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_21",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T08:24:16.190609+00:00",
+        "initial_degradation": 0.221,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0121,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.010100000000000001,
+          0.014100000000000001
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-1ea791-23": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_22",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T08:24:16.190609+00:00",
+        "initial_degradation": 0.222,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0122,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0102,
+          0.0142
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-1ea791-24": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_23",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T08:24:16.190609+00:00",
+        "initial_degradation": 0.223,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.0123,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0103,
+          0.0143
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    },
+    "H07-1ea791-25": {
+      "synthetic_rul": {
+        "scenario_id": "H07_FICTIONAL_CONSTANT_24",
+        "version": "h07-fictional-rul-v1",
+        "start_time": "2026-10-10T08:24:16.190609+00:00",
+        "initial_degradation": 0.224,
+        "endpoint": 1.0,
+        "rate_per_hour": 0.012400000000000001,
+        "horizon_hours": 100.0,
+        "maximum_gap_seconds": 10.0,
+        "assume_constant_rate_across_gaps": false,
+        "rate_bounds_per_hour": [
+          0.0104,
+          0.0144
+        ],
+        "future_duty": []
+      },
+      "energy": {
+        "version": "h07-fictional-power-v1",
+        "method": "POWER",
+        "maximum_gap_seconds": 10,
+        "power_sign": "IMPORT_ONLY_NONNEGATIVE"
+      }
+    }
+  }
+}

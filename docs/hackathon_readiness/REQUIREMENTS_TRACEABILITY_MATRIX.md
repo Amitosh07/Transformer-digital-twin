@@ -1,0 +1,32 @@
+# Requirements traceability matrix
+
+Sources: PDF=DT Problem Statement.pdf (page references); EMAIL=provided organizer screenshots (recommendation wording preserved); USER=confirmed scope in this audit request; REF=reference architecture/UI image; ENG=engineering recommendation. Official public abstract corroborates monitoring/HI/anomaly/maintenance/dashboard: https://www.powernext-ai.in/problem-statements (accessed 9 October 2026). It does not establish specific judging weights or guarantee a finale dataset. Findings are defined in [GAP_ANALYSIS.md](GAP_ANALYSIS.md).
+
+Status uses implemented / component-tested / integrated / trained / validated separately. “Partial” never means a documentation-only feature is implemented.
+
+| ID / requirement | Basis | Actual evidence and status | Gap / priority | Verification / owner |
+|---|---|---|---|---|
+| R01 operational-data simulation | PDF pp.1–2 | generator.py and faults.py exist; schema tests pass | Scenario coherence/delivery F10/F12 P1 | Repeat seeded timestamped sequence and injected rated overload; simulator |
+| R02 electrical/thermal monitoring | PDF p.2 | Backend schemas/storage/APIs; React locally generated cards | API view disconnected F01 P0; units F19 P2 | One canonical source row matches REST/dashboard; backend/frontend |
+| R03 loading | PDF pp.2,4 | ML AssetConfig calculates S/rating; unrated null smoke passed | Registration/provenance F09 P1 | Missing rating null, fictional/verified configs distinguished; backend/ML |
+| R04 HI | PDF pp.2,4 | ML health engine/tests, React independent weights | Genuine display F01/F19 | Compare API component scores/cap/override to view; ML/frontend |
+| R05 anomaly and early alerts | PDF p.2; EMAIL suggested metrics | Detector/persistence, alert predicates/lifecycle exist | Models/artifacts F03 P0; live lifecycle F15 P1 | Scenario/event trace, false episodes per covered asset-days; ML/backend |
+| R06 predictive maintenance | PDF pp.2,4 | Maintenance engine, records/reads/lifecycle; studio local action card | Integration/status F01/F04 P0 | Persist and display supported action/reasons; ML/backend/frontend |
+| R07 RUL estimation | PDF p.3; USER mandatory | Only unavailable declaration, no estimator/API/view | F05 P0 | Labelled synthetic first-passage demo and null operational prerequisite handling; ML/frontend |
+| R08 thermal/electrical twin | PDF pp.1–3; EMAIL/USER | Empirical dynamic thermal code and electrical features/tests | Artifacts/config F03/F09; no complete standards/hot-spot implementation | Replay actual parameter bundle; show residual/readiness versus absolute limit; ML |
+| R09 fault prediction | PDF p.3; EMAIL | Experimental proxy-onset code/gates | Training and probabilities not verified; F18 P2 loading defect | Future-horizon causal tests, both-class/event validation before release; ML |
+| R10 interactive real-time dashboard | PDF pp.2–4 | React presentation/studio builds | F01/F02 P0, no REST freshness/error states | Actual row arrival visible, disconnect/null/error states; frontend/backend |
+| R11 Modbus transmission | USER confirmed | No Modbus code/dependency/map | F06 P0 | Independent register read → bridge → stored row → screen; simulator/backend |
+| R12 IoT integration | USER; PDF p.2 simulator/future sensors | MQTT broker/consumer/publisher implemented | Missing Modbus link, transport durability F06/F12 | Disconnect/reconnect/topic mismatch and acquisition provenance; simulator/backend |
+| R13 no reliance on live college data | USER; PDF p.1 simulated-data scope; EMAIL replay acceptable | Simulator/replay available | Full local demo missing | Primary simulated Modbus and explicit canonical replay fallback; all four |
+| R14 full nameplate information | EMAIL recommended; USER important | Partial registry CRUD; values optional | Frequency/vector/impedance/rise/side/provenance F09 P1 | Registry round-trip and absence gates; backend/organizer |
+| R15 active power/consumption/conservation | USER priorities; REF active power | Canonical P/S/Q/kWh stored; generator integrates | No energy/coverage/loss/conservation UI F07 P1 | Integrate known trace, resets/gaps, scenario estimate attribution; ML/backend/frontend |
+| R16 approximately 25 assets | USER investigation target | Multi-asset DB/ML primitives; three hardcoded UI assets | F16 P2 | Proposed 25-stream load/identity/state test, labelled simulated; simulator/frontend |
+| R17 timestamps/abnormal labels | EMAIL recommended | Canonical identity/time and protection fields; injected scenarios | Source time conflict; scenario metadata incomplete F11/F12/F19 | Known UTC vs unknown source time, alarm/trip episode trace; simulator/ML |
+| R18 THD/frequency/unbalance | EMAIL suggested scenarios; REF | Current/voltage magnitude-spread features; FRQ/THD source extension deferred | THD not acquired/mapped; engineering limits unknown | Mark THD unavailable unless separately verified/mapped; no fake VUF; ML/organizer |
+| R19 trend analysis/reporting/downloadable summaries | PDF p.3 typical reporting layer | Backend bounded trends with null gaps; local UI synthetic trend | Historical UI/report export not demonstrated; P2 | API historical bounds/gaps; downloadable source-labelled summary, if adopted; frontend/backend |
+| R20 technical documentation/user guide/source/demo | PDF p.4 | Phase plans/model card/README/runbooks/code exist | F20 P2, reproducibility F03/F15 | Fresh-machine instructions and supported commands, live/recorded complete trace; team lead |
+| R21 canonical validation/missingness/proxy honesty | contracts; ENG | Strong Pydantic/ML gates and null policies | Dropped metadata/local risk/conflicting duplicate F04/F08/F14 | Contract round-trip, missingness, changed-key conflict and null risk; backend/ML/frontend |
+| R22 authorized read-only live monitoring | USER; ENG | Local demo isolation, no confirmed live device | F17 P2 before any live extension | Explicit operator authorization/register map; no control writes; simulator/asset operator |
+
+Current organizer-facing requirements must be read together: public abstract and PDF define prototype objectives; screenshots recommend richer signals/labels and accept simulation/replay; user additionally confirms Modbus, IoT, RUL and energy scope. Reference images are design guidance, not independently verified mandatory sensors. No deadline dataset, pass accuracy, scoring weights or required 25 live connections are inferred.

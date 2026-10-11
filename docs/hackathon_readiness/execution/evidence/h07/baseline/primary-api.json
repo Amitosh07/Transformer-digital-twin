@@ -1,0 +1,3309 @@
+{
+  "latest": {
+    "transformer": {
+      "schema_version": "1.1.0",
+      "rated_frequency_hz": null,
+      "vector_group": null,
+      "impedance_percent": null,
+      "temperature_rise_limits": null,
+      "measurement_side": "LV",
+      "ct_ratio": null,
+      "pt_ratio": null,
+      "insulation_type": null,
+      "loss_parameters": null,
+      "configuration_metadata": {
+        "version": "fictional-demo-v1",
+        "status": "SYNTHETIC_CONFIG",
+        "field_metadata": {
+          "rated_current_a": {
+            "unit": "A",
+            "verification": "SYNTHETIC_CONFIG",
+            "provenance": "Declared H06 fictional configuration",
+            "evidence_reference": null,
+            "effective_at": null
+          },
+          "rated_power_kva": {
+            "unit": "kVA",
+            "verification": "SYNTHETIC_CONFIG",
+            "provenance": "Declared H06 fictional configuration",
+            "evidence_reference": null,
+            "effective_at": null
+          },
+          "measurement_side": {
+            "unit": null,
+            "verification": "SYNTHETIC_CONFIG",
+            "provenance": "Declared H06 fictional configuration",
+            "evidence_reference": null,
+            "effective_at": null
+          },
+          "rated_voltage_lv": {
+            "unit": "V",
+            "verification": "SYNTHETIC_CONFIG",
+            "provenance": "Declared H06 fictional configuration",
+            "evidence_reference": null,
+            "effective_at": null
+          }
+        }
+      },
+      "rated_power_kva": 30.0,
+      "rated_voltage_hv": null,
+      "rated_voltage_lv": 400.0,
+      "rated_current_a": 43.30127018922193,
+      "cooling_class": null,
+      "oil_type": null,
+      "id": "H06-SIM-05",
+      "name": "H06-SIM-05 fictional demo",
+      "created_at": "2026-10-09T18:25:32.444399Z",
+      "updated_at": "2026-10-09T18:25:32.444399Z"
+    },
+    "telemetry": {
+      "schema_version": "1.1.0",
+      "acquisition": {
+        "source_kind": "SIMULATED",
+        "source_name": "fictional-modbus",
+        "origin_kind": "SIMULATED",
+        "origin_transformer_id": null,
+        "replay_run_id": null,
+        "gateway_id": "H06-DEMO-GW",
+        "timestamp_origin": "SOURCE_SNAPSHOT",
+        "timezone_status": "DECLARED_UTC",
+        "field_units": {
+          "oil_level": "percent",
+          "current_l1": "A",
+          "current_l2": "A",
+          "current_l3": "A",
+          "energy_kwh": "kWh",
+          "oil_temp_trip": "STATUS",
+          "oil_temp_alarm": "STATUS",
+          "neutral_current": "A",
+          "oil_temperature": "DEG_C",
+          "power_factor_l1": "1",
+          "power_factor_l2": "1",
+          "power_factor_l3": "1",
+          "phase_voltage_l1": "V",
+          "phase_voltage_l2": "V",
+          "phase_voltage_l3": "V",
+          "active_power_total": "kW",
+          "ambient_temperature": "DEG_C",
+          "winding_temperature": "STATUS",
+          "apparent_power_total": "kVA",
+          "reactive_power_total": "kVAr",
+          "magnetic_oil_gauge_alarm": "STATUS"
+        },
+        "field_verification": {
+          "oil_level": "SYNTHETIC",
+          "current_l1": "SYNTHETIC",
+          "current_l2": "SYNTHETIC",
+          "current_l3": "SYNTHETIC",
+          "energy_kwh": "SYNTHETIC",
+          "oil_temp_trip": "SYNTHETIC",
+          "oil_temp_alarm": "SYNTHETIC",
+          "neutral_current": "SYNTHETIC",
+          "oil_temperature": "SYNTHETIC",
+          "power_factor_l1": "SYNTHETIC",
+          "power_factor_l2": "SYNTHETIC",
+          "power_factor_l3": "SYNTHETIC",
+          "phase_voltage_l1": "SYNTHETIC",
+          "phase_voltage_l2": "SYNTHETIC",
+          "phase_voltage_l3": "SYNTHETIC",
+          "active_power_total": "SYNTHETIC",
+          "ambient_temperature": "SYNTHETIC",
+          "winding_temperature": "SYNTHETIC",
+          "apparent_power_total": "SYNTHETIC",
+          "reactive_power_total": "SYNTHETIC",
+          "magnetic_oil_gauge_alarm": "SYNTHETIC"
+        },
+        "measurement_side": "LV",
+        "map_version": "fictional-lv-v1",
+        "snapshot_id": "4cf3ab1d6049a31f6d80dddfd6afd2f1cb66c6c2aee9dbeb6939d3ecbb9d4536",
+        "sequence": 834,
+        "expected_interval_seconds": 5.0
+      },
+      "transformer_id": "H06-SIM-05",
+      "timestamp": "2026-10-09T01:04:30Z",
+      "phase_voltage_l1": 230.72,
+      "phase_voltage_l2": 230.0,
+      "phase_voltage_l3": 231.98,
+      "current_l1": 15.1,
+      "current_l2": 15.08,
+      "current_l3": 15.0,
+      "neutral_current": 0.004,
+      "oil_temperature": 28.782,
+      "winding_temperature": null,
+      "ambient_temperature": 25.4,
+      "oil_level": 84.9,
+      "oil_temp_alarm": 0,
+      "oil_temp_trip": 0,
+      "magnetic_oil_gauge_alarm": 0,
+      "active_power_total": 9.495,
+      "apparent_power_total": 10.432,
+      "reactive_power_total": 4.32,
+      "energy_kwh": 19.559054,
+      "power_factor_l1": 0.928,
+      "power_factor_l2": 0.9059,
+      "power_factor_l3": 0.8967,
+      "source_name": "fictional-modbus",
+      "scenario_id": "SCN_HEALTHY_01",
+      "id": 1264,
+      "is_missing_critical": false,
+      "data_quality_score": 0.9523809523809523,
+      "received_at": "2026-10-09T19:34:24.853256Z"
+    },
+    "analytics": {
+      "metadata": {
+        "thermal_readiness": "READY",
+        "thermal_model_mode": "PUBLIC_EMPIRICAL",
+        "thermal_temperature_unit": "SOURCE_UNVERIFIED",
+        "apparent_power_utilization": 0.34773333333333334,
+        "forecast_operational_status": "INSUFFICIENT_VALIDATION",
+        "experimental_fault_risk": null,
+        "maintenance_trip_latched": true,
+        "maintenance_clear_policy_status": "CONFIGURATION REQUIRED",
+        "coverage_overall": 1.0,
+        "health_coverage": 1.0,
+        "extended_reason_codes": [
+          "VERIFIED_TRIP_OVERRIDE",
+          "VERIFIED_TRIP",
+          "OIL_TEMP_TRIP",
+          "TRIP_LATCHED",
+          "REDUCED_HISTORY_COVERAGE",
+          "DEMO_UNVERIFIED_CONFIG"
+        ],
+        "extended_health_reason_codes": [
+          "VERIFIED_TRIP_OVERRIDE"
+        ],
+        "reason_descriptions": {
+          "TRIP_LATCHED": "Trip Latched",
+          "OIL_TEMP_TRIP": "Active oil temperature trip contact",
+          "VERIFIED_TRIP": "Verified Trip",
+          "VERIFIED_TRIP_OVERRIDE": "Verified Trip Override"
+        },
+        "components": {
+          "thermal": {
+            "status": "INSUFFICIENT_DATA",
+            "unit": "SOURCE_UNVERIFIED",
+            "coverage_fraction": 0.9638888888888889,
+            "reasons": [
+              "REDUCED_HISTORY_COVERAGE",
+              "DEMO_UNVERIFIED_CONFIG"
+            ]
+          },
+          "anomaly": {
+            "status": "INSUFFICIENT_DATA",
+            "unit": "1",
+            "coverage_fraction": 0.9638888888888889,
+            "reasons": [
+              "REDUCED_HISTORY_COVERAGE",
+              "DEMO_UNVERIFIED_CONFIG"
+            ]
+          },
+          "health": {
+            "status": "INSUFFICIENT_DATA",
+            "unit": "index",
+            "coverage_fraction": 0.9638888888888889,
+            "reasons": [
+              "REDUCED_HISTORY_COVERAGE",
+              "DEMO_UNVERIFIED_CONFIG"
+            ]
+          },
+          "maintenance": {
+            "status": "INSUFFICIENT_DATA",
+            "unit": null,
+            "coverage_fraction": 0.9638888888888889,
+            "reasons": [
+              "REDUCED_HISTORY_COVERAGE",
+              "DEMO_UNVERIFIED_CONFIG"
+            ]
+          },
+          "forecast": {
+            "status": "UNAVAILABLE",
+            "unit": null,
+            "coverage_fraction": 0.9638888888888889,
+            "reasons": [
+              "REDUCED_HISTORY_COVERAGE",
+              "DEMO_UNVERIFIED_CONFIG",
+              "INSUFFICIENT_VALIDATION"
+            ]
+          },
+          "rul": {
+            "status": "READY",
+            "unit": "h",
+            "coverage_fraction": 1.0,
+            "reasons": []
+          }
+        },
+        "units": {
+          "oil_level": "percent",
+          "current_l1": "A",
+          "current_l2": "A",
+          "current_l3": "A",
+          "energy_kwh": "kWh",
+          "oil_temp_trip": "STATUS",
+          "oil_temp_alarm": "STATUS",
+          "neutral_current": "A",
+          "oil_temperature": "DEG_C",
+          "power_factor_l1": "1",
+          "power_factor_l2": "1",
+          "power_factor_l3": "1",
+          "phase_voltage_l1": "V",
+          "phase_voltage_l2": "V",
+          "phase_voltage_l3": "V",
+          "active_power_total": "kW",
+          "ambient_temperature": "DEG_C",
+          "winding_temperature": "STATUS",
+          "apparent_power_total": "kVA",
+          "reactive_power_total": "kVAr",
+          "magnetic_oil_gauge_alarm": "STATUS"
+        },
+        "coverage": {
+          "start": "2026-10-09T00:04:30Z",
+          "end": "2026-10-09T01:04:30Z",
+          "covered_seconds": 3470.0,
+          "expected_seconds": 3600.0,
+          "fraction": 0.9638888888888889,
+          "gap_count": 13,
+          "missing_fields": [
+            "winding_temperature"
+          ]
+        },
+        "forecast": {
+          "target_definition": "new_oil_alert_within_1h",
+          "horizon_hours": 1.0,
+          "release_status": "INSUFFICIENT_VALIDATION",
+          "operational_eligible": false,
+          "limitation_codes": [
+            "INSUFFICIENT_VALIDATION"
+          ]
+        },
+        "versions": {
+          "bundle_id": "demo_unverified_coded_config_v1",
+          "configuration_version": "fictional-demo-v1",
+          "preprocessing_version": "1.0.0",
+          "artifact_schema_version": "1.0.0"
+        }
+      },
+      "rul": {
+        "rul_status": "SIMULATED_ESTIMATE",
+        "rul_method": "SYNTHETIC_FIRST_PASSAGE_V1",
+        "rul_target_definition": "Declared fictional degradation reaches scenario endpoint; not physical end-of-life",
+        "rul_value": 78.92499999999937,
+        "rul_unit": "h",
+        "rul_lower": 65.77083333333282,
+        "rul_upper": 98.65624999999922,
+        "uncertainty_kind": "SCENARIO_RANGE",
+        "forecast_horizon_hours": 100.0,
+        "future_duty_scenario": "H06_FICTIONAL_PREROLL",
+        "degradation_state": 0.21075000000000615,
+        "end_threshold": 1.0,
+        "degradation_unit": "1",
+        "degradation_rate_per_hour": 0.01,
+        "equivalent_ageing_hours": null,
+        "source_kind": "SIMULATED",
+        "simulated": true,
+        "model_version": "synthetic-first-passage-v1",
+        "config_version": "fictional-rul-v1",
+        "required_inputs": [],
+        "assumptions": [
+          "Fictional latent D is independent of health index and anomaly score",
+          "Endpoint is a scenario definition, not transformer end-of-life",
+          "Future duty begins at this event time; rates have units 1/hour",
+          "Declared rate range 0.008\u20130.012/hour; not calibrated confidence",
+          "Declared future duty: [{'hours': 100.0, 'rate_per_hour': 0.01}]"
+        ],
+        "limitation_codes": [],
+        "coverage_start": "2026-10-08T23:00:00Z",
+        "coverage_end": "2026-10-09T01:04:30Z",
+        "coverage_fraction": 1.0,
+        "timestamp": "2026-10-09T01:04:30Z"
+      },
+      "transformer_id": "H06-SIM-05",
+      "timestamp": "2026-10-09T01:04:30Z",
+      "inference_status": "OK",
+      "missing_features": [],
+      "loading_percent": 34.77333333333333,
+      "thermal_model_temperature": 27.411415387180618,
+      "thermal_residual": 1.370584612819382,
+      "thermal_state": null,
+      "anomaly_score": 1.0,
+      "anomaly_flag": true,
+      "health_index": 0.0,
+      "health_components": {
+        "thermal": 100.0,
+        "electrical": 0.0,
+        "loading": 100.0,
+        "oil": 100.0,
+        "alarm": 0.0,
+        "anomaly": 0.0
+      },
+      "health_reason_codes": [],
+      "fault_risk": null,
+      "predicted_fault": null,
+      "prediction_confidence": null,
+      "maintenance_priority": "URGENT",
+      "maintenance_recommendation": "Immediate operator review under site protection procedure (trip latched; requires authorized clear).",
+      "reason_codes": [
+        "OIL_TEMP_TRIP"
+      ],
+      "schema_version": "1.1.0",
+      "feature_version": "1.0.0",
+      "model_version": "DEMO_UNVERIFIED_CONFIG",
+      "error_detail": null
+    },
+    "open_alerts_count": 3,
+    "demo_mode": true,
+    "data_source": {
+      "source_name": "fictional-modbus",
+      "scenario_id": "SCN_HEALTHY_01"
+    },
+    "schema_version": "1.1.0",
+    "feature_version": "1.0.0",
+    "model_version": "DEMO_UNVERIFIED_CONFIG",
+    "analytics_availability": {
+      "status": "AVAILABLE",
+      "reasons": [],
+      "state_coverage_loss": false
+    }
+  },
+  "receipt": {
+    "schema_version": "1.1.0",
+    "receipt_status": "COMMITTED",
+    "snapshot_id": "4cf3ab1d6049a31f6d80dddfd6afd2f1cb66c6c2aee9dbeb6939d3ecbb9d4536",
+    "payload_hash": "4cf3ab1d6049a31f6d80dddfd6afd2f1cb66c6c2aee9dbeb6939d3ecbb9d4536",
+    "transformer_id": "H06-SIM-05",
+    "timestamp": "2026-10-09T01:04:30+00:00",
+    "received_at": "2026-10-09T19:34:24.853256+00:00",
+    "committed_at": "2026-10-09T19:34:24.853256+00:00",
+    "accepted_snapshot_id": "4cf3ab1d6049a31f6d80dddfd6afd2f1cb66c6c2aee9dbeb6939d3ecbb9d4536",
+    "accepted_payload_hash": "4cf3ab1d6049a31f6d80dddfd6afd2f1cb66c6c2aee9dbeb6939d3ecbb9d4536",
+    "ingestion_outcome": "ACCEPTED",
+    "analytics_status": "AVAILABLE",
+    "state_coverage_loss": false
+  },
+  "rul": {
+    "transformer_id": "H06-SIM-05",
+    "timestamp": "2026-10-09T01:04:30+00:00",
+    "rul": {
+      "rul_unit": "h",
+      "rul_lower": 65.77083333333282,
+      "rul_upper": 98.65624999999922,
+      "rul_value": 78.92499999999937,
+      "simulated": true,
+      "timestamp": "2026-10-09T01:04:30Z",
+      "rul_method": "SYNTHETIC_FIRST_PASSAGE_V1",
+      "rul_status": "SIMULATED_ESTIMATE",
+      "assumptions": [
+        "Fictional latent D is independent of health index and anomaly score",
+        "Endpoint is a scenario definition, not transformer end-of-life",
+        "Future duty begins at this event time; rates have units 1/hour",
+        "Declared rate range 0.008\u20130.012/hour; not calibrated confidence",
+        "Declared future duty: [{'hours': 100.0, 'rate_per_hour': 0.01}]"
+      ],
+      "source_kind": "SIMULATED",
+      "coverage_end": "2026-10-09T01:04:30Z",
+      "end_threshold": 1.0,
+      "model_version": "synthetic-first-passage-v1",
+      "config_version": "fictional-rul-v1",
+      "coverage_start": "2026-10-08T23:00:00Z",
+      "required_inputs": [],
+      "degradation_unit": "1",
+      "limitation_codes": [],
+      "uncertainty_kind": "SCENARIO_RANGE",
+      "coverage_fraction": 1.0,
+      "degradation_state": 0.21075000000000615,
+      "future_duty_scenario": "H06_FICTIONAL_PREROLL",
+      "rul_target_definition": "Declared fictional degradation reaches scenario endpoint; not physical end-of-life",
+      "forecast_horizon_hours": 100.0,
+      "equivalent_ageing_hours": null,
+      "degradation_rate_per_hour": 0.01
+    },
+    "schema_version": "1.1.0"
+  },
+  "energy": {
+    "transformer_id": "H06-SIM-05",
+    "timestamp": "2026-10-09T01:04:30.000000Z",
+    "schema_version": "1.1.0",
+    "energy_status": "AVAILABLE",
+    "energy_method": "SIMULATED",
+    "calculation_method": "TRAPEZOID",
+    "source_kind": "SIMULATED",
+    "active_power_unit_status": "SYNTHETIC",
+    "energy_unit": "kWh",
+    "window_start": "2026-10-09T00:04:30.000000Z",
+    "window_end": "2026-10-09T01:04:30.000000Z",
+    "consumed_kwh": 8.75092083333334,
+    "covered_consumed_kwh": 8.75092083333334,
+    "import_kwh": 8.75092083333334,
+    "export_kwh": null,
+    "peak_kw": 13.82,
+    "loss_kw": null,
+    "loss_kwh": null,
+    "estimated_savings_kwh": null,
+    "efficiency_percent": null,
+    "loss_method": null,
+    "coverage_seconds": 3600.0,
+    "coverage_fraction": 1.0,
+    "gap_count": 0,
+    "reset_count": 0,
+    "missing_intervals": [],
+    "peak_time": "2026-10-09T00:23:45.000000Z",
+    "load_profile": [
+      {
+        "timestamp": "2026-10-09T00:04:30.000000Z",
+        "active_power_total": 10.471
+      },
+      {
+        "timestamp": "2026-10-09T00:04:35.000000Z",
+        "active_power_total": 5.05
+      },
+      {
+        "timestamp": "2026-10-09T00:04:40.000000Z",
+        "active_power_total": 9.707
+      },
+      {
+        "timestamp": "2026-10-09T00:04:45.000000Z",
+        "active_power_total": 10.356
+      },
+      {
+        "timestamp": "2026-10-09T00:04:50.000000Z",
+        "active_power_total": 10.682
+      },
+      {
+        "timestamp": "2026-10-09T00:04:55.000000Z",
+        "active_power_total": 9.86
+      },
+      {
+        "timestamp": "2026-10-09T00:05:00.000000Z",
+        "active_power_total": 9.71
+      },
+      {
+        "timestamp": "2026-10-09T00:05:05.000000Z",
+        "active_power_total": 8.783
+      },
+      {
+        "timestamp": "2026-10-09T00:05:10.000000Z",
+        "active_power_total": 9.004
+      },
+      {
+        "timestamp": "2026-10-09T00:05:15.000000Z",
+        "active_power_total": 7.237
+      },
+      {
+        "timestamp": "2026-10-09T00:05:20.000000Z",
+        "active_power_total": 9.237
+      },
+      {
+        "timestamp": "2026-10-09T00:05:25.000000Z",
+        "active_power_total": 8.333
+      },
+      {
+        "timestamp": "2026-10-09T00:05:30.000000Z",
+        "active_power_total": 6.168
+      },
+      {
+        "timestamp": "2026-10-09T00:05:35.000000Z",
+        "active_power_total": 10.71
+      },
+      {
+        "timestamp": "2026-10-09T00:05:40.000000Z",
+        "active_power_total": 6.733
+      },
+      {
+        "timestamp": "2026-10-09T00:05:45.000000Z",
+        "active_power_total": 9.532
+      },
+      {
+        "timestamp": "2026-10-09T00:05:50.000000Z",
+        "active_power_total": 9.181
+      },
+      {
+        "timestamp": "2026-10-09T00:05:55.000000Z",
+        "active_power_total": 9.129
+      },
+      {
+        "timestamp": "2026-10-09T00:06:00.000000Z",
+        "active_power_total": 6.697
+      },
+      {
+        "timestamp": "2026-10-09T00:06:05.000000Z",
+        "active_power_total": 9.475
+      },
+      {
+        "timestamp": "2026-10-09T00:06:10.000000Z",
+        "active_power_total": 8.69
+      },
+      {
+        "timestamp": "2026-10-09T00:06:15.000000Z",
+        "active_power_total": 9.281
+      },
+      {
+        "timestamp": "2026-10-09T00:06:20.000000Z",
+        "active_power_total": 8.819
+      },
+      {
+        "timestamp": "2026-10-09T00:06:25.000000Z",
+        "active_power_total": 9.237
+      },
+      {
+        "timestamp": "2026-10-09T00:06:30.000000Z",
+        "active_power_total": 6.907
+      },
+      {
+        "timestamp": "2026-10-09T00:06:35.000000Z",
+        "active_power_total": 8.029
+      },
+      {
+        "timestamp": "2026-10-09T00:06:40.000000Z",
+        "active_power_total": 7.657
+      },
+      {
+        "timestamp": "2026-10-09T00:06:45.000000Z",
+        "active_power_total": 8.34
+      },
+      {
+        "timestamp": "2026-10-09T00:06:50.000000Z",
+        "active_power_total": 11.529
+      },
+      {
+        "timestamp": "2026-10-09T00:06:55.000000Z",
+        "active_power_total": 8.478
+      },
+      {
+        "timestamp": "2026-10-09T00:07:00.000000Z",
+        "active_power_total": 9.044
+      },
+      {
+        "timestamp": "2026-10-09T00:07:05.000000Z",
+        "active_power_total": 11.11
+      },
+      {
+        "timestamp": "2026-10-09T00:07:10.000000Z",
+        "active_power_total": 8.435
+      },
+      {
+        "timestamp": "2026-10-09T00:07:15.000000Z",
+        "active_power_total": 8.955
+      },
+      {
+        "timestamp": "2026-10-09T00:07:20.000000Z",
+        "active_power_total": 9.445
+      },
+      {
+        "timestamp": "2026-10-09T00:07:25.000000Z",
+        "active_power_total": 10.338
+      },
+      {
+        "timestamp": "2026-10-09T00:07:30.000000Z",
+        "active_power_total": 9.518
+      },
+      {
+        "timestamp": "2026-10-09T00:07:35.000000Z",
+        "active_power_total": 9.17
+      },
+      {
+        "timestamp": "2026-10-09T00:07:40.000000Z",
+        "active_power_total": 10.034
+      },
+      {
+        "timestamp": "2026-10-09T00:07:45.000000Z",
+        "active_power_total": 8.579
+      },
+      {
+        "timestamp": "2026-10-09T00:07:50.000000Z",
+        "active_power_total": 9.985
+      },
+      {
+        "timestamp": "2026-10-09T00:07:55.000000Z",
+        "active_power_total": 7.738
+      },
+      {
+        "timestamp": "2026-10-09T00:08:00.000000Z",
+        "active_power_total": 7.414
+      },
+      {
+        "timestamp": "2026-10-09T00:08:05.000000Z",
+        "active_power_total": 9.209
+      },
+      {
+        "timestamp": "2026-10-09T00:08:10.000000Z",
+        "active_power_total": 9.68
+      },
+      {
+        "timestamp": "2026-10-09T00:08:15.000000Z",
+        "active_power_total": 9.397
+      },
+      {
+        "timestamp": "2026-10-09T00:08:20.000000Z",
+        "active_power_total": 10.233
+      },
+      {
+        "timestamp": "2026-10-09T00:08:25.000000Z",
+        "active_power_total": 10.587
+      },
+      {
+        "timestamp": "2026-10-09T00:08:30.000000Z",
+        "active_power_total": 6.547
+      },
+      {
+        "timestamp": "2026-10-09T00:08:35.000000Z",
+        "active_power_total": 7.386
+      },
+      {
+        "timestamp": "2026-10-09T00:08:40.000000Z",
+        "active_power_total": 10.319
+      },
+      {
+        "timestamp": "2026-10-09T00:08:45.000000Z",
+        "active_power_total": 8.184
+      },
+      {
+        "timestamp": "2026-10-09T00:08:50.000000Z",
+        "active_power_total": 10.598
+      },
+      {
+        "timestamp": "2026-10-09T00:08:55.000000Z",
+        "active_power_total": 10.974
+      },
+      {
+        "timestamp": "2026-10-09T00:09:00.000000Z",
+        "active_power_total": 8.138
+      },
+      {
+        "timestamp": "2026-10-09T00:09:05.000000Z",
+        "active_power_total": 8.459
+      },
+      {
+        "timestamp": "2026-10-09T00:09:10.000000Z",
+        "active_power_total": 9.987
+      },
+      {
+        "timestamp": "2026-10-09T00:09:15.000000Z",
+        "active_power_total": 12.802
+      },
+      {
+        "timestamp": "2026-10-09T00:09:20.000000Z",
+        "active_power_total": 8.735
+      },
+      {
+        "timestamp": "2026-10-09T00:09:25.000000Z",
+        "active_power_total": 9.13
+      },
+      {
+        "timestamp": "2026-10-09T00:09:30.000000Z",
+        "active_power_total": 9.709
+      },
+      {
+        "timestamp": "2026-10-09T00:09:35.000000Z",
+        "active_power_total": 6.637
+      },
+      {
+        "timestamp": "2026-10-09T00:09:40.000000Z",
+        "active_power_total": 9.376
+      },
+      {
+        "timestamp": "2026-10-09T00:09:45.000000Z",
+        "active_power_total": 9.552
+      },
+      {
+        "timestamp": "2026-10-09T00:09:50.000000Z",
+        "active_power_total": 10.214
+      },
+      {
+        "timestamp": "2026-10-09T00:09:55.000000Z",
+        "active_power_total": 9.243
+      },
+      {
+        "timestamp": "2026-10-09T00:10:05.000000Z",
+        "active_power_total": 7.368
+      },
+      {
+        "timestamp": "2026-10-09T00:10:10.000000Z",
+        "active_power_total": 9.152
+      },
+      {
+        "timestamp": "2026-10-09T00:10:20.000000Z",
+        "active_power_total": 8.57
+      },
+      {
+        "timestamp": "2026-10-09T00:10:25.000000Z",
+        "active_power_total": 8.055
+      },
+      {
+        "timestamp": "2026-10-09T00:10:30.000000Z",
+        "active_power_total": 11.052
+      },
+      {
+        "timestamp": "2026-10-09T00:10:35.000000Z",
+        "active_power_total": 8.197
+      },
+      {
+        "timestamp": "2026-10-09T00:10:40.000000Z",
+        "active_power_total": 9.303
+      },
+      {
+        "timestamp": "2026-10-09T00:10:45.000000Z",
+        "active_power_total": 8.251
+      },
+      {
+        "timestamp": "2026-10-09T00:10:50.000000Z",
+        "active_power_total": 9.342
+      },
+      {
+        "timestamp": "2026-10-09T00:10:55.000000Z",
+        "active_power_total": 8.422
+      },
+      {
+        "timestamp": "2026-10-09T00:11:00.000000Z",
+        "active_power_total": 8.604
+      },
+      {
+        "timestamp": "2026-10-09T00:11:05.000000Z",
+        "active_power_total": 9.541
+      },
+      {
+        "timestamp": "2026-10-09T00:11:10.000000Z",
+        "active_power_total": 10.577
+      },
+      {
+        "timestamp": "2026-10-09T00:11:15.000000Z",
+        "active_power_total": 8.789
+      },
+      {
+        "timestamp": "2026-10-09T00:11:20.000000Z",
+        "active_power_total": 9.398
+      },
+      {
+        "timestamp": "2026-10-09T00:11:25.000000Z",
+        "active_power_total": 11.03
+      },
+      {
+        "timestamp": "2026-10-09T00:11:30.000000Z",
+        "active_power_total": 7.943
+      },
+      {
+        "timestamp": "2026-10-09T00:11:35.000000Z",
+        "active_power_total": 8.686
+      },
+      {
+        "timestamp": "2026-10-09T00:11:40.000000Z",
+        "active_power_total": 10.086
+      },
+      {
+        "timestamp": "2026-10-09T00:11:45.000000Z",
+        "active_power_total": 6.956
+      },
+      {
+        "timestamp": "2026-10-09T00:11:50.000000Z",
+        "active_power_total": 10.726
+      },
+      {
+        "timestamp": "2026-10-09T00:11:55.000000Z",
+        "active_power_total": 9.542
+      },
+      {
+        "timestamp": "2026-10-09T00:12:00.000000Z",
+        "active_power_total": 10.035
+      },
+      {
+        "timestamp": "2026-10-09T00:12:05.000000Z",
+        "active_power_total": 7.202
+      },
+      {
+        "timestamp": "2026-10-09T00:12:10.000000Z",
+        "active_power_total": 9.722
+      },
+      {
+        "timestamp": "2026-10-09T00:12:15.000000Z",
+        "active_power_total": 9.023
+      },
+      {
+        "timestamp": "2026-10-09T00:12:20.000000Z",
+        "active_power_total": 6.163
+      },
+      {
+        "timestamp": "2026-10-09T00:12:25.000000Z",
+        "active_power_total": 8.669
+      },
+      {
+        "timestamp": "2026-10-09T00:12:30.000000Z",
+        "active_power_total": 11.718
+      },
+      {
+        "timestamp": "2026-10-09T00:12:35.000000Z",
+        "active_power_total": 9.179
+      },
+      {
+        "timestamp": "2026-10-09T00:12:40.000000Z",
+        "active_power_total": 8.23
+      },
+      {
+        "timestamp": "2026-10-09T00:12:45.000000Z",
+        "active_power_total": 10.467
+      },
+      {
+        "timestamp": "2026-10-09T00:12:50.000000Z",
+        "active_power_total": 9.934
+      },
+      {
+        "timestamp": "2026-10-09T00:12:55.000000Z",
+        "active_power_total": 10.495
+      },
+      {
+        "timestamp": "2026-10-09T00:13:00.000000Z",
+        "active_power_total": 10.076
+      },
+      {
+        "timestamp": "2026-10-09T00:13:05.000000Z",
+        "active_power_total": 7.661
+      },
+      {
+        "timestamp": "2026-10-09T00:13:10.000000Z",
+        "active_power_total": 10.349
+      },
+      {
+        "timestamp": "2026-10-09T00:13:15.000000Z",
+        "active_power_total": 9.066
+      },
+      {
+        "timestamp": "2026-10-09T00:13:20.000000Z",
+        "active_power_total": 8.903
+      },
+      {
+        "timestamp": "2026-10-09T00:13:25.000000Z",
+        "active_power_total": 7.823
+      },
+      {
+        "timestamp": "2026-10-09T00:13:30.000000Z",
+        "active_power_total": 9.221
+      },
+      {
+        "timestamp": "2026-10-09T00:13:35.000000Z",
+        "active_power_total": 9.54
+      },
+      {
+        "timestamp": "2026-10-09T00:13:40.000000Z",
+        "active_power_total": 6.414
+      },
+      {
+        "timestamp": "2026-10-09T00:13:45.000000Z",
+        "active_power_total": 7.368
+      },
+      {
+        "timestamp": "2026-10-09T00:13:50.000000Z",
+        "active_power_total": 7.321
+      },
+      {
+        "timestamp": "2026-10-09T00:13:55.000000Z",
+        "active_power_total": 8.49
+      },
+      {
+        "timestamp": "2026-10-09T00:14:00.000000Z",
+        "active_power_total": 8.725
+      },
+      {
+        "timestamp": "2026-10-09T00:14:05.000000Z",
+        "active_power_total": 9.943
+      },
+      {
+        "timestamp": "2026-10-09T00:14:10.000000Z",
+        "active_power_total": 6.868
+      },
+      {
+        "timestamp": "2026-10-09T00:14:15.000000Z",
+        "active_power_total": 8.833
+      },
+      {
+        "timestamp": "2026-10-09T00:14:20.000000Z",
+        "active_power_total": 9.134
+      },
+      {
+        "timestamp": "2026-10-09T00:14:25.000000Z",
+        "active_power_total": 8.698
+      },
+      {
+        "timestamp": "2026-10-09T00:14:30.000000Z",
+        "active_power_total": 7.033
+      },
+      {
+        "timestamp": "2026-10-09T00:14:35.000000Z",
+        "active_power_total": 9.498
+      },
+      {
+        "timestamp": "2026-10-09T00:14:40.000000Z",
+        "active_power_total": 7.733
+      },
+      {
+        "timestamp": "2026-10-09T00:14:45.000000Z",
+        "active_power_total": 7.665
+      },
+      {
+        "timestamp": "2026-10-09T00:14:50.000000Z",
+        "active_power_total": 9.238
+      },
+      {
+        "timestamp": "2026-10-09T00:14:55.000000Z",
+        "active_power_total": 9.31
+      },
+      {
+        "timestamp": "2026-10-09T00:15:00.000000Z",
+        "active_power_total": 10.22
+      },
+      {
+        "timestamp": "2026-10-09T00:15:05.000000Z",
+        "active_power_total": 8.162
+      },
+      {
+        "timestamp": "2026-10-09T00:15:10.000000Z",
+        "active_power_total": 9.123
+      },
+      {
+        "timestamp": "2026-10-09T00:15:15.000000Z",
+        "active_power_total": 11.421
+      },
+      {
+        "timestamp": "2026-10-09T00:15:20.000000Z",
+        "active_power_total": 8.414
+      },
+      {
+        "timestamp": "2026-10-09T00:15:25.000000Z",
+        "active_power_total": 10.743
+      },
+      {
+        "timestamp": "2026-10-09T00:15:30.000000Z",
+        "active_power_total": 5.555
+      },
+      {
+        "timestamp": "2026-10-09T00:15:35.000000Z",
+        "active_power_total": 6.909
+      },
+      {
+        "timestamp": "2026-10-09T00:15:40.000000Z",
+        "active_power_total": 8.849
+      },
+      {
+        "timestamp": "2026-10-09T00:15:45.000000Z",
+        "active_power_total": 11.02
+      },
+      {
+        "timestamp": "2026-10-09T00:15:50.000000Z",
+        "active_power_total": 10.15
+      },
+      {
+        "timestamp": "2026-10-09T00:15:55.000000Z",
+        "active_power_total": 9.037
+      },
+      {
+        "timestamp": "2026-10-09T00:16:00.000000Z",
+        "active_power_total": 9.025
+      },
+      {
+        "timestamp": "2026-10-09T00:16:05.000000Z",
+        "active_power_total": 8.882
+      },
+      {
+        "timestamp": "2026-10-09T00:16:10.000000Z",
+        "active_power_total": 10.71
+      },
+      {
+        "timestamp": "2026-10-09T00:16:20.000000Z",
+        "active_power_total": 10.044
+      },
+      {
+        "timestamp": "2026-10-09T00:16:25.000000Z",
+        "active_power_total": 10.107
+      },
+      {
+        "timestamp": "2026-10-09T00:16:35.000000Z",
+        "active_power_total": 7.964
+      },
+      {
+        "timestamp": "2026-10-09T00:16:40.000000Z",
+        "active_power_total": 9.343
+      },
+      {
+        "timestamp": "2026-10-09T00:16:45.000000Z",
+        "active_power_total": 8.329
+      },
+      {
+        "timestamp": "2026-10-09T00:16:50.000000Z",
+        "active_power_total": 9.548
+      },
+      {
+        "timestamp": "2026-10-09T00:16:55.000000Z",
+        "active_power_total": 8.546
+      },
+      {
+        "timestamp": "2026-10-09T00:17:00.000000Z",
+        "active_power_total": 7.385
+      },
+      {
+        "timestamp": "2026-10-09T00:17:05.000000Z",
+        "active_power_total": 6.748
+      },
+      {
+        "timestamp": "2026-10-09T00:17:10.000000Z",
+        "active_power_total": 7.242
+      },
+      {
+        "timestamp": "2026-10-09T00:17:15.000000Z",
+        "active_power_total": 8.618
+      },
+      {
+        "timestamp": "2026-10-09T00:17:20.000000Z",
+        "active_power_total": 10.601
+      },
+      {
+        "timestamp": "2026-10-09T00:17:25.000000Z",
+        "active_power_total": 7.03
+      },
+      {
+        "timestamp": "2026-10-09T00:17:30.000000Z",
+        "active_power_total": 7.833
+      },
+      {
+        "timestamp": "2026-10-09T00:17:35.000000Z",
+        "active_power_total": 10.262
+      },
+      {
+        "timestamp": "2026-10-09T00:17:40.000000Z",
+        "active_power_total": 9.22
+      },
+      {
+        "timestamp": "2026-10-09T00:17:45.000000Z",
+        "active_power_total": 6.102
+      },
+      {
+        "timestamp": "2026-10-09T00:17:50.000000Z",
+        "active_power_total": 7.533
+      },
+      {
+        "timestamp": "2026-10-09T00:17:55.000000Z",
+        "active_power_total": 12.122
+      },
+      {
+        "timestamp": "2026-10-09T00:18:00.000000Z",
+        "active_power_total": 9.183
+      },
+      {
+        "timestamp": "2026-10-09T00:18:05.000000Z",
+        "active_power_total": 9.244
+      },
+      {
+        "timestamp": "2026-10-09T00:18:10.000000Z",
+        "active_power_total": 9.614
+      },
+      {
+        "timestamp": "2026-10-09T00:18:15.000000Z",
+        "active_power_total": 7.484
+      },
+      {
+        "timestamp": "2026-10-09T00:18:20.000000Z",
+        "active_power_total": 5.805
+      },
+      {
+        "timestamp": "2026-10-09T00:18:25.000000Z",
+        "active_power_total": 8.254
+      },
+      {
+        "timestamp": "2026-10-09T00:18:30.000000Z",
+        "active_power_total": 9.265
+      },
+      {
+        "timestamp": "2026-10-09T00:18:35.000000Z",
+        "active_power_total": 8.612
+      },
+      {
+        "timestamp": "2026-10-09T00:18:40.000000Z",
+        "active_power_total": 8.804
+      },
+      {
+        "timestamp": "2026-10-09T00:18:45.000000Z",
+        "active_power_total": 8.993
+      },
+      {
+        "timestamp": "2026-10-09T00:18:50.000000Z",
+        "active_power_total": 9.206
+      },
+      {
+        "timestamp": "2026-10-09T00:18:55.000000Z",
+        "active_power_total": 8.632
+      },
+      {
+        "timestamp": "2026-10-09T00:19:00.000000Z",
+        "active_power_total": 7.635
+      },
+      {
+        "timestamp": "2026-10-09T00:19:05.000000Z",
+        "active_power_total": 10.3
+      },
+      {
+        "timestamp": "2026-10-09T00:19:10.000000Z",
+        "active_power_total": 10.264
+      },
+      {
+        "timestamp": "2026-10-09T00:19:15.000000Z",
+        "active_power_total": 9.508
+      },
+      {
+        "timestamp": "2026-10-09T00:19:20.000000Z",
+        "active_power_total": 11.138
+      },
+      {
+        "timestamp": "2026-10-09T00:19:25.000000Z",
+        "active_power_total": 8.73
+      },
+      {
+        "timestamp": "2026-10-09T00:19:30.000000Z",
+        "active_power_total": 8.915
+      },
+      {
+        "timestamp": "2026-10-09T00:19:35.000000Z",
+        "active_power_total": 9.411
+      },
+      {
+        "timestamp": "2026-10-09T00:19:40.000000Z",
+        "active_power_total": 6.519
+      },
+      {
+        "timestamp": "2026-10-09T00:19:45.000000Z",
+        "active_power_total": 11.361
+      },
+      {
+        "timestamp": "2026-10-09T00:19:50.000000Z",
+        "active_power_total": 9.258
+      },
+      {
+        "timestamp": "2026-10-09T00:19:55.000000Z",
+        "active_power_total": 8.33
+      },
+      {
+        "timestamp": "2026-10-09T00:20:00.000000Z",
+        "active_power_total": 12.459
+      },
+      {
+        "timestamp": "2026-10-09T00:20:05.000000Z",
+        "active_power_total": 8.234
+      },
+      {
+        "timestamp": "2026-10-09T00:20:10.000000Z",
+        "active_power_total": 11.902
+      },
+      {
+        "timestamp": "2026-10-09T00:20:15.000000Z",
+        "active_power_total": 10.711
+      },
+      {
+        "timestamp": "2026-10-09T00:20:20.000000Z",
+        "active_power_total": 9.113
+      },
+      {
+        "timestamp": "2026-10-09T00:20:25.000000Z",
+        "active_power_total": 9.311
+      },
+      {
+        "timestamp": "2026-10-09T00:20:30.000000Z",
+        "active_power_total": 6.207
+      },
+      {
+        "timestamp": "2026-10-09T00:20:35.000000Z",
+        "active_power_total": 9.485
+      },
+      {
+        "timestamp": "2026-10-09T00:20:40.000000Z",
+        "active_power_total": 8.553
+      },
+      {
+        "timestamp": "2026-10-09T00:20:45.000000Z",
+        "active_power_total": 8.542
+      },
+      {
+        "timestamp": "2026-10-09T00:20:50.000000Z",
+        "active_power_total": 9.971
+      },
+      {
+        "timestamp": "2026-10-09T00:20:55.000000Z",
+        "active_power_total": 8.211
+      },
+      {
+        "timestamp": "2026-10-09T00:21:00.000000Z",
+        "active_power_total": 8.315
+      },
+      {
+        "timestamp": "2026-10-09T00:21:05.000000Z",
+        "active_power_total": 7.234
+      },
+      {
+        "timestamp": "2026-10-09T00:21:10.000000Z",
+        "active_power_total": 9.88
+      },
+      {
+        "timestamp": "2026-10-09T00:21:15.000000Z",
+        "active_power_total": 6.415
+      },
+      {
+        "timestamp": "2026-10-09T00:21:20.000000Z",
+        "active_power_total": 9.674
+      },
+      {
+        "timestamp": "2026-10-09T00:21:25.000000Z",
+        "active_power_total": 5.299
+      },
+      {
+        "timestamp": "2026-10-09T00:21:30.000000Z",
+        "active_power_total": 9.333
+      },
+      {
+        "timestamp": "2026-10-09T00:21:35.000000Z",
+        "active_power_total": 7.356
+      },
+      {
+        "timestamp": "2026-10-09T00:21:40.000000Z",
+        "active_power_total": 8.977
+      },
+      {
+        "timestamp": "2026-10-09T00:21:45.000000Z",
+        "active_power_total": 8.255
+      },
+      {
+        "timestamp": "2026-10-09T00:21:50.000000Z",
+        "active_power_total": 7.309
+      },
+      {
+        "timestamp": "2026-10-09T00:21:55.000000Z",
+        "active_power_total": 9.32
+      },
+      {
+        "timestamp": "2026-10-09T00:22:00.000000Z",
+        "active_power_total": 7.556
+      },
+      {
+        "timestamp": "2026-10-09T00:22:05.000000Z",
+        "active_power_total": 9.66
+      },
+      {
+        "timestamp": "2026-10-09T00:22:10.000000Z",
+        "active_power_total": 6.96
+      },
+      {
+        "timestamp": "2026-10-09T00:22:15.000000Z",
+        "active_power_total": 10.092
+      },
+      {
+        "timestamp": "2026-10-09T00:22:20.000000Z",
+        "active_power_total": 9.735
+      },
+      {
+        "timestamp": "2026-10-09T00:22:25.000000Z",
+        "active_power_total": 8.661
+      },
+      {
+        "timestamp": "2026-10-09T00:22:30.000000Z",
+        "active_power_total": 10.447
+      },
+      {
+        "timestamp": "2026-10-09T00:22:35.000000Z",
+        "active_power_total": 11.292
+      },
+      {
+        "timestamp": "2026-10-09T00:22:40.000000Z",
+        "active_power_total": 8.016
+      },
+      {
+        "timestamp": "2026-10-09T00:22:45.000000Z",
+        "active_power_total": 8.718
+      },
+      {
+        "timestamp": "2026-10-09T00:22:50.000000Z",
+        "active_power_total": 10.669
+      },
+      {
+        "timestamp": "2026-10-09T00:22:55.000000Z",
+        "active_power_total": 9.182
+      },
+      {
+        "timestamp": "2026-10-09T00:23:00.000000Z",
+        "active_power_total": 9.817
+      },
+      {
+        "timestamp": "2026-10-09T00:23:05.000000Z",
+        "active_power_total": 8.707
+      },
+      {
+        "timestamp": "2026-10-09T00:23:10.000000Z",
+        "active_power_total": 9.84
+      },
+      {
+        "timestamp": "2026-10-09T00:23:15.000000Z",
+        "active_power_total": 5.724
+      },
+      {
+        "timestamp": "2026-10-09T00:23:20.000000Z",
+        "active_power_total": 10.167
+      },
+      {
+        "timestamp": "2026-10-09T00:23:25.000000Z",
+        "active_power_total": 7.256
+      },
+      {
+        "timestamp": "2026-10-09T00:23:30.000000Z",
+        "active_power_total": 9.979
+      },
+      {
+        "timestamp": "2026-10-09T00:23:35.000000Z",
+        "active_power_total": 10.275
+      },
+      {
+        "timestamp": "2026-10-09T00:23:40.000000Z",
+        "active_power_total": 7.501
+      },
+      {
+        "timestamp": "2026-10-09T00:23:45.000000Z",
+        "active_power_total": 13.82
+      },
+      {
+        "timestamp": "2026-10-09T00:23:50.000000Z",
+        "active_power_total": 7.769
+      },
+      {
+        "timestamp": "2026-10-09T00:23:55.000000Z",
+        "active_power_total": 9.233
+      },
+      {
+        "timestamp": "2026-10-09T00:24:00.000000Z",
+        "active_power_total": 9.515
+      },
+      {
+        "timestamp": "2026-10-09T00:24:05.000000Z",
+        "active_power_total": 11.626
+      },
+      {
+        "timestamp": "2026-10-09T00:24:10.000000Z",
+        "active_power_total": 6.279
+      },
+      {
+        "timestamp": "2026-10-09T00:24:15.000000Z",
+        "active_power_total": 9.062
+      },
+      {
+        "timestamp": "2026-10-09T00:24:20.000000Z",
+        "active_power_total": 9.619
+      },
+      {
+        "timestamp": "2026-10-09T00:24:25.000000Z",
+        "active_power_total": 9.124
+      },
+      {
+        "timestamp": "2026-10-09T00:24:30.000000Z",
+        "active_power_total": 10.982
+      },
+      {
+        "timestamp": "2026-10-09T00:24:35.000000Z",
+        "active_power_total": 10.298
+      },
+      {
+        "timestamp": "2026-10-09T00:24:40.000000Z",
+        "active_power_total": 11.46
+      },
+      {
+        "timestamp": "2026-10-09T00:24:45.000000Z",
+        "active_power_total": 11.029
+      },
+      {
+        "timestamp": "2026-10-09T00:24:50.000000Z",
+        "active_power_total": 7.971
+      },
+      {
+        "timestamp": "2026-10-09T00:24:55.000000Z",
+        "active_power_total": 5.561
+      },
+      {
+        "timestamp": "2026-10-09T00:25:00.000000Z",
+        "active_power_total": 9.04
+      },
+      {
+        "timestamp": "2026-10-09T00:25:05.000000Z",
+        "active_power_total": 10.198
+      },
+      {
+        "timestamp": "2026-10-09T00:25:10.000000Z",
+        "active_power_total": 9.167
+      },
+      {
+        "timestamp": "2026-10-09T00:25:15.000000Z",
+        "active_power_total": 8.344
+      },
+      {
+        "timestamp": "2026-10-09T00:25:20.000000Z",
+        "active_power_total": 9.562
+      },
+      {
+        "timestamp": "2026-10-09T00:25:25.000000Z",
+        "active_power_total": 9.355
+      },
+      {
+        "timestamp": "2026-10-09T00:25:30.000000Z",
+        "active_power_total": 7.422
+      },
+      {
+        "timestamp": "2026-10-09T00:25:35.000000Z",
+        "active_power_total": 10.546
+      },
+      {
+        "timestamp": "2026-10-09T00:25:40.000000Z",
+        "active_power_total": 9.342
+      },
+      {
+        "timestamp": "2026-10-09T00:25:45.000000Z",
+        "active_power_total": 6.802
+      },
+      {
+        "timestamp": "2026-10-09T00:25:50.000000Z",
+        "active_power_total": 5.849
+      },
+      {
+        "timestamp": "2026-10-09T00:25:55.000000Z",
+        "active_power_total": 9.512
+      },
+      {
+        "timestamp": "2026-10-09T00:26:00.000000Z",
+        "active_power_total": 9.707
+      },
+      {
+        "timestamp": "2026-10-09T00:26:05.000000Z",
+        "active_power_total": 8.287
+      },
+      {
+        "timestamp": "2026-10-09T00:26:10.000000Z",
+        "active_power_total": 8.263
+      },
+      {
+        "timestamp": "2026-10-09T00:26:15.000000Z",
+        "active_power_total": 10.214
+      },
+      {
+        "timestamp": "2026-10-09T00:26:20.000000Z",
+        "active_power_total": 7.738
+      },
+      {
+        "timestamp": "2026-10-09T00:26:25.000000Z",
+        "active_power_total": 7.252
+      },
+      {
+        "timestamp": "2026-10-09T00:26:30.000000Z",
+        "active_power_total": 9.059
+      },
+      {
+        "timestamp": "2026-10-09T00:26:35.000000Z",
+        "active_power_total": 7.877
+      },
+      {
+        "timestamp": "2026-10-09T00:26:40.000000Z",
+        "active_power_total": 7.856
+      },
+      {
+        "timestamp": "2026-10-09T00:26:45.000000Z",
+        "active_power_total": 9.403
+      },
+      {
+        "timestamp": "2026-10-09T00:26:50.000000Z",
+        "active_power_total": 9.569
+      },
+      {
+        "timestamp": "2026-10-09T00:26:55.000000Z",
+        "active_power_total": 9.38
+      },
+      {
+        "timestamp": "2026-10-09T00:27:00.000000Z",
+        "active_power_total": 8.389
+      },
+      {
+        "timestamp": "2026-10-09T00:27:05.000000Z",
+        "active_power_total": 8.821
+      },
+      {
+        "timestamp": "2026-10-09T00:27:10.000000Z",
+        "active_power_total": 7.056
+      },
+      {
+        "timestamp": "2026-10-09T00:27:15.000000Z",
+        "active_power_total": 7.734
+      },
+      {
+        "timestamp": "2026-10-09T00:27:20.000000Z",
+        "active_power_total": 8.927
+      },
+      {
+        "timestamp": "2026-10-09T00:27:25.000000Z",
+        "active_power_total": 7.758
+      },
+      {
+        "timestamp": "2026-10-09T00:27:30.000000Z",
+        "active_power_total": 8.824
+      },
+      {
+        "timestamp": "2026-10-09T00:27:35.000000Z",
+        "active_power_total": 7.773
+      },
+      {
+        "timestamp": "2026-10-09T00:27:40.000000Z",
+        "active_power_total": 9.545
+      },
+      {
+        "timestamp": "2026-10-09T00:27:45.000000Z",
+        "active_power_total": 8.136
+      },
+      {
+        "timestamp": "2026-10-09T00:27:50.000000Z",
+        "active_power_total": 8.478
+      },
+      {
+        "timestamp": "2026-10-09T00:27:55.000000Z",
+        "active_power_total": 8.598
+      },
+      {
+        "timestamp": "2026-10-09T00:28:00.000000Z",
+        "active_power_total": 6.933
+      },
+      {
+        "timestamp": "2026-10-09T00:28:05.000000Z",
+        "active_power_total": 9.075
+      },
+      {
+        "timestamp": "2026-10-09T00:28:10.000000Z",
+        "active_power_total": 6.958
+      },
+      {
+        "timestamp": "2026-10-09T00:28:15.000000Z",
+        "active_power_total": 9.518
+      },
+      {
+        "timestamp": "2026-10-09T00:28:20.000000Z",
+        "active_power_total": 9.488
+      },
+      {
+        "timestamp": "2026-10-09T00:28:25.000000Z",
+        "active_power_total": 8.843
+      },
+      {
+        "timestamp": "2026-10-09T00:28:30.000000Z",
+        "active_power_total": 7.678
+      },
+      {
+        "timestamp": "2026-10-09T00:28:35.000000Z",
+        "active_power_total": 7.417
+      },
+      {
+        "timestamp": "2026-10-09T00:28:40.000000Z",
+        "active_power_total": 8.909
+      },
+      {
+        "timestamp": "2026-10-09T00:28:45.000000Z",
+        "active_power_total": 9.561
+      },
+      {
+        "timestamp": "2026-10-09T00:28:50.000000Z",
+        "active_power_total": 7.101
+      },
+      {
+        "timestamp": "2026-10-09T00:28:55.000000Z",
+        "active_power_total": 8.211
+      },
+      {
+        "timestamp": "2026-10-09T00:29:00.000000Z",
+        "active_power_total": 10.568
+      },
+      {
+        "timestamp": "2026-10-09T00:29:05.000000Z",
+        "active_power_total": 8.651
+      },
+      {
+        "timestamp": "2026-10-09T00:29:10.000000Z",
+        "active_power_total": 10.04
+      },
+      {
+        "timestamp": "2026-10-09T00:29:15.000000Z",
+        "active_power_total": 9.425
+      },
+      {
+        "timestamp": "2026-10-09T00:29:20.000000Z",
+        "active_power_total": 11.517
+      },
+      {
+        "timestamp": "2026-10-09T00:29:25.000000Z",
+        "active_power_total": 5.818
+      },
+      {
+        "timestamp": "2026-10-09T00:29:30.000000Z",
+        "active_power_total": 9.275
+      },
+      {
+        "timestamp": "2026-10-09T00:29:35.000000Z",
+        "active_power_total": 8.896
+      },
+      {
+        "timestamp": "2026-10-09T00:29:40.000000Z",
+        "active_power_total": 7.799
+      },
+      {
+        "timestamp": "2026-10-09T00:29:45.000000Z",
+        "active_power_total": 6.501
+      },
+      {
+        "timestamp": "2026-10-09T00:29:50.000000Z",
+        "active_power_total": 7.946
+      },
+      {
+        "timestamp": "2026-10-09T00:29:55.000000Z",
+        "active_power_total": 6.17
+      },
+      {
+        "timestamp": "2026-10-09T00:30:00.000000Z",
+        "active_power_total": 7.559
+      },
+      {
+        "timestamp": "2026-10-09T00:30:05.000000Z",
+        "active_power_total": 7.7
+      },
+      {
+        "timestamp": "2026-10-09T00:30:10.000000Z",
+        "active_power_total": 9.368
+      },
+      {
+        "timestamp": "2026-10-09T00:30:15.000000Z",
+        "active_power_total": 8.795
+      },
+      {
+        "timestamp": "2026-10-09T00:30:20.000000Z",
+        "active_power_total": 11.504
+      },
+      {
+        "timestamp": "2026-10-09T00:30:25.000000Z",
+        "active_power_total": 10.996
+      },
+      {
+        "timestamp": "2026-10-09T00:30:30.000000Z",
+        "active_power_total": 10.006
+      },
+      {
+        "timestamp": "2026-10-09T00:30:35.000000Z",
+        "active_power_total": 10.826
+      },
+      {
+        "timestamp": "2026-10-09T00:30:40.000000Z",
+        "active_power_total": 9.442
+      },
+      {
+        "timestamp": "2026-10-09T00:30:45.000000Z",
+        "active_power_total": 6.992
+      },
+      {
+        "timestamp": "2026-10-09T00:30:50.000000Z",
+        "active_power_total": 6.741
+      },
+      {
+        "timestamp": "2026-10-09T00:30:55.000000Z",
+        "active_power_total": 7.597
+      },
+      {
+        "timestamp": "2026-10-09T00:31:00.000000Z",
+        "active_power_total": 9.251
+      },
+      {
+        "timestamp": "2026-10-09T00:31:05.000000Z",
+        "active_power_total": 6.969
+      },
+      {
+        "timestamp": "2026-10-09T00:31:10.000000Z",
+        "active_power_total": 6.938
+      },
+      {
+        "timestamp": "2026-10-09T00:31:15.000000Z",
+        "active_power_total": 6.179
+      },
+      {
+        "timestamp": "2026-10-09T00:31:20.000000Z",
+        "active_power_total": 11.577
+      },
+      {
+        "timestamp": "2026-10-09T00:31:25.000000Z",
+        "active_power_total": 9.308
+      },
+      {
+        "timestamp": "2026-10-09T00:31:30.000000Z",
+        "active_power_total": 7.022
+      },
+      {
+        "timestamp": "2026-10-09T00:31:35.000000Z",
+        "active_power_total": 7.625
+      },
+      {
+        "timestamp": "2026-10-09T00:31:40.000000Z",
+        "active_power_total": 9.354
+      },
+      {
+        "timestamp": "2026-10-09T00:31:45.000000Z",
+        "active_power_total": 12.188
+      },
+      {
+        "timestamp": "2026-10-09T00:31:50.000000Z",
+        "active_power_total": 11.318
+      },
+      {
+        "timestamp": "2026-10-09T00:31:55.000000Z",
+        "active_power_total": 10.666
+      },
+      {
+        "timestamp": "2026-10-09T00:32:00.000000Z",
+        "active_power_total": 9.653
+      },
+      {
+        "timestamp": "2026-10-09T00:32:05.000000Z",
+        "active_power_total": 9.059
+      },
+      {
+        "timestamp": "2026-10-09T00:32:10.000000Z",
+        "active_power_total": 7.624
+      },
+      {
+        "timestamp": "2026-10-09T00:32:15.000000Z",
+        "active_power_total": 11.647
+      },
+      {
+        "timestamp": "2026-10-09T00:32:20.000000Z",
+        "active_power_total": 8.399
+      },
+      {
+        "timestamp": "2026-10-09T00:32:25.000000Z",
+        "active_power_total": 8.271
+      },
+      {
+        "timestamp": "2026-10-09T00:32:30.000000Z",
+        "active_power_total": 9.801
+      },
+      {
+        "timestamp": "2026-10-09T00:32:35.000000Z",
+        "active_power_total": 10.054
+      },
+      {
+        "timestamp": "2026-10-09T00:32:40.000000Z",
+        "active_power_total": 7.941
+      },
+      {
+        "timestamp": "2026-10-09T00:32:45.000000Z",
+        "active_power_total": 8.575
+      },
+      {
+        "timestamp": "2026-10-09T00:32:50.000000Z",
+        "active_power_total": 9.088
+      },
+      {
+        "timestamp": "2026-10-09T00:32:55.000000Z",
+        "active_power_total": 8.58
+      },
+      {
+        "timestamp": "2026-10-09T00:33:00.000000Z",
+        "active_power_total": 8.161
+      },
+      {
+        "timestamp": "2026-10-09T00:33:05.000000Z",
+        "active_power_total": 9.693
+      },
+      {
+        "timestamp": "2026-10-09T00:33:10.000000Z",
+        "active_power_total": 9.373
+      },
+      {
+        "timestamp": "2026-10-09T00:33:15.000000Z",
+        "active_power_total": 9.292
+      },
+      {
+        "timestamp": "2026-10-09T00:33:20.000000Z",
+        "active_power_total": 9.547
+      },
+      {
+        "timestamp": "2026-10-09T00:33:25.000000Z",
+        "active_power_total": 8.843
+      },
+      {
+        "timestamp": "2026-10-09T00:33:30.000000Z",
+        "active_power_total": 11.139
+      },
+      {
+        "timestamp": "2026-10-09T00:33:35.000000Z",
+        "active_power_total": 9.584
+      },
+      {
+        "timestamp": "2026-10-09T00:33:40.000000Z",
+        "active_power_total": 8.932
+      },
+      {
+        "timestamp": "2026-10-09T00:33:45.000000Z",
+        "active_power_total": 9.463
+      },
+      {
+        "timestamp": "2026-10-09T00:33:50.000000Z",
+        "active_power_total": 9.387
+      },
+      {
+        "timestamp": "2026-10-09T00:33:55.000000Z",
+        "active_power_total": 7.056
+      },
+      {
+        "timestamp": "2026-10-09T00:34:00.000000Z",
+        "active_power_total": 8.725
+      },
+      {
+        "timestamp": "2026-10-09T00:34:05.000000Z",
+        "active_power_total": 11.04
+      },
+      {
+        "timestamp": "2026-10-09T00:34:10.000000Z",
+        "active_power_total": 6.167
+      },
+      {
+        "timestamp": "2026-10-09T00:34:15.000000Z",
+        "active_power_total": 9.431
+      },
+      {
+        "timestamp": "2026-10-09T00:34:20.000000Z",
+        "active_power_total": 8.595
+      },
+      {
+        "timestamp": "2026-10-09T00:34:25.000000Z",
+        "active_power_total": 9.305
+      },
+      {
+        "timestamp": "2026-10-09T00:34:30.000000Z",
+        "active_power_total": 7.677
+      },
+      {
+        "timestamp": "2026-10-09T00:34:35.000000Z",
+        "active_power_total": 10.394
+      },
+      {
+        "timestamp": "2026-10-09T00:34:40.000000Z",
+        "active_power_total": 12.302
+      },
+      {
+        "timestamp": "2026-10-09T00:34:45.000000Z",
+        "active_power_total": 8.984
+      },
+      {
+        "timestamp": "2026-10-09T00:34:50.000000Z",
+        "active_power_total": 9.671
+      },
+      {
+        "timestamp": "2026-10-09T00:34:55.000000Z",
+        "active_power_total": 8.684
+      },
+      {
+        "timestamp": "2026-10-09T00:35:00.000000Z",
+        "active_power_total": 9.71
+      },
+      {
+        "timestamp": "2026-10-09T00:35:05.000000Z",
+        "active_power_total": 10.242
+      },
+      {
+        "timestamp": "2026-10-09T00:35:10.000000Z",
+        "active_power_total": 11.133
+      },
+      {
+        "timestamp": "2026-10-09T00:35:15.000000Z",
+        "active_power_total": 8.946
+      },
+      {
+        "timestamp": "2026-10-09T00:35:20.000000Z",
+        "active_power_total": 7.468
+      },
+      {
+        "timestamp": "2026-10-09T00:35:25.000000Z",
+        "active_power_total": 6.898
+      },
+      {
+        "timestamp": "2026-10-09T00:35:30.000000Z",
+        "active_power_total": 7.528
+      },
+      {
+        "timestamp": "2026-10-09T00:35:35.000000Z",
+        "active_power_total": 9.88
+      },
+      {
+        "timestamp": "2026-10-09T00:35:40.000000Z",
+        "active_power_total": 8.833
+      },
+      {
+        "timestamp": "2026-10-09T00:35:45.000000Z",
+        "active_power_total": 11.737
+      },
+      {
+        "timestamp": "2026-10-09T00:35:50.000000Z",
+        "active_power_total": 8.523
+      },
+      {
+        "timestamp": "2026-10-09T00:35:55.000000Z",
+        "active_power_total": 10.5
+      },
+      {
+        "timestamp": "2026-10-09T00:36:00.000000Z",
+        "active_power_total": 8.562
+      },
+      {
+        "timestamp": "2026-10-09T00:36:05.000000Z",
+        "active_power_total": 8.875
+      },
+      {
+        "timestamp": "2026-10-09T00:36:10.000000Z",
+        "active_power_total": 8.858
+      },
+      {
+        "timestamp": "2026-10-09T00:36:15.000000Z",
+        "active_power_total": 6.601
+      },
+      {
+        "timestamp": "2026-10-09T00:36:20.000000Z",
+        "active_power_total": 9.416
+      },
+      {
+        "timestamp": "2026-10-09T00:36:25.000000Z",
+        "active_power_total": 10.565
+      },
+      {
+        "timestamp": "2026-10-09T00:36:30.000000Z",
+        "active_power_total": 7.89
+      },
+      {
+        "timestamp": "2026-10-09T00:36:35.000000Z",
+        "active_power_total": 7.951
+      },
+      {
+        "timestamp": "2026-10-09T00:36:40.000000Z",
+        "active_power_total": 8.313
+      },
+      {
+        "timestamp": "2026-10-09T00:36:50.000000Z",
+        "active_power_total": 9.544
+      },
+      {
+        "timestamp": "2026-10-09T00:36:55.000000Z",
+        "active_power_total": 9.58
+      },
+      {
+        "timestamp": "2026-10-09T00:37:05.000000Z",
+        "active_power_total": 7.582
+      },
+      {
+        "timestamp": "2026-10-09T00:37:10.000000Z",
+        "active_power_total": 9.096
+      },
+      {
+        "timestamp": "2026-10-09T00:37:15.000000Z",
+        "active_power_total": 6.879
+      },
+      {
+        "timestamp": "2026-10-09T00:37:20.000000Z",
+        "active_power_total": 7.633
+      },
+      {
+        "timestamp": "2026-10-09T00:37:25.000000Z",
+        "active_power_total": 7.721
+      },
+      {
+        "timestamp": "2026-10-09T00:37:30.000000Z",
+        "active_power_total": 10.139
+      },
+      {
+        "timestamp": "2026-10-09T00:37:35.000000Z",
+        "active_power_total": 6.817
+      },
+      {
+        "timestamp": "2026-10-09T00:37:40.000000Z",
+        "active_power_total": 8.001
+      },
+      {
+        "timestamp": "2026-10-09T00:37:45.000000Z",
+        "active_power_total": 8.28
+      },
+      {
+        "timestamp": "2026-10-09T00:37:50.000000Z",
+        "active_power_total": 11.343
+      },
+      {
+        "timestamp": "2026-10-09T00:37:55.000000Z",
+        "active_power_total": 9.885
+      },
+      {
+        "timestamp": "2026-10-09T00:38:00.000000Z",
+        "active_power_total": 8.501
+      },
+      {
+        "timestamp": "2026-10-09T00:38:05.000000Z",
+        "active_power_total": 6.632
+      },
+      {
+        "timestamp": "2026-10-09T00:38:10.000000Z",
+        "active_power_total": 7.929
+      },
+      {
+        "timestamp": "2026-10-09T00:38:15.000000Z",
+        "active_power_total": 8.494
+      },
+      {
+        "timestamp": "2026-10-09T00:38:20.000000Z",
+        "active_power_total": 8.801
+      },
+      {
+        "timestamp": "2026-10-09T00:38:25.000000Z",
+        "active_power_total": 7.776
+      },
+      {
+        "timestamp": "2026-10-09T00:38:30.000000Z",
+        "active_power_total": 7.085
+      },
+      {
+        "timestamp": "2026-10-09T00:38:35.000000Z",
+        "active_power_total": 11.119
+      },
+      {
+        "timestamp": "2026-10-09T00:38:40.000000Z",
+        "active_power_total": 7.429
+      },
+      {
+        "timestamp": "2026-10-09T00:38:45.000000Z",
+        "active_power_total": 7.809
+      },
+      {
+        "timestamp": "2026-10-09T00:38:50.000000Z",
+        "active_power_total": 9.545
+      },
+      {
+        "timestamp": "2026-10-09T00:38:55.000000Z",
+        "active_power_total": 12.189
+      },
+      {
+        "timestamp": "2026-10-09T00:39:00.000000Z",
+        "active_power_total": 6.798
+      },
+      {
+        "timestamp": "2026-10-09T00:39:05.000000Z",
+        "active_power_total": 8.95
+      },
+      {
+        "timestamp": "2026-10-09T00:39:10.000000Z",
+        "active_power_total": 11.183
+      },
+      {
+        "timestamp": "2026-10-09T00:39:15.000000Z",
+        "active_power_total": 8.789
+      },
+      {
+        "timestamp": "2026-10-09T00:39:25.000000Z",
+        "active_power_total": 6.885
+      },
+      {
+        "timestamp": "2026-10-09T00:39:30.000000Z",
+        "active_power_total": 7.851
+      },
+      {
+        "timestamp": "2026-10-09T00:39:35.000000Z",
+        "active_power_total": 9.454
+      },
+      {
+        "timestamp": "2026-10-09T00:39:40.000000Z",
+        "active_power_total": 11.2
+      },
+      {
+        "timestamp": "2026-10-09T00:39:45.000000Z",
+        "active_power_total": 11.186
+      },
+      {
+        "timestamp": "2026-10-09T00:39:50.000000Z",
+        "active_power_total": 9.255
+      },
+      {
+        "timestamp": "2026-10-09T00:39:55.000000Z",
+        "active_power_total": 10.536
+      },
+      {
+        "timestamp": "2026-10-09T00:40:00.000000Z",
+        "active_power_total": 7.844
+      },
+      {
+        "timestamp": "2026-10-09T00:40:05.000000Z",
+        "active_power_total": 9.017
+      },
+      {
+        "timestamp": "2026-10-09T00:40:10.000000Z",
+        "active_power_total": 9.796
+      },
+      {
+        "timestamp": "2026-10-09T00:40:15.000000Z",
+        "active_power_total": 7.682
+      },
+      {
+        "timestamp": "2026-10-09T00:40:20.000000Z",
+        "active_power_total": 5.522
+      },
+      {
+        "timestamp": "2026-10-09T00:40:25.000000Z",
+        "active_power_total": 9.609
+      },
+      {
+        "timestamp": "2026-10-09T00:40:30.000000Z",
+        "active_power_total": 8.516
+      },
+      {
+        "timestamp": "2026-10-09T00:40:35.000000Z",
+        "active_power_total": 9.534
+      },
+      {
+        "timestamp": "2026-10-09T00:40:40.000000Z",
+        "active_power_total": 6.187
+      },
+      {
+        "timestamp": "2026-10-09T00:40:45.000000Z",
+        "active_power_total": 8.748
+      },
+      {
+        "timestamp": "2026-10-09T00:40:50.000000Z",
+        "active_power_total": 8.145
+      },
+      {
+        "timestamp": "2026-10-09T00:40:55.000000Z",
+        "active_power_total": 8.885
+      },
+      {
+        "timestamp": "2026-10-09T00:41:00.000000Z",
+        "active_power_total": 8.443
+      },
+      {
+        "timestamp": "2026-10-09T00:41:05.000000Z",
+        "active_power_total": 8.876
+      },
+      {
+        "timestamp": "2026-10-09T00:41:10.000000Z",
+        "active_power_total": 6.449
+      },
+      {
+        "timestamp": "2026-10-09T00:41:15.000000Z",
+        "active_power_total": 11.896
+      },
+      {
+        "timestamp": "2026-10-09T00:41:20.000000Z",
+        "active_power_total": 6.453
+      },
+      {
+        "timestamp": "2026-10-09T00:41:25.000000Z",
+        "active_power_total": 6.392
+      },
+      {
+        "timestamp": "2026-10-09T00:41:30.000000Z",
+        "active_power_total": 8.064
+      },
+      {
+        "timestamp": "2026-10-09T00:41:35.000000Z",
+        "active_power_total": 10.506
+      },
+      {
+        "timestamp": "2026-10-09T00:41:40.000000Z",
+        "active_power_total": 10.242
+      },
+      {
+        "timestamp": "2026-10-09T00:41:45.000000Z",
+        "active_power_total": 6.81
+      },
+      {
+        "timestamp": "2026-10-09T00:41:50.000000Z",
+        "active_power_total": 9.102
+      },
+      {
+        "timestamp": "2026-10-09T00:41:55.000000Z",
+        "active_power_total": 7.25
+      },
+      {
+        "timestamp": "2026-10-09T00:42:00.000000Z",
+        "active_power_total": 6.738
+      },
+      {
+        "timestamp": "2026-10-09T00:42:05.000000Z",
+        "active_power_total": 8.496
+      },
+      {
+        "timestamp": "2026-10-09T00:42:10.000000Z",
+        "active_power_total": 7.752
+      },
+      {
+        "timestamp": "2026-10-09T00:42:15.000000Z",
+        "active_power_total": 8.083
+      },
+      {
+        "timestamp": "2026-10-09T00:42:20.000000Z",
+        "active_power_total": 8.552
+      },
+      {
+        "timestamp": "2026-10-09T00:42:25.000000Z",
+        "active_power_total": 6.86
+      },
+      {
+        "timestamp": "2026-10-09T00:42:30.000000Z",
+        "active_power_total": 7.45
+      },
+      {
+        "timestamp": "2026-10-09T00:42:35.000000Z",
+        "active_power_total": 6.976
+      },
+      {
+        "timestamp": "2026-10-09T00:42:40.000000Z",
+        "active_power_total": 9.241
+      },
+      {
+        "timestamp": "2026-10-09T00:42:45.000000Z",
+        "active_power_total": 7.873
+      },
+      {
+        "timestamp": "2026-10-09T00:42:50.000000Z",
+        "active_power_total": 9.773
+      },
+      {
+        "timestamp": "2026-10-09T00:42:55.000000Z",
+        "active_power_total": 10.56
+      },
+      {
+        "timestamp": "2026-10-09T00:43:00.000000Z",
+        "active_power_total": 11.396
+      },
+      {
+        "timestamp": "2026-10-09T00:43:05.000000Z",
+        "active_power_total": 7.352
+      },
+      {
+        "timestamp": "2026-10-09T00:43:10.000000Z",
+        "active_power_total": 7.946
+      },
+      {
+        "timestamp": "2026-10-09T00:43:15.000000Z",
+        "active_power_total": 9.841
+      },
+      {
+        "timestamp": "2026-10-09T00:43:20.000000Z",
+        "active_power_total": 11.221
+      },
+      {
+        "timestamp": "2026-10-09T00:43:25.000000Z",
+        "active_power_total": 8.264
+      },
+      {
+        "timestamp": "2026-10-09T00:43:30.000000Z",
+        "active_power_total": 9.166
+      },
+      {
+        "timestamp": "2026-10-09T00:43:35.000000Z",
+        "active_power_total": 7.014
+      },
+      {
+        "timestamp": "2026-10-09T00:43:40.000000Z",
+        "active_power_total": 8.292
+      },
+      {
+        "timestamp": "2026-10-09T00:43:45.000000Z",
+        "active_power_total": 10.407
+      },
+      {
+        "timestamp": "2026-10-09T00:43:50.000000Z",
+        "active_power_total": 7.911
+      },
+      {
+        "timestamp": "2026-10-09T00:43:55.000000Z",
+        "active_power_total": 9.153
+      },
+      {
+        "timestamp": "2026-10-09T00:44:00.000000Z",
+        "active_power_total": 8.04
+      },
+      {
+        "timestamp": "2026-10-09T00:44:05.000000Z",
+        "active_power_total": 9.035
+      },
+      {
+        "timestamp": "2026-10-09T00:44:10.000000Z",
+        "active_power_total": 10.052
+      },
+      {
+        "timestamp": "2026-10-09T00:44:15.000000Z",
+        "active_power_total": 7.915
+      },
+      {
+        "timestamp": "2026-10-09T00:44:20.000000Z",
+        "active_power_total": 8.519
+      },
+      {
+        "timestamp": "2026-10-09T00:44:25.000000Z",
+        "active_power_total": 7.065
+      },
+      {
+        "timestamp": "2026-10-09T00:44:30.000000Z",
+        "active_power_total": 8.185
+      },
+      {
+        "timestamp": "2026-10-09T00:44:35.000000Z",
+        "active_power_total": 9.845
+      },
+      {
+        "timestamp": "2026-10-09T00:44:40.000000Z",
+        "active_power_total": 8.819
+      },
+      {
+        "timestamp": "2026-10-09T00:44:45.000000Z",
+        "active_power_total": 9.782
+      },
+      {
+        "timestamp": "2026-10-09T00:44:50.000000Z",
+        "active_power_total": 8.501
+      },
+      {
+        "timestamp": "2026-10-09T00:44:55.000000Z",
+        "active_power_total": 7.849
+      },
+      {
+        "timestamp": "2026-10-09T00:45:00.000000Z",
+        "active_power_total": 9.653
+      },
+      {
+        "timestamp": "2026-10-09T00:45:05.000000Z",
+        "active_power_total": 7.926
+      },
+      {
+        "timestamp": "2026-10-09T00:45:10.000000Z",
+        "active_power_total": 8.786
+      },
+      {
+        "timestamp": "2026-10-09T00:45:15.000000Z",
+        "active_power_total": 8.545
+      },
+      {
+        "timestamp": "2026-10-09T00:45:20.000000Z",
+        "active_power_total": 7.959
+      },
+      {
+        "timestamp": "2026-10-09T00:45:25.000000Z",
+        "active_power_total": 10.514
+      },
+      {
+        "timestamp": "2026-10-09T00:45:30.000000Z",
+        "active_power_total": 9.487
+      },
+      {
+        "timestamp": "2026-10-09T00:45:35.000000Z",
+        "active_power_total": 9.308
+      },
+      {
+        "timestamp": "2026-10-09T00:45:40.000000Z",
+        "active_power_total": 8.296
+      },
+      {
+        "timestamp": "2026-10-09T00:45:45.000000Z",
+        "active_power_total": 8.159
+      },
+      {
+        "timestamp": "2026-10-09T00:45:50.000000Z",
+        "active_power_total": 7.202
+      },
+      {
+        "timestamp": "2026-10-09T00:45:55.000000Z",
+        "active_power_total": 11.336
+      },
+      {
+        "timestamp": "2026-10-09T00:46:00.000000Z",
+        "active_power_total": 6.109
+      },
+      {
+        "timestamp": "2026-10-09T00:46:05.000000Z",
+        "active_power_total": 8.108
+      },
+      {
+        "timestamp": "2026-10-09T00:46:10.000000Z",
+        "active_power_total": 9.229
+      },
+      {
+        "timestamp": "2026-10-09T00:46:15.000000Z",
+        "active_power_total": 7.509
+      },
+      {
+        "timestamp": "2026-10-09T00:46:20.000000Z",
+        "active_power_total": 9.105
+      },
+      {
+        "timestamp": "2026-10-09T00:46:25.000000Z",
+        "active_power_total": 7.891
+      },
+      {
+        "timestamp": "2026-10-09T00:46:30.000000Z",
+        "active_power_total": 7.612
+      },
+      {
+        "timestamp": "2026-10-09T00:46:35.000000Z",
+        "active_power_total": 10.014
+      },
+      {
+        "timestamp": "2026-10-09T00:46:40.000000Z",
+        "active_power_total": 8.036
+      },
+      {
+        "timestamp": "2026-10-09T00:46:45.000000Z",
+        "active_power_total": 6.589
+      },
+      {
+        "timestamp": "2026-10-09T00:46:50.000000Z",
+        "active_power_total": 9.359
+      },
+      {
+        "timestamp": "2026-10-09T00:46:55.000000Z",
+        "active_power_total": 8.686
+      },
+      {
+        "timestamp": "2026-10-09T00:47:00.000000Z",
+        "active_power_total": 8.269
+      },
+      {
+        "timestamp": "2026-10-09T00:47:05.000000Z",
+        "active_power_total": 5.581
+      },
+      {
+        "timestamp": "2026-10-09T00:47:10.000000Z",
+        "active_power_total": 8.781
+      },
+      {
+        "timestamp": "2026-10-09T00:47:15.000000Z",
+        "active_power_total": 10.728
+      },
+      {
+        "timestamp": "2026-10-09T00:47:20.000000Z",
+        "active_power_total": 8.914
+      },
+      {
+        "timestamp": "2026-10-09T00:47:25.000000Z",
+        "active_power_total": 9.331
+      },
+      {
+        "timestamp": "2026-10-09T00:47:30.000000Z",
+        "active_power_total": 7.588
+      },
+      {
+        "timestamp": "2026-10-09T00:47:35.000000Z",
+        "active_power_total": 9.348
+      },
+      {
+        "timestamp": "2026-10-09T00:47:40.000000Z",
+        "active_power_total": 8.027
+      },
+      {
+        "timestamp": "2026-10-09T00:47:45.000000Z",
+        "active_power_total": 7.103
+      },
+      {
+        "timestamp": "2026-10-09T00:47:50.000000Z",
+        "active_power_total": 8.613
+      },
+      {
+        "timestamp": "2026-10-09T00:47:55.000000Z",
+        "active_power_total": 8.155
+      },
+      {
+        "timestamp": "2026-10-09T00:48:00.000000Z",
+        "active_power_total": 8.034
+      },
+      {
+        "timestamp": "2026-10-09T00:48:05.000000Z",
+        "active_power_total": 10.066
+      },
+      {
+        "timestamp": "2026-10-09T00:48:10.000000Z",
+        "active_power_total": 7.961
+      },
+      {
+        "timestamp": "2026-10-09T00:48:15.000000Z",
+        "active_power_total": 11.508
+      },
+      {
+        "timestamp": "2026-10-09T00:48:20.000000Z",
+        "active_power_total": 9.269
+      },
+      {
+        "timestamp": "2026-10-09T00:48:25.000000Z",
+        "active_power_total": 9.523
+      },
+      {
+        "timestamp": "2026-10-09T00:48:30.000000Z",
+        "active_power_total": 8.06
+      },
+      {
+        "timestamp": "2026-10-09T00:48:35.000000Z",
+        "active_power_total": 9.9
+      },
+      {
+        "timestamp": "2026-10-09T00:48:40.000000Z",
+        "active_power_total": 7.02
+      },
+      {
+        "timestamp": "2026-10-09T00:48:45.000000Z",
+        "active_power_total": 9.118
+      },
+      {
+        "timestamp": "2026-10-09T00:48:50.000000Z",
+        "active_power_total": 8.462
+      },
+      {
+        "timestamp": "2026-10-09T00:48:55.000000Z",
+        "active_power_total": 8.552
+      },
+      {
+        "timestamp": "2026-10-09T00:49:05.000000Z",
+        "active_power_total": 8.065
+      },
+      {
+        "timestamp": "2026-10-09T00:49:15.000000Z",
+        "active_power_total": 9.671
+      },
+      {
+        "timestamp": "2026-10-09T00:49:20.000000Z",
+        "active_power_total": 8.921
+      },
+      {
+        "timestamp": "2026-10-09T00:49:25.000000Z",
+        "active_power_total": 10.296
+      },
+      {
+        "timestamp": "2026-10-09T00:49:35.000000Z",
+        "active_power_total": 7.107
+      },
+      {
+        "timestamp": "2026-10-09T00:49:40.000000Z",
+        "active_power_total": 7.858
+      },
+      {
+        "timestamp": "2026-10-09T00:49:45.000000Z",
+        "active_power_total": 6.525
+      },
+      {
+        "timestamp": "2026-10-09T00:49:55.000000Z",
+        "active_power_total": 5.059
+      },
+      {
+        "timestamp": "2026-10-09T00:50:00.000000Z",
+        "active_power_total": 9.87
+      },
+      {
+        "timestamp": "2026-10-09T00:50:05.000000Z",
+        "active_power_total": 7.684
+      },
+      {
+        "timestamp": "2026-10-09T00:50:10.000000Z",
+        "active_power_total": 6.672
+      },
+      {
+        "timestamp": "2026-10-09T00:50:15.000000Z",
+        "active_power_total": 8.861
+      },
+      {
+        "timestamp": "2026-10-09T00:50:20.000000Z",
+        "active_power_total": 10.939
+      },
+      {
+        "timestamp": "2026-10-09T00:50:25.000000Z",
+        "active_power_total": 8.902
+      },
+      {
+        "timestamp": "2026-10-09T00:50:30.000000Z",
+        "active_power_total": 6.798
+      },
+      {
+        "timestamp": "2026-10-09T00:50:35.000000Z",
+        "active_power_total": 5.859
+      },
+      {
+        "timestamp": "2026-10-09T00:50:40.000000Z",
+        "active_power_total": 10.306
+      },
+      {
+        "timestamp": "2026-10-09T00:50:45.000000Z",
+        "active_power_total": 8.736
+      },
+      {
+        "timestamp": "2026-10-09T00:50:50.000000Z",
+        "active_power_total": 8.706
+      },
+      {
+        "timestamp": "2026-10-09T00:50:55.000000Z",
+        "active_power_total": 9.524
+      },
+      {
+        "timestamp": "2026-10-09T00:51:00.000000Z",
+        "active_power_total": 7.931
+      },
+      {
+        "timestamp": "2026-10-09T00:51:05.000000Z",
+        "active_power_total": 10.514
+      },
+      {
+        "timestamp": "2026-10-09T00:51:10.000000Z",
+        "active_power_total": 8.099
+      },
+      {
+        "timestamp": "2026-10-09T00:51:15.000000Z",
+        "active_power_total": 8.287
+      },
+      {
+        "timestamp": "2026-10-09T00:51:20.000000Z",
+        "active_power_total": 7.466
+      },
+      {
+        "timestamp": "2026-10-09T00:51:25.000000Z",
+        "active_power_total": 6.524
+      },
+      {
+        "timestamp": "2026-10-09T00:51:30.000000Z",
+        "active_power_total": 9.66
+      },
+      {
+        "timestamp": "2026-10-09T00:51:35.000000Z",
+        "active_power_total": 9.358
+      },
+      {
+        "timestamp": "2026-10-09T00:51:40.000000Z",
+        "active_power_total": 10.75
+      },
+      {
+        "timestamp": "2026-10-09T00:51:45.000000Z",
+        "active_power_total": 8.511
+      },
+      {
+        "timestamp": "2026-10-09T00:51:50.000000Z",
+        "active_power_total": 7.129
+      },
+      {
+        "timestamp": "2026-10-09T00:51:55.000000Z",
+        "active_power_total": 6.687
+      },
+      {
+        "timestamp": "2026-10-09T00:52:00.000000Z",
+        "active_power_total": 10.352
+      },
+      {
+        "timestamp": "2026-10-09T00:52:05.000000Z",
+        "active_power_total": 7.706
+      },
+      {
+        "timestamp": "2026-10-09T00:52:10.000000Z",
+        "active_power_total": 8.654
+      },
+      {
+        "timestamp": "2026-10-09T00:52:15.000000Z",
+        "active_power_total": 8.056
+      },
+      {
+        "timestamp": "2026-10-09T00:52:20.000000Z",
+        "active_power_total": 7.569
+      },
+      {
+        "timestamp": "2026-10-09T00:52:25.000000Z",
+        "active_power_total": 9.738
+      },
+      {
+        "timestamp": "2026-10-09T00:52:30.000000Z",
+        "active_power_total": 8.343
+      },
+      {
+        "timestamp": "2026-10-09T00:52:35.000000Z",
+        "active_power_total": 8.843
+      },
+      {
+        "timestamp": "2026-10-09T00:52:40.000000Z",
+        "active_power_total": 9.187
+      },
+      {
+        "timestamp": "2026-10-09T00:52:45.000000Z",
+        "active_power_total": 5.277
+      },
+      {
+        "timestamp": "2026-10-09T00:52:50.000000Z",
+        "active_power_total": 9.915
+      },
+      {
+        "timestamp": "2026-10-09T00:52:55.000000Z",
+        "active_power_total": 8.369
+      },
+      {
+        "timestamp": "2026-10-09T00:53:00.000000Z",
+        "active_power_total": 6.764
+      },
+      {
+        "timestamp": "2026-10-09T00:53:05.000000Z",
+        "active_power_total": 8.511
+      },
+      {
+        "timestamp": "2026-10-09T00:53:10.000000Z",
+        "active_power_total": 7.815
+      },
+      {
+        "timestamp": "2026-10-09T00:53:15.000000Z",
+        "active_power_total": 10.199
+      },
+      {
+        "timestamp": "2026-10-09T00:53:20.000000Z",
+        "active_power_total": 10.175
+      },
+      {
+        "timestamp": "2026-10-09T00:53:25.000000Z",
+        "active_power_total": 7.414
+      },
+      {
+        "timestamp": "2026-10-09T00:53:30.000000Z",
+        "active_power_total": 9.471
+      },
+      {
+        "timestamp": "2026-10-09T00:53:35.000000Z",
+        "active_power_total": 7.17
+      },
+      {
+        "timestamp": "2026-10-09T00:53:40.000000Z",
+        "active_power_total": 11.25
+      },
+      {
+        "timestamp": "2026-10-09T00:53:45.000000Z",
+        "active_power_total": 8.736
+      },
+      {
+        "timestamp": "2026-10-09T00:53:50.000000Z",
+        "active_power_total": 10.693
+      },
+      {
+        "timestamp": "2026-10-09T00:53:55.000000Z",
+        "active_power_total": 10.357
+      },
+      {
+        "timestamp": "2026-10-09T00:54:00.000000Z",
+        "active_power_total": 11.219
+      },
+      {
+        "timestamp": "2026-10-09T00:54:05.000000Z",
+        "active_power_total": 7.905
+      },
+      {
+        "timestamp": "2026-10-09T00:54:10.000000Z",
+        "active_power_total": 7.53
+      },
+      {
+        "timestamp": "2026-10-09T00:54:20.000000Z",
+        "active_power_total": 7.66
+      },
+      {
+        "timestamp": "2026-10-09T00:54:25.000000Z",
+        "active_power_total": 9.881
+      },
+      {
+        "timestamp": "2026-10-09T00:54:30.000000Z",
+        "active_power_total": 7.461
+      },
+      {
+        "timestamp": "2026-10-09T00:54:35.000000Z",
+        "active_power_total": 8.854
+      },
+      {
+        "timestamp": "2026-10-09T00:54:40.000000Z",
+        "active_power_total": 8.262
+      },
+      {
+        "timestamp": "2026-10-09T00:54:45.000000Z",
+        "active_power_total": 7.01
+      },
+      {
+        "timestamp": "2026-10-09T00:54:50.000000Z",
+        "active_power_total": 4.186
+      },
+      {
+        "timestamp": "2026-10-09T00:54:55.000000Z",
+        "active_power_total": 10.545
+      },
+      {
+        "timestamp": "2026-10-09T00:55:00.000000Z",
+        "active_power_total": 10.93
+      },
+      {
+        "timestamp": "2026-10-09T00:55:05.000000Z",
+        "active_power_total": 6.779
+      },
+      {
+        "timestamp": "2026-10-09T00:55:10.000000Z",
+        "active_power_total": 4.984
+      },
+      {
+        "timestamp": "2026-10-09T00:55:15.000000Z",
+        "active_power_total": 8.1
+      },
+      {
+        "timestamp": "2026-10-09T00:55:20.000000Z",
+        "active_power_total": 9.479
+      },
+      {
+        "timestamp": "2026-10-09T00:55:25.000000Z",
+        "active_power_total": 6.793
+      },
+      {
+        "timestamp": "2026-10-09T00:55:30.000000Z",
+        "active_power_total": 8.716
+      },
+      {
+        "timestamp": "2026-10-09T00:55:40.000000Z",
+        "active_power_total": 10.545
+      },
+      {
+        "timestamp": "2026-10-09T00:55:45.000000Z",
+        "active_power_total": 5.545
+      },
+      {
+        "timestamp": "2026-10-09T00:55:50.000000Z",
+        "active_power_total": 8.702
+      },
+      {
+        "timestamp": "2026-10-09T00:55:55.000000Z",
+        "active_power_total": 6.45
+      },
+      {
+        "timestamp": "2026-10-09T00:56:00.000000Z",
+        "active_power_total": 9.232
+      },
+      {
+        "timestamp": "2026-10-09T00:56:05.000000Z",
+        "active_power_total": 10.222
+      },
+      {
+        "timestamp": "2026-10-09T00:56:10.000000Z",
+        "active_power_total": 9.24
+      },
+      {
+        "timestamp": "2026-10-09T00:56:15.000000Z",
+        "active_power_total": 9.026
+      },
+      {
+        "timestamp": "2026-10-09T00:56:20.000000Z",
+        "active_power_total": 10.33
+      },
+      {
+        "timestamp": "2026-10-09T00:56:25.000000Z",
+        "active_power_total": 10.242
+      },
+      {
+        "timestamp": "2026-10-09T00:56:30.000000Z",
+        "active_power_total": 10.015
+      },
+      {
+        "timestamp": "2026-10-09T00:56:35.000000Z",
+        "active_power_total": 7.699
+      },
+      {
+        "timestamp": "2026-10-09T00:56:40.000000Z",
+        "active_power_total": 8.51
+      },
+      {
+        "timestamp": "2026-10-09T00:56:45.000000Z",
+        "active_power_total": 9.546
+      },
+      {
+        "timestamp": "2026-10-09T00:56:50.000000Z",
+        "active_power_total": 8.666
+      },
+      {
+        "timestamp": "2026-10-09T00:56:55.000000Z",
+        "active_power_total": 9.324
+      },
+      {
+        "timestamp": "2026-10-09T00:57:00.000000Z",
+        "active_power_total": 7.655
+      },
+      {
+        "timestamp": "2026-10-09T00:57:05.000000Z",
+        "active_power_total": 8.517
+      },
+      {
+        "timestamp": "2026-10-09T00:57:10.000000Z",
+        "active_power_total": 9.504
+      },
+      {
+        "timestamp": "2026-10-09T00:57:15.000000Z",
+        "active_power_total": 9.705
+      },
+      {
+        "timestamp": "2026-10-09T00:57:20.000000Z",
+        "active_power_total": 8.757
+      },
+      {
+        "timestamp": "2026-10-09T00:57:25.000000Z",
+        "active_power_total": 7.079
+      },
+      {
+        "timestamp": "2026-10-09T00:57:30.000000Z",
+        "active_power_total": 7.075
+      },
+      {
+        "timestamp": "2026-10-09T00:57:35.000000Z",
+        "active_power_total": 9.57
+      },
+      {
+        "timestamp": "2026-10-09T00:57:40.000000Z",
+        "active_power_total": 7.31
+      },
+      {
+        "timestamp": "2026-10-09T00:57:45.000000Z",
+        "active_power_total": 10.47
+      },
+      {
+        "timestamp": "2026-10-09T00:57:50.000000Z",
+        "active_power_total": 7.456
+      },
+      {
+        "timestamp": "2026-10-09T00:57:55.000000Z",
+        "active_power_total": 10.426
+      },
+      {
+        "timestamp": "2026-10-09T00:58:00.000000Z",
+        "active_power_total": 9.766
+      },
+      {
+        "timestamp": "2026-10-09T00:58:05.000000Z",
+        "active_power_total": 8.786
+      },
+      {
+        "timestamp": "2026-10-09T00:58:10.000000Z",
+        "active_power_total": 10.133
+      },
+      {
+        "timestamp": "2026-10-09T00:58:15.000000Z",
+        "active_power_total": 8.29
+      },
+      {
+        "timestamp": "2026-10-09T00:58:20.000000Z",
+        "active_power_total": 5.783
+      },
+      {
+        "timestamp": "2026-10-09T00:58:25.000000Z",
+        "active_power_total": 9.109
+      },
+      {
+        "timestamp": "2026-10-09T00:58:30.000000Z",
+        "active_power_total": 9.328
+      },
+      {
+        "timestamp": "2026-10-09T00:58:35.000000Z",
+        "active_power_total": 10.825
+      },
+      {
+        "timestamp": "2026-10-09T00:58:40.000000Z",
+        "active_power_total": 9.806
+      },
+      {
+        "timestamp": "2026-10-09T00:58:45.000000Z",
+        "active_power_total": 7.823
+      },
+      {
+        "timestamp": "2026-10-09T00:58:50.000000Z",
+        "active_power_total": 8.382
+      },
+      {
+        "timestamp": "2026-10-09T00:58:55.000000Z",
+        "active_power_total": 7.831
+      },
+      {
+        "timestamp": "2026-10-09T00:59:00.000000Z",
+        "active_power_total": 10.09
+      },
+      {
+        "timestamp": "2026-10-09T00:59:05.000000Z",
+        "active_power_total": 8.039
+      },
+      {
+        "timestamp": "2026-10-09T00:59:10.000000Z",
+        "active_power_total": 9.468
+      },
+      {
+        "timestamp": "2026-10-09T00:59:15.000000Z",
+        "active_power_total": 9.464
+      },
+      {
+        "timestamp": "2026-10-09T00:59:20.000000Z",
+        "active_power_total": 6.262
+      },
+      {
+        "timestamp": "2026-10-09T00:59:25.000000Z",
+        "active_power_total": 6.999
+      },
+      {
+        "timestamp": "2026-10-09T00:59:30.000000Z",
+        "active_power_total": 8.312
+      },
+      {
+        "timestamp": "2026-10-09T00:59:35.000000Z",
+        "active_power_total": 7.164
+      },
+      {
+        "timestamp": "2026-10-09T00:59:40.000000Z",
+        "active_power_total": 7.94
+      },
+      {
+        "timestamp": "2026-10-09T00:59:45.000000Z",
+        "active_power_total": 10.713
+      },
+      {
+        "timestamp": "2026-10-09T00:59:50.000000Z",
+        "active_power_total": 7.15
+      },
+      {
+        "timestamp": "2026-10-09T00:59:55.000000Z",
+        "active_power_total": 7.66
+      },
+      {
+        "timestamp": "2026-10-09T01:00:00.000000Z",
+        "active_power_total": 7.762
+      },
+      {
+        "timestamp": "2026-10-09T01:00:05.000000Z",
+        "active_power_total": 8.844
+      },
+      {
+        "timestamp": "2026-10-09T01:00:10.000000Z",
+        "active_power_total": 9.612
+      },
+      {
+        "timestamp": "2026-10-09T01:00:15.000000Z",
+        "active_power_total": 7.107
+      },
+      {
+        "timestamp": "2026-10-09T01:00:20.000000Z",
+        "active_power_total": 6.325
+      },
+      {
+        "timestamp": "2026-10-09T01:00:25.000000Z",
+        "active_power_total": 7.941
+      },
+      {
+        "timestamp": "2026-10-09T01:00:30.000000Z",
+        "active_power_total": 7.055
+      },
+      {
+        "timestamp": "2026-10-09T01:00:35.000000Z",
+        "active_power_total": 9.287
+      },
+      {
+        "timestamp": "2026-10-09T01:00:40.000000Z",
+        "active_power_total": 9.475
+      },
+      {
+        "timestamp": "2026-10-09T01:00:45.000000Z",
+        "active_power_total": 6.33
+      },
+      {
+        "timestamp": "2026-10-09T01:00:50.000000Z",
+        "active_power_total": 7.625
+      },
+      {
+        "timestamp": "2026-10-09T01:00:55.000000Z",
+        "active_power_total": 8.464
+      },
+      {
+        "timestamp": "2026-10-09T01:01:00.000000Z",
+        "active_power_total": 9.762
+      },
+      {
+        "timestamp": "2026-10-09T01:01:05.000000Z",
+        "active_power_total": 8.644
+      },
+      {
+        "timestamp": "2026-10-09T01:01:10.000000Z",
+        "active_power_total": 6.716
+      },
+      {
+        "timestamp": "2026-10-09T01:01:15.000000Z",
+        "active_power_total": 7.553
+      },
+      {
+        "timestamp": "2026-10-09T01:01:20.000000Z",
+        "active_power_total": 7.735
+      },
+      {
+        "timestamp": "2026-10-09T01:01:25.000000Z",
+        "active_power_total": 8.044
+      },
+      {
+        "timestamp": "2026-10-09T01:01:30.000000Z",
+        "active_power_total": 10.526
+      },
+      {
+        "timestamp": "2026-10-09T01:01:35.000000Z",
+        "active_power_total": 9.204
+      },
+      {
+        "timestamp": "2026-10-09T01:01:40.000000Z",
+        "active_power_total": 9.564
+      },
+      {
+        "timestamp": "2026-10-09T01:01:45.000000Z",
+        "active_power_total": 10.793
+      },
+      {
+        "timestamp": "2026-10-09T01:01:50.000000Z",
+        "active_power_total": 10.027
+      },
+      {
+        "timestamp": "2026-10-09T01:01:55.000000Z",
+        "active_power_total": 7.713
+      },
+      {
+        "timestamp": "2026-10-09T01:02:00.000000Z",
+        "active_power_total": 9.255
+      },
+      {
+        "timestamp": "2026-10-09T01:02:05.000000Z",
+        "active_power_total": 8.652
+      },
+      {
+        "timestamp": "2026-10-09T01:02:10.000000Z",
+        "active_power_total": 12.699
+      },
+      {
+        "timestamp": "2026-10-09T01:02:15.000000Z",
+        "active_power_total": 6.204
+      },
+      {
+        "timestamp": "2026-10-09T01:02:20.000000Z",
+        "active_power_total": 9.907
+      },
+      {
+        "timestamp": "2026-10-09T01:02:25.000000Z",
+        "active_power_total": 7.958
+      },
+      {
+        "timestamp": "2026-10-09T01:02:30.000000Z",
+        "active_power_total": 7.264
+      },
+      {
+        "timestamp": "2026-10-09T01:02:35.000000Z",
+        "active_power_total": 8.731
+      },
+      {
+        "timestamp": "2026-10-09T01:02:40.000000Z",
+        "active_power_total": 9.737
+      },
+      {
+        "timestamp": "2026-10-09T01:02:45.000000Z",
+        "active_power_total": 11.014
+      },
+      {
+        "timestamp": "2026-10-09T01:02:50.000000Z",
+        "active_power_total": 5.84
+      },
+      {
+        "timestamp": "2026-10-09T01:02:55.000000Z",
+        "active_power_total": 8.394
+      },
+      {
+        "timestamp": "2026-10-09T01:03:00.000000Z",
+        "active_power_total": 6.003
+      },
+      {
+        "timestamp": "2026-10-09T01:03:05.000000Z",
+        "active_power_total": 6.356
+      },
+      {
+        "timestamp": "2026-10-09T01:03:10.000000Z",
+        "active_power_total": 8.338
+      },
+      {
+        "timestamp": "2026-10-09T01:03:15.000000Z",
+        "active_power_total": 7.823
+      },
+      {
+        "timestamp": "2026-10-09T01:03:20.000000Z",
+        "active_power_total": 8.08
+      },
+      {
+        "timestamp": "2026-10-09T01:03:25.000000Z",
+        "active_power_total": 9.163
+      },
+      {
+        "timestamp": "2026-10-09T01:03:30.000000Z",
+        "active_power_total": 8.668
+      },
+      {
+        "timestamp": "2026-10-09T01:03:35.000000Z",
+        "active_power_total": 5.682
+      },
+      {
+        "timestamp": "2026-10-09T01:03:40.000000Z",
+        "active_power_total": 7.618
+      },
+      {
+        "timestamp": "2026-10-09T01:03:45.000000Z",
+        "active_power_total": 8.836
+      },
+      {
+        "timestamp": "2026-10-09T01:03:50.000000Z",
+        "active_power_total": 9.134
+      },
+      {
+        "timestamp": "2026-10-09T01:03:55.000000Z",
+        "active_power_total": 9.58
+      },
+      {
+        "timestamp": "2026-10-09T01:04:00.000000Z",
+        "active_power_total": 9.324
+      },
+      {
+        "timestamp": "2026-10-09T01:04:05.000000Z",
+        "active_power_total": 8.007
+      },
+      {
+        "timestamp": "2026-10-09T01:04:10.000000Z",
+        "active_power_total": 8.195
+      },
+      {
+        "timestamp": "2026-10-09T01:04:15.000000Z",
+        "active_power_total": 5.411
+      },
+      {
+        "timestamp": "2026-10-09T01:04:20.000000Z",
+        "active_power_total": 9.698
+      },
+      {
+        "timestamp": "2026-10-09T01:04:25.000000Z",
+        "active_power_total": 8.742
+      },
+      {
+        "timestamp": "2026-10-09T01:04:30.000000Z",
+        "active_power_total": 9.495
+      }
+    ],
+    "conservation_recommendation": null,
+    "conservation_evidence": [],
+    "assumptions": [
+      "Source lineage: {'source_kind': 'SIMULATED', 'source_name': 'fictional-modbus', 'origin_kind': 'SIMULATED', 'origin_transformer_id': None, 'replay_run_id': None, 'measurement_side': 'LV', 'map_version': 'fictional-lv-v1'}",
+      "Counter and power are alternative authoritative methods; never summed",
+      "No extrapolation beyond supported event-time endpoints",
+      "Power sign convention: IMPORT_ONLY_NONNEGATIVE",
+      "Fictional simulated measurements/configuration; not measured real energy",
+      "Explicit linear power/current interpolation at bounded window boundaries"
+    ],
+    "limitation_codes": [
+      "LOSS_PARAMETERS_BOUNDARY_OR_COVERAGE_INELIGIBLE"
+    ],
+    "config_version": "h06-fictional-power-v1",
+    "map_version": "fictional-lv-v1",
+    "calculation_version": "energy-event-time-v1",
+    "provenance": {
+      "power_unit": "kW",
+      "counter_unit": "kWh",
+      "counter_semantics": null,
+      "continuity_evidence": null,
+      "measurement_side": "LV",
+      "maximum_gap_seconds": 90,
+      "minimum_coverage_fraction": 1.0
+    }
+  }
+}

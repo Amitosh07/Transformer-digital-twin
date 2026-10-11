@@ -1,4 +1,5 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Query
+from typing import Literal
 
 from app.api.v1.query_dependencies import PageQuery
 from app.api.v1.read_examples import TRANSFORMER, page_example, response_example
@@ -15,8 +16,9 @@ router = APIRouter(tags=["transformers"])
     response_model=Page[TransformerOut],
     responses=response_example(page_example(TRANSFORMER)),
 )
-def list_transformers(db: DatabaseSession, page: PageQuery) -> Page[TransformerOut]:
-    return query_service.transformers(db, page)
+def list_transformers(db: DatabaseSession, page: PageQuery,
+                      scope: Literal['active', 'all'] = Query(default='active')) -> Page[TransformerOut]:
+    return query_service.transformers(db, page, scope)
 
 
 @router.post(

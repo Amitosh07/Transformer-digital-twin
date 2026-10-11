@@ -10,7 +10,7 @@ export const Team: React.FC = () => {
       icon: <Brain className="w-6 h-6 text-amber-400" />,
       responsibilities: [
         'Author of Canonical Schema v1.0.0 & ML Contract v1.0.0',
-        'IEEE C57.91 thermodynamic thermal residual modeling',
+        'Backend thermal residual modelling',
         'Multivariate anomaly detection & 6-pillar Health Index engine',
         'Evaluation rigor: zero temporal data leakage',
       ],
@@ -109,7 +109,7 @@ export const Team: React.FC = () => {
 
             <div className="mt-6 pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-500">
               <span>Boundary Verified</span>
-              <span className="text-emerald-400">100% CONTRACT</span>
+              <span className="text-emerald-400">CONTRACT REVIEW</span>
             </div>
           </div>
         ))}

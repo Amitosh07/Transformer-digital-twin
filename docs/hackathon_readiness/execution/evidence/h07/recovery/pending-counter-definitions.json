@@ -1,0 +1,13 @@
+{
+  "pending_entries": 1247,
+  "unique_pending_with_puback": 16,
+  "unique_pending_attempted": 16,
+  "never_attempted": 1231,
+  "reasons": {
+    "null": 1231,
+    "NOT_YET_COMMITTED": 16
+  },
+  "states": {
+    "PENDING": 1247
+  }
+}

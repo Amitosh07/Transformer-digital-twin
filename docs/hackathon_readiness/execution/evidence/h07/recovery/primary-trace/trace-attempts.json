@@ -1,0 +1,42 @@
+[
+  {
+    "asset": "H06-SIM-05",
+    "snapshot": "39a120e8ebe4028dfd1af07b11beda73e34ac42c342af3a222dbabef8f69d309",
+    "timestamp": "2026-10-09T02:04:30Z",
+    "sequence": 1554,
+    "observed_at": "2026-10-09T20:31:59.216600+00:00",
+    "receipt": null
+  },
+  {
+    "asset": "H06-SIM-05",
+    "snapshot": "88469d5116d6646fd8b87e6eaa29e36008bbea6a1a4b7d0036bc969a5d26a20b",
+    "timestamp": "2026-10-09T02:04:40Z",
+    "sequence": 1556,
+    "observed_at": "2026-10-09T20:32:09.701851+00:00",
+    "receipt": null
+  },
+  {
+    "asset": "H06-SIM-05",
+    "snapshot": "d853d4e9358ffe6e52d01d861139a97c79146a036e2f8ecdca6761e330d234f1",
+    "timestamp": "2026-10-09T02:04:50Z",
+    "sequence": 1558,
+    "observed_at": "2026-10-09T20:32:20.906415+00:00",
+    "receipt": null
+  },
+  {
+    "asset": "H06-SIM-05",
+    "snapshot": "5daf813db96584a393a718628d670b49d3cf2f8a4fd8693248fac6121edf109e",
+    "timestamp": "2026-10-09T02:05:00Z",
+    "sequence": 1560,
+    "observed_at": "2026-10-09T20:32:32.249313+00:00",
+    "receipt": null
+  },
+  {
+    "asset": "H06-SIM-05",
+    "snapshot": "cfbba7bcf5e560fca5937f854be267160c0b34f9ce9bbd5e8bc5d08f88da7cf0",
+    "timestamp": "2026-10-09T02:05:10Z",
+    "sequence": 1562,
+    "observed_at": "2026-10-09T20:32:43.536363+00:00",
+    "receipt": null
+  }
+]

@@ -1,0 +1,4 @@
+*.egg-info/
+build/
+.h03-spool/
+/config/.h06-native-spool/

@@ -1,0 +1,437 @@
+{
+  "H07-dfb1b1-01": {
+    "latest": {
+      "transformer": {
+        "schema_version": "1.1.0",
+        "rated_frequency_hz": null,
+        "vector_group": null,
+        "impedance_percent": null,
+        "temperature_rise_limits": null,
+        "measurement_side": "LV",
+        "ct_ratio": null,
+        "pt_ratio": null,
+        "insulation_type": null,
+        "loss_parameters": null,
+        "configuration_metadata": {
+          "version": "fictional-demo-v1",
+          "status": "SYNTHETIC_CONFIG",
+          "field_metadata": {
+            "rated_current_a": {
+              "unit": "A",
+              "verification": "SYNTHETIC_CONFIG",
+              "provenance": "Declared H06 fictional configuration",
+              "evidence_reference": null,
+              "effective_at": null
+            },
+            "rated_power_kva": {
+              "unit": "kVA",
+              "verification": "SYNTHETIC_CONFIG",
+              "provenance": "Declared H06 fictional configuration",
+              "evidence_reference": null,
+              "effective_at": null
+            },
+            "measurement_side": {
+              "unit": null,
+              "verification": "SYNTHETIC_CONFIG",
+              "provenance": "Declared H06 fictional configuration",
+              "evidence_reference": null,
+              "effective_at": null
+            },
+            "rated_voltage_lv": {
+              "unit": "V",
+              "verification": "SYNTHETIC_CONFIG",
+              "provenance": "Declared H06 fictional configuration",
+              "evidence_reference": null,
+              "effective_at": null
+            }
+          }
+        },
+        "rated_power_kva": 30.0,
+        "rated_voltage_hv": null,
+        "rated_voltage_lv": 400.0,
+        "rated_current_a": 43.30127018922193,
+        "cooling_class": null,
+        "oil_type": null,
+        "id": "H07-dfb1b1-01",
+        "name": "H07-dfb1b1-01 fictional demo",
+        "created_at": "2026-10-09T19:36:27.257158Z",
+        "updated_at": "2026-10-09T19:36:27.257158Z"
+      },
+      "telemetry": null,
+      "analytics": null,
+      "open_alerts_count": 0,
+      "demo_mode": false,
+      "data_source": {
+        "source_name": null,
+        "scenario_id": null
+      },
+      "schema_version": "1.1.0",
+      "feature_version": null,
+      "model_version": null,
+      "analytics_availability": {
+        "status": "UNAVAILABLE",
+        "reasons": [
+          "NO_TELEMETRY"
+        ],
+        "state_coverage_loss": true
+      }
+    },
+    "energy": {
+      "transformer_id": "H07-dfb1b1-01",
+      "timestamp": null,
+      "schema_version": "1.1.0",
+      "energy_status": "UNAVAILABLE",
+      "energy_method": "UNAVAILABLE",
+      "calculation_method": "NONE",
+      "source_kind": null,
+      "active_power_unit_status": "UNKNOWN",
+      "energy_unit": "kWh",
+      "window_start": "2026-10-09T18:36:36.133250Z",
+      "window_end": "2026-10-09T19:36:36.133250Z",
+      "consumed_kwh": null,
+      "covered_consumed_kwh": null,
+      "import_kwh": null,
+      "export_kwh": null,
+      "peak_kw": null,
+      "loss_kw": null,
+      "loss_kwh": null,
+      "estimated_savings_kwh": null,
+      "efficiency_percent": null,
+      "loss_method": null,
+      "coverage_seconds": 0,
+      "coverage_fraction": 0.0,
+      "gap_count": 0,
+      "reset_count": 0,
+      "missing_intervals": [
+        {
+          "start": "2026-10-09T18:36:36.133250Z",
+          "end": "2026-10-09T19:36:36.133250Z",
+          "reason": "UNSUPPORTED_WINDOW_BOUNDARY"
+        }
+      ],
+      "peak_time": null,
+      "load_profile": [],
+      "conservation_recommendation": null,
+      "conservation_evidence": [],
+      "assumptions": [
+        "Source lineage: {'source_kind': None, 'source_name': None, 'origin_kind': None, 'origin_transformer_id': None, 'replay_run_id': None, 'measurement_side': None, 'map_version': None}",
+        "Counter and power are alternative authoritative methods; never summed",
+        "No extrapolation beyond supported event-time endpoints",
+        "Power sign convention: IMPORT_ONLY_NONNEGATIVE"
+      ],
+      "limitation_codes": [
+        "POWER_UNITS_OR_SIGN_UNVERIFIED",
+        "INCOMPLETE_WINDOW_COVERAGE",
+        "BELOW_MINIMUM_COVERAGE",
+        "NO_SUPPORTED_INTERVALS",
+        "INSTANTANEOUS_LOAD_PROFILE_UNAVAILABLE"
+      ],
+      "config_version": "h07-fictional-power-v1",
+      "map_version": null,
+      "calculation_version": "energy-event-time-v1",
+      "provenance": {
+        "power_unit": null,
+        "counter_unit": null,
+        "counter_semantics": null,
+        "continuity_evidence": null,
+        "measurement_side": "UNKNOWN",
+        "maximum_gap_seconds": 10,
+        "minimum_coverage_fraction": 1.0
+      }
+    },
+    "checkpoint": null,
+    "alerts": [],
+    "maintenance": [],
+    "api_ms": 146.63009999640053
+  },
+  "H07-dfb1b1-02": {
+    "latest": {
+      "transformer": {
+        "schema_version": "1.1.0",
+        "rated_frequency_hz": null,
+        "vector_group": null,
+        "impedance_percent": null,
+        "temperature_rise_limits": null,
+        "measurement_side": "LV",
+        "ct_ratio": null,
+        "pt_ratio": null,
+        "insulation_type": null,
+        "loss_parameters": null,
+        "configuration_metadata": {
+          "version": "fictional-demo-v1",
+          "status": "SYNTHETIC_CONFIG",
+          "field_metadata": {
+            "rated_current_a": {
+              "unit": "A",
+              "verification": "SYNTHETIC_CONFIG",
+              "provenance": "Declared H06 fictional configuration",
+              "evidence_reference": null,
+              "effective_at": null
+            },
+            "rated_power_kva": {
+              "unit": "kVA",
+              "verification": "SYNTHETIC_CONFIG",
+              "provenance": "Declared H06 fictional configuration",
+              "evidence_reference": null,
+              "effective_at": null
+            },
+            "measurement_side": {
+              "unit": null,
+              "verification": "SYNTHETIC_CONFIG",
+              "provenance": "Declared H06 fictional configuration",
+              "evidence_reference": null,
+              "effective_at": null
+            },
+            "rated_voltage_lv": {
+              "unit": "V",
+              "verification": "SYNTHETIC_CONFIG",
+              "provenance": "Declared H06 fictional configuration",
+              "evidence_reference": null,
+              "effective_at": null
+            }
+          }
+        },
+        "rated_power_kva": 30.0,
+        "rated_voltage_hv": null,
+        "rated_voltage_lv": 400.0,
+        "rated_current_a": 43.30127018922193,
+        "cooling_class": null,
+        "oil_type": null,
+        "id": "H07-dfb1b1-02",
+        "name": "H07-dfb1b1-02 fictional demo",
+        "created_at": "2026-10-09T19:36:27.334003Z",
+        "updated_at": "2026-10-09T19:36:27.334003Z"
+      },
+      "telemetry": null,
+      "analytics": null,
+      "open_alerts_count": 0,
+      "demo_mode": false,
+      "data_source": {
+        "source_name": null,
+        "scenario_id": null
+      },
+      "schema_version": "1.1.0",
+      "feature_version": null,
+      "model_version": null,
+      "analytics_availability": {
+        "status": "UNAVAILABLE",
+        "reasons": [
+          "NO_TELEMETRY"
+        ],
+        "state_coverage_loss": true
+      }
+    },
+    "energy": {
+      "transformer_id": "H07-dfb1b1-02",
+      "timestamp": null,
+      "schema_version": "1.1.0",
+      "energy_status": "UNAVAILABLE",
+      "energy_method": "UNAVAILABLE",
+      "calculation_method": "NONE",
+      "source_kind": null,
+      "active_power_unit_status": "UNKNOWN",
+      "energy_unit": "kWh",
+      "window_start": "2026-10-09T18:36:36.705156Z",
+      "window_end": "2026-10-09T19:36:36.705156Z",
+      "consumed_kwh": null,
+      "covered_consumed_kwh": null,
+      "import_kwh": null,
+      "export_kwh": null,
+      "peak_kw": null,
+      "loss_kw": null,
+      "loss_kwh": null,
+      "estimated_savings_kwh": null,
+      "efficiency_percent": null,
+      "loss_method": null,
+      "coverage_seconds": 0,
+      "coverage_fraction": 0.0,
+      "gap_count": 0,
+      "reset_count": 0,
+      "missing_intervals": [
+        {
+          "start": "2026-10-09T18:36:36.705156Z",
+          "end": "2026-10-09T19:36:36.705156Z",
+          "reason": "UNSUPPORTED_WINDOW_BOUNDARY"
+        }
+      ],
+      "peak_time": null,
+      "load_profile": [],
+      "conservation_recommendation": null,
+      "conservation_evidence": [],
+      "assumptions": [
+        "Source lineage: {'source_kind': None, 'source_name': None, 'origin_kind': None, 'origin_transformer_id': None, 'replay_run_id': None, 'measurement_side': None, 'map_version': None}",
+        "Counter and power are alternative authoritative methods; never summed",
+        "No extrapolation beyond supported event-time endpoints",
+        "Power sign convention: IMPORT_ONLY_NONNEGATIVE"
+      ],
+      "limitation_codes": [
+        "POWER_UNITS_OR_SIGN_UNVERIFIED",
+        "INCOMPLETE_WINDOW_COVERAGE",
+        "BELOW_MINIMUM_COVERAGE",
+        "NO_SUPPORTED_INTERVALS",
+        "INSTANTANEOUS_LOAD_PROFILE_UNAVAILABLE"
+      ],
+      "config_version": "h07-fictional-power-v1",
+      "map_version": null,
+      "calculation_version": "energy-event-time-v1",
+      "provenance": {
+        "power_unit": null,
+        "counter_unit": null,
+        "counter_semantics": null,
+        "continuity_evidence": null,
+        "measurement_side": "UNKNOWN",
+        "maximum_gap_seconds": 10,
+        "minimum_coverage_fraction": 1.0
+      }
+    },
+    "checkpoint": null,
+    "alerts": [],
+    "maintenance": [],
+    "api_ms": 100.3052000014577
+  },
+  "H07-dfb1b1-03": {
+    "latest": {
+      "transformer": {
+        "schema_version": "1.1.0",
+        "rated_frequency_hz": null,
+        "vector_group": null,
+        "impedance_percent": null,
+        "temperature_rise_limits": null,
+        "measurement_side": "LV",
+        "ct_ratio": null,
+        "pt_ratio": null,
+        "insulation_type": null,
+        "loss_parameters": null,
+        "configuration_metadata": {
+          "version": "fictional-demo-v1",
+          "status": "SYNTHETIC_CONFIG",
+          "field_metadata": {
+            "rated_current_a": {
+              "unit": "A",
+              "verification": "SYNTHETIC_CONFIG",
+              "provenance": "Declared H06 fictional configuration",
+              "evidence_reference": null,
+              "effective_at": null
+            },
+            "rated_power_kva": {
+              "unit": "kVA",
+              "verification": "SYNTHETIC_CONFIG",
+              "provenance": "Declared H06 fictional configuration",
+              "evidence_reference": null,
+              "effective_at": null
+            },
+            "measurement_side": {
+              "unit": null,
+              "verification": "SYNTHETIC_CONFIG",
+              "provenance": "Declared H06 fictional configuration",
+              "evidence_reference": null,
+              "effective_at": null
+            },
+            "rated_voltage_lv": {
+              "unit": "V",
+              "verification": "SYNTHETIC_CONFIG",
+              "provenance": "Declared H06 fictional configuration",
+              "evidence_reference": null,
+              "effective_at": null
+            }
+          }
+        },
+        "rated_power_kva": 30.0,
+        "rated_voltage_hv": null,
+        "rated_voltage_lv": 400.0,
+        "rated_current_a": 43.30127018922193,
+        "cooling_class": null,
+        "oil_type": null,
+        "id": "H07-dfb1b1-03",
+        "name": "H07-dfb1b1-03 fictional demo",
+        "created_at": "2026-10-09T19:36:27.425868Z",
+        "updated_at": "2026-10-09T19:36:27.425868Z"
+      },
+      "telemetry": null,
+      "analytics": null,
+      "open_alerts_count": 0,
+      "demo_mode": false,
+      "data_source": {
+        "source_name": null,
+        "scenario_id": null
+      },
+      "schema_version": "1.1.0",
+      "feature_version": null,
+      "model_version": null,
+      "analytics_availability": {
+        "status": "UNAVAILABLE",
+        "reasons": [
+          "NO_TELEMETRY"
+        ],
+        "state_coverage_loss": true
+      }
+    },
+    "energy": {
+      "transformer_id": "H07-dfb1b1-03",
+      "timestamp": null,
+      "schema_version": "1.1.0",
+      "energy_status": "UNAVAILABLE",
+      "energy_method": "UNAVAILABLE",
+      "calculation_method": "NONE",
+      "source_kind": null,
+      "active_power_unit_status": "UNKNOWN",
+      "energy_unit": "kWh",
+      "window_start": "2026-10-09T18:36:36.830012Z",
+      "window_end": "2026-10-09T19:36:36.830012Z",
+      "consumed_kwh": null,
+      "covered_consumed_kwh": null,
+      "import_kwh": null,
+      "export_kwh": null,
+      "peak_kw": null,
+      "loss_kw": null,
+      "loss_kwh": null,
+      "estimated_savings_kwh": null,
+      "efficiency_percent": null,
+      "loss_method": null,
+      "coverage_seconds": 0,
+      "coverage_fraction": 0.0,
+      "gap_count": 0,
+      "reset_count": 0,
+      "missing_intervals": [
+        {
+          "start": "2026-10-09T18:36:36.830012Z",
+          "end": "2026-10-09T19:36:36.830012Z",
+          "reason": "UNSUPPORTED_WINDOW_BOUNDARY"
+        }
+      ],
+      "peak_time": null,
+      "load_profile": [],
+      "conservation_recommendation": null,
+      "conservation_evidence": [],
+      "assumptions": [
+        "Source lineage: {'source_kind': None, 'source_name': None, 'origin_kind': None, 'origin_transformer_id': None, 'replay_run_id': None, 'measurement_side': None, 'map_version': None}",
+        "Counter and power are alternative authoritative methods; never summed",
+        "No extrapolation beyond supported event-time endpoints",
+        "Power sign convention: IMPORT_ONLY_NONNEGATIVE"
+      ],
+      "limitation_codes": [
+        "POWER_UNITS_OR_SIGN_UNVERIFIED",
+        "INCOMPLETE_WINDOW_COVERAGE",
+        "BELOW_MINIMUM_COVERAGE",
+        "NO_SUPPORTED_INTERVALS",
+        "INSTANTANEOUS_LOAD_PROFILE_UNAVAILABLE"
+      ],
+      "config_version": "h07-fictional-power-v1",
+      "map_version": null,
+      "calculation_version": "energy-event-time-v1",
+      "provenance": {
+        "power_unit": null,
+        "counter_unit": null,
+        "counter_semantics": null,
+        "continuity_evidence": null,
+        "measurement_side": "UNKNOWN",
+        "maximum_gap_seconds": 10,
+        "minimum_coverage_fraction": 1.0
+      }
+    },
+    "checkpoint": null,
+    "alerts": [],
+    "maintenance": [],
+    "api_ms": 16.872100000909995
+  }
+}

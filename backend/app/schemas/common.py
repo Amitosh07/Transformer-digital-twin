@@ -2,6 +2,7 @@
 
 from collections.abc import Mapping
 from datetime import UTC, datetime
+import re
 from typing import Annotated, Any, Generic, Literal, TypeVar
 
 from pydantic import (
@@ -33,6 +34,8 @@ ReasonCode = Literal[
 def require_datetime_input(value: object) -> object:
     if not isinstance(value, (str, datetime)):
         raise ValueError("Timestamp must be an ISO-8601 string or aware datetime")
+    if isinstance(value, str) and not re.fullmatch(r'\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{1,6})?(?:Z|[+-]\d{2}:\d{2})', value):
+        raise ValueError('Aware ISO timestamp at microsecond precision required')
     return value
 
 

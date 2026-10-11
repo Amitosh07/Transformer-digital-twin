@@ -1,0 +1,8 @@
+{
+  "observed_at": "2026-10-10T13:50:06.238793+05:30",
+  "free_c": 7023398912,
+  "free_d": 178234658816,
+  "docker_df": "TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE\nImages          18        8         3.991GB   1.846GB (46%)\nContainers      26        7         24.67MB   221.2kB (0%)\nLocal Volumes   15        6         1.373GB   80.12MB (5%)\nBuild Cache     174       0         4.999GB   3.486GB\n",
+  "hardware": "\nName                                 NumberOfCores NumberOfLogicalProcessors\n----                                 ------------- -------------------------\n13th Gen Intel(R) Core(TM) i7-13620H            10                        16\n                                                                            \n\n\n",
+  "python": "3.13.7"
+}

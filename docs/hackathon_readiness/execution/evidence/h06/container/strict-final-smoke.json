@@ -1,0 +1,21 @@
+{
+  "/health/ready": {
+    "http_status": 200
+  },
+  "/api/v1/transformers/H06-SIM-05/latest": {
+    "http_status": 200,
+    "timestamp": "2026-10-09T00:53:40Z",
+    "snapshot_id": "a553bb422b885ea14b63a33a7727c56acf7ce02baf5e3e65a16b6a139cd9844b",
+    "receipt_status": "COMMITTED",
+    "source_kind": "SIMULATED"
+  },
+  "/api/v1/transformers/H06-SIM-05/rul": {
+    "http_status": 200
+  },
+  "/api/v1/transformers/H06-SIM-05/energy?window=1h&anchor=latest": {
+    "http_status": 200
+  },
+  "frontend": {
+    "http_status": 200
+  }
+}

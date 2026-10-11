@@ -1,0 +1,7 @@
+NAME                                          IMAGE                                       COMMAND                  SERVICE            CREATED          STATUS                       PORTS
+transformer-h06-20261009-backend-1            transformer-h06-20261009-backend            "/app/docker/entrypo…"   backend            13 minutes ago   Up 13 minutes (healthy)      127.0.0.1:8001->8000/tcp
+transformer-h06-20261009-db-1                 postgres:16                                 "docker-entrypoint.s…"   db                 2 hours ago      Up About an hour (healthy)   127.0.0.1:55433->5432/tcp
+transformer-h06-20261009-frontend-1           transformer-h06-20261009-frontend           "/docker-entrypoint.…"   frontend           2 hours ago      Up 2 hours (healthy)         127.0.0.1:5173->80/tcp
+transformer-h06-20261009-modbus-bridge-1      transformer-h06-20261009-modbus-bridge      "simulator modbus-br…"   modbus-bridge      2 hours ago      Up About an hour             8000/tcp
+transformer-h06-20261009-modbus-simulator-1   transformer-h06-20261009-modbus-simulator   "simulator modbus-se…"   modbus-simulator   2 hours ago      Up 2 hours (healthy)         127.0.0.1:1502->1502/tcp
+transformer-h06-20261009-mqtt-1               eclipse-mosquitto:2                         "/docker-entrypoint.…"   mqtt               2 hours ago      Up 48 minutes (healthy)      127.0.0.1:51885->1883/tcp

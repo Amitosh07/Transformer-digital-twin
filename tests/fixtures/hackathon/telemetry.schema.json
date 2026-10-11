@@ -1,0 +1,636 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://transformer-digital-twin.invalid/contracts/1.1.0/telemetry.schema.json",
+  "title": "H00 telemetry",
+  "type": "object",
+  "properties": {
+    "transformer_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,6})?(?:Z|[+-]\\d{2}:\\d{2})$"
+    },
+    "phase_voltage_l1": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "phase_voltage_l2": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "phase_voltage_l3": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "current_l1": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "current_l2": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "current_l3": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "neutral_current": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "oil_temperature": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "winding_temperature": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "ambient_temperature": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "oil_level": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "oil_temp_alarm": {
+      "enum": [
+        0,
+        1,
+        true,
+        false,
+        null
+      ]
+    },
+    "oil_temp_trip": {
+      "enum": [
+        0,
+        1,
+        true,
+        false,
+        null
+      ]
+    },
+    "magnetic_oil_gauge_alarm": {
+      "enum": [
+        0,
+        1,
+        true,
+        false,
+        null
+      ]
+    },
+    "active_power_total": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "apparent_power_total": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "reactive_power_total": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "energy_kwh": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "power_factor_l1": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": -1,
+      "maximum": 1
+    },
+    "power_factor_l2": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": -1,
+      "maximum": 1
+    },
+    "power_factor_l3": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": -1,
+      "maximum": 1
+    },
+    "source_name": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 255
+    },
+    "scenario_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 255
+    },
+    "schema_version": {
+      "enum": [
+        "1.0.0",
+        "1.1.0"
+      ]
+    },
+    "acquisition": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "source_kind": {
+              "enum": [
+                "SIMULATED",
+                "REPLAYED",
+                "LIVE"
+              ]
+            },
+            "source_name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "origin_kind": {
+              "enum": [
+                "SIMULATED",
+                "LIVE",
+                "UNKNOWN"
+              ]
+            },
+            "origin_transformer_id": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "replay_run_id": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "gateway_id": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "timestamp_origin": {
+              "enum": [
+                "SOURCE_SNAPSHOT",
+                "SOURCE_EVENT",
+                "GATEWAY_POLL",
+                "REPLAY_ASSUMPTION"
+              ]
+            },
+            "timezone_status": {
+              "enum": [
+                "VERIFIED",
+                "DECLARED_UTC",
+                "ASSUMED",
+                "UNKNOWN"
+              ]
+            },
+            "field_units": {
+              "type": "object",
+              "properties": {
+                "phase_voltage_l1": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "phase_voltage_l2": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "phase_voltage_l3": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "current_l1": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "current_l2": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "current_l3": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "neutral_current": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "oil_temperature": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "winding_temperature": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "ambient_temperature": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "oil_level": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "oil_temp_alarm": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "oil_temp_trip": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "magnetic_oil_gauge_alarm": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "active_power_total": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "apparent_power_total": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "reactive_power_total": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "energy_kwh": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "power_factor_l1": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "power_factor_l2": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "power_factor_l3": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "phase_voltage_l1",
+                "phase_voltage_l2",
+                "phase_voltage_l3",
+                "current_l1",
+                "current_l2",
+                "current_l3",
+                "neutral_current",
+                "oil_temperature",
+                "winding_temperature",
+                "ambient_temperature",
+                "oil_level",
+                "oil_temp_alarm",
+                "oil_temp_trip",
+                "magnetic_oil_gauge_alarm",
+                "active_power_total",
+                "apparent_power_total",
+                "reactive_power_total",
+                "energy_kwh",
+                "power_factor_l1",
+                "power_factor_l2",
+                "power_factor_l3"
+              ],
+              "additionalProperties": false
+            },
+            "field_verification": {
+              "type": "object",
+              "properties": {
+                "phase_voltage_l1": {
+                  "enum": [
+                    "VERIFIED",
+                    "UNVERIFIED",
+                    "SYNTHETIC"
+                  ]
+                },
+                "phase_voltage_l2": {
+                  "enum": [
+                    "VERIFIED",
+                    "UNVERIFIED",
+                    "SYNTHETIC"
+                  ]
+                },
+                "phase_voltage_l3": {
+                  "enum": [
+                    "VERIFIED",
+                    "UNVERIFIED",
+                    "SYNTHETIC"
+                  ]
+                },
+                "current_l1": {
+                  "enum": [
+                    "VERIFIED",
+                    "UNVERIFIED",
+                    "SYNTHETIC"
+                  ]
+                },
+                "current_l2": {
+                  "enum": [
+                    "VERIFIED",
+                    "UNVERIFIED",
+                    "SYNTHETIC"
+                  ]
+                },
+                "current_l3": {
+                  "enum": [
+                    "VERIFIED",
+                    "UNVERIFIED",
+                    "SYNTHETIC"
+                  ]
+                },
+                "neutral_current": {
+                  "enum": [
+                    "VERIFIED",
+                    "UNVERIFIED",
+                    "SYNTHETIC"
+                  ]
+                },
+                "oil_temperature": {
+                  "enum": [
+                    "VERIFIED",
+                    "UNVERIFIED",
+                    "SYNTHETIC"
+                  ]
+                },
+                "winding_temperature": {
+                  "enum": [
+                    "VERIFIED",
+                    "UNVERIFIED",
+                    "SYNTHETIC"
+                  ]
+                },
+                "ambient_temperature": {
+                  "enum": [
+                    "VERIFIED",
+                    "UNVERIFIED",
+                    "SYNTHETIC"
+                  ]
+                },
+                "oil_level": {
+                  "enum": [
+                    "VERIFIED",
+                    "UNVERIFIED",
+                    "SYNTHETIC"
+                  ]
+                },
+                "oil_temp_alarm": {
+                  "enum": [
+                    "VERIFIED",
+                    "UNVERIFIED",
+                    "SYNTHETIC"
+                  ]
+                },
+                "oil_temp_trip": {
+                  "enum": [
+                    "VERIFIED",
+                    "UNVERIFIED",
+                    "SYNTHETIC"
+                  ]
+                },
+                "magnetic_oil_gauge_alarm": {
+                  "enum": [
+                    "VERIFIED",
+                    "UNVERIFIED",
+                    "SYNTHETIC"
+                  ]
+                },
+                "active_power_total": {
+                  "enum": [
+                    "VERIFIED",
+                    "UNVERIFIED",
+                    "SYNTHETIC"
+                  ]
+                },
+                "apparent_power_total": {
+                  "enum": [
+                    "VERIFIED",
+                    "UNVERIFIED",
+                    "SYNTHETIC"
+                  ]
+                },
+                "reactive_power_total": {
+                  "enum": [
+                    "VERIFIED",
+                    "UNVERIFIED",
+                    "SYNTHETIC"
+                  ]
+                },
+                "energy_kwh": {
+                  "enum": [
+                    "VERIFIED",
+                    "UNVERIFIED",
+                    "SYNTHETIC"
+                  ]
+                },
+                "power_factor_l1": {
+                  "enum": [
+                    "VERIFIED",
+                    "UNVERIFIED",
+                    "SYNTHETIC"
+                  ]
+                },
+                "power_factor_l2": {
+                  "enum": [
+                    "VERIFIED",
+                    "UNVERIFIED",
+                    "SYNTHETIC"
+                  ]
+                },
+                "power_factor_l3": {
+                  "enum": [
+                    "VERIFIED",
+                    "UNVERIFIED",
+                    "SYNTHETIC"
+                  ]
+                }
+              },
+              "required": [
+                "phase_voltage_l1",
+                "phase_voltage_l2",
+                "phase_voltage_l3",
+                "current_l1",
+                "current_l2",
+                "current_l3",
+                "neutral_current",
+                "oil_temperature",
+                "winding_temperature",
+                "ambient_temperature",
+                "oil_level",
+                "oil_temp_alarm",
+                "oil_temp_trip",
+                "magnetic_oil_gauge_alarm",
+                "active_power_total",
+                "apparent_power_total",
+                "reactive_power_total",
+                "energy_kwh",
+                "power_factor_l1",
+                "power_factor_l2",
+                "power_factor_l3"
+              ],
+              "additionalProperties": false
+            },
+            "measurement_side": {
+              "enum": [
+                "HV",
+                "LV",
+                "UNKNOWN"
+              ]
+            },
+            "map_version": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "snapshot_id": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "sequence": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "expected_interval_seconds": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "exclusiveMinimum": 0
+            }
+          },
+          "required": [
+            "source_kind",
+            "source_name",
+            "origin_kind",
+            "origin_transformer_id",
+            "replay_run_id",
+            "gateway_id",
+            "timestamp_origin",
+            "timezone_status",
+            "field_units",
+            "field_verification",
+            "measurement_side",
+            "map_version",
+            "snapshot_id",
+            "sequence",
+            "expected_interval_seconds"
+          ],
+          "additionalProperties": false,
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "source_kind": {
+                    "const": "REPLAYED"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "origin_transformer_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "replay_run_id": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "transformer_id",
+    "timestamp"
+  ],
+  "additionalProperties": false
+}

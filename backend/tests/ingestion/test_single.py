@@ -43,10 +43,13 @@ def test_single_and_duplicate_are_persisted_and_idempotent(
     assert data["analytics"]["feature_version"] == "1.0.0"
     second = ingest_client.post("/api/v1/telemetry", json=payload)
     assert second.status_code == 200
-    assert second.json() == {"duplicate": True, "telemetry_id": data["telemetry_id"]}
+    assert second.json()['duplicate'] is True
+    assert second.json()['telemetry_id'] == data['telemetry_id']
+    assert second.json()['analytics'] == data['analytics']
+    assert second.json()['forward_state_advanced'] is False
     assert client.calls == 1
     row = ingestion_session.get(Telemetry, data["telemetry_id"])
-    assert row.source_name == "api"
+    assert row.source_name is None
     assert row.scenario_id == "test-scenario"
     assert row.current_l1 == 0
     assert (
@@ -127,19 +130,13 @@ def test_ml_failure_does_not_lose_telemetry(
     assert response.status_code == 201
     result = response.json()
     assert "ML_UNAVAILABLE" in result["warnings"]
-    assert result["analytics"]["inference_status"] == "INSUFFICIENT_DATA"
-    assert (
-        result["analytics"]["feature_version"]
-        == result["analytics"]["model_version"]
-        == "unavailable"
-    )
-    assert result["analytics"]["error_detail"]
+    assert result['analytics'] is None
     assert ingestion_session.get(Telemetry, result["telemetry_id"]) is not None
     assert ingestion_session.scalar(
         select(Analytics).where(
             Analytics.telemetry_id == result["telemetry_id"],
         )
-    ).error_detail
+    ) is None
 
 
 def test_client_factory_failure_is_also_isolated(
@@ -159,7 +156,7 @@ def test_client_factory_failure_is_also_isolated(
 
 
 @pytest.mark.parametrize("failure", ["python", "database"])
-def test_alert_hook_failure_cannot_rollback_saved_rows(
+def test_alert_hook_failure_rolls_back_the_transaction(
     failure: str,
     ingest_client: TestClient,
     payload: dict[str, Any],
@@ -174,19 +171,12 @@ def test_alert_hook_failure_cannot_rollback_saved_rows(
         raise RuntimeError("hook failure")
 
     monkeypatch.setattr(hooks, "evaluate_alerts", broken)
-    response = ingest_client.post("/api/v1/telemetry", json=payload)
-    assert response.status_code == 201
-    result = response.json()
-    assert "ALERT_HOOK_FAILED" in result["warnings"]
-    assert ingestion_session.get(Telemetry, result["telemetry_id"]) is not None
-    assert (
-        ingestion_session.scalar(
-            select(Analytics).where(
-                Analytics.telemetry_id == result["telemetry_id"],
-            )
-        )
-        is not None
-    )
+    with pytest.raises(Exception):
+        ingest_client.post('/api/v1/telemetry', json=payload)
+    assert ingestion_session.scalar(select(Telemetry).where(
+        Telemetry.transformer_id == payload['transformer_id'])) is None
+    assert ingestion_session.scalar(select(Analytics).where(
+        Analytics.transformer_id == payload['transformer_id'])) is None
 
 
 def test_run_ml_false_stores_only_telemetry(

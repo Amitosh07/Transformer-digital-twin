@@ -11,7 +11,15 @@ from app.models import Analytics, Telemetry
 from .conftest import make_record
 
 
+@pytest.fixture
+def replay_asset(ingest_client, asset_id):
+    destination = asset_id + '-replay'
+    assert ingest_client.post('/api/v1/transformers', json={'id': destination, 'name': 'Isolated replay'}).status_code == 201
+    return destination
+
+
 def test_replay_uses_shared_ingestion_and_reports_completed(
+    replay_asset: str,
     ingest_client: TestClient,
     asset_id: str,
     ingestion_session: Session,
@@ -33,9 +41,10 @@ def test_replay_uses_shared_ingestion_and_reports_completed(
         "/api/v1/simulate/replay",
         json={
             "transformer_id": asset_id,
+            'replay_transformer_id': replay_asset,
             "source_name": "replay-test",
             "speed_multiplier": 0,
-            "records": [make_record("ignored-source-id", second) for second in [10000, 0]],
+            "records": [make_record(asset_id, second) for second in [10000, 0]],
         },
     )
     elapsed = perf_counter() - started
@@ -49,12 +58,14 @@ def test_replay_uses_shared_ingestion_and_reports_completed(
     assert data["row_count"] == data["inserted_count"] == 2
     assert data["finished_at"] is not None
     rows = ingestion_session.scalars(
-        select(Telemetry).where(Telemetry.transformer_id == asset_id)
+        select(Telemetry).where(Telemetry.transformer_id == replay_asset)
     ).all()
     assert all(row.source_name == "replay-test" for row in rows)
+    assert all(row.acquisition['origin_transformer_id'] == asset_id for row in rows)
 
 
 def test_replay_gaps_are_scaled_and_capped(
+    replay_asset: str,
     ingest_client: TestClient,
     asset_id: str,
     monkeypatch: pytest.MonkeyPatch,
@@ -67,6 +78,7 @@ def test_replay_gaps_are_scaled_and_capped(
         "/api/v1/simulate/replay",
         json={
             "source_name": "scaled-replay",
+            'replay_transformer_id': replay_asset,
             "speed_multiplier": 2,
             "records": [make_record(asset_id, second) for second in [0, 4, 100]],
         },
@@ -75,7 +87,8 @@ def test_replay_gaps_are_scaled_and_capped(
     assert delays == [2, 5]
 
 
-def test_stored_replay_fills_missing_analytics_only(
+def test_stored_replay_preserves_live_rows_and_analysis(
+    replay_asset: str,
     ingest_client: TestClient,
     asset_id: str,
     ingestion_session: Session,
@@ -84,14 +97,15 @@ def test_stored_replay_fills_missing_analytics_only(
     existing = ingest_client.post("/api/v1/telemetry", json=make_record(asset_id, 1)).json()
     payload = {
         "transformer_id": asset_id,
+        'replay_transformer_id': replay_asset,
         "source_name": "stored-replay",
         "from_stored": {"start": "2026-10-06T00:00:00Z", "end": "2026-10-06T00:00:01Z"},
     }
     response = ingest_client.post("/api/v1/simulate/replay", json=payload)
     status = ingest_client.get(f"/api/v1/simulate/replay/{response.json()['run_id']}").json()
     assert status["status"] == "COMPLETED"
-    assert status["inserted_count"] == 0
-    assert status["duplicate_count"] == 2
+    assert status['inserted_count'] == 2
+    assert status['duplicate_count'] == 0
     assert (
         ingestion_session.scalar(
             select(func.count())
@@ -110,7 +124,7 @@ def test_stored_replay_fills_missing_analytics_only(
                 Analytics.transformer_id == asset_id,
             )
         )
-        == 2
+        == 1
     )
     persisted = ingestion_session.scalar(
         select(Analytics).where(
@@ -118,12 +132,15 @@ def test_stored_replay_fills_missing_analytics_only(
         )
     )
     first_id = persisted.id
-    ingest_client.post("/api/v1/simulate/replay", json=payload)
+    second = ingest_client.post('/api/v1/simulate/replay', json=payload)
+    # A new run is different semantic lineage under the same destination/time.
+    assert ingest_client.get(f"/api/v1/simulate/replay/{second.json()['run_id']}").json()['status'] == 'FAILED'
     ingestion_session.expire_all()
     assert ingestion_session.get(Analytics, first_id).telemetry_id == existing["telemetry_id"]
 
 
 def test_replay_failure_sets_failed_status(
+    replay_asset: str,
     ingest_client: TestClient,
     asset_id: str,
     monkeypatch: pytest.MonkeyPatch,
@@ -138,6 +155,7 @@ def test_replay_failure_sets_failed_status(
         "/api/v1/simulate/replay",
         json={
             "source_name": "failure-test",
+            'replay_transformer_id': replay_asset,
             "records": [make_record(asset_id, 0)],
         },
     )

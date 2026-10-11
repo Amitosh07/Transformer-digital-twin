@@ -139,6 +139,7 @@ class MqttConsumer:
         with self._lock:
             if not self._accepting:
                 return
+            self._values['validated_count'] += len(records)
             try:
                 self._queue.put_nowait(records)
             except Full:
@@ -162,6 +163,9 @@ class MqttConsumer:
             record = records[0]
             try:
                 session = self._sessions()
+                # All assets are locked together in stable order for this transaction.
+                if isinstance(session, Session):
+                    ingestion_service.transactional_ml.lock_assets(session, [row.transformer_id for row in records])
                 inserted = duplicates = 0
                 for record in records:
                     result = ingestion_service.ingest_record(
@@ -176,12 +180,18 @@ class MqttConsumer:
                 with self._lock:
                     self._values["ingested_count"] += inserted
                     self._values["duplicate_count"] += duplicates
+                    self._values['committed_count'] += inserted + duplicates
             except Exception as exc:
                 if session is not None:
                     try:
                         session.rollback()
                     except Exception:
                         pass
+                if isinstance(exc, ingestion_service.telemetry_repo.SemanticConflict) and session is not None:
+                    try:
+                        ingestion_service._conflict_receipt(session, exc)
+                    except Exception:
+                        session.rollback()
                 self._worker_error(record, exc)
             finally:
                 if session is not None:
@@ -194,7 +204,13 @@ class MqttConsumer:
     def _worker_error(self, record: TelemetryIn, exc: Exception) -> None:
         with self._lock:
             self._values["error_count"] += 1
-            self._values["last_error"] = "INGESTION_FAILED"
+            reason = getattr(exc, 'reason', 'INGESTION_FAILED')
+            self._values["last_error"] = reason
+            if reason == 'SEMANTIC_PAYLOAD_CONFLICT':
+                self._values['conflicted_count'] += 1
+                self._values['rejected_count'] += 1
+                self._rejections.append({'time': datetime.now(UTC).isoformat(),
+                    'topic': '', 'reason': reason, 'field': 'snapshot_id'})
         logger.error(
             "MQTT ingestion failed transformer_id=%s timestamp=%s error_type=%s",
             record.transformer_id,

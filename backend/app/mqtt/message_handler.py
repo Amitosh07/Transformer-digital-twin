@@ -1,6 +1,5 @@
 """Pure canonical message validation; rejection objects never retain payloads."""
 
-import json
 from typing import Any
 
 from pydantic import ValidationError
@@ -42,7 +41,8 @@ def parse_message(topic: str, payload: bytes) -> list[TelemetryIn]:
     except UnicodeDecodeError:
         raise MessageRejected("INVALID_UTF8") from None
     try:
-        value: Any = json.loads(decoded)
+        from ml.pipeline.identity import parse_record_json
+        value: Any = parse_record_json(decoded)
     except (ValueError, RecursionError):
         raise MessageRejected("INVALID_JSON") from None
     if isinstance(value, dict):
@@ -65,7 +65,7 @@ def parse_message(topic: str, payload: bytes) -> list[TelemetryIn]:
             row["transformer_id"] = identity
         elif identity is not None and row.get("transformer_id") != identity:
             raise MessageRejected("TOPIC_ID_MISMATCH", "transformer_id")
-        row.setdefault("source_name", settings.mqtt_source_name)
+        # MQTT is transport; preserve absent semantic source fields as null.
         try:
             records.append(TelemetryIn.model_validate(row))
         except ValidationError as exc:

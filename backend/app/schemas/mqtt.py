@@ -21,6 +21,9 @@ class MqttStatus(BaseModel):
     qos: int
     queue_depth: int = 0
     received_count: int = 0
+    validated_count: int = 0
+    committed_count: int = 0
+    conflicted_count: int = 0
     ingested_count: int = 0
     duplicate_count: int = 0
     rejected_count: int = 0

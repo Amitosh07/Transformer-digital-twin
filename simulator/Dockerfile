@@ -1,18 +1,10 @@
-# Transformer Digital Twin — Simulator
-# simulator_README §11
-FROM python:3.12-slim
-
+FROM ml_runtime
+USER root
+COPY simulator /build/simulator
+RUN python -m pip install --no-cache-dir /build/simulator
+RUN useradd --uid 10002 --create-home simulator && mkdir -p /spool && chown simulator /spool
 WORKDIR /app
-
-# Install dependencies
-COPY pyproject.toml ./
-RUN pip install --no-cache-dir -e ".[dev]" 2>/dev/null || pip install --no-cache-dir .
-
-# Copy source
-COPY simulator/ simulator/
-COPY scenarios/ scenarios/
-COPY tests/ tests/
-
-# Default: run the CLI help
-ENTRYPOINT ["python", "-m", "simulator.cli"]
+USER simulator
+HEALTHCHECK NONE
+ENTRYPOINT ["simulator"]
 CMD ["--help"]

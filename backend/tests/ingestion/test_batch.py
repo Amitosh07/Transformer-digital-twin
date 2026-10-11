@@ -129,8 +129,9 @@ def test_sorted_history_has_no_per_row_queries_and_includes_interleaved_stored_r
     assert response.json()["inserted_count"] == 3
     assert response.json()["duplicate_count"] == 2
     assert queries == 1
-    assert [record.timestamp.second for record, _ in captured] == [1, 3, 5]
-    assert [row.timestamp.second for row in captured[-1][1]] == [1, 2, 3, 4]
+    # Rows 1 and 3 are late relative to the already accepted row 4.
+    assert [record.timestamp.second for record, _ in captured] == [5]
+    assert [row.timestamp.second for row in captured[-1][1]] == [2, 4]
     for record, history in captured:
         assert all(row.timestamp < record.timestamp for row in history)
         assert [row.timestamp for row in history] == sorted(row.timestamp for row in history)

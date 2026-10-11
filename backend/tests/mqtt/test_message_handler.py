@@ -21,7 +21,7 @@ def test_single_and_array_preserve_nulls_metadata_and_utc() -> None:
     )[0]
     assert record.transformer_id == "TX-parse"
     assert record.timestamp == datetime(2026, 10, 7, 9, tzinfo=UTC)
-    assert record.source_name == "mqtt"
+    assert record.source_name is None  # Transport is not source provenance.
     assert record.scenario_id == "scenario"
     assert record.oil_temp_alarm == 1
     assert record.current_l1 == 0
@@ -53,10 +53,11 @@ def test_excluded_fields(key: str) -> None:
 def test_validation_never_exposes_payload(field: str, value: Any) -> None:
     with pytest.raises(MessageRejected) as caught:
         parse_message(TOPIC, encode({**BASE, field: value}))
-    assert caught.value.reason == "VALIDATION_ERROR"
+    nonfinite = isinstance(value, float) and not __import__('math').isfinite(value)
+    assert caught.value.reason == ("INVALID_JSON" if nonfinite else "VALIDATION_ERROR")
     assert "secret" not in str(caught.value)
     assert "secret" not in repr(caught.value)
-    assert caught.value.field == (None if field == "secret-field" else field)
+    assert caught.value.field == (None if field == "secret-field" or nonfinite else field)
 
 
 @pytest.mark.parametrize(
@@ -97,7 +98,9 @@ def test_custom_topic_and_source(monkeypatch: pytest.MonkeyPatch) -> None:
     get_settings.cache_clear()
     record = parse_message("site/telemetry/TX-custom", encode(BASE))[0]
     assert record.transformer_id == "TX-custom"
-    assert record.source_name == "mqtt-simulator"
+    assert record.source_name is None
+    explicit = parse_message('site/telemetry/TX-custom', encode({**BASE, 'source_name': 'mqtt-simulator'}))[0]
+    assert explicit.source_name == 'mqtt-simulator'
     with pytest.raises(MessageRejected, match="TOPIC_MISMATCH"):
         parse_message("other/telemetry/TX-custom", encode(BASE))
 

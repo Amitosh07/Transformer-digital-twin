@@ -1,0 +1,17 @@
+{
+  "current_trace_attempts": [
+    {
+      "command": "python simulator/scripts/demo_trace.py --database-url <disposable transformer DSN> --evidence-directory docs/hackathon_readiness/execution/evidence/h07/primary",
+      "condition": "source paused during first attempt; immediately restored",
+      "exit_status": 1,
+      "error": "AttributeError: ModbusIOException object has no attribute registers"
+    },
+    {
+      "command": "same command after unpausing source",
+      "exit_status": 1,
+      "error": "AssertionError: assert receipt and receipt[payload_hash] == snapshot",
+      "scope": "Five bounded current-snapshot attempts; no new correlated trace claimed"
+    }
+  ],
+  "scope": "Actual observed tool outputs transcribed; H06 earlier proof remains historical evidence."
+}

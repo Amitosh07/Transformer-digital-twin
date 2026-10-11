@@ -1,0 +1,196 @@
+{
+  "map_version": "fictional-lv-v1",
+  "gateway_id": "H03-LOOPBACK-GW",
+  "poll_interval_seconds": 5,
+  "timeout_seconds": 2,
+  "snapshot_retries": 3,
+  "backoff_seconds": 1,
+  "max_backoff_seconds": 30,
+  "mqtt": {
+    "host": "127.0.0.1",
+    "port": 1883
+  },
+  "receipt_base_url": "http://127.0.0.1:8001",
+  "spool": {
+    "directory": ".h03-spool",
+    "max_records": 10000,
+    "max_bytes": 16777216
+  },
+  "assets": [
+    {
+      "transformer_id": "H03-SIM-01",
+      "unit_id": 1,
+      "host": "127.0.0.1",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H03-SIM-02",
+      "unit_id": 2,
+      "host": "127.0.0.1",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H03-SIM-03",
+      "unit_id": 3,
+      "host": "127.0.0.1",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H03-SIM-04",
+      "unit_id": 4,
+      "host": "127.0.0.1",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H03-SIM-05",
+      "unit_id": 5,
+      "host": "127.0.0.1",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H03-SIM-06",
+      "unit_id": 6,
+      "host": "127.0.0.1",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H03-SIM-07",
+      "unit_id": 7,
+      "host": "127.0.0.1",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H03-SIM-08",
+      "unit_id": 8,
+      "host": "127.0.0.1",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H03-SIM-09",
+      "unit_id": 9,
+      "host": "127.0.0.1",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H03-SIM-10",
+      "unit_id": 10,
+      "host": "127.0.0.1",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H03-SIM-11",
+      "unit_id": 11,
+      "host": "127.0.0.1",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H03-SIM-12",
+      "unit_id": 12,
+      "host": "127.0.0.1",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H03-SIM-13",
+      "unit_id": 13,
+      "host": "127.0.0.1",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H03-SIM-14",
+      "unit_id": 14,
+      "host": "127.0.0.1",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H03-SIM-15",
+      "unit_id": 15,
+      "host": "127.0.0.1",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H03-SIM-16",
+      "unit_id": 16,
+      "host": "127.0.0.1",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H03-SIM-17",
+      "unit_id": 17,
+      "host": "127.0.0.1",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H03-SIM-18",
+      "unit_id": 18,
+      "host": "127.0.0.1",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H03-SIM-19",
+      "unit_id": 19,
+      "host": "127.0.0.1",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H03-SIM-20",
+      "unit_id": 20,
+      "host": "127.0.0.1",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H03-SIM-21",
+      "unit_id": 21,
+      "host": "127.0.0.1",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H03-SIM-22",
+      "unit_id": 22,
+      "host": "127.0.0.1",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H03-SIM-23",
+      "unit_id": 23,
+      "host": "127.0.0.1",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H03-SIM-24",
+      "unit_id": 24,
+      "host": "127.0.0.1",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    },
+    {
+      "transformer_id": "H03-SIM-25",
+      "unit_id": 25,
+      "host": "127.0.0.1",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    }
+  ]
+}

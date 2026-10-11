@@ -1,0 +1,790 @@
+{
+  "latest": {
+    "transformer": {
+      "schema_version": "1.1.0",
+      "rated_frequency_hz": null,
+      "vector_group": null,
+      "impedance_percent": null,
+      "temperature_rise_limits": null,
+      "measurement_side": "LV",
+      "ct_ratio": null,
+      "pt_ratio": null,
+      "insulation_type": null,
+      "loss_parameters": null,
+      "configuration_metadata": {
+        "version": "fictional-demo-v1",
+        "status": "SYNTHETIC_CONFIG",
+        "field_metadata": {
+          "rated_current_a": {
+            "unit": "A",
+            "verification": "SYNTHETIC_CONFIG",
+            "provenance": "Declared H06 fictional configuration",
+            "evidence_reference": null,
+            "effective_at": null
+          },
+          "rated_power_kva": {
+            "unit": "kVA",
+            "verification": "SYNTHETIC_CONFIG",
+            "provenance": "Declared H06 fictional configuration",
+            "evidence_reference": null,
+            "effective_at": null
+          },
+          "measurement_side": {
+            "unit": null,
+            "verification": "SYNTHETIC_CONFIG",
+            "provenance": "Declared H06 fictional configuration",
+            "evidence_reference": null,
+            "effective_at": null
+          },
+          "rated_voltage_lv": {
+            "unit": "V",
+            "verification": "SYNTHETIC_CONFIG",
+            "provenance": "Declared H06 fictional configuration",
+            "evidence_reference": null,
+            "effective_at": null
+          }
+        }
+      },
+      "rated_power_kva": 30.0,
+      "rated_voltage_hv": null,
+      "rated_voltage_lv": 400.0,
+      "rated_current_a": 43.30127018922193,
+      "cooling_class": null,
+      "oil_type": null,
+      "id": "H06-SIM-05",
+      "name": "H06-SIM-05 fictional demo",
+      "created_at": "2026-10-09T18:25:32.444399Z",
+      "updated_at": "2026-10-09T18:25:32.444399Z"
+    },
+    "telemetry": {
+      "schema_version": "1.1.0",
+      "acquisition": {
+        "source_kind": "SIMULATED",
+        "source_name": "fictional-modbus",
+        "origin_kind": "SIMULATED",
+        "origin_transformer_id": null,
+        "replay_run_id": null,
+        "gateway_id": "H06-DEMO-GW",
+        "timestamp_origin": "SOURCE_SNAPSHOT",
+        "timezone_status": "DECLARED_UTC",
+        "field_units": {
+          "oil_level": "percent",
+          "current_l1": "A",
+          "current_l2": "A",
+          "current_l3": "A",
+          "energy_kwh": "kWh",
+          "oil_temp_trip": "STATUS",
+          "oil_temp_alarm": "STATUS",
+          "neutral_current": "A",
+          "oil_temperature": "DEG_C",
+          "power_factor_l1": "1",
+          "power_factor_l2": "1",
+          "power_factor_l3": "1",
+          "phase_voltage_l1": "V",
+          "phase_voltage_l2": "V",
+          "phase_voltage_l3": "V",
+          "active_power_total": "kW",
+          "ambient_temperature": "DEG_C",
+          "winding_temperature": "STATUS",
+          "apparent_power_total": "kVA",
+          "reactive_power_total": "kVAr",
+          "magnetic_oil_gauge_alarm": "STATUS"
+        },
+        "field_verification": {
+          "oil_level": "SYNTHETIC",
+          "current_l1": "SYNTHETIC",
+          "current_l2": "SYNTHETIC",
+          "current_l3": "SYNTHETIC",
+          "energy_kwh": "SYNTHETIC",
+          "oil_temp_trip": "SYNTHETIC",
+          "oil_temp_alarm": "SYNTHETIC",
+          "neutral_current": "SYNTHETIC",
+          "oil_temperature": "SYNTHETIC",
+          "power_factor_l1": "SYNTHETIC",
+          "power_factor_l2": "SYNTHETIC",
+          "power_factor_l3": "SYNTHETIC",
+          "phase_voltage_l1": "SYNTHETIC",
+          "phase_voltage_l2": "SYNTHETIC",
+          "phase_voltage_l3": "SYNTHETIC",
+          "active_power_total": "SYNTHETIC",
+          "ambient_temperature": "SYNTHETIC",
+          "winding_temperature": "SYNTHETIC",
+          "apparent_power_total": "SYNTHETIC",
+          "reactive_power_total": "SYNTHETIC",
+          "magnetic_oil_gauge_alarm": "SYNTHETIC"
+        },
+        "measurement_side": "LV",
+        "map_version": "fictional-lv-v1",
+        "snapshot_id": "a47f156587cf8f0e79875aa7163b83be4c7f480e73f6257727514534643cc8f3",
+        "sequence": 78,
+        "expected_interval_seconds": 5.0
+      },
+      "transformer_id": "H06-SIM-05",
+      "timestamp": "2026-10-09T00:01:30Z",
+      "phase_voltage_l1": 231.94,
+      "phase_voltage_l2": 231.51,
+      "phase_voltage_l3": 230.53,
+      "current_l1": 59.63,
+      "current_l2": 59.58,
+      "current_l3": 59.25,
+      "neutral_current": 0.002,
+      "oil_temperature": 30.753,
+      "winding_temperature": null,
+      "ambient_temperature": 25.4,
+      "oil_level": 84.1,
+      "oil_temp_alarm": 0,
+      "oil_temp_trip": 0,
+      "magnetic_oil_gauge_alarm": 0,
+      "active_power_total": 38.461,
+      "apparent_power_total": 41.283,
+      "reactive_power_total": 15.001,
+      "energy_kwh": 10.131462,
+      "power_factor_l1": 0.9242,
+      "power_factor_l2": 0.944,
+      "power_factor_l3": 0.9267,
+      "source_name": "fictional-modbus",
+      "scenario_id": "SCN_OVERLOAD_01",
+      "id": 78,
+      "is_missing_critical": false,
+      "data_quality_score": 0.9523809523809523,
+      "received_at": "2026-10-09T18:29:02.239573Z"
+    },
+    "analytics": {
+      "metadata": {
+        "thermal_readiness": "READY",
+        "thermal_model_mode": "PUBLIC_EMPIRICAL",
+        "thermal_temperature_unit": "SOURCE_UNVERIFIED",
+        "apparent_power_utilization": 1.3761,
+        "forecast_operational_status": "INSUFFICIENT_VALIDATION",
+        "experimental_fault_risk": null,
+        "maintenance_trip_latched": false,
+        "maintenance_clear_policy_status": "NOT_APPLICABLE",
+        "coverage_overall": 1.0,
+        "health_coverage": 1.0,
+        "extended_reason_codes": [
+          "RAPID_TEMP_RISE",
+          "OVERLOAD",
+          "PERSISTENT_CONDITION_CAP_APPLIED",
+          "PERSISTENT_CURRENT_IMBALANCE",
+          "CURRENT_IMBALANCE",
+          "REDUCED_HISTORY_COVERAGE",
+          "DEMO_UNVERIFIED_CONFIG"
+        ],
+        "extended_health_reason_codes": [
+          "RAPID_TEMP_RISE",
+          "OVERLOAD",
+          "PERSISTENT_CONDITION_CAP_APPLIED"
+        ],
+        "reason_descriptions": {
+          "OVERLOAD": "Overload condition exceeding rated capacity",
+          "RAPID_TEMP_RISE": "Rapid temperature rise rate",
+          "CURRENT_IMBALANCE": "Phase current imbalance",
+          "PERSISTENT_CURRENT_IMBALANCE": "Persistent Current Imbalance",
+          "PERSISTENT_CONDITION_CAP_APPLIED": "Persistent Condition Cap Applied"
+        },
+        "components": {
+          "thermal": {
+            "status": "INSUFFICIENT_DATA",
+            "unit": "SOURCE_UNVERIFIED",
+            "coverage_fraction": 0.02361111111111111,
+            "reasons": [
+              "REDUCED_HISTORY_COVERAGE",
+              "DEMO_UNVERIFIED_CONFIG"
+            ]
+          },
+          "anomaly": {
+            "status": "INSUFFICIENT_DATA",
+            "unit": "1",
+            "coverage_fraction": 0.02361111111111111,
+            "reasons": [
+              "REDUCED_HISTORY_COVERAGE",
+              "DEMO_UNVERIFIED_CONFIG"
+            ]
+          },
+          "health": {
+            "status": "INSUFFICIENT_DATA",
+            "unit": "index",
+            "coverage_fraction": 0.02361111111111111,
+            "reasons": [
+              "REDUCED_HISTORY_COVERAGE",
+              "DEMO_UNVERIFIED_CONFIG"
+            ]
+          },
+          "maintenance": {
+            "status": "INSUFFICIENT_DATA",
+            "unit": null,
+            "coverage_fraction": 0.02361111111111111,
+            "reasons": [
+              "REDUCED_HISTORY_COVERAGE",
+              "DEMO_UNVERIFIED_CONFIG"
+            ]
+          },
+          "forecast": {
+            "status": "UNAVAILABLE",
+            "unit": null,
+            "coverage_fraction": 0.02361111111111111,
+            "reasons": [
+              "REDUCED_HISTORY_COVERAGE",
+              "DEMO_UNVERIFIED_CONFIG",
+              "INSUFFICIENT_VALIDATION"
+            ]
+          },
+          "rul": {
+            "status": "READY",
+            "unit": "h",
+            "coverage_fraction": 1.0,
+            "reasons": []
+          }
+        },
+        "units": {
+          "oil_level": "percent",
+          "current_l1": "A",
+          "current_l2": "A",
+          "current_l3": "A",
+          "energy_kwh": "kWh",
+          "oil_temp_trip": "STATUS",
+          "oil_temp_alarm": "STATUS",
+          "neutral_current": "A",
+          "oil_temperature": "DEG_C",
+          "power_factor_l1": "1",
+          "power_factor_l2": "1",
+          "power_factor_l3": "1",
+          "phase_voltage_l1": "V",
+          "phase_voltage_l2": "V",
+          "phase_voltage_l3": "V",
+          "active_power_total": "kW",
+          "ambient_temperature": "DEG_C",
+          "winding_temperature": "STATUS",
+          "apparent_power_total": "kVA",
+          "reactive_power_total": "kVAr",
+          "magnetic_oil_gauge_alarm": "STATUS"
+        },
+        "coverage": {
+          "start": "2026-10-08T23:01:30Z",
+          "end": "2026-10-09T00:01:30Z",
+          "covered_seconds": 85.0,
+          "expected_seconds": 3600.0,
+          "fraction": 0.02361111111111111,
+          "gap_count": 59,
+          "missing_fields": [
+            "winding_temperature"
+          ]
+        },
+        "forecast": {
+          "target_definition": "new_oil_alert_within_1h",
+          "horizon_hours": 1.0,
+          "release_status": "INSUFFICIENT_VALIDATION",
+          "operational_eligible": false,
+          "limitation_codes": [
+            "INSUFFICIENT_VALIDATION"
+          ]
+        },
+        "versions": {
+          "bundle_id": "demo_unverified_coded_config_v1",
+          "configuration_version": "fictional-demo-v1",
+          "preprocessing_version": "1.0.0",
+          "artifact_schema_version": "1.0.0"
+        }
+      },
+      "rul": {
+        "rul_status": "SIMULATED_ESTIMATE",
+        "rul_method": "SYNTHETIC_FIRST_PASSAGE_V1",
+        "rul_target_definition": "Declared fictional degradation reaches scenario endpoint; not physical end-of-life",
+        "rul_value": 79.97499999999992,
+        "rul_unit": "h",
+        "rul_lower": 66.64583333333327,
+        "rul_upper": 99.96874999999991,
+        "uncertainty_kind": "SCENARIO_RANGE",
+        "forecast_horizon_hours": 100.0,
+        "future_duty_scenario": "H06_FICTIONAL_PREROLL",
+        "degradation_state": 0.20025000000000068,
+        "end_threshold": 1.0,
+        "degradation_unit": "1",
+        "degradation_rate_per_hour": 0.01,
+        "equivalent_ageing_hours": null,
+        "source_kind": "SIMULATED",
+        "simulated": true,
+        "model_version": "synthetic-first-passage-v1",
+        "config_version": "fictional-rul-v1",
+        "required_inputs": [],
+        "assumptions": [
+          "Fictional latent D is independent of health index and anomaly score",
+          "Endpoint is a scenario definition, not transformer end-of-life",
+          "Future duty begins at this event time; rates have units 1/hour",
+          "Declared rate range 0.008\u20130.012/hour; not calibrated confidence",
+          "Declared future duty: [{'hours': 100.0, 'rate_per_hour': 0.01}]"
+        ],
+        "limitation_codes": [],
+        "coverage_start": "2026-10-08T23:00:00Z",
+        "coverage_end": "2026-10-09T00:01:30Z",
+        "coverage_fraction": 1.0,
+        "timestamp": "2026-10-09T00:01:30Z"
+      },
+      "transformer_id": "H06-SIM-05",
+      "timestamp": "2026-10-09T00:01:30Z",
+      "inference_status": "OK",
+      "missing_features": [],
+      "loading_percent": 137.61,
+      "thermal_model_temperature": 27.328127231979476,
+      "thermal_residual": 3.424872768020524,
+      "thermal_state": null,
+      "anomaly_score": 1.0,
+      "anomaly_flag": true,
+      "health_index": 20.0,
+      "health_components": {
+        "thermal": 0.0,
+        "electrical": 0.0,
+        "loading": 62.389999999999986,
+        "oil": 100.0,
+        "alarm": 100.0,
+        "anomaly": 0.0
+      },
+      "health_reason_codes": [
+        "RAPID_TEMP_RISE",
+        "OVERLOAD"
+      ],
+      "fault_risk": null,
+      "predicted_fault": null,
+      "prediction_confidence": null,
+      "maintenance_priority": "PLAN",
+      "maintenance_recommendation": "Verify measurement/phase allocation and plan balancing if confirmed.",
+      "reason_codes": [
+        "RAPID_TEMP_RISE",
+        "OVERLOAD",
+        "CURRENT_IMBALANCE"
+      ],
+      "schema_version": "1.1.0",
+      "feature_version": "1.0.0",
+      "model_version": "DEMO_UNVERIFIED_CONFIG",
+      "error_detail": null
+    },
+    "open_alerts_count": 6,
+    "demo_mode": true,
+    "data_source": {
+      "source_name": "fictional-modbus",
+      "scenario_id": "SCN_OVERLOAD_01"
+    },
+    "schema_version": "1.1.0",
+    "feature_version": "1.0.0",
+    "model_version": "DEMO_UNVERIFIED_CONFIG",
+    "analytics_availability": {
+      "status": "AVAILABLE",
+      "reasons": [],
+      "state_coverage_loss": false
+    }
+  },
+  "receipt": {
+    "schema_version": "1.1.0",
+    "receipt_status": "COMMITTED",
+    "snapshot_id": "a47f156587cf8f0e79875aa7163b83be4c7f480e73f6257727514534643cc8f3",
+    "payload_hash": "a47f156587cf8f0e79875aa7163b83be4c7f480e73f6257727514534643cc8f3",
+    "transformer_id": "H06-SIM-05",
+    "timestamp": "2026-10-09T00:01:30+00:00",
+    "received_at": "2026-10-09T18:29:02.239573+00:00",
+    "committed_at": "2026-10-09T18:29:02.239573+00:00",
+    "accepted_snapshot_id": "a47f156587cf8f0e79875aa7163b83be4c7f480e73f6257727514534643cc8f3",
+    "accepted_payload_hash": "a47f156587cf8f0e79875aa7163b83be4c7f480e73f6257727514534643cc8f3",
+    "ingestion_outcome": "ACCEPTED",
+    "analytics_status": "AVAILABLE",
+    "state_coverage_loss": false
+  },
+  "rul": {
+    "transformer_id": "H06-SIM-05",
+    "timestamp": "2026-10-09T00:01:30+00:00",
+    "rul": {
+      "rul_unit": "h",
+      "rul_lower": 66.64583333333327,
+      "rul_upper": 99.96874999999991,
+      "rul_value": 79.97499999999992,
+      "simulated": true,
+      "timestamp": "2026-10-09T00:01:30Z",
+      "rul_method": "SYNTHETIC_FIRST_PASSAGE_V1",
+      "rul_status": "SIMULATED_ESTIMATE",
+      "assumptions": [
+        "Fictional latent D is independent of health index and anomaly score",
+        "Endpoint is a scenario definition, not transformer end-of-life",
+        "Future duty begins at this event time; rates have units 1/hour",
+        "Declared rate range 0.008\u20130.012/hour; not calibrated confidence",
+        "Declared future duty: [{'hours': 100.0, 'rate_per_hour': 0.01}]"
+      ],
+      "source_kind": "SIMULATED",
+      "coverage_end": "2026-10-09T00:01:30Z",
+      "end_threshold": 1.0,
+      "model_version": "synthetic-first-passage-v1",
+      "config_version": "fictional-rul-v1",
+      "coverage_start": "2026-10-08T23:00:00Z",
+      "required_inputs": [],
+      "degradation_unit": "1",
+      "limitation_codes": [],
+      "uncertainty_kind": "SCENARIO_RANGE",
+      "coverage_fraction": 1.0,
+      "degradation_state": 0.20025000000000068,
+      "future_duty_scenario": "H06_FICTIONAL_PREROLL",
+      "rul_target_definition": "Declared fictional degradation reaches scenario endpoint; not physical end-of-life",
+      "forecast_horizon_hours": 100.0,
+      "equivalent_ageing_hours": null,
+      "degradation_rate_per_hour": 0.01
+    },
+    "schema_version": "1.1.0"
+  },
+  "energy": {
+    "transformer_id": "H06-SIM-05",
+    "timestamp": "2026-10-09T00:01:30.000000Z",
+    "schema_version": "1.1.0",
+    "energy_status": "AVAILABLE",
+    "energy_method": "SIMULATED",
+    "calculation_method": "TRAPEZOID",
+    "source_kind": "SIMULATED",
+    "active_power_unit_status": "SYNTHETIC",
+    "energy_unit": "kWh",
+    "window_start": "2026-10-08T23:01:30.000000Z",
+    "window_end": "2026-10-09T00:01:30.000000Z",
+    "consumed_kwh": 9.848117361111111,
+    "covered_consumed_kwh": 9.848117361111111,
+    "import_kwh": 9.848117361111111,
+    "export_kwh": null,
+    "peak_kw": 38.719,
+    "loss_kw": null,
+    "loss_kwh": null,
+    "estimated_savings_kwh": null,
+    "efficiency_percent": null,
+    "loss_method": null,
+    "coverage_seconds": 3600.0,
+    "coverage_fraction": 1.0,
+    "gap_count": 0,
+    "reset_count": 0,
+    "missing_intervals": [],
+    "peak_time": "2026-10-09T00:01:25.000000Z",
+    "load_profile": [
+      {
+        "timestamp": "2026-10-08T23:02:00.000000Z",
+        "active_power_total": 9.858
+      },
+      {
+        "timestamp": "2026-10-08T23:03:00.000000Z",
+        "active_power_total": 9.199
+      },
+      {
+        "timestamp": "2026-10-08T23:04:00.000000Z",
+        "active_power_total": 10.105
+      },
+      {
+        "timestamp": "2026-10-08T23:05:00.000000Z",
+        "active_power_total": 9.72
+      },
+      {
+        "timestamp": "2026-10-08T23:06:00.000000Z",
+        "active_power_total": 10.814
+      },
+      {
+        "timestamp": "2026-10-08T23:07:00.000000Z",
+        "active_power_total": 10.719
+      },
+      {
+        "timestamp": "2026-10-08T23:08:00.000000Z",
+        "active_power_total": 8.721
+      },
+      {
+        "timestamp": "2026-10-08T23:09:00.000000Z",
+        "active_power_total": 7.739
+      },
+      {
+        "timestamp": "2026-10-08T23:10:00.000000Z",
+        "active_power_total": 10.316
+      },
+      {
+        "timestamp": "2026-10-08T23:11:00.000000Z",
+        "active_power_total": 9.84
+      },
+      {
+        "timestamp": "2026-10-08T23:12:00.000000Z",
+        "active_power_total": 9.398
+      },
+      {
+        "timestamp": "2026-10-08T23:13:00.000000Z",
+        "active_power_total": 11.306
+      },
+      {
+        "timestamp": "2026-10-08T23:14:00.000000Z",
+        "active_power_total": 9.908
+      },
+      {
+        "timestamp": "2026-10-08T23:15:00.000000Z",
+        "active_power_total": 10.405
+      },
+      {
+        "timestamp": "2026-10-08T23:16:00.000000Z",
+        "active_power_total": 12.002
+      },
+      {
+        "timestamp": "2026-10-08T23:17:00.000000Z",
+        "active_power_total": 9.654
+      },
+      {
+        "timestamp": "2026-10-08T23:18:00.000000Z",
+        "active_power_total": 11.883
+      },
+      {
+        "timestamp": "2026-10-08T23:19:00.000000Z",
+        "active_power_total": 9.321
+      },
+      {
+        "timestamp": "2026-10-08T23:20:00.000000Z",
+        "active_power_total": 9.946
+      },
+      {
+        "timestamp": "2026-10-08T23:21:00.000000Z",
+        "active_power_total": 8.45
+      },
+      {
+        "timestamp": "2026-10-08T23:22:00.000000Z",
+        "active_power_total": 11.449
+      },
+      {
+        "timestamp": "2026-10-08T23:23:00.000000Z",
+        "active_power_total": 8.338
+      },
+      {
+        "timestamp": "2026-10-08T23:24:00.000000Z",
+        "active_power_total": 9.577
+      },
+      {
+        "timestamp": "2026-10-08T23:25:00.000000Z",
+        "active_power_total": 7.842
+      },
+      {
+        "timestamp": "2026-10-08T23:26:00.000000Z",
+        "active_power_total": 10.431
+      },
+      {
+        "timestamp": "2026-10-08T23:27:00.000000Z",
+        "active_power_total": 10.641
+      },
+      {
+        "timestamp": "2026-10-08T23:28:00.000000Z",
+        "active_power_total": 10.071
+      },
+      {
+        "timestamp": "2026-10-08T23:29:00.000000Z",
+        "active_power_total": 11.758
+      },
+      {
+        "timestamp": "2026-10-08T23:30:00.000000Z",
+        "active_power_total": 10.241
+      },
+      {
+        "timestamp": "2026-10-08T23:31:00.000000Z",
+        "active_power_total": 10.717
+      },
+      {
+        "timestamp": "2026-10-08T23:32:00.000000Z",
+        "active_power_total": 8.578
+      },
+      {
+        "timestamp": "2026-10-08T23:33:00.000000Z",
+        "active_power_total": 9.956
+      },
+      {
+        "timestamp": "2026-10-08T23:34:00.000000Z",
+        "active_power_total": 7.806
+      },
+      {
+        "timestamp": "2026-10-08T23:35:00.000000Z",
+        "active_power_total": 8.379
+      },
+      {
+        "timestamp": "2026-10-08T23:36:00.000000Z",
+        "active_power_total": 7.066
+      },
+      {
+        "timestamp": "2026-10-08T23:37:00.000000Z",
+        "active_power_total": 7.733
+      },
+      {
+        "timestamp": "2026-10-08T23:38:00.000000Z",
+        "active_power_total": 8.198
+      },
+      {
+        "timestamp": "2026-10-08T23:39:00.000000Z",
+        "active_power_total": 8.213
+      },
+      {
+        "timestamp": "2026-10-08T23:40:00.000000Z",
+        "active_power_total": 11.601
+      },
+      {
+        "timestamp": "2026-10-08T23:41:00.000000Z",
+        "active_power_total": 9.861
+      },
+      {
+        "timestamp": "2026-10-08T23:42:00.000000Z",
+        "active_power_total": 8.807
+      },
+      {
+        "timestamp": "2026-10-08T23:43:00.000000Z",
+        "active_power_total": 8.623
+      },
+      {
+        "timestamp": "2026-10-08T23:44:00.000000Z",
+        "active_power_total": 11.388
+      },
+      {
+        "timestamp": "2026-10-08T23:45:00.000000Z",
+        "active_power_total": 8.283
+      },
+      {
+        "timestamp": "2026-10-08T23:46:00.000000Z",
+        "active_power_total": 12.023
+      },
+      {
+        "timestamp": "2026-10-08T23:47:00.000000Z",
+        "active_power_total": 10.439
+      },
+      {
+        "timestamp": "2026-10-08T23:48:00.000000Z",
+        "active_power_total": 10.752
+      },
+      {
+        "timestamp": "2026-10-08T23:49:00.000000Z",
+        "active_power_total": 11.601
+      },
+      {
+        "timestamp": "2026-10-08T23:50:00.000000Z",
+        "active_power_total": 8.503
+      },
+      {
+        "timestamp": "2026-10-08T23:51:00.000000Z",
+        "active_power_total": 10.07
+      },
+      {
+        "timestamp": "2026-10-08T23:52:00.000000Z",
+        "active_power_total": 8.587
+      },
+      {
+        "timestamp": "2026-10-08T23:53:00.000000Z",
+        "active_power_total": 7.793
+      },
+      {
+        "timestamp": "2026-10-08T23:54:00.000000Z",
+        "active_power_total": 8.966
+      },
+      {
+        "timestamp": "2026-10-08T23:55:00.000000Z",
+        "active_power_total": 9.17
+      },
+      {
+        "timestamp": "2026-10-08T23:56:00.000000Z",
+        "active_power_total": 7.704
+      },
+      {
+        "timestamp": "2026-10-08T23:57:00.000000Z",
+        "active_power_total": 8.524
+      },
+      {
+        "timestamp": "2026-10-08T23:58:00.000000Z",
+        "active_power_total": 7.88
+      },
+      {
+        "timestamp": "2026-10-08T23:59:00.000000Z",
+        "active_power_total": 9.887
+      },
+      {
+        "timestamp": "2026-10-09T00:00:05.000000Z",
+        "active_power_total": 8.84
+      },
+      {
+        "timestamp": "2026-10-09T00:00:10.000000Z",
+        "active_power_total": 10.614
+      },
+      {
+        "timestamp": "2026-10-09T00:00:15.000000Z",
+        "active_power_total": 10.575
+      },
+      {
+        "timestamp": "2026-10-09T00:00:20.000000Z",
+        "active_power_total": 11.677
+      },
+      {
+        "timestamp": "2026-10-09T00:00:25.000000Z",
+        "active_power_total": 9.066
+      },
+      {
+        "timestamp": "2026-10-09T00:00:30.000000Z",
+        "active_power_total": 9.779
+      },
+      {
+        "timestamp": "2026-10-09T00:00:35.000000Z",
+        "active_power_total": 10.572
+      },
+      {
+        "timestamp": "2026-10-09T00:00:40.000000Z",
+        "active_power_total": 9.312
+      },
+      {
+        "timestamp": "2026-10-09T00:00:45.000000Z",
+        "active_power_total": 5.512
+      },
+      {
+        "timestamp": "2026-10-09T00:00:50.000000Z",
+        "active_power_total": 9.39
+      },
+      {
+        "timestamp": "2026-10-09T00:00:55.000000Z",
+        "active_power_total": 9.236
+      },
+      {
+        "timestamp": "2026-10-09T00:01:00.000000Z",
+        "active_power_total": 37.053
+      },
+      {
+        "timestamp": "2026-10-09T00:01:05.000000Z",
+        "active_power_total": 37.168
+      },
+      {
+        "timestamp": "2026-10-09T00:01:10.000000Z",
+        "active_power_total": 38.562
+      },
+      {
+        "timestamp": "2026-10-09T00:01:15.000000Z",
+        "active_power_total": 37.078
+      },
+      {
+        "timestamp": "2026-10-09T00:01:20.000000Z",
+        "active_power_total": 36.054
+      },
+      {
+        "timestamp": "2026-10-09T00:01:25.000000Z",
+        "active_power_total": 38.719
+      },
+      {
+        "timestamp": "2026-10-09T00:01:30.000000Z",
+        "active_power_total": 38.461
+      }
+    ],
+    "conservation_recommendation": null,
+    "conservation_evidence": [],
+    "assumptions": [
+      "Source lineage: {'source_kind': 'SIMULATED', 'source_name': 'fictional-modbus', 'origin_kind': 'SIMULATED', 'origin_transformer_id': None, 'replay_run_id': None, 'measurement_side': 'LV', 'map_version': 'fictional-lv-v1'}",
+      "Counter and power are alternative authoritative methods; never summed",
+      "No extrapolation beyond supported event-time endpoints",
+      "Power sign convention: IMPORT_ONLY_NONNEGATIVE",
+      "Fictional simulated measurements/configuration; not measured real energy",
+      "Explicit linear power/current interpolation at bounded window boundaries"
+    ],
+    "limitation_codes": [
+      "LOSS_PARAMETERS_BOUNDARY_OR_COVERAGE_INELIGIBLE"
+    ],
+    "config_version": "h06-fictional-power-v1",
+    "map_version": "fictional-lv-v1",
+    "calculation_version": "energy-event-time-v1",
+    "provenance": {
+      "power_unit": "kW",
+      "counter_unit": "kWh",
+      "counter_semantics": null,
+      "continuity_evidence": null,
+      "measurement_side": "LV",
+      "maximum_gap_seconds": 90,
+      "minimum_coverage_fraction": 1.0
+    }
+  }
+}

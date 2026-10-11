@@ -18,7 +18,7 @@ export const Solution: React.FC = () => {
           </h2>
 
           <p className="text-slate-300 font-sans leading-relaxed text-sm sm:text-base">
-            Transformers are physical thermodynamic systems, not random number generators. By pairing <strong>IEEE differential thermal equations</strong> with <strong>machine learning anomaly detection</strong>, our digital twin calculates exactly what the top-oil temperature <em>should</em> be for any given load and ambient air condition.
+            Transformers are physical thermodynamic systems, not random number generators. By pairing <strong>backend thermal modelling</strong> with <strong>machine learning anomaly detection</strong>, our digital twin estimates what the top-oil temperature <em>should</em> be for any given load and ambient air condition.
           </p>
 
           <p className="text-slate-400 font-sans leading-relaxed text-sm">
@@ -32,7 +32,7 @@ export const Solution: React.FC = () => {
               <div>
                 <strong className="text-slate-200 block text-sm">Thermodynamic Residual Isolation</strong>
                 <span className="text-slate-400">
-                  Separates ambient heat waves from genuine internal degradation, eliminating false alarms.
+                  Shows observed and model temperatures with source units, readiness and coverage evidence.
                 </span>
               </div>
             </div>
@@ -52,7 +52,7 @@ export const Solution: React.FC = () => {
               <div>
                 <strong className="text-slate-200 block text-sm">Prescriptive Maintenance Dispatch</strong>
                 <span className="text-slate-400">
-                  Emits automated work orders with standardized reason codes (`HIGH_OIL_TEMP`, `CURRENT_IMBALANCE`).
+                  Displays backend maintenance recommendations and their supplied reason codes.
                 </span>
               </div>
             </div>
@@ -63,20 +63,20 @@ export const Solution: React.FC = () => {
         <div className="lg:col-span-6">
           <div className="bg-[#0B0F19] border border-slate-800 rounded-2xl p-6 shadow-2xl relative">
             <div className="flex items-center justify-between pb-4 border-b border-slate-800 mb-5 text-xs font-mono">
-              <span className="text-slate-400 uppercase tracking-wider">Governing Thermal Formulation</span>
+              <span className="text-slate-400 uppercase tracking-wider">Concept explanation — no live values</span>
               <span className="text-emerald-400 bg-emerald-950/60 border border-emerald-800 px-2 py-0.5 rounded">
-                IEEE C57.91 COMPLIANT
+                READINESS AND UNIT GATES
               </span>
             </div>
 
             {/* Differential Equation Card */}
             <div className="p-4 rounded-xl bg-[#06080E] border border-slate-800 text-center font-mono my-4 space-y-2">
-              <div className="text-xs text-slate-400 uppercase tracking-widest">Top-Oil Thermal Rise ODE</div>
+              <div className="text-xs text-slate-400 uppercase tracking-widest">Backend thermal residual</div>
               <div className="text-base sm:text-lg font-bold text-amber-400 py-1">
-                τ<sub>o</sub> · (dθ<sub>o</sub>/dt) = [Δθ<sub>u</sub> · ((1 + R·K<sup>2</sup>) / (1 + R))<sup>n</sup> − Δθ<sub>o</sub>]
+                ΔT = T<sub>observed</sub> − T<sub>model</sub>
               </div>
               <div className="text-[11px] text-slate-400">
-                Where K = Load Ratio, R = Loss Ratio, τ<sub>o</sub> = Thermal Time Constant
+                Interpretation requires compatible source units and a ready backend model.
               </div>
             </div>
 
@@ -86,7 +86,7 @@ export const Solution: React.FC = () => {
                 <div className="text-rose-400 font-bold mb-1">Traditional SCADA</div>
                 <ul className="space-y-1 text-slate-400 text-[11px]">
                   <li>• Static threshold trigger</li>
-                  <li>• Trips when OTI &gt; 90°C</li>
+                  <li>• Asset-specific protection settings</li>
                   <li>• No load/ambient awareness</li>
                   <li>• Zero proactive warning</li>
                 </ul>
@@ -98,7 +98,7 @@ export const Solution: React.FC = () => {
                   <li>• Physics-informed ΔT residual</li>
                   <li>• Real-time model comparison</li>
                   <li>• Ambient-normalized tracking</li>
-                  <li>• +48h proactive dispatch</li>
+                  <li>• Backend maintenance advice</li>
                 </ul>
               </div>
             </div>

@@ -1,0 +1,6 @@
+{
+  "fleet_file": "operational-fleet.json",
+  "host": "127.0.0.1",
+  "port": 1502,
+  "registry_url": "http://127.0.0.1:8001"
+}

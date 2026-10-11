@@ -1,0 +1,7 @@
+{
+  "PID": 13296,
+  "Script": "C:\\Users\\Amitosh Nigam\\Desktop\\Transformer-digital-twin\\simulator\\scripts\\guard_operational_disk.ps1",
+  "Log": "D:\\TransformerDigitalTwin-H07\\20261010-operational-ten\\disk-guard.jsonl",
+  "ThresholdGiB": 2.75,
+  "IntervalSeconds": 30
+}

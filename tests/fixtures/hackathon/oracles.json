@@ -1,0 +1,789 @@
+{
+  "rul": [
+    {
+      "name": "constant",
+      "oracle_kind": "ARITHMETIC",
+      "expected": {
+        "transformer_id": "HX-A",
+        "timestamp": "2026-10-09T00:00:00Z",
+        "rul": {
+          "rul_status": "SIMULATED_ESTIMATE",
+          "rul_method": "SYNTHETIC_FIRST_PASSAGE_V1",
+          "rul_target_definition": "Fictional D reaches scenario D_EOL=1",
+          "rul_value": 80,
+          "rul_unit": "h",
+          "rul_lower": 66.6666666667,
+          "rul_upper": 100,
+          "uncertainty_kind": "SCENARIO_RANGE",
+          "forecast_horizon_hours": 100,
+          "future_duty_scenario": "Constant declared synthetic rate",
+          "degradation_state": 0.2,
+          "end_threshold": 1,
+          "degradation_unit": "1",
+          "degradation_rate_per_hour": 0.01,
+          "equivalent_ageing_hours": null,
+          "source_kind": "SIMULATED",
+          "simulated": true,
+          "model_version": "synthetic-first-passage-v1",
+          "config_version": "fictional-config-v1",
+          "required_inputs": [],
+          "assumptions": [
+            "Declared constant synthetic rate 0.01/hour",
+            "D is independent of HI; scenario endpoint is not physical end-of-life",
+            "Scenario range varies rate from .008 to .012/hour, not a confidence interval"
+          ],
+          "limitation_codes": [
+            "SYNTHETIC_SCENARIO_ONLY",
+            "NOT_EMPIRICAL_CONFIDENCE"
+          ],
+          "coverage_start": "2026-10-09T00:00:00Z",
+          "coverage_end": "2026-10-09T00:00:00Z",
+          "coverage_fraction": 1,
+          "timestamp": "2026-10-09T00:00:00Z"
+        },
+        "schema_version": "1.1.0"
+      },
+      "rate_bounds_per_hour": [
+        0.008,
+        0.012
+      ]
+    },
+    {
+      "name": "zero-rate",
+      "oracle_kind": "ARITHMETIC",
+      "expected": {
+        "transformer_id": "HX-A",
+        "timestamp": "2026-10-09T00:00:00Z",
+        "rul": {
+          "rul_status": "NO_CROSSING_WITHIN_HORIZON",
+          "rul_method": "SYNTHETIC_FIRST_PASSAGE_V1",
+          "rul_target_definition": "Fictional D reaches scenario D_EOL=1",
+          "rul_value": null,
+          "rul_unit": "h",
+          "rul_lower": null,
+          "rul_upper": null,
+          "uncertainty_kind": null,
+          "forecast_horizon_hours": 100,
+          "future_duty_scenario": "Constant declared synthetic rate",
+          "degradation_state": 0.2,
+          "end_threshold": 1,
+          "degradation_unit": "1",
+          "degradation_rate_per_hour": 0,
+          "equivalent_ageing_hours": null,
+          "source_kind": "SIMULATED",
+          "simulated": true,
+          "model_version": "synthetic-first-passage-v1",
+          "config_version": "fictional-config-v1",
+          "required_inputs": [],
+          "assumptions": [
+            "Declared constant synthetic rate 0/hour",
+            "D is independent of HI; scenario endpoint is not physical end-of-life"
+          ],
+          "limitation_codes": [
+            "SYNTHETIC_SCENARIO_ONLY",
+            "NOT_EMPIRICAL_CONFIDENCE"
+          ],
+          "coverage_start": "2026-10-09T00:00:00Z",
+          "coverage_end": "2026-10-09T00:00:00Z",
+          "coverage_fraction": 1,
+          "timestamp": "2026-10-09T00:00:00Z"
+        },
+        "schema_version": "1.1.0"
+      }
+    },
+    {
+      "name": "endpoint",
+      "oracle_kind": "ARITHMETIC",
+      "expected": {
+        "transformer_id": "HX-A",
+        "timestamp": "2026-10-09T00:00:00Z",
+        "rul": {
+          "rul_status": "END_THRESHOLD_REACHED",
+          "rul_method": "SYNTHETIC_FIRST_PASSAGE_V1",
+          "rul_target_definition": "Fictional D reaches scenario D_EOL=1",
+          "rul_value": 0,
+          "rul_unit": "h",
+          "rul_lower": null,
+          "rul_upper": null,
+          "uncertainty_kind": null,
+          "forecast_horizon_hours": 100,
+          "future_duty_scenario": "Constant declared synthetic rate",
+          "degradation_state": 1,
+          "end_threshold": 1,
+          "degradation_unit": "1",
+          "degradation_rate_per_hour": 0.01,
+          "equivalent_ageing_hours": null,
+          "source_kind": "SIMULATED",
+          "simulated": true,
+          "model_version": "synthetic-first-passage-v1",
+          "config_version": "fictional-config-v1",
+          "required_inputs": [],
+          "assumptions": [
+            "Declared constant synthetic rate 0.01/hour",
+            "D is independent of HI; scenario endpoint is not physical end-of-life"
+          ],
+          "limitation_codes": [
+            "SYNTHETIC_SCENARIO_ONLY",
+            "NOT_EMPIRICAL_CONFIDENCE"
+          ],
+          "coverage_start": "2026-10-09T00:00:00Z",
+          "coverage_end": "2026-10-09T00:00:00Z",
+          "coverage_fraction": 1,
+          "timestamp": "2026-10-09T00:00:00Z"
+        },
+        "schema_version": "1.1.0"
+      }
+    },
+    {
+      "name": "beyond-horizon",
+      "oracle_kind": "ARITHMETIC",
+      "expected": {
+        "transformer_id": "HX-A",
+        "timestamp": "2026-10-09T00:00:00Z",
+        "rul": {
+          "rul_status": "NO_CROSSING_WITHIN_HORIZON",
+          "rul_method": "SYNTHETIC_FIRST_PASSAGE_V1",
+          "rul_target_definition": "Fictional D reaches scenario D_EOL=1",
+          "rul_value": null,
+          "rul_unit": "h",
+          "rul_lower": null,
+          "rul_upper": null,
+          "uncertainty_kind": null,
+          "forecast_horizon_hours": 100,
+          "future_duty_scenario": "Constant declared synthetic rate",
+          "degradation_state": 0.2,
+          "end_threshold": 1,
+          "degradation_unit": "1",
+          "degradation_rate_per_hour": 0.001,
+          "equivalent_ageing_hours": null,
+          "source_kind": "SIMULATED",
+          "simulated": true,
+          "model_version": "synthetic-first-passage-v1",
+          "config_version": "fictional-config-v1",
+          "required_inputs": [],
+          "assumptions": [
+            "Declared constant synthetic rate 0.001/hour",
+            "D is independent of HI; scenario endpoint is not physical end-of-life"
+          ],
+          "limitation_codes": [
+            "SYNTHETIC_SCENARIO_ONLY",
+            "NOT_EMPIRICAL_CONFIDENCE"
+          ],
+          "coverage_start": "2026-10-09T00:00:00Z",
+          "coverage_end": "2026-10-09T00:00:00Z",
+          "coverage_fraction": 1,
+          "timestamp": "2026-10-09T00:00:00Z"
+        },
+        "schema_version": "1.1.0"
+      }
+    },
+    {
+      "name": "real-insufficient",
+      "oracle_kind": "ELIGIBILITY",
+      "expected": {
+        "transformer_id": "HX-REAL-UNKNOWN",
+        "timestamp": "2026-10-09T00:00:00Z",
+        "rul": {
+          "rul_status": "INSUFFICIENT_DATA",
+          "rul_method": "THERMAL_AGEING_ELIGIBILITY_V1",
+          "rul_target_definition": "Conditional insulation-life budget; inputs unverified",
+          "rul_value": null,
+          "rul_unit": "h",
+          "rul_lower": null,
+          "rul_upper": null,
+          "uncertainty_kind": null,
+          "forecast_horizon_hours": null,
+          "future_duty_scenario": null,
+          "degradation_state": null,
+          "end_threshold": null,
+          "degradation_unit": null,
+          "degradation_rate_per_hour": null,
+          "equivalent_ageing_hours": null,
+          "source_kind": "LIVE",
+          "simulated": false,
+          "model_version": "synthetic-first-passage-v1",
+          "config_version": null,
+          "required_inputs": [
+            "verified_hot_spot",
+            "insulation_applicability",
+            "life_budget",
+            "prior_consumed_exposure",
+            "future_duty"
+          ],
+          "assumptions": [],
+          "limitation_codes": [
+            "UNVERIFIED_REAL_SOURCE",
+            "MISSING_LIFE_HISTORY"
+          ],
+          "coverage_start": "2026-10-09T00:00:00Z",
+          "coverage_end": "2026-10-09T00:00:00Z",
+          "coverage_fraction": null,
+          "timestamp": "2026-10-09T00:00:00Z"
+        },
+        "schema_version": "1.1.0"
+      }
+    }
+  ],
+  "energy": [
+    {
+      "name": "constant-10kw-2h",
+      "oracle_kind": "ARITHMETIC",
+      "samples": [
+        [
+          "2026-10-09T00:00:00Z",
+          10
+        ],
+        [
+          "2026-10-09T01:00:00Z",
+          10
+        ],
+        [
+          "2026-10-09T02:00:00Z",
+          10
+        ]
+      ],
+      "expected": {
+        "transformer_id": "HX-A",
+        "timestamp": "2026-10-09T02:00:00Z",
+        "schema_version": "1.1.0",
+        "energy_status": "AVAILABLE",
+        "energy_method": "SIMULATED",
+        "calculation_method": "TRAPEZOID",
+        "source_kind": "SIMULATED",
+        "active_power_unit_status": "SYNTHETIC",
+        "energy_unit": "kWh",
+        "window_start": "2026-10-09T00:00:00Z",
+        "window_end": "2026-10-09T02:00:00Z",
+        "consumed_kwh": 20,
+        "covered_consumed_kwh": 20,
+        "import_kwh": null,
+        "export_kwh": null,
+        "coverage_seconds": 7200,
+        "coverage_fraction": 1,
+        "gap_count": 0,
+        "reset_count": 0,
+        "missing_intervals": [],
+        "peak_kw": null,
+        "peak_time": null,
+        "loss_kw": null,
+        "loss_kwh": null,
+        "efficiency_percent": null,
+        "loss_method": null,
+        "conservation_recommendation": null,
+        "estimated_savings_kwh": null,
+        "load_profile": [],
+        "conservation_evidence": [],
+        "assumptions": [
+          "Arithmetic oracle: declared supported 1h intervals, not a production 5s stream"
+        ],
+        "limitation_codes": [
+          "LOSS_INPUTS_MISSING",
+          "NO_SAVINGS_BASELINE"
+        ],
+        "config_version": "fictional-config-v1",
+        "map_version": null,
+        "calculation_version": "h00-arithmetic-v1",
+        "provenance": {
+          "power_unit": "kW",
+          "counter_unit": null,
+          "counter_semantics": null,
+          "continuity_evidence": null,
+          "measurement_side": "LV",
+          "maximum_gap_seconds": 3600,
+          "minimum_coverage_fraction": 1
+        }
+      }
+    },
+    {
+      "name": "linear-ramp",
+      "oracle_kind": "ARITHMETIC",
+      "samples": [
+        [
+          "2026-10-09T00:00:00Z",
+          0
+        ],
+        [
+          "2026-10-09T01:00:00Z",
+          10
+        ]
+      ],
+      "expected": {
+        "transformer_id": "HX-A",
+        "timestamp": "2026-10-09T01:00:00Z",
+        "schema_version": "1.1.0",
+        "energy_status": "AVAILABLE",
+        "energy_method": "SIMULATED",
+        "calculation_method": "TRAPEZOID",
+        "source_kind": "SIMULATED",
+        "active_power_unit_status": "SYNTHETIC",
+        "energy_unit": "kWh",
+        "window_start": "2026-10-09T00:00:00Z",
+        "window_end": "2026-10-09T01:00:00Z",
+        "consumed_kwh": 5,
+        "covered_consumed_kwh": 5,
+        "import_kwh": null,
+        "export_kwh": null,
+        "coverage_seconds": 3600,
+        "coverage_fraction": 1,
+        "gap_count": 0,
+        "reset_count": 0,
+        "missing_intervals": [],
+        "peak_kw": null,
+        "peak_time": null,
+        "loss_kw": null,
+        "loss_kwh": null,
+        "efficiency_percent": null,
+        "loss_method": null,
+        "conservation_recommendation": null,
+        "estimated_savings_kwh": null,
+        "load_profile": [],
+        "conservation_evidence": [],
+        "assumptions": [
+          "Arithmetic oracle: declared supported 1h intervals, not a production 5s stream"
+        ],
+        "limitation_codes": [
+          "LOSS_INPUTS_MISSING",
+          "NO_SAVINGS_BASELINE"
+        ],
+        "config_version": "fictional-config-v1",
+        "map_version": null,
+        "calculation_version": "h00-arithmetic-v1",
+        "provenance": {
+          "power_unit": "kW",
+          "counter_unit": null,
+          "counter_semantics": null,
+          "continuity_evidence": null,
+          "measurement_side": "LV",
+          "maximum_gap_seconds": 3600,
+          "minimum_coverage_fraction": 1
+        }
+      }
+    },
+    {
+      "name": "counter-reset",
+      "oracle_kind": "ARITHMETIC",
+      "samples": [
+        [
+          "2026-10-09T00:00:00Z",
+          100
+        ],
+        [
+          "2026-10-09T01:00:00Z",
+          110
+        ],
+        [
+          "2026-10-09T02:00:00Z",
+          2
+        ]
+      ],
+      "expected": {
+        "transformer_id": "HX-A",
+        "timestamp": "2026-10-09T01:00:00Z",
+        "schema_version": "1.1.0",
+        "energy_status": "PARTIAL",
+        "energy_method": "SIMULATED",
+        "calculation_method": "COUNTER_DIFFERENCE",
+        "source_kind": "SIMULATED",
+        "active_power_unit_status": "SYNTHETIC",
+        "energy_unit": "kWh",
+        "window_start": "2026-10-09T00:00:00Z",
+        "window_end": "2026-10-09T02:00:00Z",
+        "consumed_kwh": null,
+        "covered_consumed_kwh": 10,
+        "import_kwh": null,
+        "export_kwh": null,
+        "coverage_seconds": 3600,
+        "coverage_fraction": 0.5,
+        "gap_count": 0,
+        "reset_count": 1,
+        "missing_intervals": [
+          {
+            "start": "2026-10-09T01:00:00Z",
+            "end": "2026-10-09T02:00:00Z",
+            "reason": "COUNTER_RESET"
+          }
+        ],
+        "peak_kw": null,
+        "peak_time": null,
+        "loss_kw": null,
+        "loss_kwh": null,
+        "efficiency_percent": null,
+        "loss_method": null,
+        "conservation_recommendation": null,
+        "estimated_savings_kwh": null,
+        "load_profile": [],
+        "conservation_evidence": [],
+        "assumptions": [
+          "Arithmetic oracle: declared supported 1h intervals, not a production 5s stream"
+        ],
+        "limitation_codes": [
+          "LOSS_INPUTS_MISSING",
+          "NO_SAVINGS_BASELINE"
+        ],
+        "config_version": "fictional-config-v1",
+        "map_version": null,
+        "calculation_version": "h00-arithmetic-v1",
+        "provenance": {
+          "power_unit": "kW",
+          "counter_unit": "kWh",
+          "counter_semantics": "CUMULATIVE_IMPORT",
+          "continuity_evidence": null,
+          "measurement_side": "LV",
+          "maximum_gap_seconds": 3600,
+          "minimum_coverage_fraction": 1
+        }
+      }
+    },
+    {
+      "name": "long-gap",
+      "oracle_kind": "ARITHMETIC",
+      "samples": [
+        [
+          "2026-10-09T00:00:00Z",
+          10
+        ],
+        [
+          "2026-10-09T02:00:00Z",
+          10
+        ]
+      ],
+      "expected": {
+        "transformer_id": "HX-A",
+        "timestamp": null,
+        "schema_version": "1.1.0",
+        "energy_status": "INSUFFICIENT_DATA",
+        "energy_method": "SIMULATED",
+        "calculation_method": "TRAPEZOID",
+        "source_kind": "SIMULATED",
+        "active_power_unit_status": "SYNTHETIC",
+        "energy_unit": "kWh",
+        "window_start": "2026-10-09T00:00:00Z",
+        "window_end": "2026-10-09T02:00:00Z",
+        "consumed_kwh": null,
+        "covered_consumed_kwh": null,
+        "import_kwh": null,
+        "export_kwh": null,
+        "coverage_seconds": 0,
+        "coverage_fraction": 0,
+        "gap_count": 1,
+        "reset_count": 0,
+        "missing_intervals": [
+          {
+            "start": "2026-10-09T00:00:00Z",
+            "end": "2026-10-09T02:00:00Z",
+            "reason": "LONG_GAP"
+          }
+        ],
+        "peak_kw": null,
+        "peak_time": null,
+        "loss_kw": null,
+        "loss_kwh": null,
+        "efficiency_percent": null,
+        "loss_method": null,
+        "conservation_recommendation": null,
+        "estimated_savings_kwh": null,
+        "load_profile": [],
+        "conservation_evidence": [],
+        "assumptions": [
+          "Arithmetic oracle: declared supported 1h intervals, not a production 5s stream"
+        ],
+        "limitation_codes": [
+          "LOSS_INPUTS_MISSING",
+          "NO_SAVINGS_BASELINE"
+        ],
+        "config_version": "fictional-config-v1",
+        "map_version": null,
+        "calculation_version": "h00-arithmetic-v1",
+        "provenance": {
+          "power_unit": "kW",
+          "counter_unit": null,
+          "counter_semantics": null,
+          "continuity_evidence": null,
+          "measurement_side": "LV",
+          "maximum_gap_seconds": 10,
+          "minimum_coverage_fraction": 1
+        }
+      }
+    },
+    {
+      "name": "unknown-units",
+      "oracle_kind": "ARITHMETIC",
+      "samples": [
+        [
+          "2026-10-09T00:00:00Z",
+          10
+        ],
+        [
+          "2026-10-09T02:00:00Z",
+          10
+        ]
+      ],
+      "expected": {
+        "transformer_id": "HX-A",
+        "timestamp": null,
+        "schema_version": "1.1.0",
+        "energy_status": "UNAVAILABLE",
+        "energy_method": "UNAVAILABLE",
+        "calculation_method": "NONE",
+        "source_kind": "SIMULATED",
+        "active_power_unit_status": "UNKNOWN",
+        "energy_unit": "kWh",
+        "window_start": "2026-10-09T00:00:00Z",
+        "window_end": "2026-10-09T02:00:00Z",
+        "consumed_kwh": null,
+        "covered_consumed_kwh": null,
+        "import_kwh": null,
+        "export_kwh": null,
+        "coverage_seconds": 0,
+        "coverage_fraction": 0,
+        "gap_count": 0,
+        "reset_count": 0,
+        "missing_intervals": [
+          {
+            "start": "2026-10-09T00:00:00Z",
+            "end": "2026-10-09T02:00:00Z",
+            "reason": "UNKNOWN_UNITS"
+          }
+        ],
+        "peak_kw": null,
+        "peak_time": null,
+        "loss_kw": null,
+        "loss_kwh": null,
+        "efficiency_percent": null,
+        "loss_method": null,
+        "conservation_recommendation": null,
+        "estimated_savings_kwh": null,
+        "load_profile": [],
+        "conservation_evidence": [],
+        "assumptions": [
+          "Arithmetic oracle: declared supported 1h intervals, not a production 5s stream"
+        ],
+        "limitation_codes": [
+          "LOSS_INPUTS_MISSING",
+          "NO_SAVINGS_BASELINE"
+        ],
+        "config_version": "fictional-config-v1",
+        "map_version": null,
+        "calculation_version": "h00-arithmetic-v1",
+        "provenance": {
+          "power_unit": null,
+          "counter_unit": null,
+          "counter_semantics": null,
+          "continuity_evidence": null,
+          "measurement_side": "LV",
+          "maximum_gap_seconds": 10,
+          "minimum_coverage_fraction": 1
+        }
+      }
+    },
+    {
+      "name": "duplicate-zero-effect",
+      "oracle_kind": "ARITHMETIC",
+      "samples": [
+        [
+          "2026-10-09T00:00:00Z",
+          10
+        ],
+        [
+          "2026-10-09T00:00:00Z",
+          10
+        ],
+        [
+          "2026-10-09T01:00:00Z",
+          10
+        ],
+        [
+          "2026-10-09T02:00:00Z",
+          10
+        ]
+      ],
+      "expected": {
+        "transformer_id": "HX-A",
+        "timestamp": "2026-10-09T02:00:00Z",
+        "schema_version": "1.1.0",
+        "energy_status": "AVAILABLE",
+        "energy_method": "SIMULATED",
+        "calculation_method": "TRAPEZOID",
+        "source_kind": "SIMULATED",
+        "active_power_unit_status": "SYNTHETIC",
+        "energy_unit": "kWh",
+        "window_start": "2026-10-09T00:00:00Z",
+        "window_end": "2026-10-09T02:00:00Z",
+        "consumed_kwh": 20,
+        "covered_consumed_kwh": 20,
+        "import_kwh": null,
+        "export_kwh": null,
+        "coverage_seconds": 7200,
+        "coverage_fraction": 1,
+        "gap_count": 0,
+        "reset_count": 0,
+        "missing_intervals": [],
+        "peak_kw": null,
+        "peak_time": null,
+        "loss_kw": null,
+        "loss_kwh": null,
+        "efficiency_percent": null,
+        "loss_method": null,
+        "conservation_recommendation": null,
+        "estimated_savings_kwh": null,
+        "load_profile": [],
+        "conservation_evidence": [],
+        "assumptions": [
+          "Arithmetic oracle: declared supported 1h intervals, not a production 5s stream"
+        ],
+        "limitation_codes": [
+          "LOSS_INPUTS_MISSING",
+          "NO_SAVINGS_BASELINE"
+        ],
+        "config_version": "fictional-config-v1",
+        "map_version": null,
+        "calculation_version": "h00-arithmetic-v1",
+        "provenance": {
+          "power_unit": "kW",
+          "counter_unit": null,
+          "counter_semantics": null,
+          "continuity_evidence": null,
+          "measurement_side": "LV",
+          "maximum_gap_seconds": 3600,
+          "minimum_coverage_fraction": 1
+        }
+      }
+    },
+    {
+      "name": "known-counter-100-to-110",
+      "oracle_kind": "ARITHMETIC",
+      "samples": [
+        [
+          "2026-10-09T00:00:00Z",
+          100
+        ],
+        [
+          "2026-10-09T01:00:00Z",
+          110
+        ]
+      ],
+      "expected": {
+        "transformer_id": "HX-A",
+        "timestamp": "2026-10-09T01:00:00Z",
+        "schema_version": "1.1.0",
+        "energy_status": "AVAILABLE",
+        "energy_method": "SIMULATED",
+        "calculation_method": "COUNTER_DIFFERENCE",
+        "source_kind": "SIMULATED",
+        "active_power_unit_status": "SYNTHETIC",
+        "energy_unit": "kWh",
+        "window_start": "2026-10-09T00:00:00Z",
+        "window_end": "2026-10-09T01:00:00Z",
+        "consumed_kwh": 10,
+        "covered_consumed_kwh": 10,
+        "import_kwh": null,
+        "export_kwh": null,
+        "coverage_seconds": 3600,
+        "coverage_fraction": 1,
+        "gap_count": 0,
+        "reset_count": 0,
+        "missing_intervals": [],
+        "peak_kw": null,
+        "peak_time": null,
+        "loss_kw": null,
+        "loss_kwh": null,
+        "efficiency_percent": null,
+        "loss_method": null,
+        "conservation_recommendation": null,
+        "estimated_savings_kwh": null,
+        "load_profile": [],
+        "conservation_evidence": [],
+        "assumptions": [
+          "Arithmetic oracle: declared supported 1h intervals, not a production 5s stream"
+        ],
+        "limitation_codes": [
+          "LOSS_INPUTS_MISSING",
+          "NO_SAVINGS_BASELINE"
+        ],
+        "config_version": "fictional-config-v1",
+        "map_version": null,
+        "calculation_version": "h00-arithmetic-v1",
+        "provenance": {
+          "power_unit": "kW",
+          "counter_unit": "kWh",
+          "counter_semantics": "CUMULATIVE_IMPORT",
+          "continuity_evidence": null,
+          "measurement_side": "LV",
+          "maximum_gap_seconds": 3600,
+          "minimum_coverage_fraction": 1
+        }
+      }
+    },
+    {
+      "name": "long-counter-gap-no-continuity",
+      "oracle_kind": "ARITHMETIC",
+      "samples": [
+        [
+          "2026-10-09T00:00:00Z",
+          100
+        ],
+        [
+          "2026-10-09T02:00:00Z",
+          110
+        ]
+      ],
+      "expected": {
+        "transformer_id": "HX-A",
+        "timestamp": null,
+        "schema_version": "1.1.0",
+        "energy_status": "INSUFFICIENT_DATA",
+        "energy_method": "SIMULATED",
+        "calculation_method": "COUNTER_DIFFERENCE",
+        "source_kind": "SIMULATED",
+        "active_power_unit_status": "SYNTHETIC",
+        "energy_unit": "kWh",
+        "window_start": "2026-10-09T00:00:00Z",
+        "window_end": "2026-10-09T02:00:00Z",
+        "consumed_kwh": null,
+        "covered_consumed_kwh": null,
+        "import_kwh": null,
+        "export_kwh": null,
+        "coverage_seconds": 0,
+        "coverage_fraction": 0,
+        "gap_count": 1,
+        "reset_count": 0,
+        "missing_intervals": [
+          {
+            "start": "2026-10-09T00:00:00Z",
+            "end": "2026-10-09T02:00:00Z",
+            "reason": "LONG_GAP"
+          }
+        ],
+        "peak_kw": null,
+        "peak_time": null,
+        "loss_kw": null,
+        "loss_kwh": null,
+        "efficiency_percent": null,
+        "loss_method": null,
+        "conservation_recommendation": null,
+        "estimated_savings_kwh": null,
+        "load_profile": [],
+        "conservation_evidence": [],
+        "assumptions": [
+          "Arithmetic oracle: declared supported 1h intervals, not a production 5s stream"
+        ],
+        "limitation_codes": [
+          "LOSS_INPUTS_MISSING",
+          "NO_SAVINGS_BASELINE"
+        ],
+        "config_version": "fictional-config-v1",
+        "map_version": null,
+        "calculation_version": "h00-arithmetic-v1",
+        "provenance": {
+          "power_unit": "kW",
+          "counter_unit": "kWh",
+          "counter_semantics": "CUMULATIVE_IMPORT",
+          "continuity_evidence": null,
+          "measurement_side": "LV",
+          "maximum_gap_seconds": 10,
+          "minimum_coverage_fraction": 1
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,378 @@
+{
+  "map_version": "fictional-lv-v1",
+  "host": "0.0.0.0",
+  "port": 1502,
+  "start_utc": "2026-10-09T00:00:00Z",
+  "seed": 42,
+  "interval_seconds": 5,
+  "timeline": [
+    {
+      "from_seconds": 0,
+      "to_seconds": 60,
+      "scenario": "HEALTHY"
+    },
+    {
+      "from_seconds": 60,
+      "to_seconds": 120,
+      "scenario": "OVERLOAD"
+    },
+    {
+      "from_seconds": 120,
+      "to_seconds": 180,
+      "scenario": "ALARM_TRIP"
+    }
+  ],
+  "assets": [
+    {
+      "transformer_id": "H03-SIM-01",
+      "unit_id": 1,
+      "seed": 42,
+      "configuration": {
+        "transformer_id": "H03-SIM-01",
+        "rated_power_kva": 30,
+        "rated_voltage_lv": 400,
+        "rated_current_a": 43.30127018922193,
+        "configuration_status": "SYNTHETIC_CONFIG",
+        "configuration_version": "fictional-demo-v1",
+        "measurement_side": "LV"
+      }
+    },
+    {
+      "transformer_id": "H03-SIM-02",
+      "unit_id": 2,
+      "seed": 43,
+      "configuration": {
+        "transformer_id": "H03-SIM-02",
+        "rated_power_kva": 30,
+        "rated_voltage_lv": 400,
+        "rated_current_a": 43.30127018922193,
+        "configuration_status": "SYNTHETIC_CONFIG",
+        "configuration_version": "fictional-demo-v1",
+        "measurement_side": "LV"
+      }
+    },
+    {
+      "transformer_id": "H03-SIM-03",
+      "unit_id": 3,
+      "seed": 44,
+      "configuration": {
+        "transformer_id": "H03-SIM-03",
+        "rated_power_kva": 30,
+        "rated_voltage_lv": 400,
+        "rated_current_a": 43.30127018922193,
+        "configuration_status": "SYNTHETIC_CONFIG",
+        "configuration_version": "fictional-demo-v1",
+        "measurement_side": "LV"
+      }
+    },
+    {
+      "transformer_id": "H03-SIM-04",
+      "unit_id": 4,
+      "seed": 45,
+      "configuration": {
+        "transformer_id": "H03-SIM-04",
+        "rated_power_kva": 30,
+        "rated_voltage_lv": 400,
+        "rated_current_a": 43.30127018922193,
+        "configuration_status": "SYNTHETIC_CONFIG",
+        "configuration_version": "fictional-demo-v1",
+        "measurement_side": "LV"
+      }
+    },
+    {
+      "transformer_id": "H03-SIM-05",
+      "unit_id": 5,
+      "seed": 46,
+      "configuration": {
+        "transformer_id": "H03-SIM-05",
+        "rated_power_kva": 30,
+        "rated_voltage_lv": 400,
+        "rated_current_a": 43.30127018922193,
+        "configuration_status": "SYNTHETIC_CONFIG",
+        "configuration_version": "fictional-demo-v1",
+        "measurement_side": "LV"
+      }
+    },
+    {
+      "transformer_id": "H03-SIM-06",
+      "unit_id": 6,
+      "seed": 47,
+      "configuration": {
+        "transformer_id": "H03-SIM-06",
+        "rated_power_kva": 30,
+        "rated_voltage_lv": 400,
+        "rated_current_a": 43.30127018922193,
+        "configuration_status": "SYNTHETIC_CONFIG",
+        "configuration_version": "fictional-demo-v1",
+        "measurement_side": "LV"
+      }
+    },
+    {
+      "transformer_id": "H03-SIM-07",
+      "unit_id": 7,
+      "seed": 48,
+      "configuration": {
+        "transformer_id": "H03-SIM-07",
+        "rated_power_kva": 30,
+        "rated_voltage_lv": 400,
+        "rated_current_a": 43.30127018922193,
+        "configuration_status": "SYNTHETIC_CONFIG",
+        "configuration_version": "fictional-demo-v1",
+        "measurement_side": "LV"
+      }
+    },
+    {
+      "transformer_id": "H03-SIM-08",
+      "unit_id": 8,
+      "seed": 49,
+      "configuration": {
+        "transformer_id": "H03-SIM-08",
+        "rated_power_kva": 30,
+        "rated_voltage_lv": 400,
+        "rated_current_a": 43.30127018922193,
+        "configuration_status": "SYNTHETIC_CONFIG",
+        "configuration_version": "fictional-demo-v1",
+        "measurement_side": "LV"
+      }
+    },
+    {
+      "transformer_id": "H03-SIM-09",
+      "unit_id": 9,
+      "seed": 50,
+      "configuration": {
+        "transformer_id": "H03-SIM-09",
+        "rated_power_kva": 30,
+        "rated_voltage_lv": 400,
+        "rated_current_a": 43.30127018922193,
+        "configuration_status": "SYNTHETIC_CONFIG",
+        "configuration_version": "fictional-demo-v1",
+        "measurement_side": "LV"
+      }
+    },
+    {
+      "transformer_id": "H03-SIM-10",
+      "unit_id": 10,
+      "seed": 51,
+      "configuration": {
+        "transformer_id": "H03-SIM-10",
+        "rated_power_kva": 30,
+        "rated_voltage_lv": 400,
+        "rated_current_a": 43.30127018922193,
+        "configuration_status": "SYNTHETIC_CONFIG",
+        "configuration_version": "fictional-demo-v1",
+        "measurement_side": "LV"
+      }
+    },
+    {
+      "transformer_id": "H03-SIM-11",
+      "unit_id": 11,
+      "seed": 52,
+      "configuration": {
+        "transformer_id": "H03-SIM-11",
+        "rated_power_kva": 30,
+        "rated_voltage_lv": 400,
+        "rated_current_a": 43.30127018922193,
+        "configuration_status": "SYNTHETIC_CONFIG",
+        "configuration_version": "fictional-demo-v1",
+        "measurement_side": "LV"
+      }
+    },
+    {
+      "transformer_id": "H03-SIM-12",
+      "unit_id": 12,
+      "seed": 53,
+      "configuration": {
+        "transformer_id": "H03-SIM-12",
+        "rated_power_kva": 30,
+        "rated_voltage_lv": 400,
+        "rated_current_a": 43.30127018922193,
+        "configuration_status": "SYNTHETIC_CONFIG",
+        "configuration_version": "fictional-demo-v1",
+        "measurement_side": "LV"
+      }
+    },
+    {
+      "transformer_id": "H03-SIM-13",
+      "unit_id": 13,
+      "seed": 54,
+      "configuration": {
+        "transformer_id": "H03-SIM-13",
+        "rated_power_kva": 30,
+        "rated_voltage_lv": 400,
+        "rated_current_a": 43.30127018922193,
+        "configuration_status": "SYNTHETIC_CONFIG",
+        "configuration_version": "fictional-demo-v1",
+        "measurement_side": "LV"
+      }
+    },
+    {
+      "transformer_id": "H03-SIM-14",
+      "unit_id": 14,
+      "seed": 55,
+      "configuration": {
+        "transformer_id": "H03-SIM-14",
+        "rated_power_kva": 30,
+        "rated_voltage_lv": 400,
+        "rated_current_a": 43.30127018922193,
+        "configuration_status": "SYNTHETIC_CONFIG",
+        "configuration_version": "fictional-demo-v1",
+        "measurement_side": "LV"
+      }
+    },
+    {
+      "transformer_id": "H03-SIM-15",
+      "unit_id": 15,
+      "seed": 56,
+      "configuration": {
+        "transformer_id": "H03-SIM-15",
+        "rated_power_kva": 30,
+        "rated_voltage_lv": 400,
+        "rated_current_a": 43.30127018922193,
+        "configuration_status": "SYNTHETIC_CONFIG",
+        "configuration_version": "fictional-demo-v1",
+        "measurement_side": "LV"
+      }
+    },
+    {
+      "transformer_id": "H03-SIM-16",
+      "unit_id": 16,
+      "seed": 57,
+      "configuration": {
+        "transformer_id": "H03-SIM-16",
+        "rated_power_kva": 30,
+        "rated_voltage_lv": 400,
+        "rated_current_a": 43.30127018922193,
+        "configuration_status": "SYNTHETIC_CONFIG",
+        "configuration_version": "fictional-demo-v1",
+        "measurement_side": "LV"
+      }
+    },
+    {
+      "transformer_id": "H03-SIM-17",
+      "unit_id": 17,
+      "seed": 58,
+      "configuration": {
+        "transformer_id": "H03-SIM-17",
+        "rated_power_kva": 30,
+        "rated_voltage_lv": 400,
+        "rated_current_a": 43.30127018922193,
+        "configuration_status": "SYNTHETIC_CONFIG",
+        "configuration_version": "fictional-demo-v1",
+        "measurement_side": "LV"
+      }
+    },
+    {
+      "transformer_id": "H03-SIM-18",
+      "unit_id": 18,
+      "seed": 59,
+      "configuration": {
+        "transformer_id": "H03-SIM-18",
+        "rated_power_kva": 30,
+        "rated_voltage_lv": 400,
+        "rated_current_a": 43.30127018922193,
+        "configuration_status": "SYNTHETIC_CONFIG",
+        "configuration_version": "fictional-demo-v1",
+        "measurement_side": "LV"
+      }
+    },
+    {
+      "transformer_id": "H03-SIM-19",
+      "unit_id": 19,
+      "seed": 60,
+      "configuration": {
+        "transformer_id": "H03-SIM-19",
+        "rated_power_kva": 30,
+        "rated_voltage_lv": 400,
+        "rated_current_a": 43.30127018922193,
+        "configuration_status": "SYNTHETIC_CONFIG",
+        "configuration_version": "fictional-demo-v1",
+        "measurement_side": "LV"
+      }
+    },
+    {
+      "transformer_id": "H03-SIM-20",
+      "unit_id": 20,
+      "seed": 61,
+      "configuration": {
+        "transformer_id": "H03-SIM-20",
+        "rated_power_kva": 30,
+        "rated_voltage_lv": 400,
+        "rated_current_a": 43.30127018922193,
+        "configuration_status": "SYNTHETIC_CONFIG",
+        "configuration_version": "fictional-demo-v1",
+        "measurement_side": "LV"
+      }
+    },
+    {
+      "transformer_id": "H03-SIM-21",
+      "unit_id": 21,
+      "seed": 62,
+      "configuration": {
+        "transformer_id": "H03-SIM-21",
+        "rated_power_kva": 30,
+        "rated_voltage_lv": 400,
+        "rated_current_a": 43.30127018922193,
+        "configuration_status": "SYNTHETIC_CONFIG",
+        "configuration_version": "fictional-demo-v1",
+        "measurement_side": "LV"
+      }
+    },
+    {
+      "transformer_id": "H03-SIM-22",
+      "unit_id": 22,
+      "seed": 63,
+      "configuration": {
+        "transformer_id": "H03-SIM-22",
+        "rated_power_kva": 30,
+        "rated_voltage_lv": 400,
+        "rated_current_a": 43.30127018922193,
+        "configuration_status": "SYNTHETIC_CONFIG",
+        "configuration_version": "fictional-demo-v1",
+        "measurement_side": "LV"
+      }
+    },
+    {
+      "transformer_id": "H03-SIM-23",
+      "unit_id": 23,
+      "seed": 64,
+      "configuration": {
+        "transformer_id": "H03-SIM-23",
+        "rated_power_kva": 30,
+        "rated_voltage_lv": 400,
+        "rated_current_a": 43.30127018922193,
+        "configuration_status": "SYNTHETIC_CONFIG",
+        "configuration_version": "fictional-demo-v1",
+        "measurement_side": "LV"
+      }
+    },
+    {
+      "transformer_id": "H03-SIM-24",
+      "unit_id": 24,
+      "seed": 65,
+      "configuration": {
+        "transformer_id": "H03-SIM-24",
+        "rated_power_kva": 30,
+        "rated_voltage_lv": 400,
+        "rated_current_a": 43.30127018922193,
+        "configuration_status": "SYNTHETIC_CONFIG",
+        "configuration_version": "fictional-demo-v1",
+        "measurement_side": "LV"
+      }
+    },
+    {
+      "transformer_id": "H03-SIM-25",
+      "unit_id": 25,
+      "seed": 66,
+      "configuration": {
+        "transformer_id": "H03-SIM-25",
+        "rated_power_kva": 30,
+        "rated_voltage_lv": 400,
+        "rated_current_a": 43.30127018922193,
+        "configuration_status": "SYNTHETIC_CONFIG",
+        "configuration_version": "fictional-demo-v1",
+        "measurement_side": "LV"
+      }
+    }
+  ],
+  "container_network": true
+}

@@ -9,7 +9,7 @@ def test_defaults() -> None:
     assert settings.schema_version == "1.0.0"
     assert settings.default_transformer_id == "TX-001"
     assert settings.ml_backend == "stub"
-    assert settings.ml_history_window == 60
+    assert settings.ml_history_window == 4096
     assert settings.ml_timeout_seconds == 5
     assert settings.ml_max_retries == 2
     assert settings.mqtt_enabled is False

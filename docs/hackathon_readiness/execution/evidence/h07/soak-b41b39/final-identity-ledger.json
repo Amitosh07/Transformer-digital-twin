@@ -1,0 +1,3502 @@
+[
+  {
+    "asset": "H07-b41b39-01",
+    "timestamp": "2026-10-10T07:38:37.245258+00:00",
+    "sequence": 0,
+    "snapshot": "7e4a97a7616599ebc0502c299e3080b302d0d6724f616efef0d2a5306264ea1c",
+    "disposition": "NOT_ACQUIRED_NO_SQL_OR_SPOOL"
+  },
+  {
+    "asset": "H07-b41b39-02",
+    "timestamp": "2026-10-10T07:38:37.245258+00:00",
+    "sequence": 0,
+    "snapshot": "321715b961ff250b6fbc657f71be165ff4bc71ac7241a3bd11f17ccafa5470f0",
+    "disposition": "NOT_ACQUIRED_NO_SQL_OR_SPOOL"
+  },
+  {
+    "asset": "H07-b41b39-03",
+    "timestamp": "2026-10-10T07:38:37.245258+00:00",
+    "sequence": 0,
+    "snapshot": "c2a826577600ffbf8c7dbc25b3ce143340d0ba2fd5607d668e5a9ccee60769fc",
+    "disposition": "NOT_ACQUIRED_NO_SQL_OR_SPOOL"
+  },
+  {
+    "asset": "H07-b41b39-04",
+    "timestamp": "2026-10-10T07:38:37.245258+00:00",
+    "sequence": 0,
+    "snapshot": "32caa72d3dc37f225b7287cff9dda4944fca28c2f0b9abe2510b35c82388a176",
+    "disposition": "NOT_ACQUIRED_NO_SQL_OR_SPOOL"
+  },
+  {
+    "asset": "H07-b41b39-05",
+    "timestamp": "2026-10-10T07:38:37.245258+00:00",
+    "sequence": 0,
+    "snapshot": "07ea7a04315cfb3c8a60ab356bb37606d09845637a6eab884e5c4f031ae05a18",
+    "disposition": "NOT_ACQUIRED_NO_SQL_OR_SPOOL"
+  },
+  {
+    "asset": "H07-b41b39-06",
+    "timestamp": "2026-10-10T07:38:37.245258+00:00",
+    "sequence": 0,
+    "snapshot": "0d2931dbd1f7e4ac0e47bbb95b760b5bfc515aba3188499d202623f1fac8d964",
+    "disposition": "NOT_ACQUIRED_NO_SQL_OR_SPOOL"
+  },
+  {
+    "asset": "H07-b41b39-07",
+    "timestamp": "2026-10-10T07:38:37.245258+00:00",
+    "sequence": 0,
+    "snapshot": "781aface22fe4ae7aa2c5bc34eaf4b41e65ba9376eafad6cbdaf43fa45ae88ea",
+    "disposition": "NOT_ACQUIRED_NO_SQL_OR_SPOOL"
+  },
+  {
+    "asset": "H07-b41b39-08",
+    "timestamp": "2026-10-10T07:38:37.245258+00:00",
+    "sequence": 0,
+    "snapshot": "6d301c5542fa405f140dbd086e9807d9d464a4592668360538a8cdb1fbcad2db",
+    "disposition": "NOT_ACQUIRED_NO_SQL_OR_SPOOL"
+  },
+  {
+    "asset": "H07-b41b39-09",
+    "timestamp": "2026-10-10T07:38:37.245258+00:00",
+    "sequence": 0,
+    "snapshot": "782a6bf3495157ef0bcadcdf163f584449859cb6c768062f44181325f9fbf2f6",
+    "disposition": "NOT_ACQUIRED_NO_SQL_OR_SPOOL"
+  },
+  {
+    "asset": "H07-b41b39-10",
+    "timestamp": "2026-10-10T07:38:37.245258+00:00",
+    "sequence": 0,
+    "snapshot": "dc7ec197f1bbac5a8281ba266f8e828555f45cced377e3b7816f24a4462c91c5",
+    "disposition": "NOT_ACQUIRED_NO_SQL_OR_SPOOL"
+  },
+  {
+    "asset": "H07-b41b39-11",
+    "timestamp": "2026-10-10T07:38:37.245258+00:00",
+    "sequence": 0,
+    "snapshot": "54734cce6414226b8ad6b8060410c6c94939afd5f58cfc73655435ab1bf39ed5",
+    "disposition": "NOT_ACQUIRED_NO_SQL_OR_SPOOL"
+  },
+  {
+    "asset": "H07-b41b39-12",
+    "timestamp": "2026-10-10T07:38:37.245258+00:00",
+    "sequence": 0,
+    "snapshot": "ffc2aea357d2117427e223779b44815ecba84bd2c28f597d1ba916269ced747f",
+    "disposition": "NOT_ACQUIRED_NO_SQL_OR_SPOOL"
+  },
+  {
+    "asset": "H07-b41b39-13",
+    "timestamp": "2026-10-10T07:38:37.245258+00:00",
+    "sequence": 0,
+    "snapshot": "78fabb81f1723f3873a2724a326a2f4b6713ff950491c2ac10a9be788f107925",
+    "disposition": "NOT_ACQUIRED_NO_SQL_OR_SPOOL"
+  },
+  {
+    "asset": "H07-b41b39-14",
+    "timestamp": "2026-10-10T07:38:37.245258+00:00",
+    "sequence": 0,
+    "snapshot": "dbbe875e797bbbd2d88f70e5a2ddd8e700107e26b64b12e5fb093b59c3fb2149",
+    "disposition": "NOT_ACQUIRED_NO_SQL_OR_SPOOL"
+  },
+  {
+    "asset": "H07-b41b39-15",
+    "timestamp": "2026-10-10T07:38:37.245258+00:00",
+    "sequence": 0,
+    "snapshot": "938d0cda8cc147c04d7b580fd2773a3880955eb699bc12c9a0bdf58ccac09a7a",
+    "disposition": "NOT_ACQUIRED_NO_SQL_OR_SPOOL"
+  },
+  {
+    "asset": "H07-b41b39-16",
+    "timestamp": "2026-10-10T07:38:37.245258+00:00",
+    "sequence": 0,
+    "snapshot": "b0de73f99f6036d60120a7f098f8b89afe0587f43c92b28b17848c30e6a33278",
+    "disposition": "NOT_ACQUIRED_NO_SQL_OR_SPOOL"
+  },
+  {
+    "asset": "H07-b41b39-17",
+    "timestamp": "2026-10-10T07:38:37.245258+00:00",
+    "sequence": 0,
+    "snapshot": "13dce5e4e44f5df86660fc34dbe804cf21ef71385a1c70cae57873e65a9ff687",
+    "disposition": "NOT_ACQUIRED_NO_SQL_OR_SPOOL"
+  },
+  {
+    "asset": "H07-b41b39-18",
+    "timestamp": "2026-10-10T07:38:37.245258+00:00",
+    "sequence": 0,
+    "snapshot": "d26539452d17760e646e4b2d272acc29fc2505b4fea53182ef174c9683a2f118",
+    "disposition": "NOT_ACQUIRED_NO_SQL_OR_SPOOL"
+  },
+  {
+    "asset": "H07-b41b39-19",
+    "timestamp": "2026-10-10T07:38:37.245258+00:00",
+    "sequence": 0,
+    "snapshot": "4ff89eb80042c51ceb3c61b854cebde35cdd5eaa3c37bb09fa87427698d4e9c8",
+    "disposition": "NOT_ACQUIRED_NO_SQL_OR_SPOOL"
+  },
+  {
+    "asset": "H07-b41b39-20",
+    "timestamp": "2026-10-10T07:38:37.245258+00:00",
+    "sequence": 0,
+    "snapshot": "a7f349bbcecfdaea859faf81f906eecf227ba6e1271ec96c75a735b88f9de3b0",
+    "disposition": "NOT_ACQUIRED_NO_SQL_OR_SPOOL"
+  },
+  {
+    "asset": "H07-b41b39-21",
+    "timestamp": "2026-10-10T07:38:37.245258+00:00",
+    "sequence": 0,
+    "snapshot": "26de8171b92beba7963f5a2517087d4461b19bf9f49212190c3cf6582a62f1a6",
+    "disposition": "NOT_ACQUIRED_NO_SQL_OR_SPOOL"
+  },
+  {
+    "asset": "H07-b41b39-22",
+    "timestamp": "2026-10-10T07:38:37.245258+00:00",
+    "sequence": 0,
+    "snapshot": "c308603738a691fea8eb65d0ed8d7b77fd4041ed0df39d8669d97d95d8462503",
+    "disposition": "NOT_ACQUIRED_NO_SQL_OR_SPOOL"
+  },
+  {
+    "asset": "H07-b41b39-23",
+    "timestamp": "2026-10-10T07:38:37.245258+00:00",
+    "sequence": 0,
+    "snapshot": "3802faea25f4f0f301cd33919baacf0e2d75c85a004c13eb2ec512ef2b0191fe",
+    "disposition": "NOT_ACQUIRED_NO_SQL_OR_SPOOL"
+  },
+  {
+    "asset": "H07-b41b39-24",
+    "timestamp": "2026-10-10T07:38:37.245258+00:00",
+    "sequence": 0,
+    "snapshot": "8b6ef3172327cb7f380d1ddcbe3862a328d93a40dea793db899d8d8ca7dc70f1",
+    "disposition": "NOT_ACQUIRED_NO_SQL_OR_SPOOL"
+  },
+  {
+    "asset": "H07-b41b39-25",
+    "timestamp": "2026-10-10T07:38:37.245258+00:00",
+    "sequence": 0,
+    "snapshot": "142621301c8875e2e31fe89bf6c0708c2af5536db40b81e377e86359150b5848",
+    "disposition": "NOT_ACQUIRED_NO_SQL_OR_SPOOL"
+  },
+  {
+    "asset": "H07-b41b39-01",
+    "timestamp": "2026-10-10T07:38:42.245258+00:00",
+    "sequence": 1,
+    "snapshot": "82ed15f37b054d6b39aa883e70181ff2092e26043bd4a78522d929efcd383db5",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-02",
+    "timestamp": "2026-10-10T07:38:42.245258+00:00",
+    "sequence": 1,
+    "snapshot": "1510d210c30bd20075b04cd90b208b6b89b7b7cf21297c0af13643484ae40ee5",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-03",
+    "timestamp": "2026-10-10T07:38:42.245258+00:00",
+    "sequence": 1,
+    "snapshot": "f7f737dcb3c5b9ea678f9f77b86089afba11061cd418917b9078ee66086113e6",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-04",
+    "timestamp": "2026-10-10T07:38:42.245258+00:00",
+    "sequence": 1,
+    "snapshot": "6c566e5e9ec9e092c088f56b84e3b11d1b7134d05bf233bf80649e0f874ed5f7",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-05",
+    "timestamp": "2026-10-10T07:38:42.245258+00:00",
+    "sequence": 1,
+    "snapshot": "735e803b1d215a24dbaca247894e84f32e3f9fb88274b264a9790f2e920cc802",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-06",
+    "timestamp": "2026-10-10T07:38:42.245258+00:00",
+    "sequence": 1,
+    "snapshot": "93878961282275a16de6fef23a1367881e998fc1741c448d94323c16ebccf7d0",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-07",
+    "timestamp": "2026-10-10T07:38:42.245258+00:00",
+    "sequence": 1,
+    "snapshot": "514d366b5938ae18867f502e4e343dba64e569defef0edb7faf6bd2b2edd8656",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-08",
+    "timestamp": "2026-10-10T07:38:42.245258+00:00",
+    "sequence": 1,
+    "snapshot": "1248742a6d5c7db6b786848f4644706393b514956dc5461f21c6b672815b6bd1",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-09",
+    "timestamp": "2026-10-10T07:38:42.245258+00:00",
+    "sequence": 1,
+    "snapshot": "6a3559f8fc94535bd8cf0b403e26fc4f413532fe11d7c13661ff633042b4d112",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-10",
+    "timestamp": "2026-10-10T07:38:42.245258+00:00",
+    "sequence": 1,
+    "snapshot": "149a15d66e5207c158c1ac87da0e7f8286b008d5263e6a995dd1b9d283436d6d",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-11",
+    "timestamp": "2026-10-10T07:38:42.245258+00:00",
+    "sequence": 1,
+    "snapshot": "2ca4f57af695444359e591137d8a9a6beb6474741c5d1c7c3593c456bbcbf3f0",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-12",
+    "timestamp": "2026-10-10T07:38:42.245258+00:00",
+    "sequence": 1,
+    "snapshot": "235b0344324db8b0a592eef6eae2b97b1a553055843b842065b2242ede47f3cb",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-13",
+    "timestamp": "2026-10-10T07:38:42.245258+00:00",
+    "sequence": 1,
+    "snapshot": "36b10689175cc2c1d1564f6c00f27b368175afc4c6f76928d46bfd011591917c",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-14",
+    "timestamp": "2026-10-10T07:38:42.245258+00:00",
+    "sequence": 1,
+    "snapshot": "780a6778471fb1025449783e15db46479110dc33552206b8989c0672d00ec029",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-15",
+    "timestamp": "2026-10-10T07:38:42.245258+00:00",
+    "sequence": 1,
+    "snapshot": "9d0ca4acde5dec979da8dffa1d77463f90dee36d6c3fb026ac404754af36a29e",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-16",
+    "timestamp": "2026-10-10T07:38:42.245258+00:00",
+    "sequence": 1,
+    "snapshot": "c5f8e4b38f3c23ba3ada8ed2b77c9b326f1812a7043234faed3bc2c8a614d5e9",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-17",
+    "timestamp": "2026-10-10T07:38:42.245258+00:00",
+    "sequence": 1,
+    "snapshot": "9d44812a656ab75b972caf13c68b44cd2d402ccfdb2020bbd91e19460f4f7ff1",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-18",
+    "timestamp": "2026-10-10T07:38:42.245258+00:00",
+    "sequence": 1,
+    "snapshot": "8b7344765d2ce919c86f6eff9d4dedbb6dff939fe93ae73ae3e717b82049a985",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-19",
+    "timestamp": "2026-10-10T07:38:42.245258+00:00",
+    "sequence": 1,
+    "snapshot": "6702a31eb945964ce734c1ef5e4f404322ea33c930e7b1df9d180d3f22e5d640",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-20",
+    "timestamp": "2026-10-10T07:38:42.245258+00:00",
+    "sequence": 1,
+    "snapshot": "19fb20095d9606b0e5d50c4e19e90b00e2529448f0d05a4fdc53444d5a3484f1",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-21",
+    "timestamp": "2026-10-10T07:38:42.245258+00:00",
+    "sequence": 1,
+    "snapshot": "3fa75c25a4a696a8cdb7298ad0029b70113d7328e38a5c001a775b3d10608b50",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-22",
+    "timestamp": "2026-10-10T07:38:42.245258+00:00",
+    "sequence": 1,
+    "snapshot": "30c32fb1263769d8b325d917cb90121fd0a1eb499e170854cead91b1327cf69a",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-23",
+    "timestamp": "2026-10-10T07:38:42.245258+00:00",
+    "sequence": 1,
+    "snapshot": "39b401e77a76fdcdd9730042edd56f36eaa92ffe17ceafa57e0badd2ecdb09e4",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-24",
+    "timestamp": "2026-10-10T07:38:42.245258+00:00",
+    "sequence": 1,
+    "snapshot": "aa871e3dbec9ed3d73973585a276fec9693ad61210fac57a3e8dd4a4bf7a16ed",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-25",
+    "timestamp": "2026-10-10T07:38:42.245258+00:00",
+    "sequence": 1,
+    "snapshot": "5e3e77ca6c9beb7c5d6ab647d7ce071b1a6a4be8afa75f543b596b790b680177",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-01",
+    "timestamp": "2026-10-10T07:38:47.245258+00:00",
+    "sequence": 2,
+    "snapshot": "646cb38c054fd3d00b034e8ca21b486a6fabdd08e6ecbf4e4aecef56f85bbf36",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-02",
+    "timestamp": "2026-10-10T07:38:47.245258+00:00",
+    "sequence": 2,
+    "snapshot": "09a74c4505284bd8dc44f8bda2269f57f6d1706e9476b5f608531166444504a8",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-03",
+    "timestamp": "2026-10-10T07:38:47.245258+00:00",
+    "sequence": 2,
+    "snapshot": "4d6e5be691e22065318b29f6b7a7c609dc90d15e7a45352e30279bf0fb074f79",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-04",
+    "timestamp": "2026-10-10T07:38:47.245258+00:00",
+    "sequence": 2,
+    "snapshot": "d04d736420902e415c7e083e4ff2f193d385297d18b4131fe7dae7796e744975",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-05",
+    "timestamp": "2026-10-10T07:38:47.245258+00:00",
+    "sequence": 2,
+    "snapshot": "807e59b9346b2ba6869d88886ad895ef963ffbd400e6dd4cfb02d9149bfb5ce2",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-06",
+    "timestamp": "2026-10-10T07:38:47.245258+00:00",
+    "sequence": 2,
+    "snapshot": "949cf6549ae8c3466f5a1036d9e9f37cd3b05d9feb0b0f72a16a4453a0e1c273",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-07",
+    "timestamp": "2026-10-10T07:38:47.245258+00:00",
+    "sequence": 2,
+    "snapshot": "33ceaf2adabf180960ac57d0c8331f1da529620c3c1b564ad09ca6957eef23dc",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-08",
+    "timestamp": "2026-10-10T07:38:47.245258+00:00",
+    "sequence": 2,
+    "snapshot": "16d5d34203ced78925541fea6a0a87abcfd2d1675b804db932c2a479fcc6cb4d",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-09",
+    "timestamp": "2026-10-10T07:38:47.245258+00:00",
+    "sequence": 2,
+    "snapshot": "76aac889aff331e4a91074e3c640970072421b90aff2cd5ae58dcc72714d4d87",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-10",
+    "timestamp": "2026-10-10T07:38:47.245258+00:00",
+    "sequence": 2,
+    "snapshot": "50bd9947238eec9fecb38e93ddace10e527c2ef76abfb1bb8844cfc121fc9c37",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-11",
+    "timestamp": "2026-10-10T07:38:47.245258+00:00",
+    "sequence": 2,
+    "snapshot": "11db881bda64c1aa640a20a1db4ee021282e2a384f7c5ac81a1f719b4169cd87",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-12",
+    "timestamp": "2026-10-10T07:38:47.245258+00:00",
+    "sequence": 2,
+    "snapshot": "2948dd0a2d348fd385aede35cf0594ff5f2e0eef654b452587a9a22096b954e6",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-13",
+    "timestamp": "2026-10-10T07:38:47.245258+00:00",
+    "sequence": 2,
+    "snapshot": "d9c7f3f410ba4733de7b8052045047f46cccd8eeca48f8482bd77fc6b0727042",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-14",
+    "timestamp": "2026-10-10T07:38:47.245258+00:00",
+    "sequence": 2,
+    "snapshot": "099ddd02fa2ce1a0e00786c3f92d1864060c205a8e9634b1231eceb03ad58641",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-15",
+    "timestamp": "2026-10-10T07:38:47.245258+00:00",
+    "sequence": 2,
+    "snapshot": "5a796bc1e31ccfe8a462bba9a674bb9232f0fa929d05763567bbb77c59181085",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-16",
+    "timestamp": "2026-10-10T07:38:47.245258+00:00",
+    "sequence": 2,
+    "snapshot": "7aecada7258ce1009273982b2d818efc61572a324184e3bd5491bab04dca9f25",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-17",
+    "timestamp": "2026-10-10T07:38:47.245258+00:00",
+    "sequence": 2,
+    "snapshot": "74d8440cab41cc71e514a2be13c8b1738605d7f619f9ae6b94bbc94a127c3d26",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-18",
+    "timestamp": "2026-10-10T07:38:47.245258+00:00",
+    "sequence": 2,
+    "snapshot": "448bfe3dffd209be8575d362fe8dcd95c1dc0bf296b326dd19ef1e2e02b98369",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-19",
+    "timestamp": "2026-10-10T07:38:47.245258+00:00",
+    "sequence": 2,
+    "snapshot": "3a82529af618ea382b87cc8b8f74e88a1c43ed32af8d79c916ada42a452d0bd5",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-20",
+    "timestamp": "2026-10-10T07:38:47.245258+00:00",
+    "sequence": 2,
+    "snapshot": "9f91461dd868b7392ce67858e51234b46b157ff6ecf8dfd1a0f7626eae72e09b",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-21",
+    "timestamp": "2026-10-10T07:38:47.245258+00:00",
+    "sequence": 2,
+    "snapshot": "808b350629a98357d9231d21978f3b805022ae39d751f7f1c8b1772902a99ada",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-22",
+    "timestamp": "2026-10-10T07:38:47.245258+00:00",
+    "sequence": 2,
+    "snapshot": "1cc5f2419a31b97e66414d7e76e78201e7b72b19ccafae35df8108cf00811608",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-23",
+    "timestamp": "2026-10-10T07:38:47.245258+00:00",
+    "sequence": 2,
+    "snapshot": "3b8829cadb227a9613b0965b608dfb4c965cfbe7e4cf6630a46b6c96cbd9a5d7",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-24",
+    "timestamp": "2026-10-10T07:38:47.245258+00:00",
+    "sequence": 2,
+    "snapshot": "19b584ba24612aa750d205ace8d57de818f696626c8a14dba07bcc3c4978d9db",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-25",
+    "timestamp": "2026-10-10T07:38:47.245258+00:00",
+    "sequence": 2,
+    "snapshot": "19a6fe9bc418a9293a928d0e67617a3686a778ed4fc217d5a06d2c44819cbbf2",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-01",
+    "timestamp": "2026-10-10T07:38:52.245258+00:00",
+    "sequence": 3,
+    "snapshot": "c0d0f22ef38217e3ddac26a303cf651b3ff31ecd60e36f75ad2f0dffc6ce3d07",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-02",
+    "timestamp": "2026-10-10T07:38:52.245258+00:00",
+    "sequence": 3,
+    "snapshot": "6e7f74fd9efd392bee76147af514bf372fb6e5044df2def2f3c4f87362b91839",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-03",
+    "timestamp": "2026-10-10T07:38:52.245258+00:00",
+    "sequence": 3,
+    "snapshot": "923b1613c8ff9c253fd272d47d34fb2d73e59164640f7edfad78200fbf507bfa",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-04",
+    "timestamp": "2026-10-10T07:38:52.245258+00:00",
+    "sequence": 3,
+    "snapshot": "9f807690fe68b33642293955a9fdbd0dc0785a1d03659e7a05c184ecb2cbe755",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-05",
+    "timestamp": "2026-10-10T07:38:52.245258+00:00",
+    "sequence": 3,
+    "snapshot": "bd21c84bac2b1022563716ea1639f032af8386d452e94086eb296c26c8e93383",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-06",
+    "timestamp": "2026-10-10T07:38:52.245258+00:00",
+    "sequence": 3,
+    "snapshot": "b5c07ac2e6d425bb242a9ece09fb7c38d2087c5eff9385fd19f6856b82039227",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-07",
+    "timestamp": "2026-10-10T07:38:52.245258+00:00",
+    "sequence": 3,
+    "snapshot": "d4f8d2a8ca57e3ce5d82e888ffb278cab03d438f15d74759e8e789928f1439d1",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-08",
+    "timestamp": "2026-10-10T07:38:52.245258+00:00",
+    "sequence": 3,
+    "snapshot": "ee2c5c7acfe84a9dfe338cbd6d3df1074870f4032ee4d553ad8161203f30dfe5",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-09",
+    "timestamp": "2026-10-10T07:38:52.245258+00:00",
+    "sequence": 3,
+    "snapshot": "b665683eaf99cd1e492351f804bcb08bbe74f76501a1ce5c143049dc3efc19c0",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-10",
+    "timestamp": "2026-10-10T07:38:52.245258+00:00",
+    "sequence": 3,
+    "snapshot": "5fa6bbb7781b0093362d64c2293ccbee9eac4372d946524b1ce29d1f3917d492",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-11",
+    "timestamp": "2026-10-10T07:38:52.245258+00:00",
+    "sequence": 3,
+    "snapshot": "be64a0be93a59605f5d9d7887476c5a6e20e61b280c5d6ad611b9981593ff053",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-12",
+    "timestamp": "2026-10-10T07:38:52.245258+00:00",
+    "sequence": 3,
+    "snapshot": "06d998b29587bfac718c09f717acd72b7e23753fcfbb4d1234e4a24030f47f5c",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-13",
+    "timestamp": "2026-10-10T07:38:52.245258+00:00",
+    "sequence": 3,
+    "snapshot": "4b4ebc6eb156335ab74c8fe7267c15a67c77c4a334372c21790b7e5f6a2d6200",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-14",
+    "timestamp": "2026-10-10T07:38:52.245258+00:00",
+    "sequence": 3,
+    "snapshot": "032b0135f94ed403a1421a085550b2a3d2973349b1694b739fe03696a6941791",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-15",
+    "timestamp": "2026-10-10T07:38:52.245258+00:00",
+    "sequence": 3,
+    "snapshot": "0cf871107ca5c36d4e5bbff816ad621b338778a27a615905bb5797d76ace1e3a",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-16",
+    "timestamp": "2026-10-10T07:38:52.245258+00:00",
+    "sequence": 3,
+    "snapshot": "598eea5316aff52747e74e8377dff9fd14e588f271fb62d2867acf45e7e1edc4",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-17",
+    "timestamp": "2026-10-10T07:38:52.245258+00:00",
+    "sequence": 3,
+    "snapshot": "31fc4b3025c13ba1cc58a2ef005013cb481b5250da6324073c226420680d407d",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-18",
+    "timestamp": "2026-10-10T07:38:52.245258+00:00",
+    "sequence": 3,
+    "snapshot": "8a9b54161c9155825ab6a26790eb4c285cb2220070445f57fd2c5231cb375227",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-19",
+    "timestamp": "2026-10-10T07:38:52.245258+00:00",
+    "sequence": 3,
+    "snapshot": "074142148010a90f2e804f55dbabc0753e6e98fb06e992917dca81f42bae8cb7",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-20",
+    "timestamp": "2026-10-10T07:38:52.245258+00:00",
+    "sequence": 3,
+    "snapshot": "9d74a35ef4e6840560bf7e7d0d468a10c7719db1272db1a50daa8cdd4c860fdd",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-21",
+    "timestamp": "2026-10-10T07:38:52.245258+00:00",
+    "sequence": 3,
+    "snapshot": "718733f4e76c72ea21f374d42ae93c62c6669de009689ee7e073bd882527255e",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-22",
+    "timestamp": "2026-10-10T07:38:52.245258+00:00",
+    "sequence": 3,
+    "snapshot": "c5596b1aac2518e1b0ca562ae7a8f0423e582ab438204fb4228e01756fd9e6cc",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-23",
+    "timestamp": "2026-10-10T07:38:52.245258+00:00",
+    "sequence": 3,
+    "snapshot": "b9b1bf490e1aa81e396ba66e9bb3c9535de333d4de708a753adb42c595d036e6",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-24",
+    "timestamp": "2026-10-10T07:38:52.245258+00:00",
+    "sequence": 3,
+    "snapshot": "238004fe6e36eb2ff7845f44402fcfa40b74a5d5b2aab0e6a5d03e199484d9ec",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-25",
+    "timestamp": "2026-10-10T07:38:52.245258+00:00",
+    "sequence": 3,
+    "snapshot": "dcbe459206be73060e0a3d96358aff4d824d56122ad1c4ab727603070e4970b6",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-01",
+    "timestamp": "2026-10-10T07:38:57.245258+00:00",
+    "sequence": 4,
+    "snapshot": "8985a326ac7a36beaa6782db7c14389f67d873603819ba6350dd619015ed0dfa",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-02",
+    "timestamp": "2026-10-10T07:38:57.245258+00:00",
+    "sequence": 4,
+    "snapshot": "2fdea7a11417ed27afeb2bdb9105144eebb61061cafdef786bd461e3e5591b69",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-03",
+    "timestamp": "2026-10-10T07:38:57.245258+00:00",
+    "sequence": 4,
+    "snapshot": "dc1dec4c4a4af210df28ece496f5cd9c5c351d222c93435d1227e4f7b2fe5fe9",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-04",
+    "timestamp": "2026-10-10T07:38:57.245258+00:00",
+    "sequence": 4,
+    "snapshot": "04d0a33a4a55f5d35152d9f40463cfd38e7aa7a249d9fac6958635bdd8210006",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-05",
+    "timestamp": "2026-10-10T07:38:57.245258+00:00",
+    "sequence": 4,
+    "snapshot": "971c8b064c07b8429cf039a7dd14c3d97f0828a38d438337289de81134ca7dac",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-06",
+    "timestamp": "2026-10-10T07:38:57.245258+00:00",
+    "sequence": 4,
+    "snapshot": "e178fadc626a2f15b7c5353fd4ab5d8c485b8f45e317ad8d93c0c6c8f2fe9151",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-07",
+    "timestamp": "2026-10-10T07:38:57.245258+00:00",
+    "sequence": 4,
+    "snapshot": "89bea45e4447cc7a0c8fe1e82511402068660d7243c4927b21b8f7ad52bda770",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-08",
+    "timestamp": "2026-10-10T07:38:57.245258+00:00",
+    "sequence": 4,
+    "snapshot": "40e716b039ba15edfa8f5e719efc01899bab7fc6c18c0fd8100a67c664daab8d",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-09",
+    "timestamp": "2026-10-10T07:38:57.245258+00:00",
+    "sequence": 4,
+    "snapshot": "9c62a767f4e3170642eb90fa08adad396c75eabfc1ae2b12d22a4f2b7bf1ffc4",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-10",
+    "timestamp": "2026-10-10T07:38:57.245258+00:00",
+    "sequence": 4,
+    "snapshot": "b58d30be94d4dba80eb5b83df2253b4890867581743fd6f14d8b715afa9f18d0",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-11",
+    "timestamp": "2026-10-10T07:38:57.245258+00:00",
+    "sequence": 4,
+    "snapshot": "6b11af1fda14ab38d579f50735a124c36fdad190413bb595b687b6147dcfa891",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-12",
+    "timestamp": "2026-10-10T07:38:57.245258+00:00",
+    "sequence": 4,
+    "snapshot": "0e87ce7f5e86dc1ebf8e48c6cbc799b2ca98170ec49a803c470776b4cdf68d0a",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-13",
+    "timestamp": "2026-10-10T07:38:57.245258+00:00",
+    "sequence": 4,
+    "snapshot": "f73eb78747606f519743832cc09d683c28b3f6cdfc2901415e58fb414076c84f",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-14",
+    "timestamp": "2026-10-10T07:38:57.245258+00:00",
+    "sequence": 4,
+    "snapshot": "ca366c391b2f0441e4b52ea28ed0bc3b4d50817d9dbfe7ef097c3bf1969d01ef",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-15",
+    "timestamp": "2026-10-10T07:38:57.245258+00:00",
+    "sequence": 4,
+    "snapshot": "97218813c8c071d6ee837ed85f569475a96ee8df1534133de8f4aba052bcb7e9",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-16",
+    "timestamp": "2026-10-10T07:38:57.245258+00:00",
+    "sequence": 4,
+    "snapshot": "a7298a81ac8590863d2dff4f3963941e5c027d68332ea3be670e1c5d0706da42",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-17",
+    "timestamp": "2026-10-10T07:38:57.245258+00:00",
+    "sequence": 4,
+    "snapshot": "77e25bf88db36bfb26767771f1c48b32b9df8d142b0be12a7f90aeb81b9385b9",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-18",
+    "timestamp": "2026-10-10T07:38:57.245258+00:00",
+    "sequence": 4,
+    "snapshot": "ae308ab5e8b06d8fee3ea379cf00b28196a0dc28c7cb11b62fc5981036d3b6c7",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-19",
+    "timestamp": "2026-10-10T07:38:57.245258+00:00",
+    "sequence": 4,
+    "snapshot": "644eafee2395728394831cba871f27a2e99c7753a1915790699cecfbd5248e64",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-20",
+    "timestamp": "2026-10-10T07:38:57.245258+00:00",
+    "sequence": 4,
+    "snapshot": "f9cddcd139dda26db1b4d8bd9837bdc7b27dc13c1065a9a5c940e1f6242695ae",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-21",
+    "timestamp": "2026-10-10T07:38:57.245258+00:00",
+    "sequence": 4,
+    "snapshot": "3f13e9e9be8157e1d2629a70862152316234dff30c79786ffc077a075c7ec58a",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-22",
+    "timestamp": "2026-10-10T07:38:57.245258+00:00",
+    "sequence": 4,
+    "snapshot": "c7a174d93dd665e86c46f24f9c8aa00c31afe83efb272fbfbae2fdcb7fad9452",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-23",
+    "timestamp": "2026-10-10T07:38:57.245258+00:00",
+    "sequence": 4,
+    "snapshot": "400eeeedd06f449dd7859fea15978e04a7f078ff25a7d0f8ff048c3d095ce98a",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-24",
+    "timestamp": "2026-10-10T07:38:57.245258+00:00",
+    "sequence": 4,
+    "snapshot": "4339acd65f779b2cdc838f49c4a273c04fcecd773aa5a67ccfae3f065efa735a",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-25",
+    "timestamp": "2026-10-10T07:38:57.245258+00:00",
+    "sequence": 4,
+    "snapshot": "c0217acffabf49e046c2dfcf54f640609949f88f013f3e8f0b16238f6d65a105",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-01",
+    "timestamp": "2026-10-10T07:39:02.245258+00:00",
+    "sequence": 5,
+    "snapshot": "56e997d6825e687cdaf51f065847ef9dca0815fd8740c047cd1f4b89c254e55d",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-02",
+    "timestamp": "2026-10-10T07:39:02.245258+00:00",
+    "sequence": 5,
+    "snapshot": "dc54c7694abafb4aee563dafbc1139957dbaaf00bf9894a07f23aeea266f9236",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-03",
+    "timestamp": "2026-10-10T07:39:02.245258+00:00",
+    "sequence": 5,
+    "snapshot": "ac0c870c20e4b54daab93294f43fcff2c67781041393715494ff6e808b218361",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-04",
+    "timestamp": "2026-10-10T07:39:02.245258+00:00",
+    "sequence": 5,
+    "snapshot": "449372bcbbe898635bee5d49f1bbe5c0aa73d6646ce6f8820889699bba97e918",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-05",
+    "timestamp": "2026-10-10T07:39:02.245258+00:00",
+    "sequence": 5,
+    "snapshot": "2718a2bf6a187000c583aca53050561f687b9017e830a800243f5f24fe16bbdb",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-06",
+    "timestamp": "2026-10-10T07:39:02.245258+00:00",
+    "sequence": 5,
+    "snapshot": "a781811c5974931eaf0897cc6460fd9f877615129ccb6dafdc4dea4d72ed3e6e",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-07",
+    "timestamp": "2026-10-10T07:39:02.245258+00:00",
+    "sequence": 5,
+    "snapshot": "223621e53a991da42c3828d86a55ee5039d23c0cc65fbf5bb5899d4bc57fca24",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-08",
+    "timestamp": "2026-10-10T07:39:02.245258+00:00",
+    "sequence": 5,
+    "snapshot": "5550549edce64e5fcd8114abd9820a04f459b0fbb2c3f91c313c73119980a5a3",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-09",
+    "timestamp": "2026-10-10T07:39:02.245258+00:00",
+    "sequence": 5,
+    "snapshot": "7e22d5e714e5a0be293d83e425a7d4e295173d1256b4bcb73bbaafd335813301",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-10",
+    "timestamp": "2026-10-10T07:39:02.245258+00:00",
+    "sequence": 5,
+    "snapshot": "63f430bc7fdb9d870cc885be5f8ec3ccaa2bd2bf5b927a9acc9acae0f837aaad",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-11",
+    "timestamp": "2026-10-10T07:39:02.245258+00:00",
+    "sequence": 5,
+    "snapshot": "6d36315b70d2acdfccd9867e70ff551ca6bd589ee63bb8e98a3e2f76e6ac4b53",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-12",
+    "timestamp": "2026-10-10T07:39:02.245258+00:00",
+    "sequence": 5,
+    "snapshot": "a28b8db73f62ce5769308345325a50921aac34e73be339b33f5688e9b3877477",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-13",
+    "timestamp": "2026-10-10T07:39:02.245258+00:00",
+    "sequence": 5,
+    "snapshot": "6812c2abdb004648c4a3152144081a1ec1daf8fb6bbc9f863a956825bf1c6ef4",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-14",
+    "timestamp": "2026-10-10T07:39:02.245258+00:00",
+    "sequence": 5,
+    "snapshot": "585119323aeae2b79879dd53e14925fe65f36b345a12de563e2ab44703c82aa0",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-15",
+    "timestamp": "2026-10-10T07:39:02.245258+00:00",
+    "sequence": 5,
+    "snapshot": "af0ce40b20263bc5731a62b0b7e1ac80e28fbd8c8982d5952e1cf1d700c70100",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-16",
+    "timestamp": "2026-10-10T07:39:02.245258+00:00",
+    "sequence": 5,
+    "snapshot": "c2aa4fa0c65698c532c939293512f92fd19fc4cdff9baf8afdbfd1fa70e98bdf",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-17",
+    "timestamp": "2026-10-10T07:39:02.245258+00:00",
+    "sequence": 5,
+    "snapshot": "6d0f2c1c9f6f6d8ae525b54e6ca97b858b251e37033398a74e39b57854efe464",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-18",
+    "timestamp": "2026-10-10T07:39:02.245258+00:00",
+    "sequence": 5,
+    "snapshot": "fc9856f5c1af8dbd37905c92163e6f5e6eb576fcf90432c80153792440e6335c",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-19",
+    "timestamp": "2026-10-10T07:39:02.245258+00:00",
+    "sequence": 5,
+    "snapshot": "b38c7b6d0aeb409f9675fd8148dd5b9a26b177167c5505d79abb5a2d930b3dff",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-20",
+    "timestamp": "2026-10-10T07:39:02.245258+00:00",
+    "sequence": 5,
+    "snapshot": "c6883dff1b3e960247b18e8ff7d720e311db330b70642e14934a9f4fdd00fcf9",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-21",
+    "timestamp": "2026-10-10T07:39:02.245258+00:00",
+    "sequence": 5,
+    "snapshot": "32c402e0b9a098c8a43faf7002dbcdc047fbf0b85f15fecec4cd245520024c7a",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-22",
+    "timestamp": "2026-10-10T07:39:02.245258+00:00",
+    "sequence": 5,
+    "snapshot": "2fad794d2d957111ed4c056e2d95d0cf65cd9d98ba0aeb4fec7f8d8c56283aa7",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-23",
+    "timestamp": "2026-10-10T07:39:02.245258+00:00",
+    "sequence": 5,
+    "snapshot": "26871c8d50581e2943b643f546b59515c0868c537605fb6d2d676cbb970c4b38",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-24",
+    "timestamp": "2026-10-10T07:39:02.245258+00:00",
+    "sequence": 5,
+    "snapshot": "5eb668eec2da861072345fe6b104c72eeb3c3b73d1f1dcfc85d09f72c98bef60",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-25",
+    "timestamp": "2026-10-10T07:39:02.245258+00:00",
+    "sequence": 5,
+    "snapshot": "03673fa037b091be0c47f4cfb3dadd4e5193256dabba10f7f503b4a305a25c44",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-01",
+    "timestamp": "2026-10-10T07:39:07.245258+00:00",
+    "sequence": 6,
+    "snapshot": "94d039037398b6260ad2e47cfd213af7e9331ce0a3b291e8f3d9874338b20ff4",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-02",
+    "timestamp": "2026-10-10T07:39:07.245258+00:00",
+    "sequence": 6,
+    "snapshot": "54c57d1c47903a94b88c4303d4bcfb7145b0089db1176497e410656bab7fe0f9",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-03",
+    "timestamp": "2026-10-10T07:39:07.245258+00:00",
+    "sequence": 6,
+    "snapshot": "48ea7dd54793b731e21afb0e25c53ef2560ad2040a5e9f33b70c510712579e81",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-04",
+    "timestamp": "2026-10-10T07:39:07.245258+00:00",
+    "sequence": 6,
+    "snapshot": "6d015d1c3469e3a20d0636f27c934bb5b0d3cb22e7c2093e8b4132f1457d0aba",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-05",
+    "timestamp": "2026-10-10T07:39:07.245258+00:00",
+    "sequence": 6,
+    "snapshot": "91b65fc5e13a2245001c6b1ec6dad3206060551d08ce2fcf9574d8df64301ac6",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-06",
+    "timestamp": "2026-10-10T07:39:07.245258+00:00",
+    "sequence": 6,
+    "snapshot": "0775759e317fd55303b7feabbd3b39ffcc96fb61089bc2b6885213b6c96c34a8",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-07",
+    "timestamp": "2026-10-10T07:39:07.245258+00:00",
+    "sequence": 6,
+    "snapshot": "47082ef182c378998d0d327ca6084a0c3629e67f5c322f0c265312a60a2219f8",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-08",
+    "timestamp": "2026-10-10T07:39:07.245258+00:00",
+    "sequence": 6,
+    "snapshot": "258f8b3faa491a4de6effd296b9d2b4b377a219751b90e91015588dda80a6520",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-09",
+    "timestamp": "2026-10-10T07:39:07.245258+00:00",
+    "sequence": 6,
+    "snapshot": "b79814a3e2078f6c614ad86d9b0314d7ebcbeaf528d1c38a8afc2a32ac9f1ea4",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-10",
+    "timestamp": "2026-10-10T07:39:07.245258+00:00",
+    "sequence": 6,
+    "snapshot": "35db021364ca21dbb8d4e080991b00b56a108021585bd880d55d48d97046973f",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-11",
+    "timestamp": "2026-10-10T07:39:07.245258+00:00",
+    "sequence": 6,
+    "snapshot": "9a462e7d2a70ffac1637e9939916bb5698d117a757ded22eb2d7e16e9280515f",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-12",
+    "timestamp": "2026-10-10T07:39:07.245258+00:00",
+    "sequence": 6,
+    "snapshot": "879f4bfa822c1bfaea4dd5fd1696a2449e1d8fe1d9ae039d8347b157abfad7fd",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-13",
+    "timestamp": "2026-10-10T07:39:07.245258+00:00",
+    "sequence": 6,
+    "snapshot": "fdb9ff536ceacf1dedde12b9ca029da4d21cde18e4ebd6ae3384ef38b107995e",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-14",
+    "timestamp": "2026-10-10T07:39:07.245258+00:00",
+    "sequence": 6,
+    "snapshot": "e9778aa99f9a36ab1c7d697e4b6817743a79318efc2606f7a4c04ca3eaecd326",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-15",
+    "timestamp": "2026-10-10T07:39:07.245258+00:00",
+    "sequence": 6,
+    "snapshot": "8985fedb16f3a66da3999b29cdad499ebb73ee67e944fb2668fc5be812d4a522",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-16",
+    "timestamp": "2026-10-10T07:39:07.245258+00:00",
+    "sequence": 6,
+    "snapshot": "78b4d4a9cfe6a23852382433fe80dbf97f32a0e5dc5b649d3ceb0a97d0920c3b",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-17",
+    "timestamp": "2026-10-10T07:39:07.245258+00:00",
+    "sequence": 6,
+    "snapshot": "2f98dfcc6e4ef7923cd1228af82c846250293a653e20dfc1d42b05902bb1a3c9",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-18",
+    "timestamp": "2026-10-10T07:39:07.245258+00:00",
+    "sequence": 6,
+    "snapshot": "27dd629da496293917e482b9ea0f1010ec0b8c02dc2b6b211dc34c4403ac0d3f",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-19",
+    "timestamp": "2026-10-10T07:39:07.245258+00:00",
+    "sequence": 6,
+    "snapshot": "66182baca92a74401891da0cb9d7e282bf681f4ad1dd61244e50c74f4789ab13",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-20",
+    "timestamp": "2026-10-10T07:39:07.245258+00:00",
+    "sequence": 6,
+    "snapshot": "8ae4f551214387209549a33f81dd8150bebb6112e0a7c03ffd060e867dde5750",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-21",
+    "timestamp": "2026-10-10T07:39:07.245258+00:00",
+    "sequence": 6,
+    "snapshot": "9ce0ce968bf3100422cf937bf9b6f1e5359692b9daae7d9fb06ddf8bf48ce2c8",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-22",
+    "timestamp": "2026-10-10T07:39:07.245258+00:00",
+    "sequence": 6,
+    "snapshot": "4ca8c567330e1ab8ed66289c8ce45b91d7994ce197fba53abf4ccea461cbd7be",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-23",
+    "timestamp": "2026-10-10T07:39:07.245258+00:00",
+    "sequence": 6,
+    "snapshot": "27b478ecb2b46333a18bfefa4e061737aa91f6991a919b721d19d269171d7957",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-24",
+    "timestamp": "2026-10-10T07:39:07.245258+00:00",
+    "sequence": 6,
+    "snapshot": "cc1bf74f6db694f378a859615cb7a75e4d6426687830ffddf2b8e3b9563d31f0",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-25",
+    "timestamp": "2026-10-10T07:39:07.245258+00:00",
+    "sequence": 6,
+    "snapshot": "8fecfb1f44b9b1c6dd436b8a62e0635da5904217184ca38c5be184a36eb17ddf",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-01",
+    "timestamp": "2026-10-10T07:39:12.245258+00:00",
+    "sequence": 7,
+    "snapshot": "e5bc5ef32b51aed9398842bc107e769389496bbd38d716c3bf256b113fd32d31",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-02",
+    "timestamp": "2026-10-10T07:39:12.245258+00:00",
+    "sequence": 7,
+    "snapshot": "e8759375fd62ba99906437d149cb79037277ca671c081487c86f172c67832f29",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-03",
+    "timestamp": "2026-10-10T07:39:12.245258+00:00",
+    "sequence": 7,
+    "snapshot": "d05126f7fcef44aa9cf9382c898edff6ad9e96f4ecde901af916e4a0c455b897",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-04",
+    "timestamp": "2026-10-10T07:39:12.245258+00:00",
+    "sequence": 7,
+    "snapshot": "b794d2f6fc9c545d0223b432942ceb397def1d5b2cf16d6f09f138fe685f3645",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-05",
+    "timestamp": "2026-10-10T07:39:12.245258+00:00",
+    "sequence": 7,
+    "snapshot": "867b4b92be3cdb49840b074a62e0b0280d8166e4e93320673b46d37a1507b752",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-06",
+    "timestamp": "2026-10-10T07:39:12.245258+00:00",
+    "sequence": 7,
+    "snapshot": "cadd9d372181fba48b91b130ab833a0775b85dfe1c8964647c91cde51949a144",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-07",
+    "timestamp": "2026-10-10T07:39:12.245258+00:00",
+    "sequence": 7,
+    "snapshot": "d8531800a3cce982fd0fba0d40dd20e03da0162f51f077668d7d9b4b65871521",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-08",
+    "timestamp": "2026-10-10T07:39:12.245258+00:00",
+    "sequence": 7,
+    "snapshot": "da58a4e57109ef762b057cc9a86432d4526d87169603ce9117c68ca961bd19c1",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-09",
+    "timestamp": "2026-10-10T07:39:12.245258+00:00",
+    "sequence": 7,
+    "snapshot": "b4a649c67ac3995e71bcf9f8e01ae3143870328ec7fbfafff70771f13cfa1969",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-10",
+    "timestamp": "2026-10-10T07:39:12.245258+00:00",
+    "sequence": 7,
+    "snapshot": "dbf2b4e7286036d6722a0a0813530dc3ad0f355493297ad20abc667466f57e8d",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-11",
+    "timestamp": "2026-10-10T07:39:12.245258+00:00",
+    "sequence": 7,
+    "snapshot": "e0c876c635a47b5998c0e095851568fcfb75016a3127b92052a7adff98fdc080",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-12",
+    "timestamp": "2026-10-10T07:39:12.245258+00:00",
+    "sequence": 7,
+    "snapshot": "d15f4c485626a8588ccae9d7935a86cba080a7e90f81754e3aecbdeb654a3509",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-13",
+    "timestamp": "2026-10-10T07:39:12.245258+00:00",
+    "sequence": 7,
+    "snapshot": "319a04b424b3ba05f02cc91c8d41666d40714890a4506f5722a20a1ba9cf77bf",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-14",
+    "timestamp": "2026-10-10T07:39:12.245258+00:00",
+    "sequence": 7,
+    "snapshot": "e71425aed0ca64f35e3b24cbe6b39f040d87286f0d73fcbbd4b3e8770f67cfd6",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-15",
+    "timestamp": "2026-10-10T07:39:12.245258+00:00",
+    "sequence": 7,
+    "snapshot": "7e4844a5f5d6a56e714c1194c13534e104ff9dffeeded946b237bb564ba0b63e",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-16",
+    "timestamp": "2026-10-10T07:39:12.245258+00:00",
+    "sequence": 7,
+    "snapshot": "00a89e61fdb62ef63b4cbdc2b0a2e3baaf9c5e62c47ec28044ce7409a9e85e57",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-17",
+    "timestamp": "2026-10-10T07:39:12.245258+00:00",
+    "sequence": 7,
+    "snapshot": "1e096302b78694b044ae7e1c4455948f25ab5f46c57621279a6f8877f2bc1c04",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-18",
+    "timestamp": "2026-10-10T07:39:12.245258+00:00",
+    "sequence": 7,
+    "snapshot": "1ed044f0b0efbaebcd8b4b5dedb982007339b9ecf4100a4a4a7ad10bef6cd74f",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-19",
+    "timestamp": "2026-10-10T07:39:12.245258+00:00",
+    "sequence": 7,
+    "snapshot": "f6f6b0f6b3f3e76a1f954e7aa58d0b6740d1edebee71f518833abd84b06cc534",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-20",
+    "timestamp": "2026-10-10T07:39:12.245258+00:00",
+    "sequence": 7,
+    "snapshot": "407b54a49f14586f92d311c61d7b555021d20c8ceacf83a658681ae381af00c0",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-21",
+    "timestamp": "2026-10-10T07:39:12.245258+00:00",
+    "sequence": 7,
+    "snapshot": "88f96b1b631dc0ca3caf48edcf2b22ad23d208194dbbcc836022ef3b876911c9",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-22",
+    "timestamp": "2026-10-10T07:39:12.245258+00:00",
+    "sequence": 7,
+    "snapshot": "938f1d42e0ca80213e2b3e20d0689b50a4e976e28754f563e1ae6dbf5a48ed0f",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-23",
+    "timestamp": "2026-10-10T07:39:12.245258+00:00",
+    "sequence": 7,
+    "snapshot": "8100cbc43cdc71d4546b44fe0d2c06320c2e1d1a56e0ecec9946310a2f7cda6b",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-24",
+    "timestamp": "2026-10-10T07:39:12.245258+00:00",
+    "sequence": 7,
+    "snapshot": "02b9aded9a6f519ed46cd7099e9200211f740b05d948b9687db8e6477df77ed9",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-25",
+    "timestamp": "2026-10-10T07:39:12.245258+00:00",
+    "sequence": 7,
+    "snapshot": "c5760d28bbc5606a23506cd336328282ffd65d15ca2f228ce609ba6b8b0b2529",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-01",
+    "timestamp": "2026-10-10T07:39:17.245258+00:00",
+    "sequence": 8,
+    "snapshot": "51d78013ac537a43cd23206b9bec8503a01a89c7cd43fb7e43c8229f6864b6bd",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-02",
+    "timestamp": "2026-10-10T07:39:17.245258+00:00",
+    "sequence": 8,
+    "snapshot": "74af7162b17d737b31968362d4e56ee9244f38bcce867e7a18777a4689c8e3a3",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-03",
+    "timestamp": "2026-10-10T07:39:17.245258+00:00",
+    "sequence": 8,
+    "snapshot": "20cfc0899f4de2ec24724052330ce0f116ce256d3cd69b089766ecacd2a6beb7",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-04",
+    "timestamp": "2026-10-10T07:39:17.245258+00:00",
+    "sequence": 8,
+    "snapshot": "07156c011d3dfdf7bf2805a7e4768df5ee132744fc6fe402d4e75fa9d3a3e29d",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-05",
+    "timestamp": "2026-10-10T07:39:17.245258+00:00",
+    "sequence": 8,
+    "snapshot": "afe6a1ff92fbfe24dbae2ebf3181046a8c6fdb0d95b5aa3321d549397d35dc9e",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-06",
+    "timestamp": "2026-10-10T07:39:17.245258+00:00",
+    "sequence": 8,
+    "snapshot": "4fe2ba8f1ea527392555cab64998a106f6380c032ba824cd5c60f46a7a8133e7",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-07",
+    "timestamp": "2026-10-10T07:39:17.245258+00:00",
+    "sequence": 8,
+    "snapshot": "49aef7fc45bf9dfb73cde3ae56fc6cdf62cc59c8b0932394c870097189bef99c",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-08",
+    "timestamp": "2026-10-10T07:39:17.245258+00:00",
+    "sequence": 8,
+    "snapshot": "36353314ad1a55fc9c199fe879b36c42489770f71a5877337e828760284412ba",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-09",
+    "timestamp": "2026-10-10T07:39:17.245258+00:00",
+    "sequence": 8,
+    "snapshot": "0c6939f0ccac34f92b9b0266c87f1537508b052cc210973ec940f6b9c9bd9737",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-10",
+    "timestamp": "2026-10-10T07:39:17.245258+00:00",
+    "sequence": 8,
+    "snapshot": "a4aec422c7e4933a414e02050100dde1ef7dc9d9ea9916e299caa5157b210d2d",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-11",
+    "timestamp": "2026-10-10T07:39:17.245258+00:00",
+    "sequence": 8,
+    "snapshot": "afaaec3d2778e344b768c628d5b35145f4ba1056c0d94e0976fc72435656459c",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-12",
+    "timestamp": "2026-10-10T07:39:17.245258+00:00",
+    "sequence": 8,
+    "snapshot": "f228b35608eb719d8509e37afa83d7ad7024ddef0640939c98ecd8f06d522988",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-13",
+    "timestamp": "2026-10-10T07:39:17.245258+00:00",
+    "sequence": 8,
+    "snapshot": "205d54b64914fb13ea91c9ceea845a6ebfa9d5c2b324ada26d8328f390948f0c",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-14",
+    "timestamp": "2026-10-10T07:39:17.245258+00:00",
+    "sequence": 8,
+    "snapshot": "83cd52746d7d92887c4bd660f6319c81ba3d9f9c392d8e5143fc88539ff74d04",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-15",
+    "timestamp": "2026-10-10T07:39:17.245258+00:00",
+    "sequence": 8,
+    "snapshot": "7bfa66d0c24c36806d2fd96c6d0d9e09dea62af40b5f280aa91de4f142c5406e",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-16",
+    "timestamp": "2026-10-10T07:39:17.245258+00:00",
+    "sequence": 8,
+    "snapshot": "21758ab574a1ef17c128b0fca7768ff31d8b649ba10acf316878bae250bf0e87",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-17",
+    "timestamp": "2026-10-10T07:39:17.245258+00:00",
+    "sequence": 8,
+    "snapshot": "7ed4d328c86ed9bc25ad41798ff4d32ba4ad39ad606e2d98d17a696721c48177",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-18",
+    "timestamp": "2026-10-10T07:39:17.245258+00:00",
+    "sequence": 8,
+    "snapshot": "349f3f58fa0af2220a8741993d05043c43c7001417b306d6cca2caf78fac798b",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-19",
+    "timestamp": "2026-10-10T07:39:17.245258+00:00",
+    "sequence": 8,
+    "snapshot": "99535bb0b6a4a6357fb26d703ad0b266b08a676c4a4598769287d2fbfa742c25",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-20",
+    "timestamp": "2026-10-10T07:39:17.245258+00:00",
+    "sequence": 8,
+    "snapshot": "429f1d4e69a1c09ac86eeac14626cc930f20e2d7ad53bf9a82693b61df61dcf0",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-21",
+    "timestamp": "2026-10-10T07:39:17.245258+00:00",
+    "sequence": 8,
+    "snapshot": "22015a6a36edee559e4d31d3ece38d76e5696a7111c77e18f4611b74342497d6",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-22",
+    "timestamp": "2026-10-10T07:39:17.245258+00:00",
+    "sequence": 8,
+    "snapshot": "3e7e6923d823ddc5fea13991d196f2eaf0e7e710a9f3b516424cca8f2267391d",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-23",
+    "timestamp": "2026-10-10T07:39:17.245258+00:00",
+    "sequence": 8,
+    "snapshot": "5678b278badff577195a63af49d92c74cae6014ef917b924f30afe9b2387efa2",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-24",
+    "timestamp": "2026-10-10T07:39:17.245258+00:00",
+    "sequence": 8,
+    "snapshot": "0fe7ae4661a8179626b46c1da84fbb9330e4cfbd25a57c9b9afcbd65c05c5b0c",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-25",
+    "timestamp": "2026-10-10T07:39:17.245258+00:00",
+    "sequence": 8,
+    "snapshot": "7f559e494e2741e7bba85754b4b2191a4cd98afa92d77c8044f295acc9d25f27",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-01",
+    "timestamp": "2026-10-10T07:39:22.245258+00:00",
+    "sequence": 9,
+    "snapshot": "6a325024ee2eeca043810aa9db7659a731bc4efd1158c5dc68290d7e89921b3a",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-02",
+    "timestamp": "2026-10-10T07:39:22.245258+00:00",
+    "sequence": 9,
+    "snapshot": "3de3bb9e628caf2d347e2f1de84925f0a31a06365804e8718d71142b1639e161",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-03",
+    "timestamp": "2026-10-10T07:39:22.245258+00:00",
+    "sequence": 9,
+    "snapshot": "5b88e352c2a393bce5b4618573daf238df61102b4af6518ca2f1612f1c52c180",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-04",
+    "timestamp": "2026-10-10T07:39:22.245258+00:00",
+    "sequence": 9,
+    "snapshot": "5339d32ed1b1931bfd54d806e58aaf57734b5aa4b374109004c430a4db04d398",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-05",
+    "timestamp": "2026-10-10T07:39:22.245258+00:00",
+    "sequence": 9,
+    "snapshot": "b73bc87dd402436373cc5a1b68543528fb59352bcb78a6138cbbd6f3e6396dd9",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-06",
+    "timestamp": "2026-10-10T07:39:22.245258+00:00",
+    "sequence": 9,
+    "snapshot": "24635095f7211409c5cb364a58d16e1fd14311c07135ee9a56fcd75842fd0b32",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-07",
+    "timestamp": "2026-10-10T07:39:22.245258+00:00",
+    "sequence": 9,
+    "snapshot": "3d09ba9827435df04e7cf1dc37134253c4644002d64a05c00678244f455ee429",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-08",
+    "timestamp": "2026-10-10T07:39:22.245258+00:00",
+    "sequence": 9,
+    "snapshot": "7a30d2218d4372e5a59899fd2e5c3587369390f0c94689a6c2527e08b8c4de21",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-09",
+    "timestamp": "2026-10-10T07:39:22.245258+00:00",
+    "sequence": 9,
+    "snapshot": "239407b730c7218244d67acdfa63d352238e38a96a4a710e1a499b5f27891fb3",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-10",
+    "timestamp": "2026-10-10T07:39:22.245258+00:00",
+    "sequence": 9,
+    "snapshot": "032fd98f6b449b4e5c3122814c689d9f03ddf71ebd8c15dfaa4a8ffeb3cf7200",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-11",
+    "timestamp": "2026-10-10T07:39:22.245258+00:00",
+    "sequence": 9,
+    "snapshot": "79d4cf670f03aa648306dbdbc053c8c7f82d92a18827d878f539c3add28ef982",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-12",
+    "timestamp": "2026-10-10T07:39:22.245258+00:00",
+    "sequence": 9,
+    "snapshot": "8a95478a33794bde8aa370e7b50f26b229b754b241084ef9c017115ea31aeb37",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-13",
+    "timestamp": "2026-10-10T07:39:22.245258+00:00",
+    "sequence": 9,
+    "snapshot": "91d5fce7b85e7f097e8fb04aa084a30612948c5eb3e5d3ed8c6d6b5c4eccf225",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-14",
+    "timestamp": "2026-10-10T07:39:22.245258+00:00",
+    "sequence": 9,
+    "snapshot": "0bf048e51bea6f8e1cee1a34387de9d8443193a3fc64aaafb38b0607bdae32a9",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-15",
+    "timestamp": "2026-10-10T07:39:22.245258+00:00",
+    "sequence": 9,
+    "snapshot": "5d978a2662ab247ae2e33f5ac44c930fb7c0f01e86c10e50428acee1b9165fe4",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-16",
+    "timestamp": "2026-10-10T07:39:22.245258+00:00",
+    "sequence": 9,
+    "snapshot": "264bfc32bb0b34a507b2325494699c99bc3b7ba676027e1902103eb3e13732df",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-17",
+    "timestamp": "2026-10-10T07:39:22.245258+00:00",
+    "sequence": 9,
+    "snapshot": "30be78866938a290b5406f6415bd4bd59f1f83f01c435ed190ac45fd1745dc97",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-18",
+    "timestamp": "2026-10-10T07:39:22.245258+00:00",
+    "sequence": 9,
+    "snapshot": "84097e41cf10cce4a40eebdfe1c2059b7937451d11f7a992088c326273741f1e",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-19",
+    "timestamp": "2026-10-10T07:39:22.245258+00:00",
+    "sequence": 9,
+    "snapshot": "ed826b5782e27c925a9a64967c9d9b0416cd946d2710f0249533e58be850d200",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-20",
+    "timestamp": "2026-10-10T07:39:22.245258+00:00",
+    "sequence": 9,
+    "snapshot": "e0c9971c660133f31cc1b94b63d344071fbe80a0b52cb503af05b6db48090fbc",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-21",
+    "timestamp": "2026-10-10T07:39:22.245258+00:00",
+    "sequence": 9,
+    "snapshot": "dfcc63674d72c4498431c6ec49a7714113c7609d4b3fad7ae87c00b37e715a16",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-22",
+    "timestamp": "2026-10-10T07:39:22.245258+00:00",
+    "sequence": 9,
+    "snapshot": "1b1564b18506f2b670f4d7d17a66e5536e10fbdb3567f780a0f87ecf9c4682d0",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-23",
+    "timestamp": "2026-10-10T07:39:22.245258+00:00",
+    "sequence": 9,
+    "snapshot": "b5c118eae272d1b15714fee56c2e1b0415cb565f9744a09e04d3b9470bcf7864",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-24",
+    "timestamp": "2026-10-10T07:39:22.245258+00:00",
+    "sequence": 9,
+    "snapshot": "f6c08b2b8f75544342ca46c1423c5361f210f633d80639e35282407df09cc15f",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-25",
+    "timestamp": "2026-10-10T07:39:22.245258+00:00",
+    "sequence": 9,
+    "snapshot": "6ba2944bc149b262914d9c33edb311a7005ca1d95931d06b080cb75b1ce53ff2",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-01",
+    "timestamp": "2026-10-10T07:39:27.245258+00:00",
+    "sequence": 10,
+    "snapshot": "c6e8ada994b324fcbf6b6f792bddd4ee664aed13e0219916fcda7014430d5665",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-02",
+    "timestamp": "2026-10-10T07:39:27.245258+00:00",
+    "sequence": 10,
+    "snapshot": "786e33dfe6476f8226843a34c8baa353ea40405aee343830a1a6683812912194",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-03",
+    "timestamp": "2026-10-10T07:39:27.245258+00:00",
+    "sequence": 10,
+    "snapshot": "f924b52e64a6f29e6ed852569c53826d8d10387ac187b586e6ae2dfe4dfff642",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-04",
+    "timestamp": "2026-10-10T07:39:27.245258+00:00",
+    "sequence": 10,
+    "snapshot": "20050ca56ed79305f224cb5f61892a11c8643ba4dd30a6dbbe98bd403d265cd9",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-05",
+    "timestamp": "2026-10-10T07:39:27.245258+00:00",
+    "sequence": 10,
+    "snapshot": "354fd5ce402892759495cd2fcbcac37d19304177270a8b5e0031c7a47373db5c",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-06",
+    "timestamp": "2026-10-10T07:39:27.245258+00:00",
+    "sequence": 10,
+    "snapshot": "2dc79b5eec42058addfbd550c5d4ba289e56ff38a963c8bcccffc8bd56ed37c7",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-07",
+    "timestamp": "2026-10-10T07:39:27.245258+00:00",
+    "sequence": 10,
+    "snapshot": "c97f75b63b12a70e2ccc981c0d2b23b3efcdcd0f35dd3dd03bda5eda942777f6",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-08",
+    "timestamp": "2026-10-10T07:39:27.245258+00:00",
+    "sequence": 10,
+    "snapshot": "b6fdb0da8c9c5cbfdc87f990d44541f129fd4c616b6db8d0d7debbae772c6291",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-09",
+    "timestamp": "2026-10-10T07:39:27.245258+00:00",
+    "sequence": 10,
+    "snapshot": "ad94fce5ec417d2ecd32a074988fac1faa4800927e89f52cda67ffa48179c937",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-10",
+    "timestamp": "2026-10-10T07:39:27.245258+00:00",
+    "sequence": 10,
+    "snapshot": "d8e9b1dfe1aa76830a78c3d40fad4f69c9730e21701bccbde5bd9d54e0fc1ee8",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-11",
+    "timestamp": "2026-10-10T07:39:27.245258+00:00",
+    "sequence": 10,
+    "snapshot": "1763e525b5030ee0ac6ffe04bfbecebe920bccf0420ba5cc1f2a530013a3e37a",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-12",
+    "timestamp": "2026-10-10T07:39:27.245258+00:00",
+    "sequence": 10,
+    "snapshot": "0ec1da86a80dfe9c43cac31ff987514a4d816e36532a296701b9b3630f2c6f05",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-13",
+    "timestamp": "2026-10-10T07:39:27.245258+00:00",
+    "sequence": 10,
+    "snapshot": "2f6d9d11f0de55df8a4862b9f23735311fe424877d451f4e4fd559151232f4d8",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-14",
+    "timestamp": "2026-10-10T07:39:27.245258+00:00",
+    "sequence": 10,
+    "snapshot": "8c400dad3027c38d5cd542046c9c1ae14964e02ace75fa399f256b7f2707730d",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-15",
+    "timestamp": "2026-10-10T07:39:27.245258+00:00",
+    "sequence": 10,
+    "snapshot": "b38eafd1d36bade97c1a779038d092fb6ff08e201dbd0cf0116fc4b556727f6d",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-16",
+    "timestamp": "2026-10-10T07:39:27.245258+00:00",
+    "sequence": 10,
+    "snapshot": "0b6f9501c78247bb484d75ad5172c2d0650c2f4dbdb720417e9ce15a1ca928d9",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-17",
+    "timestamp": "2026-10-10T07:39:27.245258+00:00",
+    "sequence": 10,
+    "snapshot": "a9986f4e6c092960008d3af408f2a4e7323943b2808bb9f421ad302a897d71e1",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-18",
+    "timestamp": "2026-10-10T07:39:27.245258+00:00",
+    "sequence": 10,
+    "snapshot": "ac4a909385b66c56d80386a161d7630b54a5a4d0a22e56424e4f8c4bfbf62f48",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-19",
+    "timestamp": "2026-10-10T07:39:27.245258+00:00",
+    "sequence": 10,
+    "snapshot": "12a38085b306a3676a205f6e14a9960553c7ee2835f547aaf9ce8e1557fcfd5a",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-20",
+    "timestamp": "2026-10-10T07:39:27.245258+00:00",
+    "sequence": 10,
+    "snapshot": "263bbb53735c04e3d34d95cb84a0862b7f8ea4d340736a8ebe9b02db2374194a",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-21",
+    "timestamp": "2026-10-10T07:39:27.245258+00:00",
+    "sequence": 10,
+    "snapshot": "2a07c4f4157e763b4618701bb5d791d357310d5416f191ab6e65db6785d39aa1",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-22",
+    "timestamp": "2026-10-10T07:39:27.245258+00:00",
+    "sequence": 10,
+    "snapshot": "c6b8afdca798fe431714d7a1968b1a8db2a3862c44c8d4ce8fb71f101538d8dd",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-23",
+    "timestamp": "2026-10-10T07:39:27.245258+00:00",
+    "sequence": 10,
+    "snapshot": "5e3398c41241a755c7ccbd4b7d54bcee61fba61b80af092ba07d6e7c6f01b6e9",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-24",
+    "timestamp": "2026-10-10T07:39:27.245258+00:00",
+    "sequence": 10,
+    "snapshot": "96be49bd738d89e4fef81b0a54825f0d51207564c0fe8ccd4b6fb0bafe375e6d",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-25",
+    "timestamp": "2026-10-10T07:39:27.245258+00:00",
+    "sequence": 10,
+    "snapshot": "8eb5f6f848bc66fd226d3916c979d1b62da65310d2795c5c0be449db1eae85cd",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-01",
+    "timestamp": "2026-10-10T07:39:32.245258+00:00",
+    "sequence": 11,
+    "snapshot": "5cae22785a1c83bd5f06a70607a09969629b7bdff96bf958a8b7f0786b1cd615",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-02",
+    "timestamp": "2026-10-10T07:39:32.245258+00:00",
+    "sequence": 11,
+    "snapshot": "e9add185aede2aea7c9aad67e05d52cdf33bbe73660a1b9a81aff5ed9563c9f7",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-03",
+    "timestamp": "2026-10-10T07:39:32.245258+00:00",
+    "sequence": 11,
+    "snapshot": "d50fd707879d041ba7b20f4a413676a07c9309ce71521cff9e347b1906d993a9",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-04",
+    "timestamp": "2026-10-10T07:39:32.245258+00:00",
+    "sequence": 11,
+    "snapshot": "5680c9d73705374c265d748608b38783d8ba740d437b5e77675111b2552d9123",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-05",
+    "timestamp": "2026-10-10T07:39:32.245258+00:00",
+    "sequence": 11,
+    "snapshot": "69a9b8e54ca3cebd57237f040cf8d48aa235747305c68d11c0ff6fa1b7e42234",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-06",
+    "timestamp": "2026-10-10T07:39:32.245258+00:00",
+    "sequence": 11,
+    "snapshot": "ae488039357c0737469f43c9f46dddf6749816f16b63ce6d7a7ec62ea16fced1",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-07",
+    "timestamp": "2026-10-10T07:39:32.245258+00:00",
+    "sequence": 11,
+    "snapshot": "8115aeacbaa05df5eee9c101255dfae293ef1b178c779da0a4fbbbd9bd4e0c42",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-08",
+    "timestamp": "2026-10-10T07:39:32.245258+00:00",
+    "sequence": 11,
+    "snapshot": "9d7ab75768d95102065771aefabc65a78364a86dde110c0119fdec160b4426ad",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-09",
+    "timestamp": "2026-10-10T07:39:32.245258+00:00",
+    "sequence": 11,
+    "snapshot": "660e3a713f7d13b3b423e3951b908c686e6852acd0016440158a3ace8b93d6a6",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-10",
+    "timestamp": "2026-10-10T07:39:32.245258+00:00",
+    "sequence": 11,
+    "snapshot": "1a81a4df5fe77ad04bb2540b7a2f6107fac97974d89f9a2f3ed3a53a4b9d4aa3",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-11",
+    "timestamp": "2026-10-10T07:39:32.245258+00:00",
+    "sequence": 11,
+    "snapshot": "40c0be885ab3919751448eb06da2ab8e8429968ad4a68bdc5cac9c8753513168",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-12",
+    "timestamp": "2026-10-10T07:39:32.245258+00:00",
+    "sequence": 11,
+    "snapshot": "1d8046d91f19dc77a712711fd456b1d87292e5c2cc21028b2b5633b5aab8220b",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-13",
+    "timestamp": "2026-10-10T07:39:32.245258+00:00",
+    "sequence": 11,
+    "snapshot": "bd53b0201784891beb5cd4b536783db6a5a79f0150f868400b4aefcae4ed5d8d",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-14",
+    "timestamp": "2026-10-10T07:39:32.245258+00:00",
+    "sequence": 11,
+    "snapshot": "8d22e0fe44a8ed2fad21819d5a852b213057ee238771b8d99baa268f71491db3",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-15",
+    "timestamp": "2026-10-10T07:39:32.245258+00:00",
+    "sequence": 11,
+    "snapshot": "e4be528ea84aea02b2f3aa496d9bc3130410ba99d8599efdc6b68ab3d6e6f6ce",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-16",
+    "timestamp": "2026-10-10T07:39:32.245258+00:00",
+    "sequence": 11,
+    "snapshot": "fff3bcb408e6d8057227c952205c6a3a29da21c0ba7dde10768c34a8d064c21d",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-17",
+    "timestamp": "2026-10-10T07:39:32.245258+00:00",
+    "sequence": 11,
+    "snapshot": "4253f116de492630c31645b11c5e1ec88e58d6c3363c9eb52943e746edb878c2",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-18",
+    "timestamp": "2026-10-10T07:39:32.245258+00:00",
+    "sequence": 11,
+    "snapshot": "951e4db76a6864e7a56ab28f76922c1f41384c475e677755ba571754c238ae52",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-19",
+    "timestamp": "2026-10-10T07:39:32.245258+00:00",
+    "sequence": 11,
+    "snapshot": "dd1c397b8d2a8c4f87cad8b580a457e7d8bc0336baaacf01413ca6cb9ea75ae8",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-20",
+    "timestamp": "2026-10-10T07:39:32.245258+00:00",
+    "sequence": 11,
+    "snapshot": "7275f54ebc5a4c6461a945c495597c6a6f235bf923f67b08a12d6efc00465df7",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-21",
+    "timestamp": "2026-10-10T07:39:32.245258+00:00",
+    "sequence": 11,
+    "snapshot": "aeb57d5ea7b51727d7c7c3d7da88fb327d425e86251c73b001e65ac40134a9ce",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-22",
+    "timestamp": "2026-10-10T07:39:32.245258+00:00",
+    "sequence": 11,
+    "snapshot": "2fbfc8552a00919e6f9cdd4df422f1d0d2fb9f4b6ab9ad53f105dc21268ad43c",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-23",
+    "timestamp": "2026-10-10T07:39:32.245258+00:00",
+    "sequence": 11,
+    "snapshot": "898ef67e72ea451b268982e25cb847f439b4f8e4216895dce6958230d68c01c1",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-24",
+    "timestamp": "2026-10-10T07:39:32.245258+00:00",
+    "sequence": 11,
+    "snapshot": "1c5ed5d5fe94189691665e17dd067d3f96dfde71b547e1bcf18bfe3503eedd22",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-25",
+    "timestamp": "2026-10-10T07:39:32.245258+00:00",
+    "sequence": 11,
+    "snapshot": "2d4c8e93d2625a46a05dd5da718e3cab333237a0e87086f9c761a5b10a9b1fdf",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-01",
+    "timestamp": "2026-10-10T07:39:37.245258+00:00",
+    "sequence": 12,
+    "snapshot": "f83124c0563adb02ab8b3ff37cd5d149472ecff71642eab23f6f81a06685f2e4",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-02",
+    "timestamp": "2026-10-10T07:39:37.245258+00:00",
+    "sequence": 12,
+    "snapshot": "31ee32097c0f069ba39d970de7bdb8b8cd3cdea70dd0fa62e4fb72a4a62426e8",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-03",
+    "timestamp": "2026-10-10T07:39:37.245258+00:00",
+    "sequence": 12,
+    "snapshot": "8f6f20857eee4900907531b8666f94ad9f79657991d2383b10cefff6dfc88b16",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-04",
+    "timestamp": "2026-10-10T07:39:37.245258+00:00",
+    "sequence": 12,
+    "snapshot": "bc7920593ff41b6b1e59b566e45004753de50e061d14efeebb8eaa71b0193c81",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-05",
+    "timestamp": "2026-10-10T07:39:37.245258+00:00",
+    "sequence": 12,
+    "snapshot": "ffd8a12c7d1230c6d66b569c146b36cd225dd8915a4e8e2cc57ad33e6fc3c6a1",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-06",
+    "timestamp": "2026-10-10T07:39:37.245258+00:00",
+    "sequence": 12,
+    "snapshot": "640df59c54f4c50118fb2224611e7c4529f1aa9b93abecdf12d430b060070cdf",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-07",
+    "timestamp": "2026-10-10T07:39:37.245258+00:00",
+    "sequence": 12,
+    "snapshot": "9ff88fc6861cf3e45a69123b65250918e06148fe4e91231aad1b3b5545c0fcc0",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-08",
+    "timestamp": "2026-10-10T07:39:37.245258+00:00",
+    "sequence": 12,
+    "snapshot": "88ee8055036c7b00fcbab12c52f1186ca60c84bd6c3b3eabc89f74e23fa0c6b1",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-09",
+    "timestamp": "2026-10-10T07:39:37.245258+00:00",
+    "sequence": 12,
+    "snapshot": "f6797626bfb79858ebd9317889223f39c30517166031b59817ce10e907c237b4",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-10",
+    "timestamp": "2026-10-10T07:39:37.245258+00:00",
+    "sequence": 12,
+    "snapshot": "e477e5b2bb847cc34e3f4e85b666d36852c62725d7e43d418e51d99f096bc0a0",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-11",
+    "timestamp": "2026-10-10T07:39:37.245258+00:00",
+    "sequence": 12,
+    "snapshot": "515994c27fddfad6ef12d25af33aed2172ff1ba1cceb7f789a14527c3bb7e024",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-12",
+    "timestamp": "2026-10-10T07:39:37.245258+00:00",
+    "sequence": 12,
+    "snapshot": "5292dbe1f8c72cf902e58cf9201546bc120696bd4e47db128ab8f4adaee5235c",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-13",
+    "timestamp": "2026-10-10T07:39:37.245258+00:00",
+    "sequence": 12,
+    "snapshot": "0d5026ffc2249c40624a8a2116bf6eec0199442559049cebe94e55183bac94eb",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-14",
+    "timestamp": "2026-10-10T07:39:37.245258+00:00",
+    "sequence": 12,
+    "snapshot": "6856256e23d0c19fc169f5b553ab0e8e925285ac16b2fee51c30bbf1556db0a4",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-15",
+    "timestamp": "2026-10-10T07:39:37.245258+00:00",
+    "sequence": 12,
+    "snapshot": "bb301ce13501328d6e0624135ca8f283173a71a63637538934582f247d42c3be",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-16",
+    "timestamp": "2026-10-10T07:39:37.245258+00:00",
+    "sequence": 12,
+    "snapshot": "012de50fb75b248a4c593e941f674c52167066dbf179d373340f5d89a7317ab7",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-17",
+    "timestamp": "2026-10-10T07:39:37.245258+00:00",
+    "sequence": 12,
+    "snapshot": "5663bdac552fceffbc9e03d7f714feca0c0843a38d099ca835c668d0b87713df",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-18",
+    "timestamp": "2026-10-10T07:39:37.245258+00:00",
+    "sequence": 12,
+    "snapshot": "8387e8a9c0d8c7398565072344dce66575af793902a1fbb01b60aaa682fbb5e8",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-19",
+    "timestamp": "2026-10-10T07:39:37.245258+00:00",
+    "sequence": 12,
+    "snapshot": "782950813fb341d57c993a83218c250f95875676607c324f151c93dc773cab56",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-20",
+    "timestamp": "2026-10-10T07:39:37.245258+00:00",
+    "sequence": 12,
+    "snapshot": "0630c44fe808d03e97f5ef893bd9f195a91f936aa11aa19c65774c7a1961a804",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-21",
+    "timestamp": "2026-10-10T07:39:37.245258+00:00",
+    "sequence": 12,
+    "snapshot": "651f226b548656782aa7b0aefb9582d503b1a729e24c9bcb8b00eaa1d3457043",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-22",
+    "timestamp": "2026-10-10T07:39:37.245258+00:00",
+    "sequence": 12,
+    "snapshot": "e869f0d06fbdbdbe34847e396cb11a5e1dd1870d2d42c6af1868ae6473134607",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-23",
+    "timestamp": "2026-10-10T07:39:37.245258+00:00",
+    "sequence": 12,
+    "snapshot": "76396c742334d426d906db2cab1ae58d2890cd7cf468d1f79584ba16ae6358f1",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-24",
+    "timestamp": "2026-10-10T07:39:37.245258+00:00",
+    "sequence": 12,
+    "snapshot": "d9cc7cf0345a7777b777e6dae07fd940c64c4784696ad147176db19948aa61bc",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-25",
+    "timestamp": "2026-10-10T07:39:37.245258+00:00",
+    "sequence": 12,
+    "snapshot": "fb5bdc9e9e01cb2ce6c492bb97556eff467469e001eee4baa000930ecc6c2b0a",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-01",
+    "timestamp": "2026-10-10T07:39:42.245258+00:00",
+    "sequence": 13,
+    "snapshot": "d89ecaa20751133b232fa448081a2a97c6dee5df4846a29d463b52a37fc5d395",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-02",
+    "timestamp": "2026-10-10T07:39:42.245258+00:00",
+    "sequence": 13,
+    "snapshot": "058b01b0923640d3b013acebc4dca7812564af73afb77bd53314fd99e6e1327f",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-03",
+    "timestamp": "2026-10-10T07:39:42.245258+00:00",
+    "sequence": 13,
+    "snapshot": "bd5685e06a4b7895f9182145cad0ea8b48d5ba63313e8a3d80d11deeed9d89c9",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-04",
+    "timestamp": "2026-10-10T07:39:42.245258+00:00",
+    "sequence": 13,
+    "snapshot": "c4e4efc22b4717f18600f7f65cfa2d8a65846fd5399d8c511c47bfe025d132f1",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-05",
+    "timestamp": "2026-10-10T07:39:42.245258+00:00",
+    "sequence": 13,
+    "snapshot": "2e9fd0e9d2258ae9b2dd3f908f01ba8281e47f336e634734dd85cf5a2448a3a0",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-06",
+    "timestamp": "2026-10-10T07:39:42.245258+00:00",
+    "sequence": 13,
+    "snapshot": "343cd5ef54fd012a39489a0879739c06c3e7854d6a2d9c9d5ee9ccb3f1fff7e3",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-07",
+    "timestamp": "2026-10-10T07:39:42.245258+00:00",
+    "sequence": 13,
+    "snapshot": "e79cbe38b0f51b98751e91dc8b971568d3e2e414fb66894a103501749c8e454d",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-08",
+    "timestamp": "2026-10-10T07:39:42.245258+00:00",
+    "sequence": 13,
+    "snapshot": "75335652c0d43b474c9d66d5413c1906d308b96d36a86adc38ed789871912e97",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-09",
+    "timestamp": "2026-10-10T07:39:42.245258+00:00",
+    "sequence": 13,
+    "snapshot": "0ae7e76df27b7b6113bac3a4406c439c8d4dd1d170bbfe439412a3c6b5a91cc1",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-10",
+    "timestamp": "2026-10-10T07:39:42.245258+00:00",
+    "sequence": 13,
+    "snapshot": "32bf93e4f0a9425362c76bfbceb20c8abf612e104083e323a3178b3de30965d5",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-11",
+    "timestamp": "2026-10-10T07:39:42.245258+00:00",
+    "sequence": 13,
+    "snapshot": "75a0408b830e6d7768be0b08a6090ea00083b9b132a2aa7580d5f46eb082d9af",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-12",
+    "timestamp": "2026-10-10T07:39:42.245258+00:00",
+    "sequence": 13,
+    "snapshot": "0bd7a6b316d7a17787a4aae598293c7d8f5aa9fd72cea7fe7a575c3352008cd6",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-13",
+    "timestamp": "2026-10-10T07:39:42.245258+00:00",
+    "sequence": 13,
+    "snapshot": "0a593cafa4629962ea0a60182dde06cb03757ced1660883a1c7fe04bbc2dd852",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-14",
+    "timestamp": "2026-10-10T07:39:42.245258+00:00",
+    "sequence": 13,
+    "snapshot": "15535a4b8ceb8d3db7c91da58b3f41e37f3231bc063939946843601201b98d79",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-15",
+    "timestamp": "2026-10-10T07:39:42.245258+00:00",
+    "sequence": 13,
+    "snapshot": "8ca67a17b89bcb51eaa0256b9fbc0904892f8a9904ad8752be0c78fc91eae941",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-16",
+    "timestamp": "2026-10-10T07:39:42.245258+00:00",
+    "sequence": 13,
+    "snapshot": "510554dcefcee681ee4ca977b97a500e90ce5ec1dd5af123a8f1d189084285c1",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-17",
+    "timestamp": "2026-10-10T07:39:42.245258+00:00",
+    "sequence": 13,
+    "snapshot": "3744cbe24c7c00583e74ebfb434d419f08f88c1d45600910414a13e9ef75e63e",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-18",
+    "timestamp": "2026-10-10T07:39:42.245258+00:00",
+    "sequence": 13,
+    "snapshot": "08e9e89832a071734f930f807b35c814a984c9c5de2c5fe9d129328b645563a0",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-19",
+    "timestamp": "2026-10-10T07:39:42.245258+00:00",
+    "sequence": 13,
+    "snapshot": "e963db1be6a82c48c18a55ffdbef86d35ca2bdc470109d2fa58fc2fea25b11d2",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-20",
+    "timestamp": "2026-10-10T07:39:42.245258+00:00",
+    "sequence": 13,
+    "snapshot": "45498043cf7c07d668721e794a84d1e508240cea2ffcb4a9fe1f2a847cb8cf4d",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-21",
+    "timestamp": "2026-10-10T07:39:42.245258+00:00",
+    "sequence": 13,
+    "snapshot": "0d2abd809ae8874a9f8839bb400406e1e026966c80512535fef6ddc75c023604",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-22",
+    "timestamp": "2026-10-10T07:39:42.245258+00:00",
+    "sequence": 13,
+    "snapshot": "7c32d846a63fbc92b6df85a1638ce2c2f28dc7c9ecf9f81d70645f98ad0b7015",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-23",
+    "timestamp": "2026-10-10T07:39:42.245258+00:00",
+    "sequence": 13,
+    "snapshot": "58a6fcb192148acd578d38d811cd48470a7df9adb681beb54286ae706201aa62",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-24",
+    "timestamp": "2026-10-10T07:39:42.245258+00:00",
+    "sequence": 13,
+    "snapshot": "4fc7c36f38f32d2b59233af5b8a425b4532e9a67dd6a839c60194c81c56e7f95",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-25",
+    "timestamp": "2026-10-10T07:39:42.245258+00:00",
+    "sequence": 13,
+    "snapshot": "251df79c9d1b8f85a09bb68b6872d1f579745833947f957a4d8995d0a6adbd1b",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-01",
+    "timestamp": "2026-10-10T07:39:47.245258+00:00",
+    "sequence": 14,
+    "snapshot": "ec2c564276135fa8de32b5ff1ec4258385dbff8c4e43cb3520d767510b47d88e",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-02",
+    "timestamp": "2026-10-10T07:39:47.245258+00:00",
+    "sequence": 14,
+    "snapshot": "1e3423bbe5553613c31492dc1466b814f5cf7ea57236115e48081f06344d5c6e",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-03",
+    "timestamp": "2026-10-10T07:39:47.245258+00:00",
+    "sequence": 14,
+    "snapshot": "c718bfb803ab9cd66b8fb8d8055345a430180290949b649d17ef8f97fa659661",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-04",
+    "timestamp": "2026-10-10T07:39:47.245258+00:00",
+    "sequence": 14,
+    "snapshot": "ad842afa54ace42e680c8e2e6d4a9edc3b7a32ef81d4621cc771140c25694efe",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-05",
+    "timestamp": "2026-10-10T07:39:47.245258+00:00",
+    "sequence": 14,
+    "snapshot": "b7fb2ba1792814c49e8730e4110b3efaaba50413f373d251f85b009bc85161cf",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-06",
+    "timestamp": "2026-10-10T07:39:47.245258+00:00",
+    "sequence": 14,
+    "snapshot": "f3b518b64658deef8f58ec47339a261b667211436c014ba8cf3ea96ff0b3feb8",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-07",
+    "timestamp": "2026-10-10T07:39:47.245258+00:00",
+    "sequence": 14,
+    "snapshot": "38134c5ef9b0d2c12fbef9ae621018971edf3b20e736bb0982683b71377122ca",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-08",
+    "timestamp": "2026-10-10T07:39:47.245258+00:00",
+    "sequence": 14,
+    "snapshot": "057aa991bba1318033fc39462b6de8eb1c97af90fe89622923216f953821a959",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-09",
+    "timestamp": "2026-10-10T07:39:47.245258+00:00",
+    "sequence": 14,
+    "snapshot": "86358c09dfd590308601d86b6fcfd2d6c31b1be50ad4be43cd1afc4e76fb151b",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-10",
+    "timestamp": "2026-10-10T07:39:47.245258+00:00",
+    "sequence": 14,
+    "snapshot": "df2e0b6290d17c2a40e0aeca7f0889b8c75d5390e597f9fc4a6fa6e6a38d9741",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-11",
+    "timestamp": "2026-10-10T07:39:47.245258+00:00",
+    "sequence": 14,
+    "snapshot": "11950a9a8a836e613dada01ac8c3127bda6233448c2ccf1ce7aa61241dd2f6ab",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-12",
+    "timestamp": "2026-10-10T07:39:47.245258+00:00",
+    "sequence": 14,
+    "snapshot": "650fb50a67014ff1163ba70f6f4f48db0332b12e2077c7fc20d8f58872faaef2",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-13",
+    "timestamp": "2026-10-10T07:39:47.245258+00:00",
+    "sequence": 14,
+    "snapshot": "bb58a5d4166a7f5494c4f8e570fb6a4780619a37538941cbe513240ac7c299df",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-14",
+    "timestamp": "2026-10-10T07:39:47.245258+00:00",
+    "sequence": 14,
+    "snapshot": "8a9d9e18be89ba5651ea6b20958cda42f1bd01e15cc2e2cd02567fd69d04731c",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-15",
+    "timestamp": "2026-10-10T07:39:47.245258+00:00",
+    "sequence": 14,
+    "snapshot": "94cb35621527a870a913580aa5c9b9528e8f3c31857e27216b709de2a439a9d9",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-16",
+    "timestamp": "2026-10-10T07:39:47.245258+00:00",
+    "sequence": 14,
+    "snapshot": "953b502cd68ca6ba2c3684ce058a313e44826a5f7ba39d02705e2ba203a41d40",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-17",
+    "timestamp": "2026-10-10T07:39:47.245258+00:00",
+    "sequence": 14,
+    "snapshot": "c371c72a7ecb292f4a2bcb2ab9723364cfd0b900947cc913224dd59a74a2b0ab",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-18",
+    "timestamp": "2026-10-10T07:39:47.245258+00:00",
+    "sequence": 14,
+    "snapshot": "fbd51087106f92b2107e50514c9898c373277cb46b3724d4132c8d576eed0c4b",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-19",
+    "timestamp": "2026-10-10T07:39:47.245258+00:00",
+    "sequence": 14,
+    "snapshot": "8ff33596a25b178d5776188d92797bc4f67cee828f0e1320b33ab7d309ecf78a",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-20",
+    "timestamp": "2026-10-10T07:39:47.245258+00:00",
+    "sequence": 14,
+    "snapshot": "c7eae38a63db0e1d4cf7db0b4241552bdb3a69e4712d0adf025d99eb009f82ba",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-21",
+    "timestamp": "2026-10-10T07:39:47.245258+00:00",
+    "sequence": 14,
+    "snapshot": "e7c4e4e3655a87b3a34b325b2da3132e04811f1ef57a8f0c11b10f08ce523624",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-22",
+    "timestamp": "2026-10-10T07:39:47.245258+00:00",
+    "sequence": 14,
+    "snapshot": "5c4ebad5c7346fe4b24e15952308a40bdcb16ffc09b00ef5c201575c45eb4667",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-23",
+    "timestamp": "2026-10-10T07:39:47.245258+00:00",
+    "sequence": 14,
+    "snapshot": "f019f4484ad26d874bfd8ebec888eed26f78ea9020327e74fefe9c4c9410a3bd",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-24",
+    "timestamp": "2026-10-10T07:39:47.245258+00:00",
+    "sequence": 14,
+    "snapshot": "4d1af6fa184e508f8c3240dd6194b3c87801b20b859bce3abc09eda77f3b7ee0",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-25",
+    "timestamp": "2026-10-10T07:39:47.245258+00:00",
+    "sequence": 14,
+    "snapshot": "062d90e6a5720b59943c7681fafb9e19d37bfc1ecee68b64c1dc09f0e0186334",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-01",
+    "timestamp": "2026-10-10T07:39:52.245258+00:00",
+    "sequence": 15,
+    "snapshot": "74bc6ee6b96549e59e1c01d3534c19284cf9ff95c171ec9771f9ab0de8ad50d9",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-02",
+    "timestamp": "2026-10-10T07:39:52.245258+00:00",
+    "sequence": 15,
+    "snapshot": "337a1fa00ad4467dff10caa91d49d7af4d63e0a36ce66080764ff0c2115b3cc6",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-03",
+    "timestamp": "2026-10-10T07:39:52.245258+00:00",
+    "sequence": 15,
+    "snapshot": "1837f6a9b47bca036b929c833d10c89d44e3215ed46cb16edb17fa79cc519c04",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-04",
+    "timestamp": "2026-10-10T07:39:52.245258+00:00",
+    "sequence": 15,
+    "snapshot": "17fcae3a0d09a791f8c0a52b2518e03d885f6009485251546ad1ad6ed60b905c",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-05",
+    "timestamp": "2026-10-10T07:39:52.245258+00:00",
+    "sequence": 15,
+    "snapshot": "1caf20504f90d9d7a807b6bd08b1bc31af3a42e4f9be2d86d77b46bfbb4d8daf",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-06",
+    "timestamp": "2026-10-10T07:39:52.245258+00:00",
+    "sequence": 15,
+    "snapshot": "69de1936fd70147aa4e140fe8563b7b63f72527583841b45856bbbf22c43cc04",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-07",
+    "timestamp": "2026-10-10T07:39:52.245258+00:00",
+    "sequence": 15,
+    "snapshot": "d9413d2f32e93527dc5f64e9a852613b0dbf8af460c11ba9921c332585c90860",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-08",
+    "timestamp": "2026-10-10T07:39:52.245258+00:00",
+    "sequence": 15,
+    "snapshot": "04106a695e86ddeb7d137705afe302f839f2147835ff5a9f3bf5b137b632279f",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-09",
+    "timestamp": "2026-10-10T07:39:52.245258+00:00",
+    "sequence": 15,
+    "snapshot": "48ba05910db15cd8ba6b494dbd9b3b05b87b25101b48b2820d8adc9862ebbe8d",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-10",
+    "timestamp": "2026-10-10T07:39:52.245258+00:00",
+    "sequence": 15,
+    "snapshot": "214a4a17590cc6cd04876e6eeb01fbf05634060cbab405f41fa5357d4223c264",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-11",
+    "timestamp": "2026-10-10T07:39:52.245258+00:00",
+    "sequence": 15,
+    "snapshot": "3094ce9137adfefde0501ecce35c57f86bad7c15c4c5d2a4ab8281c6bba82c7e",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-12",
+    "timestamp": "2026-10-10T07:39:52.245258+00:00",
+    "sequence": 15,
+    "snapshot": "37e0d280ae6f2799ceac11c0325dd32086c71bf59881a5900fec7be2224b4807",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-13",
+    "timestamp": "2026-10-10T07:39:52.245258+00:00",
+    "sequence": 15,
+    "snapshot": "e8eaba28a0b04b72b2d10b14addd0660c0ee0d074c6b9d9dcf067bf18129cc42",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-14",
+    "timestamp": "2026-10-10T07:39:52.245258+00:00",
+    "sequence": 15,
+    "snapshot": "baf4b55c11b01463110748bd8a77d6e40d742bf945c8fc84a40abded027fa887",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-15",
+    "timestamp": "2026-10-10T07:39:52.245258+00:00",
+    "sequence": 15,
+    "snapshot": "477f70d9b497ceae36ecf9cb27b57cbb6d96ed8b66e7f006a19fbf6c54485b62",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-16",
+    "timestamp": "2026-10-10T07:39:52.245258+00:00",
+    "sequence": 15,
+    "snapshot": "fb9340b7a09e514739070c246a8985666ab6ca370b33781a6b16563fdf69a1ff",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-17",
+    "timestamp": "2026-10-10T07:39:52.245258+00:00",
+    "sequence": 15,
+    "snapshot": "bf3908bdd0a7c96fb76e1d141663696f0d7d77b585e1c31d448c96f31ed6325f",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-18",
+    "timestamp": "2026-10-10T07:39:52.245258+00:00",
+    "sequence": 15,
+    "snapshot": "fce11c0dab2e6e4913a2ff202b61018e7468259b721e417c917f15b283ec9580",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-19",
+    "timestamp": "2026-10-10T07:39:52.245258+00:00",
+    "sequence": 15,
+    "snapshot": "8bb92b53b2efc39df9aff41de6bba11979df75c9375570609638d6fe3652455c",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-20",
+    "timestamp": "2026-10-10T07:39:52.245258+00:00",
+    "sequence": 15,
+    "snapshot": "fe180a3c8ebe204187bc2d70a1658698ec307c73cf568ff7e78640d0eceddfd9",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-21",
+    "timestamp": "2026-10-10T07:39:52.245258+00:00",
+    "sequence": 15,
+    "snapshot": "c120c1fe5df649dee9c84b006c6a226914a371f4c1e40561f699e0dcb1bb7465",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-22",
+    "timestamp": "2026-10-10T07:39:52.245258+00:00",
+    "sequence": 15,
+    "snapshot": "ced57da424ceb82e92df621b5cd410111df1f326edebda676fe6ea22f3598580",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-23",
+    "timestamp": "2026-10-10T07:39:52.245258+00:00",
+    "sequence": 15,
+    "snapshot": "e549c0fa9ba5b21b237ee6b71472ed35fda75db6e2fb7c689c6409bcf2dafe9f",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-24",
+    "timestamp": "2026-10-10T07:39:52.245258+00:00",
+    "sequence": 15,
+    "snapshot": "1a1b4d804ab897863aa373b5ad07b7384aa7f2454bc6d2dc3a8ac8dd4efea04d",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-25",
+    "timestamp": "2026-10-10T07:39:52.245258+00:00",
+    "sequence": 15,
+    "snapshot": "ebd76e37db8254051b5dbdc47efd90973ec500b9b3088fa8a5665708c06c1e9a",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-01",
+    "timestamp": "2026-10-10T07:39:57.245258+00:00",
+    "sequence": 16,
+    "snapshot": "4a30acc6cab173c331d13bb203bc38a318a6d1f0c56d81522dd550ca9973497c",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-02",
+    "timestamp": "2026-10-10T07:39:57.245258+00:00",
+    "sequence": 16,
+    "snapshot": "9f7ac51be835e57f7949c569f7b65eefe2cd59b766a68b05a38d24c6e65fe403",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-03",
+    "timestamp": "2026-10-10T07:39:57.245258+00:00",
+    "sequence": 16,
+    "snapshot": "03a07bd9197c8811a5c9b108d31fc708ce549c0031023a9898229b9d24651346",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-04",
+    "timestamp": "2026-10-10T07:39:57.245258+00:00",
+    "sequence": 16,
+    "snapshot": "df803f60257b8e078a7d211637b649e156653ae7adce59ac0ecfd42a8326bd67",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-05",
+    "timestamp": "2026-10-10T07:39:57.245258+00:00",
+    "sequence": 16,
+    "snapshot": "fcc0935a283f8ea70f8d488d26392efbf28e02920cb1cc10d5cca81f39d48ad0",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-06",
+    "timestamp": "2026-10-10T07:39:57.245258+00:00",
+    "sequence": 16,
+    "snapshot": "91517d1f4868cc68c6208b5441dc6934b05f73f87be2468e05950e0f131d8efc",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-07",
+    "timestamp": "2026-10-10T07:39:57.245258+00:00",
+    "sequence": 16,
+    "snapshot": "327c789cc2b41a74f62a4679d253956c56fd7b7e12325c23440eaf919833ff99",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-08",
+    "timestamp": "2026-10-10T07:39:57.245258+00:00",
+    "sequence": 16,
+    "snapshot": "306c1b63e34db7d0dc786ca24c37f6073a12c4b2039503fbadac511156fb3951",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-09",
+    "timestamp": "2026-10-10T07:39:57.245258+00:00",
+    "sequence": 16,
+    "snapshot": "cba175d5e32bc3fd8e9d44b920e31a3a91c9ebfe2ef413929dcad75240042eca",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-10",
+    "timestamp": "2026-10-10T07:39:57.245258+00:00",
+    "sequence": 16,
+    "snapshot": "92118b41c3d2fef77cc3c12a5910216a11abb90a020c09d8fb44e55ca234e171",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-11",
+    "timestamp": "2026-10-10T07:39:57.245258+00:00",
+    "sequence": 16,
+    "snapshot": "9c1541a3cb600966c41a001dcf9aefb0efcce8e645d73625b14a87b2595db627",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-12",
+    "timestamp": "2026-10-10T07:39:57.245258+00:00",
+    "sequence": 16,
+    "snapshot": "8342117a76ece65dd9a33ae547c55f6c0bb97e5e2a765e6a49906c3c79fe5ff2",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-13",
+    "timestamp": "2026-10-10T07:39:57.245258+00:00",
+    "sequence": 16,
+    "snapshot": "639284bdc9597d3c97b35cbdf8b7b511be8f74c9f01b4c72ca60c9ca7dc0f72e",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-14",
+    "timestamp": "2026-10-10T07:39:57.245258+00:00",
+    "sequence": 16,
+    "snapshot": "2e87ff1df02e7845d2f6e79b1ccd997715f0bcd4766fe824374008325553d4f8",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-15",
+    "timestamp": "2026-10-10T07:39:57.245258+00:00",
+    "sequence": 16,
+    "snapshot": "339625fd9d8d910280f5325df5c2c18c2252f183e356e0afff598909a984d536",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-16",
+    "timestamp": "2026-10-10T07:39:57.245258+00:00",
+    "sequence": 16,
+    "snapshot": "dd734f8c21cc121c9ebae05064a5497e4d017637ea1a9b580d9427fd102fec67",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-17",
+    "timestamp": "2026-10-10T07:39:57.245258+00:00",
+    "sequence": 16,
+    "snapshot": "fde59bc253d80e7145db29226d96e2100f98a108b56c1fc717b5cd81438c0772",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-18",
+    "timestamp": "2026-10-10T07:39:57.245258+00:00",
+    "sequence": 16,
+    "snapshot": "dd0a41f5d47897eff8ac24a317221189ad7fb7dc9a50709853b73ca4b0cd8d7a",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-19",
+    "timestamp": "2026-10-10T07:39:57.245258+00:00",
+    "sequence": 16,
+    "snapshot": "f7770b6894e1cf52638f0cfb001492d97af48d9a4c923ccb80bedc5061c86f11",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-20",
+    "timestamp": "2026-10-10T07:39:57.245258+00:00",
+    "sequence": 16,
+    "snapshot": "ad56744911f56aaf16170082f4e17430a58b44f56831f97ff3cc277105d1cc19",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-21",
+    "timestamp": "2026-10-10T07:39:57.245258+00:00",
+    "sequence": 16,
+    "snapshot": "0876fe3d80ef39249dbcfea485ca3a0289745438aa47cc797d7c15b6c7b2e853",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-22",
+    "timestamp": "2026-10-10T07:39:57.245258+00:00",
+    "sequence": 16,
+    "snapshot": "1df44efc400aeb79629f441496ad249ffac836bc2405f18e5b1bdac187506dd1",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-23",
+    "timestamp": "2026-10-10T07:39:57.245258+00:00",
+    "sequence": 16,
+    "snapshot": "5de5842b8dcd7e118cfbe0149cf5c12883b5b1d17a50fcca0f60a7ed9f49a324",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-24",
+    "timestamp": "2026-10-10T07:39:57.245258+00:00",
+    "sequence": 16,
+    "snapshot": "e9107ac2f9b9856d26f41c7ee210b666bd7c04aaec4f4608dfa0062cd9f05a90",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-25",
+    "timestamp": "2026-10-10T07:39:57.245258+00:00",
+    "sequence": 16,
+    "snapshot": "225279cf41101a21727c7b1369ad6d710646d89aa4a76cbfe9d625ad24ae9253",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-01",
+    "timestamp": "2026-10-10T07:40:02.245258+00:00",
+    "sequence": 17,
+    "snapshot": "79f47801137be71fcbeb0bbb87460a6b7027289fa0941105c2282a77a4ccb6a2",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-02",
+    "timestamp": "2026-10-10T07:40:02.245258+00:00",
+    "sequence": 17,
+    "snapshot": "b0fdd8f417b72568260e691efa4420b47551de5de9df79d33ac964b77218c81e",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-03",
+    "timestamp": "2026-10-10T07:40:02.245258+00:00",
+    "sequence": 17,
+    "snapshot": "9060f47acbe3fedb82fa023ed80c6790f3610af3325757994005a7e36226fd03",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-04",
+    "timestamp": "2026-10-10T07:40:02.245258+00:00",
+    "sequence": 17,
+    "snapshot": "950c89982f54de113c715e1383d63b413545bb0abd1ffa4c1b5baf78bcf8edfb",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-05",
+    "timestamp": "2026-10-10T07:40:02.245258+00:00",
+    "sequence": 17,
+    "snapshot": "a389767e030c029cc8d8f3ba8a9fe4f1f3bbca6dcbec0deb28e7ca0bcfccf214",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-06",
+    "timestamp": "2026-10-10T07:40:02.245258+00:00",
+    "sequence": 17,
+    "snapshot": "ddf336032c3ee2f9fec18689279793a3797b1e9efdc74a0ffa548a12500a4fa0",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-07",
+    "timestamp": "2026-10-10T07:40:02.245258+00:00",
+    "sequence": 17,
+    "snapshot": "1b52b6df5627a2fffc48bc92a720485336f1e644a0658daa3b04baf38680fcba",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-08",
+    "timestamp": "2026-10-10T07:40:02.245258+00:00",
+    "sequence": 17,
+    "snapshot": "11d38966317063ec5128000d3f54aa23f50a0d034970377d819de9531f47ece1",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-09",
+    "timestamp": "2026-10-10T07:40:02.245258+00:00",
+    "sequence": 17,
+    "snapshot": "01d306265eecf3a3db07e7ba3586cd205927102ab8b27e876ddbb10f4fc5fee0",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-10",
+    "timestamp": "2026-10-10T07:40:02.245258+00:00",
+    "sequence": 17,
+    "snapshot": "171e9ace73d199ae56213d30a118cc17878fea51b57f9c1ca9a03af4247bfa2f",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-11",
+    "timestamp": "2026-10-10T07:40:02.245258+00:00",
+    "sequence": 17,
+    "snapshot": "2fbed03d10dc43203a1913ac6fec22bfeef48bc3a8ed8f2140405fbc0cd231a0",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-12",
+    "timestamp": "2026-10-10T07:40:02.245258+00:00",
+    "sequence": 17,
+    "snapshot": "853059b85798ffd510ed6c8c6c3b960587a858361d52939d1100d7685b9cd0ac",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-13",
+    "timestamp": "2026-10-10T07:40:02.245258+00:00",
+    "sequence": 17,
+    "snapshot": "e146a849d0b53bbe45a940f7e920685dbc39afe18f4fd77e2813714f9d619093",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-14",
+    "timestamp": "2026-10-10T07:40:02.245258+00:00",
+    "sequence": 17,
+    "snapshot": "af4de13e155fdbbe4197ed0b3257f11f12af828c861dbce7e6c8ffdc04b58b65",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-15",
+    "timestamp": "2026-10-10T07:40:02.245258+00:00",
+    "sequence": 17,
+    "snapshot": "5836e7d2263c5faca6c30c02696042c1b6a7e943c2da177b933c8b053e14a23c",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-16",
+    "timestamp": "2026-10-10T07:40:02.245258+00:00",
+    "sequence": 17,
+    "snapshot": "d3dbc67e909a4a448146ea360830f6bce070f982b76f28e250fa5b42ff4cef10",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-17",
+    "timestamp": "2026-10-10T07:40:02.245258+00:00",
+    "sequence": 17,
+    "snapshot": "d30fc633b5b76c2d48c541a24a9ef587f3701bff7447767a733c70966a08391e",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-18",
+    "timestamp": "2026-10-10T07:40:02.245258+00:00",
+    "sequence": 17,
+    "snapshot": "9abc8a18d73109ba1b6a34102a8104b0840cfe1ed71c1ec55e92f23741b3a4b2",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-19",
+    "timestamp": "2026-10-10T07:40:02.245258+00:00",
+    "sequence": 17,
+    "snapshot": "d608998cee3f23b6c466bc485aa73995a7cf44c98bb4a1df3a0c9eba2d1d0e85",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-20",
+    "timestamp": "2026-10-10T07:40:02.245258+00:00",
+    "sequence": 17,
+    "snapshot": "160ec154ae9947f6a2fcd33f068b65722f9970227abd692f8a2584ee2731f960",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-21",
+    "timestamp": "2026-10-10T07:40:02.245258+00:00",
+    "sequence": 17,
+    "snapshot": "25e58d21fd23c384d6f484ad95212745ee2f676d3f42b686ac28da5ebb9ae60d",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-22",
+    "timestamp": "2026-10-10T07:40:02.245258+00:00",
+    "sequence": 17,
+    "snapshot": "cf0c86e36625369c8fba808384616ff9e2487521cc2dfda7f55a9b90e2a09167",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-23",
+    "timestamp": "2026-10-10T07:40:02.245258+00:00",
+    "sequence": 17,
+    "snapshot": "4f7c6439b358a55f8f7943b8ddf8032cf1b6a443465d6b43ce31b3e6df1f675d",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-24",
+    "timestamp": "2026-10-10T07:40:02.245258+00:00",
+    "sequence": 17,
+    "snapshot": "58a4833828bb62dfde88491f0e0f492dd5e04ae85ddc141884c5c8df880d9d84",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-25",
+    "timestamp": "2026-10-10T07:40:02.245258+00:00",
+    "sequence": 17,
+    "snapshot": "64ddba44a9c90299c875a76c102d3d1d40621e160cfd1f5812af49dc13646b4b",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-01",
+    "timestamp": "2026-10-10T07:40:07.245258+00:00",
+    "sequence": 18,
+    "snapshot": "6b733bb6fcdd8271320d54756715485fa166a74472792f7508c1f2d3436ac5db",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-02",
+    "timestamp": "2026-10-10T07:40:07.245258+00:00",
+    "sequence": 18,
+    "snapshot": "4f72a6fb227e9a70a39502aeedd1e0ba375d32b2c9ab462549f7b8d9fe55aaf7",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-03",
+    "timestamp": "2026-10-10T07:40:07.245258+00:00",
+    "sequence": 18,
+    "snapshot": "cd005984a450fcac954769b81297e72be10a142477a85c493f002ea65f0e5f34",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-04",
+    "timestamp": "2026-10-10T07:40:07.245258+00:00",
+    "sequence": 18,
+    "snapshot": "0c1e573600ce38ee887e33a292f30034e2cd87a5409383023f3669b3df7faf6b",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-05",
+    "timestamp": "2026-10-10T07:40:07.245258+00:00",
+    "sequence": 18,
+    "snapshot": "e07b57c9df5d27b8f7901d3e0b9359f2b471de995e9984b1e929dda32afcf7eb",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-06",
+    "timestamp": "2026-10-10T07:40:07.245258+00:00",
+    "sequence": 18,
+    "snapshot": "54ab02235e1350df3de0ccf6b6c38fd0365da63d22497375ac8b863d2e7fa781",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-07",
+    "timestamp": "2026-10-10T07:40:07.245258+00:00",
+    "sequence": 18,
+    "snapshot": "afc8a0126d3c969183c3cac3e6040459d6539fd1e0320948b5a36515337efefe",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-08",
+    "timestamp": "2026-10-10T07:40:07.245258+00:00",
+    "sequence": 18,
+    "snapshot": "fba854ab98db2d6232eb19db61b7f0e7ac8f0187870b780bbbfbfa933a693087",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-09",
+    "timestamp": "2026-10-10T07:40:07.245258+00:00",
+    "sequence": 18,
+    "snapshot": "b199d43c384095c777b6b9401092679699fd2a704d38bcae331017f5e507edd3",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-10",
+    "timestamp": "2026-10-10T07:40:07.245258+00:00",
+    "sequence": 18,
+    "snapshot": "ec189db9b294b392db05c6178f0926978f5d4b06850e04ff223f306ad7447337",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-11",
+    "timestamp": "2026-10-10T07:40:07.245258+00:00",
+    "sequence": 18,
+    "snapshot": "6f0073015999c1efe96e83f482a2c8099a332bab38476a02089f8046d3fffd0e",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-12",
+    "timestamp": "2026-10-10T07:40:07.245258+00:00",
+    "sequence": 18,
+    "snapshot": "420a68e41ac37d172f7e6e6d4f932be4100b3c9b6c60e0e75700bb2758eb0b7a",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-13",
+    "timestamp": "2026-10-10T07:40:07.245258+00:00",
+    "sequence": 18,
+    "snapshot": "e8f2926e6ca743b39886972af32d08e497959254a7810b3b9b7b69780d74f28f",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-14",
+    "timestamp": "2026-10-10T07:40:07.245258+00:00",
+    "sequence": 18,
+    "snapshot": "ea1aa7206a246a68a1213eb1fa3bab88173961f74592cc84fa22ecb32f2bf8da",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-15",
+    "timestamp": "2026-10-10T07:40:07.245258+00:00",
+    "sequence": 18,
+    "snapshot": "5ac5180a02892955e885b187bac12d723ff184590ad3c806563159477d9e299a",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-16",
+    "timestamp": "2026-10-10T07:40:07.245258+00:00",
+    "sequence": 18,
+    "snapshot": "231d05f9b81f71d690be9550a8f299852141150d208ab8e6a81db703d930e073",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-17",
+    "timestamp": "2026-10-10T07:40:07.245258+00:00",
+    "sequence": 18,
+    "snapshot": "ea574afff7d17998494e6fc0f45d7b28dd85e182e5e00cc3c33f8a3be47017b6",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-18",
+    "timestamp": "2026-10-10T07:40:07.245258+00:00",
+    "sequence": 18,
+    "snapshot": "f1d3451c2e3a414d2fb26b8fd38ba7488cc3d20843c16071c7b645a6b8e4fc7f",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-19",
+    "timestamp": "2026-10-10T07:40:07.245258+00:00",
+    "sequence": 18,
+    "snapshot": "c4b19b5a18cd46d8ed45c4869efc2f0d206e792c76f9fe74673495e89ed2541c",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-20",
+    "timestamp": "2026-10-10T07:40:07.245258+00:00",
+    "sequence": 18,
+    "snapshot": "c7bf071d7bd84835d2cce51fe16dc08f7b54600a82ab08e60dd8b0abc256ef63",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-21",
+    "timestamp": "2026-10-10T07:40:07.245258+00:00",
+    "sequence": 18,
+    "snapshot": "bc3a2d6cd288daa7d9bc5e4c42513a833ab426a37d90fddd739e82b25b993c4d",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-22",
+    "timestamp": "2026-10-10T07:40:07.245258+00:00",
+    "sequence": 18,
+    "snapshot": "e6992a95ab4e4d367e5d048bed1d1070ac5d09c3c0138f16bf83e5c485965baa",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-23",
+    "timestamp": "2026-10-10T07:40:07.245258+00:00",
+    "sequence": 18,
+    "snapshot": "7a6ad5d35474e633dcc97e13536ed0599f243ae45e7c67a7903c28377086bef3",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-24",
+    "timestamp": "2026-10-10T07:40:07.245258+00:00",
+    "sequence": 18,
+    "snapshot": "0b7c92b15186f79ea640f32e2e4af37da6e924af9ad8217780235160d74daa62",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-25",
+    "timestamp": "2026-10-10T07:40:07.245258+00:00",
+    "sequence": 18,
+    "snapshot": "eb3470e7281ecbdbbccacfbe00a44f778260e59ba1b796223ed236cea1098cea",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-01",
+    "timestamp": "2026-10-10T07:40:12.245258+00:00",
+    "sequence": 19,
+    "snapshot": "b7b714191752765dc22288445965f2ce0c9078eb60ef2861f522736b00dfdfa5",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-02",
+    "timestamp": "2026-10-10T07:40:12.245258+00:00",
+    "sequence": 19,
+    "snapshot": "565eeeef82445e86d080207d49a7e65ed94ee2ec0849daace16fbd72bdb253e7",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-03",
+    "timestamp": "2026-10-10T07:40:12.245258+00:00",
+    "sequence": 19,
+    "snapshot": "ecbbdbdf7162a86912c71b2ebffc7bcca371660076e273d0c64c31869013f48b",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-04",
+    "timestamp": "2026-10-10T07:40:12.245258+00:00",
+    "sequence": 19,
+    "snapshot": "a5bb137a9b301fe243244e02e271f67543223e99f21f5d06b43fda55b3742ed0",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-05",
+    "timestamp": "2026-10-10T07:40:12.245258+00:00",
+    "sequence": 19,
+    "snapshot": "bc7e42389686a0bcc34212210642fc647981a0d9fd4ae517adb8409e587e06ef",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-06",
+    "timestamp": "2026-10-10T07:40:12.245258+00:00",
+    "sequence": 19,
+    "snapshot": "fd82802d2de4abf5e11b71724cc36aff7aea2461e982b3d46dd50866a6e9a7d7",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-07",
+    "timestamp": "2026-10-10T07:40:12.245258+00:00",
+    "sequence": 19,
+    "snapshot": "70b21ba243f27050e8d0a61325164f13af6a399552e360afbd7d022f872d807a",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-08",
+    "timestamp": "2026-10-10T07:40:12.245258+00:00",
+    "sequence": 19,
+    "snapshot": "14df748a7aa4ed5e5e9b7a955682117a761ab2a3a292abfe87f985f17af91661",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-09",
+    "timestamp": "2026-10-10T07:40:12.245258+00:00",
+    "sequence": 19,
+    "snapshot": "da898949d08d5fc208344ed36a0edd25b3efdb7d77f3461fb6d6cdbe1e9474bd",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-10",
+    "timestamp": "2026-10-10T07:40:12.245258+00:00",
+    "sequence": 19,
+    "snapshot": "af60f941eec3e48d4209d1d316ca2ed99b7548c40eccfcf27a2f6894533e84a6",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-11",
+    "timestamp": "2026-10-10T07:40:12.245258+00:00",
+    "sequence": 19,
+    "snapshot": "f24a0f4e95bb0d05171d07afe52b12ae359232b0258c54b5629162c4e585de04",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-12",
+    "timestamp": "2026-10-10T07:40:12.245258+00:00",
+    "sequence": 19,
+    "snapshot": "14b2eb8431de8aeb213214cd1bc54772e6ece4f9e4d90c702711b49ebda74fa9",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-13",
+    "timestamp": "2026-10-10T07:40:12.245258+00:00",
+    "sequence": 19,
+    "snapshot": "eb794bcfddd43ab67df823f77235a3173649b1643bf9bc3908d0feb78682829f",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-14",
+    "timestamp": "2026-10-10T07:40:12.245258+00:00",
+    "sequence": 19,
+    "snapshot": "33344b5aa0a544caa4609ca36b8eed19580c911beac6a08135ae4bf1211dbce5",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-15",
+    "timestamp": "2026-10-10T07:40:12.245258+00:00",
+    "sequence": 19,
+    "snapshot": "458884249e99df1c38411442cef4ef36d862ab6c2689fc6243fb19b0aab29620",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-16",
+    "timestamp": "2026-10-10T07:40:12.245258+00:00",
+    "sequence": 19,
+    "snapshot": "53d9595576176767f8fec326eef11886bc8d3d100501b888a98a0f908c4ce9a4",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-17",
+    "timestamp": "2026-10-10T07:40:12.245258+00:00",
+    "sequence": 19,
+    "snapshot": "3c32371939d8ea7d044a842fc7aa5b529583db7fc11b0ef2adcb22b65ee99f03",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-18",
+    "timestamp": "2026-10-10T07:40:12.245258+00:00",
+    "sequence": 19,
+    "snapshot": "41211aaaf9fd8d94b5b178a6e9c30ad849cae8b461d494ecbf53e369580aab96",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-19",
+    "timestamp": "2026-10-10T07:40:12.245258+00:00",
+    "sequence": 19,
+    "snapshot": "0e64e3f1c5e2120504345f8881f2c0180d0614fcaba1540c354518e0abaadc77",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-20",
+    "timestamp": "2026-10-10T07:40:12.245258+00:00",
+    "sequence": 19,
+    "snapshot": "b629b96aba7ef7eb50c5b15bd4375a5179a47e35f6f685914c4b451f94587763",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-21",
+    "timestamp": "2026-10-10T07:40:12.245258+00:00",
+    "sequence": 19,
+    "snapshot": "a7ca94b250106d16f0bc84c4f1153b7bc896e1b1ace79a330fca14954bca43ca",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-22",
+    "timestamp": "2026-10-10T07:40:12.245258+00:00",
+    "sequence": 19,
+    "snapshot": "6539a7f93f007b445a02435909e18624b4595b4fc697f53ef36feeb0ed88daf2",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-23",
+    "timestamp": "2026-10-10T07:40:12.245258+00:00",
+    "sequence": 19,
+    "snapshot": "706df70e6ff7aaadcbd95c8f6adf25e6312d66769cee13bb8358578ad4b09574",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-24",
+    "timestamp": "2026-10-10T07:40:12.245258+00:00",
+    "sequence": 19,
+    "snapshot": "bf29f6d75bcd3a92c4e5d6d17fbafc61d2be163c1b20d7f02cc9d799da33f990",
+    "disposition": "SQL_COMMITTED"
+  },
+  {
+    "asset": "H07-b41b39-25",
+    "timestamp": "2026-10-10T07:40:12.245258+00:00",
+    "sequence": 19,
+    "snapshot": "31e6351d60dcc14b5f299190395b85cd3335462670a89e062bac326fbf14069e",
+    "disposition": "SQL_COMMITTED"
+  }
+]

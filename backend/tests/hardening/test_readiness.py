@@ -111,7 +111,7 @@ def test_http_timeout_reports_not_ready(db: Session, monkeypatch: pytest.MonkeyP
 @pytest.mark.parametrize(
     "entrypoint,expected",
     [
-        ("builtins:abs", "ready"),
+        ("builtins:abs", "error"),  # Importability alone is not a transactional runtime.
         ("missing_phase8_module:predict", "error"),
         ("builtins:missing", "error"),
         ("invalid", "error"),

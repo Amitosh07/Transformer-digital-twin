@@ -32,6 +32,7 @@ class StoredWindow(CanonicalModel):
 
 
 class ReplayIn(CanonicalModel):
+    replay_transformer_id: str | None = Field(default=None, min_length=1, max_length=128)
     transformer_id: str | None = Field(default=None, min_length=1, max_length=128)
     source_name: str = Field(default="api", min_length=1, max_length=255)
     records: list[dict[str, Any]] | None = Field(default=None, strict=True)
@@ -56,6 +57,9 @@ class IngestResult(CanonicalModel):
     analytics: AnalyticsOut | None = None
     duplicate: bool = False
     warnings: list[str] = Field(default_factory=list)
+    snapshot_id: str | None = None
+    ingestion_outcome: Literal['ACCEPTED','EXACT_RETRY','REJECTED_LATE_OBSERVATION'] = 'ACCEPTED'
+    forward_state_advanced: bool = False
 
 
 class ValidationSample(CanonicalModel):

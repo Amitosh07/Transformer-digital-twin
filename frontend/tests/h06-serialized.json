@@ -1,0 +1,109 @@
+{
+  "rul": {
+    "rul_status": "SIMULATED_ESTIMATE",
+    "rul_method": "SYNTHETIC_FIRST_PASSAGE_V1",
+    "rul_target_definition": "Declared fictional degradation reaches scenario endpoint; not physical end-of-life",
+    "rul_value": 80.0,
+    "rul_unit": "h",
+    "rul_lower": 66.66666666666667,
+    "rul_upper": 100.0,
+    "uncertainty_kind": "SCENARIO_RANGE",
+    "forecast_horizon_hours": 100.0,
+    "future_duty_scenario": "FICTIONAL_CONSTANT_RATE",
+    "degradation_state": 0.2,
+    "end_threshold": 1.0,
+    "degradation_unit": "1",
+    "degradation_rate_per_hour": 0.01,
+    "equivalent_ageing_hours": null,
+    "source_kind": "REPLAYED",
+    "simulated": true,
+    "model_version": "synthetic-first-passage-v1",
+    "config_version": "fictional-rul-v1",
+    "required_inputs": [],
+    "assumptions": [
+      "Fictional latent D is independent of health index and anomaly score",
+      "Endpoint is a scenario definition, not transformer end-of-life",
+      "Future duty begins at this event time; rates have units 1/hour",
+      "Declared rate range 0.008\u20130.012/hour; not calibrated confidence",
+      "Declared future duty: [{'hours': 100.0, 'rate_per_hour': 0.01}]"
+    ],
+    "limitation_codes": [],
+    "coverage_start": null,
+    "coverage_end": "2026-10-09T00:00:00.000000Z",
+    "coverage_fraction": null,
+    "timestamp": "2026-10-09T00:00:00.000000Z"
+  },
+  "energy": {
+    "transformer_id": "HX-A",
+    "timestamp": "2026-10-09T01:00:00.000000Z",
+    "schema_version": "1.1.0",
+    "energy_status": "AVAILABLE",
+    "energy_method": "SIMULATED",
+    "calculation_method": "COUNTER_DIFFERENCE",
+    "source_kind": "SIMULATED",
+    "active_power_unit_status": "UNKNOWN",
+    "energy_unit": "kWh",
+    "window_start": "2026-10-09T00:00:00.000000Z",
+    "window_end": "2026-10-09T01:00:00.000000Z",
+    "consumed_kwh": 10.0,
+    "covered_consumed_kwh": 10.0,
+    "import_kwh": 10.0,
+    "export_kwh": null,
+    "peak_kw": null,
+    "loss_kw": null,
+    "loss_kwh": null,
+    "estimated_savings_kwh": null,
+    "efficiency_percent": null,
+    "loss_method": null,
+    "coverage_seconds": 3600.0,
+    "coverage_fraction": 1.0,
+    "gap_count": 0,
+    "reset_count": 0,
+    "missing_intervals": [],
+    "peak_time": null,
+    "load_profile": [],
+    "conservation_recommendation": null,
+    "conservation_evidence": [],
+    "assumptions": [
+      "Source lineage: {'source_kind': 'SIMULATED', 'source_name': 'h00-fictional', 'origin_kind': 'SIMULATED', 'origin_transformer_id': None, 'replay_run_id': None, 'measurement_side': 'LV', 'map_version': 'h00-requirements-v1'}",
+      "Counter and power are alternative authoritative methods; never summed",
+      "No extrapolation beyond supported event-time endpoints",
+      "Power sign convention: UNKNOWN",
+      "Fictional simulated measurements/configuration; not measured real energy"
+    ],
+    "limitation_codes": [
+      "LOSS_PARAMETERS_BOUNDARY_OR_COVERAGE_INELIGIBLE",
+      "INSTANTANEOUS_LOAD_PROFILE_UNAVAILABLE"
+    ],
+    "config_version": "h06-test-counter-v1",
+    "map_version": "h00-requirements-v1",
+    "calculation_version": "energy-event-time-v1",
+    "provenance": {
+      "power_unit": "UNKNOWN",
+      "counter_unit": "kWh",
+      "counter_semantics": "CUMULATIVE_IMPORT",
+      "continuity_evidence": null,
+      "measurement_side": "LV",
+      "maximum_gap_seconds": 3600,
+      "minimum_coverage_fraction": 1.0
+    }
+  },
+  "projection": {
+    "transformer_id": "HX-A",
+    "timestamp": "2026-10-09T00:00:00.000000Z",
+    "schema_version": "1.1.0",
+    "projected_curve": [
+      {
+        "elapsed_hours": 0.0,
+        "degradation": 0.2
+      },
+      {
+        "elapsed_hours": 80.0,
+        "degradation": 1.0
+      }
+    ],
+    "end_threshold": 1,
+    "degradation_unit": "1",
+    "forecast_horizon_hours": 100
+  }
+}

@@ -193,7 +193,7 @@ export const Architecture: React.FC = () => {
                 </span>
                 <h4 className="text-sm font-bold text-slate-100 mt-3 mb-2">ML & Physics Models</h4>
                 <p className="text-slate-400 text-[11px] leading-relaxed font-sans mb-3">
-                  IEEE thermodynamic differential equations, multivariate isolation forest anomaly detector, and 6-pillar Health Index engine.
+                  Backend thermal modelling, multivariate isolation forest anomaly detector, and 6-pillar Health Index engine.
                 </p>
               </div>
               <div className="pt-3 border-t border-slate-900 text-[10px] text-slate-500">

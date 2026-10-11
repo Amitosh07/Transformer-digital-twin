@@ -1,0 +1,28 @@
+{
+  "map_version": "fictional-lv-v1",
+  "gateway_id": "H06-DEMO-GW",
+  "poll_interval_seconds": 2,
+  "timeout_seconds": 2,
+  "snapshot_retries": 3,
+  "backoff_seconds": 1,
+  "max_backoff_seconds": 30,
+  "mqtt": {
+    "host": "mqtt",
+    "port": 1883
+  },
+  "receipt_base_url": "http://backend:8000",
+  "spool": {
+    "directory": "/spool",
+    "max_records": 10000,
+    "max_bytes": 16777216
+  },
+  "assets": [
+    {
+      "transformer_id": "H06-SIM-05",
+      "unit_id": 1,
+      "host": "modbus-simulator",
+      "port": 1502,
+      "expected_interval_seconds": 5
+    }
+  ]
+}

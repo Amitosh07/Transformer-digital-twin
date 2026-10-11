@@ -1,0 +1,44 @@
+{
+  "map_version": "fictional-lv-v1",
+  "host": "0.0.0.0",
+  "port": 1502,
+  "start_utc": "2026-10-08T23:00:00Z",
+  "seed": 42,
+  "interval_seconds": 5,
+  "timeline": [
+    {
+      "from_seconds": 3600,
+      "to_seconds": 3660,
+      "scenario": "HEALTHY"
+    },
+    {
+      "from_seconds": 3660,
+      "to_seconds": 3720,
+      "scenario": "OVERLOAD"
+    },
+    {
+      "from_seconds": 3720,
+      "to_seconds": 3780,
+      "scenario": "ALARM_TRIP"
+    }
+  ],
+  "assets": [
+    {
+      "transformer_id": "H06-SIM-05",
+      "unit_id": 1,
+      "seed": 42,
+      "configuration": {
+        "transformer_id": "H06-SIM-05",
+        "rated_power_kva": 30,
+        "rated_voltage_lv": 400,
+        "rated_current_a": 43.30127018922193,
+        "configuration_status": "SYNTHETIC_CONFIG",
+        "configuration_version": "fictional-demo-v1",
+        "measurement_side": "LV"
+      }
+    }
+  ],
+  "container_network": true,
+  "pre_roll_steps": 60,
+  "pre_roll_interval_seconds": 60
+}

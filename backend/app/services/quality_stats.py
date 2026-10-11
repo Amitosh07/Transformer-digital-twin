@@ -115,11 +115,13 @@ def parse_records(
     records: list[TelemetryIn] = []
     for index, row in enumerate(rows):
         payload = dict(row)
-        payload["source_name"] = (
-            source_name if force_source else payload.get("source_name") or source_name
-        )
+        # Run/transport labels are not semantic source provenance. Preserve null.
         if transformer_id is not None:
-            payload["transformer_id"] = transformer_id
+            if payload.get('transformer_id') not in (None, transformer_id):
+                # Do not relabel live records into a replay destination silently.
+                stats.parse_error_count += 1
+                continue
+            payload.setdefault('transformer_id', transformer_id)
         try:
             record = TelemetryIn.model_validate(payload)
         except ValidationError as exc:

@@ -1,0 +1,404 @@
+{
+  "$id": "https://transformer-digital-twin.invalid/contracts/1.1.0/asset.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "anyOf": [
+          {
+            "properties": {
+              "schema_version": {
+                "const": "1.1.0"
+              }
+            },
+            "required": [
+              "schema_version"
+            ]
+          },
+          {
+            "properties": {
+              "configuration_metadata": {
+                "type": "object"
+              }
+            },
+            "required": [
+              "configuration_metadata"
+            ]
+          }
+        ]
+      },
+      "then": {
+        "properties": {
+          "rated_current_a": {
+            "exclusiveMinimum": 0,
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "rated_power_kva": {
+            "exclusiveMinimum": 0,
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "rated_voltage_hv": {
+            "exclusiveMinimum": 0,
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "rated_voltage_lv": {
+            "exclusiveMinimum": 0,
+            "type": [
+              "number",
+              "null"
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "properties": {
+    "configuration_metadata": {
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "field_metadata": {
+              "additionalProperties": {
+                "additionalProperties": false,
+                "properties": {
+                  "effective_at": {
+                    "anyOf": [
+                      {
+                        "format": "date-time",
+                        "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,6})?(?:Z|[+-]\\d{2}:\\d{2})$",
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "evidence_reference": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "provenance": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "unit": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "verification": {
+                    "enum": [
+                      "SYNTHETIC_CONFIG",
+                      "VERIFIED",
+                      "UNVERIFIED"
+                    ]
+                  }
+                },
+                "required": [
+                  "unit",
+                  "verification",
+                  "provenance",
+                  "evidence_reference",
+                  "effective_at"
+                ],
+                "type": "object"
+              },
+              "type": "object"
+            },
+            "status": {
+              "enum": [
+                "SYNTHETIC_CONFIG",
+                "VERIFIED",
+                "UNVERIFIED"
+              ]
+            },
+            "version": {
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          "required": [
+            "version",
+            "status",
+            "field_metadata"
+          ],
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "cooling_class": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "created_at": {
+      "format": "date-time",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,6})?(?:Z|[+-]\\d{2}:\\d{2})$",
+      "type": "string"
+    },
+    "ct_ratio": {
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "primary": {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            "secondary": {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            "unit": {
+              "const": "A"
+            }
+          },
+          "required": [
+            "primary",
+            "secondary",
+            "unit"
+          ],
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "id": {
+      "maxLength": 128,
+      "minLength": 1,
+      "type": "string"
+    },
+    "impedance_percent": {
+      "exclusiveMinimum": 0,
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "insulation_type": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "loss_parameters": {
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "no_load_kw": {
+              "minimum": 0,
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "rated_load_kw": {
+              "minimum": 0,
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "reference": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "reference_temperature_deg_c": {
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "no_load_kw",
+            "rated_load_kw",
+            "reference_temperature_deg_c",
+            "reference"
+          ],
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "measurement_side": {
+      "anyOf": [
+        {
+          "enum": [
+            "HV",
+            "LV",
+            "UNKNOWN"
+          ]
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "name": {
+      "maxLength": 255,
+      "minLength": 1,
+      "type": "string"
+    },
+    "oil_type": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "pt_ratio": {
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "primary": {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            "secondary": {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            "unit": {
+              "const": "V"
+            }
+          },
+          "required": [
+            "primary",
+            "secondary",
+            "unit"
+          ],
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "rated_current_a": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "rated_frequency_hz": {
+      "exclusiveMinimum": 0,
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "rated_power_kva": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "rated_voltage_hv": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "rated_voltage_lv": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "schema_version": {
+      "enum": [
+        "1.0.0",
+        "1.1.0"
+      ]
+    },
+    "temperature_rise_limits": {
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "hot_spot_k": {
+              "exclusiveMinimum": 0,
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "reference": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "top_oil_k": {
+              "exclusiveMinimum": 0,
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "winding_k": {
+              "exclusiveMinimum": 0,
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "top_oil_k",
+            "winding_k",
+            "hot_spot_k",
+            "reference"
+          ],
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "updated_at": {
+      "format": "date-time",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,6})?(?:Z|[+-]\\d{2}:\\d{2})$",
+      "type": "string"
+    },
+    "vector_group": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "name"
+  ],
+  "title": "H00 asset",
+  "type": "object"
+}

@@ -1,0 +1,4242 @@
+[
+  {
+    "name": "telemetry-valid",
+    "schema": "telemetry.schema.json",
+    "valid": true,
+    "reason": null,
+    "payload": {
+      "transformer_id": "HX-A",
+      "timestamp": "2026-10-09T00:00:00Z",
+      "phase_voltage_l1": 230.940108,
+      "phase_voltage_l2": 230.940108,
+      "phase_voltage_l3": 230.940108,
+      "current_l1": 14.433757,
+      "current_l2": 14.433757,
+      "current_l3": 14.433757,
+      "neutral_current": 0,
+      "oil_temperature": 40,
+      "winding_temperature": 0,
+      "ambient_temperature": 25,
+      "oil_level": 80,
+      "oil_temp_alarm": 0,
+      "oil_temp_trip": 0,
+      "magnetic_oil_gauge_alarm": 0,
+      "active_power_total": 10,
+      "apparent_power_total": 10,
+      "reactive_power_total": 0,
+      "energy_kwh": 100,
+      "power_factor_l1": 1,
+      "power_factor_l2": 1,
+      "power_factor_l3": 1,
+      "source_name": "h00-fictional",
+      "scenario_id": "normal",
+      "schema_version": "1.1.0",
+      "acquisition": {
+        "source_kind": "SIMULATED",
+        "source_name": "h00-fictional",
+        "origin_kind": "SIMULATED",
+        "origin_transformer_id": null,
+        "replay_run_id": null,
+        "gateway_id": "h00-gateway",
+        "timestamp_origin": "SOURCE_SNAPSHOT",
+        "timezone_status": "DECLARED_UTC",
+        "field_units": {
+          "phase_voltage_l1": "V",
+          "phase_voltage_l2": "V",
+          "phase_voltage_l3": "V",
+          "current_l1": "A",
+          "current_l2": "A",
+          "current_l3": "A",
+          "neutral_current": "A",
+          "oil_temperature": "DEG_C",
+          "winding_temperature": "STATUS",
+          "ambient_temperature": "DEG_C",
+          "oil_level": "percent",
+          "oil_temp_alarm": "STATUS",
+          "oil_temp_trip": "STATUS",
+          "magnetic_oil_gauge_alarm": "STATUS",
+          "active_power_total": "kW",
+          "apparent_power_total": "kVA",
+          "reactive_power_total": "kVAr",
+          "energy_kwh": "kWh",
+          "power_factor_l1": "1",
+          "power_factor_l2": "1",
+          "power_factor_l3": "1"
+        },
+        "field_verification": {
+          "phase_voltage_l1": "SYNTHETIC",
+          "phase_voltage_l2": "SYNTHETIC",
+          "phase_voltage_l3": "SYNTHETIC",
+          "current_l1": "SYNTHETIC",
+          "current_l2": "SYNTHETIC",
+          "current_l3": "SYNTHETIC",
+          "neutral_current": "SYNTHETIC",
+          "oil_temperature": "SYNTHETIC",
+          "winding_temperature": "SYNTHETIC",
+          "ambient_temperature": "SYNTHETIC",
+          "oil_level": "SYNTHETIC",
+          "oil_temp_alarm": "SYNTHETIC",
+          "oil_temp_trip": "SYNTHETIC",
+          "magnetic_oil_gauge_alarm": "SYNTHETIC",
+          "active_power_total": "SYNTHETIC",
+          "apparent_power_total": "SYNTHETIC",
+          "reactive_power_total": "SYNTHETIC",
+          "energy_kwh": "SYNTHETIC",
+          "power_factor_l1": "SYNTHETIC",
+          "power_factor_l2": "SYNTHETIC",
+          "power_factor_l3": "SYNTHETIC"
+        },
+        "measurement_side": "LV",
+        "map_version": "h00-requirements-v1",
+        "snapshot_id": null,
+        "sequence": 0,
+        "expected_interval_seconds": 5
+      }
+    }
+  },
+  {
+    "name": "asset-valid",
+    "schema": "asset.schema.json",
+    "valid": true,
+    "reason": null,
+    "payload": {
+      "id": "HX-A",
+      "name": "Fictional H00 asset A",
+      "schema_version": "1.1.0",
+      "rated_power_kva": 100,
+      "rated_voltage_hv": null,
+      "rated_voltage_lv": 400,
+      "rated_current_a": 144.337567,
+      "rated_frequency_hz": 50,
+      "vector_group": null,
+      "impedance_percent": null,
+      "temperature_rise_limits": null,
+      "measurement_side": "LV",
+      "ct_ratio": null,
+      "pt_ratio": null,
+      "insulation_type": null,
+      "loss_parameters": null,
+      "cooling_class": null,
+      "oil_type": null,
+      "configuration_metadata": {
+        "version": "fictional-config-v1",
+        "status": "SYNTHETIC_CONFIG",
+        "field_metadata": {
+          "rated_power_kva": {
+            "unit": "kVA",
+            "verification": "SYNTHETIC_CONFIG",
+            "provenance": "Fictional H00 configuration; LV voltage is line-to-line",
+            "evidence_reference": null,
+            "effective_at": "2026-10-09T00:00:00Z"
+          },
+          "rated_voltage_lv": {
+            "unit": "V",
+            "verification": "SYNTHETIC_CONFIG",
+            "provenance": "Fictional H00 configuration; LV voltage is line-to-line",
+            "evidence_reference": null,
+            "effective_at": "2026-10-09T00:00:00Z"
+          },
+          "rated_current_a": {
+            "unit": "A",
+            "verification": "SYNTHETIC_CONFIG",
+            "provenance": "Fictional H00 configuration; LV voltage is line-to-line",
+            "evidence_reference": null,
+            "effective_at": "2026-10-09T00:00:00Z"
+          },
+          "rated_frequency_hz": {
+            "unit": "Hz",
+            "verification": "SYNTHETIC_CONFIG",
+            "provenance": "Fictional H00 configuration; LV voltage is line-to-line",
+            "evidence_reference": null,
+            "effective_at": "2026-10-09T00:00:00Z"
+          },
+          "measurement_side": {
+            "unit": "1",
+            "verification": "SYNTHETIC_CONFIG",
+            "provenance": "Fictional H00 configuration; LV voltage is line-to-line",
+            "evidence_reference": null,
+            "effective_at": "2026-10-09T00:00:00Z"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "analytics-valid",
+    "schema": "analytics.schema.json",
+    "valid": true,
+    "reason": null,
+    "payload": {
+      "transformer_id": "HX-A",
+      "timestamp": "2026-10-09T00:00:00Z",
+      "inference_status": "OK",
+      "missing_features": [],
+      "loading_percent": 10,
+      "thermal_model_temperature": null,
+      "thermal_residual": null,
+      "thermal_state": null,
+      "anomaly_score": null,
+      "anomaly_flag": null,
+      "health_index": null,
+      "health_components": null,
+      "fault_risk": null,
+      "predicted_fault": null,
+      "prediction_confidence": null,
+      "maintenance_priority": null,
+      "maintenance_recommendation": null,
+      "error_detail": null,
+      "health_reason_codes": [],
+      "reason_codes": [],
+      "schema_version": "1.1.0",
+      "feature_version": "1.0.0",
+      "model_version": "h00-interface-only",
+      "metadata": {
+        "thermal_readiness": "WARMING_UP",
+        "thermal_model_mode": "PUBLIC_EMPIRICAL",
+        "thermal_temperature_unit": "SOURCE_UNIT",
+        "apparent_power_utilization": 0.1,
+        "forecast_operational_status": "INSUFFICIENT_VALIDATION",
+        "experimental_fault_risk": null,
+        "maintenance_trip_latched": false,
+        "maintenance_clear_policy_status": "NOT_APPLICABLE",
+        "coverage_overall": 1,
+        "health_coverage": null,
+        "extended_reason_codes": [
+          "THERMAL_WARMUP"
+        ],
+        "extended_health_reason_codes": [],
+        "reason_descriptions": {
+          "THERMAL_WARMUP": "Thermal model is warming up"
+        },
+        "components": {
+          "thermal": {
+            "status": "WARMING_UP",
+            "unit": null,
+            "coverage_fraction": null,
+            "reasons": [
+              "INTERFACE_EXAMPLE_ONLY"
+            ]
+          },
+          "anomaly": {
+            "status": "UNAVAILABLE",
+            "unit": null,
+            "coverage_fraction": null,
+            "reasons": [
+              "INTERFACE_EXAMPLE_ONLY"
+            ]
+          },
+          "health": {
+            "status": "UNAVAILABLE",
+            "unit": null,
+            "coverage_fraction": null,
+            "reasons": [
+              "INTERFACE_EXAMPLE_ONLY"
+            ]
+          },
+          "maintenance": {
+            "status": "UNAVAILABLE",
+            "unit": null,
+            "coverage_fraction": null,
+            "reasons": [
+              "INTERFACE_EXAMPLE_ONLY"
+            ]
+          },
+          "forecast": {
+            "status": "UNAVAILABLE",
+            "unit": null,
+            "coverage_fraction": null,
+            "reasons": [
+              "INTERFACE_EXAMPLE_ONLY"
+            ]
+          },
+          "rul": {
+            "status": "UNAVAILABLE",
+            "unit": null,
+            "coverage_fraction": null,
+            "reasons": [
+              "INTERFACE_EXAMPLE_ONLY"
+            ]
+          }
+        },
+        "units": {
+          "loading_percent": "percent",
+          "thermal_model_temperature": "SOURCE_UNIT",
+          "winding_temperature": "STATUS"
+        },
+        "coverage": {
+          "start": "2026-10-09T00:00:00Z",
+          "end": "2026-10-09T00:00:00Z",
+          "covered_seconds": 0,
+          "expected_seconds": 0,
+          "fraction": null,
+          "gap_count": 0,
+          "missing_fields": []
+        },
+        "forecast": {
+          "target_definition": null,
+          "horizon_hours": null,
+          "release_status": "INSUFFICIENT_VALIDATION",
+          "operational_eligible": false,
+          "limitation_codes": [
+            "RELEASE_EVIDENCE_MISSING"
+          ]
+        },
+        "versions": {
+          "bundle_id": "h00-interface-only",
+          "configuration_version": "fictional-config-v1",
+          "preprocessing_version": "1.0.0",
+          "artifact_schema_version": "1.0.0"
+        },
+        "reason_evidence": []
+      }
+    }
+  },
+  {
+    "name": "rul-valid",
+    "schema": "rul.schema.json",
+    "valid": true,
+    "reason": null,
+    "payload": {
+      "transformer_id": "HX-A",
+      "timestamp": "2026-10-09T00:00:00Z",
+      "rul": {
+        "rul_status": "SIMULATED_ESTIMATE",
+        "rul_method": "SYNTHETIC_FIRST_PASSAGE_V1",
+        "rul_target_definition": "Fictional D reaches scenario D_EOL=1",
+        "rul_value": 80,
+        "rul_unit": "h",
+        "rul_lower": 66.6666666667,
+        "rul_upper": 100,
+        "uncertainty_kind": "SCENARIO_RANGE",
+        "forecast_horizon_hours": 100,
+        "future_duty_scenario": "Constant declared synthetic rate",
+        "degradation_state": 0.2,
+        "end_threshold": 1,
+        "degradation_unit": "1",
+        "degradation_rate_per_hour": 0.01,
+        "equivalent_ageing_hours": null,
+        "source_kind": "SIMULATED",
+        "simulated": true,
+        "model_version": "synthetic-first-passage-v1",
+        "config_version": "fictional-config-v1",
+        "required_inputs": [],
+        "assumptions": [
+          "Rate constant .01/hour; scenario rate bounds .008 to .012/hour",
+          "D is synthetic latent state, independent of health index"
+        ],
+        "limitation_codes": [
+          "SYNTHETIC_SCENARIO_ONLY",
+          "NOT_EMPIRICAL_CONFIDENCE"
+        ],
+        "coverage_start": "2026-10-09T00:00:00Z",
+        "coverage_end": "2026-10-09T00:00:00Z",
+        "coverage_fraction": 1,
+        "timestamp": "2026-10-09T00:00:00Z"
+      },
+      "schema_version": "1.1.0"
+    }
+  },
+  {
+    "name": "energy-valid",
+    "schema": "energy.schema.json",
+    "valid": true,
+    "reason": null,
+    "payload": {
+      "transformer_id": "HX-A",
+      "timestamp": "2026-10-09T02:00:00Z",
+      "schema_version": "1.1.0",
+      "energy_status": "AVAILABLE",
+      "energy_method": "SIMULATED",
+      "calculation_method": "TRAPEZOID",
+      "source_kind": "SIMULATED",
+      "active_power_unit_status": "SYNTHETIC",
+      "energy_unit": "kWh",
+      "window_start": "2026-10-09T00:00:00Z",
+      "window_end": "2026-10-09T02:00:00Z",
+      "consumed_kwh": 20,
+      "covered_consumed_kwh": 20,
+      "import_kwh": null,
+      "export_kwh": null,
+      "coverage_seconds": 7200,
+      "coverage_fraction": 1,
+      "gap_count": 0,
+      "reset_count": 0,
+      "missing_intervals": [],
+      "peak_kw": null,
+      "peak_time": null,
+      "loss_kw": null,
+      "loss_kwh": null,
+      "efficiency_percent": null,
+      "loss_method": null,
+      "conservation_recommendation": null,
+      "estimated_savings_kwh": null,
+      "load_profile": [],
+      "conservation_evidence": [],
+      "assumptions": [
+        "Arithmetic oracle: declared supported 1h intervals, not a production 5s stream"
+      ],
+      "limitation_codes": [
+        "LOSS_INPUTS_MISSING",
+        "NO_SAVINGS_BASELINE"
+      ],
+      "config_version": "fictional-config-v1",
+      "map_version": null,
+      "calculation_version": "h00-arithmetic-v1",
+      "provenance": {
+        "power_unit": "kW",
+        "counter_unit": null,
+        "counter_semantics": null,
+        "continuity_evidence": null,
+        "measurement_side": "LV",
+        "maximum_gap_seconds": 3600,
+        "minimum_coverage_fraction": 1
+      }
+    }
+  },
+  {
+    "name": "receipt-valid",
+    "schema": "receipt.schema.json",
+    "valid": true,
+    "reason": null,
+    "payload": {
+      "schema_version": "1.1.0",
+      "receipt_status": "COMMITTED",
+      "snapshot_id": "e43cda01fefabd186e1b688fede57a31599891db3ad74b5f2f0b9731bd825617",
+      "payload_hash": "e43cda01fefabd186e1b688fede57a31599891db3ad74b5f2f0b9731bd825617",
+      "transformer_id": "HX-A",
+      "timestamp": "2026-10-09T00:00:00Z",
+      "received_at": "2026-10-09T00:00:00.100000Z",
+      "committed_at": "2026-10-09T00:00:00.200000Z",
+      "accepted_snapshot_id": "e43cda01fefabd186e1b688fede57a31599891db3ad74b5f2f0b9731bd825617",
+      "accepted_payload_hash": "e43cda01fefabd186e1b688fede57a31599891db3ad74b5f2f0b9731bd825617",
+      "ingestion_outcome": "ACCEPTED",
+      "analytics_status": "UNAVAILABLE",
+      "state_coverage_loss": true
+    }
+  },
+  {
+    "name": "ingestion-outcome-valid",
+    "schema": "ingestion-outcome.schema.json",
+    "valid": true,
+    "reason": null,
+    "payload": {
+      "schema_version": "1.1.0",
+      "transformer_id": "HX-A",
+      "timestamp": "2026-10-09T00:00:00Z",
+      "snapshot_id": "e43cda01fefabd186e1b688fede57a31599891db3ad74b5f2f0b9731bd825617",
+      "ingestion_outcome": "REJECTED_LATE_OBSERVATION",
+      "http_status": 409,
+      "forward_state_advanced": false,
+      "analytics": null,
+      "reason": "Earlier than latest accepted event; no forward inference"
+    }
+  },
+  {
+    "name": "checkpoint-valid",
+    "schema": "checkpoint.schema.json",
+    "valid": true,
+    "reason": null,
+    "payload": {
+      "checkpoint_version": "1.0.0",
+      "transformer_id": "HX-A",
+      "committed_event_time": "2026-10-09T00:00:00Z",
+      "last_snapshot_id": "e43cda01fefabd186e1b688fede57a31599891db3ad74b5f2f0b9731bd825617",
+      "last_payload_hash": "e43cda01fefabd186e1b688fede57a31599891db3ad74b5f2f0b9731bd825617",
+      "versions": {
+        "bundle_id": "h00-interface-only",
+        "contract_version": "1.1.0",
+        "feature_version": "1.0.0",
+        "model_version": "h00-interface-only",
+        "preprocessing_version": "1.0.0",
+        "configuration_version": "fictional-config-v1"
+      },
+      "lifecycle_status": "WARMING_UP",
+      "state": {
+        "thermal": {
+          "state_version": "h01-payload-pending",
+          "payload": null
+        },
+        "history": {
+          "state_version": "h01-payload-pending",
+          "payload": null
+        },
+        "anomaly_persistence": {
+          "state_version": "h01-payload-pending",
+          "payload": null
+        },
+        "health_persistence": {
+          "state_version": "h01-payload-pending",
+          "payload": null
+        },
+        "maintenance_persistence": {
+          "state_version": "h01-payload-pending",
+          "payload": null
+        },
+        "synthetic_degradation": {
+          "state_version": "h01-payload-pending",
+          "payload": null
+        },
+        "coverage": {
+          "state_version": "h00-coverage-v1",
+          "payload": {
+            "state_coverage_loss": true,
+            "missing_inference_times": [
+              "2026-10-09T00:00:00Z"
+            ]
+          }
+        }
+      },
+      "last_result": null,
+      "observation_count": 1
+    }
+  },
+  {
+    "name": "register-map-valid",
+    "schema": "register-map.schema.json",
+    "valid": true,
+    "reason": null,
+    "payload": {
+      "map_version": "h00-requirements-v1",
+      "status": "REQUIREMENTS_ONLY",
+      "address_convention": "ZERO_BASED",
+      "coherent_snapshot": true,
+      "sequence_guard": "READ_BEFORE_AND_AFTER",
+      "control_writes_allowed": false,
+      "encoding_owner": "Person 4 / H03",
+      "blocked_details": [
+        "H03 must assign and test register addresses/counts/type/endian/scales/quality and counter width"
+      ],
+      "assets": [
+        {
+          "transformer_id": "HX-A",
+          "endpoint": "127.0.0.1:1502",
+          "unit_id": 1,
+          "measurement_side": "LV",
+          "configuration_version": "fictional-config-v1",
+          "ct_ratio": null,
+          "pt_ratio": null
+        },
+        {
+          "transformer_id": "HX-B",
+          "endpoint": "127.0.0.1:1502",
+          "unit_id": 2,
+          "measurement_side": "LV",
+          "configuration_version": "fictional-config-v1",
+          "ct_ratio": null,
+          "pt_ratio": null
+        }
+      ],
+      "entries": [
+        {
+          "field": "phase_voltage_l1",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "V",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "phase_voltage_l2",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "V",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "phase_voltage_l3",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "V",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "current_l1",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "A",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "current_l2",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "A",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "current_l3",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "A",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "neutral_current",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "A",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "oil_temperature",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "DEG_C",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "winding_temperature",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "STATUS",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "ambient_temperature",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "DEG_C",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "oil_level",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "percent",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "oil_temp_alarm",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "STATUS",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "oil_temp_trip",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "STATUS",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "magnetic_oil_gauge_alarm",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "STATUS",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "active_power_total",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "kW",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "apparent_power_total",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "kVA",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "reactive_power_total",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "kVAr",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "energy_kwh",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "kWh",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "power_factor_l1",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "1",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "power_factor_l2",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "1",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "power_factor_l3",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "1",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "timestamp",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "UTC",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "sequence",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "1",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "map_version",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "1",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        }
+      ],
+      "counter_requirements": {
+        "semantics": "CUMULATIVE_IMPORT",
+        "unit": "kWh",
+        "modulus": null,
+        "reset_evidence": "Negative deltas excluded; synthetic reset oracle",
+        "continuity_evidence": null,
+        "timestamp_timezone": "DECLARED_UTC"
+      }
+    }
+  },
+  {
+    "name": "latest-valid",
+    "schema": "latest.schema.json",
+    "valid": true,
+    "reason": null,
+    "payload": {
+      "transformer": {
+        "id": "HX-A",
+        "name": "Fictional H00 asset A",
+        "schema_version": "1.1.0",
+        "rated_power_kva": 100,
+        "rated_voltage_hv": null,
+        "rated_voltage_lv": 400,
+        "rated_current_a": 144.337567,
+        "rated_frequency_hz": 50,
+        "vector_group": null,
+        "impedance_percent": null,
+        "temperature_rise_limits": null,
+        "measurement_side": "LV",
+        "ct_ratio": null,
+        "pt_ratio": null,
+        "insulation_type": null,
+        "loss_parameters": null,
+        "cooling_class": null,
+        "oil_type": null,
+        "configuration_metadata": {
+          "version": "fictional-config-v1",
+          "status": "SYNTHETIC_CONFIG",
+          "field_metadata": {
+            "rated_power_kva": {
+              "unit": "kVA",
+              "verification": "SYNTHETIC_CONFIG",
+              "provenance": "Fictional H00 configuration; LV voltage is line-to-line",
+              "evidence_reference": null,
+              "effective_at": "2026-10-09T00:00:00Z"
+            },
+            "rated_voltage_lv": {
+              "unit": "V",
+              "verification": "SYNTHETIC_CONFIG",
+              "provenance": "Fictional H00 configuration; LV voltage is line-to-line",
+              "evidence_reference": null,
+              "effective_at": "2026-10-09T00:00:00Z"
+            },
+            "rated_current_a": {
+              "unit": "A",
+              "verification": "SYNTHETIC_CONFIG",
+              "provenance": "Fictional H00 configuration; LV voltage is line-to-line",
+              "evidence_reference": null,
+              "effective_at": "2026-10-09T00:00:00Z"
+            },
+            "rated_frequency_hz": {
+              "unit": "Hz",
+              "verification": "SYNTHETIC_CONFIG",
+              "provenance": "Fictional H00 configuration; LV voltage is line-to-line",
+              "evidence_reference": null,
+              "effective_at": "2026-10-09T00:00:00Z"
+            },
+            "measurement_side": {
+              "unit": "1",
+              "verification": "SYNTHETIC_CONFIG",
+              "provenance": "Fictional H00 configuration; LV voltage is line-to-line",
+              "evidence_reference": null,
+              "effective_at": "2026-10-09T00:00:00Z"
+            }
+          }
+        }
+      },
+      "telemetry": {
+        "transformer_id": "HX-A",
+        "timestamp": "2026-10-09T00:00:00Z",
+        "phase_voltage_l1": 230.940108,
+        "phase_voltage_l2": 230.940108,
+        "phase_voltage_l3": 230.940108,
+        "current_l1": 14.433757,
+        "current_l2": 14.433757,
+        "current_l3": 14.433757,
+        "neutral_current": 0,
+        "oil_temperature": 40,
+        "winding_temperature": 0,
+        "ambient_temperature": 25,
+        "oil_level": 80,
+        "oil_temp_alarm": 0,
+        "oil_temp_trip": 0,
+        "magnetic_oil_gauge_alarm": 0,
+        "active_power_total": 10,
+        "apparent_power_total": 10,
+        "reactive_power_total": 0,
+        "energy_kwh": 100,
+        "power_factor_l1": 1,
+        "power_factor_l2": 1,
+        "power_factor_l3": 1,
+        "source_name": "h00-fictional",
+        "scenario_id": "normal",
+        "schema_version": "1.1.0",
+        "acquisition": {
+          "source_kind": "SIMULATED",
+          "source_name": "h00-fictional",
+          "origin_kind": "SIMULATED",
+          "origin_transformer_id": null,
+          "replay_run_id": null,
+          "gateway_id": "h00-gateway",
+          "timestamp_origin": "SOURCE_SNAPSHOT",
+          "timezone_status": "DECLARED_UTC",
+          "field_units": {
+            "phase_voltage_l1": "V",
+            "phase_voltage_l2": "V",
+            "phase_voltage_l3": "V",
+            "current_l1": "A",
+            "current_l2": "A",
+            "current_l3": "A",
+            "neutral_current": "A",
+            "oil_temperature": "DEG_C",
+            "winding_temperature": "STATUS",
+            "ambient_temperature": "DEG_C",
+            "oil_level": "percent",
+            "oil_temp_alarm": "STATUS",
+            "oil_temp_trip": "STATUS",
+            "magnetic_oil_gauge_alarm": "STATUS",
+            "active_power_total": "kW",
+            "apparent_power_total": "kVA",
+            "reactive_power_total": "kVAr",
+            "energy_kwh": "kWh",
+            "power_factor_l1": "1",
+            "power_factor_l2": "1",
+            "power_factor_l3": "1"
+          },
+          "field_verification": {
+            "phase_voltage_l1": "SYNTHETIC",
+            "phase_voltage_l2": "SYNTHETIC",
+            "phase_voltage_l3": "SYNTHETIC",
+            "current_l1": "SYNTHETIC",
+            "current_l2": "SYNTHETIC",
+            "current_l3": "SYNTHETIC",
+            "neutral_current": "SYNTHETIC",
+            "oil_temperature": "SYNTHETIC",
+            "winding_temperature": "SYNTHETIC",
+            "ambient_temperature": "SYNTHETIC",
+            "oil_level": "SYNTHETIC",
+            "oil_temp_alarm": "SYNTHETIC",
+            "oil_temp_trip": "SYNTHETIC",
+            "magnetic_oil_gauge_alarm": "SYNTHETIC",
+            "active_power_total": "SYNTHETIC",
+            "apparent_power_total": "SYNTHETIC",
+            "reactive_power_total": "SYNTHETIC",
+            "energy_kwh": "SYNTHETIC",
+            "power_factor_l1": "SYNTHETIC",
+            "power_factor_l2": "SYNTHETIC",
+            "power_factor_l3": "SYNTHETIC"
+          },
+          "measurement_side": "LV",
+          "map_version": "h00-requirements-v1",
+          "snapshot_id": "e43cda01fefabd186e1b688fede57a31599891db3ad74b5f2f0b9731bd825617",
+          "sequence": 0,
+          "expected_interval_seconds": 5
+        },
+        "id": 1,
+        "is_missing_critical": false,
+        "data_quality_score": 1,
+        "received_at": "2026-10-09T00:00:00.100000Z"
+      },
+      "analytics": null,
+      "open_alerts_count": 0,
+      "demo_mode": true,
+      "data_source": {
+        "source_name": "h00-fictional",
+        "scenario_id": "normal"
+      },
+      "schema_version": "1.1.0",
+      "feature_version": null,
+      "model_version": null,
+      "analytics_availability": {
+        "status": "UNAVAILABLE",
+        "reasons": [
+          "ML_UNAVAILABLE"
+        ],
+        "state_coverage_loss": true
+      }
+    }
+  },
+  {
+    "name": "telemetry-invalid",
+    "schema": "telemetry.schema.json",
+    "valid": false,
+    "reason": "Intentional contract violation",
+    "payload": {
+      "transformer_id": "HX-A",
+      "timestamp": "2026-10-09T00:00:00Z",
+      "phase_voltage_l1": 230.940108,
+      "phase_voltage_l2": 230.940108,
+      "phase_voltage_l3": 230.940108,
+      "current_l1": 14.433757,
+      "current_l2": 14.433757,
+      "current_l3": 14.433757,
+      "neutral_current": 0,
+      "oil_temperature": 40,
+      "winding_temperature": 0,
+      "ambient_temperature": 25,
+      "oil_level": 80,
+      "oil_temp_alarm": 0,
+      "oil_temp_trip": 0,
+      "magnetic_oil_gauge_alarm": 0,
+      "active_power_total": 10,
+      "apparent_power_total": 10,
+      "reactive_power_total": 0,
+      "energy_kwh": 100,
+      "power_factor_l1": 1,
+      "power_factor_l2": 1,
+      "power_factor_l3": 1,
+      "source_name": "h00-fictional",
+      "scenario_id": "normal",
+      "schema_version": "1.1.0",
+      "acquisition": {
+        "source_kind": "SIMULATED",
+        "source_name": "h00-fictional",
+        "origin_kind": "SIMULATED",
+        "origin_transformer_id": null,
+        "replay_run_id": null,
+        "gateway_id": "h00-gateway",
+        "timestamp_origin": "SOURCE_SNAPSHOT",
+        "timezone_status": "DECLARED_UTC",
+        "field_units": {
+          "phase_voltage_l1": "V",
+          "phase_voltage_l2": "V",
+          "phase_voltage_l3": "V",
+          "current_l1": "A",
+          "current_l2": "A",
+          "current_l3": "A",
+          "neutral_current": "A",
+          "oil_temperature": "DEG_C",
+          "winding_temperature": "STATUS",
+          "ambient_temperature": "DEG_C",
+          "oil_level": "percent",
+          "oil_temp_alarm": "STATUS",
+          "oil_temp_trip": "STATUS",
+          "magnetic_oil_gauge_alarm": "STATUS",
+          "active_power_total": "kW",
+          "apparent_power_total": "kVA",
+          "reactive_power_total": "kVAr",
+          "energy_kwh": "kWh",
+          "power_factor_l1": "1",
+          "power_factor_l2": "1",
+          "power_factor_l3": "1"
+        },
+        "field_verification": {
+          "phase_voltage_l1": "SYNTHETIC",
+          "phase_voltage_l2": "SYNTHETIC",
+          "phase_voltage_l3": "SYNTHETIC",
+          "current_l1": "SYNTHETIC",
+          "current_l2": "SYNTHETIC",
+          "current_l3": "SYNTHETIC",
+          "neutral_current": "SYNTHETIC",
+          "oil_temperature": "SYNTHETIC",
+          "winding_temperature": "SYNTHETIC",
+          "ambient_temperature": "SYNTHETIC",
+          "oil_level": "SYNTHETIC",
+          "oil_temp_alarm": "SYNTHETIC",
+          "oil_temp_trip": "SYNTHETIC",
+          "magnetic_oil_gauge_alarm": "SYNTHETIC",
+          "active_power_total": "SYNTHETIC",
+          "apparent_power_total": "SYNTHETIC",
+          "reactive_power_total": "SYNTHETIC",
+          "energy_kwh": "SYNTHETIC",
+          "power_factor_l1": "SYNTHETIC",
+          "power_factor_l2": "SYNTHETIC",
+          "power_factor_l3": "SYNTHETIC"
+        },
+        "measurement_side": "LV",
+        "map_version": "h00-requirements-v1",
+        "snapshot_id": null,
+        "sequence": 0,
+        "expected_interval_seconds": 5
+      },
+      "received_at": "2026-10-09T00:00:00Z"
+    }
+  },
+  {
+    "name": "asset-invalid",
+    "schema": "asset.schema.json",
+    "valid": false,
+    "reason": "Intentional contract violation",
+    "payload": {
+      "id": "HX-A",
+      "name": "Fictional H00 asset A",
+      "schema_version": "1.1.0",
+      "rated_power_kva": -1,
+      "rated_voltage_hv": null,
+      "rated_voltage_lv": 400,
+      "rated_current_a": 144.337567,
+      "rated_frequency_hz": 50,
+      "vector_group": null,
+      "impedance_percent": null,
+      "temperature_rise_limits": null,
+      "measurement_side": "LV",
+      "ct_ratio": null,
+      "pt_ratio": null,
+      "insulation_type": null,
+      "loss_parameters": null,
+      "cooling_class": null,
+      "oil_type": null,
+      "configuration_metadata": {
+        "version": "fictional-config-v1",
+        "status": "SYNTHETIC_CONFIG",
+        "field_metadata": {
+          "rated_power_kva": {
+            "unit": "kVA",
+            "verification": "SYNTHETIC_CONFIG",
+            "provenance": "Fictional H00 configuration; LV voltage is line-to-line",
+            "evidence_reference": null,
+            "effective_at": "2026-10-09T00:00:00Z"
+          },
+          "rated_voltage_lv": {
+            "unit": "V",
+            "verification": "SYNTHETIC_CONFIG",
+            "provenance": "Fictional H00 configuration; LV voltage is line-to-line",
+            "evidence_reference": null,
+            "effective_at": "2026-10-09T00:00:00Z"
+          },
+          "rated_current_a": {
+            "unit": "A",
+            "verification": "SYNTHETIC_CONFIG",
+            "provenance": "Fictional H00 configuration; LV voltage is line-to-line",
+            "evidence_reference": null,
+            "effective_at": "2026-10-09T00:00:00Z"
+          },
+          "rated_frequency_hz": {
+            "unit": "Hz",
+            "verification": "SYNTHETIC_CONFIG",
+            "provenance": "Fictional H00 configuration; LV voltage is line-to-line",
+            "evidence_reference": null,
+            "effective_at": "2026-10-09T00:00:00Z"
+          },
+          "measurement_side": {
+            "unit": "1",
+            "verification": "SYNTHETIC_CONFIG",
+            "provenance": "Fictional H00 configuration; LV voltage is line-to-line",
+            "evidence_reference": null,
+            "effective_at": "2026-10-09T00:00:00Z"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "analytics-invalid",
+    "schema": "analytics.schema.json",
+    "valid": false,
+    "reason": "Intentional contract violation",
+    "payload": {
+      "transformer_id": "HX-A",
+      "timestamp": "2026-10-09T00:00:00Z",
+      "inference_status": "OK",
+      "missing_features": [],
+      "loading_percent": 10,
+      "thermal_model_temperature": null,
+      "thermal_residual": null,
+      "thermal_state": null,
+      "anomaly_score": null,
+      "anomaly_flag": 1,
+      "health_index": null,
+      "health_components": null,
+      "fault_risk": null,
+      "predicted_fault": null,
+      "prediction_confidence": null,
+      "maintenance_priority": null,
+      "maintenance_recommendation": null,
+      "error_detail": null,
+      "health_reason_codes": [],
+      "reason_codes": [],
+      "schema_version": "1.1.0",
+      "feature_version": "1.0.0",
+      "model_version": "h00-interface-only",
+      "metadata": {
+        "thermal_readiness": "WARMING_UP",
+        "thermal_model_mode": "PUBLIC_EMPIRICAL",
+        "thermal_temperature_unit": "SOURCE_UNIT",
+        "apparent_power_utilization": 0.1,
+        "forecast_operational_status": "INSUFFICIENT_VALIDATION",
+        "experimental_fault_risk": null,
+        "maintenance_trip_latched": false,
+        "maintenance_clear_policy_status": "NOT_APPLICABLE",
+        "coverage_overall": 1,
+        "health_coverage": null,
+        "extended_reason_codes": [
+          "THERMAL_WARMUP"
+        ],
+        "extended_health_reason_codes": [],
+        "reason_descriptions": {
+          "THERMAL_WARMUP": "Thermal model is warming up"
+        },
+        "components": {
+          "thermal": {
+            "status": "WARMING_UP",
+            "unit": null,
+            "coverage_fraction": null,
+            "reasons": [
+              "INTERFACE_EXAMPLE_ONLY"
+            ]
+          },
+          "anomaly": {
+            "status": "UNAVAILABLE",
+            "unit": null,
+            "coverage_fraction": null,
+            "reasons": [
+              "INTERFACE_EXAMPLE_ONLY"
+            ]
+          },
+          "health": {
+            "status": "UNAVAILABLE",
+            "unit": null,
+            "coverage_fraction": null,
+            "reasons": [
+              "INTERFACE_EXAMPLE_ONLY"
+            ]
+          },
+          "maintenance": {
+            "status": "UNAVAILABLE",
+            "unit": null,
+            "coverage_fraction": null,
+            "reasons": [
+              "INTERFACE_EXAMPLE_ONLY"
+            ]
+          },
+          "forecast": {
+            "status": "UNAVAILABLE",
+            "unit": null,
+            "coverage_fraction": null,
+            "reasons": [
+              "INTERFACE_EXAMPLE_ONLY"
+            ]
+          },
+          "rul": {
+            "status": "UNAVAILABLE",
+            "unit": null,
+            "coverage_fraction": null,
+            "reasons": [
+              "INTERFACE_EXAMPLE_ONLY"
+            ]
+          }
+        },
+        "units": {
+          "loading_percent": "percent",
+          "thermal_model_temperature": "SOURCE_UNIT",
+          "winding_temperature": "STATUS"
+        },
+        "coverage": {
+          "start": "2026-10-09T00:00:00Z",
+          "end": "2026-10-09T00:00:00Z",
+          "covered_seconds": 0,
+          "expected_seconds": 0,
+          "fraction": null,
+          "gap_count": 0,
+          "missing_fields": []
+        },
+        "forecast": {
+          "target_definition": null,
+          "horizon_hours": null,
+          "release_status": "INSUFFICIENT_VALIDATION",
+          "operational_eligible": false,
+          "limitation_codes": [
+            "RELEASE_EVIDENCE_MISSING"
+          ]
+        },
+        "versions": {
+          "bundle_id": "h00-interface-only",
+          "configuration_version": "fictional-config-v1",
+          "preprocessing_version": "1.0.0",
+          "artifact_schema_version": "1.0.0"
+        },
+        "reason_evidence": []
+      }
+    }
+  },
+  {
+    "name": "rul-invalid",
+    "schema": "rul.schema.json",
+    "valid": false,
+    "reason": "Intentional contract violation",
+    "payload": {
+      "transformer_id": "HX-A",
+      "timestamp": "2026-10-09T00:00:00Z",
+      "rul": {
+        "rul_status": "INSUFFICIENT_DATA",
+        "rul_method": "SYNTHETIC_FIRST_PASSAGE_V1",
+        "rul_target_definition": "Fictional D reaches scenario D_EOL=1",
+        "rul_value": 80,
+        "rul_unit": "h",
+        "rul_lower": 66.6666666667,
+        "rul_upper": 100,
+        "uncertainty_kind": "SCENARIO_RANGE",
+        "forecast_horizon_hours": 100,
+        "future_duty_scenario": "Constant declared synthetic rate",
+        "degradation_state": 0.2,
+        "end_threshold": 1,
+        "degradation_unit": "1",
+        "degradation_rate_per_hour": 0.01,
+        "equivalent_ageing_hours": null,
+        "source_kind": "SIMULATED",
+        "simulated": true,
+        "model_version": "synthetic-first-passage-v1",
+        "config_version": "fictional-config-v1",
+        "required_inputs": [],
+        "assumptions": [
+          "Rate constant .01/hour; scenario rate bounds .008 to .012/hour",
+          "D is synthetic latent state, independent of health index"
+        ],
+        "limitation_codes": [
+          "SYNTHETIC_SCENARIO_ONLY",
+          "NOT_EMPIRICAL_CONFIDENCE"
+        ],
+        "coverage_start": "2026-10-09T00:00:00Z",
+        "coverage_end": "2026-10-09T00:00:00Z",
+        "coverage_fraction": 1,
+        "timestamp": "2026-10-09T00:00:00Z"
+      },
+      "schema_version": "1.1.0"
+    }
+  },
+  {
+    "name": "energy-invalid",
+    "schema": "energy.schema.json",
+    "valid": false,
+    "reason": "Intentional contract violation",
+    "payload": {
+      "transformer_id": "HX-A",
+      "timestamp": "2026-10-09T02:00:00Z",
+      "schema_version": "1.1.0",
+      "energy_status": "AVAILABLE",
+      "energy_method": "SIMULATED",
+      "calculation_method": "SIMULATED",
+      "source_kind": "SIMULATED",
+      "active_power_unit_status": "SYNTHETIC",
+      "energy_unit": "kWh",
+      "window_start": "2026-10-09T00:00:00Z",
+      "window_end": "2026-10-09T02:00:00Z",
+      "consumed_kwh": 20,
+      "covered_consumed_kwh": 20,
+      "import_kwh": null,
+      "export_kwh": null,
+      "coverage_seconds": 7200,
+      "coverage_fraction": 1,
+      "gap_count": 0,
+      "reset_count": 0,
+      "missing_intervals": [],
+      "peak_kw": null,
+      "peak_time": null,
+      "loss_kw": null,
+      "loss_kwh": null,
+      "efficiency_percent": null,
+      "loss_method": null,
+      "conservation_recommendation": null,
+      "estimated_savings_kwh": null,
+      "load_profile": [],
+      "conservation_evidence": [],
+      "assumptions": [
+        "Arithmetic oracle: declared supported 1h intervals, not a production 5s stream"
+      ],
+      "limitation_codes": [
+        "LOSS_INPUTS_MISSING",
+        "NO_SAVINGS_BASELINE"
+      ],
+      "config_version": "fictional-config-v1",
+      "map_version": null,
+      "calculation_version": "h00-arithmetic-v1",
+      "provenance": {
+        "power_unit": "kW",
+        "counter_unit": null,
+        "counter_semantics": null,
+        "continuity_evidence": null,
+        "measurement_side": "LV",
+        "maximum_gap_seconds": 3600,
+        "minimum_coverage_fraction": 1
+      }
+    }
+  },
+  {
+    "name": "receipt-invalid",
+    "schema": "receipt.schema.json",
+    "valid": false,
+    "reason": "Intentional contract violation",
+    "payload": {
+      "schema_version": "1.1.0",
+      "receipt_status": "COMMITTED",
+      "snapshot_id": "e43cda01fefabd186e1b688fede57a31599891db3ad74b5f2f0b9731bd825617",
+      "payload_hash": "e43cda01fefabd186e1b688fede57a31599891db3ad74b5f2f0b9731bd825617",
+      "transformer_id": "HX-A",
+      "timestamp": "2026-10-09T00:00:00Z",
+      "received_at": "2026-10-09T00:00:00.100000Z",
+      "committed_at": null,
+      "accepted_snapshot_id": "e43cda01fefabd186e1b688fede57a31599891db3ad74b5f2f0b9731bd825617",
+      "accepted_payload_hash": "e43cda01fefabd186e1b688fede57a31599891db3ad74b5f2f0b9731bd825617",
+      "ingestion_outcome": "ACCEPTED",
+      "analytics_status": "UNAVAILABLE",
+      "state_coverage_loss": true
+    }
+  },
+  {
+    "name": "ingestion-outcome-invalid",
+    "schema": "ingestion-outcome.schema.json",
+    "valid": false,
+    "reason": "Intentional contract violation",
+    "payload": {
+      "schema_version": "1.1.0",
+      "transformer_id": "HX-A",
+      "timestamp": "2026-10-09T00:00:00Z",
+      "snapshot_id": "e43cda01fefabd186e1b688fede57a31599891db3ad74b5f2f0b9731bd825617",
+      "ingestion_outcome": "OK",
+      "http_status": 409,
+      "forward_state_advanced": false,
+      "analytics": null,
+      "reason": "Earlier than latest accepted event; no forward inference"
+    }
+  },
+  {
+    "name": "checkpoint-invalid",
+    "schema": "checkpoint.schema.json",
+    "valid": false,
+    "reason": "Intentional contract violation",
+    "payload": {
+      "checkpoint_version": "1.0.0",
+      "transformer_id": "HX-A",
+      "committed_event_time": "2026-10-09T00:00:00Z",
+      "last_snapshot_id": "e43cda01fefabd186e1b688fede57a31599891db3ad74b5f2f0b9731bd825617",
+      "last_payload_hash": "e43cda01fefabd186e1b688fede57a31599891db3ad74b5f2f0b9731bd825617",
+      "versions": {
+        "bundle_id": "h00-interface-only",
+        "contract_version": "1.1.0",
+        "feature_version": "1.0.0",
+        "model_version": "h00-interface-only",
+        "preprocessing_version": "1.0.0",
+        "configuration_version": "fictional-config-v1"
+      },
+      "lifecycle_status": "WARMING_UP",
+      "state": {
+        "thermal": {
+          "state_version": "h01-payload-pending",
+          "payload": null
+        },
+        "history": {
+          "state_version": "h01-payload-pending",
+          "payload": null
+        },
+        "anomaly_persistence": {
+          "state_version": "h01-payload-pending",
+          "payload": null
+        },
+        "health_persistence": {
+          "state_version": "h01-payload-pending",
+          "payload": null
+        },
+        "synthetic_degradation": {
+          "state_version": "h01-payload-pending",
+          "payload": null
+        },
+        "coverage": {
+          "state_version": "h00-coverage-v1",
+          "payload": {
+            "state_coverage_loss": true,
+            "missing_inference_times": [
+              "2026-10-09T00:00:00Z"
+            ]
+          }
+        }
+      },
+      "last_result": null,
+      "observation_count": 1
+    }
+  },
+  {
+    "name": "register-map-invalid",
+    "schema": "register-map.schema.json",
+    "valid": false,
+    "reason": "Intentional contract violation",
+    "payload": {
+      "map_version": "h00-requirements-v1",
+      "status": "REQUIREMENTS_ONLY",
+      "address_convention": "ZERO_BASED",
+      "coherent_snapshot": true,
+      "sequence_guard": "READ_BEFORE_AND_AFTER",
+      "control_writes_allowed": true,
+      "encoding_owner": "Person 4 / H03",
+      "blocked_details": [
+        "H03 must assign and test register addresses/counts/type/endian/scales/quality and counter width"
+      ],
+      "assets": [
+        {
+          "transformer_id": "HX-A",
+          "endpoint": "127.0.0.1:1502",
+          "unit_id": 1,
+          "measurement_side": "LV",
+          "configuration_version": "fictional-config-v1",
+          "ct_ratio": null,
+          "pt_ratio": null
+        },
+        {
+          "transformer_id": "HX-B",
+          "endpoint": "127.0.0.1:1502",
+          "unit_id": 2,
+          "measurement_side": "LV",
+          "configuration_version": "fictional-config-v1",
+          "ct_ratio": null,
+          "pt_ratio": null
+        }
+      ],
+      "entries": [
+        {
+          "field": "phase_voltage_l1",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "V",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "phase_voltage_l2",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "V",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "phase_voltage_l3",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "V",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "current_l1",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "A",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "current_l2",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "A",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "current_l3",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "A",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "neutral_current",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "A",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "oil_temperature",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "DEG_C",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "winding_temperature",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "STATUS",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "ambient_temperature",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "DEG_C",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "oil_level",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "percent",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "oil_temp_alarm",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "STATUS",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "oil_temp_trip",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "STATUS",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "magnetic_oil_gauge_alarm",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "STATUS",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "active_power_total",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "kW",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "apparent_power_total",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "kVA",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "reactive_power_total",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "kVAr",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "energy_kwh",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "kWh",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "power_factor_l1",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "1",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "power_factor_l2",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "1",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "power_factor_l3",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "1",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "timestamp",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "UTC",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "sequence",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "1",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "map_version",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "1",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        }
+      ],
+      "counter_requirements": {
+        "semantics": "CUMULATIVE_IMPORT",
+        "unit": "kWh",
+        "modulus": null,
+        "reset_evidence": "Negative deltas excluded; synthetic reset oracle",
+        "continuity_evidence": null,
+        "timestamp_timezone": "DECLARED_UTC"
+      }
+    }
+  },
+  {
+    "name": "latest-invalid",
+    "schema": "latest.schema.json",
+    "valid": false,
+    "reason": "Intentional contract violation",
+    "payload": {
+      "transformer": {
+        "id": "HX-A",
+        "name": "Fictional H00 asset A",
+        "schema_version": "1.1.0",
+        "rated_power_kva": -1,
+        "rated_voltage_hv": null,
+        "rated_voltage_lv": 400,
+        "rated_current_a": 144.337567,
+        "rated_frequency_hz": 50,
+        "vector_group": null,
+        "impedance_percent": null,
+        "temperature_rise_limits": null,
+        "measurement_side": "LV",
+        "ct_ratio": null,
+        "pt_ratio": null,
+        "insulation_type": null,
+        "loss_parameters": null,
+        "cooling_class": null,
+        "oil_type": null,
+        "configuration_metadata": {
+          "version": "fictional-config-v1",
+          "status": "SYNTHETIC_CONFIG",
+          "field_metadata": {
+            "rated_power_kva": {
+              "unit": "kVA",
+              "verification": "SYNTHETIC_CONFIG",
+              "provenance": "Fictional H00 configuration; LV voltage is line-to-line",
+              "evidence_reference": null,
+              "effective_at": "2026-10-09T00:00:00Z"
+            },
+            "rated_voltage_lv": {
+              "unit": "V",
+              "verification": "SYNTHETIC_CONFIG",
+              "provenance": "Fictional H00 configuration; LV voltage is line-to-line",
+              "evidence_reference": null,
+              "effective_at": "2026-10-09T00:00:00Z"
+            },
+            "rated_current_a": {
+              "unit": "A",
+              "verification": "SYNTHETIC_CONFIG",
+              "provenance": "Fictional H00 configuration; LV voltage is line-to-line",
+              "evidence_reference": null,
+              "effective_at": "2026-10-09T00:00:00Z"
+            },
+            "rated_frequency_hz": {
+              "unit": "Hz",
+              "verification": "SYNTHETIC_CONFIG",
+              "provenance": "Fictional H00 configuration; LV voltage is line-to-line",
+              "evidence_reference": null,
+              "effective_at": "2026-10-09T00:00:00Z"
+            },
+            "measurement_side": {
+              "unit": "1",
+              "verification": "SYNTHETIC_CONFIG",
+              "provenance": "Fictional H00 configuration; LV voltage is line-to-line",
+              "evidence_reference": null,
+              "effective_at": "2026-10-09T00:00:00Z"
+            }
+          }
+        }
+      },
+      "telemetry": {
+        "transformer_id": "HX-A",
+        "timestamp": "2026-10-09T00:00:00Z",
+        "phase_voltage_l1": 230.940108,
+        "phase_voltage_l2": 230.940108,
+        "phase_voltage_l3": 230.940108,
+        "current_l1": 14.433757,
+        "current_l2": 14.433757,
+        "current_l3": 14.433757,
+        "neutral_current": 0,
+        "oil_temperature": 40,
+        "winding_temperature": 0,
+        "ambient_temperature": 25,
+        "oil_level": 80,
+        "oil_temp_alarm": 0,
+        "oil_temp_trip": 0,
+        "magnetic_oil_gauge_alarm": 0,
+        "active_power_total": 10,
+        "apparent_power_total": 10,
+        "reactive_power_total": 0,
+        "energy_kwh": 100,
+        "power_factor_l1": 1,
+        "power_factor_l2": 1,
+        "power_factor_l3": 1,
+        "source_name": "h00-fictional",
+        "scenario_id": "normal",
+        "schema_version": "1.1.0",
+        "acquisition": {
+          "source_kind": "SIMULATED",
+          "source_name": "h00-fictional",
+          "origin_kind": "SIMULATED",
+          "origin_transformer_id": null,
+          "replay_run_id": null,
+          "gateway_id": "h00-gateway",
+          "timestamp_origin": "SOURCE_SNAPSHOT",
+          "timezone_status": "DECLARED_UTC",
+          "field_units": {
+            "phase_voltage_l1": "V",
+            "phase_voltage_l2": "V",
+            "phase_voltage_l3": "V",
+            "current_l1": "A",
+            "current_l2": "A",
+            "current_l3": "A",
+            "neutral_current": "A",
+            "oil_temperature": "DEG_C",
+            "winding_temperature": "STATUS",
+            "ambient_temperature": "DEG_C",
+            "oil_level": "percent",
+            "oil_temp_alarm": "STATUS",
+            "oil_temp_trip": "STATUS",
+            "magnetic_oil_gauge_alarm": "STATUS",
+            "active_power_total": "kW",
+            "apparent_power_total": "kVA",
+            "reactive_power_total": "kVAr",
+            "energy_kwh": "kWh",
+            "power_factor_l1": "1",
+            "power_factor_l2": "1",
+            "power_factor_l3": "1"
+          },
+          "field_verification": {
+            "phase_voltage_l1": "SYNTHETIC",
+            "phase_voltage_l2": "SYNTHETIC",
+            "phase_voltage_l3": "SYNTHETIC",
+            "current_l1": "SYNTHETIC",
+            "current_l2": "SYNTHETIC",
+            "current_l3": "SYNTHETIC",
+            "neutral_current": "SYNTHETIC",
+            "oil_temperature": "SYNTHETIC",
+            "winding_temperature": "SYNTHETIC",
+            "ambient_temperature": "SYNTHETIC",
+            "oil_level": "SYNTHETIC",
+            "oil_temp_alarm": "SYNTHETIC",
+            "oil_temp_trip": "SYNTHETIC",
+            "magnetic_oil_gauge_alarm": "SYNTHETIC",
+            "active_power_total": "SYNTHETIC",
+            "apparent_power_total": "SYNTHETIC",
+            "reactive_power_total": "SYNTHETIC",
+            "energy_kwh": "SYNTHETIC",
+            "power_factor_l1": "SYNTHETIC",
+            "power_factor_l2": "SYNTHETIC",
+            "power_factor_l3": "SYNTHETIC"
+          },
+          "measurement_side": "LV",
+          "map_version": "h00-requirements-v1",
+          "snapshot_id": null,
+          "sequence": 0,
+          "expected_interval_seconds": 5
+        },
+        "id": 1,
+        "is_missing_critical": false,
+        "data_quality_score": 1,
+        "received_at": "2026-10-09T00:00:00.100000Z"
+      },
+      "analytics": "HEALTHY",
+      "open_alerts_count": 0,
+      "demo_mode": true,
+      "data_source": {
+        "source_name": "h00-fictional",
+        "scenario_id": "normal"
+      },
+      "schema_version": "1.1.0",
+      "feature_version": null,
+      "model_version": null,
+      "analytics_availability": {
+        "status": "UNAVAILABLE",
+        "reasons": [
+          "ML_UNAVAILABLE"
+        ],
+        "state_coverage_loss": true
+      }
+    }
+  },
+  {
+    "name": "legacy-flat-no-version",
+    "schema": "telemetry.schema.json",
+    "valid": true,
+    "reason": null,
+    "payload": {
+      "transformer_id": "TX-001",
+      "timestamp": "2026-10-07T09:00:00Z",
+      "oil_temperature": 42,
+      "oil_level": 8,
+      "source_name": "simulator",
+      "scenario_id": "normal-demo",
+      "oil_temp_alarm": true,
+      "oil_temp_trip": null
+    }
+  },
+  {
+    "name": "legacy-explicit-1.0.0",
+    "schema": "telemetry.schema.json",
+    "valid": true,
+    "reason": null,
+    "payload": {
+      "transformer_id": "TX-001",
+      "timestamp": "2026-10-07T09:00:00Z",
+      "oil_temperature": 42,
+      "oil_level": 8,
+      "source_name": "simulator",
+      "scenario_id": "normal-demo",
+      "oil_temp_alarm": true,
+      "oil_temp_trip": null,
+      "schema_version": "1.0.0"
+    }
+  },
+  {
+    "name": "existing-read-api-analytics-example",
+    "schema": "analytics.schema.json",
+    "valid": true,
+    "reason": null,
+    "payload": {
+      "transformer_id": "TX-001",
+      "timestamp": "2026-10-07T09:00:00Z",
+      "inference_status": "OK",
+      "anomaly_score": 0.1,
+      "health_index": 90,
+      "fault_risk": 0.05,
+      "schema_version": "1.0.0",
+      "feature_version": "1.0.0",
+      "model_version": "stub-0.0.0"
+    }
+  },
+  {
+    "name": "legacy-unrated-registry",
+    "schema": "asset.schema.json",
+    "valid": true,
+    "reason": null,
+    "payload": {
+      "id": "TX-001",
+      "name": "Demo transformer",
+      "created_at": "2026-10-07T09:00:00Z",
+      "updated_at": "2026-10-07T09:00:00Z"
+    }
+  },
+  {
+    "name": "insufficient-analytics",
+    "schema": "analytics.schema.json",
+    "valid": true,
+    "reason": null,
+    "payload": {
+      "transformer_id": "HX-A",
+      "timestamp": "2026-10-09T00:00:00Z",
+      "inference_status": "INSUFFICIENT_DATA",
+      "missing_features": [
+        "oil_temperature",
+        "current_l1"
+      ],
+      "loading_percent": null,
+      "thermal_model_temperature": null,
+      "thermal_residual": null,
+      "thermal_state": null,
+      "anomaly_score": null,
+      "anomaly_flag": null,
+      "health_index": null,
+      "health_components": null,
+      "fault_risk": null,
+      "predicted_fault": null,
+      "prediction_confidence": null,
+      "maintenance_priority": null,
+      "maintenance_recommendation": null,
+      "error_detail": null,
+      "health_reason_codes": [],
+      "reason_codes": [],
+      "schema_version": "1.1.0",
+      "feature_version": "1.0.0",
+      "model_version": "h00-interface-only",
+      "metadata": {
+        "thermal_readiness": "WARMING_UP",
+        "thermal_model_mode": "PUBLIC_EMPIRICAL",
+        "thermal_temperature_unit": "SOURCE_UNIT",
+        "apparent_power_utilization": 0.1,
+        "forecast_operational_status": "INSUFFICIENT_VALIDATION",
+        "experimental_fault_risk": null,
+        "maintenance_trip_latched": false,
+        "maintenance_clear_policy_status": "NOT_APPLICABLE",
+        "coverage_overall": 1,
+        "health_coverage": null,
+        "extended_reason_codes": [
+          "THERMAL_WARMUP"
+        ],
+        "extended_health_reason_codes": [],
+        "reason_descriptions": {
+          "THERMAL_WARMUP": "Thermal model is warming up"
+        },
+        "components": {
+          "thermal": {
+            "status": "WARMING_UP",
+            "unit": null,
+            "coverage_fraction": null,
+            "reasons": [
+              "INTERFACE_EXAMPLE_ONLY"
+            ]
+          },
+          "anomaly": {
+            "status": "UNAVAILABLE",
+            "unit": null,
+            "coverage_fraction": null,
+            "reasons": [
+              "INTERFACE_EXAMPLE_ONLY"
+            ]
+          },
+          "health": {
+            "status": "UNAVAILABLE",
+            "unit": null,
+            "coverage_fraction": null,
+            "reasons": [
+              "INTERFACE_EXAMPLE_ONLY"
+            ]
+          },
+          "maintenance": {
+            "status": "UNAVAILABLE",
+            "unit": null,
+            "coverage_fraction": null,
+            "reasons": [
+              "INTERFACE_EXAMPLE_ONLY"
+            ]
+          },
+          "forecast": {
+            "status": "UNAVAILABLE",
+            "unit": null,
+            "coverage_fraction": null,
+            "reasons": [
+              "INTERFACE_EXAMPLE_ONLY"
+            ]
+          },
+          "rul": {
+            "status": "UNAVAILABLE",
+            "unit": null,
+            "coverage_fraction": null,
+            "reasons": [
+              "INTERFACE_EXAMPLE_ONLY"
+            ]
+          }
+        },
+        "units": {
+          "loading_percent": "percent",
+          "thermal_model_temperature": "SOURCE_UNIT",
+          "winding_temperature": "STATUS"
+        },
+        "coverage": {
+          "start": "2026-10-09T00:00:00Z",
+          "end": "2026-10-09T00:00:00Z",
+          "covered_seconds": 0,
+          "expected_seconds": 0,
+          "fraction": null,
+          "gap_count": 0,
+          "missing_fields": []
+        },
+        "forecast": {
+          "target_definition": null,
+          "horizon_hours": null,
+          "release_status": "INSUFFICIENT_VALIDATION",
+          "operational_eligible": false,
+          "limitation_codes": [
+            "RELEASE_EVIDENCE_MISSING"
+          ]
+        },
+        "versions": {
+          "bundle_id": "h00-interface-only",
+          "configuration_version": "fictional-config-v1",
+          "preprocessing_version": "1.0.0",
+          "artifact_schema_version": "1.0.0"
+        },
+        "reason_evidence": []
+      }
+    }
+  },
+  {
+    "name": "no-persisted-rul",
+    "schema": "rul.schema.json",
+    "valid": true,
+    "reason": null,
+    "payload": {
+      "transformer_id": "HX-A",
+      "timestamp": null,
+      "rul": null,
+      "schema_version": "1.1.0"
+    }
+  },
+  {
+    "name": "receipt-not-yet-committed",
+    "schema": "receipt.schema.json",
+    "valid": true,
+    "reason": null,
+    "payload": {
+      "error": {
+        "code": "RECEIPT_NOT_COMMITTED",
+        "message": "No committed receipt visible",
+        "details": {
+          "snapshot_id": "e43cda01fefabd186e1b688fede57a31599891db3ad74b5f2f0b9731bd825617"
+        }
+      }
+    }
+  },
+  {
+    "name": "naive-time",
+    "schema": "telemetry.schema.json",
+    "valid": false,
+    "reason": "naive-time",
+    "payload": {
+      "transformer_id": "TX-001",
+      "timestamp": "2026-10-09T00:00:00",
+      "oil_temperature": 42,
+      "oil_level": 8,
+      "source_name": "simulator",
+      "scenario_id": "normal-demo",
+      "oil_temp_alarm": true,
+      "oil_temp_trip": null
+    }
+  },
+  {
+    "name": "fractional-protection",
+    "schema": "telemetry.schema.json",
+    "valid": false,
+    "reason": "fractional-protection",
+    "payload": {
+      "transformer_id": "TX-001",
+      "timestamp": "2026-10-07T09:00:00Z",
+      "oil_temperature": 42,
+      "oil_level": 8,
+      "source_name": "simulator",
+      "scenario_id": "normal-demo",
+      "oil_temp_alarm": 1.0,
+      "oil_temp_trip": null
+    }
+  },
+  {
+    "name": "string-protection",
+    "schema": "telemetry.schema.json",
+    "valid": false,
+    "reason": "string-protection",
+    "payload": {
+      "transformer_id": "TX-001",
+      "timestamp": "2026-10-07T09:00:00Z",
+      "oil_temperature": 42,
+      "oil_level": 8,
+      "source_name": "simulator",
+      "scenario_id": "normal-demo",
+      "oil_temp_alarm": "1",
+      "oil_temp_trip": null
+    }
+  },
+  {
+    "name": "boolean-measurement",
+    "schema": "telemetry.schema.json",
+    "valid": false,
+    "reason": "boolean-measurement",
+    "payload": {
+      "transformer_id": "TX-001",
+      "timestamp": "2026-10-07T09:00:00Z",
+      "oil_temperature": 42,
+      "oil_level": 8,
+      "source_name": "simulator",
+      "scenario_id": "normal-demo",
+      "oil_temp_alarm": true,
+      "oil_temp_trip": null,
+      "current_l1": true
+    }
+  },
+  {
+    "name": "excluded-voltage",
+    "schema": "telemetry.schema.json",
+    "valid": false,
+    "reason": "excluded-voltage",
+    "payload": {
+      "transformer_id": "TX-001",
+      "timestamp": "2026-10-07T09:00:00Z",
+      "oil_temperature": 42,
+      "oil_level": 8,
+      "source_name": "simulator",
+      "scenario_id": "normal-demo",
+      "oil_temp_alarm": true,
+      "oil_temp_trip": null,
+      "VL12": 400
+    }
+  },
+  {
+    "name": "raw-source-column",
+    "schema": "telemetry.schema.json",
+    "valid": false,
+    "reason": "raw-source-column",
+    "payload": {
+      "transformer_id": "TX-001",
+      "timestamp": "2026-10-07T09:00:00Z",
+      "oil_temperature": 42,
+      "oil_level": 8,
+      "source_name": "simulator",
+      "scenario_id": "normal-demo",
+      "oil_temp_alarm": true,
+      "oil_temp_trip": null,
+      "DeviceTimeStamp": "2026-10-09T00:00:00Z"
+    }
+  },
+  {
+    "name": "submicrosecond-time",
+    "schema": "telemetry.schema.json",
+    "valid": false,
+    "reason": "submicrosecond-time",
+    "payload": {
+      "transformer_id": "TX-001",
+      "timestamp": "2026-10-09T00:00:00.0000001Z",
+      "oil_temperature": 42,
+      "oil_level": 8,
+      "source_name": "simulator",
+      "scenario_id": "normal-demo",
+      "oil_temp_alarm": true,
+      "oil_temp_trip": null
+    }
+  },
+  {
+    "name": "replay-without-lineage",
+    "schema": "telemetry.schema.json",
+    "valid": false,
+    "reason": "Replay requires origin/run",
+    "payload": {
+      "transformer_id": "HX-A",
+      "timestamp": "2026-10-09T00:00:00Z",
+      "phase_voltage_l1": 230.940108,
+      "phase_voltage_l2": 230.940108,
+      "phase_voltage_l3": 230.940108,
+      "current_l1": 14.433757,
+      "current_l2": 14.433757,
+      "current_l3": 14.433757,
+      "neutral_current": 0,
+      "oil_temperature": 40,
+      "winding_temperature": 0,
+      "ambient_temperature": 25,
+      "oil_level": 80,
+      "oil_temp_alarm": 0,
+      "oil_temp_trip": 0,
+      "magnetic_oil_gauge_alarm": 0,
+      "active_power_total": 10,
+      "apparent_power_total": 10,
+      "reactive_power_total": 0,
+      "energy_kwh": 100,
+      "power_factor_l1": 1,
+      "power_factor_l2": 1,
+      "power_factor_l3": 1,
+      "source_name": "h00-fictional",
+      "scenario_id": "normal",
+      "schema_version": "1.1.0",
+      "acquisition": {
+        "source_kind": "REPLAYED",
+        "source_name": "h00-fictional",
+        "origin_kind": "SIMULATED",
+        "origin_transformer_id": null,
+        "replay_run_id": null,
+        "gateway_id": "h00-gateway",
+        "timestamp_origin": "SOURCE_SNAPSHOT",
+        "timezone_status": "DECLARED_UTC",
+        "field_units": {
+          "phase_voltage_l1": "V",
+          "phase_voltage_l2": "V",
+          "phase_voltage_l3": "V",
+          "current_l1": "A",
+          "current_l2": "A",
+          "current_l3": "A",
+          "neutral_current": "A",
+          "oil_temperature": "DEG_C",
+          "winding_temperature": "STATUS",
+          "ambient_temperature": "DEG_C",
+          "oil_level": "percent",
+          "oil_temp_alarm": "STATUS",
+          "oil_temp_trip": "STATUS",
+          "magnetic_oil_gauge_alarm": "STATUS",
+          "active_power_total": "kW",
+          "apparent_power_total": "kVA",
+          "reactive_power_total": "kVAr",
+          "energy_kwh": "kWh",
+          "power_factor_l1": "1",
+          "power_factor_l2": "1",
+          "power_factor_l3": "1"
+        },
+        "field_verification": {
+          "phase_voltage_l1": "SYNTHETIC",
+          "phase_voltage_l2": "SYNTHETIC",
+          "phase_voltage_l3": "SYNTHETIC",
+          "current_l1": "SYNTHETIC",
+          "current_l2": "SYNTHETIC",
+          "current_l3": "SYNTHETIC",
+          "neutral_current": "SYNTHETIC",
+          "oil_temperature": "SYNTHETIC",
+          "winding_temperature": "SYNTHETIC",
+          "ambient_temperature": "SYNTHETIC",
+          "oil_level": "SYNTHETIC",
+          "oil_temp_alarm": "SYNTHETIC",
+          "oil_temp_trip": "SYNTHETIC",
+          "magnetic_oil_gauge_alarm": "SYNTHETIC",
+          "active_power_total": "SYNTHETIC",
+          "apparent_power_total": "SYNTHETIC",
+          "reactive_power_total": "SYNTHETIC",
+          "energy_kwh": "SYNTHETIC",
+          "power_factor_l1": "SYNTHETIC",
+          "power_factor_l2": "SYNTHETIC",
+          "power_factor_l3": "SYNTHETIC"
+        },
+        "measurement_side": "LV",
+        "map_version": "h00-requirements-v1",
+        "snapshot_id": null,
+        "sequence": 0,
+        "expected_interval_seconds": 5
+      }
+    }
+  },
+  {
+    "name": "changed-duplicate-conflict-receipt",
+    "schema": "receipt.schema.json",
+    "valid": true,
+    "reason": null,
+    "payload": {
+      "schema_version": "1.1.0",
+      "receipt_status": "CONFLICT",
+      "snapshot_id": "dcea245c04e413c0b724735d634e26743ec45351c57955b09388c33e69efb47b",
+      "payload_hash": "dcea245c04e413c0b724735d634e26743ec45351c57955b09388c33e69efb47b",
+      "transformer_id": "HX-A",
+      "timestamp": "2026-10-09T00:00:00Z",
+      "received_at": "2026-10-09T00:00:00.100000Z",
+      "committed_at": null,
+      "accepted_snapshot_id": "e43cda01fefabd186e1b688fede57a31599891db3ad74b5f2f0b9731bd825617",
+      "accepted_payload_hash": "e43cda01fefabd186e1b688fede57a31599891db3ad74b5f2f0b9731bd825617",
+      "ingestion_outcome": "CONFLICT",
+      "analytics_status": "UNAVAILABLE",
+      "state_coverage_loss": true
+    }
+  },
+  {
+    "name": "exact-retry-committed-receipt",
+    "schema": "receipt.schema.json",
+    "valid": true,
+    "reason": null,
+    "payload": {
+      "schema_version": "1.1.0",
+      "receipt_status": "COMMITTED",
+      "snapshot_id": "e43cda01fefabd186e1b688fede57a31599891db3ad74b5f2f0b9731bd825617",
+      "payload_hash": "e43cda01fefabd186e1b688fede57a31599891db3ad74b5f2f0b9731bd825617",
+      "transformer_id": "HX-A",
+      "timestamp": "2026-10-09T00:00:00Z",
+      "received_at": "2026-10-09T00:00:00.100000Z",
+      "committed_at": "2026-10-09T00:00:00.200000Z",
+      "accepted_snapshot_id": "e43cda01fefabd186e1b688fede57a31599891db3ad74b5f2f0b9731bd825617",
+      "accepted_payload_hash": "e43cda01fefabd186e1b688fede57a31599891db3ad74b5f2f0b9731bd825617",
+      "ingestion_outcome": "EXACT_RETRY",
+      "analytics_status": "UNAVAILABLE",
+      "state_coverage_loss": true
+    }
+  },
+  {
+    "name": "registered-HX-B",
+    "schema": "asset.schema.json",
+    "valid": true,
+    "reason": null,
+    "payload": {
+      "id": "HX-B",
+      "name": "Fictional H00 HX-B",
+      "schema_version": "1.1.0",
+      "rated_power_kva": 100,
+      "rated_voltage_hv": null,
+      "rated_voltage_lv": 400,
+      "rated_current_a": 144.337567,
+      "rated_frequency_hz": 50,
+      "vector_group": null,
+      "impedance_percent": null,
+      "temperature_rise_limits": null,
+      "measurement_side": "LV",
+      "ct_ratio": null,
+      "pt_ratio": null,
+      "insulation_type": null,
+      "loss_parameters": null,
+      "cooling_class": null,
+      "oil_type": null,
+      "configuration_metadata": {
+        "version": "fictional-config-v1",
+        "status": "SYNTHETIC_CONFIG",
+        "field_metadata": {
+          "rated_power_kva": {
+            "unit": "kVA",
+            "verification": "SYNTHETIC_CONFIG",
+            "provenance": "Fictional H00 configuration; LV voltage is line-to-line",
+            "evidence_reference": null,
+            "effective_at": "2026-10-09T00:00:00Z"
+          },
+          "rated_voltage_lv": {
+            "unit": "V",
+            "verification": "SYNTHETIC_CONFIG",
+            "provenance": "Fictional H00 configuration; LV voltage is line-to-line",
+            "evidence_reference": null,
+            "effective_at": "2026-10-09T00:00:00Z"
+          },
+          "rated_current_a": {
+            "unit": "A",
+            "verification": "SYNTHETIC_CONFIG",
+            "provenance": "Fictional H00 configuration; LV voltage is line-to-line",
+            "evidence_reference": null,
+            "effective_at": "2026-10-09T00:00:00Z"
+          },
+          "rated_frequency_hz": {
+            "unit": "Hz",
+            "verification": "SYNTHETIC_CONFIG",
+            "provenance": "Fictional H00 configuration; LV voltage is line-to-line",
+            "evidence_reference": null,
+            "effective_at": "2026-10-09T00:00:00Z"
+          },
+          "measurement_side": {
+            "unit": "1",
+            "verification": "SYNTHETIC_CONFIG",
+            "provenance": "Fictional H00 configuration; LV voltage is line-to-line",
+            "evidence_reference": null,
+            "effective_at": "2026-10-09T00:00:00Z"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "registered-HX-A-REPLAY",
+    "schema": "asset.schema.json",
+    "valid": true,
+    "reason": null,
+    "payload": {
+      "id": "HX-A-REPLAY",
+      "name": "Fictional H00 HX-A-REPLAY",
+      "schema_version": "1.1.0",
+      "rated_power_kva": 100,
+      "rated_voltage_hv": null,
+      "rated_voltage_lv": 400,
+      "rated_current_a": 144.337567,
+      "rated_frequency_hz": 50,
+      "vector_group": null,
+      "impedance_percent": null,
+      "temperature_rise_limits": null,
+      "measurement_side": "LV",
+      "ct_ratio": null,
+      "pt_ratio": null,
+      "insulation_type": null,
+      "loss_parameters": null,
+      "cooling_class": null,
+      "oil_type": null,
+      "configuration_metadata": {
+        "version": "fictional-config-v1",
+        "status": "SYNTHETIC_CONFIG",
+        "field_metadata": {
+          "rated_power_kva": {
+            "unit": "kVA",
+            "verification": "SYNTHETIC_CONFIG",
+            "provenance": "Fictional H00 configuration; LV voltage is line-to-line",
+            "evidence_reference": null,
+            "effective_at": "2026-10-09T00:00:00Z"
+          },
+          "rated_voltage_lv": {
+            "unit": "V",
+            "verification": "SYNTHETIC_CONFIG",
+            "provenance": "Fictional H00 configuration; LV voltage is line-to-line",
+            "evidence_reference": null,
+            "effective_at": "2026-10-09T00:00:00Z"
+          },
+          "rated_current_a": {
+            "unit": "A",
+            "verification": "SYNTHETIC_CONFIG",
+            "provenance": "Fictional H00 configuration; LV voltage is line-to-line",
+            "evidence_reference": null,
+            "effective_at": "2026-10-09T00:00:00Z"
+          },
+          "rated_frequency_hz": {
+            "unit": "Hz",
+            "verification": "SYNTHETIC_CONFIG",
+            "provenance": "Fictional H00 configuration; LV voltage is line-to-line",
+            "evidence_reference": null,
+            "effective_at": "2026-10-09T00:00:00Z"
+          },
+          "measurement_side": {
+            "unit": "1",
+            "verification": "SYNTHETIC_CONFIG",
+            "provenance": "Fictional H00 configuration; LV voltage is line-to-line",
+            "evidence_reference": null,
+            "effective_at": "2026-10-09T00:00:00Z"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "real-unverified-asset",
+    "schema": "asset.schema.json",
+    "valid": true,
+    "reason": null,
+    "payload": {
+      "id": "HX-REAL-UNKNOWN",
+      "name": "Unverified source example, not an identified real asset",
+      "schema_version": "1.1.0",
+      "rated_power_kva": null,
+      "rated_voltage_hv": null,
+      "rated_voltage_lv": null,
+      "rated_current_a": null,
+      "configuration_metadata": {
+        "version": "unknown-config-v1",
+        "status": "UNVERIFIED",
+        "field_metadata": {}
+      }
+    }
+  },
+  {
+    "name": "legacy-ambiguous-voltage-unchanged",
+    "schema": "asset.schema.json",
+    "valid": true,
+    "reason": null,
+    "payload": {
+      "id": "HX-LEGACY",
+      "name": "Legacy ambiguous voltage example",
+      "schema_version": "1.0.0",
+      "rated_voltage_hv": 11,
+      "configuration_metadata": {
+        "version": "legacy-unverified-v1",
+        "status": "UNVERIFIED",
+        "field_metadata": {
+          "rated_voltage_hv": {
+            "unit": null,
+            "verification": "UNVERIFIED",
+            "provenance": "Legacy value 11, original V/kV evidence absent; no conversion",
+            "evidence_reference": null,
+            "effective_at": null
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "synthetic-units-live",
+    "schema": "telemetry.schema.json",
+    "valid": false,
+    "reason": "synthetic-units-live",
+    "payload": {
+      "transformer_id": "HX-A",
+      "timestamp": "2026-10-09T00:00:00Z",
+      "phase_voltage_l1": 230.940108,
+      "phase_voltage_l2": 230.940108,
+      "phase_voltage_l3": 230.940108,
+      "current_l1": 14.433757,
+      "current_l2": 14.433757,
+      "current_l3": 14.433757,
+      "neutral_current": 0,
+      "oil_temperature": 40,
+      "winding_temperature": 0,
+      "ambient_temperature": 25,
+      "oil_level": 80,
+      "oil_temp_alarm": 0,
+      "oil_temp_trip": 0,
+      "magnetic_oil_gauge_alarm": 0,
+      "active_power_total": 10,
+      "apparent_power_total": 10,
+      "reactive_power_total": 0,
+      "energy_kwh": 100,
+      "power_factor_l1": 1,
+      "power_factor_l2": 1,
+      "power_factor_l3": 1,
+      "source_name": "h00-fictional",
+      "scenario_id": "normal",
+      "schema_version": "1.1.0",
+      "acquisition": {
+        "source_kind": "LIVE",
+        "source_name": "h00-fictional",
+        "origin_kind": "LIVE",
+        "origin_transformer_id": null,
+        "replay_run_id": null,
+        "gateway_id": "h00-gateway",
+        "timestamp_origin": "SOURCE_SNAPSHOT",
+        "timezone_status": "VERIFIED",
+        "field_units": {
+          "phase_voltage_l1": "V",
+          "phase_voltage_l2": "V",
+          "phase_voltage_l3": "V",
+          "current_l1": "A",
+          "current_l2": "A",
+          "current_l3": "A",
+          "neutral_current": "A",
+          "oil_temperature": "DEG_C",
+          "winding_temperature": "STATUS",
+          "ambient_temperature": "DEG_C",
+          "oil_level": "percent",
+          "oil_temp_alarm": "STATUS",
+          "oil_temp_trip": "STATUS",
+          "magnetic_oil_gauge_alarm": "STATUS",
+          "active_power_total": "kW",
+          "apparent_power_total": "kVA",
+          "reactive_power_total": "kVAr",
+          "energy_kwh": "kWh",
+          "power_factor_l1": "1",
+          "power_factor_l2": "1",
+          "power_factor_l3": "1"
+        },
+        "field_verification": {
+          "phase_voltage_l1": "SYNTHETIC",
+          "phase_voltage_l2": "SYNTHETIC",
+          "phase_voltage_l3": "SYNTHETIC",
+          "current_l1": "SYNTHETIC",
+          "current_l2": "SYNTHETIC",
+          "current_l3": "SYNTHETIC",
+          "neutral_current": "SYNTHETIC",
+          "oil_temperature": "SYNTHETIC",
+          "winding_temperature": "SYNTHETIC",
+          "ambient_temperature": "SYNTHETIC",
+          "oil_level": "SYNTHETIC",
+          "oil_temp_alarm": "SYNTHETIC",
+          "oil_temp_trip": "SYNTHETIC",
+          "magnetic_oil_gauge_alarm": "SYNTHETIC",
+          "active_power_total": "SYNTHETIC",
+          "apparent_power_total": "SYNTHETIC",
+          "reactive_power_total": "SYNTHETIC",
+          "energy_kwh": "SYNTHETIC",
+          "power_factor_l1": "SYNTHETIC",
+          "power_factor_l2": "SYNTHETIC",
+          "power_factor_l3": "SYNTHETIC"
+        },
+        "measurement_side": "LV",
+        "map_version": "h00-requirements-v1",
+        "snapshot_id": null,
+        "sequence": 0,
+        "expected_interval_seconds": 5
+      }
+    }
+  },
+  {
+    "name": "unknown-timezone-unstaged",
+    "schema": "telemetry.schema.json",
+    "valid": false,
+    "reason": "unknown-timezone-unstaged",
+    "payload": {
+      "transformer_id": "HX-A",
+      "timestamp": "2026-10-09T00:00:00Z",
+      "phase_voltage_l1": 230.940108,
+      "phase_voltage_l2": 230.940108,
+      "phase_voltage_l3": 230.940108,
+      "current_l1": 14.433757,
+      "current_l2": 14.433757,
+      "current_l3": 14.433757,
+      "neutral_current": 0,
+      "oil_temperature": 40,
+      "winding_temperature": 0,
+      "ambient_temperature": 25,
+      "oil_level": 80,
+      "oil_temp_alarm": 0,
+      "oil_temp_trip": 0,
+      "magnetic_oil_gauge_alarm": 0,
+      "active_power_total": 10,
+      "apparent_power_total": 10,
+      "reactive_power_total": 0,
+      "energy_kwh": 100,
+      "power_factor_l1": 1,
+      "power_factor_l2": 1,
+      "power_factor_l3": 1,
+      "source_name": "h00-fictional",
+      "scenario_id": "normal",
+      "schema_version": "1.1.0",
+      "acquisition": {
+        "source_kind": "SIMULATED",
+        "source_name": "h00-fictional",
+        "origin_kind": "SIMULATED",
+        "origin_transformer_id": null,
+        "replay_run_id": null,
+        "gateway_id": "h00-gateway",
+        "timestamp_origin": "SOURCE_SNAPSHOT",
+        "timezone_status": "UNKNOWN",
+        "field_units": {
+          "phase_voltage_l1": "V",
+          "phase_voltage_l2": "V",
+          "phase_voltage_l3": "V",
+          "current_l1": "A",
+          "current_l2": "A",
+          "current_l3": "A",
+          "neutral_current": "A",
+          "oil_temperature": "DEG_C",
+          "winding_temperature": "STATUS",
+          "ambient_temperature": "DEG_C",
+          "oil_level": "percent",
+          "oil_temp_alarm": "STATUS",
+          "oil_temp_trip": "STATUS",
+          "magnetic_oil_gauge_alarm": "STATUS",
+          "active_power_total": "kW",
+          "apparent_power_total": "kVA",
+          "reactive_power_total": "kVAr",
+          "energy_kwh": "kWh",
+          "power_factor_l1": "1",
+          "power_factor_l2": "1",
+          "power_factor_l3": "1"
+        },
+        "field_verification": {
+          "phase_voltage_l1": "SYNTHETIC",
+          "phase_voltage_l2": "SYNTHETIC",
+          "phase_voltage_l3": "SYNTHETIC",
+          "current_l1": "SYNTHETIC",
+          "current_l2": "SYNTHETIC",
+          "current_l3": "SYNTHETIC",
+          "neutral_current": "SYNTHETIC",
+          "oil_temperature": "SYNTHETIC",
+          "winding_temperature": "SYNTHETIC",
+          "ambient_temperature": "SYNTHETIC",
+          "oil_level": "SYNTHETIC",
+          "oil_temp_alarm": "SYNTHETIC",
+          "oil_temp_trip": "SYNTHETIC",
+          "magnetic_oil_gauge_alarm": "SYNTHETIC",
+          "active_power_total": "SYNTHETIC",
+          "apparent_power_total": "SYNTHETIC",
+          "reactive_power_total": "SYNTHETIC",
+          "energy_kwh": "SYNTHETIC",
+          "power_factor_l1": "SYNTHETIC",
+          "power_factor_l2": "SYNTHETIC",
+          "power_factor_l3": "SYNTHETIC"
+        },
+        "measurement_side": "LV",
+        "map_version": "h00-requirements-v1",
+        "snapshot_id": null,
+        "sequence": 0,
+        "expected_interval_seconds": 5
+      }
+    }
+  },
+  {
+    "name": "source-name-disagreement",
+    "schema": "telemetry.schema.json",
+    "valid": false,
+    "reason": "source-name-disagreement",
+    "payload": {
+      "transformer_id": "HX-A",
+      "timestamp": "2026-10-09T00:00:00Z",
+      "phase_voltage_l1": 230.940108,
+      "phase_voltage_l2": 230.940108,
+      "phase_voltage_l3": 230.940108,
+      "current_l1": 14.433757,
+      "current_l2": 14.433757,
+      "current_l3": 14.433757,
+      "neutral_current": 0,
+      "oil_temperature": 40,
+      "winding_temperature": 0,
+      "ambient_temperature": 25,
+      "oil_level": 80,
+      "oil_temp_alarm": 0,
+      "oil_temp_trip": 0,
+      "magnetic_oil_gauge_alarm": 0,
+      "active_power_total": 10,
+      "apparent_power_total": 10,
+      "reactive_power_total": 0,
+      "energy_kwh": 100,
+      "power_factor_l1": 1,
+      "power_factor_l2": 1,
+      "power_factor_l3": 1,
+      "source_name": "other",
+      "scenario_id": "normal",
+      "schema_version": "1.1.0",
+      "acquisition": {
+        "source_kind": "SIMULATED",
+        "source_name": "h00-fictional",
+        "origin_kind": "SIMULATED",
+        "origin_transformer_id": null,
+        "replay_run_id": null,
+        "gateway_id": "h00-gateway",
+        "timestamp_origin": "SOURCE_SNAPSHOT",
+        "timezone_status": "DECLARED_UTC",
+        "field_units": {
+          "phase_voltage_l1": "V",
+          "phase_voltage_l2": "V",
+          "phase_voltage_l3": "V",
+          "current_l1": "A",
+          "current_l2": "A",
+          "current_l3": "A",
+          "neutral_current": "A",
+          "oil_temperature": "DEG_C",
+          "winding_temperature": "STATUS",
+          "ambient_temperature": "DEG_C",
+          "oil_level": "percent",
+          "oil_temp_alarm": "STATUS",
+          "oil_temp_trip": "STATUS",
+          "magnetic_oil_gauge_alarm": "STATUS",
+          "active_power_total": "kW",
+          "apparent_power_total": "kVA",
+          "reactive_power_total": "kVAr",
+          "energy_kwh": "kWh",
+          "power_factor_l1": "1",
+          "power_factor_l2": "1",
+          "power_factor_l3": "1"
+        },
+        "field_verification": {
+          "phase_voltage_l1": "SYNTHETIC",
+          "phase_voltage_l2": "SYNTHETIC",
+          "phase_voltage_l3": "SYNTHETIC",
+          "current_l1": "SYNTHETIC",
+          "current_l2": "SYNTHETIC",
+          "current_l3": "SYNTHETIC",
+          "neutral_current": "SYNTHETIC",
+          "oil_temperature": "SYNTHETIC",
+          "winding_temperature": "SYNTHETIC",
+          "ambient_temperature": "SYNTHETIC",
+          "oil_level": "SYNTHETIC",
+          "oil_temp_alarm": "SYNTHETIC",
+          "oil_temp_trip": "SYNTHETIC",
+          "magnetic_oil_gauge_alarm": "SYNTHETIC",
+          "active_power_total": "SYNTHETIC",
+          "apparent_power_total": "SYNTHETIC",
+          "reactive_power_total": "SYNTHETIC",
+          "energy_kwh": "SYNTHETIC",
+          "power_factor_l1": "SYNTHETIC",
+          "power_factor_l2": "SYNTHETIC",
+          "power_factor_l3": "SYNTHETIC"
+        },
+        "measurement_side": "LV",
+        "map_version": "h00-requirements-v1",
+        "snapshot_id": null,
+        "sequence": 0,
+        "expected_interval_seconds": 5
+      }
+    }
+  },
+  {
+    "name": "forged-snapshot-id",
+    "schema": "telemetry.schema.json",
+    "valid": false,
+    "reason": "forged-snapshot-id",
+    "payload": {
+      "transformer_id": "HX-A",
+      "timestamp": "2026-10-09T00:00:00Z",
+      "phase_voltage_l1": 230.940108,
+      "phase_voltage_l2": 230.940108,
+      "phase_voltage_l3": 230.940108,
+      "current_l1": 14.433757,
+      "current_l2": 14.433757,
+      "current_l3": 14.433757,
+      "neutral_current": 0,
+      "oil_temperature": 40,
+      "winding_temperature": 0,
+      "ambient_temperature": 25,
+      "oil_level": 80,
+      "oil_temp_alarm": 0,
+      "oil_temp_trip": 0,
+      "magnetic_oil_gauge_alarm": 0,
+      "active_power_total": 10,
+      "apparent_power_total": 10,
+      "reactive_power_total": 0,
+      "energy_kwh": 100,
+      "power_factor_l1": 1,
+      "power_factor_l2": 1,
+      "power_factor_l3": 1,
+      "source_name": "h00-fictional",
+      "scenario_id": "normal",
+      "schema_version": "1.1.0",
+      "acquisition": {
+        "source_kind": "SIMULATED",
+        "source_name": "h00-fictional",
+        "origin_kind": "SIMULATED",
+        "origin_transformer_id": null,
+        "replay_run_id": null,
+        "gateway_id": "h00-gateway",
+        "timestamp_origin": "SOURCE_SNAPSHOT",
+        "timezone_status": "DECLARED_UTC",
+        "field_units": {
+          "phase_voltage_l1": "V",
+          "phase_voltage_l2": "V",
+          "phase_voltage_l3": "V",
+          "current_l1": "A",
+          "current_l2": "A",
+          "current_l3": "A",
+          "neutral_current": "A",
+          "oil_temperature": "DEG_C",
+          "winding_temperature": "STATUS",
+          "ambient_temperature": "DEG_C",
+          "oil_level": "percent",
+          "oil_temp_alarm": "STATUS",
+          "oil_temp_trip": "STATUS",
+          "magnetic_oil_gauge_alarm": "STATUS",
+          "active_power_total": "kW",
+          "apparent_power_total": "kVA",
+          "reactive_power_total": "kVAr",
+          "energy_kwh": "kWh",
+          "power_factor_l1": "1",
+          "power_factor_l2": "1",
+          "power_factor_l3": "1"
+        },
+        "field_verification": {
+          "phase_voltage_l1": "SYNTHETIC",
+          "phase_voltage_l2": "SYNTHETIC",
+          "phase_voltage_l3": "SYNTHETIC",
+          "current_l1": "SYNTHETIC",
+          "current_l2": "SYNTHETIC",
+          "current_l3": "SYNTHETIC",
+          "neutral_current": "SYNTHETIC",
+          "oil_temperature": "SYNTHETIC",
+          "winding_temperature": "SYNTHETIC",
+          "ambient_temperature": "SYNTHETIC",
+          "oil_level": "SYNTHETIC",
+          "oil_temp_alarm": "SYNTHETIC",
+          "oil_temp_trip": "SYNTHETIC",
+          "magnetic_oil_gauge_alarm": "SYNTHETIC",
+          "active_power_total": "SYNTHETIC",
+          "apparent_power_total": "SYNTHETIC",
+          "reactive_power_total": "SYNTHETIC",
+          "energy_kwh": "SYNTHETIC",
+          "power_factor_l1": "SYNTHETIC",
+          "power_factor_l2": "SYNTHETIC",
+          "power_factor_l3": "SYNTHETIC"
+        },
+        "measurement_side": "LV",
+        "map_version": "h00-requirements-v1",
+        "snapshot_id": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+        "sequence": 0,
+        "expected_interval_seconds": 5
+      }
+    }
+  },
+  {
+    "name": "unknown-verified-unit",
+    "schema": "telemetry.schema.json",
+    "valid": false,
+    "reason": "unknown-verified-unit",
+    "payload": {
+      "transformer_id": "HX-A",
+      "timestamp": "2026-10-09T00:00:00Z",
+      "phase_voltage_l1": 230.940108,
+      "phase_voltage_l2": 230.940108,
+      "phase_voltage_l3": 230.940108,
+      "current_l1": 14.433757,
+      "current_l2": 14.433757,
+      "current_l3": 14.433757,
+      "neutral_current": 0,
+      "oil_temperature": 40,
+      "winding_temperature": 0,
+      "ambient_temperature": 25,
+      "oil_level": 80,
+      "oil_temp_alarm": 0,
+      "oil_temp_trip": 0,
+      "magnetic_oil_gauge_alarm": 0,
+      "active_power_total": 10,
+      "apparent_power_total": 10,
+      "reactive_power_total": 0,
+      "energy_kwh": 100,
+      "power_factor_l1": 1,
+      "power_factor_l2": 1,
+      "power_factor_l3": 1,
+      "source_name": "h00-fictional",
+      "scenario_id": "normal",
+      "schema_version": "1.1.0",
+      "acquisition": {
+        "source_kind": "SIMULATED",
+        "source_name": "h00-fictional",
+        "origin_kind": "SIMULATED",
+        "origin_transformer_id": null,
+        "replay_run_id": null,
+        "gateway_id": "h00-gateway",
+        "timestamp_origin": "SOURCE_SNAPSHOT",
+        "timezone_status": "DECLARED_UTC",
+        "field_units": {
+          "phase_voltage_l1": "V",
+          "phase_voltage_l2": "V",
+          "phase_voltage_l3": "V",
+          "current_l1": "A",
+          "current_l2": "A",
+          "current_l3": "A",
+          "neutral_current": "A",
+          "oil_temperature": "DEG_C",
+          "winding_temperature": "STATUS",
+          "ambient_temperature": "DEG_C",
+          "oil_level": "percent",
+          "oil_temp_alarm": "STATUS",
+          "oil_temp_trip": "STATUS",
+          "magnetic_oil_gauge_alarm": "STATUS",
+          "active_power_total": "UNKNOWN",
+          "apparent_power_total": "kVA",
+          "reactive_power_total": "kVAr",
+          "energy_kwh": "kWh",
+          "power_factor_l1": "1",
+          "power_factor_l2": "1",
+          "power_factor_l3": "1"
+        },
+        "field_verification": {
+          "phase_voltage_l1": "SYNTHETIC",
+          "phase_voltage_l2": "SYNTHETIC",
+          "phase_voltage_l3": "SYNTHETIC",
+          "current_l1": "SYNTHETIC",
+          "current_l2": "SYNTHETIC",
+          "current_l3": "SYNTHETIC",
+          "neutral_current": "SYNTHETIC",
+          "oil_temperature": "SYNTHETIC",
+          "winding_temperature": "SYNTHETIC",
+          "ambient_temperature": "SYNTHETIC",
+          "oil_level": "SYNTHETIC",
+          "oil_temp_alarm": "SYNTHETIC",
+          "oil_temp_trip": "SYNTHETIC",
+          "magnetic_oil_gauge_alarm": "SYNTHETIC",
+          "active_power_total": "SYNTHETIC",
+          "apparent_power_total": "SYNTHETIC",
+          "reactive_power_total": "SYNTHETIC",
+          "energy_kwh": "SYNTHETIC",
+          "power_factor_l1": "SYNTHETIC",
+          "power_factor_l2": "SYNTHETIC",
+          "power_factor_l3": "SYNTHETIC"
+        },
+        "measurement_side": "LV",
+        "map_version": "h00-requirements-v1",
+        "snapshot_id": null,
+        "sequence": 0,
+        "expected_interval_seconds": 5
+      }
+    }
+  },
+  {
+    "name": "unreleased-risk-number",
+    "schema": "analytics.schema.json",
+    "valid": false,
+    "reason": "No operational release",
+    "payload": {
+      "transformer_id": "HX-A",
+      "timestamp": "2026-10-09T00:00:00Z",
+      "inference_status": "OK",
+      "missing_features": [],
+      "loading_percent": 10,
+      "thermal_model_temperature": null,
+      "thermal_residual": null,
+      "thermal_state": null,
+      "anomaly_score": null,
+      "anomaly_flag": null,
+      "health_index": null,
+      "health_components": null,
+      "fault_risk": 0.2,
+      "predicted_fault": null,
+      "prediction_confidence": null,
+      "maintenance_priority": null,
+      "maintenance_recommendation": null,
+      "error_detail": null,
+      "health_reason_codes": [],
+      "reason_codes": [],
+      "schema_version": "1.1.0",
+      "feature_version": "1.0.0",
+      "model_version": "h00-interface-only",
+      "metadata": {
+        "thermal_readiness": "WARMING_UP",
+        "thermal_model_mode": "PUBLIC_EMPIRICAL",
+        "thermal_temperature_unit": "SOURCE_UNIT",
+        "apparent_power_utilization": 0.1,
+        "forecast_operational_status": "INSUFFICIENT_VALIDATION",
+        "experimental_fault_risk": null,
+        "maintenance_trip_latched": false,
+        "maintenance_clear_policy_status": "NOT_APPLICABLE",
+        "coverage_overall": 1,
+        "health_coverage": null,
+        "extended_reason_codes": [
+          "THERMAL_WARMUP"
+        ],
+        "extended_health_reason_codes": [],
+        "reason_descriptions": {
+          "THERMAL_WARMUP": "Thermal model is warming up"
+        },
+        "components": {
+          "thermal": {
+            "status": "WARMING_UP",
+            "unit": null,
+            "coverage_fraction": null,
+            "reasons": [
+              "INTERFACE_EXAMPLE_ONLY"
+            ]
+          },
+          "anomaly": {
+            "status": "UNAVAILABLE",
+            "unit": null,
+            "coverage_fraction": null,
+            "reasons": [
+              "INTERFACE_EXAMPLE_ONLY"
+            ]
+          },
+          "health": {
+            "status": "UNAVAILABLE",
+            "unit": null,
+            "coverage_fraction": null,
+            "reasons": [
+              "INTERFACE_EXAMPLE_ONLY"
+            ]
+          },
+          "maintenance": {
+            "status": "UNAVAILABLE",
+            "unit": null,
+            "coverage_fraction": null,
+            "reasons": [
+              "INTERFACE_EXAMPLE_ONLY"
+            ]
+          },
+          "forecast": {
+            "status": "UNAVAILABLE",
+            "unit": null,
+            "coverage_fraction": null,
+            "reasons": [
+              "INTERFACE_EXAMPLE_ONLY"
+            ]
+          },
+          "rul": {
+            "status": "UNAVAILABLE",
+            "unit": null,
+            "coverage_fraction": null,
+            "reasons": [
+              "INTERFACE_EXAMPLE_ONLY"
+            ]
+          }
+        },
+        "units": {
+          "loading_percent": "percent",
+          "thermal_model_temperature": "SOURCE_UNIT",
+          "winding_temperature": "STATUS"
+        },
+        "coverage": {
+          "start": "2026-10-09T00:00:00Z",
+          "end": "2026-10-09T00:00:00Z",
+          "covered_seconds": 0,
+          "expected_seconds": 0,
+          "fraction": null,
+          "gap_count": 0,
+          "missing_fields": []
+        },
+        "forecast": {
+          "target_definition": null,
+          "horizon_hours": null,
+          "release_status": "INSUFFICIENT_VALIDATION",
+          "operational_eligible": false,
+          "limitation_codes": [
+            "RELEASE_EVIDENCE_MISSING"
+          ]
+        },
+        "versions": {
+          "bundle_id": "h00-interface-only",
+          "configuration_version": "fictional-config-v1",
+          "preprocessing_version": "1.0.0",
+          "artifact_schema_version": "1.0.0"
+        },
+        "reason_evidence": []
+      }
+    }
+  },
+  {
+    "name": "insufficient-coverage-number",
+    "schema": "energy.schema.json",
+    "valid": false,
+    "reason": "No total for partial coverage",
+    "payload": {
+      "transformer_id": "HX-A",
+      "timestamp": "2026-10-09T02:00:00Z",
+      "schema_version": "1.1.0",
+      "energy_status": "AVAILABLE",
+      "energy_method": "SIMULATED",
+      "calculation_method": "TRAPEZOID",
+      "source_kind": "SIMULATED",
+      "active_power_unit_status": "SYNTHETIC",
+      "energy_unit": "kWh",
+      "window_start": "2026-10-09T00:00:00Z",
+      "window_end": "2026-10-09T02:00:00Z",
+      "consumed_kwh": 20,
+      "covered_consumed_kwh": 20,
+      "import_kwh": null,
+      "export_kwh": null,
+      "coverage_seconds": 3600,
+      "coverage_fraction": 0.5,
+      "gap_count": 0,
+      "reset_count": 0,
+      "missing_intervals": [],
+      "peak_kw": null,
+      "peak_time": null,
+      "loss_kw": null,
+      "loss_kwh": null,
+      "efficiency_percent": null,
+      "loss_method": null,
+      "conservation_recommendation": null,
+      "estimated_savings_kwh": null,
+      "load_profile": [],
+      "conservation_evidence": [],
+      "assumptions": [
+        "Arithmetic oracle: declared supported 1h intervals, not a production 5s stream"
+      ],
+      "limitation_codes": [
+        "LOSS_INPUTS_MISSING",
+        "NO_SAVINGS_BASELINE"
+      ],
+      "config_version": "fictional-config-v1",
+      "map_version": null,
+      "calculation_version": "h00-arithmetic-v1",
+      "provenance": {
+        "power_unit": "kW",
+        "counter_unit": null,
+        "counter_semantics": null,
+        "continuity_evidence": null,
+        "measurement_side": "LV",
+        "maximum_gap_seconds": 3600,
+        "minimum_coverage_fraction": 1
+      }
+    }
+  },
+  {
+    "name": "missing-config-provenance",
+    "schema": "asset.schema.json",
+    "valid": false,
+    "reason": "Per-field provenance required",
+    "payload": {
+      "id": "HX-A",
+      "name": "Fictional H00 asset A",
+      "schema_version": "1.1.0",
+      "rated_power_kva": 100,
+      "rated_voltage_hv": null,
+      "rated_voltage_lv": 400,
+      "rated_current_a": 144.337567,
+      "rated_frequency_hz": 50,
+      "vector_group": null,
+      "impedance_percent": null,
+      "temperature_rise_limits": null,
+      "measurement_side": "LV",
+      "ct_ratio": null,
+      "pt_ratio": null,
+      "insulation_type": null,
+      "loss_parameters": null,
+      "cooling_class": null,
+      "oil_type": null,
+      "configuration_metadata": {
+        "version": "fictional-config-v1",
+        "status": "SYNTHETIC_CONFIG",
+        "field_metadata": {
+          "rated_power_kva": {
+            "unit": "kVA",
+            "verification": "SYNTHETIC_CONFIG",
+            "provenance": "Fictional H00 configuration; LV voltage is line-to-line",
+            "evidence_reference": null,
+            "effective_at": "2026-10-09T00:00:00Z"
+          },
+          "rated_current_a": {
+            "unit": "A",
+            "verification": "SYNTHETIC_CONFIG",
+            "provenance": "Fictional H00 configuration; LV voltage is line-to-line",
+            "evidence_reference": null,
+            "effective_at": "2026-10-09T00:00:00Z"
+          },
+          "rated_frequency_hz": {
+            "unit": "Hz",
+            "verification": "SYNTHETIC_CONFIG",
+            "provenance": "Fictional H00 configuration; LV voltage is line-to-line",
+            "evidence_reference": null,
+            "effective_at": "2026-10-09T00:00:00Z"
+          },
+          "measurement_side": {
+            "unit": "1",
+            "verification": "SYNTHETIC_CONFIG",
+            "provenance": "Fictional H00 configuration; LV voltage is line-to-line",
+            "evidence_reference": null,
+            "effective_at": "2026-10-09T00:00:00Z"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "duplicate-unit-mapping",
+    "schema": "register-map.schema.json",
+    "valid": false,
+    "reason": "One asset per endpoint/unit",
+    "payload": {
+      "map_version": "h00-requirements-v1",
+      "status": "REQUIREMENTS_ONLY",
+      "address_convention": "ZERO_BASED",
+      "coherent_snapshot": true,
+      "sequence_guard": "READ_BEFORE_AND_AFTER",
+      "control_writes_allowed": false,
+      "encoding_owner": "Person 4 / H03",
+      "blocked_details": [
+        "H03 must assign and test register addresses/counts/type/endian/scales/quality and counter width"
+      ],
+      "assets": [
+        {
+          "transformer_id": "HX-A",
+          "endpoint": "127.0.0.1:1502",
+          "unit_id": 1,
+          "measurement_side": "LV",
+          "configuration_version": "fictional-config-v1",
+          "ct_ratio": null,
+          "pt_ratio": null
+        },
+        {
+          "transformer_id": "HX-B",
+          "endpoint": "127.0.0.1:1502",
+          "unit_id": 1,
+          "measurement_side": "LV",
+          "configuration_version": "fictional-config-v1",
+          "ct_ratio": null,
+          "pt_ratio": null
+        }
+      ],
+      "entries": [
+        {
+          "field": "phase_voltage_l1",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "V",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "phase_voltage_l2",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "V",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "phase_voltage_l3",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "V",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "current_l1",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "A",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "current_l2",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "A",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "current_l3",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "A",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "neutral_current",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "A",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "oil_temperature",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "DEG_C",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "winding_temperature",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "STATUS",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "ambient_temperature",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "DEG_C",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "oil_level",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "percent",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "oil_temp_alarm",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "STATUS",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "oil_temp_trip",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "STATUS",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "magnetic_oil_gauge_alarm",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "STATUS",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "active_power_total",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "kW",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "apparent_power_total",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "kVA",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "reactive_power_total",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "kVAr",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "energy_kwh",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "kWh",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "power_factor_l1",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "1",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "power_factor_l2",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "1",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "power_factor_l3",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "1",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "timestamp",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "UTC",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "sequence",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "1",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        },
+        {
+          "field": "map_version",
+          "address_zero_based": null,
+          "register_count": null,
+          "data_type": null,
+          "byte_order": null,
+          "word_order": null,
+          "multiplier": null,
+          "unit": "1",
+          "verification": "SYNTHETIC",
+          "measurement_side": "LV",
+          "missing_sentinel": null,
+          "quality_bit": null,
+          "read_function": 4
+        }
+      ],
+      "counter_requirements": {
+        "semantics": "CUMULATIVE_IMPORT",
+        "unit": "kWh",
+        "modulus": null,
+        "reset_evidence": "Negative deltas excluded; synthetic reset oracle",
+        "continuity_evidence": null,
+        "timestamp_timezone": "DECLARED_UTC"
+      }
+    }
+  },
+  {
+    "name": "late-state-mutation",
+    "schema": "ingestion-outcome.schema.json",
+    "valid": false,
+    "reason": "Late data cannot advance",
+    "payload": {
+      "schema_version": "1.1.0",
+      "transformer_id": "HX-A",
+      "timestamp": "2026-10-09T00:00:00Z",
+      "snapshot_id": "e43cda01fefabd186e1b688fede57a31599891db3ad74b5f2f0b9731bd825617",
+      "ingestion_outcome": "REJECTED_LATE_OBSERVATION",
+      "http_status": 409,
+      "forward_state_advanced": true,
+      "analytics": null,
+      "reason": "Earlier than latest accepted event; no forward inference"
+    }
+  },
+  {
+    "name": "legacy-registry-nonpositive-remains-representable",
+    "schema": "asset.schema.json",
+    "valid": true,
+    "reason": null,
+    "payload": {
+      "id": "HX-OLD",
+      "name": "Legacy invalid physical rating; operationally ineligible",
+      "rated_power_kva": -1
+    }
+  },
+  {
+    "name": "available-components-interface-example",
+    "schema": "analytics.schema.json",
+    "valid": true,
+    "reason": "Illustrative shape, not fitted-model oracle",
+    "payload": {
+      "transformer_id": "HX-A",
+      "timestamp": "2026-10-09T00:00:00Z",
+      "inference_status": "OK",
+      "missing_features": [],
+      "loading_percent": 10,
+      "thermal_model_temperature": null,
+      "thermal_residual": null,
+      "thermal_state": null,
+      "anomaly_score": 0.25,
+      "anomaly_flag": false,
+      "health_index": 80,
+      "health_components": null,
+      "fault_risk": null,
+      "predicted_fault": null,
+      "prediction_confidence": null,
+      "maintenance_priority": null,
+      "maintenance_recommendation": null,
+      "error_detail": null,
+      "health_reason_codes": [],
+      "reason_codes": [],
+      "schema_version": "1.1.0",
+      "feature_version": "1.0.0",
+      "model_version": "h00-interface-only",
+      "metadata": {
+        "thermal_readiness": "WARMING_UP",
+        "thermal_model_mode": "PUBLIC_EMPIRICAL",
+        "thermal_temperature_unit": "SOURCE_UNIT",
+        "apparent_power_utilization": 0.1,
+        "forecast_operational_status": "INSUFFICIENT_VALIDATION",
+        "experimental_fault_risk": null,
+        "maintenance_trip_latched": false,
+        "maintenance_clear_policy_status": "NOT_APPLICABLE",
+        "coverage_overall": 1,
+        "health_coverage": null,
+        "extended_reason_codes": [
+          "THERMAL_WARMUP"
+        ],
+        "extended_health_reason_codes": [],
+        "reason_descriptions": {
+          "THERMAL_WARMUP": "Thermal model is warming up"
+        },
+        "components": {
+          "thermal": {
+            "status": "WARMING_UP",
+            "unit": null,
+            "coverage_fraction": null,
+            "reasons": [
+              "INTERFACE_EXAMPLE_ONLY"
+            ]
+          },
+          "anomaly": {
+            "status": "READY",
+            "unit": "1",
+            "coverage_fraction": 1,
+            "reasons": [
+              "INTERFACE_EXAMPLE_ONLY"
+            ]
+          },
+          "health": {
+            "status": "READY",
+            "unit": "0..100",
+            "coverage_fraction": 1,
+            "reasons": [
+              "INTERFACE_EXAMPLE_ONLY"
+            ]
+          },
+          "maintenance": {
+            "status": "UNAVAILABLE",
+            "unit": null,
+            "coverage_fraction": null,
+            "reasons": [
+              "INTERFACE_EXAMPLE_ONLY"
+            ]
+          },
+          "forecast": {
+            "status": "UNAVAILABLE",
+            "unit": null,
+            "coverage_fraction": null,
+            "reasons": [
+              "INTERFACE_EXAMPLE_ONLY"
+            ]
+          },
+          "rul": {
+            "status": "UNAVAILABLE",
+            "unit": null,
+            "coverage_fraction": null,
+            "reasons": [
+              "INTERFACE_EXAMPLE_ONLY"
+            ]
+          }
+        },
+        "units": {
+          "loading_percent": "percent",
+          "thermal_model_temperature": "SOURCE_UNIT",
+          "winding_temperature": "STATUS"
+        },
+        "coverage": {
+          "start": "2026-10-09T00:00:00Z",
+          "end": "2026-10-09T00:00:00Z",
+          "covered_seconds": 0,
+          "expected_seconds": 0,
+          "fraction": null,
+          "gap_count": 0,
+          "missing_fields": []
+        },
+        "forecast": {
+          "target_definition": null,
+          "horizon_hours": null,
+          "release_status": "INSUFFICIENT_VALIDATION",
+          "operational_eligible": false,
+          "limitation_codes": [
+            "RELEASE_EVIDENCE_MISSING"
+          ]
+        },
+        "versions": {
+          "bundle_id": "h00-interface-only",
+          "configuration_version": "fictional-config-v1",
+          "preprocessing_version": "1.0.0",
+          "artifact_schema_version": "1.0.0"
+        },
+        "reason_evidence": []
+      }
+    }
+  },
+  {
+    "name": "live-labelled-unknown-units",
+    "schema": "telemetry.schema.json",
+    "valid": true,
+    "reason": "Hypothetical gateway UTC timestamp, no authorized sensor/unit claim",
+    "payload": {
+      "transformer_id": "HX-REAL-UNKNOWN",
+      "timestamp": "2026-10-09T00:00:00Z",
+      "phase_voltage_l1": null,
+      "phase_voltage_l2": null,
+      "phase_voltage_l3": null,
+      "current_l1": null,
+      "current_l2": null,
+      "current_l3": null,
+      "neutral_current": null,
+      "oil_temperature": null,
+      "winding_temperature": null,
+      "ambient_temperature": null,
+      "oil_level": null,
+      "oil_temp_alarm": null,
+      "oil_temp_trip": null,
+      "magnetic_oil_gauge_alarm": null,
+      "active_power_total": null,
+      "apparent_power_total": null,
+      "reactive_power_total": null,
+      "energy_kwh": null,
+      "power_factor_l1": null,
+      "power_factor_l2": null,
+      "power_factor_l3": null,
+      "source_name": "fictional-live-envelope-example",
+      "scenario_id": "real-source-insufficient-example",
+      "schema_version": "1.1.0",
+      "acquisition": {
+        "source_kind": "LIVE",
+        "source_name": "fictional-live-envelope-example",
+        "origin_kind": "UNKNOWN",
+        "origin_transformer_id": null,
+        "replay_run_id": null,
+        "gateway_id": "h00-gateway",
+        "timestamp_origin": "GATEWAY_POLL",
+        "timezone_status": "VERIFIED",
+        "field_units": {
+          "phase_voltage_l1": "UNKNOWN",
+          "phase_voltage_l2": "UNKNOWN",
+          "phase_voltage_l3": "UNKNOWN",
+          "current_l1": "UNKNOWN",
+          "current_l2": "UNKNOWN",
+          "current_l3": "UNKNOWN",
+          "neutral_current": "UNKNOWN",
+          "oil_temperature": "UNKNOWN",
+          "winding_temperature": "UNKNOWN",
+          "ambient_temperature": "UNKNOWN",
+          "oil_level": "UNKNOWN",
+          "oil_temp_alarm": "UNKNOWN",
+          "oil_temp_trip": "UNKNOWN",
+          "magnetic_oil_gauge_alarm": "UNKNOWN",
+          "active_power_total": "UNKNOWN",
+          "apparent_power_total": "UNKNOWN",
+          "reactive_power_total": "UNKNOWN",
+          "energy_kwh": "UNKNOWN",
+          "power_factor_l1": "UNKNOWN",
+          "power_factor_l2": "UNKNOWN",
+          "power_factor_l3": "UNKNOWN"
+        },
+        "field_verification": {
+          "phase_voltage_l1": "UNVERIFIED",
+          "phase_voltage_l2": "UNVERIFIED",
+          "phase_voltage_l3": "UNVERIFIED",
+          "current_l1": "UNVERIFIED",
+          "current_l2": "UNVERIFIED",
+          "current_l3": "UNVERIFIED",
+          "neutral_current": "UNVERIFIED",
+          "oil_temperature": "UNVERIFIED",
+          "winding_temperature": "UNVERIFIED",
+          "ambient_temperature": "UNVERIFIED",
+          "oil_level": "UNVERIFIED",
+          "oil_temp_alarm": "UNVERIFIED",
+          "oil_temp_trip": "UNVERIFIED",
+          "magnetic_oil_gauge_alarm": "UNVERIFIED",
+          "active_power_total": "UNVERIFIED",
+          "apparent_power_total": "UNVERIFIED",
+          "reactive_power_total": "UNVERIFIED",
+          "energy_kwh": "UNVERIFIED",
+          "power_factor_l1": "UNVERIFIED",
+          "power_factor_l2": "UNVERIFIED",
+          "power_factor_l3": "UNVERIFIED"
+        },
+        "measurement_side": "UNKNOWN",
+        "map_version": null,
+        "snapshot_id": null,
+        "sequence": 0,
+        "expected_interval_seconds": null
+      }
+    }
+  },
+  {
+    "name": "outcome-ACCEPTED",
+    "schema": "ingestion-outcome.schema.json",
+    "valid": true,
+    "reason": null,
+    "payload": {
+      "schema_version": "1.1.0",
+      "transformer_id": "HX-A",
+      "timestamp": "2026-10-09T00:00:00Z",
+      "snapshot_id": "e43cda01fefabd186e1b688fede57a31599891db3ad74b5f2f0b9731bd825617",
+      "ingestion_outcome": "ACCEPTED",
+      "http_status": 201,
+      "forward_state_advanced": true,
+      "analytics": null,
+      "reason": "Interface outcome example"
+    }
+  },
+  {
+    "name": "outcome-EXACT_RETRY",
+    "schema": "ingestion-outcome.schema.json",
+    "valid": true,
+    "reason": null,
+    "payload": {
+      "schema_version": "1.1.0",
+      "transformer_id": "HX-A",
+      "timestamp": "2026-10-09T00:00:00Z",
+      "snapshot_id": "e43cda01fefabd186e1b688fede57a31599891db3ad74b5f2f0b9731bd825617",
+      "ingestion_outcome": "EXACT_RETRY",
+      "http_status": 200,
+      "forward_state_advanced": false,
+      "analytics": null,
+      "reason": "Interface outcome example"
+    }
+  },
+  {
+    "name": "outcome-CONFLICT",
+    "schema": "ingestion-outcome.schema.json",
+    "valid": true,
+    "reason": null,
+    "payload": {
+      "schema_version": "1.1.0",
+      "transformer_id": "HX-A",
+      "timestamp": "2026-10-09T00:00:00Z",
+      "snapshot_id": "e43cda01fefabd186e1b688fede57a31599891db3ad74b5f2f0b9731bd825617",
+      "ingestion_outcome": "CONFLICT",
+      "http_status": 409,
+      "forward_state_advanced": false,
+      "analytics": null,
+      "reason": "Interface outcome example"
+    }
+  }
+]

@@ -22,7 +22,7 @@ export const Roadmap: React.FC = () => {
       status: 'COMPLETE',
       statusClass: 'text-emerald-400 bg-emerald-950/60 border-emerald-800',
       description:
-        'Engineered the IEEE top-oil thermal model, isolating the Thermal Residual (Observed - Model). Built 6-pillar Health Index engine and deterministic fault injection suite.',
+        'Engineered the backend top-oil thermal model, isolating the Thermal Residual (Observed - Model). Built 6-pillar Health Index engine and deterministic fault injection suite.',
       deliverables: [
         'Continuous Thermal Residual ΔT tracking',
         'Deterministic fault injection (Overload, Thermal, Imbalance)',

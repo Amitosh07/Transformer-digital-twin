@@ -1,0 +1,746 @@
+{
+  "mode": "switch",
+  "started": "2026-10-09T19:41:09.387Z",
+  "passed": true,
+  "delayed_asset": {
+    "transformer": {
+      "schema_version": "1.1.0",
+      "rated_frequency_hz": null,
+      "vector_group": null,
+      "impedance_percent": null,
+      "temperature_rise_limits": null,
+      "measurement_side": "LV",
+      "ct_ratio": null,
+      "pt_ratio": null,
+      "insulation_type": null,
+      "loss_parameters": null,
+      "configuration_metadata": {
+        "version": "fictional-demo-v1",
+        "status": "SYNTHETIC_CONFIG",
+        "field_metadata": {
+          "rated_current_a": {
+            "unit": "A",
+            "verification": "SYNTHETIC_CONFIG",
+            "provenance": "Declared H06 fictional configuration",
+            "evidence_reference": null,
+            "effective_at": null
+          },
+          "rated_power_kva": {
+            "unit": "kVA",
+            "verification": "SYNTHETIC_CONFIG",
+            "provenance": "Declared H06 fictional configuration",
+            "evidence_reference": null,
+            "effective_at": null
+          },
+          "measurement_side": {
+            "unit": null,
+            "verification": "SYNTHETIC_CONFIG",
+            "provenance": "Declared H06 fictional configuration",
+            "evidence_reference": null,
+            "effective_at": null
+          },
+          "rated_voltage_lv": {
+            "unit": "V",
+            "verification": "SYNTHETIC_CONFIG",
+            "provenance": "Declared H06 fictional configuration",
+            "evidence_reference": null,
+            "effective_at": null
+          }
+        }
+      },
+      "rated_power_kva": 30,
+      "rated_voltage_hv": null,
+      "rated_voltage_lv": 400,
+      "rated_current_a": 43.30127018922193,
+      "cooling_class": null,
+      "oil_type": null,
+      "id": "H07-dfb1b1-01",
+      "name": "H07-dfb1b1-01 fictional demo",
+      "created_at": "2026-10-09T19:36:27.257158Z",
+      "updated_at": "2026-10-09T19:36:27.257158Z"
+    },
+    "telemetry": {
+      "schema_version": "1.1.0",
+      "acquisition": {
+        "source_kind": "SIMULATED",
+        "source_name": "fictional-modbus",
+        "origin_kind": "SIMULATED",
+        "origin_transformer_id": null,
+        "replay_run_id": null,
+        "gateway_id": "H07-dfb1b1",
+        "timestamp_origin": "SOURCE_SNAPSHOT",
+        "timezone_status": "DECLARED_UTC",
+        "field_units": {
+          "oil_level": "percent",
+          "current_l1": "A",
+          "current_l2": "A",
+          "current_l3": "A",
+          "energy_kwh": "kWh",
+          "oil_temp_trip": "STATUS",
+          "oil_temp_alarm": "STATUS",
+          "neutral_current": "A",
+          "oil_temperature": "DEG_C",
+          "power_factor_l1": "1",
+          "power_factor_l2": "1",
+          "power_factor_l3": "1",
+          "phase_voltage_l1": "V",
+          "phase_voltage_l2": "V",
+          "phase_voltage_l3": "V",
+          "active_power_total": "kW",
+          "ambient_temperature": "DEG_C",
+          "winding_temperature": "STATUS",
+          "apparent_power_total": "kVA",
+          "reactive_power_total": "kVAr",
+          "magnetic_oil_gauge_alarm": "STATUS"
+        },
+        "field_verification": {
+          "oil_level": "SYNTHETIC",
+          "current_l1": "SYNTHETIC",
+          "current_l2": "SYNTHETIC",
+          "current_l3": "SYNTHETIC",
+          "energy_kwh": "SYNTHETIC",
+          "oil_temp_trip": "SYNTHETIC",
+          "oil_temp_alarm": "SYNTHETIC",
+          "neutral_current": "SYNTHETIC",
+          "oil_temperature": "SYNTHETIC",
+          "power_factor_l1": "SYNTHETIC",
+          "power_factor_l2": "SYNTHETIC",
+          "power_factor_l3": "SYNTHETIC",
+          "phase_voltage_l1": "SYNTHETIC",
+          "phase_voltage_l2": "SYNTHETIC",
+          "phase_voltage_l3": "SYNTHETIC",
+          "active_power_total": "SYNTHETIC",
+          "ambient_temperature": "SYNTHETIC",
+          "winding_temperature": "SYNTHETIC",
+          "apparent_power_total": "SYNTHETIC",
+          "reactive_power_total": "SYNTHETIC",
+          "magnetic_oil_gauge_alarm": "SYNTHETIC"
+        },
+        "measurement_side": "LV",
+        "map_version": "fictional-lv-v1",
+        "snapshot_id": "e73ab3a7b74105e8d4ce9b923b4c43406fb280c03c547325d67b7eb68678d07f",
+        "sequence": 27,
+        "expected_interval_seconds": 5
+      },
+      "transformer_id": "H07-dfb1b1-01",
+      "timestamp": "2026-10-09T19:38:45.017775Z",
+      "phase_voltage_l1": 230.86,
+      "phase_voltage_l2": 232.69,
+      "phase_voltage_l3": 229.77,
+      "current_l1": 58.89,
+      "current_l2": 59.5,
+      "current_l3": 59.41,
+      "neutral_current": 0.054,
+      "oil_temperature": 42.189,
+      "winding_temperature": null,
+      "ambient_temperature": 30.4,
+      "oil_level": 84.6,
+      "oil_temp_alarm": 0,
+      "oil_temp_trip": 0,
+      "magnetic_oil_gauge_alarm": 0,
+      "active_power_total": 37.672,
+      "apparent_power_total": 41.091,
+      "reactive_power_total": 16.409,
+      "energy_kwh": 0.700476,
+      "power_factor_l1": 0.8966,
+      "power_factor_l2": 0.9328,
+      "power_factor_l3": 0.9207,
+      "source_name": "fictional-modbus",
+      "scenario_id": "SCN_OVERLOAD_01",
+      "id": 2323,
+      "is_missing_critical": false,
+      "data_quality_score": 0.9523809523809523,
+      "received_at": "2026-10-09T19:41:03.748348Z"
+    },
+    "analytics": {
+      "metadata": {
+        "thermal_readiness": "WARMING_UP",
+        "thermal_model_mode": "PUBLIC_EMPIRICAL",
+        "thermal_temperature_unit": "SOURCE_UNVERIFIED",
+        "apparent_power_utilization": 1.3697000000000001,
+        "forecast_operational_status": "INSUFFICIENT_VALIDATION",
+        "experimental_fault_risk": null,
+        "maintenance_trip_latched": false,
+        "maintenance_clear_policy_status": "NOT_APPLICABLE",
+        "coverage_overall": 0.8888888888888888,
+        "health_coverage": 1,
+        "extended_reason_codes": [
+          "HIGH_OIL_TEMP",
+          "RAPID_TEMP_RISE",
+          "OVERLOAD",
+          "UNCONFIRMED_STATISTICAL_EXCEEDANCE",
+          "REDUCED_HISTORY_COVERAGE",
+          "DEMO_UNVERIFIED_CONFIG"
+        ],
+        "extended_health_reason_codes": [
+          "HIGH_OIL_TEMP",
+          "RAPID_TEMP_RISE",
+          "OVERLOAD"
+        ],
+        "reason_descriptions": {
+          "OVERLOAD": "Overload condition exceeding rated capacity",
+          "HIGH_OIL_TEMP": "High oil indicator (source units)",
+          "RAPID_TEMP_RISE": "Rapid temperature rise rate",
+          "UNCONFIRMED_STATISTICAL_EXCEEDANCE": "Unconfirmed Statistical Exceedance"
+        },
+        "components": {
+          "thermal": {
+            "status": "WARMING_UP",
+            "unit": "SOURCE_UNVERIFIED",
+            "coverage_fraction": 0.015277777777777777,
+            "reasons": [
+              "REDUCED_HISTORY_COVERAGE",
+              "DEMO_UNVERIFIED_CONFIG"
+            ]
+          },
+          "anomaly": {
+            "status": "INSUFFICIENT_DATA",
+            "unit": "1",
+            "coverage_fraction": 0.015277777777777777,
+            "reasons": [
+              "REDUCED_HISTORY_COVERAGE",
+              "DEMO_UNVERIFIED_CONFIG"
+            ]
+          },
+          "health": {
+            "status": "INSUFFICIENT_DATA",
+            "unit": "index",
+            "coverage_fraction": 0.015277777777777777,
+            "reasons": [
+              "REDUCED_HISTORY_COVERAGE",
+              "DEMO_UNVERIFIED_CONFIG"
+            ]
+          },
+          "maintenance": {
+            "status": "INSUFFICIENT_DATA",
+            "unit": null,
+            "coverage_fraction": 0.015277777777777777,
+            "reasons": [
+              "REDUCED_HISTORY_COVERAGE",
+              "DEMO_UNVERIFIED_CONFIG"
+            ]
+          },
+          "forecast": {
+            "status": "UNAVAILABLE",
+            "unit": null,
+            "coverage_fraction": 0.015277777777777777,
+            "reasons": [
+              "REDUCED_HISTORY_COVERAGE",
+              "DEMO_UNVERIFIED_CONFIG",
+              "INSUFFICIENT_VALIDATION"
+            ]
+          },
+          "rul": {
+            "status": "READY",
+            "unit": "h",
+            "coverage_fraction": 1,
+            "reasons": []
+          }
+        },
+        "units": {
+          "oil_level": "percent",
+          "current_l1": "A",
+          "current_l2": "A",
+          "current_l3": "A",
+          "energy_kwh": "kWh",
+          "oil_temp_trip": "STATUS",
+          "oil_temp_alarm": "STATUS",
+          "neutral_current": "A",
+          "oil_temperature": "DEG_C",
+          "power_factor_l1": "1",
+          "power_factor_l2": "1",
+          "power_factor_l3": "1",
+          "phase_voltage_l1": "V",
+          "phase_voltage_l2": "V",
+          "phase_voltage_l3": "V",
+          "active_power_total": "kW",
+          "ambient_temperature": "DEG_C",
+          "winding_temperature": "STATUS",
+          "apparent_power_total": "kVA",
+          "reactive_power_total": "kVAr",
+          "magnetic_oil_gauge_alarm": "STATUS"
+        },
+        "coverage": {
+          "start": "2026-10-09T19:36:30.017775Z",
+          "end": "2026-10-09T19:38:45.017775Z",
+          "covered_seconds": 55,
+          "expected_seconds": 3600,
+          "fraction": 0.015277777777777777,
+          "gap_count": 8,
+          "missing_fields": [
+            "winding_temperature"
+          ]
+        },
+        "forecast": {
+          "target_definition": "new_oil_alert_within_1h",
+          "horizon_hours": 1,
+          "release_status": "INSUFFICIENT_VALIDATION",
+          "operational_eligible": false,
+          "limitation_codes": [
+            "INSUFFICIENT_VALIDATION"
+          ]
+        },
+        "versions": {
+          "bundle_id": "demo_unverified_coded_config_v1",
+          "configuration_version": "fictional-demo-v1",
+          "preprocessing_version": "1.0.0",
+          "artifact_schema_version": "1.0.0"
+        }
+      },
+      "rul": {
+        "rul_status": "SIMULATED_ESTIMATE",
+        "rul_method": "SYNTHETIC_FIRST_PASSAGE_V1",
+        "rul_target_definition": "Declared fictional degradation reaches scenario endpoint; not physical end-of-life",
+        "rul_value": 79.9625,
+        "rul_unit": "h",
+        "rul_lower": 66.63541666666667,
+        "rul_upper": 99.953125,
+        "uncertainty_kind": "SCENARIO_RANGE",
+        "forecast_horizon_hours": 100,
+        "future_duty_scenario": "H07_FICTIONAL_CONSTANT_0",
+        "degradation_state": 0.200375,
+        "end_threshold": 1,
+        "degradation_unit": "1",
+        "degradation_rate_per_hour": 0.01,
+        "equivalent_ageing_hours": null,
+        "source_kind": "SIMULATED",
+        "simulated": true,
+        "model_version": "synthetic-first-passage-v1",
+        "config_version": "h07-fictional-rul-v1",
+        "required_inputs": [],
+        "assumptions": [
+          "Fictional latent D is independent of health index and anomaly score",
+          "Endpoint is a scenario definition, not transformer end-of-life",
+          "Future duty begins at this event time; rates have units 1/hour",
+          "Declared rate range 0.008–0.012/hour; not calibrated confidence",
+          "Declared future duty: [{'hours': 100.0, 'rate_per_hour': 0.01}]"
+        ],
+        "limitation_codes": [],
+        "coverage_start": "2026-10-09T19:36:30.017775Z",
+        "coverage_end": "2026-10-09T19:38:45.017775Z",
+        "coverage_fraction": 1,
+        "timestamp": "2026-10-09T19:38:45.017775Z"
+      },
+      "transformer_id": "H07-dfb1b1-01",
+      "timestamp": "2026-10-09T19:38:45.017775Z",
+      "inference_status": "OK",
+      "missing_features": [],
+      "loading_percent": 136.97000000000003,
+      "thermal_model_temperature": 40.44858061876489,
+      "thermal_residual": null,
+      "thermal_state": null,
+      "anomaly_score": 1,
+      "anomaly_flag": false,
+      "health_index": 41.303,
+      "health_components": {
+        "thermal": 0,
+        "electrical": 0,
+        "loading": 63.02999999999999,
+        "oil": 100,
+        "alarm": 100,
+        "anomaly": 0
+      },
+      "health_reason_codes": [
+        "HIGH_OIL_TEMP",
+        "RAPID_TEMP_RISE",
+        "OVERLOAD"
+      ],
+      "fault_risk": null,
+      "predicted_fault": null,
+      "prediction_confidence": null,
+      "maintenance_priority": "WATCH",
+      "maintenance_recommendation": "Monitor transient; verify whether temperature rise is sustained.",
+      "reason_codes": [
+        "HIGH_OIL_TEMP",
+        "RAPID_TEMP_RISE",
+        "OVERLOAD"
+      ],
+      "schema_version": "1.1.0",
+      "feature_version": "1.0.0",
+      "model_version": "DEMO_UNVERIFIED_CONFIG",
+      "error_detail": null
+    },
+    "open_alerts_count": 6,
+    "demo_mode": true,
+    "data_source": {
+      "source_name": "fictional-modbus",
+      "scenario_id": "SCN_OVERLOAD_01"
+    },
+    "schema_version": "1.1.0",
+    "feature_version": "1.0.0",
+    "model_version": "DEMO_UNVERIFIED_CONFIG",
+    "analytics_availability": {
+      "status": "AVAILABLE",
+      "reasons": [],
+      "state_coverage_loss": false
+    }
+  },
+  "selected_asset": {
+    "transformer": {
+      "schema_version": "1.1.0",
+      "rated_frequency_hz": null,
+      "vector_group": null,
+      "impedance_percent": null,
+      "temperature_rise_limits": null,
+      "measurement_side": "LV",
+      "ct_ratio": null,
+      "pt_ratio": null,
+      "insulation_type": null,
+      "loss_parameters": null,
+      "configuration_metadata": {
+        "version": "fictional-demo-v1",
+        "status": "SYNTHETIC_CONFIG",
+        "field_metadata": {
+          "rated_current_a": {
+            "unit": "A",
+            "verification": "SYNTHETIC_CONFIG",
+            "provenance": "Declared H06 fictional configuration",
+            "evidence_reference": null,
+            "effective_at": null
+          },
+          "rated_power_kva": {
+            "unit": "kVA",
+            "verification": "SYNTHETIC_CONFIG",
+            "provenance": "Declared H06 fictional configuration",
+            "evidence_reference": null,
+            "effective_at": null
+          },
+          "measurement_side": {
+            "unit": null,
+            "verification": "SYNTHETIC_CONFIG",
+            "provenance": "Declared H06 fictional configuration",
+            "evidence_reference": null,
+            "effective_at": null
+          },
+          "rated_voltage_lv": {
+            "unit": "V",
+            "verification": "SYNTHETIC_CONFIG",
+            "provenance": "Declared H06 fictional configuration",
+            "evidence_reference": null,
+            "effective_at": null
+          }
+        }
+      },
+      "rated_power_kva": 30,
+      "rated_voltage_hv": null,
+      "rated_voltage_lv": 400,
+      "rated_current_a": 43.30127018922193,
+      "cooling_class": null,
+      "oil_type": null,
+      "id": "H07-dfb1b1-02",
+      "name": "H07-dfb1b1-02 fictional demo",
+      "created_at": "2026-10-09T19:36:27.334003Z",
+      "updated_at": "2026-10-09T19:36:27.334003Z"
+    },
+    "telemetry": {
+      "schema_version": "1.1.0",
+      "acquisition": {
+        "source_kind": "SIMULATED",
+        "source_name": "fictional-modbus",
+        "origin_kind": "SIMULATED",
+        "origin_transformer_id": null,
+        "replay_run_id": null,
+        "gateway_id": "H07-dfb1b1",
+        "timestamp_origin": "SOURCE_SNAPSHOT",
+        "timezone_status": "DECLARED_UTC",
+        "field_units": {
+          "oil_level": "percent",
+          "current_l1": "A",
+          "current_l2": "A",
+          "current_l3": "A",
+          "energy_kwh": "kWh",
+          "oil_temp_trip": "STATUS",
+          "oil_temp_alarm": "STATUS",
+          "neutral_current": "A",
+          "oil_temperature": "DEG_C",
+          "power_factor_l1": "1",
+          "power_factor_l2": "1",
+          "power_factor_l3": "1",
+          "phase_voltage_l1": "V",
+          "phase_voltage_l2": "V",
+          "phase_voltage_l3": "V",
+          "active_power_total": "kW",
+          "ambient_temperature": "DEG_C",
+          "winding_temperature": "STATUS",
+          "apparent_power_total": "kVA",
+          "reactive_power_total": "kVAr",
+          "magnetic_oil_gauge_alarm": "STATUS"
+        },
+        "field_verification": {
+          "oil_level": "SYNTHETIC",
+          "current_l1": "SYNTHETIC",
+          "current_l2": "SYNTHETIC",
+          "current_l3": "SYNTHETIC",
+          "energy_kwh": "SYNTHETIC",
+          "oil_temp_trip": "SYNTHETIC",
+          "oil_temp_alarm": "SYNTHETIC",
+          "neutral_current": "SYNTHETIC",
+          "oil_temperature": "SYNTHETIC",
+          "power_factor_l1": "SYNTHETIC",
+          "power_factor_l2": "SYNTHETIC",
+          "power_factor_l3": "SYNTHETIC",
+          "phase_voltage_l1": "SYNTHETIC",
+          "phase_voltage_l2": "SYNTHETIC",
+          "phase_voltage_l3": "SYNTHETIC",
+          "active_power_total": "SYNTHETIC",
+          "ambient_temperature": "SYNTHETIC",
+          "winding_temperature": "SYNTHETIC",
+          "apparent_power_total": "SYNTHETIC",
+          "reactive_power_total": "SYNTHETIC",
+          "magnetic_oil_gauge_alarm": "SYNTHETIC"
+        },
+        "measurement_side": "LV",
+        "map_version": "fictional-lv-v1",
+        "snapshot_id": "888113543bcc2134d49eee416d98a077956e3dfce3f66e352f4cec0ea2e1e2e0",
+        "sequence": 26,
+        "expected_interval_seconds": 5
+      },
+      "transformer_id": "H07-dfb1b1-02",
+      "timestamp": "2026-10-09T19:38:40.017775Z",
+      "phase_voltage_l1": 232.58,
+      "phase_voltage_l2": 229.27,
+      "phase_voltage_l3": 230.44,
+      "current_l1": 26.13,
+      "current_l2": 25.68,
+      "current_l3": 25.88,
+      "neutral_current": 0.09,
+      "oil_temperature": 41.564,
+      "winding_temperature": null,
+      "ambient_temperature": 29.7,
+      "oil_level": 84.8,
+      "oil_temp_alarm": 0,
+      "oil_temp_trip": 0,
+      "magnetic_oil_gauge_alarm": 0,
+      "active_power_total": 16.638,
+      "apparent_power_total": 17.929,
+      "reactive_power_total": 6.679,
+      "energy_kwh": 0.56805,
+      "power_factor_l1": 0.9334,
+      "power_factor_l2": 0.9093,
+      "power_factor_l3": 0.941,
+      "source_name": "fictional-modbus",
+      "scenario_id": "SCN_HEALTHY_01",
+      "id": 2274,
+      "is_missing_critical": false,
+      "data_quality_score": 0.9523809523809523,
+      "received_at": "2026-10-09T19:40:55.460071Z"
+    },
+    "analytics": {
+      "metadata": {
+        "thermal_readiness": "WARMING_UP",
+        "thermal_model_mode": "PUBLIC_EMPIRICAL",
+        "thermal_temperature_unit": "SOURCE_UNVERIFIED",
+        "apparent_power_utilization": 0.5976333333333332,
+        "forecast_operational_status": "INSUFFICIENT_VALIDATION",
+        "experimental_fault_risk": null,
+        "maintenance_trip_latched": false,
+        "maintenance_clear_policy_status": "NOT_APPLICABLE",
+        "coverage_overall": 0.8888888888888888,
+        "health_coverage": 1,
+        "extended_reason_codes": [
+          "HIGH_OIL_TEMP",
+          "UNCONFIRMED_STATISTICAL_EXCEEDANCE",
+          "CURRENT_IMBALANCE",
+          "REDUCED_HISTORY_COVERAGE",
+          "DEMO_UNVERIFIED_CONFIG"
+        ],
+        "extended_health_reason_codes": [
+          "HIGH_OIL_TEMP"
+        ],
+        "reason_descriptions": {
+          "HIGH_OIL_TEMP": "High oil indicator (source units)",
+          "CURRENT_IMBALANCE": "Phase current imbalance",
+          "UNCONFIRMED_STATISTICAL_EXCEEDANCE": "Unconfirmed Statistical Exceedance"
+        },
+        "components": {
+          "thermal": {
+            "status": "WARMING_UP",
+            "unit": "SOURCE_UNVERIFIED",
+            "coverage_fraction": 0.013888888888888888,
+            "reasons": [
+              "REDUCED_HISTORY_COVERAGE",
+              "DEMO_UNVERIFIED_CONFIG"
+            ]
+          },
+          "anomaly": {
+            "status": "INSUFFICIENT_DATA",
+            "unit": "1",
+            "coverage_fraction": 0.013888888888888888,
+            "reasons": [
+              "REDUCED_HISTORY_COVERAGE",
+              "DEMO_UNVERIFIED_CONFIG"
+            ]
+          },
+          "health": {
+            "status": "INSUFFICIENT_DATA",
+            "unit": "index",
+            "coverage_fraction": 0.013888888888888888,
+            "reasons": [
+              "REDUCED_HISTORY_COVERAGE",
+              "DEMO_UNVERIFIED_CONFIG"
+            ]
+          },
+          "maintenance": {
+            "status": "INSUFFICIENT_DATA",
+            "unit": null,
+            "coverage_fraction": 0.013888888888888888,
+            "reasons": [
+              "REDUCED_HISTORY_COVERAGE",
+              "DEMO_UNVERIFIED_CONFIG"
+            ]
+          },
+          "forecast": {
+            "status": "UNAVAILABLE",
+            "unit": null,
+            "coverage_fraction": 0.013888888888888888,
+            "reasons": [
+              "REDUCED_HISTORY_COVERAGE",
+              "DEMO_UNVERIFIED_CONFIG",
+              "INSUFFICIENT_VALIDATION"
+            ]
+          },
+          "rul": {
+            "status": "READY",
+            "unit": "h",
+            "coverage_fraction": 1,
+            "reasons": []
+          }
+        },
+        "units": {
+          "oil_level": "percent",
+          "current_l1": "A",
+          "current_l2": "A",
+          "current_l3": "A",
+          "energy_kwh": "kWh",
+          "oil_temp_trip": "STATUS",
+          "oil_temp_alarm": "STATUS",
+          "neutral_current": "A",
+          "oil_temperature": "DEG_C",
+          "power_factor_l1": "1",
+          "power_factor_l2": "1",
+          "power_factor_l3": "1",
+          "phase_voltage_l1": "V",
+          "phase_voltage_l2": "V",
+          "phase_voltage_l3": "V",
+          "active_power_total": "kW",
+          "ambient_temperature": "DEG_C",
+          "winding_temperature": "STATUS",
+          "apparent_power_total": "kVA",
+          "reactive_power_total": "kVAr",
+          "magnetic_oil_gauge_alarm": "STATUS"
+        },
+        "coverage": {
+          "start": "2026-10-09T19:36:30.017775Z",
+          "end": "2026-10-09T19:38:40.017775Z",
+          "covered_seconds": 50,
+          "expected_seconds": 3600,
+          "fraction": 0.013888888888888888,
+          "gap_count": 8,
+          "missing_fields": [
+            "winding_temperature"
+          ]
+        },
+        "forecast": {
+          "target_definition": "new_oil_alert_within_1h",
+          "horizon_hours": 1,
+          "release_status": "INSUFFICIENT_VALIDATION",
+          "operational_eligible": false,
+          "limitation_codes": [
+            "INSUFFICIENT_VALIDATION"
+          ]
+        },
+        "versions": {
+          "bundle_id": "demo_unverified_coded_config_v1",
+          "configuration_version": "fictional-demo-v1",
+          "preprocessing_version": "1.0.0",
+          "artifact_schema_version": "1.0.0"
+        }
+      },
+      "rul": {
+        "rul_status": "SIMULATED_ESTIMATE",
+        "rul_method": "SYNTHETIC_FIRST_PASSAGE_V1",
+        "rul_target_definition": "Declared fictional degradation reaches scenario endpoint; not physical end-of-life",
+        "rul_value": 79.072799779978,
+        "rul_unit": "h",
+        "rul_lower": 66.00291551882461,
+        "rul_upper": 98.59694787379973,
+        "uncertainty_kind": "SCENARIO_RANGE",
+        "forecast_horizon_hours": 100,
+        "future_duty_scenario": "H07_FICTIONAL_CONSTANT_1",
+        "degradation_state": 0.20136472222222224,
+        "end_threshold": 1,
+        "degradation_unit": "1",
+        "degradation_rate_per_hour": 0.0101,
+        "equivalent_ageing_hours": null,
+        "source_kind": "SIMULATED",
+        "simulated": true,
+        "model_version": "synthetic-first-passage-v1",
+        "config_version": "h07-fictional-rul-v1",
+        "required_inputs": [],
+        "assumptions": [
+          "Fictional latent D is independent of health index and anomaly score",
+          "Endpoint is a scenario definition, not transformer end-of-life",
+          "Future duty begins at this event time; rates have units 1/hour",
+          "Declared rate range 0.0081–0.0121/hour; not calibrated confidence",
+          "Declared future duty: [{'hours': 100.0, 'rate_per_hour': 0.0101}]"
+        ],
+        "limitation_codes": [],
+        "coverage_start": "2026-10-09T19:36:30.017775Z",
+        "coverage_end": "2026-10-09T19:38:40.017775Z",
+        "coverage_fraction": 1,
+        "timestamp": "2026-10-09T19:38:40.017775Z"
+      },
+      "transformer_id": "H07-dfb1b1-02",
+      "timestamp": "2026-10-09T19:38:40.017775Z",
+      "inference_status": "OK",
+      "missing_features": [],
+      "loading_percent": 59.76333333333332,
+      "thermal_model_temperature": 40.5026712804693,
+      "thermal_residual": null,
+      "thermal_state": null,
+      "anomaly_score": 1,
+      "anomaly_flag": false,
+      "health_index": 69.135,
+      "health_components": {
+        "thermal": 80.45,
+        "electrical": 0,
+        "loading": 100,
+        "oil": 100,
+        "alarm": 100,
+        "anomaly": 0
+      },
+      "health_reason_codes": [
+        "HIGH_OIL_TEMP"
+      ],
+      "fault_risk": null,
+      "predicted_fault": null,
+      "prediction_confidence": null,
+      "maintenance_priority": "WATCH",
+      "maintenance_recommendation": "Verify measurement/phase allocation and plan balancing if confirmed.",
+      "reason_codes": [
+        "HIGH_OIL_TEMP",
+        "CURRENT_IMBALANCE"
+      ],
+      "schema_version": "1.1.0",
+      "feature_version": "1.0.0",
+      "model_version": "DEMO_UNVERIFIED_CONFIG",
+      "error_detail": null
+    },
+    "open_alerts_count": 3,
+    "demo_mode": true,
+    "data_source": {
+      "source_name": "fictional-modbus",
+      "scenario_id": "SCN_HEALTHY_01"
+    },
+    "schema_version": "1.1.0",
+    "feature_version": "1.0.0",
+    "model_version": "DEMO_UNVERIFIED_CONFIG",
+    "analytics_availability": {
+      "status": "AVAILABLE",
+      "reasons": [],
+      "state_coverage_loss": false
+    }
+  },
+  "dom": "H07-dfb1b1-02 · Stale measurement\n\nSource: SIMULATED · fictional-modbus\n\nMeasurement event: 2026-10-09T19:38:40.017775Z · Analytics event: 2026-10-09T19:38:40.017775Z\n\nLast successful API poll: 2026-10-09T19:41:19.055Z\n\nReceived at: 2026-10-09T19:40:55.460071Z · Expected cadence: 5 s\n\nTimezone: DECLARED_UTC · Gateway: H07-dfb1b1 · Snapshot: 888113543bcc2134d49eee416d98a077956e3dfce3f66e352f4cec0ea2e1e2e0\n\nReplay origin/run: None supplied / None supplied\n\nAnalytics availability: AVAILABLE · No availability evidence supplied\n\nBundle/configuration: demo_unverified_coded_config_v1 / fictional-demo-v1\n\nInference: OK · Reasons: HIGH_OIL_TEMP, CURRENT_IMBALANCE",
+  "finished": "2026-10-09T19:41:19.587Z"
+}

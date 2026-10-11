@@ -1,0 +1,4 @@
+FROM transformer-h06-20261009-modbus-bridge
+USER root
+COPY simulator/spool.py simulator/modbus_bridge.py simulator/modbus_server.py /usr/local/lib/python3.12/site-packages/simulator/
+USER simulator

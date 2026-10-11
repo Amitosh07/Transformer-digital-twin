@@ -1,175 +1,190 @@
-"""
-Historical replay engine — simulator_README §6.
-
-Replays the public Kaggle dataset at adjustable speed through the canonical
-adapter layer.  Source CSV column names are translated using the source
-mapping defined in dataschema.md §19.
-
-Flow:
-  Dataset → Canonical Adapter → Replay Engine → Backend → Dashboard
-"""
-
+"""Replay canonical JSONL or reuse the unchanged shared CSV adapter."""
 from __future__ import annotations
-
-import datetime as _dt
-import time
+import copy
+import importlib.util
+import math
 from pathlib import Path
-from typing import Generator, Optional
-
+import sys
+import time
+from zoneinfo import ZoneInfo
 import pandas as pd
+from ml.pipeline.identity import FIELDS, PROTECTION, payload_hash, parse_record_json, utc
+from .schema import TransformerRecord, acquisition
 
-from .schema import (
-    EXCLUDED_SOURCE_FIELDS,
-    SOURCE_TO_CANONICAL,
-    TransformerRecord,
-)
+
+def replay_provenance(source, destination, run_id, sequence, *, origin_id=None, timezone_assumption=None):
+    origin = origin_id or source["transformer_id"]
+    if not destination or destination == origin or not run_id:
+        raise ValueError("separate replay destination and immutable run ID required")
+    old = source.get("acquisition")
+    if old:
+        acq = copy.deepcopy(old)
+        origin_kind = old["origin_kind"]
+    else:
+        acq = acquisition()
+        origin_kind = "UNKNOWN"
+        acq["field_units"] = {k: "UNKNOWN" for k in FIELDS}
+        acq["field_verification"] = {k: "UNVERIFIED" for k in FIELDS}
+        acq["measurement_side"] = "UNKNOWN"
+        acq["timezone_status"] = "ASSUMED"
+    if timezone_assumption:
+        acq["timezone_status"] = "ASSUMED"
+    if not old and not timezone_assumption:
+        raise ValueError("legacy replay requires explicit timezone assumption; units remain unknown")
+    acq.update(source_kind="REPLAYED", source_name="canonical-replay", origin_kind=origin_kind,
+               origin_transformer_id=origin, replay_run_id=run_id, gateway_id=None,
+               timestamp_origin="REPLAY_ASSUMPTION" if acq["timezone_status"] == "ASSUMED" else "SOURCE_EVENT",
+               sequence=sequence, snapshot_id=None)
+    result = {k: source.get(k) for k in FIELDS}
+    result.update(transformer_id=destination, timestamp=source["timestamp"], schema_version="1.1.0",
+                  scenario_id=source.get("scenario_id"), source_name="canonical-replay", acquisition=acq)
+    acq["snapshot_id"] = payload_hash(result)
+    TransformerRecord.model_validate(result)  # validate without losing Decimal source precision
+    return result
+
+
+def aware_source_time(value, timezone_assumption):
+    parsed = pd.Timestamp(value)
+    if parsed.tzinfo is None:
+        if not timezone_assumption:
+            raise ValueError("naive source timestamp requires --timezone")
+        parsed = parsed.tz_localize(ZoneInfo(timezone_assumption), ambiguous="raise", nonexistent="raise")
+    utc(parsed)  # rejects submicrosecond precision
+    return parsed.to_pydatetime()
+
+
+class CanonicalReplay:
+    def __init__(self, input_path, transformer_id, run_id, speed=1, timezone_assumption=None):
+        if not math.isfinite(speed) or speed <= 0:
+            raise ValueError("positive finite playback speed required")
+        self.path = Path(input_path)
+        self.destination, self.run_id, self.speed = transformer_id, run_id, speed
+        self.timezone_assumption = timezone_assumption
+        self.origin = None
+
+    def records(self):
+        previous_time, previous_hash, origin = None, None, None
+        sequence = 0
+        with self.path.open(encoding="utf-8") as handle:
+            for line_number, line in enumerate(handle, 1):
+                if not line.strip():
+                    continue
+                source = parse_record_json(line)
+                if not isinstance(source, dict):
+                    raise ValueError(f"line {line_number}: expected canonical object")
+                stamp = aware_source_time(source["timestamp"], self.timezone_assumption)
+                # Preserve already-aware source representation exactly.
+                if pd.Timestamp(source["timestamp"]).tzinfo is None:
+                    source["timestamp"] = stamp.isoformat()
+                TransformerRecord.model_validate(source)
+                if origin is None:
+                    origin = source["transformer_id"]
+                    self.origin = origin
+                if source["transformer_id"] != origin:
+                    raise ValueError("one origin asset per replay run required")
+                digest = payload_hash(source)
+                snapshot = (source.get("acquisition") or {}).get("snapshot_id")
+                if snapshot is not None and snapshot != digest:
+                    raise ValueError("source snapshot/hash mismatch")
+                if previous_time is not None and stamp <= previous_time:
+                    if stamp == previous_time and digest == previous_hash:
+                        continue
+                    raise ValueError("out-of-order or changed duplicate source record")
+                record = replay_provenance(source, self.destination, self.run_id, sequence,
+                                           timezone_assumption=self.timezone_assumption)
+                yield record
+                previous_time, previous_hash = stamp, digest
+                sequence += 1
+
+    def playback(self, sleeper=time.sleep):
+        previous = None
+        for record in self.records():
+            stamp = aware_source_time(record["timestamp"], None)
+            if previous is not None:
+                sleeper((stamp-previous).total_seconds()/self.speed)
+            previous = stamp
+            yield record
+
+    def validate_destination(self, client, base_url, first_record):
+        # H02 must own registration and SQL ordering; no implicit registry creation.
+        asset = client.get(f"{base_url.rstrip('/')}/api/v1/transformers/{self.destination}")
+        asset.raise_for_status()
+        latest = client.get(f"{base_url.rstrip('/')}/api/v1/transformers/{self.destination}/latest")
+        if latest.status_code == 404:
+            return
+        latest.raise_for_status()
+        telemetry = latest.json().get("telemetry")
+        if not telemetry:
+            return
+        acq = telemetry.get("acquisition") or {}
+        if (acq.get("source_kind") != "REPLAYED" or acq.get("replay_run_id") != self.run_id or
+            acq.get("origin_transformer_id") != first_record["acquisition"]["origin_transformer_id"]):
+            raise ValueError("destination contains a conflicting live or replay stream")
+
+
+def shared_adapter(adapter_path=None):
+    path = Path(adapter_path) if adapter_path else Path(__file__).resolve().parents[2] / "ml/adaptors/data_adapter.py"
+    if not path.is_file():
+        raise ValueError("shared CSV adapter unavailable; provide --adapter-path or use replay-canonical")
+    spec = importlib.util.spec_from_file_location("h03_shared_data_adapter", path)
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
 
 
 class ReplayEngine:
-    """
-    Loads one or more Kaggle CSV files, translates source columns to
-    canonical names, and yields TransformerRecords at a controllable
-    speed.
-
-    Parameters
-    ----------
-    csv_paths : list[str | Path]
-        Paths to one or more source CSV files.
-    transformer_id : str
-        Asset ID to stamp on every record (configurable baseline ID).
-    speed_multiplier : float
-        Playback speed.  1 = real time, 10 = 10× faster, etc.
-    """
-
-    def __init__(
-        self,
-        csv_paths: list[str | Path],
-        transformer_id: str = "TX-001",
-        speed_multiplier: float = 1.0,
-    ) -> None:
-        self.transformer_id = transformer_id
-        self.speed_multiplier = max(0.01, speed_multiplier)
-        self._df = self._load_and_adapt(csv_paths)
-
-    # ------------------------------------------------------------------
-    # Adapter layer — Kaggle columns → canonical fields (dataschema §19)
-    # ------------------------------------------------------------------
-
-    def _load_and_adapt(self, paths: list[str | Path]) -> pd.DataFrame:
-        frames: list[pd.DataFrame] = []
-        for p in paths:
-            df = pd.read_csv(p)
-            # Drop explicitly excluded columns (dataschema §5)
-            df.drop(
-                columns=[c for c in EXCLUDED_SOURCE_FIELDS if c in df.columns],
-                inplace=True,
-            )
-            frames.append(df)
-
-        if not frames:
-            return pd.DataFrame()
-
-        # Merge all files on DeviceTimeStamp
-        merged = frames[0]
-        for other in frames[1:]:
-            if "DeviceTimeStamp" in other.columns:
-                merged = merged.merge(other, on="DeviceTimeStamp", how="outer", suffixes=("", "_dup"))
-                # Remove any duplicate columns created by merge
-                merged = merged[[c for c in merged.columns if not c.endswith("_dup")]]
-
-        # Rename source → canonical
-        rename_map = {
-            src: canon
-            for src, canon in SOURCE_TO_CANONICAL.items()
-            if src in merged.columns
-        }
-        merged.rename(columns=rename_map, inplace=True)
-
-        # Parse timestamp
-        if "timestamp" in merged.columns:
-            merged["timestamp"] = pd.to_datetime(merged["timestamp"], errors="coerce")
-            merged.sort_values("timestamp", inplace=True)
-            merged.dropna(subset=["timestamp"], inplace=True)
-            merged.reset_index(drop=True, inplace=True)
-
-        return merged
-
-    # ------------------------------------------------------------------
-    # Public API
-    # ------------------------------------------------------------------
+    def __init__(self, csv_paths, transformer_id="TX-001", speed_multiplier=1,
+                 *, timezone_assumption=None, origin_transformer_id="RAW-UNKNOWN",
+                 replay_run_id="legacy-csv-replay", adapter_path=None):
+        if not math.isfinite(speed_multiplier) or speed_multiplier <= 0:
+            raise ValueError("positive finite replay speed required")
+        self.transformer_id, self.speed_multiplier = transformer_id, speed_multiplier
+        self.timezone_assumption = timezone_assumption
+        self.origin, self.run_id = origin_transformer_id, replay_run_id
+        adapter = shared_adapter(adapter_path)
+        supplied = {Path(p).name: Path(p) for p in csv_paths}
+        if len(supplied) != len(csv_paths) or any(name not in adapter.AGGREGATION_RULES for name in supplied):
+            raise ValueError("use distinct recognized adapter source filenames")
+        normalized = {}
+        for name in adapter.AGGREGATION_RULES:
+            if name in supplied:
+                frame = adapter.load_dataset(supplied[name], name)
+                frame = adapter.parse_timestamp(frame, name)
+                frame = adapter.resolve_duplicates(frame, name)
+                normalized[name] = adapter.normalize_columns(frame, name)
+            else:
+                normalized[name] = pd.DataFrame(columns=["timestamp", *adapter.SOURCE_COLUMN_MAPPINGS[name].values()])
+                normalized[name]["timestamp"] = pd.to_datetime(normalized[name]["timestamp"])
+        self._df = adapter.merge_datasets(normalized)
+        self._df.insert(0, "transformer_id", self.origin)
+        self._df = self._df.reindex(columns=adapter.CANONICAL_COLUMNS)
+        adapter.validate_canonical_telemetry(self._df)
+        if not self._df.empty:
+            aware_source_time(self._df.iloc[0]["timestamp"], timezone_assumption)
 
     @property
-    def record_count(self) -> int:
+    def record_count(self):
         return len(self._df)
 
-    def replay(self) -> Generator[TransformerRecord, None, None]:
-        """
-        Yield canonical records in time order, sleeping between records
-        to simulate the original interval at the configured speed.
-        """
-        prev_ts: Optional[_dt.datetime] = None
+    def records(self):
+        for sequence, (_, row) in enumerate(self._df.iterrows()):
+            source = {"transformer_id": self.origin,
+                      "timestamp": aware_source_time(row["timestamp"], self.timezone_assumption).isoformat()}
+            for key in FIELDS:
+                value = row[key]
+                source[key] = None if pd.isna(value) else int(value) if key in PROTECTION else float(value)
+            data = replay_provenance(source, self.transformer_id, self.run_id, sequence,
+                                     timezone_assumption=self.timezone_assumption)
+            yield TransformerRecord.model_validate(data)
 
-        for _, row in self._df.iterrows():
-            rec = self._row_to_record(row)
+    def all_records(self):
+        return list(self.records())
 
-            if prev_ts is not None and rec.timestamp is not None and prev_ts is not None:
-                gap = (rec.timestamp - prev_ts).total_seconds()
-                sleep_s = max(0, gap / self.speed_multiplier)
-                if sleep_s > 0:
-                    time.sleep(sleep_s)
-
-            prev_ts = rec.timestamp
-            yield rec
-
-    def all_records(self) -> list[TransformerRecord]:
-        """Return all records immediately (no sleep) — useful for batch seeding."""
-        records: list[TransformerRecord] = []
-        for _, row in self._df.iterrows():
-            records.append(self._row_to_record(row))
-        return records
-
-    # ------------------------------------------------------------------
-    # Internal
-    # ------------------------------------------------------------------
-
-    def _row_to_record(self, row: pd.Series) -> TransformerRecord:
-        """
-        Build a TransformerRecord from a row that already has canonical
-        column names.  Missing data stays None — NOT converted to zero
-        (dataschema §1.6).
-        """
-
-        def _get(field: str, cast=float):
-            val = row.get(field)
-            if val is None or (isinstance(val, float) and pd.isna(val)):
-                return None
-            try:
-                return cast(val)
-            except (ValueError, TypeError):
-                return None
-
-        return TransformerRecord(
-            transformer_id=self.transformer_id,
-            timestamp=row.get("timestamp", _dt.datetime.now(_dt.timezone.utc)),
-            phase_voltage_l1=_get("phase_voltage_l1"),
-            phase_voltage_l2=_get("phase_voltage_l2"),
-            phase_voltage_l3=_get("phase_voltage_l3"),
-            current_l1=_get("current_l1"),
-            current_l2=_get("current_l2"),
-            current_l3=_get("current_l3"),
-            neutral_current=_get("neutral_current"),
-            oil_temperature=_get("oil_temperature"),
-            winding_temperature=_get("winding_temperature"),
-            ambient_temperature=_get("ambient_temperature"),
-            oil_level=_get("oil_level"),
-            oil_temp_alarm=_get("oil_temp_alarm", int),
-            oil_temp_trip=_get("oil_temp_trip", int),
-            magnetic_oil_gauge_alarm=_get("magnetic_oil_gauge_alarm", int),
-            active_power_total=_get("active_power_total"),
-            apparent_power_total=_get("apparent_power_total"),
-            reactive_power_total=_get("reactive_power_total"),
-            energy_kwh=_get("energy_kwh"),
-            power_factor_l1=_get("power_factor_l1"),
-            power_factor_l2=_get("power_factor_l2"),
-            power_factor_l3=_get("power_factor_l3"),
-        )
+    def replay(self):
+        previous = None
+        for record in self.records():
+            if previous is not None:
+                time.sleep((record.timestamp-previous).total_seconds()/self.speed_multiplier)
+            previous = record.timestamp
+            yield record

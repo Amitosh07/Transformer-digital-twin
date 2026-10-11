@@ -80,13 +80,15 @@ def test_bulk_alert_conflict_reconciles_through_existing_row_path(
 def test_external_duplicate_safety_path_keeps_original_telemetry(
     db: Session, monkeypatch: pytest.MonkeyPatch
 ) -> None:
-    original = telemetry_repo.insert_many
+    original = telemetry_repo.insert_telemetry
 
-    def inserted_elsewhere(session: Session, values: list[dict[str, Any]]) -> dict:
-        original(session, values)
-        return {}
+    def inserted_elsewhere(session: Session, record, **kwargs):
+        # Simulate the competing accepted row on the current single-record
+        # insertion path, then exercise its real ON CONFLICT lookup.
+        original(session, record, **kwargs)
+        return original(session, record, **kwargs)
 
-    monkeypatch.setattr(telemetry_repo, "insert_many", inserted_elsewhere)
+    monkeypatch.setattr(telemetry_repo, "insert_telemetry", inserted_elsewhere)
     asset = "TX-external-conflict-" + uuid4().hex
     summary = ingest_batch(db, [mixed(asset, 0).model_dump(mode="json")])
     assert summary.inserted_count == 0 and summary.duplicate_count == 1

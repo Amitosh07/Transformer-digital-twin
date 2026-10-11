@@ -1,0 +1,2 @@
+{"asset": "H06-SIM-05", "bytes": 7885133, "categories": {"history": 7857713, "thermal": 307, "coverage": 600, "health_persistence": 6439, "anomaly_persistence": 6467, "synthetic_degradation": 1035, "maintenance_persistence": 6864}, "records_bytes": 1658183, "identity_cache_bytes": 6199432}
+{"asset": "H07-dfb1b1-01", "bytes": 329121, "categories": {"history": 316087, "thermal": 313, "coverage": 616, "health_persistence": 1809, "anomaly_persistence": 812, "synthetic_degradation": 1175, "maintenance_persistence": 2234}, "records_bytes": 106063, "identity_cache_bytes": 209926}

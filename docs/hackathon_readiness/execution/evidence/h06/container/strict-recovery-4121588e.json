@@ -1,0 +1,397 @@
+{
+  "run": "4121588e",
+  "asset": "H06-STRICT-4121588e",
+  "completed": true,
+  "configuration": {
+    "map_version": "fictional-lv-v1",
+    "gateway_id": "H06-DEMO-GW",
+    "poll_interval_seconds": 2,
+    "timeout_seconds": 2,
+    "snapshot_retries": 3,
+    "backoff_seconds": 1,
+    "max_backoff_seconds": 30,
+    "mqtt": {
+      "host": "mqtt",
+      "port": 1883
+    },
+    "receipt_base_url": "http://backend:8000",
+    "spool": {
+      "directory": "/spool",
+      "max_records": 10000,
+      "max_bytes": 16777216
+    },
+    "assets": [
+      {
+        "transformer_id": "H06-SIM-05",
+        "unit_id": 1,
+        "host": "modbus-simulator",
+        "port": 1502,
+        "expected_interval_seconds": 5
+      }
+    ]
+  },
+  "historical_diagnostic_limit": "The prior failed counter assertion did not save identities or counter snapshots; its exact increment cannot be retrospectively attributed.",
+  "preoutage": {
+    "wall_time": "2026-10-09T19:21:38.319652+00:00",
+    "queued": {
+      "counters": {
+        "acquired": 1
+      },
+      "entries": [
+        {
+          "snapshot": "91f939c21b7cef8a29703984ce0c2a109a20751c45a11232c4ebc03c4bf4049f",
+          "hash": "91f939c21b7cef8a29703984ce0c2a109a20751c45a11232c4ebc03c4bf4049f",
+          "asset": "H06-SIM-05",
+          "event_time": "2026-10-09T00:52:25.000000Z",
+          "state": "PENDING",
+          "attempts": 0,
+          "pubacks": 0,
+          "reason": null,
+          "next_attempt": 0.0
+        }
+      ],
+      "broker_reachable": true,
+      "publisher_connected": false,
+      "observed_at": 1791573701.6783385
+    },
+    "receipt": {
+      "status": 200,
+      "body": {
+        "schema_version": "1.1.0",
+        "receipt_status": "COMMITTED",
+        "snapshot_id": "91f939c21b7cef8a29703984ce0c2a109a20751c45a11232c4ebc03c4bf4049f",
+        "payload_hash": "91f939c21b7cef8a29703984ce0c2a109a20751c45a11232c4ebc03c4bf4049f",
+        "transformer_id": "H06-SIM-05",
+        "timestamp": "2026-10-09T00:52:25+00:00",
+        "received_at": "2026-10-09T19:21:31.816122+00:00",
+        "committed_at": "2026-10-09T19:21:31.816122+00:00",
+        "accepted_snapshot_id": "91f939c21b7cef8a29703984ce0c2a109a20751c45a11232c4ebc03c4bf4049f",
+        "accepted_payload_hash": "91f939c21b7cef8a29703984ce0c2a109a20751c45a11232c4ebc03c4bf4049f",
+        "ingestion_outcome": "ACCEPTED",
+        "analytics_status": "AVAILABLE",
+        "state_coverage_loss": false
+      }
+    },
+    "sql_committed_at": "2026-10-09 19:21:31.816122+00:00"
+  },
+  "outage_established": {
+    "wall_time": "2026-10-09T19:21:51.259368+00:00",
+    "broker_running": false,
+    "status": {
+      "counters": {
+        "acquired": 1
+      },
+      "entries": [
+        {
+          "snapshot": "91f939c21b7cef8a29703984ce0c2a109a20751c45a11232c4ebc03c4bf4049f",
+          "hash": "91f939c21b7cef8a29703984ce0c2a109a20751c45a11232c4ebc03c4bf4049f",
+          "asset": "H06-SIM-05",
+          "event_time": "2026-10-09T00:52:25.000000Z",
+          "state": "PENDING",
+          "attempts": 0,
+          "pubacks": 0,
+          "reason": null,
+          "next_attempt": 0.0
+        }
+      ],
+      "broker_reachable": false,
+      "publisher_connected": false,
+      "observed_at": 1791573710.6980636
+    }
+  },
+  "diagnosis": {
+    "before": {
+      "counters": {
+        "acquired": 1
+      },
+      "entries": [
+        {
+          "snapshot": "91f939c21b7cef8a29703984ce0c2a109a20751c45a11232c4ebc03c4bf4049f",
+          "hash": "91f939c21b7cef8a29703984ce0c2a109a20751c45a11232c4ebc03c4bf4049f",
+          "asset": "H06-SIM-05",
+          "event_time": "2026-10-09T00:52:25.000000Z",
+          "state": "PENDING",
+          "attempts": 0,
+          "pubacks": 0,
+          "reason": null,
+          "next_attempt": 0.0
+        }
+      ],
+      "broker_reachable": false,
+      "publisher_connected": false,
+      "observed_at": 1791573710.6980636
+    },
+    "after": {
+      "counters": {
+        "acquired": 1,
+        "committed": 1
+      },
+      "entries": [],
+      "broker_reachable": false,
+      "publisher_connected": false,
+      "observed_at": 1791573718.3990119
+    },
+    "snapshot_id": "91f939c21b7cef8a29703984ce0c2a109a20751c45a11232c4ebc03c4bf4049f",
+    "matching_receipt": {
+      "status": 200,
+      "body": {
+        "schema_version": "1.1.0",
+        "receipt_status": "COMMITTED",
+        "snapshot_id": "91f939c21b7cef8a29703984ce0c2a109a20751c45a11232c4ebc03c4bf4049f",
+        "payload_hash": "91f939c21b7cef8a29703984ce0c2a109a20751c45a11232c4ebc03c4bf4049f",
+        "transformer_id": "H06-SIM-05",
+        "timestamp": "2026-10-09T00:52:25+00:00",
+        "received_at": "2026-10-09T19:21:31.816122+00:00",
+        "committed_at": "2026-10-09T19:21:31.816122+00:00",
+        "accepted_snapshot_id": "91f939c21b7cef8a29703984ce0c2a109a20751c45a11232c4ebc03c4bf4049f",
+        "accepted_payload_hash": "91f939c21b7cef8a29703984ce0c2a109a20751c45a11232c4ebc03c4bf4049f",
+        "ingestion_outcome": "ACCEPTED",
+        "analytics_status": "AVAILABLE",
+        "state_coverage_loss": false
+      }
+    },
+    "conclusion": "Receipt-first confirmation legitimately increments delivery committed count while MQTT is offline; this identity committed in SQL before the outage, with no new publication or new SQL row."
+  },
+  "postoutage_identity": {
+    "created_wall_time": "2026-10-09T19:22:18.208735+00:00",
+    "record": {
+      "schema_version": "1.1.0",
+      "source_name": "fictional-simulator",
+      "scenario_id": "SCN_HEALTHY_01",
+      "acquisition": {
+        "source_kind": "SIMULATED",
+        "source_name": "fictional-simulator",
+        "origin_kind": "SIMULATED",
+        "origin_transformer_id": null,
+        "replay_run_id": null,
+        "gateway_id": null,
+        "timestamp_origin": "SOURCE_SNAPSHOT",
+        "timezone_status": "DECLARED_UTC",
+        "field_units": {
+          "phase_voltage_l1": "V",
+          "phase_voltage_l2": "V",
+          "phase_voltage_l3": "V",
+          "current_l1": "A",
+          "current_l2": "A",
+          "current_l3": "A",
+          "neutral_current": "A",
+          "oil_temperature": "DEG_C",
+          "winding_temperature": "STATUS",
+          "ambient_temperature": "DEG_C",
+          "oil_level": "percent",
+          "oil_temp_alarm": "STATUS",
+          "oil_temp_trip": "STATUS",
+          "magnetic_oil_gauge_alarm": "STATUS",
+          "active_power_total": "kW",
+          "apparent_power_total": "kVA",
+          "reactive_power_total": "kVAr",
+          "energy_kwh": "kWh",
+          "power_factor_l1": "1",
+          "power_factor_l2": "1",
+          "power_factor_l3": "1"
+        },
+        "field_verification": {
+          "phase_voltage_l1": "SYNTHETIC",
+          "phase_voltage_l2": "SYNTHETIC",
+          "phase_voltage_l3": "SYNTHETIC",
+          "current_l1": "SYNTHETIC",
+          "current_l2": "SYNTHETIC",
+          "current_l3": "SYNTHETIC",
+          "neutral_current": "SYNTHETIC",
+          "oil_temperature": "SYNTHETIC",
+          "winding_temperature": "SYNTHETIC",
+          "ambient_temperature": "SYNTHETIC",
+          "oil_level": "SYNTHETIC",
+          "oil_temp_alarm": "SYNTHETIC",
+          "oil_temp_trip": "SYNTHETIC",
+          "magnetic_oil_gauge_alarm": "SYNTHETIC",
+          "active_power_total": "SYNTHETIC",
+          "apparent_power_total": "SYNTHETIC",
+          "reactive_power_total": "SYNTHETIC",
+          "energy_kwh": "SYNTHETIC",
+          "power_factor_l1": "SYNTHETIC",
+          "power_factor_l2": "SYNTHETIC",
+          "power_factor_l3": "SYNTHETIC"
+        },
+        "measurement_side": "LV",
+        "map_version": null,
+        "snapshot_id": "e02cccdc16abcc38b4a7424aa67950054037bdcc7ce118a1846deb76f15efd0b",
+        "sequence": 0,
+        "expected_interval_seconds": 3600
+      },
+      "transformer_id": "H06-STRICT-4121588e",
+      "timestamp": "2026-10-09T00:00:00Z",
+      "phase_voltage_l1": 230.94010767585033,
+      "phase_voltage_l2": 230.94010767585033,
+      "phase_voltage_l3": 230.94010767585033,
+      "current_l1": 14.433756729740644,
+      "current_l2": 14.433756729740644,
+      "current_l3": 14.433756729740644,
+      "neutral_current": 0.05,
+      "oil_temperature": 42.0,
+      "winding_temperature": null,
+      "ambient_temperature": 26.2,
+      "oil_level": 85.2,
+      "oil_temp_alarm": 0,
+      "oil_temp_trip": 0,
+      "magnetic_oil_gauge_alarm": 0,
+      "active_power_total": 10,
+      "apparent_power_total": 10,
+      "reactive_power_total": 0,
+      "energy_kwh": 0,
+      "power_factor_l1": 1,
+      "power_factor_l2": 1,
+      "power_factor_l3": 1
+    },
+    "expected_hash": "e02cccdc16abcc38b4a7424aa67950054037bdcc7ce118a1846deb76f15efd0b",
+    "pending": {
+      "counters": {
+        "acquired": 2,
+        "committed": 1
+      },
+      "entries": [
+        {
+          "snapshot": "e02cccdc16abcc38b4a7424aa67950054037bdcc7ce118a1846deb76f15efd0b",
+          "hash": "e02cccdc16abcc38b4a7424aa67950054037bdcc7ce118a1846deb76f15efd0b",
+          "asset": "H06-STRICT-4121588e",
+          "event_time": "2026-10-09T00:00:00.000000Z",
+          "state": "PENDING",
+          "attempts": 0,
+          "pubacks": 0,
+          "reason": null,
+          "next_attempt": 0.0
+        }
+      ],
+      "broker_reachable": false,
+      "publisher_connected": false,
+      "observed_at": 1791573726.3694317
+    },
+    "disconnected": {
+      "counters": {
+        "acquired": 2,
+        "committed": 1
+      },
+      "entries": [
+        {
+          "snapshot": "e02cccdc16abcc38b4a7424aa67950054037bdcc7ce118a1846deb76f15efd0b",
+          "hash": "e02cccdc16abcc38b4a7424aa67950054037bdcc7ce118a1846deb76f15efd0b",
+          "asset": "H06-STRICT-4121588e",
+          "event_time": "2026-10-09T00:00:00.000000Z",
+          "state": "PENDING",
+          "attempts": 1,
+          "pubacks": 0,
+          "reason": "BROKER_FAILURE",
+          "next_attempt": 1791573734.7208917
+        }
+      ],
+      "broker_reachable": false,
+      "publisher_connected": false,
+      "observed_at": 1791573737.5981216
+    },
+    "receipt": {
+      "status": 404
+    }
+  },
+  "offline_observation": {
+    "seconds": 10,
+    "observations": [
+      {
+        "counters": {
+          "acquired": 2,
+          "committed": 1
+        },
+        "entries": [
+          {
+            "snapshot": "e02cccdc16abcc38b4a7424aa67950054037bdcc7ce118a1846deb76f15efd0b",
+            "hash": "e02cccdc16abcc38b4a7424aa67950054037bdcc7ce118a1846deb76f15efd0b",
+            "asset": "H06-STRICT-4121588e",
+            "event_time": "2026-10-09T00:00:00.000000Z",
+            "state": "PENDING",
+            "attempts": 2,
+            "pubacks": 0,
+            "reason": "BROKER_FAILURE",
+            "next_attempt": 1791573747.5295486
+          }
+        ],
+        "broker_reachable": false,
+        "publisher_connected": false,
+        "observed_at": 1791573749.4113648
+      }
+    ],
+    "no_committed_receipt": true,
+    "no_sql_rows": true,
+    "committed_counter_unchanged": true
+  },
+  "durable_restart": {
+    "counters": {
+      "acquired": 2,
+      "committed": 1
+    },
+    "entries": [
+      {
+        "snapshot": "e02cccdc16abcc38b4a7424aa67950054037bdcc7ce118a1846deb76f15efd0b",
+        "hash": "e02cccdc16abcc38b4a7424aa67950054037bdcc7ce118a1846deb76f15efd0b",
+        "asset": "H06-STRICT-4121588e",
+        "event_time": "2026-10-09T00:00:00.000000Z",
+        "state": "PENDING",
+        "attempts": 2,
+        "pubacks": 0,
+        "reason": "BROKER_FAILURE",
+        "next_attempt": 1791573747.5295486
+      }
+    ],
+    "broker_reachable": false,
+    "publisher_connected": false,
+    "observed_at": 1791573762.0490198
+  },
+  "recovery": {
+    "deadline_seconds": 48,
+    "status": {
+      "counters": {
+        "acquired": 2,
+        "committed": 2,
+        "broker_pubacks": 2
+      },
+      "entries": [],
+      "broker_reachable": true,
+      "publisher_connected": false,
+      "observed_at": 1791573784.2369282
+    },
+    "receipt": {
+      "schema_version": "1.1.0",
+      "receipt_status": "COMMITTED",
+      "snapshot_id": "e02cccdc16abcc38b4a7424aa67950054037bdcc7ce118a1846deb76f15efd0b",
+      "payload_hash": "e02cccdc16abcc38b4a7424aa67950054037bdcc7ce118a1846deb76f15efd0b",
+      "transformer_id": "H06-STRICT-4121588e",
+      "timestamp": "2026-10-09T00:00:00+00:00",
+      "received_at": "2026-10-09T19:23:02.961699+00:00",
+      "committed_at": "2026-10-09T19:23:02.961699+00:00",
+      "accepted_snapshot_id": "e02cccdc16abcc38b4a7424aa67950054037bdcc7ce118a1846deb76f15efd0b",
+      "accepted_payload_hash": "e02cccdc16abcc38b4a7424aa67950054037bdcc7ce118a1846deb76f15efd0b",
+      "ingestion_outcome": "ACCEPTED",
+      "analytics_status": "AVAILABLE",
+      "state_coverage_loss": false
+    },
+    "sql_rows": [
+      [
+        977,
+        1
+      ]
+    ],
+    "checkpoint_observations": 1,
+    "http_exact_retry": true,
+    "mqtt_reconnect_exact_retry": true,
+    "telemetry_analytics_alerts_maintenance_checkpoint_unchanged": true,
+    "republish": {
+      "counters": {
+        "acquired": 2,
+        "committed": 2,
+        "broker_pubacks": 2
+      },
+      "entries": [],
+      "broker_reachable": true,
+      "publisher_connected": true,
+      "observed_at": 1791573793.852846
+    }
+  }
+}

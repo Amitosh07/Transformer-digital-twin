@@ -1,0 +1,21 @@
+{
+  "fleet_file": "operational-fleet.json",
+  "gateway_id": "KA-BLR-SIM-GW",
+  "modbus_host": "modbus-simulator",
+  "modbus_port": 1502,
+  "poll_interval_seconds": 1,
+  "timeout_seconds": 2,
+  "snapshot_retries": 3,
+  "backoff_seconds": 1,
+  "max_backoff_seconds": 30,
+  "mqtt": {
+    "host": "mqtt",
+    "port": 1883
+  },
+  "receipt_base_url": "http://backend:8000",
+  "spool": {
+    "directory": "/spool",
+    "max_records": 10000,
+    "max_bytes": 16777216
+  }
+}

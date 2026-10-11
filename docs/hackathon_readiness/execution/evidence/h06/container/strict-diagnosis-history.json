@@ -1,0 +1,209 @@
+{
+  "broker_stop": "2026-10-09T19:06:39+00:00",
+  "broker_restart": "2026-10-09T19:06:56+00:00",
+  "bridge_diagnostics": [
+    {
+      "gateway_id": "H06-DEMO-GW",
+      "gateway_time": "2026-10-09T19:06:34.023089+00:00",
+      "counters": {
+        "acquired": 462,
+        "broker_pubacks": 553,
+        "committed": 447
+      },
+      "spool_usage": [
+        15,
+        34029
+      ],
+      "assets": {
+        "H06-SIM-05": {
+          "connected": true,
+          "last_success_at": "2026-10-09T19:06:33.959938+00:00",
+          "failures": 0,
+          "torn": 0,
+          "reconnects": 1,
+          "reason": null,
+          "missed_snapshots": 0
+        }
+      }
+    },
+    {
+      "gateway_id": "H06-DEMO-GW",
+      "gateway_time": "2026-10-09T19:06:36.242391+00:00",
+      "counters": {
+        "acquired": 462,
+        "broker_pubacks": 554,
+        "committed": 447
+      },
+      "spool_usage": [
+        15,
+        34029
+      ],
+      "assets": {
+        "H06-SIM-05": {
+          "connected": true,
+          "last_success_at": "2026-10-09T19:06:36.240919+00:00",
+          "failures": 0,
+          "torn": 0,
+          "reconnects": 1,
+          "reason": null,
+          "missed_snapshots": 0
+        }
+      }
+    },
+    {
+      "gateway_id": "H06-DEMO-GW",
+      "gateway_time": "2026-10-09T19:06:38.311899+00:00",
+      "counters": {
+        "acquired": 463,
+        "broker_pubacks": 555,
+        "committed": 448
+      },
+      "spool_usage": [
+        15,
+        34023
+      ],
+      "assets": {
+        "H06-SIM-05": {
+          "connected": true,
+          "last_success_at": "2026-10-09T19:06:38.267083+00:00",
+          "failures": 0,
+          "torn": 0,
+          "reconnects": 1,
+          "reason": null,
+          "missed_snapshots": 0
+        }
+      }
+    },
+    {
+      "gateway_id": "H06-DEMO-GW",
+      "gateway_time": "2026-10-09T19:06:44.375695+00:00",
+      "counters": {
+        "acquired": 464,
+        "broker_pubacks": 555,
+        "committed": 448
+      },
+      "spool_usage": [
+        16,
+        36293
+      ],
+      "assets": {
+        "H06-SIM-05": {
+          "connected": true,
+          "last_success_at": "2026-10-09T19:06:44.355321+00:00",
+          "failures": 0,
+          "torn": 0,
+          "reconnects": 1,
+          "reason": null,
+          "missed_snapshots": 0
+        }
+      }
+    },
+    {
+      "gateway_id": "H06-DEMO-GW",
+      "gateway_time": "2026-10-09T19:06:50.345310+00:00",
+      "counters": {
+        "acquired": 465,
+        "broker_pubacks": 555,
+        "committed": 449
+      },
+      "spool_usage": [
+        16,
+        36293
+      ],
+      "assets": {
+        "H06-SIM-05": {
+          "connected": true,
+          "last_success_at": "2026-10-09T19:06:46.416296+00:00",
+          "failures": 0,
+          "torn": 0,
+          "reconnects": 1,
+          "reason": null,
+          "missed_snapshots": 0
+        }
+      }
+    },
+    {
+      "gateway_id": "H06-DEMO-GW",
+      "gateway_time": "2026-10-09T19:06:56.422892+00:00",
+      "counters": {
+        "acquired": 466,
+        "broker_pubacks": 555,
+        "committed": 449
+      },
+      "spool_usage": [
+        17,
+        38557
+      ],
+      "assets": {
+        "H06-SIM-05": {
+          "connected": true,
+          "last_success_at": "2026-10-09T19:06:56.406751+00:00",
+          "failures": 0,
+          "torn": 0,
+          "reconnects": 1,
+          "reason": null,
+          "missed_snapshots": 1
+        }
+      }
+    }
+  ],
+  "receipts": [
+    {
+      "snapshot_id": "35167bf3fbe95ed0c4fe0c20b4c0e42d3d14b34abb0eb95b1fab03ad909335d5",
+      "payload_hash": "35167bf3fbe95ed0c4fe0c20b4c0e42d3d14b34abb0eb95b1fab03ad909335d5",
+      "committed_at": "2026-10-09 19:05:57.184594+00:00",
+      "event_time": "2026-10-09 00:37:20+00:00",
+      "telemetry_id": 618
+    },
+    {
+      "snapshot_id": "e0547f6ded7e58d39d5d173c370b96afd16a3bd2ab9e0ea553732826c07ee3e4",
+      "payload_hash": "e0547f6ded7e58d39d5d173c370b96afd16a3bd2ab9e0ea553732826c07ee3e4",
+      "committed_at": "2026-10-09 19:06:14.481188+00:00",
+      "event_time": "2026-10-09 00:37:25+00:00",
+      "telemetry_id": 621
+    },
+    {
+      "snapshot_id": "0e90c8d5b415865e9d36e36ba849236a7caa5925ed1a3b40adc11091ba30bb7a",
+      "payload_hash": "0e90c8d5b415865e9d36e36ba849236a7caa5925ed1a3b40adc11091ba30bb7a",
+      "committed_at": "2026-10-09 19:06:17.301829+00:00",
+      "event_time": "2026-10-09 00:37:30+00:00",
+      "telemetry_id": 622
+    },
+    {
+      "snapshot_id": "697cb81635529f8828297e95155d788e40b219f6c316f753d36f6e1f46d7331a",
+      "payload_hash": "697cb81635529f8828297e95155d788e40b219f6c316f753d36f6e1f46d7331a",
+      "committed_at": "2026-10-09 19:06:21.298627+00:00",
+      "event_time": "2026-10-09 00:37:35+00:00",
+      "telemetry_id": 624
+    },
+    {
+      "snapshot_id": "57437cb3b90e8cbf9a1b6a23808ed369579332940b5952f4555f91a968b37946",
+      "payload_hash": "57437cb3b90e8cbf9a1b6a23808ed369579332940b5952f4555f91a968b37946",
+      "committed_at": "2026-10-09 19:06:25.633357+00:00",
+      "event_time": "2026-10-09 00:37:40+00:00",
+      "telemetry_id": 626
+    },
+    {
+      "snapshot_id": "c0026489eee231c96ee6c11e2800160a9fa12fb3c7e1c8cbd8391c25263f4013",
+      "payload_hash": "c0026489eee231c96ee6c11e2800160a9fa12fb3c7e1c8cbd8391c25263f4013",
+      "committed_at": "2026-10-09 19:06:29.832870+00:00",
+      "event_time": "2026-10-09 00:37:45+00:00",
+      "telemetry_id": 628
+    },
+    {
+      "snapshot_id": "e4611652027aa945c8a92621393cc8c0f506b4fa806f51fe48a37d175f2837c0",
+      "payload_hash": "e4611652027aa945c8a92621393cc8c0f506b4fa806f51fe48a37d175f2837c0",
+      "committed_at": "2026-10-09 19:06:33.983699+00:00",
+      "event_time": "2026-10-09 00:37:50+00:00",
+      "telemetry_id": 630
+    },
+    {
+      "snapshot_id": "bb434c7b7ad23f9496bcdd5363f264fb9b7e84780d639c3e70548bcb257289f7",
+      "payload_hash": "bb434c7b7ad23f9496bcdd5363f264fb9b7e84780d639c3e70548bcb257289f7",
+      "committed_at": "2026-10-09 19:06:38.289930+00:00",
+      "event_time": "2026-10-09 00:37:55+00:00",
+      "telemetry_id": 632
+    }
+  ],
+  "limitation": "Original failing assertion did not persist its before/after identity set; retained logs establish counter timing and actual SQL receipt timing, not a unique retrospective attribution."
+}

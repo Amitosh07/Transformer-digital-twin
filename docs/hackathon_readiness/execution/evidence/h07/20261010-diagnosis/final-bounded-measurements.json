@@ -1,0 +1,83 @@
+{
+  "b41b39": {
+    "start": "2026-10-10T07:38:43.581971+00:00",
+    "end": "2026-10-10T07:40:13.582384+00:00",
+    "duration_seconds": 90.00041469999996,
+    "generated_all_retained_source_logs": 500,
+    "generated_event_time_in_measurement_window": 450,
+    "acquired_audit_unique": null,
+    "delivery_attempt_stages": {},
+    "sql_committed_at_final_query": 475,
+    "dispositions": {
+      "NOT_ACQUIRED_NO_SQL_OR_SPOOL": 25,
+      "SQL_COMMITTED": 475
+    },
+    "visible_unique_snapshots": 22,
+    "browser_errors": 1,
+    "event_to_visible_ms": {
+      "samples": 22,
+      "p50": 34210,
+      "p95": 49728,
+      "p99": 51862,
+      "max": 51862
+    },
+    "received_to_visible_ms": {
+      "samples": 22,
+      "p50": 4938,
+      "p95": 8813,
+      "p99": 8850,
+      "max": 8850
+    },
+    "acquisition_event_age_ms": {
+      "samples": 0,
+      "max": null
+    },
+    "c_free_min_bytes": 7255654400,
+    "database_max_bytes": 116743191,
+    "browser_exit_code": 0
+  },
+  "1ea791": {
+    "start": "2026-10-10T08:24:25.864797+00:00",
+    "end": "2026-10-10T08:27:25.872554+00:00",
+    "duration_seconds": 180.00773189999745,
+    "generated_all_retained_source_logs": 1125,
+    "generated_event_time_in_measurement_window": 900,
+    "acquired_audit_unique": 200,
+    "delivery_attempt_stages": {
+      "PUBACK": 281,
+      "RECEIPT_CONFIRMED": 64
+    },
+    "sql_committed_at_final_query": 80,
+    "dispositions": {
+      "NOT_ACQUIRED_NO_SQL_OR_SPOOL": 925,
+      "SQL_COMMITTED": 80,
+      "DURABLE_PENDING": 120
+    },
+    "visible_unique_snapshots": 6,
+    "browser_errors": 6,
+    "event_to_visible_ms": {
+      "samples": 6,
+      "p50": 31852,
+      "p95": 39595,
+      "p99": 39595,
+      "max": 39595
+    },
+    "received_to_visible_ms": {
+      "samples": 6,
+      "p50": 12052,
+      "p95": 18615,
+      "p99": 18615,
+      "max": 18615
+    },
+    "acquisition_event_age_ms": {
+      "samples": 200,
+      "p50": 9568.808,
+      "p95": 10604.89,
+      "p99": 11087.173,
+      "max": 11196.360999999999
+    },
+    "c_free_min_bytes": 6988709888,
+    "database_max_bytes": 260422679,
+    "browser_exit_code": 1
+  }
+}

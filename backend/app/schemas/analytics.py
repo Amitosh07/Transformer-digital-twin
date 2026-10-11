@@ -2,7 +2,8 @@
 
 from typing import Literal
 
-from pydantic import ConfigDict, Field, StrictBool
+from pydantic import ConfigDict, Field, StrictBool, AliasChoices, model_validator
+from app.schemas.hackathon import AnalyticsMetadata, RULResult
 
 from app.schemas.common import (
     CanonicalModel,
@@ -23,6 +24,8 @@ class HealthComponents(CanonicalModel):
 
 
 class MLResultIn(CanonicalModel):
+    metadata: AnalyticsMetadata | None = Field(default=None, validation_alias=AliasChoices('ml_metadata','metadata'))
+    rul: RULResult | None = None
     transformer_id: str = Field(min_length=1, max_length=128)
     timestamp: UtcDatetime
     inference_status: Literal["OK", "INSUFFICIENT_DATA"]
@@ -46,6 +49,14 @@ class MLResultIn(CanonicalModel):
     feature_version: str
     model_version: str
     error_detail: str | None = None
+
+    @model_validator(mode='after')
+    def forecast_release(self):
+        f = self.metadata.forecast if self.metadata else None
+        if (f and (f.release_status != 'RELEASED' or not f.operational_eligible)) or (self.schema_version == '1.1.0' and f is None):
+            if any(v is not None for v in (self.fault_risk,self.predicted_fault,self.prediction_confidence)):
+                raise ValueError('operational forecast outputs require release evidence')
+        return self
 
 
 class AnalyticsOut(MLResultIn):

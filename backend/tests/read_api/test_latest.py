@@ -43,7 +43,8 @@ def test_latest_uses_own_analytics_and_sanitizes_errors(
     analytics.error_detail = "secret database exception"
     db.flush()
     result = read_client.get(f"/api/v1/transformers/{asset}/latest")
-    assert result.json()["analytics"]["error_detail"] == "ML analysis failed"
+    assert result.json()['analytics'] is None
+    assert result.json()['analytics_availability']['status'] == 'UNAVAILABLE'
     assert "secret" not in result.text
     ingest_record(
         db,

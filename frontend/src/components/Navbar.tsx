@@ -25,7 +25,6 @@ export const Navbar: React.FC<NavbarProps> = ({ isDark, onToggleTheme }) => {
     { label: 'Live Studio', href: '#demo', highlight: true },
     { label: 'Pipeline', href: '#pipeline' },
     { label: 'Architecture', href: '#architecture' },
-    { label: 'Team', href: '#team' },
     { label: 'Roadmap', href: '#roadmap' },
   ];
 
