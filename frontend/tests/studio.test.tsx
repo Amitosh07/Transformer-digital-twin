@@ -27,7 +27,7 @@ it('populates registry assets and renders actual latest/history, recommendations
  const selector=screen.getByRole('combobox',{name:'Asset'});
  await waitFor(()=>expect(within(selector).getByRole('option',{name:'API asset HX-B (HX-B)'})).toBeInTheDocument());
  await waitFor(()=>expect(screen.getByText(/Actual backend recommendation/)).toBeVisible());
- expect(within(screen.getByRole('region',{name:'Health index'})).getByText('37')).toBeVisible();
+ expect(within(screen.getByRole('region',{name:'Health index'})).getByText('37.00')).toBeVisible();
  expect(screen.getByText(/Oil temperature alarm: Unknown contact/)).toHaveTextContent('Oil temperature trip: Cleared');
  expect(screen.getByText(/Source: SIMULATED/)).toBeVisible();
  await waitFor(()=>expect(screen.getByText(/RUL API not available: API HTTP 404/)).toBeVisible());

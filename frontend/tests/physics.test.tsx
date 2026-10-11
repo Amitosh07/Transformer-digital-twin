@@ -172,8 +172,8 @@ it('cancels old asset/view requests, ignores late responses and does not poll ph
   unmount(); expect(signals[2].aborted).toBe(true); expect(vi.getTimerCount()).toBe(0);
 });
 
-it('keeps navigation/selector/chart working, requests only in thermal view and wires global refresh and error retry', async () => {
-  let fail = false; const calls: string[] = [];
+it('keeps navigation/selector/chart working without the removed thermal view and never requests physics with the demo flag off', async () => {
+  const calls: string[] = [];
   vi.stubGlobal('fetch', vi.fn(async (input: string) => {
     const u = new URL(input); const id = u.pathname.split('/')[4]; const latest = makeLatest(id);
     if (u.pathname === '/api/v1/transformers') return response(page(['HX-A', 'HX-B'].map(id => makeLatest(id).transformer), 50));
@@ -182,23 +182,25 @@ it('keeps navigation/selector/chart working, requests only in thermal view and w
     if (u.pathname.endsWith('/telemetry')) return response(page([latest.telemetry]));
     if (u.pathname.endsWith('/analytics')) return response(page([latest.analytics]));
     if (u.pathname.endsWith('/alerts') || u.pathname.endsWith('/maintenance')) return response(page([]));
-    if (u.pathname.endsWith('/physics')) { calls.push(id); return fail ? response({ error: { code: 'SERVICE_ERROR', message: 'Physics service unavailable' } }, 500) : response(controlledResult(id)); }
+    if (u.pathname.endsWith('/physics')) { calls.push(id); return response(controlledResult(id)); }
     return response({}, 404);
   }));
   render(<App/>); await waitFor(() => expect(screen.getByRole('button', { name: 'Monitor HX-A' })).toBeVisible());
+  const nav = within(screen.getByRole('navigation', { name: 'Main navigation' }));
+  expect(nav.getAllByRole('button').map(b => b.textContent)).toEqual(['Overview', 'Transformer monitoring', 'Live alarms / events', 'Predictive maintenance']);
+  expect(screen.queryByRole('button', { name: 'Thermal & loading' })).not.toBeInTheDocument();
+  expect(screen.queryByRole('button', { name: 'System / source health' })).not.toBeInTheDocument();
   fireEvent.click(screen.getByRole('button', { name: 'Monitor HX-A' }));
-  await waitFor(() => expect(screen.getByRole('region', { name: 'Selected transformer measurements' })).toHaveTextContent('HX-A')); expect(calls).toEqual([]);
-  fireEvent.click(screen.getByRole('button', { name: 'Thermal & loading', exact: true }));
-  await waitFor(() => expect(screen.getByText('Controlled-simulation estimates / simplified node proxies')).toBeVisible()); expect(calls).toEqual(['HX-A']);
+  await waitFor(() => expect(screen.getByRole('region', { name: 'Selected transformer measurements' })).toHaveTextContent('HX-A'));
+  await waitFor(() => expect(screen.getByRole('combobox', { name: 'Trend channel' })).toBeVisible());
   fireEvent.change(screen.getByRole('combobox', { name: 'Trend channel' }), { target: { value: 'Phase currents' } });
   expect(screen.getByRole('img', { name: 'Phase currents event-time trend' })).toBeVisible();
   fireEvent.change(screen.getByRole('combobox', { name: 'Asset', exact: true }), { target: { value: 'HX-B' } });
-  await waitFor(() => expect(calls).toEqual(['HX-A', 'HX-B']));
-  fail = true; fireEvent.click(screen.getByRole('button', { name: /Refresh/ }));
-  await waitFor(() => expect(screen.getByRole('button', { name: 'Retry physics' })).toBeVisible());
-  expect(screen.queryByText('Controlled-simulation estimates / simplified node proxies')).not.toBeInTheDocument();
-  fail = false; fireEvent.click(screen.getByRole('button', { name: 'Retry physics' }));
-  await waitFor(() => expect(screen.getByText('Controlled-simulation estimates / simplified node proxies')).toBeVisible()); expect(calls).toEqual(['HX-A', 'HX-B', 'HX-B', 'HX-B']);
-  fireEvent.click(screen.getByRole('button', { name: 'System / source health', exact: true })); expect(screen.queryByRole('region', { name: 'Physics results' })).not.toBeInTheDocument();
-  fireEvent.click(screen.getByRole('button', { name: 'Overview', exact: true })); await waitFor(() => expect(screen.getByRole('button', { name: 'Monitor HX-B' })).toBeVisible()); expect(calls).toHaveLength(4);
+  await waitFor(() => expect(screen.getByRole('region', { name: 'Selected transformer measurements' })).toHaveTextContent('HX-B'));
+  fireEvent.click(screen.getByRole('button', { name: /Refresh/ }));
+  fireEvent.click(nav.getByRole('button', { name: 'Predictive maintenance' }));
+  expect(screen.getByRole('heading', { level: 1, name: 'Predictive maintenance' })).toBeVisible();
+  expect(screen.queryByRole('region', { name: 'Physics results' })).not.toBeInTheDocument();
+  fireEvent.click(nav.getByRole('button', { name: 'Overview' })); await waitFor(() => expect(screen.getByRole('button', { name: 'Monitor HX-B' })).toBeVisible());
+  expect(calls).toEqual([]);
 });

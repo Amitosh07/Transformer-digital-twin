@@ -3,7 +3,7 @@ import { physicsComponentNames } from '../../api/livePhysicsDemo';
 import type { PhysicsComponentName } from '../../api/physics';
 import type { usePhysics } from '../../hooks/usePhysics';
 import { Badge, EventTime } from './TelemetryPanels';
-import { valueLabel } from './presentation';
+import { codeLabel, valueLabel } from './presentation';
 
 const features: Record<PhysicsComponentName, { title: string; unit: string; icon: typeof Thermometer; explanation: string; provenance: string }> = {
   measured_oil_temperature: { title: 'Simulated oil sensor temperature', unit: '°C', icon: Droplets, explanation: 'Synthetic sensor input; response model is documented for the selected demo.', provenance: 'SIMULATED SENSOR' },
@@ -30,16 +30,16 @@ export function PhysicsFeatureCards({ state, enabled, now }: { state: State; ena
     const available = status === 'READY' && component?.value != null;
     const reason = !enabled ? 'Local frontend demo flag is disabled. Start backend/scripts/Start-TenTransformerDemo.ps1 for the MQTT fleet, open its printed frontend URL and select one of its registered synthetic assets.' : state.loading ? 'Loading the selected asset’s simulation result.' : state.error ?? (expired ? 'Simulation event expired; waiting for a new event.' : component?.status === 'INITIALIZING' ? 'Waiting for supported temperature history.' : component?.status === 'UNAVAILABLE' ? data?.reason ?? 'This component is unavailable.' : !data ? 'No eligible simulation result is available.' : null);
     return <article className="feature-panel physics-feature" key={name} aria-label={definition.title} data-physics-component={name} data-asset={data?.transformer_id} data-sequence={data?.sequence}>
-      <div className="feature-heading"><definition.icon size={18}/><h3>{definition.title}</h3></div>
-      <div className="physics-card-badges"><Badge tone={available ? 'info' : state.error ? 'danger' : 'neutral'}>{status}</Badge>{enabled && <Badge>LIVE SIMULATION</Badge>}</div>
+      <div className="feature-heading"><definition.icon size={18} aria-hidden="true"/><h3>{definition.title}</h3></div>
+      <Badge tone={available ? 'info' : state.error ? 'danger' : 'neutral'}>{codeLabel(status.replaceAll(' ', '_'))}</Badge>
       <strong className="feature-value">{available ? valueLabel(component.value, definition.unit) : 'Unavailable'}</strong>
-      {!available && <small>Unit: {definition.unit}</small>}
-      <small className="physics-card-provenance">{definition.provenance} · SYNTHETIC</small>
+      {!available && definition.unit !== '1' && <small>Unit: {definition.unit}</small>}
+      <small className="physics-card-provenance">{codeLabel(definition.provenance.replaceAll(' ', '_'))} · synthetic data{enabled ? ' · live simulation' : ''}</small>
       <p>{definition.explanation}</p>
       {reason && <p className="physics-card-reason">{reason}</p>}
       {state.error && enabled && name === 'measured_oil_temperature' && <button className="button-secondary" onClick={state.retry}>Retry physics</button>}
-      <details><summary>Model and assumptions</summary><p>Model {component?.model_id ?? 'Unavailable'} · Target {component?.target ?? 'Unavailable'} · Reference {component?.reference ?? 'docs/live_physics_demo_model.md'}</p><p>Case {data?.case_id ?? 'Unavailable'} · Run {data?.run_id ?? 'Unavailable'}. Demo-only simplified models; operational physics eligibility is unchanged.</p></details>
-      <footer><div>Event <EventTime value={data?.timestamp}/></div><div>Evaluated <EventTime value={data?.evaluated_at}/></div><div>Last update <EventTime value={state.lastSuccess == null ? null : new Date(state.lastSuccess).toISOString()}/></div><div>{data?.transformer_id ?? 'No current result'} · sequence {data?.sequence ?? 'Unavailable'}</div></footer>
+      <footer><div>Event <EventTime value={data?.timestamp}/></div></footer>
+      <details className="tech-details"><summary>Technical details</summary><div className="tech-details-body"><p>Model {component?.model_id ?? 'Unavailable'} · Target {component?.target ?? 'Unavailable'} · Reference {component?.reference ?? 'docs/live_physics_demo_model.md'}</p><p>Case {data?.case_id ?? 'Unavailable'} · Run {data?.run_id ?? 'Unavailable'}. Demo-only simplified models; operational physics eligibility is unchanged.</p><p>Evaluated <EventTime value={data?.evaluated_at}/> · Last update <EventTime value={state.lastSuccess == null ? null : new Date(state.lastSuccess).toISOString()}/></p><p>{data?.transformer_id ?? 'No current result'} · Sequence {data?.sequence ?? 'Unavailable'} · Status code {status}</p></div></details>
     </article>;
   })}</>;
 }

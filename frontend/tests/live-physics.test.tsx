@@ -68,7 +68,8 @@ it('displays ten computed numeric values, units, models, synthetic provenance an
   const units = ['°C','°C','°C','K','K','W','1','h','°C','K'];
   rows.forEach((r, i) => {
     const value = r.querySelectorAll('td')[1].textContent!;
-    expect(value).toMatch(/\d/); expect(value.endsWith(` ${units[i]}`)).toBe(true);
+    expect(value).toMatch(/\d/);
+    if (units[i] === '1') expect(value).toMatch(/^-?[\d,]+\.\d{2}$/); else expect(value.endsWith(` ${units[i]}`)).toBe(true);
     expect(r).toHaveTextContent('SYNTHETIC_SIMULATED');
     fireEvent.click(r.querySelector('summary')!);
     expect(r).toHaveTextContent(data.components[physicsComponentNames[i]].model_id);

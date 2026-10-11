@@ -2,7 +2,7 @@
   "version": "operational-fleet-v1",
   "source_kind": "SIMULATED",
   "map_version": "fictional-lv-v1",
-  "interval_seconds": 5,
+  "interval_seconds": 10,
   "configuration": {
     "rated_power_kva": 30,
     "rated_voltage_lv": 400,

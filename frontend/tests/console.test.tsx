@@ -124,6 +124,40 @@ it('clamps the page after a registry refresh reduces the available inventory', a
   expect(screen.getByRole('button',{name:'Next'})).toBeDisabled();
 });
 
+it('overview drops the removed read-only, evidence and refresh-policy clutter and formats readings with real units', async () => {
+  fixtureFetch(); render(<App/>);
+  await waitFor(() => expect(screen.getByRole('button',{name:'Monitor HX-A'})).toBeVisible());
+  for (const text of [/Read-only monitoring/, /^Read only$/, /Condition evidence/, /Per-asset assessment/, /concurrent requests/, /No alarm is not proof/, /Source shown per asset/])
+    expect(screen.queryByText(text)).not.toBeInTheDocument();
+  expect(screen.getByText('Assets on this page')).toBeVisible();
+  const card = screen.getByRole('button',{name:'Monitor HX-A'});
+  await waitFor(() => expect(card).toHaveTextContent('37.00 °C'));
+  expect(card).toHaveTextContent('0.00 A'); expect(card).not.toHaveTextContent(/DEG|_C\b/);
+});
+it('renders missing readings as unavailable rather than zero', async () => {
+  fixtureFetch(u => { if (!u.pathname.endsWith('/latest')) return undefined; const l = makeLatest(u.pathname.split('/')[4]); l.telemetry!.oil_temperature = null; return Promise.resolve(new Response(JSON.stringify(l))); });
+  render(<App/>);
+  await waitFor(() => expect(screen.getByRole('button',{name:'Monitor HX-A'})).toHaveTextContent('0.00 A'));
+  const card = screen.getByRole('button',{name:'Monitor HX-A'});
+  expect(within(card).getByText('Oil temperature').nextElementSibling).toHaveTextContent('Unavailable');
+  expect(card).not.toHaveTextContent('0.00 °C');
+});
+it('shows alarms only on the dedicated page, in plain English, with the raw evidence kept in technical details', async () => {
+  const alert = {id:7,transformer_id:'HX-A',timestamp:'2026-10-09T00:00:00Z',severity:'WARNING',alert_type:'RAPID_TEMP_RISE',trigger:'reason_codes',evidence:{reason_codes:['RAPID_TEMP_RISE','CURRENT_IMBALANCE']},threshold_or_reason:'RAPID_TEMP_RISE',recommended_action:'Review the temperature trend reported by the ML adapter.',status:'OPEN',last_seen_at:'2026-10-09T00:00:00Z'};
+  fixtureFetch(u => u.pathname.endsWith('/alerts') ? Promise.resolve(new Response(JSON.stringify(page([alert])))) : undefined);
+  render(<App/>); await waitFor(() => expect(screen.getByRole('button',{name:'Monitor HX-A'})).toBeVisible());
+  fireEvent.click(screen.getByRole('button',{name:'Monitor HX-A'}));
+  await waitFor(() => expect(screen.getByRole('region',{name:'Selected transformer measurements'})).toHaveTextContent('HX-A'));
+  expect(screen.queryByRole('region',{name:'Alerts'})).not.toBeInTheDocument();
+  expect(screen.queryByRole('heading',{name:'Alarms & events'})).not.toBeInTheDocument();
+  fireEvent.click(within(screen.getByRole('navigation',{name:'Main navigation'})).getByRole('button',{name:'Live alarms / events'}));
+  const region = await screen.findByRole('region',{name:'Alerts'});
+  await waitFor(() => expect(within(region).getByText('Reported reasons: Rapid temp rise, Current imbalance')).toBeVisible());
+  expect(within(region).getByText('Warning')).toBeVisible(); expect(within(region).getByText('Open')).toBeVisible();
+  expect(within(region).getByText(/Backend recommendation: Review the temperature trend/)).toBeVisible();
+  const details = within(region).getByText('Technical details').closest('details')!;
+  expect(details.open).toBe(false); expect(details).toHaveTextContent('"RAPID_TEMP_RISE"'); expect(details).toHaveTextContent('reason_codes');
+});
 it('stops displaying a selected identity removed from the active registry', async () => {
   let inventory = ['HX-A','HX-B'];
   fixtureFetch(u => u.pathname === '/api/v1/transformers'

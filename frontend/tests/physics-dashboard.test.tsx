@@ -25,14 +25,15 @@ it('appends all ten numeric cards to the same six-card grid with provenance and 
   const units = ['°C','°C','°C','K','K','W','1','h','°C','K'];
   cards.slice(6).forEach((card,i) => {
     expect(card.parentElement).toBe(region);
-    expect(card.querySelector('.feature-value')?.textContent).toMatch(new RegExp(` ${units[i]}$`));
-    expect(card).toHaveTextContent('READY'); expect(card).toHaveTextContent('LIVE SIMULATION'); expect(card).toHaveTextContent('SYNTHETIC');
+    expect(card.querySelector('.feature-value')?.textContent).toMatch(units[i] === '1' ? /^-?[\d,]+\.\d{2}$/ : new RegExp(`^-?[\\d,]+\\.\\d{2} ${units[i]}$`));
+    expect(card).toHaveTextContent('Ready'); expect(card).toHaveTextContent('live simulation'); expect(card).toHaveTextContent('synthetic data');
     const times = card.querySelectorAll('time');
     expect(times[0].dateTime).toBe(s.data.timestamp); expect(times[1].dateTime).toBe(s.data.evaluated_at); expect(times[2].dateTime).toBe(new Date(now).toISOString());
     expect(card.dataset.physicsComponent).toBe(physicsComponentNames[i]);
     fireEvent.click(card.querySelector('summary')!); expect(card.querySelector('details')?.open).toBe(true);
   });
-  expect(cards[6]).toHaveTextContent('SIMULATED SENSOR'); expect(cards[6]).not.toHaveTextContent('MEASURED');
+  expect(cards[6]).toHaveTextContent('Simulated sensor'); expect(cards[6]).not.toHaveTextContent('MEASURED');
+  expect(cards[6].querySelector('.physics-card-provenance')).not.toHaveTextContent(/measured/i);
 });
 
 it('keeps component readiness independent when the event is initializing', () => {
@@ -40,8 +41,8 @@ it('keeps component readiness independent when the event is initializing', () =>
   s.data.components.hot_spot_temperature.status = 'INITIALIZING';
   s.data.components.hot_spot_temperature.value = null;
   render(<PhysicsFeatureCards state={s} enabled now={now}/>);
-  expect(screen.getByRole('article',{name:'Winding hot-spot temperature estimate'})).toHaveTextContent('INITIALIZING');
-  expect(screen.getByRole('article',{name:'Total transformer losses'})).toHaveTextContent('READY');
+  expect(screen.getByRole('article',{name:'Winding hot-spot temperature estimate'})).toHaveTextContent('Initializing');
+  expect(screen.getByRole('article',{name:'Total transformer losses'})).toHaveTextContent('Ready');
   expect(screen.getByRole('article',{name:'Total transformer losses'}).querySelector('.feature-value')).not.toHaveTextContent('Unavailable');
 });
 
