@@ -2,8 +2,6 @@
 
 **A telemetry-to-monitoring platform for transformer assets.** The repository brings together a React operations console, a FastAPI and PostgreSQL backend, an ML runtime, and a Python simulator that can generate, replay, and deliver telemetry over Modbus and MQTT.
 
-> [!IMPORTANT]
-> **Release status: NOT READY for operational thermal predictions.** The current two-node thermal estimator is limited to controlled simulations. The FEM package is an independent synthetic steady-conduction benchmark, not a transformer model. This repository does not establish operational hot-spot prediction, insulation ageing, real remaining useful life (RUL), failure probability, estimator-to-FEM comparison, standards compliance, or field accuracy. See [model limitations](docs/model_limitations.md) and the [Phase 7 release report](docs/phase7_report.md).
 
 ## What the system does
 
@@ -18,56 +16,96 @@
 
 The primary path carries simulator or external telemetry into the shared ingestion service. HTTP and replay use that same service, as does MQTT. The simulator's Modbus bridge retains uncommitted messages in a spool and checks the backend receipt resource before removing them.
 
-```mermaid
-flowchart LR
-    subgraph Sources[Telemetry sources]
-        SIM[Python simulator<br/>synthetic generation and replay]
-        MOD[Modbus server<br/>FC04 register map]
-        BR[Modbus bridge<br/>durable spool]
-        HTTP[HTTP telemetry and batch API]
-        REP[Historical replay API]
-        SIM --> MOD --> BR
-    end
+## Architecture
 
-    MQ[Mosquitto MQTT broker]
-    BR --> MQ
-    MQ --> ING
-    HTTP --> ING
-    REP --> ING
+The primary path carries simulator or external telemetry into the shared ingestion service. HTTP and replay use that same service, as does MQTT. The simulator's Modbus bridge retains uncommitted messages in a spool and checks the backend receipt resource before removing them.
 
-    subgraph Platform[Application platform]
-        ING[FastAPI shared ingestion<br/>validation and idempotency]
-        ML[ML adapter and transactional pipeline]
-        PG[(PostgreSQL<br/>telemetry, analytics, alerts,<br/>receipts, checkpoints, physics)]
-        API[Bounded REST read APIs]
-        ING --> ML
-        ING --> PG
-        ML --> PG
-        PG --> API
-    end
+```text
+TELEMETRY SOURCES
+=================
 
-    API --> UI[React and TypeScript<br/>monitoring console]
-    PG -. committed receipt .-> BR
+ Python Simulator
+ (generation/replay)
+        |
+        v
+ Modbus Server
+ (FC04 register map)
+        |
+        v
+ Modbus Bridge
+ (durable message spool)
+        |
+        v
+ Mosquitto MQTT Broker ----------------------+
+                                              |
+ HTTP Telemetry and Batch API ---------------+----> SHARED INGESTION
+                                              |     FastAPI: validation,
+ Historical Replay API ----------------------+     normalization, idempotency
+                                                    |
+                         +--------------------------+------------------+
+                         |                                             |
+                         v                                             v
+                  ML Adapter and                              PostgreSQL
+              Transactional Pipeline                          Database
+                         |                                             |
+                         +---------------------> PostgreSQL <---------+
+                                                       |
+                                                       v
+                                               Versioned REST
+                                                  Read APIs
+                                                       |
+                                                       v
+                                         React + TypeScript Console
+
+Reliability acknowledgement:
+PostgreSQL committed receipt - - - - - - - -> Modbus Bridge
+(The bridge removes a spooled message only after confirming backend receipt.)
 ```
 
 ### Physics result path
 
 Physics is an optional extension of ingestion and persistence. Its read resource is separate from the regular analytics endpoints. It reports component-level units, status, coverage, provenance, assumptions, and reasons; a missing or unsupported result is represented as unavailable rather than a fabricated temperature.
 
-```mermaid
-flowchart LR
-    EVENT[Accepted telemetry event] --> GATE{Physics processing enabled<br/>and inputs/config eligible?}
-    GATE -- No --> UNAVAILABLE[Typed unavailable components<br/>with reasons and provenance]
-    GATE -- Yes --> EST[Physics estimator<br/>controlled-simulation scope]
-    EST --> RESULT[Versioned component result<br/>values or explicit unavailable states]
-    UNAVAILABLE --> TX[Shared database transaction]
-    RESULT --> TX
-    TX --> STORE[(Physics event and<br/>asset-owned checkpoint)]
-    STORE --> READ[GET /api/v1/transformers/{id}/physics]
-    READ --> PANEL[Thermal & loading console view]
+### Physics result path
+
+Physics is an optional extension of ingestion and persistence. Its read resource is separate from the regular analytics endpoints. It reports component-level units, status, coverage, provenance, assumptions, and reasons; a missing or unsupported result is represented as unavailable rather than a fabricated temperature.
+
+```text
+ACCEPTED TELEMETRY EVENT
+          |
+          v
+  Physics processing enabled
+  and inputs/config eligible?
+          |
+      +---+---+
+      |       |
+     NO      YES
+      |       |
+      v       v
+ Typed      Physics estimator
+ unavailable (controlled simulation
+ components   only)
+ with reasons       |
+ and provenance     v
+      |       Versioned component results
+      |       (values OR explicit unavailable states)
+      |               |
+      +-------+-------+
+              |
+              v
+     Shared database transaction
+              |
+              v
+  Physics events + asset-owned checkpoints
+              |
+              v
+       Physics Read API
+ (GET transformer physics endpoint)
+              |
+              v
+   Thermal and loading console view
 ```
 
-No FEM solve is run inside the API. The current FEM benchmark is independent of the two-node estimator, and an estimator-to-FEM comparison is not available. See the [physics integration design](docs/physics_integration.md) and [frozen physics contract](docs/physics_contract.md).
 
 ## Components
 
@@ -158,8 +196,6 @@ The frontend API origin is a build-time setting for production. Configure the pr
 
 Open `http://127.0.0.1:5177`. Check backend liveness/readiness at `/health` and `/health/ready`, and inspect `/openapi.json` for the active API contract. With physics disabled, the physics endpoint is expected to return unavailable components. This setup does not demonstrate a successful operational temperature prediction.
 
-> [!CAUTION]
-> The root Docker Compose backend entrypoint runs database migrations automatically. Do not point a demo or local command at a retained database unless its migration, backup, and rollout procedure has been reviewed. Do not use reset commands against retained data.
 
 ## Verification
 
